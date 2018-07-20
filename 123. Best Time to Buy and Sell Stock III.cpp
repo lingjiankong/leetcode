@@ -22,7 +22,6 @@
 //     sell2[i] = max(sell2[i-1], buy2[i-1]+price[i])
 //
 // as shown in the transition relation, every state is updated w.r.t. current price [i] and states in *previous* day [i-1]. If you update in "increasing order", you ends up updating against state in today [i] instead of previous day [i-1], which is wrong. In the case of this problem, the code will still work if you were updating in increasing order, as if you were buying and selling stock on the same day, which result in useless transaction.
-// this about an extreme case, say you are allowed to complete 100 transactions instead of 2. Then during the first, say, 50 days, there's no way for you to complete the 100th transaction yet. If you update your states in decreasing order, then sell100 or buy100 will not be affected until we get closer to the 100th day. However, if you update your states in increasing order, then sell100 and buy100 will be updated on day1, which doesn't make sense.
 
 // See 121 for dp solution in the case when you are allowed to complete only 1 transaction instead of 2.
 
@@ -43,3 +42,15 @@ public:
         return sell2;
     }
 };
+
+// Regardless of the actual number of transactions you have done (whether it is 1, 2, or k transactions, as long as it is less than or equal to k transactions), returning sell[k] will always give you the maximum possilbe profit you are able to get. For example, if you are allowed to do 30 transactions but you only have 10 days of stock, you can still return sell[k] to get the maximum profit. We see below that sell[n] never decreases. If you have actually done only 1 transaction sell[1], sell[2] and sell[3] will have the same value as sell[1]
+
+//            {3,  5,  7,  0,  3,  2,  9,  1}
+
+// buy[1]     -3, -3,  0,  0,  0,  0,  0,  0
+// buy[2]     -3, -3, -3,  4,  4,  4,  4,  8
+// buy[3]     -3, -3, -3,  4,  4,  5,  5,  12
+
+// sell[1]     0,  2,  4,  4,  4,  4,  9,  9
+// sell[2]     0,  2,  4,  4,  7,  7,  13, 13
+// sell[3]     0,  2,  4,  4,  7,  7,  14, 14
