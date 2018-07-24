@@ -22,7 +22,7 @@ public:
                 candidate2 = num;
                 count2 = 1;
             } else {
-                // i.e. num != cadidate1 and num != candidate2
+                // i.e. num != cadidate1 and num != candidate2, we get rid of one pair of (candidate1, num), --count1, and one pair of (candidate2, num), --count2
                 --count1;
                 --count2;
             }

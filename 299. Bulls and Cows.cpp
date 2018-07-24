@@ -20,7 +20,7 @@ public:
                 ++numBull;
             }
             else {
-                ++secretCount[secret[i]-'0'];
+                ++secretCount[secret[i]-'0']; // -'0' converts str to int so we can use it as index
                 ++guessCount[guess[i]-'0'];
             }
         }

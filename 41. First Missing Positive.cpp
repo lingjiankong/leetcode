@@ -9,7 +9,7 @@ public:
             return 1;
 
         for (int i = 0; i < nums.size(); ++i) {
-            // we must have WHILE loop here instead of an IF statement, for example, if we have [3, 1, 4, -1], when i = 0, we swap nums[0] with nums[3-1] and get [4, 1, 3, -1]. Now, nums[0] = 4, we must now swap nums[0] with nums[4-1] and get [-1, 1, 3, 4].
+            // after swap(nums[i], nums[nums[i]-1]), nums[nums[i]-1] has the correct value (nums[i]), but the new nums[i] might still be incorrect. We must have WHILE loop here instead of an IF statement, for example, if we have [3, 1, 4, -1], when i = 0, we swap nums[0] with nums[3-1] and get [4, 1, 3, -1]. Now, nums[0] = 4, if we were using an if loop, nums[0] still has the wrong value, hence, we must now swap nums[0] with nums[4-1] and get [-1, 1, 3, 4].
             while (nums[i] > 0 && nums[i] <= nums.size() && nums[nums[i]-1] != nums[i])
                 swap(nums[i], nums[nums[i]-1]); // put nums[i] at the place it belongs to (nums[nums[i]-1])
         }
@@ -22,3 +22,4 @@ public:
         return nums.size() + 1;
     }
 };
+ m
