@@ -1,11 +1,29 @@
 // the whole idea is bucket sort
 
+// example
 // [ 2,      3,  4, 5,                10, 11,   12,     13     ]
 //  (minNum) 3 | 4, 5 |      |      | 10, 11 |  12  |  (maxNum)
-
+//
 // gap = 2, ceil(13-2)/(8-1) = ceil(11/7) = 2
 // number of bucket = 7, nums.size()-1 = 8-1 = 7
 // 3, 4, 5, 10, 11, 12 are put into the corresponding positon in the bucket
+
+// another example
+// [1, 4, 5, 8, 10, 25, 26, 27, 28, 29, 30]
+//
+// gap = 3, number of bucket = 10
+// [1, 4) | [4, 7) | [7, 10) | [10, 13) | [13, 16) | [16, 19) | [19, 22) | [22, 25) | [25, 28) | [28, 30)
+//
+// 0th bucket: empty
+// 1th bucket: min=4, max=5
+// 2th bucket: min=8, max=8
+// 3th bucket: min=10, max=10
+// 4th bucket: empty
+// 5th bucket: empty
+// 6th bucket: empty
+// 7th bucket: empty
+// 8th bucket: min=25, max=27
+// 9th bucket: min=28, max=29
 
 class Solution {
 public:

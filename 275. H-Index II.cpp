@@ -18,14 +18,14 @@
 // index0:    0, 1, 2, 3, 4, 5, 6, 7
 // index1:    8, 7, 6, 5, 4, 3, 2, 1
 
-// Now, instead of from left to right find the last number >= its index, we would like to find the first number >= its index.
-// Now we just using binary search to find that number, a thing here we need to mind is that we need to convert index0 to index1.
+// Now, instead of from left to right find the LAST number >= its index, we would like to from left to right find FIRST number >= its index.
+// Now we just using binary search to find that number, a thing here we need to have in mind is that we need to convert index0 to reversed index1 (i becomes nums.size()-i).
 
 // if citations[mid] == n-mid, we find the H-index and return it
-// if citations[mid] > n-mid, we set high = mid - 1
+// if citations[mid] > n-mid, we set high = mid - 1, you DO NOT return here because you want the FIRST citations[mid] >= n-mid
 // if citations[mid] < n-mid, we set low = mid + 1
 
-// Why we return n - low in the end? Because it possible that until low == high, you still didn't find exactly citations[mid] == n-mid (i.e. first element in citations = its index). In this case, we return the first element in citations > its index, which is n - low.
+// Why we return n - low in the end? Because it possible that until low == high, you still didn't find exactly citations[mid] == n-mid (i.e. first element in citations = its index). In this case, we return the first element in citations > its index (if exists), which is n - low.
 
 class Solution {
 public:
