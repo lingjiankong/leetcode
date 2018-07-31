@@ -7,7 +7,7 @@ public:
 
         for (int i = 0; i < nums.size(); ++i) {
             if (i > k)
-                seen.erase(nums[i-k-1]);
+                seen.erase(nums[i-k-1]); // you want to compare num[i] with elements in [nums[i-k], nums[i-1]], therefore you erase nums[i-k-1]
             if (seen.find(nums[i]) != seen.end()) {
                 return true;
             }

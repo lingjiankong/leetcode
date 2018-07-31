@@ -10,7 +10,7 @@ public:
         int i = 0, j = 0, minDis = INT_MAX;
         while (i < wordMap[word1].size() && j < wordMap[word2].size()) {
             minDis = min(minDis, abs(wordMap[word1][i]-wordMap[word2][j]));
-            wordMap[word1][i] < wordMap[word2][j] ? ++i : ++j;
+            wordMap[word1][i] < wordMap[word2][j] ? ++i : ++j; // the trick is here!
         }
         return minDis;
     }
