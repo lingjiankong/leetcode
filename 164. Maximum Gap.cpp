@@ -28,7 +28,7 @@
 // 
 // Another example
 // [ 2,      3,  4, 5,              10, 11,   12,     13	 ]
-//  (minNum) 3 | 4, 5 |	    |     | 10, 11 |  12  |  (maxNum)
+//  (minNum) 3 | 4, 5 |      |      10, 11 |  12  |  (maxNum)
 // gap = ceil(13-2)/(8-1) = ceil(11/7) = 2
 // number of bucket = nums.size()-1 = 8-1 = 7
 // 3, 4, 5, 10, 11, 12 are put into the corresponding positon in the bucket

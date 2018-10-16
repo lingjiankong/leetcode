@@ -3,7 +3,8 @@ class Solution
 
 	public:
 
-		bool increasingTriplet(vector<int>& nums) {
+		bool increasingTriplet(vector<int>& nums)
+		{
 
 			int min = INT_MAX; // Most minimum element
 			int secondMin = INT_MAX; // Second most minimum element
