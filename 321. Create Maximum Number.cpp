@@ -112,13 +112,33 @@ class Solution
 		vector<int> maxNumber(const vector<int>& nums1, const vector<int>& nums2)
 		{
 			vector<int> res (nums1.size() + nums2.size());
-			auto s1 = nums1.begin(), e1 = nums1.end();
-			auto s2 = nums2.begin(), e2 = nums2.end();
+
+			auto s1 = nums1.begin();
+			auto e1 = nums1.end();
+
+			auto s2 = nums2.begin();
+			auto e2 = nums2.end();
+
 			int index = 0;
 
 			while(s1 != e1 || s2 != e2)
 			{
+
 				// Returns true if the range [s1, e1) compares lexicographically less than the range [s2, e2).
+				// 
+				// std::lexicographical_compare is equivalent to:
+				//
+				// template <class InputItr1, class InputItr2>
+				// bool lexicographical_compare(InputItr1 s1, InputItr1 e1, InputItr2 s2, InputItr2 e2)
+				// {
+				//   while (s1 != e1)
+				//   {
+				//     if (s2 == e2 || *s2 < *s1) return false;
+				//     else if (*s1 < *s2) return true;
+				//     ++s1; ++s2; // s1 == s2 in this case, so advance both
+				//   }
+				// 	 return (s2 != e2);
+				// }
 				res[index++] = lexicographical_compare(s1, e1, s2, e2) ? *s2++ : *s1++;
 			}
 
