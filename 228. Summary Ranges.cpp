@@ -33,7 +33,7 @@ vector<string> summaryRanges(vector<int>& nums)
 	}
 	else
 	{
-		res.push_back(to_string(nums[start]) + "->" + to_string(*nums.rbegin()));
+		res.push_back(to_string(nums[start]) + "->" + to_string(nums.back()));
 	}
 
 	return res;
