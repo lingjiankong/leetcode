@@ -13,6 +13,7 @@ int removeDuplicates(vector<int>& nums)
 	// i.e. it is possible that nums[count] = nums[count-1].
 	// All elements in [0, count) are guaranteed to contain no duplicate.
 	int count = 1;
+
 	for (int i = 1; i < nums.size(); ++i)
 	{
 		if (nums[i] != nums[count-1])
