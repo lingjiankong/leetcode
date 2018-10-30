@@ -1,6 +1,7 @@
 // Method 1: Traverse the string twice.
 int firstUniqChar(string s)
 {
+	// Stores how many times a particular letter has been seen.
 	// Note that int in vector are zero initialized
 	// You'd better do vector<int> counts(26, 0) to be more explicit.
 	vector<int> counts(26);
