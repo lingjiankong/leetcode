@@ -1,5 +1,6 @@
 // Moore voting algorithm
 // Note: LeetCode has bug that cause this code to have different result in test and submit. Just ignore it
+// See 169. Majority Element for intuition.
 vector<int> majorityElement(vector<int>& nums)
 {
 	// At most two candidates in this case.

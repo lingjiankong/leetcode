@@ -32,15 +32,16 @@ int majorityElement2(vector<int>& nums)
 		}
 		else if (count == 0)
 		{
-			// Reset res to num, all subsequent iterations compare num with current res.
-			// If they are different, we get rid of a pair of (res, num) and --count,
-			// else we get another res and ++count
+			// If count == 0, then we've got rid of pairs of different elements,
+			// Hence we set the new res to current num, all subsequent iterations compare num with current res.
+			// If they are different, then we get rid of a pair of (res, num) and --count,
+			// else we get another res and ++count.
 			res = num;
 			count = 1;
 		}
 		else
 		{
-			// nums != res, thus we get rid of one pair of different number (res, num)
+			// In this case, nums != res, thus we get rid of one pair of different number (res, num)
 			--count;
 		}
 	}
