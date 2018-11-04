@@ -1,0 +1,16 @@
+// See also 168. Excel Sheet Column Title
+int titleToNumber(string s)
+{
+	int columnNumber = 0;
+
+	int multiplier = 1;
+	for (int i = s.size() - 1; i >= 0; --i)	
+	{
+		// s[i] - 'A' + 1:
+		// "+ 1" here so that `A` is mapped to 1, 'B' is mapped to 2...
+		columnNumber +=	multiplier * (s[i] + 1 - 'A');
+		multiplier *= 26;
+	}
+
+	return columnNumber;
+}
