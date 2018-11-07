@@ -1,25 +1,27 @@
-class Solution 
+class Solution
 {
-	
+
 	public:
-		
-		int maxProfit(int k, vector<int>& prices) 
+
+		int maxProfit(int k, vector<int>& prices)
 		{
-			if (prices.size() < 2) 
+			if (prices.size() < 2)
 			{
 				return 0;
 			}
 
-			// Same as saying we can perform unlimited transaction, the situation becomes the same as 
+			// Same as saying we can perform unlimited transaction, the situation becomes the same as
 			// 122. Best Time to Buy and Sell Stock II, you just add all profit you can get.
-			if (k >= prices.size() / 2) 
+			// Theoretically you don't have to check it, but then the vector you allocate to store
+			// ith transaction will be too big.
+			if (k >= prices.size() / 2)
 			{
 				int total = 0;
 
-				for (int i = 1; i < prices.size(); ++i) 
+				for (int i = 1; i < prices.size(); ++i)
 				{
 					int diff = prices[i] - prices[i-1];
-					
+
 					if (diff > 0)
 					{
 						total += diff;
@@ -29,26 +31,28 @@ class Solution
 				return total;
 			}
 
-			// If you are limited by k transactions, this situation becomes a generalization of solution to 
-			// 123. Best Time to Buy and Sell Stock III, if you understand that question, then understanding this one is easy, 
+			// If you are limited by k transactions, this situation becomes a generalization of solution to
+			// 123. Best Time to Buy and Sell Stock III, if you understand that question, then understanding this one is easy,
 			// otherwise you will be confused
 			//
-			// Why k+1? because you need sold[0] to update hold[1] = max(hold[1], sold[0] - prices[1]), 
-			// sold[0] will always be 0 and hold[0] will always be INT_MIN. 
+			// Why k+1? because you need sold[0] to update hold[1] = max(hold[1], sold[0] - prices[1]),
+			// sold[0] will always be 0 and hold[0] will always be INT_MIN.
 			// Note here the index i in hold/sold records the ith time you buy/sell.
 
 			// Element i represents the max amount of money you could have in the state when you are holding the ith stock
-			vector<int> hold (k + 1, INT_MIN); 
+			vector<int> hold (k + 1, INT_MIN);
+
 			// Element i represents the max amount of money you could have in the state when you've sold the ith stock
 			vector<int> sold (k + 1, 0);
 
-			for (int i = 0; i < prices.size(); ++i) 
+			for (int i = 0; i < prices.size(); ++i)
 			{
-				for (int j = k; j > 0; --j) 
+				for (int j = k; j > 0; --j)
 				{
 					// You can only sold the jth stock after you've bought the jth stock, that's why
 					// hold[j] + prices[i]
-					sold[j] = max(sold[j], hold[j] + prices[i]); 
+					sold[j] = max(sold[j], hold[j] + prices[i]);
+
 					// You can only hold the jth stock after you've sold the j-1 th stock, that's why
 					// sold[j-1] - prices[i]
 					hold[j] = max(hold[j], sold[j-1] - prices[i]);
@@ -61,14 +65,14 @@ class Solution
 
 };
 
-// Regardless of the actual number of transactions you have done 
-// (whether it is 1, 2, or k transactions, as long as it is less than or equal to k transactions), 
-// returning sold[k] will always give you the maximum possilbe profit you are able to get. 
-// 
-// For example, if you are allowed to do 30 transactions but you only have 10 days of stock, 
-// you can still return sold[k] to get the maximum profit. 
-// 
-// We see below that sold[n] never decreases. If you have actually done only 1 transaction, 
+// Regardless of the actual number of transactions you have done
+// (whether it is 1, 2, or k transactions, as long as it is less than or equal to k transactions),
+// returning sold[k] will always give you the maximum possilbe profit you are able to get.
+//
+// For example, if you are allowed to do 30 transactions but you only have 10 days of stock,
+// you can still return sold[k] to get the maximum profit.
+//
+// We see below that sold[n] never decreases. If you have actually done only 1 transaction,
 // sold[1], sold[2] and sold[3] will have the same value as sold[1]
 
 //			  {3,  5,  7,  0,  3,  2,  9,  1}

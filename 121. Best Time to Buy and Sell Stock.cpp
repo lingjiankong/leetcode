@@ -1,46 +1,46 @@
 // Intuitive solution
-int maxProfit(vector<int>& prices) 
+int maxProfit(vector<int>& prices)
 {
-	if (prices.empty()) 
+	if (prices.empty())
 	{
 		return 0;
 	}
-	
+
 	int minPrice = prices[0];
 	int maxProfit = 0;
-	
-	for (int i = 1; i < prices.size(); ++i) 
+
+	for (int i = 1; i < prices.size(); ++i)
 	{
 		int profit = prices[i] - minPrice;
 		maxProfit = max(profit, maxProfit);
 		minPrice = min(prices[i], minPrice);
 	}
-	
+
 	return maxProfit;
 }
 
 // DP solution. This builds the intuition for question 123. Best Time to Buy and Sell Stock III
-// 
+//
 // At any day, we keep two state in dp:
 //
-// 1. sold: the max amount of money you have when you've sold the stock 
+// 1. sold: the max amount of money you have when you've sold the stock
 // (the max amount of money you have when you have no stock in hand).
-// It doesn't matter when you sold the stock. You could have sold it before or you can sell it now. 
+// It doesn't matter when you sold the stock. You could have sold it before or you can sell it now.
 // The point here is that you have NO stock in hand.
-// 
+//
 // 2. hold: the max amount of money you have when you are holding the stock.
-// (the max amount of money you have when you have the stock in hand). 
+// (the max amount of money you have when you have the stock in hand).
 // In order to hold the stock, of course you should have bought the stock at some point.
-// Note here we have to spend money to buy the stock, therefore the amount of money is negative 
+// Note here we have to spend money to buy the stock, therefore the amount of money is negative
 // since we own other people money (we have to borrow money to buy stock).
-// If doesn't matter when you bought the stock. You could have bought it before or you can buy it now. 
+// If doesn't matter when you bought the stock. You could have bought it before or you can buy it now.
 // The point here is that you currently have stock in hand.
-int maxProfit2(vector<int>& prices) 
+int maxProfit(vector<int>& prices)
 {
 	int sold = 0;
 	int hold = INT_MIN;
 
-	for (auto price : prices) 
+	for (auto price : prices)
 	{
 		// sold is the max of either:
 		// sold <- you've sold the stock before and you currently have no stock in hand, and you do nothing
@@ -59,5 +59,5 @@ int maxProfit2(vector<int>& prices)
 // Example
 //
 //		          {3,  5,  7,  1,  3,  2,  9,  1}
-// sold        0   0   2   4   4   4   4   8   8 
-// hold	 INT_MIN  -3  -3  -3  -1  -1  -1  -1  -1 
+// sold        0   0   2   4   4   4   4   8   8
+// hold	 INT_MIN  -3  -3  -3  -1  -1  -1  -1  -1
