@@ -24,7 +24,7 @@ void gameOfLife(vector<vector<int>>& board)
 			// You can't just do lives += board[x][y], this doesn't make sense (board[x][y] could be 3 or 4)
 			//
 			// The max and min here are very smart:
-			// we do it so that we can check the entire grid and not worrying about out of bound problem
+			// We do it so that we can check the entire grid and not worrying about out of bound problem
 			// if we are at a cell on the edge of the grid
 			for (int x = max(0, i-1); x < min(m, i+2); ++x)
 			{

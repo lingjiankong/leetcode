@@ -1,5 +1,4 @@
-// Do not watch Ed's video. Huahua's video is very clear
-// http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-321-create-maximum-number/
+// See http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-321-create-maximum-number/
 // The problem logic is clear once you understand it. The problem can be devided into three sub-problems:
 
 // 1. First maxNumber function:
@@ -53,7 +52,8 @@ class Solution
 			// i = max(0, k-n2) because n2 might be smaller than k,
 			// in which case we must select at least k-n2 elements from nums1;
 			//
-			// i <= min(n1, k) because we do not want i to be out of range of nums1
+			// i <= min(n1, k) n1 might be smaller than k,
+			// and we do not want i to be out of range of nums1
 			// (in which case we must select the remaining k-n1 elements from nums2),
 			// and we do not want i being larger than k (in which case we've selected all k elements from num1)
 			for (int i = max(0, k-n2); i <= min(n1, k); ++i)
@@ -123,25 +123,40 @@ class Solution
 
 			while(s1 != e1 || s2 != e2)
 			{
-
 				// Returns true if the range [s1, e1) compares lexicographically less than the range [s2, e2).
-				// 
-				// std::lexicographical_compare is equivalent to:
-				//
-				// template <class InputItr1, class InputItr2>
-				// bool lexicographical_compare(InputItr1 s1, InputItr1 e1, InputItr2 s2, InputItr2 e2)
-				// {
-				//   while (s1 != e1)
-				//   {
-				//     if (s2 == e2 || *s2 < *s1) return false;
-				//     else if (*s1 < *s2) return true;
-				//     ++s1; ++s2; // s1 == s2 in this case, so advance both
-				//   }
-				// 	 return (s2 != e2);
-				// }
+				// An empty vector is always less that a non-empty vector.
+				// The template function is exactly the same as std::lexicographical_compare.
 				res[index++] = lexicographical_compare(s1, e1, s2, e2) ? *s2++ : *s1++;
 			}
 
 			return res;
 		}
+
+		template <class ItrType1, class ItrType2>	
+		bool lexicographical_compare(ItrType1 s1, ItrType1 e1, ItrType2 s2, ItrType2 e2)
+		{
+			while (s1 != e1)
+			{
+				if (s2 == e2)
+				{
+					return false;
+				}
+				else if (*s1 > *s2)
+				{
+					return false;
+				}
+				else if (*s1 < *s2)
+				{
+					return true;
+				}
+				else
+				{
+					++s1;
+					++s2;
+				}
+			}
+
+			return true;
+		}
+
 };
