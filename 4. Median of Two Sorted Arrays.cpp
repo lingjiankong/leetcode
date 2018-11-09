@@ -7,15 +7,15 @@
 //
 // effect:  1   2   3   5   7 | 8   9   10  11  12
 //
-//                  L1  R1
+//              L1  R1
 // num1:    2   5 | 6   11                 cut1 (the vertical line): number of element to the left of nums1
 // num2:    2   3   3 | 9   10  11  14     cut2 (the vertical line): number of element to the left of nums2
 //                  L2  R2
 //
-// effect:	2   2   3   3   5 | 6   9   10  11  11  14 
+// effect:  2   2   3   3   5 | 6   9   10  11  11  14
 //
-// The basic idea is to use binary search on nums1 to find cut1
-// (and cut2 can be automatically calculated as cut2 = (n1+n2)/2 - cut1),
+// The basic idea is to use binary search on nums1 to find cut1,
+// and cut2 can be automatically calculated as cut2 = (n1+n2)/2 - cut1,
 // such that L1 <= R2 and L2 <= R1.
 //
 // The solution is very intuitive once you understand the code,

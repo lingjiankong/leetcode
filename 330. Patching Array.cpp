@@ -1,5 +1,5 @@
 // The code is easy, but the thinking process is hard. Once you get the intuition, the problmen is ok.
-// Ed's video is confusing. The following is edited based on Stephan's post in LeetCode discussion:
+// The following is edited based on Stephan's post in LeetCode discussion:
 //
 // Let miss be the smallest sum in [0, n] that we might be missing,
 // meaning we already know we can build all sums in [0, miss).
@@ -26,6 +26,8 @@
 // And so on. Now, the given 46 is too large to help with sum 29, so we must insert 29 into our array.
 // This extends our range to [0, 29) + 29 -> [0, 58). Then 46 becomes useful and expands our range to [0, 58) + 46 -> [0, 104),
 // which includes everything in [0, 100], now we're done.
+//
+// Note: the array given is sorted.
 int minPatches(vector<int>& nums, int n)
 {
 
@@ -33,14 +35,20 @@ int minPatches(vector<int>& nums, int n)
 	int numOfPatches = 0;
 
 	// Initial miss = 1 because we are sure that we can build all sums in [0, 1).
+	// i.e. Initially we can sum up to number 0 by using nothing.
 	long miss = 1;
 
 	while (miss <= n)
 	{
+		// We know previously we can cover all number until miss, i.e. [0, previousMiss)
+		// If num[i] <= miss, then our coverage is expanded to [0, previousMiss + nums[i])
+		// Therefore, update our new miss to be previousMiss + nums[i]
 		if (i < nums.size() && nums[i] <= miss)
 		{
 			miss += nums[i++];
 		}
+
+		// If there's no more number, or if the next number is too big, then we patch miss.
 		else
 		{
 			miss += miss;
