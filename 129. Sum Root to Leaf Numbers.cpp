@@ -40,7 +40,7 @@ private:
 
 };
 
-// Same idea without using pricate variable.
+// Same idea without using private variable.
 class Solution
 {
 
