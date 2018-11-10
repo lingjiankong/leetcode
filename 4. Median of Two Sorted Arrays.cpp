@@ -2,7 +2,7 @@
 // then (#elements to the left of cut1) + (#elements to the left of cut2)
 // = (#elements to the right of cut1) + (#elements to the right of cut2)
 // 
-// if nums1.size() + nums2.size() is oddm
+// if nums1.size() + nums2.size() is odd,
 // then (#elements to the left of cut1) + (#elements to the left of cut2) + 1
 // = (#elements to the right of cut1) + (#elements to the right of cut2) 
 //
