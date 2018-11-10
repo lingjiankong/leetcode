@@ -13,13 +13,13 @@
  *	   Interval(int s, int e) : start(s), end(e) {}
  * };
  */
+
 int minMeetingRooms(vector<Interval>& intervals)
 {
-
 	vector<int> starts;
 	vector<int> ends;
 
-	for (const auto& interval : intervals)
+	for (auto interval : intervals)
 	{
 		starts.push_back(interval.start);
 		ends.push_back(interval.end);
