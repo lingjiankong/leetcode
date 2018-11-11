@@ -1,9 +1,9 @@
-// Maintain two priority queues, mSmaller stores the smaller half of all data,
-//
-// mLarger stores the larger half. mSmaller and mLarger must have exactly the same length
+// Maintain two priority queues, mSmaller stores the smaller half of all data, mLarger stores the larger half. 
+// EITHER mSmaller and mLarger must have exactly the same length
 // (when the total data is even -> median = (mSmaller.top() + mLarger.top())/2.0),
 // OR, the length of mSmaller must be only one greater than the length of mLarger
 // (when the total data is odd -> median = (double)mSmaller.top().
+//
 // For exampe:
 // mSmaller: [1, 3, 5], mLarger: [6, 8, 8] -> median = (5+6)/2.0 = 5.5.
 // mSmaller: [4, 4, 6], mLarger: [7, 8] -> median = 6.
@@ -14,7 +14,8 @@ class MedianFinder
 
 		void addNum(int num)
 		{
-			// Must do this here. If you blindy push everything to mSmaller and hope to balance them later,
+			// You should check which priority queue you want to push the number to.
+			// If you blindy push everything to mSmaller (or mLarger) and hope to balance them later,
 			// you might get something like [1, 3], [2], which is not the correct result.
 			if (mSmaller.empty() || num <= mSmaller.top())
 			{
@@ -54,10 +55,13 @@ class MedianFinder
 
 	private:
 		
-		// Default C++ priority queue is max queue using std::less<int>
-		// i.e. Max element has the highest priority
+		// Default C++ priority queue is max queue using std::less<int> i.e. Max element has the highest priority.
+		// Note the difference between priority_queue (implemented using heap, can only do operation on the top element).
+		// and multiset (implemented using binary search tree has everything that priority queue offer and much more).
+		// Here, we always need the max from the smaller half nums, therefore we use std::less<int>.
 		priority_queue<int, vector<int>, less<int>> mSmaller;
-
+		
+		// We always need the min from the larger half nums, therefore we use std::greater<int>.
 		priority_queue<int, vector<int>, greater<int>> mLarger;
 };
 
