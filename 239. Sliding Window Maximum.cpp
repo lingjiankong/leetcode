@@ -6,6 +6,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 	
 	// i is the right most element of the sliding window.
 	// i.e. i+1 is the right bound of the sliding window.
+	// So k - 1 is the right most elements of the first sliding window.
 	for (int i = k - 1; i < nums.size(); ++i)
 	{
 		int maxElement = *max_element(nums.begin() + i - k + 1, nums.begin() + i + 1);
@@ -15,7 +16,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 	return ans;
 }
 
-// 2. B.S.T. (multiset)
+// 2. BST (multiset), the most intuitive solution.
 // Time complexity: O((n – k + 1) * logk)
 vector<int> maxSlidingWindow(vector<int>& nums, int k)
 {
@@ -26,7 +27,8 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 	{
 		window.insert(nums[i]);
 
-		// When we've reached a "full window", we start removing elements to the left
+		// Initially, the window builds up, we just add elements to the multiset.
+		// However, when we've reached a "full window", we start removing elements to the left
 		// of the left bound of the sliding window.
 		if (i - k + 1 >= 0)
 		{
@@ -52,9 +54,10 @@ class MonotonicQueue
 
 	public:
 
-		// Push an element to the priority queue.
-		// All elements smaller than e will be popped from the queue.
-		// The queue will always be sorted in non-increasing order.
+		// Push an element e to the priority queue.
+		// All elements smaller than e will be popped from the queue,
+		// so the queue will always be sorted in non-ascending order.
+		// The underlying deque looks something like this: (9, 7, 7, 4, 1}
 		void push(int e)
 		{
 			while (!mData.empty() && e > mData.back())

@@ -20,20 +20,23 @@ vector<Interval> merge(vector<Interval>& intervals)
 {
 	sort(intervals.begin(), intervals.end(), [] (const Interval& a, const Interval& b) {return a.start < b.start;});
 
-	vector<Interval> res;
+	vector<Interval> mergedIntervals;
 
-	for (const auto& interval : intervals)
+	for (auto interval : intervals)
 	{
-		if (res.empty() || interval.start > res.back().end)
+		// If mergedIntervals is empty, or
+		// if the start of current interval is greater than the end of last merged interval,
+		// then we shall start a brand new interval.
+		if (mergedIntervals.empty() || interval.start > mergedIntervals.back().end)
 		{
-			res.push_back(interval);
+			mergedIntervals.push_back(interval);
 		}
 		else
 		{
-			// Must take the max in case previous end is greater than current end
-			res.back().end = max(res.back().end, interval.end);
+			// Must take the max in case previous end is greater than current end.
+			mergedIntervals.back().end = max(mergedIntervals.back().end, interval.end);
 		}
 	}
 
-	return res;
+	return mergedIntervals;
 }
