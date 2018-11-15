@@ -1,3 +1,9 @@
+// Our DFS solution uses preorder traversal to take care of current node first then its subtrees,
+// using preorder might be a bit more intuitive, but actually in the DFS solution for this question,
+// it doesn't matter if you use preorder, inorder, or postorder traversal.
+//
+// Compare this question with 366. Find Leaves of Binary Tree, which is a very similar question
+// but uses a bottom up approach.
 class Solution
 {
 
@@ -5,68 +11,69 @@ class Solution
 
 		vector<vector<int>> levelOrder(TreeNode* root)
 		{
-			int depth = 0;
-			dfs(root, depth);
-			return result;
-			
-			/* return bfs(root); */
+			int level = 0;
+			dfs(root, level);
+			return mResult;
 		}
 
 	private:
 
-		void dfs(TreeNode* root, int depth)
+		vector<vector<int>> mResult;
+
+		void dfs(TreeNode* root, int level)
 		{
 			if (!root)
 			{
 				return;
 			}
 
-			while (result.size() <= depth)	
+			while (mResult.size() <= level)	
 			{
-				result.push_back({});
+				mResult.push_back({});
 			}
 
-			result[depth].push_back(root->val);
-			dfs(root->left, depth + 1);
-			dfs(root->right, depth + 1);
+			mResult[level].push_back(root->val);
+
+			dfs(root->left, level + 1);
+			dfs(root->right, level + 1);
 		}
-
-		vector<vector<int>> bfs(TreeNode* root)
-		{
-			if (!root)
-			{
-				return {};
-			}
-
-			vector<TreeNode*> currentLevel = {root};
-			vector<TreeNode*> nextLevel = {};
-
-			while (!currentLevel.empty())
-			{
-				result.push_back({});
-
-				for (auto node : currentLevel)	
-				{
-					result.back().push_back(node->val);
-
-					if (node->left)
-					{
-						nextLevel.push_back(node->left);
-					}
-					
-					if (node->right)
-					{
-						nextLevel.push_back(node->right);
-					}
-				}
-
-				currentLevel.swap(nextLevel);
-				nextLevel.clear();
-			}
-
-			return result;
-		}
-
-		vector<vector<int>> result;
 
 };
+
+// BFS solution:
+vector<vector<int>> levelOrder(TreeNode* root)
+{
+	if (!root)
+	{
+		return {};
+	}
+
+	vector<vector<int>> result;
+
+	vector<TreeNode*> currentLevel = {root};
+	vector<TreeNode*> nextLevel = {};
+
+	while (!currentLevel.empty())
+	{
+		result.push_back({});
+
+		for (auto node : currentLevel)	
+		{
+			result.back().push_back(node->val);
+
+			if (node->left)
+			{
+				nextLevel.push_back(node->left);
+			}
+			if (node->right)
+			{
+				nextLevel.push_back(node->right);
+			}
+		}
+
+		currentLevel.swap(nextLevel);
+		nextLevel.clear();
+	}
+
+	return result;
+}
