@@ -10,6 +10,9 @@ bool isPalindrome(ListNode* head)
 	// slow is now the middle element:
 	// If the list is 1-2-3-4-5 the middle element is 3
 	// If the list is 1-2-3-4 the middle element is 2
+	//
+	// If the while condition was while (fast && fast->next)
+	// then the mid element will be on the right part if even number of elements/
 	ListNode* slow = head;
 	ListNode* fast = head;
 	while (fast->next && fast->next->next) {
