@@ -1,6 +1,6 @@
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 {
-	listnode dummy = listnode(0);
+	ListNode dummy = ListNode(0);
 	ListNode* current = &dummy;
 	int carry = 0;
 
@@ -25,8 +25,8 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 			sum += 1;
 		}
 
-		current->next = new ListNode(sum%10);
-		carry = sum/10;
+		current->next = new ListNode(sum % 10);
+		carry = sum / 10;
 		current = current->next;
 	}
 

@@ -1,3 +1,6 @@
+// See also 106. Construct Binary Tree from Inorder and Postorder Traversal. 
+// These two are basically the same question. 
+//
 // Preorder [root  (left subtree)  (right subtree)]
 // Inorder  [(left subtree)  root  (right subtree)]
 //

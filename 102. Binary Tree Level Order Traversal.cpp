@@ -1,3 +1,5 @@
+// Similar question: 314. Binary Tree Vertical Order Traversal.
+//
 // Our DFS solution uses preorder traversal to take care of current node first then its subtrees,
 // using preorder might be a bit more intuitive, but actually in the DFS solution for this question,
 // it doesn't matter if you use preorder, inorder, or postorder traversal.
@@ -40,7 +42,9 @@ class Solution
 
 };
 
+
 // BFS solution:
+// Similar question that uses the idea: 116. Populating Next Right Pointers in Each Node.
 vector<vector<int>> levelOrder(TreeNode* root)
 {
 	if (!root)
@@ -73,6 +77,49 @@ vector<vector<int>> levelOrder(TreeNode* root)
 
 		currentLevel.swap(nextLevel);
 		nextLevel.clear();
+	}
+
+	return result;
+}
+
+// BFS solution again, only one queue.
+vector<vector<int>> levelOrder(TreeNode *root)
+{
+	if (!root)
+	{
+		return {};
+	}
+
+	vector<vector<int>> result;
+
+	queue<TreeNode*> nodeQueue;
+	nodeQueue.push(root);
+
+	while (!nodeQueue.empty())
+	{
+		vector<int> currentLevel;
+
+		int currentLevelSize = nodeQueue.size();
+
+		for (int i = 0; i < currentLevelSize; ++i)
+		{
+			TreeNode* node = nodeQueue.front();
+			nodeQueue.pop();
+
+			currentLevel.push_back(node->val);
+
+			if (node->left)
+			{
+				nodeQueue.push(node->left);
+			}
+
+			if (node->right)
+			{
+				nodeQueue.push(node->right);
+			}
+		}
+
+		result.push_back(currentLevel);
 	}
 
 	return result;
