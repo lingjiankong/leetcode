@@ -1,4 +1,10 @@
-// Note: candidates contains non-duplicate numbers.
+// ***
+//
+// Given a set of candidate numbers (candidates) (without duplicates) and a target number (target),
+// find all unique combinations in candidates where the candidate numbers sums to target.
+// The same repeated number may be chosen from candidates unlimited number of times.
+//
+// ***
 //
 // See also 77. Combinations.
 // Note the difference in for loop in this question and 77.

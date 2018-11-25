@@ -1,4 +1,24 @@
-// See also 46. Permutations.
+// ***
+//
+// Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+//
+// Example:
+//
+// Input: [1,1,2]
+// Output:
+// [
+//   [1,1,2],
+//   [1,2,1],
+//   [2,1,1]
+// ]
+//
+// ***
+//
+// See also 46. Permutations, and compare their difference.
+//
+// In this question, we need to check if the number is a duplicate, AND
+// if the number is a duplicate, whether the duplicated number has been used before at current recursive level.
+// If so then we shall skip this duplicate number.
 class Solution
 {
 

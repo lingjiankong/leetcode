@@ -1,8 +1,29 @@
+// ***
+//
+// Given a collection of distinct integers, return all possible permutations.
+//
+// Example:
+//
+// Input: [1,2,3]
+// Output:
+// [
+//   [1,2,3],
+//   [1,3,2],
+//   [2,1,3],
+//   [2,3,1],
+//   [3,1,2],
+//   [3,2,1]
+// ]
+//
+// ***
+//
 // See also 47. Permutations II.
-// level: Recursive level.
+//
+// level: Recusion depth.
 // current: Current permutation.
-// used: Numbers in nums which have already been recursively visited before.
+// used: Numbers in nums which have already recursively visited before.
 // all: All permutations.
+//
 class Solution
 {
 
