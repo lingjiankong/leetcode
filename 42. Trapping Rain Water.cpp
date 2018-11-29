@@ -34,14 +34,14 @@ int trap(vector<int>& height)
 		rightMaxHeight[j] = max(rightMaxHeight[j+1], height[j+1]);
 	}
 
-	int maxWater = 0;
+	int totalWater = 0;
 	for (int i = 1; i < height.size() - 1; ++i)
 	{
 		int minHeight = min(leftMaxHeight[i], rightMaxHeight[i]);
-		maxWater += min(0, minHeight - height[i]);
+		totalWater += min(0, minHeight - height[i]);
 	}
 
-	return maxWater;
+	return totalWater;
 }
 
 // Maintain two pointers left and right, we keep track of the maximum height of left wall and right wall.
@@ -51,7 +51,7 @@ int trap(vector<int>& height)
 int trap(vector<int>& height)
 {
 
-	int total = 0;
+	int totalWater = 0;
 
 	// Well, you can think of leftMaxHeight = height[left] and rightMaxHeight = height[right]
 	// We assign 0 to them simply because we don't have to check the size of the vector.
@@ -70,35 +70,59 @@ int trap(vector<int>& height)
 
 		if (leftMaxHeight < rightMaxHeight)
 		{
-			total += leftMaxHeight - height[left];
+			totalWater += leftMaxHeight - height[left];
 			++left;
 		}
 		else
 		{
-			total += rightMaxHeight - height[right];
+			totalWater += rightMaxHeight - height[right];
 			--right;
 		}
 	}
 
-	return total;
+	return totalWater;
 }
 
-// Using stack
-// TODO: Unfinished
+// Maintain a monotonic decreasing stack (which stores the index) of bars.
+// Whenever we see a higher bar we might be able to form a valley to store water.
+// In the process of popping elements which are smaller than current height[i], we do our calculation.
+// See also 84. Largest Rectangle In Histogram. Very similar.
 int trap(vector<int>& height)
 {
 	stack<int> heightStack;
 
-	for (int i = 0; i < height.size(); ++i)
+	int totalWater = 0;
+
+	int i = 0;
+	while (i < height.size())
 	{
-		if (heightStack.empty() || height[i] <= height[heightStack.top()])	
+		// < and <= all works here.
+		if (heightStack.empty() || height[i] < height[heightStack.top()])	
 		{
-			heightStack.push(i);
+			heightStack.push(i++);
 		}
+		// We see a higher bar, the top element of stack might be a valley.
+		// Popping all elements which are smaller than current heights[i] (the right wall)
 		else
 		{
-				
+			int currentValleyIndex = heightStack.top(); heightStack.pop();
+
+			// No left bar, must continue.
+			if (heightStack.empty())
+			{
+				continue;	
+			}
+
+			int rectangleHeight = min(height[i], height[heightStack.top()]) - height[currentValleyIndex];
+
+			// i is the index of right bar.
+			// The valley has already been popped.
+			// Current top of the stack is the index of left bar.
+			int rectangleWidth = i - heightStack.top() - 1;
+
+			totalWater += rectangleHeight * rectangleWidth;
 		}
 	}
 
+	return totalWater;
 }
