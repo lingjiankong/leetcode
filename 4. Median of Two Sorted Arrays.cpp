@@ -1,4 +1,27 @@
-// if nums1.size() + nums2.size() is even,
+// ***
+//
+// There are two sorted arrays nums1 and nums2 of size m and n respectively.
+// 
+// Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+// You may assume nums1 and nums2 cannot be both empty.
+// 
+// Example 1:
+// 
+// nums1 = [1, 3]
+// nums2 = [2]
+// 
+// The median is 2.0
+//
+// Example 2:
+// 
+// nums1 = [1, 2]
+// nums2 = [3, 4]
+// 
+// The median is (2 + 3)/2 = 2.5
+//
+// ***
+//
+// If nums1.size() + nums2.size() is even,
 // then (#elements to the left of cut1) + (#elements to the left of cut2)
 // = (#elements to the right of cut1) + (#elements to the right of cut2)
 // 
@@ -8,14 +31,14 @@
 //
 // index:   0   1   2   3   4   5
 //
-//              L1  R1
+//               L1  R1
 // nums1:    3   5 | 8   9                  cut1 (the vertical line): number of element to the left of nums1
 // nums2:    1   2   7 | 10  11  12         cut2 (the vertical line): number of element to the left of nums2
 //                   L2  R2
 //
 // effect:   1   2   3   5   7 | 8   9   10  11  12
 //
-//              L1  R1
+//               L1  R1
 // nums1:    2   5 | 6   11                 cut1 (the vertical line): number of element to the left of nums1
 // nums2:    2   3   3 | 9   10  11  14     cut2 (the vertical line): number of element to the left of nums2
 //                   L2  R2

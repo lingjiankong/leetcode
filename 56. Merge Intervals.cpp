@@ -14,6 +14,15 @@
 // Output: [[1,5]]
 // Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 //
+// Definition for an interval:
+// struct Interval
+// {
+//    int start;
+//    int end;
+//    Interval() : start(0), end(0) {}
+//    Interval(int s, int e) : start(s), end(e) {}
+// };
+//
 // ***
 //
 // After sorting by Interval::start
@@ -24,16 +33,6 @@
 //                   |__________|
 //                       |___________|
 //                         |__|
-//
-//
-// Definition for an interval:
-// struct Interval
-// {
-//    int start;
-//    int end;
-//    Interval() : start(0), end(0) {}
-//    Interval(int s, int e) : start(s), end(e) {}
-// };
 //
 vector<Interval> merge(vector<Interval>& intervals)
 {

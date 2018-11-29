@@ -1,3 +1,10 @@
+// ***
+//
+// Given n non-negative integers representing an elevation map where the width of each bar is 1,
+// compute how much water it is able to trap after raining.
+//
+// ***
+//
 // Think about the wall and water as individual blocks (width = 1).
 // We only consider the amount of water we can fill at that single position.
 //
