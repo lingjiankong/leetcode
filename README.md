@@ -15,8 +15,8 @@
 119. Pascal's Triangle II
 169. Majority Element
 229. Majority Element II
-274. H-Index
-275. H-Index II
+274. H-Index (e)
+275. H-Index II (e)
 243. Shortest Word Distance
 244. Shortest Word Distance II
 245. Shortest Word Distance III
@@ -39,7 +39,7 @@
 287. Find the Duplicate Number
 135. Candy
 330. Patching Array
-4. Median of Two Sorted Arrays
+4. Median of Two Sorted Arrays (h)
 321. Create Maximum Number
 327. Count of Range Sum
 289. Game of Life
@@ -231,5 +231,7 @@
 126. Word Ladder II
 
 Note: The list is not mutually exclusive. It stores the chronological information of when each question was done.
+
 Notation: (e): Exotic question, could be skipped during a fast go-over. (h) Hard-to-understand question. 
+
 Credit: The list above was modified based on information obtained on www.cspiration.com.

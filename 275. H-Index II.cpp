@@ -1,3 +1,21 @@
+// ***
+//
+// Given an array of citations sorted in ascending order (each citation is a non-negative integer) of a researcher,
+// write a function to compute the researcher's h-index.
+// Definition: "A scientist has index h if h of his/her N papers have at least h citations each, and the other N − h papers have no more than h citations each."
+// 
+// Example:
+// 
+// Input: citations = [0,1,3,5,6]
+// Output: 3 
+// Explanation: [0,1,3,5,6] means the researcher has 5 papers in total and each of them had received 0, 1, 3, 5, 6 citations respectively. 
+// Since the researcher has 3 papers with at least 3 citations each and the remaining two with no more than 3 citations each, her h-index is 3.
+//
+// Note:
+// If there are several possible values for h, the maximum one is taken as the h-index.
+//
+// ***
+//
 // See also 274. H-Index
 // By definition on Wikipedia, we can find H-index in the following way:
 // Sort the array descending order, give each a index start from 1.
@@ -29,7 +47,7 @@
 // if citations[mid] == n-mid, we find the H-index and return it
 // if citations[mid] > n-mid, we set high = mid - 1, you DO NOT return here because you want the FIRST citations[mid] >= n-mid
 // if citations[mid] < n-mid, we set low = mid + 1
-
+//
 // Why we return n - low in the end?
 // Because it possible that until low == high, you still didn't find exactly citations[mid] == n-mid
 // (i.e. first element in citations that = its index).
@@ -37,7 +55,7 @@
 // While technically in the end when low == high, low = mid = high, so why not just return n-mid or n-high?
 // The reason is that if citations is empty, then high = -1 and low is undefined.
 // Therefore returning n - low is just safer and less drama.
-
+//
 int hIndex(vector<int>& citations)
 {
 	int n = citations.size();
