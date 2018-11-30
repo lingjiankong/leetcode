@@ -1,5 +1,23 @@
+// ***
+//
+// Given a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length.
+// Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+// 
+// Example 1:
+// 
+// Given nums = [1,1,1,2,2,3],
+// Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
+// It doesn't matter what you leave beyond the returned length.
+//
+// Example 2:
+// Given nums = [0,0,1,1,1,1,2,3,3],
+// Your function should return length = 7, with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and 3 respectively.
+// It doesn't matter what values are set beyond the returned length.
+//
+//***
+//
 // This problem uses the same logic as
-// 26. Remove Duplicates from Sorted Array. See that problem for intuition
+// 26. Remove Duplicates from Sorted Array. See that problem for intuition.
 int removeDuplicates(vector<int>& nums)
 {
 
@@ -9,22 +27,21 @@ int removeDuplicates(vector<int>& nums)
 	}
 
     // Because nums is a sorted array, nums[0] and nums[1] just stay at where they are.
-	// It is ok if they are duplicates, therefore count starts at 2.
+	// It is ok if they are duplicates, therefore dupStart starts at 2.
 	//
-    // count is the position of first occurance of possible triple-duplicate elements,
-    // i.e. it is possible that nums[count] = nums[count-1] = nums[count-2]. 
-	// All elements to the left of count i.e. [0, count)
-	// are guaranteed to contain at most two duplicates.
-    int count = 2; 
+    // dupStart is the position of first occurance of possible triple-duplicate elements,
+    // i.e. it is possible that nums[dupStart] = nums[dupStart-1] = nums[dupStart-2]. 
+	// All elements to the left of dupStart i.e. [0, dupStart) are guaranteed to contain at most TWO duplicates.
+    int dupStart = 2; 
      
 	for (int i = 2; i < nums.size(); ++i)
 	{
-		// Put all non-triple-duplicate elements to the left of count.
-		if (nums[i] != nums[count-2])
+		// Put all non-triple-duplicate elements to the left of dupStart.
+		if (nums[i] != nums[dupStart-2])
 		{
-			swap(nums[i], nums[count++]);
+			swap(nums[i], nums[dupStart++]);
 		}
 	}
 
-	return count;
+	return dupStart;
 }

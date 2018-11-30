@@ -3,12 +3,13 @@
 ## Array
 
 27. Remove Element
+283. Move Zeroes
 26. Remove Duplicates from Sorted Array
 80. Remove Duplicates from Sorted Array II
 277. Find the Celebrity
 189. Rotate Array
 41. First Missing Positive
-299. Bulls and Cows
+299. Bulls and Cows (e)
 134. Gas Station
 118. Pascal's Triangle
 119. Pascal's Triangle II
@@ -29,6 +30,7 @@
 123. Best Time to Buy and Sell Stock III
 188. Best Time to Buy and Sell Stock IV
 309. Best Time to Buy and Sell Stock with Cooldown
+714. Best Time to Buy and Sell Stock with Transaction Fee
 11. Container With Most Water
 42. Trapping Rain Water
 334. Increasing Triplet Subsequence
@@ -57,7 +59,6 @@
 163. Missing Ranges
 88. Merge Sorted Array
 75. Sort Colors
-283. Move Zeroes
 376. Wiggle Subsequence
 280. Wiggle Sort
 324. Wiggle Sort II
@@ -230,4 +231,5 @@
 126. Word Ladder II
 
 Note: The list is not mutually exclusive. It stores the chronological information of when each question was done.
+Notation: (e): Exotic question, could be skipped during a fast go-over. (h) Hard-to-understand question. 
 Credit: The list above was modified based on information obtained on www.cspiration.com.
