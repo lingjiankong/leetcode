@@ -143,7 +143,6 @@
 124. Binary Tree Maximum Path Sum
 250. Count Univalue Subtrees
 366. Find Leaves of Binary Tree
-337. House Robber III
 107. Binary Tree Level Order Traversal II
 103. Binary Tree Zigzag Level Order Traversal
 199. Binary Tree Right Side View
@@ -182,7 +181,7 @@
 39. Combination Sum
 40. Combination Sum II
 216. Combination Sum III
-377. Combination Sum IV	Dynamic Programming
+377. Combination Sum IV
 254. Factor Combinations
 31. Next Permutation
 60. Permutation Sequence
@@ -215,9 +214,20 @@
 363. Max Sum of Rectangle No Larger Than K
 198. House Robber
 213. House Robber II
-276. Paint Fence
-91. Decode Ways
+337. House Robber III
 10. Regular Expression Matching
 44. Wildcard Matching
 
-Credit: The list above was modified based on information obtained on www.cspiration.com. The list is not mutually exclusive. It stores the chronological information of when each question was done.
+## DFS & BFS
+200. Number of Islands
+286. Walls and Gates
+130. Surrounded Regions
+339. Nested List Weight Sum
+364. Nested List Weight Sum II
+127. Word Ladder
+51. N-Queens
+52. N-Queens II
+126. Word Ladder II
+
+Note: The list is not mutually exclusive. It stores the chronological information of when each question was done.
+Credit: The list above was modified based on information obtained on www.cspiration.com.
