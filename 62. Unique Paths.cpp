@@ -6,6 +6,12 @@
 // How many possible unique paths are there?
 //
 // ***
+//
+// Some math:
+// Total steps must be m + n - 2, during each step, you can either move down or move right.
+// Among these m + n - 2, you must choose exactly m - 1 steps to move down (therefore n - 1 steps to move right)
+// Choosing m - 1 objects out of m + n - 2 objects is simply C(m + n - 2, m - 1) = C(m + n - 2, n - 1)
+// = ( m + n - 2)! / (( m - 1)! * (n - 1)!)
 int uniquePaths(int m, int n)
 {
 	// Remember to initialize the top row and left column to 1.
