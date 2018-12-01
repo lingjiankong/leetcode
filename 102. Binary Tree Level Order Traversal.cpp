@@ -98,7 +98,6 @@ vector<vector<int>> levelOrder(TreeNode *root)
 	while (!nodeQueue.empty())
 	{
 		vector<int> currentLevel;
-
 		int currentLevelSize = nodeQueue.size();
 
 		for (int i = 0; i < currentLevelSize; ++i)

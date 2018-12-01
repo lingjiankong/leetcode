@@ -223,15 +223,14 @@
 200. Number of Islands
 286. Walls and Gates
 130. Surrounded Regions
-339. Nested List Weight Sum
-364. Nested List Weight Sum II
+339. Nested List Weight Sum (e)
+364. Nested List Weight Sum II (e)
 127. Word Ladder
 51. N-Queens
 52. N-Queens II
-126. Word Ladder II
 
-Note: The list is not mutually exclusive. It stores the chronological information of when each question was done.
+**Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
-Notation: (e): Exotic question, could be skipped during a fast go-over. (h) Hard-to-understand question. 
+**Notation**: (e): Exotic question, could be skipped during a fast go-over. (h) Hard-to-understand question. 
 
-Credit: The list above was modified based on information obtained on www.cspiration.com.
+**Credit**: The list above was modified based on information obtained on www.cspiration.com.
