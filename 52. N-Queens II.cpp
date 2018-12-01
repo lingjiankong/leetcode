@@ -1,23 +1,22 @@
 // ***
 //
 // The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
-// Given an integer n, return all distinct solutions to the n-queens puzzle.
-// Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space respectively.
+// Given an integer n, return the number of distinct solutions to the n-queens puzzle.
 // 
 // Example:
 // 
 // Input: 4
 // 
 // Output: [
-//  [".Q..",  // Solution 1
-//   "...Q",
-//   "Q...",
-//   "..Q."],
+//	[".Q..",  // Solution 1
+//	 "...Q",
+//	 "Q...",
+//	 "..Q."],
 // 
-//  ["..Q.",  // Solution 2
-//   "Q...",
-//   "...Q",
-//   ".Q.."]
+//	["..Q.",  // Solution 2
+//	 "Q...",
+//	 "...Q",
+//	 ".Q.."]
 // ]
 //
 // Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above.
@@ -28,22 +27,22 @@ class Solution
 
 	public:
 
-		vector<vector<string>> solveNQueens(int n)
+		int totalNQueens(int n)
 		{
-			vector<vector<string>> all;
+			int totalSolutions = 0;
 			vector<string> current(n, string(n, '.'));
-			solveNQueens(all, current, 0, n);
+			solveNQueens(totalSolutions, current, 0, n);
 
-			return all;
+			return totalSolutions;
 		}
 
 	private:
 
-		void solveNQueens(vector<vector<string>>& all, vector<string>& current, int row, int &n)
+		void solveNQueens(int& totalSolutions, vector<string>& current, int row, int &n)
 		{
 			if (row == n)
 			{
-				all.push_back(current);
+				++totalSolutions;
 				return;
 			}
 
@@ -52,10 +51,10 @@ class Solution
 				if (isValid(current, row, col, n))
 				{
 					current[row][col] = 'Q';
-					solveNQueens(all, current, row + 1, n);
+					solveNQueens(totalSolutions, current, row + 1, n);
 					current[row][col] = '.';
 				}
-				
+
 			}
 		}
 
@@ -84,9 +83,10 @@ class Solution
 				{
 					return false;
 				}
-				
+
 			}
 			return true;
 		}
 
 };
+
