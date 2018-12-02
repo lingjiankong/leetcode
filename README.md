@@ -1,8 +1,8 @@
 # Coding challenges from www.leetcode.com.
 
 ## Array
-| ID | Name |
-|:---:|:---:|
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 27 | Remove Element |
 | 283 | Move Zeroes |
 | 26 | Remove Duplicates from Sorted Array |
@@ -10,14 +10,14 @@
 | 277 | Find the Celebrity |
 | 189 | Rotate Array |
 | 41 | First Missing Positive |
-| 299 | Bulls and Cows (e) |
+| 299 | Bulls and Cows | Exotic
 | 134 | Gas Station |
 | 118 | Pascal's Triangle |
 | 119 | Pascal's Triangle II |
 | 169 | Majority Element |
 | 229 | Majority Element II |
-| 274 | H-Index (e) |
-| 275 | H-Index II (e) |
+| 274 | H-Index | Exotic
+| 275 | H-Index II | Exotic
 | 243 | Shortest Word Distance |
 | 244 | Shortest Word Distance II |
 | 245 | Shortest Word Distance III |
@@ -40,7 +40,7 @@
 | 287 | Find the Duplicate Number |
 | 135 | Candy |
 | 330 | Patching Array |
-| 4 | Median of Two Sorted Arrays (h) |
+| 4 | Median of Two Sorted Arrays | Hard
 | 321 | Create Maximum Number |
 | 327 | Count of Range Sum |
 | 289 | Game of Life |
@@ -65,8 +65,8 @@
 | 324 | Wiggle Sort II |
 
 ## String
-| ID | Name |
-|:---:|:---:|
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 28 | Implement strStr() |
 | 14 | Longest Common Prefix |
 | 58 | Length of Last Word |
@@ -128,8 +128,8 @@
 | 187 | Repeated DNA Sequences |
 
 ## Tree
-| ID | Name |
-|:---:|:---:|
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 144 | Binary Tree Preorder Traversal |
 | 94 | Binary Tree Inorder Traversal |
 | 145 | Binary Tree Postorder Traversal |
@@ -178,8 +178,8 @@
 | 331 | Verify Preorder Serialization of a Binary Tree |
 
 ## Backtracking
-| ID | Name |
-|:---:|:---:|
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 77 | Combinations |
 | 46 | Permutations |
 | 47 | Permutations II |
@@ -201,8 +201,8 @@
 | 351 | Android Unlock Patterns |
 
 ## Dynamic Programming
-| ID | Name |
-|:---:|:---:|
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 70 | Climbing Stairs |
 | 62 | Unique Paths |
 | 63 | Unique Paths II |
@@ -228,44 +228,46 @@
 | 44 | Wildcard Matching |
 
 ## DFS & BFS
-| ID | Name |
-|:---:|:---:|
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 200 | Number of Islands |
 | 286 | Walls and Gates |
 | 130 | Surrounded Regions |
-| 339 | Nested List Weight Sum (e) |
-| 364 | Nested List Weight Sum II (e) |
+| 339 | Nested List Weight Sum | Exotic
+| 364 | Nested List Weight Sum II | Exotic
 | 127 | Word Ladder |
 | 51 | N-Queens |
 | 52 | N-Queens II |
 
 ## LinkedList
-| ID | Name |
-|:---:|:---:|
-| 206 | Reverse Linked List |
-| 92 | Reverse Linked List II (h) |
+| ID | Name | Note |
+|:---:|:---:|:---:|
+| 206 | Reverse Linked List | Basic
+| 92 | Reverse Linked List II | Hard
 | 141 | Linked List Cycle |
+| 142 | Linked List Cycle II |
 | 234 | Palindrome Linked List |
 | 24 | Swap Nodes in Pairs |
 | 237 | Delete Node in a Linked List |
 | 19 | Remove Nth Node From End of List |
 | 203 | Remove Linked List Elements |
 | 83 | Remove Duplicates from Sorted List |
-| 82 | Remove Duplicates from Sorted List II (h) |
+| 82 | Remove Duplicates from Sorted List II | Hard
 | 369 | Plus One Linked List |
-| 2 | Add Two Numbers |
+| 2 | Add Two Numbers | Basic
 | 160 | Intersection of Two Linked Lists |
 | 21 | Merge Two Sorted Lists |
-| 143 | Reorder List |
-| 142 | Linked List Cycle II |
+| 143 | Reorder List | Important
 | 148 | Sort List |
 | 61 | Rotate List |
 | 86 | Partition List |
-| 23 | Merge k Sorted Lists |
-| 147 | Insertion Sort List |
+| 23 | Merge k Sorted Lists | Basic
 
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
-**Notation**: (e): Exotic question, could be skipped during a fast go-over. (h) Hard-to-understand question.
+**Notation**: 
+- Exotic: Exotic questions. Should be skipped during a fast go-over. 
+- Hard: Hard to understand questions. Should be skipped during a fast go-over. 
+- Basic: Questions so important that you must know.
 
 **Credit**: The list above was modified based on information obtained on www.cspiration.com

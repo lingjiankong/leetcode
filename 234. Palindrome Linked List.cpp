@@ -30,7 +30,8 @@ bool isPalindrome(ListNode* head)
 	// then the mid element will be on the right part if even number of elements.
 	ListNode* slow = head;
 	ListNode* fast = head;
-	while (fast->next && fast->next->next) {
+	while (fast->next && fast->next->next)
+	{
 		slow = slow->next;
 		fast = fast->next->next;
 	}
