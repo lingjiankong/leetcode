@@ -1,3 +1,18 @@
+// ***
+//
+// Given a singly linked list, determine if it is a palindrome.
+// 
+// Example 1:
+// 
+// Input: 1->2
+// Output: false
+//
+// Example 2:
+// 
+// Input: 1->2->2->1
+// Output: true
+//
+// ***
 bool isPalindrome(ListNode* head)
 {
 
@@ -12,7 +27,7 @@ bool isPalindrome(ListNode* head)
 	// If the list is 1-2-3-4 the middle element is 2
 	//
 	// If the while condition was while (fast && fast->next)
-	// then the mid element will be on the right part if even number of elements/
+	// then the mid element will be on the right part if even number of elements.
 	ListNode* slow = head;
 	ListNode* fast = head;
 	while (fast->next && fast->next->next) {
