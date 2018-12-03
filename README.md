@@ -263,11 +263,33 @@
 | 86 | Partition List |
 | 23 | Merge k Sorted Lists | Basic
 
+## Matrix
+| ID | Name | Note |
+|:---:|:---:|:---:|
+| 48 | Rotate Image
+| 54 | Spiral Matrix
+| 59 | Spiral Matrix II
+| 73 | Set Matrix Zeroes
+| 311 | Sparse Matrix Multiplication | Basic
+| 329 | Longest Increasing Path in a Matrix
+| 378 | Kth Smallest Element in a Sorted Matrix
+| 74 | Search a 2D Matrix
+| 240 | Search a 2D Matrix II
+| 370 | Range Addition
+| 79 | Word Search
+| 296 | Best Meeting Point
+| 361 | Bomb Enemy
+| 317 | Shortest Distance from All Buildings
+| 302 | Smallest Rectangle Enclosing Black Pixels
+| 36 | Valid Sudoku
+| 37 | Sudoku Solver
+
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
 **Notation**: 
-- Exotic: Exotic questions. Should be skipped during a fast go-over. 
-- Hard: Hard to understand questions. Should be skipped during a fast go-over. 
-- Basic: Questions so important that you must know.
+- Basic: Well designed questions so important that you must know.
+- Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over. 
+- Hard: Hard to understand questions. Should be skipped during a fast go-over. Don't spend too much time on it.
+- Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here unless you have plenty.
 
 **Credit**: The list above was modified based on information obtained on www.cspiration.com
