@@ -108,7 +108,7 @@ int trap(vector<int>& height)
 		{
 			heightStack.push(i++);
 		}
-		// We see a higher bar, the top element of stack might be a valley.
+		// Else, we see a higher bar, the top element of stack might be a valley.
 		// Popping all elements which are smaller than current heights[i] (the right wall)
 		else
 		{

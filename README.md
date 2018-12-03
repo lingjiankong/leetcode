@@ -3,10 +3,10 @@
 ## Array
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 27 | Remove Element |
-| 283 | Move Zeroes |
-| 26 | Remove Duplicates from Sorted Array |
-| 80 | Remove Duplicates from Sorted Array II |
+| 27 | Remove Element | Basic
+| 283 | Move Zeroes | Basic
+| 26 | Remove Duplicates from Sorted Array | Basic
+| 80 | Remove Duplicates from Sorted Array II | Basic
 | 277 | Find the Celebrity |
 | 189 | Rotate Array |
 | 41 | First Missing Positive |
@@ -18,23 +18,23 @@
 | 229 | Majority Element II |
 | 274 | H-Index | Exotic
 | 275 | H-Index II | Exotic
-| 243 | Shortest Word Distance |
+| 243 | Shortest Word Distance | Basic
 | 244 | Shortest Word Distance II |
 | 245 | Shortest Word Distance III |
-| 217 | Contains Duplicate |
+| 217 | Contains Duplicate | Basic
 | 219 | Contains Duplicate II |
 | 220 | Contains Duplicate III |
 | 55 | Jump Game |
 | 45 | Jump Game II |
-| 121 | Best Time to Buy and Sell Stock |
-| 122 | Best Time to Buy and Sell Stock II |
-| 123 | Best Time to Buy and Sell Stock III |
-| 188 | Best Time to Buy and Sell Stock IV |
-| 309 | Best Time to Buy and Sell Stock with Cooldown |
-| 714 | Best Time to Buy and Sell Stock with Transaction Fee |
-| 11 | Container With Most Water |
-| 42 | Trapping Rain Water |
-| 334 | Increasing Triplet Subsequence |
+| 121 | Best Time to Buy and Sell Stock | Basic
+| 122 | Best Time to Buy and Sell Stock II | Basic
+| 123 | Best Time to Buy and Sell Stock III | Basic
+| 188 | Best Time to Buy and Sell Stock IV | Basic
+| 309 | Best Time to Buy and Sell Stock with Cooldown | Basic
+| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Basic
+| 11 | Container With Most Water | Basic
+| 42 | Trapping Rain Water | Basic
+| 334 | Increasing Triplet Subsequence | 
 | 128 | Longest Consecutive Sequence |
 | 164 | Maximum Gap Bucket |
 | 287 | Find the Duplicate Number |
