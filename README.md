@@ -34,14 +34,14 @@
 | 714 | Best Time to Buy and Sell Stock with Transaction Fee | Basic
 | 11 | Container With Most Water | Basic
 | 42 | Trapping Rain Water | Basic
-| 334 | Increasing Triplet Subsequence | 
+| 334 | Increasing Triplet Subsequence |
 | 128 | Longest Consecutive Sequence |
-| 164 | Maximum Gap Bucket |
+| 164 | Maximum Gap Bucket | Hard
 | 287 | Find the Duplicate Number |
 | 135 | Candy |
-| 330 | Patching Array |
+| 330 | Patching Array | Hard
 | 4 | Median of Two Sorted Arrays | Hard
-| 321 | Create Maximum Number |
+| 321 | Create Maximum Number | Hard
 | 327 | Count of Range Sum |
 | 289 | Game of Life |
 | 57 | Insert Interval |

@@ -1,6 +1,43 @@
+// ***
+//
+// Given two arrays of length m and n with digits 0-9 representing two numbers.
+// Create the maximum number of length k <= m + n from digits of the two.
+// The relative order of the digits from the same array must be preserved. Return an array of the k digits.
+// 
+// Note: You should try to optimize your time and space complexity.
+// 
+// Example 1:
+// 
+// Input:
+// nums1 = [3, 4, 6, 5]
+// nums2 = [9, 1, 2, 5, 8, 3]
+// k = 5
+// Output:
+// [9, 8, 6, 5, 3]
+// 
+// Example 2:
+// 
+// Input:
+// nums1 = [6, 7]
+// nums2 = [6, 0, 4]
+// k = 5
+// Output:
+// [6, 7, 6, 0, 4]
+// 
+// Example 3:
+// 
+// Input:
+// nums1 = [3, 9]
+// nums2 = [8, 9]
+// k = 3
+// Output:
+// [9, 8, 9]
+//
+// ***
+//
 // See http://zxi.mytechroad.com/blog/dynamic-programming/leetcode-321-create-maximum-number/
 // The problem logic is clear once you understand it. The problem can be devided into three sub-problems:
-
+//
 // 1. First maxNumber function:
 // vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k)
 //
@@ -14,7 +51,7 @@
 // nums2 = [6, 5, 8]
 // k = 5
 // we can take 3 digits from nums1 and 2 digits from nums2
-
+//
 // 2. Second maxNumber function:
 // vector<int> maxNumber(const vector<int>& nums, int k)
 //
@@ -28,7 +65,7 @@
 // nums = [8, 9, 4, 2, 5]
 // k = 3
 // the "largest" 3-digit number we can choose while preserving the order of digits is [9, 4, 5] (i.e. 945)
-
+//
 // 3. Third maxNumber function:
 // Given two arrays nums1 and nums2, combine them such that the result number is "largest"
 // while preserving the order of digits in each individual array.
@@ -37,7 +74,7 @@
 // nums1 = [4, 9, 1]
 // nums2 = [7, 2]
 // combine them together, the "largest" number while preserving the order of digits in each individual array is [7, 4, 9, 2, 1]
-
+//
 class Solution
 {
 
