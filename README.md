@@ -63,6 +63,7 @@
 | 376 | Wiggle Subsequence |
 | 280 | Wiggle Sort |
 | 324 | Wiggle Sort II |
+| 370 | Range Addition | Exotic
 
 ## String
 | ID | Name | Note |
@@ -198,7 +199,8 @@
 | 93 | Restore IP Addresses |
 | 282 | Expression Add Operators |
 | 140 | Word Break II |
-| 351 | Android Unlock Patterns |
+| 79 | Word Search
+| 329 | Longest Increasing Path in a Matrix | Hard
 
 ## Dynamic Programming
 | ID | Name | Note |
@@ -271,13 +273,9 @@
 | 59 | Spiral Matrix II
 | 73 | Set Matrix Zeroes
 | 311 | Sparse Matrix Multiplication | Basic
-| 329 | Longest Increasing Path in a Matrix
 | 378 | Kth Smallest Element in a Sorted Matrix
-| 74 | Search a 2D Matrix
+| 74 | Search a 2D Matrix | Basic
 | 240 | Search a 2D Matrix II
-| 370 | Range Addition
-| 79 | Word Search
-| 296 | Best Meeting Point
 | 361 | Bomb Enemy
 | 317 | Shortest Distance from All Buildings
 | 302 | Smallest Rectangle Enclosing Black Pixels
