@@ -277,10 +277,7 @@
 | 74 | Search a 2D Matrix | Basic
 | 240 | Search a 2D Matrix II
 | 361 | Bomb Enemy
-| 317 | Shortest Distance from All Buildings
-| 302 | Smallest Rectangle Enclosing Black Pixels
 | 36 | Valid Sudoku
-| 37 | Sudoku Solver
 
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
