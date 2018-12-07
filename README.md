@@ -42,11 +42,9 @@
 | 330 | Patching Array | Hard
 | 4 | Median of Two Sorted Arrays | Hard
 | 321 | Create Maximum Number | Hard
-| 327 | Count of Range Sum |
-| 289 | Game of Life |
-| 57 | Insert Interval |
-| 56 | Merge Intervals |
-| 252 | Meeting Rooms |
+| 289 | Game of Life | TODO: Move to bit operation section
+| 56 | Merge Intervals | Basic
+| 252 | Meeting Rooms | *
 | 253 | Meeting Rooms II |
 | 352 | Data Stream as Disjoint Intervals TreeMap |
 | 239 | Sliding Window Maximum |

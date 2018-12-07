@@ -42,17 +42,16 @@ vector<Interval> merge(vector<Interval>& intervals)
 
 	for (auto interval : intervals)
 	{
-		// If mergedIntervals is empty, or
-		// if the start of current interval is greater than the end of last merged interval,
+		// If mergedIntervals is empty, or if the start of current interval is greater than the end of last merged interval,
 		// then we shall start a brand new interval.
-		if (mergedIntervals.empty() || interval.start > mergedIntervals.back().end)
+		if (mergedIntervals.empty() || mergedIntervals.back().end < interval.start)
 		{
 			mergedIntervals.push_back(interval);
 		}
 		else
 		{
 			// Must take the max of last merged interval end and current interval end
-			// in case last merged interval end is greater than current end.
+			// in case last merged interval end is greater than current end (i.e. current interval is inside previously merged interval).
 			mergedIntervals.back().end = max(mergedIntervals.back().end, interval.end);
 		}
 	}
