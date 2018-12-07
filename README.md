@@ -288,11 +288,8 @@
 | 67 | Add Binary | Basic
 | 415 | Add Strings | Basic
 | 43 | Multiply Strings
-| 29 | Divide Two Integers
-| 69 | Sqrt(x)
-| 50 | Pow(x, n)
+| 69 | Sqrt(x) | TODO: Move to Binary Search Section
 | 367 | Valid Perfect Square
-| 365 | Water and Jug Problem
 | 204 | Count Primes
 | 1 | Two Sum
 | 167 | Two Sum II - Input array is sorted

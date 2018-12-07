@@ -23,8 +23,10 @@ vector<int> twoSum(vector<int>& nums, int target)
 
 		if (hash.count(numberToFind))
 		{
+			// Push the two indexes to the result.
 			result.push_back(hash[numberToFind]);
 			result.push_back(i);
+
 			return result;
 		}
 
