@@ -27,9 +27,10 @@ int threeSumSmaller(vector<int>& nums, int target)
 			// As we have sort the elements in nums array, then for a triple i, left, right that matches requirement (sum < target),
 			// any elements that smaller than nums[right] and larger than nums[left] can still match it, as the sum can only go smaller.
 			// How many alternatives/elements that are smaller than nums[right] and larger than nums[left]? right - left.
-			// Yeah this was hard to understand... I copied the explanation from somewhere else and I didn't get it...
-			// An intuition that might be helpful is that this algorithm in O(n) under the for loop, so you must taking into
-			// consideration of all possible combination of right and left here.
+			//
+			// Here if nums[i] + nums[left] + nums[right] < target, then we will increment left (++left) and go to the next while loop.
+			// We must also take into account valid answers nums[i] + nums[left] + nums[right-1], nums[i] + nums[left] + nums[right - 2] ...
+			// There are total of right - left such combinations -> therefore total += right - left.
 			if (nums[i] + nums[left] + nums[right] < target)
 			{
 				total += right - left;
