@@ -44,7 +44,7 @@
 | 321 | Create Maximum Number | Hard
 | 289 | Game of Life | TODO: Move to bit operation section
 | 56 | Merge Intervals | Basic
-| 252 | Meeting Rooms | *
+| 252 | Meeting Rooms | <-
 | 253 | Meeting Rooms II |
 | 352 | Data Stream as Disjoint Intervals TreeMap |
 | 239 | Sliding Window Maximum |
@@ -297,11 +297,10 @@
 | 16 | 3Sum Closest | Basic
 | 259 | 3Sum Smaller
 | 18 | 4Sum | Basic
-| 231 | Power of Two
-| 326 | Power of Three
-| 342 | Power of Four
-| 372 | Super Pow
-| 233 | Number of Digit One
+| 454 | 4Sum II | Basic
+| 231 | Power of Two | Basic
+| 326 | Power of Three | Basic
+| 342 | Power of Four | Basic
 | 319 | Bulb Switcher
 | 292 | Nim Game
 | 202 | Happy Number
