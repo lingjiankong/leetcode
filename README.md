@@ -289,12 +289,14 @@
 | 69 | Sqrt(x) | TODO: Move to Binary Search Section
 | 367 | Valid Perfect Square
 | 204 | Count Primes
-| 1 | Two Sum
-| 167 | Two Sum II - Input array is sorted
-| 15 | 3Sum
-| 16 | 3Sum Closest
+| 1 | Two Sum | Basic
+| 167 | Two Sum II - Input array is sorted | Basic
+| 170 | Two Sum III - Data structure design | Basic
+| 653 | Two Sum IV - Input is a BST | Basic
+| 15 | 3Sum | Basic
+| 16 | 3Sum Closest | Basic
 | 259 | 3Sum Smaller
-| 18 | 4Sum
+| 18 | 4Sum | Basic
 | 231 | Power of Two
 | 326 | Power of Three
 | 342 | Power of Four
