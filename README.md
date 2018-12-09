@@ -302,11 +302,11 @@
 | 326 | Power of Three | Basic
 | 342 | Power of Four | Basic
 | 319 | Bulb Switcher
-| 292 | Nim Game
-| 202 | Happy Number
-| 400 | Nth Digit
-| 263 | Ugly Number
-| 264 | Ugly Number II
+| 292 | Nim Game | Exotic
+| 202 | Happy Number | Basic
+| 263 | Ugly Number | Basic
+| 264 | Ugly Number II | Exotic
+| 313 | Super Ugly Number
 | 306 | Additive Number
 | 172 | Factorial Trailing Zeroes
 | 343 | Integer Break
