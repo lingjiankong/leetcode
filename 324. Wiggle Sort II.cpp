@@ -1,3 +1,20 @@
+// ***
+//
+// Given an unsorted array nums, reorder it such that nums[0] < nums[1] > nums[2] < nums[3]....
+// 
+// Example 1:
+// Input: nums = [1, 5, 1, 1, 6, 4]
+// Output: One possible answer is [1, 4, 1, 5, 1, 6].
+// 
+// Example 2:
+// Input: nums = [1, 3, 2, 2, 3, 1]
+// Output: One possible answer is [2, 3, 1, 3, 1, 2].
+// 
+// Note:
+// You may assume all input has valid answer.
+//
+// ***
+//
 // See https://leetcode.com/problems/wiggle-sort-ii/discuss/77678/3-lines-Python-with-Explanation-Proof
 //
 // The idea is to first sort nums, then
@@ -38,8 +55,8 @@ void wiggleSort(vector<int>& nums)
 	// i: the index in nums where we want to put the element at, starting at right most element.
 	// j: index keeping track of the beginning of the smaller half, starting at 0.
 	// k: index keeping track of the beginning of the bigger half, starting at one past the middle element.
-	for (int i = sortedNums.size()-1, j = 0, k = (sortedNums.size()-1)/2+1; i >= 0; --i)
+	for (int i = sortedNums.size() -1, j = 0, k = (sortedNums.size() - 1) / 2 + 1; i >= 0; --i)
 	{
-		nums[i] = sortedNums[i&1 ? k++ : j++];
+		nums[i] = sortedNums[i & 1 ? k++ : j++];
 	}
 }

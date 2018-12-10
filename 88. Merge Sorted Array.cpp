@@ -9,11 +9,12 @@
 // 
 // Input:
 // nums1 = [1,2,3,0,0,0], m = 3
-// nums2 = [2,5,6],       n = 3
+// nums2 = [2,5,6], n = 3
 // 
 // Output: [1,2,2,3,5,6]
 //
 // ***
+//
 //
 // The idea is to place the largest number in the right most position (m+n-1),
 // and move from *right to left* and place the elements from nums1 and nums2 into corresponding positions.
@@ -30,4 +31,41 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
 	{
 		nums1[k--] = i >= 0 && nums1[i] > nums2[j] ? nums[i--] : nums[j--];
 	}
+}
+
+
+// Standard way of merging two sorted list:
+vector<int> merge(vector<int>& nums1, int m, vector<int> nums2, int n)
+{
+	if (m <= 0 && n <= 0)
+	{
+		return {};
+	}
+
+	vector<int> toReturn;
+
+	int i = 0; int j = 0;
+	while (i < m && j < n)
+	{
+		if (nums1[i] < nums2[j])
+		{
+			toReturn.push_back(nums1[i++]);
+		}
+		else
+		{
+			toReturn.push_back(nums2[j++]);
+		}
+	}
+
+	while (i < m)
+	{
+		toReturn.push_back(nums1[i++]);
+	}
+
+	while (j < n)
+	{
+		toReturn.push_back(nums2[j++]);
+	}
+
+	return toReturn;
 }

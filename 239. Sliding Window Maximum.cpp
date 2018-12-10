@@ -1,3 +1,27 @@
+// ***
+//
+// Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right.
+// You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.
+// 
+// Example:
+// 
+// Input: nums = [1,3,-1,-3,5,3,6,7], and k = 3
+// Output: [3,3,5,5,6,7] 
+// Explanation: 
+// 
+// Window position                Max
+// ---------------               -----
+// [1  3  -1] -3  5  3  6  7       3
+//  1 [3  -1  -3] 5  3  6  7       3
+//  1  3 [-1  -3  5] 3  6  7       5
+//  1  3  -1 [-3  5  3] 6  7       5
+//  1  3  -1  -3 [5  3  6] 7       6
+//  1  3  -1  -3  5 [3  6  7]      7
+// Note: 
+// You may assume k is always valid, 1 ≤ k ≤ input array's size for non-empty array.
+//
+// ***
+//
 // 1. Brute force
 // Time complexity: O((n – k + 1) * k)
 vector<int> maxSlidingWindow(vector<int>& nums, int k)
@@ -47,7 +71,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 	return ans; 
 }
 
-// 3. Monotonic priority queue
+// 3. Monotonic priority queue (using deque as underlying data structure)
 // Time complexity: O(n)
 class MonotonicQueue
 {
@@ -64,17 +88,18 @@ class MonotonicQueue
 			{
 				mData.pop_back();
 			}
+
 			mData.push_back(e);
 		}
 
 		// Pop the max element
-		void pop()
+		void popMax()
 		{
 			mData.pop_front();
 		}
 
 		// Peek the max element
-		int max() const
+		int peekMax() const
 		{
 			return mData.front();
 		}
@@ -96,11 +121,11 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 
 		if (i - k + 1 >= 0)
 		{
-			ans.push_back(q.max());
+			ans.push_back(q.peekMax());
 
-			if (nums[i-k+1] == q.max())
+			if (nums[i-k+1] == q.peekMax())
 			{
-				q.pop();
+				q.popMax();
 			}
 		}
 	}

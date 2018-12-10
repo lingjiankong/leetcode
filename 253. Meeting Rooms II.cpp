@@ -1,18 +1,35 @@
+// ***
+//
+// Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei),
+// find the minimum number of conference rooms required.
+// 
+// Example 1:
+// 
+// Input: [[0, 30],[5, 10],[15, 20]]
+// Output: 2
+// 
+// Example 2:
+// 
+// Input: [[7,10],[2,4]]
+// Output: 1
+//
+// Definition for an interval.
+// struct Interval {
+//       int start;
+//       int end;
+//       Interval() : start(0), end(0) {}
+//       Interval(int s, int e) : start(s), end(e) {}
+// };
+//
+// ***
+//
+// Appraoch: Sort both start and end.
+//
 // |__________|
 //				|_______|
 //					|__________|
 //					  |__________|
 //							|______|
-
-/**
- * Definition for an interval.
- * struct Interval {
- *	   int start;
- *	   int end;
- *	   Interval() : start(0), end(0) {}
- *	   Interval(int s, int e) : start(s), end(e) {}
- * };
- */
 
 int minMeetingRooms(vector<Interval>& intervals)
 {
@@ -55,3 +72,24 @@ int minMeetingRooms(vector<Interval>& intervals)
 
 	return total;
 }
+
+// Using priority queue which stores the end time (the earliest end time has highest priority) of each meeting.
+int minMeetingRooms(vector<Interval>& intervals)
+{
+	sort(intervals.begin(), intervals.end(), [] (const Interval &a, const Interval &b) {return a.start < b.start;});
+	priority_queue<int, vector<int>, greater<int>> pq;
+
+	for (auto interval : intervals)
+	{
+		// Last meeting has ended, we can use that room, no need for extra room.
+		if (!pq.empty() && pq.top() <= interval.start)
+		{
+			pq.pop();
+		}
+
+		pq.push(interval.end);
+	}
+
+	return pq.size();
+}
+

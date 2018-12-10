@@ -1,6 +1,22 @@
-// We are told that:
+// ***
+//
+// Given an input string , reverse the string word by word. 
+// 
+// Example:
+// 
+// Input:  ["t","h","e"," ","s","k","y"," ","i","s"," ","b","l","u","e"]
+// Output: ["b","l","u","e"," ","i","s"," ","s","k","y"," ","t","h","e"]
+// Note: 
+// 
+// A word is defined as a sequence of non-space characters.
 // The input string does not contain leading or trailing spaces.
 // The words are always separated by a single space.
+//
+// ***
+//
+// We are told that:
+// 1. The input string does not contain leading or trailing spaces.
+// 2. The words are always separated by a single space.
 // This makes the problem much easier compare to 151. Reverse Words in a String.
 void reverseWords(vector<char>& str)
 {

@@ -1,27 +1,49 @@
+// ***
+//
+// Write a function to find the longest common prefix string amongst an array of strings.
+// If there is no common prefix, return an empty string "".
+// 
+// Example 1:
+// Input: ["flower","flow","flight"]
+// Output: "fl"
+//
+// Example 2:
+// Input: ["dog","racecar","car"]
+// Output: ""
+//
+// Explanation: There is no common prefix among the input strings.
+//
+// Note:
+// All given inputs are in lowercase letters a-z.
+//
+// ***
+//
 // Just use simple brute force solution.
-// Use the strs[0] as reference, see how other words in strs
-// share the same letters with strs[0]
 string longestCommonPrefix(vector<string>& strs)
 {
-	if (strs.size() == 0)
+	if (strs.empty())
 	{
 		return "";
 	}
-	
-	for (int i = 0; i < strs[0].size(); ++i)
-	{
-		char letter = strs[0][i];
 
-		for (int j = 1; j < strs.size(); ++j)
+	string res = "";
+
+	// Iterate letters in the first word.
+	for (int j = 0; j < strs[0].size(); ++j)
+	{
+		char c = strs[0][j];
+
+		// Iterate all words in strs.
+		for (int i = 1; i < strs.size(); ++i)
 		{
-			if (i == strs[j].size() || strs[j][i] != letter)
+			if (j >= strs[i].size() || strs[i][j] != c)
 			{
-				// The second parameter is the number of characters to include in the substring
-				// e.g. str.substr(10, 2) will return str at position 10, 11.
-				return strs[0].substr(0, i);
+				return res;
 			}
 		}
+
+		res.push_back(c);
 	}
 
-	return strs[0];
+	return res;
 }

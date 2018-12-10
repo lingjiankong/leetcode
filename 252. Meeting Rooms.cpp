@@ -15,6 +15,8 @@
 //
 // ***
 //
+// This question is same as asking whether there are overlapping intervals.
+//
 // Examples:
 //
 // After sorted by Interval::start
@@ -38,7 +40,7 @@ bool canAttendMeetings(vector<Interval>& intervals)
 
 	for (int i = 1; i < intervals.size(); ++i)
 	{
-		if (intervals[i].start < intervals[i-1].end)
+		if (intervals[i-1].end > intervals[i].start)
 		{
 			return false;
 		}

@@ -42,43 +42,42 @@
 | 330 | Patching Array | Hard
 | 4 | Median of Two Sorted Arrays | Hard
 | 321 | Create Maximum Number | Hard
-| 289 | Game of Life | TODO: Move to bit operation section
+| 289 | Game of Life | Basic, TODO: Move to bit operation section
 | 56 | Merge Intervals | Basic
-| 252 | Meeting Rooms | *
-| 253 | Meeting Rooms II |
-| 352 | Data Stream as Disjoint Intervals TreeMap |
-| 239 | Sliding Window Maximum |
-| 295 | Find Median from Data Stream |
-| 53 | Maximum Subarray |
-| 325 | Maximum Size Subarray Sum Equals k |
-| 209 | Minimum Size Subarray Sum |
-| 238 | Product of Array Except Self |
-| 152 | Maximum Product Subarray |
-| 228 | Summary Ranges |
-| 163 | Missing Ranges |
-| 88 | Merge Sorted Array |
+| 252 | Meeting Rooms | Basic
+| 253 | Meeting Rooms II | Basic
+| 239 | Sliding Window Maximum | Basic
+| 295 | Find Median from Data Stream | Basic
+| 53 | Maximum Subarray | Basic
+| 152 | Maximum Product Subarray | Basic
+| 325 | Maximum Size Subarray Sum Equals k | Basic
+| 209 | Minimum Size Subarray Sum | Basic
+| 238 | Product of Array Except Self | Basic
+| 228 | Summary Ranges | Exotic
+| 163 | Missing Ranges | Exotic
+| 88 | Merge Sorted Array | Basic
 | 75 | Sort Colors |
 | 376 | Wiggle Subsequence |
 | 280 | Wiggle Sort |
-| 324 | Wiggle Sort II |
-| 370 | Range Addition | Exotic
+| 324 | Wiggle Sort II | Exotic
+| 370 | Range Addition |
 
 ## String
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 28 | Implement strStr() |
-| 14 | Longest Common Prefix |
+| 14 | Longest Common Prefix | Basic
 | 58 | Length of Last Word |
-| 387 | First Unique Character in a String |
-| 383 | Ransom Note |
-| 344 | Reverse String |
-| 151 | Reverse Words in a String |
-| 186 | Reverse Words in a String II |
-| 345 | Reverse Vowels of a String |
-| 205 | Isomorphic Strings |
+| 387 | First Unique Character in a String | Basic
+| 383 | Ransom Note | Basic
+| 344 | Reverse String | Basic
+| 151 | Reverse Words in a String | Bad
+| 186 | Reverse Words in a String II | Basic
+| 345 | Reverse Vowels of a String | Basic
+| 290 | Word Pattern | Basic
+| 205 | Isomorphic Strings | Basic
 | 293 | Flip Game |
 | 294 | Flip Game II |
-| 290 | Word Pattern |
 | 242 | Valid Anagram |
 | 49 | Group Anagrams |
 | 249 | Group Shifted Strings |
@@ -320,9 +319,9 @@
 
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
-**Notation**: 
+**Notation**:
 - Basic: Well designed questions so important that you must know.
-- Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over. 
+- Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over.
 - Hard: Hard to understand questions. Should be skipped during a fast go-over. Don't spend too much time on it.
 - Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here unless you have plenty.
 

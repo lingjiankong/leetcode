@@ -1,10 +1,22 @@
+// ***
+//
+// Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+// 
+// Examples:
+// 
+// s = "leetcode"
+// return 0.
+// 
+// s = "loveleetcode",
+// return 2.
+//
+// ***
+//
 // Method 1: Traverse the string twice.
 int firstUniqChar(string s)
 {
 	// Stores how many times a particular letter has been seen.
-	// Note that int in vector are zero initialized
-	// You'd better do vector<int> counts(26, 0) to be more explicit.
-	vector<int> counts(26);
+	vector<int> counts(26, 0);
 
 	for (int i = 0; i < s.size(); ++i)
 	{
@@ -23,7 +35,7 @@ int firstUniqChar(string s)
 }
 
 // Method 2: Frist traverse the string, then traverse 26 letters.
-// This could be faster is string is long.
+// This could be faster if string is long because you only need to traverse the string once.
 int firstUniqChar2(string s)
 {
 	// .first stores how many times that particular letter has been seen.

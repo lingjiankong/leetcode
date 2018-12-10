@@ -11,9 +11,22 @@
 //
 // This is a DP problem.
 // The maximum sum of subarray that ends at nums[i] depends on
-// 1. The maximum sum of subarray that ends at nums[i-1] (i.e. last curSum), and 
+// 1. The maximum sum of subarray that ends at nums[i-1] (i.e. last curSum) + nums[i], and 
 // 2. The value of nums[i] itself.
 // Therefore, curSum = max(curSum + nums[i], nums[i]).
+//
+int maxSubArray(vector<int>& nums)
+{
+	int maxSum = INT_MIN, curSum = 0;
+	for (int num : nums)
+	{
+		curSum = max(curSum + num, num);
+		maxSum = max(maxSum, curSum);
+	}
+	return maxSum;
+}
+
+// Same thing.
 int maxSubArray(vector<int>& nums)
 {
 	if (nums.size() == 0)
