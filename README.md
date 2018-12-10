@@ -288,23 +288,24 @@
 | 69 | Sqrt(x) | TODO: Move to Binary Search Section
 | 367 | Valid Perfect Square
 | 204 | Count Primes
-| 1 | Two Sum
-| 167 | Two Sum II - Input array is sorted
-| 15 | 3Sum
-| 16 | 3Sum Closest
+| 1 | Two Sum | Basic
+| 167 | Two Sum II - Input array is sorted | Basic
+| 170 | Two Sum III - Data structure design | Basic
+| 653 | Two Sum IV - Input is a BST | Basic
+| 15 | 3Sum | Basic
+| 16 | 3Sum Closest | Basic
 | 259 | 3Sum Smaller
-| 18 | 4Sum
-| 231 | Power of Two
-| 326 | Power of Three
-| 342 | Power of Four
-| 372 | Super Pow
-| 233 | Number of Digit One
+| 18 | 4Sum | Basic
+| 454 | 4Sum II | Basic
+| 231 | Power of Two | Basic
+| 326 | Power of Three | Basic
+| 342 | Power of Four | Basic
 | 319 | Bulb Switcher
-| 292 | Nim Game
-| 202 | Happy Number
-| 400 | Nth Digit
-| 263 | Ugly Number
-| 264 | Ugly Number II
+| 292 | Nim Game | Exotic
+| 202 | Happy Number | Basic
+| 263 | Ugly Number | Basic
+| 264 | Ugly Number II | Exotic
+| 313 | Super Ugly Number
 | 306 | Additive Number
 | 172 | Factorial Trailing Zeroes
 | 343 | Integer Break
