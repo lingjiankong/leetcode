@@ -1,7 +1,25 @@
+// ***
+//
+// Given an array of strings, group anagrams together.
+// 
+// Example:
+// 
+// Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+// Output:
+// [
+//   ["ate","eat","tea"],
+//   ["nat","tan"],
+//   ["bat"]
+// ]
+//
+// Note:
+// All inputs will be in lowercase. The order of your output does not matter.
+//
+// ***
+//
 // This solution is clean and good enough.
 vector<vector<string>> groupAnagrams(vector<string>& strs)
 {
-	
 	// Key: sorted word
 	// Value: words whose sorted version are the same
 	// Keep in mind that sort takes nlogn, might be a bottleneck is word is very long.

@@ -1,5 +1,27 @@
-// Simple traverse the tring, if you see two consecutive ++,
-// Turn them into -- and push back the resulting string,
+// ***
+//
+// You are playing the following Flip Game with your friend:
+// Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive "++" into "--".
+// The game ends when a person can no longer make a move and therefore the other person will be the winner.
+// 
+// Write a function to compute all possible states of the string after one valid move.
+// 
+// Example:
+// 
+// Input: s = "++++"
+// Output: 
+// [
+//   "--++",
+//   "+--+",
+//   "++--"
+// ]
+// 
+// Note: If there is no valid move, return an empty list [].
+//
+// ***
+//
+// Simple traverse the string, if you see two consecutive ++,
+// Turn them into -- and push_back the resulting string,
 // then you revert those -- to the original ++ and continue the iteration.
 //
 // In these kind of question, I prefer for (int i = 1; i < s.size(); ++i)

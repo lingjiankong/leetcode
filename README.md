@@ -68,8 +68,6 @@
 | 28 | Implement strStr() |
 | 14 | Longest Common Prefix | Basic
 | 58 | Length of Last Word |
-| 387 | First Unique Character in a String | Basic
-| 383 | Ransom Note | Basic
 | 344 | Reverse String | Basic
 | 151 | Reverse Words in a String | Bad
 | 186 | Reverse Words in a String II | Basic
@@ -77,12 +75,13 @@
 | 290 | Word Pattern | Basic
 | 205 | Isomorphic Strings | Basic
 | 293 | Flip Game |
-| 294 | Flip Game II |
-| 242 | Valid Anagram |
-| 49 | Group Anagrams |
-| 249 | Group Shifted Strings |
-| 87 | Scramble String |
-| 179 | Largest Number |
+| 387 | First Unique Character in a String | Basic
+| 294 | Flip Game II | Basic
+| 383 | Ransom Note | Basic
+| 242 | Valid Anagram | Basic
+| 49 | Group Anagrams | Basic
+| 249 | Group Shifted Strings | Basic
+| 179 | Largest Number | Basic
 | 6 | ZigZag Conversion |
 | 161 | One Edit Distance |
 | 38 | Count and Say |

@@ -1,12 +1,43 @@
+// ***
+//
+// The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
+// (you may want to display this pattern in a fixed font for better legibility)
+// 
+// P   A   H   N
+// A P L S I I G
+// Y   I   R
+// And then read line by line: "PAHNAPLSIIGYIR"
+// 
+// Write the code that will take a string and make this conversion given a number of rows:
+// 
+// string convert(string s, int numRows);
+// Example 1:
+// 
+// Input: s = "PAYPALISHIRING", numRows = 3
+// Output: "PAHNAPLSIIGYIR"
+// Example 2:
+// 
+// Input: s = "PAYPALISHIRING", numRows = 4
+// Output: "PINALSIGYAHRPI"
+// Explanation:
+// 
+// P     I    N
+// A   L S  I G
+// Y A   H R
+// P     I
+//
+// ***
+//
 // I think this is a good intuitive question about how to use while and for loop
 // to track two different indexes.
-// The idea is to separate the zig zags into "L" shapes (i.e. going down then going up),
+// The idea is to separate the zig zags into "L" shapes (i.e. going down then going toward upper-right),
 // and put letters into vector<char> representing corresponding rows.
 string convert(string s, int numRows)
 {
 	vector<vector<char>> stringBuilder(numRows);
 
-	// index keep tracks of letter in s.
+	// index keeps track of letter in s.
+	// i keeps track of the position in stringBuilder. 
 	int index = 0;
 	while (index < s.size())
 	{
