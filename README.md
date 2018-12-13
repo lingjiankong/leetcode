@@ -83,40 +83,22 @@
 | 249 | Group Shifted Strings | Basic
 | 179 | Largest Number | Basic
 | 6 | ZigZag Conversion |
-| 161 | One Edit Distance |
-| 38 | Count and Say |
-| 358 | Rearrange String k Distance Apart |
-| 316 | Remove Duplicate Letters |
-| 271 | Encode and Decode Strings |
-| 168 | Excel Sheet Column Title |
+| 161 | One Edit Distance | Basic
+| 38 | Count and Say | Bad
+| 271 | Encode and Decode Strings | Basic
+| 168 | Excel Sheet Column Title | Exotic
 | 171 | Excel Sheet Column Number |
-| 13 | Roman to Integer |
-| 12 | Integer to Roman |
-| 273 | Integer to English Words |
-| 246 | Strobogrammatic Number |
-| 247 | Strobogrammatic Number II |
-| 248 | Strobogrammatic Number III |
-| 68 | Text Justification |
-| 65 | Valid Number |
-| 157 | Read N Characters Given Read4 |
-| 158 | Read N Characters Given Read4 II |
+| 13 | Roman to Integer | Bad
+| 12 | Integer to Roman | Bad
+| 246 | Strobogrammatic Number | Basic
 | 76 | Minimum Window Substring Sliding Window |
-| 30 | Substring with Concatenation of All Words Sliding Window |
-| 3 | Longest Substring Without Repeating Characters Sliding Window |
-| 340 | Longest Substring with At Most K Distinct Characters Sliding Window |
-| 395 | Longest Substring with At Least K Repeating Characters	Sliding Window |
-| 159 | Longest Substring with At Most Two Distinct Characters	Sliding Window |
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Basic
 | 125 | Valid Palindrome |
-| 266 | Palindrome Permutation |
-| 5 | Longest Palindromic Substring |
-| 9 | Palindrome Number |
-| 214 | Shortest Palindrome |
-| 336 | Palindrome Pairs |
-| 131 | Palindrome Partitioning |
-| 132 | Palindrome Partitioning II |
-| 267 | Palindrome Permutation II |
-| 20 | Valid Parentheses |
-| 22 | Generate Parentheses |
+| 266 | Palindrome Permutation | Basic
+| 5 | Longest Palindromic Substring | Basic
+| 9 | Palindrome Number | Basic
+| 20 | Valid Parentheses | Basic
+| 22 | Generate Parentheses | Basic
 | 32 | Longest Valid Parentheses |
 | 241 | Different Ways to Add Parentheses |
 | 301 | Remove Invalid Parentheses |

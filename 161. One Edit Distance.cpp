@@ -44,7 +44,48 @@
 // Now s and t has equal length, similar idea as above, replace 'd' in s with
 // 't' in t, and check if s and t are the same
 //
-// The better solution is second one. This one just gives you intuition about the problem.
+// 1. Better solution, without modifying existing string.
+bool isOneEditDistance2(const string& s, const string& t)
+{	
+	int m = s.size();
+	int n = t.size();
+
+	if (m > n)
+	{	
+		return isOneEditDistance(t, s);
+	}
+
+	if (m + 1 < n || s == t)
+	{
+		return false;
+	}
+	
+	// i traverse string s, j traverse string t.
+	int i = 0, j = 0;
+	int mismatchCount = 0;
+
+	while (i < m && j < n)
+	{
+		if (s[i] != t[j])
+		{
+			if (++mismatchCount > 1)
+			{
+				return false;
+			}
+			if (m != n)
+			{
+				++j;	 
+				continue;
+			}
+		}
+
+		++i, ++j;
+	}
+	
+	return true; 
+}
+
+// 2. The better solution is first one. This one just gives you intuition about the problem.
 bool isOneEditDistance(string s, string t)
 {
 	int m = s.size();
@@ -85,45 +126,4 @@ bool isOneEditDistance(string s, string t)
 	// s = "abc"
 	// t = "abcd"
 	return (s == t) || (s + t[n-1] == t);
-}
-
-// 2. Better solution, without modifying existing string.
-bool isOneEditDistance2(const string& s, const string& t)
-{	
-	int m = s.size();
-	int n = t.size();
-	
-	if (m > n)
-	{	
-		return isOneEditDistance(t, s);
-	}
-
-	if (m + 1 < n || s == t) 
-	{
-		return false;
-	}
-	
-	// i traverse string s, j traverse string t.
-	int i = 0, j = 0;
-	int mismatchCount = 0;
-
-	while (i < m && j < n)
-	{
-		if (s[i] != t[j])
-		{
-			if (++mismatchCount > 1)
-			{
-				return false;
-			}
-			if (m != n)
-			{
-				++j;	 
-				continue;
-			}
-		}
-
-		++i, ++j;
-	}
-	
-	return true; 
 }

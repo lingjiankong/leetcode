@@ -30,7 +30,7 @@ class Solution
 
 			for (int i = 0; i < s.size(); ++i)
 			{
-				// Asuume the palindrom is odd from current position.
+				// Assume the palindrom is odd from current position.
 				extendPalindrome(s, i, i, start, maxLength);
 
 				// Assume the palindrom is even from current position.

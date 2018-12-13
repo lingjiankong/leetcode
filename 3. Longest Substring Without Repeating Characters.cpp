@@ -39,8 +39,8 @@
 //
 // Example:
 // xyzabcdefghijklmna...
-//     ^            ^
-//     start        i
+//	   ^			^
+//	   start		i
 //
 // Therefore the length is i - start + 1
 int lengthOfLongestSubstring(string s)
@@ -68,31 +68,31 @@ int lengthOfLongestSubstring(string s)
 //
 // Example:
 // _abcdefghijklmn...
-// ^             ^
-// start = -1    i
+// ^			 ^
+// start = -1	 i
 //
 // xyzabcdefghijklmna...
-//    ^             ^
-//    start         i
+//	  ^				^
+//	  start			i
 //
 // Therefore the length is i - start
 int lengthOfLongestSubstring(string s)
 {
-    unordered_map<char, int> seen;
+	unordered_map<char, int> seen;
 
-    int maxLength = 0;
-    int start = -1;
+	int maxLength = 0;
+	int start = -1;
 
-    for (int i = 0; i < s.size(); ++i)
-    {
-        if (seen.count(s[i]))
-        {
-            start = max(start, seen[s[i]]);
-        }
+	for (int i = 0; i < s.size(); ++i)
+	{
+		if (seen.count(s[i]))
+		{
+			start = max(start, seen[s[i]]);
+		}
 
-        maxLength = max(maxLength, i - start);
-        seen[s[i]] = i;
-    }
+		maxLength = max(maxLength, i - start);
+		seen[s[i]] = i;
+	}
 
-    return maxLength;
+	return maxLength;
 }
