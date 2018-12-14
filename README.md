@@ -109,13 +109,16 @@
 ## Tree
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 144 | Binary Tree Preorder Traversal |
-| 94 | Binary Tree Inorder Traversal |
-| 145 | Binary Tree Postorder Traversal |
-| 102 | Binary Tree Level Order Traversal |
-| 100 | Same Tree |
-| 101 | Symmetric Tree |
-| 226 | Invert Binary Tree |
+| 144 | Binary Tree Preorder Traversal | Basic
+| 94 | Binary Tree Inorder Traversal | Basic
+| 145 | Binary Tree Postorder Traversal | Basic
+| 102 | Binary Tree Level Order Traversal | Basic
+| 314 | Binary Tree Vertical Order Traversal | Basic
+| 116 | Populating Next Right Pointers in Each Node |
+| 117 | Populating Next Right Pointers in Each Node II |
+| 100 | Same Tree | Basic
+| 101 | Symmetric Tree | Basic
+| 226 | Invert Binary Tree | Basic
 | 257 | Binary Tree Paths |
 | 112 | Path Sum |
 | 113 | Path Sum II |
@@ -149,9 +152,6 @@
 | 222 | Count Complete Tree Nodes |
 | 105 | Construct Binary Tree from Preorder and Inorder Traversal |
 | 106 | Construct Binary Tree from Inorder and Postorder Traversal |
-| 116 | Populating Next Right Pointers in Each Node |
-| 117 | Populating Next Right Pointers in Each Node II |
-| 314 | Binary Tree Vertical Order Traversal |
 | 96 | Unique Binary Search Trees |
 | 95 | Unique Binary Search Trees II |
 | 331 | Verify Preorder Serialization of a Binary Tree |

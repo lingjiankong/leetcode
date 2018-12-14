@@ -1,54 +1,23 @@
-// Recursive
-class Solution
-{
-
-    public:
-
-        vector<int> postorderTraversal(TreeNode* root)
-        {
-            dfs(root);
-            return result;
-        }
-
-        void dfs(TreeNode* node)
-        {
-            if (node)
-            {   
-                dfs(node->left);
-                dfs(node->right);
-                result.push_back(node->val);
-            }
-        }
-
-    private:
-
-        vector<int> result;
-
-};
-
-// This method below takes extra space so it is not efficient.
-// It just means to help you visualize how recursive tree traversal is done
-// Postorder traversal = [leftSubtree] + [rightSubtree] + root.
-vector<int> postorderTraversal(TreeNode* root)
-{	
-	if (!root)
-	{	
-		return {};
-	}
-
-	vector<int> result;
-	
-	vector<int> leftSubtree = postorderTraversal(root->left);
-	vector<int> rightSubtree = postorderTraversal(root->right);
-
-	result.insert(result.end(), leftSubtree.begin(), leftSubtree.end());
-	result.insert(result.end(), rightSubtree.begin(), rightSubtree.end());
-	result.push_back(root->val);
-
-	return result;
-}
-
-// Iterative solution.
+// ***
+//
+// Given a binary tree, return the postorder traversal of its nodes' values.
+// 
+// Example:
+// 
+// Input: [1,null,2,3]
+//    1
+//     \
+//      2
+//     /
+//    3
+// 
+// Output: [3,2,1]
+// Follow up: Recursive solution is trivial, could you do it iteratively?
+//
+// ***
+//
+// A "solution template" for both preorder, inorder, and postorder traversal.
+//
 // A post order traversal is
 //
 // postOrder(node->left)
@@ -61,10 +30,45 @@ vector<int> postorderTraversal(TreeNode* root)
 // postOrder(node->right)
 // postOrder(node->left)
 //
-// This looks pretty much like a preorder traversal with
-// right and left subtree traversal swapped.
+// This looks pretty much like a preorder traversal with right and left subtree traversal swapped.
 // We could use the iterative method similar to 144. Binary Tree Preorder Traversal
 // to calculate the result, then reverse it to get the post order traversal result.
+class Solution
+{
+
+	public:
+
+		vector<int> postorderTraversal(TreeNode* root)
+		{
+			TreeNode* currentNode = root;
+
+			while (currentNode || !mNodeStack.empty())
+			{
+				if (currentNode)
+				{
+					mNodeStack.push(currentNode);
+					mResult.push_back(currentNode->val);
+					currentNode = currentNode -> right;
+				}
+				else
+				{
+					TreeNode* node = mNodeStack.top(); mNodeStack.pop();
+					currentNode = node -> left;
+				}
+			}
+
+			reverse(mResult.begin(), mResult.end());
+			return mResult;
+		}
+
+	private:
+
+		vector<int> mResult;
+		stack<TreeNode*> mNodeStack;
+
+};
+
+// Another iterative solution, see corresponding version for 144. Binary Tree Preorder Traversal.
 class Solution
 {
 
@@ -94,8 +98,6 @@ class Solution
     private:
 
         vector<int> result;
-
         stack<TreeNode*> nodeStack;
 
 };
-

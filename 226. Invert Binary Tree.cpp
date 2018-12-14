@@ -1,16 +1,27 @@
-TreeNode* invertTree(TreeNode* root)
-{
-	if (root)	
-	{
-		root->left = invertTree(root->left);
-		root->right = invertTree(root->right);
-		swap(root->left, root->right);
-	}
-	
-	return root;
-}
-
-//Same thing
+// ***
+//
+// Invert a binary tree.
+// 
+// Example:
+// 
+// Input:
+// 
+//      4
+//    /   \
+//   2     7
+//  / \   / \
+// 1   3 6   9
+// Output:
+// 
+//      4
+//    /   \
+//   7     2
+//  / \   / \
+// 9   6 3   1
+//
+// ***
+//
+// Postorder traverse the left and right subtree of root, then swap the left and right subtree.
 class Solution
 {
 
@@ -24,14 +35,31 @@ class Solution
 
 	private:
 
-		void dfs(TreeNode* node)
+		void dfs(TreeNode* root)
 		{
-			if (node)
+			if (!root)
 			{
-				dfs(node->left);
-				dfs(node->right);
-				swap(node->left, node->right);
+				return;
 			}
+
+			dfs(root->left);
+			dfs(root->right);
+			swap(root->left, root->right);
 		}
 
 };
+
+// Same thing:
+TreeNode* invertTree(TreeNode* root)
+{
+	if (!root)
+	{
+		return nullptr;
+	}
+
+	root->left = invertTree(root->left);
+	root->right = invertTree(root->right);
+	swap(root->left, root->right);
+
+	return root;
+}

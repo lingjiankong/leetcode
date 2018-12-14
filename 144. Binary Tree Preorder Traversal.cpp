@@ -1,4 +1,23 @@
-// Recursive
+// ***
+//
+// Given a binary tree, return the preorder traversal of its nodes' values.
+// 
+// Example:
+// 
+// Input: [1,null,2,3]
+//    1
+//     \
+//      2
+//     /
+//    3
+// 
+// Output: [1,2,3]
+// Follow up: Recursive solution is trivial, could you do it iteratively?
+//
+// ***
+//
+// A "solution template" for both preorder, inorder, and postorder traversal. You have to remember it.
+// See also 94. Binary Tree Inorder Traversal and 145. Binary Tree Postorder Traversal.
 class Solution
 {
 
@@ -6,27 +25,34 @@ class Solution
 
 		vector<int> preorderTraversal(TreeNode* root)
 		{
-			dfs(root);
-			return result;
-		}
-		
-		void dfs(TreeNode* node)
-		{
-			if (node)
+			TreeNode* currentNode = root;
+
+			while (currentNode || !mNodeStack.empty())
 			{
-				result.push_back(node->val);
-				dfs(node->left);
-				dfs(node->right);
+				if (currentNode)
+				{
+					mNodeStack.push(currentNode);
+					mResult.push_back(currentNode->val);
+					currentNode = currentNode -> left;
+				}
+				else
+				{
+					TreeNode* node = mNodeStack.top(); mNodeStack.pop();
+					currentNode = node -> right;
+				}
 			}
+
+			return mResult;
 		}
 
 	private:
 
-		vector<int> result;
+		vector<int> mResult;
+		stack<TreeNode*> mNodeStack;
 
 };
 
-// Iterative. You need to remember it.
+// Another iterative solution.
 // Pay attention to the sequence which you push the left and right nodes to the stack.
 // When pushing node to stack you could have check if node->left and node->right is nullptr,
 // but this doesn't make a big difference since you could push nullptr to stack and when
@@ -38,28 +64,28 @@ class Solution
 
 		vector<int> preorderTraversal(TreeNode* root)
 		{
-			nodeStack.push(root);
+			mNodeStack.push(root);
 
-			while (!nodeStack.empty())
+			while (!mNodeStack.empty())
 			{
-				TreeNode* node = nodeStack.top();
-				nodeStack.pop();
+				TreeNode* node = mNodeStack.top();
+				mNodeStack.pop();
 
 				if (node)
 				{
-					result.push_back(node->val);
-					nodeStack.push(node->right);
-					nodeStack.push(node->left);
+					mResult.push_back(node->val);
+					mNodeStack.push(node->right);
+					mNodeStack.push(node->left);
 				}
 			}
 
-			return result;
+			return mResult;
 		}
 
 	private:
 
-		vector<int> result;
-
-		stack<TreeNode*> nodeStack;
+		vector<int> mResult;
+		stack<TreeNode*> mNodeStack;
 
 };
+
