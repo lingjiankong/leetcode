@@ -99,10 +99,9 @@
 | 9 | Palindrome Number | Basic
 | 20 | Valid Parentheses | Basic
 | 22 | Generate Parentheses | Basic
-| 32 | Longest Valid Parentheses |
-| 241 | Different Ways to Add Parentheses |
-| 301 | Remove Invalid Parentheses |
-| 392 | Is Subsequence |
+| 241 | Different Ways to Add Parentheses | Basic
+| 392 | Is Subsequence | Basic
+| 792 | Number of Matching Subsequence |
 | 115 | Distinct Subsequences |
 | 187 | Repeated DNA Sequences |
 

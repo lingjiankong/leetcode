@@ -1,3 +1,28 @@
+// ***
+//
+// Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
+// 
+// Example 1:
+// 
+// Input: "2-1-1"
+// Output: [0, 2]
+// Explanation: 
+// ((2-1)-1) = 0 
+// (2-(1-1)) = 2
+// 
+// Example 2:
+// 
+// Input: "2*3-4*5"
+// Output: [-34, -14, -10, -10, 10]
+// Explanation: 
+// (2*(3-(4*5))) = -34 
+// ((2*3)-(4*5)) = -14 
+// ((2*(3-4))*5) = -10 
+// (2*((3-4)*5)) = -10 
+// (((2*3)-4)*5) = 10
+//
+// ***
+//
 // Recursive solution
 // You should be able to understand the solution just by reading the code.
 vector<int> diffWaysToCompute(const string& input)
@@ -14,7 +39,7 @@ vector<int> diffWaysToCompute(const string& input)
 			vector<int> leftPart = diffWaysToCompute(input.substr(0, i));
 			for (int a : leftPart)
 			{
-				vector<int> rightPart = diffWaysToCompute(input.substr(i+1));
+				vector<int> rightPart = diffWaysToCompute(input.substr(i + 1));
 				for (int b : rightPart)
 				{
 					output.push_back(c == '+' ? a + b : c == '-' ? a - b : a * b);
@@ -38,9 +63,9 @@ class Solution
 
 		vector<int> diffWaysToCompute(const string& input)
 		{
-			if (hash.find(input) != hash.end())
+			if (mHash.count(input))
 			{
-				return hash[input];
+				return mHash[input];
 			}
 			
 			vector<int> output;
@@ -64,12 +89,12 @@ class Solution
 			}
 
 			vector<int> result = output.size() ? output : std::vector<int>({stoi(input)});
-			hash[input] = result;
+			mHash[input] = result;
 			return result;
 		}
 
 	private:
 
-		unordered_map<string, vector<int>> hash;
+		unordered_map<string, vector<int>> mHash;
 
 };
