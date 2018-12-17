@@ -1,3 +1,25 @@
+// ***
+//
+// Given a binary tree, return all root-to-leaf paths.
+// 
+// Note: A leaf is a node with no children.
+// 
+// Example:
+// 
+// Input:
+// 
+//    1
+//  /   \
+// 2     3
+//  \
+//   5
+// 
+// Output: ["1->2->5", "1->3"]
+// 
+// Explanation: All root-to-leaf paths are: 1->2->5, 1->3
+//
+// ***
+//
 // See also 113. Path Sum II.
 class Solution
 {
@@ -11,39 +33,33 @@ class Solution
 				return {};
 			}
 
-			dfs(root, to_string(root->val));
+			vector<string> all;
+			string current = "";
 
-			return result;
+			dfs(root, current, all);
+
+			return all;
 		}
 
 	private:
 
-		vector<string> result;
-
-		void dfs(TreeNode* node, string path)
+		void dfs(TreeNode* node, string current, vector<string>& all)
 		{
-			// You don't have to check if the node is empty,
-			// since the way this function is called is guaranteed that the node is not empty.
-			if (!node)
-			{
-				return;
-			}
-
 			// If a node has no children, then it is the end of a path,
 			// so we just push back that entire path to result.
-			if (!node->left && !node->right)	
+			if (!node->left && !node->right)
 			{
-				result.push_back(path);
+				all.push_back(current + to_string(node->val));
 			}
 
 			if (node->left)
 			{
-				dfs(node->left, path + "->" + to_string(node->left->val));
+				dfs(node->left, current + to_string(node->val) + "->", all);
 			}
 
 			if (node->right)
 			{
-				dfs(node->right, path + "->" + to_string(node->right->val));
+				dfs(node->right, current + to_string(node->val) + "->", all);
 			}
 		}
 

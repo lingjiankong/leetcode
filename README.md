@@ -118,10 +118,10 @@
 | 100 | Same Tree | Basic
 | 101 | Symmetric Tree | Basic
 | 226 | Invert Binary Tree | Basic
-| 257 | Binary Tree Paths |
-| 112 | Path Sum |
-| 113 | Path Sum II |
-| 129 | Sum Root to Leaf Numbers |
+| 257 | Binary Tree Paths | Basic
+| 112 | Path Sum | Basic
+| 113 | Path Sum II | Basic
+| 129 | Sum Root to Leaf Numbers | Basic
 | 298 | Binary Tree Longest Consecutive Sequence |
 | 111 | Minimum Depth of Binary Tree |
 | 104 | Maximum Depth of Binary Tree |

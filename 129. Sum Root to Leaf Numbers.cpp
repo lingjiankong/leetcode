@@ -1,46 +1,71 @@
-// See a very similar question: 257. Binary Tree Paths.
+// ***
+//
+// Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number.
+// 
+// An example is the root-to-leaf path 1->2->3 which represents the number 123.
+// 
+// Find the total sum of all root-to-leaf numbers.
+// 
+// Note: A leaf is a node with no children.
+// 
+// Example:
+// Input: [1,2,3]
+//     1
+//    / \
+//   2   3
+// Output: 25
+// Explanation:
+// The root-to-leaf path 1->2 represents the number 12.
+// The root-to-leaf path 1->3 represents the number 13.
+// Therefore, sum = 12 + 13 = 25.
+// 
+// Example 2:
+// Input: [4,9,0,5,1]
+//     4
+//    / \
+//   9   0
+//  / \
+// 5   1
+// Output: 1026
+// Explanation:
+// The root-to-leaf path 4->9->5 represents the number 495.
+// The root-to-leaf path 4->9->1 represents the number 491.
+// The root-to-leaf path 4->0 represents the number 40.
+// Therefore, sum = 495 + 491 + 40 = 1026.
+//
+// ***
 class Solution
 {
 
-public:
+	public:
 
-    int sumNumbers(TreeNode* root)
-    {
-        if (!root)
-        {
-            return 0;
-        }
+		int sumNumbers(TreeNode *root)
+		{
+			return dfs(root, 0);
+		}
 
-        dfs(root, "");
+	private:
 
-        return total;
-    }
+		int dfs(TreeNode *root, int sum)
+		{
+			if (!root)
+			{
+				return 0;
+			}
 
-private:
+			sum = sum * 10 + root->val;
 
-    int total;
+			if (!root->left && !root->right)
+			{
+				return sum;
+			}
 
-    void dfs(TreeNode* node, string number)
-    {
-        if (!node)
-        {
-            return;
-        }
-
-        number += to_string(node->val);
-
-        if (!node->left && !node->right)
-        {
-            total += stoi(number);
-        }
-
-        dfs(node->left, number);
-        dfs(node->right, number);
-    }
+			return dfs(root->left, sum) + dfs(root->right, sum);
+		}
 
 };
 
-// Same idea without using private variable.
+// See a very similar question: 257. Binary Tree Paths.
 class Solution
 {
 
@@ -53,32 +78,35 @@ class Solution
 				return 0;
 			}
 
-			int total = dfs(root, "");
+			int totalSum = 0;
+			string currentNumber;
 
-			return total;
+			dfs(root, currentNumber, totalSum);
+
+			return totalSum;
 		}
 
 	private:
 
-		int dfs(TreeNode* node, string number)
+		void dfs(TreeNode* node, string currentNumber, int& totalSum)
 		{
 			if (!node)
 			{
-				return 0;
+				return;
 			}
 
-			int total = 0;
-
-			number += to_string(node->val);
+			currentNumber += to_string(node->val);
 
 			if (!node->left && !node->right)
 			{
-				total += stoi(number);
+				totalSum += stoi(currentNumber);
 			}
 
-			total += dfs(node->left, number) + dfs(node->right, number);
+			dfs(node->left, currentNumber, totalSum);
+			dfs(node->right, currentNumber, totalSum);
 
-			return total;
+			// Optional. Still pas if you don't have it.
+			currentNumber.pop_back();
 		}
 
 };
