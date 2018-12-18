@@ -122,8 +122,8 @@
 | 112 | Path Sum | Basic
 | 113 | Path Sum II | Basic
 | 129 | Sum Root to Leaf Numbers | Basic
-| 298 | Binary Tree Longest Consecutive Sequence |
-| 111 | Minimum Depth of Binary Tree |
+| 298 | Binary Tree Longest Consecutive Sequence | Basic
+| 111 | Minimum Depth of Binary Tree | Basic
 | 104 | Maximum Depth of Binary Tree |
 | 110 | Balanced Binary Tree |
 | 124 | Binary Tree Maximum Path Sum |
