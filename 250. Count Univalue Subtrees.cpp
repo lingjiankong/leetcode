@@ -1,9 +1,26 @@
-// I did 104, 250, 687, 543 together.
+// ***
+//
+// Given a binary tree, count the number of uni-value subtrees.
+// 
+// A Uni-value subtree means all nodes of the subtree have the same value.
+// 
+// Example :
+// 
+// Input:  root = [5,1,5,5,5,null,5]
+// 
+//               5
+//              / \
+//             1   5
+//            / \   \
+//           5   5   5
+// 
+// Output: 4
+//
+// ***
 //
 // Use *postorder* traversal to check:
 // 1. If left and right subtrees are all univalue trees
-// 2. If they are both univalue trees, then see if the value of current node
-// is the same as the value of its existing subtrees.
+// 2. If they are both univalue trees, then see if the value of current node is the same as the value of its existing subtrees.
 // If so, then we just found another univalue tree, ++mTotalUnivalueTrees.
 class Solution
 {
@@ -13,7 +30,9 @@ class Solution
 		int countUnivalSubtrees(TreeNode* root)
 		{
 			mTotalUnivalueTrees = 0;
+
 			isUnivalTree(root);
+
 			return mTotalUnivalueTrees;
 		}
 

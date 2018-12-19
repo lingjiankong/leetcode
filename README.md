@@ -124,19 +124,20 @@
 | 129 | Sum Root to Leaf Numbers | Basic
 | 298 | Binary Tree Longest Consecutive Sequence | Basic
 | 111 | Minimum Depth of Binary Tree | Basic
-| 104 | Maximum Depth of Binary Tree |
-| 110 | Balanced Binary Tree |
-| 124 | Binary Tree Maximum Path Sum |
-| 250 | Count Univalue Subtrees |
-| 366 | Find Leaves of Binary Tree |
+| 104 | Maximum Depth of Binary Tree | Basic
+| 250 | Count Univalue Subtrees | Basic
+| 687 | Longest Univalue Path | Basic
+| 543 | Diameter of Binary Tree | Basic
+| 110 | Balanced Binary Tree | Basic
+| 366 | Find Leaves of Binary Tree | Basic
 | 107 | Binary Tree Level Order Traversal II |
 | 103 | Binary Tree Zigzag Level Order Traversal |
-| 199 | Binary Tree Right Side View |
-| 98 | Validate Binary Search Tree	preorder |
-| 235 | Lowest Common Ancestor of a Binary Search Tree |
-| 236 | Lowest Common Ancestor of a Binary Tree |
-| 108 | Convert Sorted Array to Binary Search Tree |
-| 109 | Convert Sorted List to Binary Search Tree |
+| 199 | Binary Tree Right Side View | Basic
+| 98 | Validate Binary Search Tree | Basic
+| 235 | Lowest Common Ancestor of a Binary Search Tree | Basic; Memorize
+| 236 | Lowest Common Ancestor of a Binary Tree | Basic; Memorize
+| 108 | Convert Sorted Array to Binary Search Tree | Basic
+| 109 | Convert Sorted List to Binary Search Tree | Basic
 | 173 | Binary Search Tree Iterator |
 | 230 | Kth Smallest Element in a BST |
 | 297 | Serialize and Deserialize Binary Tree |

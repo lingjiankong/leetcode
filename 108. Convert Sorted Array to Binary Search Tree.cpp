@@ -1,19 +1,28 @@
+// ***
+//
+// Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
+// For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+//
+// Example:
+//
+// Given the sorted array: [-10,-3,0,5,9],
+// One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
+//
+//       0
+//      / \
+//    -3   9
+//    /   /
+//  -10  5
+//
+// ***
+//
 // The root value of a binary search tree is greater than its left subtree and
 // less than its right subtree. That is, the root of a binary serach tree is nums[mid].
-// We construct the root first, then recursively construct its left and right subtrees
-//
-// Why mid = low + (high-low-1)/2 ?
-// Unlike binary search, where we often set high to be the index of the last element
-// and calculate the mid index using mid = low + (high-low)/2,
-// here, high is ONE PAST the index of the last elements.
 //
 // Remember you can calculate the mid index of an array using two ways:
 // 1. (nums.size() - 1) / 2 : mid is on the left part if even elements (I usually do this).
 // 2. nums.size() / 2 : mid is on the right part if even elements.
 //
-// In this case, we are just calculating the mid using the first way.
-// Note, if you calculate the mid using second way (mid = low + (high-low)/2), you answer still pass,
-// the constructed binary search tree is still valid, just looks different.
 class Solution
 {
 
@@ -27,7 +36,7 @@ class Solution
 		}
 
 	private:
-		
+
 		TreeNode* preOrder(const vector<int>& nums, int low, int high)
 		{
 			if (low >= high)
@@ -35,11 +44,11 @@ class Solution
 				return nullptr;
 			}
 
-			int mid = low + (high-low-1)/2;
+			int mid = low + (high - low) / 2;
 
-			TreeNode root = new TreeNode(nums[mid]);
+			TreeNode* root = new TreeNode(nums[mid]);
 			root->left = preOrder(nums, low, mid);
-			root->right = preOrder(nums, mid+1, high);
+			root->right = preOrder(nums, mid + 1, high);
 
 			return root;
 		}

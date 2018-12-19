@@ -1,10 +1,24 @@
-// See also 108. Covert Sorted Array to Binary Search Tree,
-// These two questions are essentially the same, the only difference is
-// how you find the mid element of an array and of a linked list.
-// Here the mid element will be on the left part if we have even number of elements.
+// ***
 //
-// Note in both questions, the right (tail) is one past the last element we are interested in,
-// and is not included in the mid calculation.
+// Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
+// For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+//
+// Example:
+//
+// Given the sorted linked list: [-10,-3,0,5,9],
+//
+// One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
+//
+//       0
+//      / \
+//    -3   9
+//    /   /
+//  -10  5
+//
+// ***
+//
+// See also 108. Covert Sorted Array to Binary Search Tree. These two questions are essentially the same.
+// The only difference is how you find the mid element of an array and of a linked list.
 //
 // See also 234. Palindrome Linked List for intuition on calculating the mid of a linked list.
 class Solution
@@ -41,7 +55,7 @@ class Solution
 			ListNode* slow = head;
 			ListNode* fast = head;
 
-			while (fast->next != tail && fast->next->next != tail)
+			while (fast != tail && fast->next != tail)
 			{
 				slow = slow->next;
 				fast = fast->next->next;

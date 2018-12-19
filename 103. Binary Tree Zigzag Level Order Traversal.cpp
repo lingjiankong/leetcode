@@ -1,3 +1,23 @@
+// ***
+//
+// Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+// 
+// For example:
+// Given binary tree [3,9,20,null,null,15,7],
+//     3
+//    / \
+//   9  20
+//     /  \
+//    15   7
+// return its zigzag level order traversal as:
+// [
+//   [3],
+//   [20,9],
+//   [15,7]
+// ]
+//
+// ***
+//
 // Just 102. Binary Tree Level Order Traversal with a leftToRight bool.
 // There are methods that you don't need to reverse currentLevel, for example, 
 // change the order of pushing back to nextLevel depending on current leftToRight flag.
@@ -9,37 +29,36 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root)
 	}
 
 	vector<vector<int>> result;
-
-	vector<TreeNode*> currentLevel = {root};
-	vector<TreeNode*> nextLevel = {};
-
+	queue<TreeNode*> nodeQueue; nodeQueue.push(root);
 	bool leftToRight = true;
 
-	while (!currentLevel.empty())
+	while (!nodeQueue.empty())
 	{
-		result.push_back({});
+		vector<int> currentLevel;
+		int currentLevelSize = nodeQueue.size();
 
-		for (auto node : currentLevel)
+		for (int i = 0; i < currentLevelSize; ++i)
 		{
-			result.back().push_back(node->val);
+			TreeNode* node = nodeQueue.front(); nodeQueue.pop();
+			currentLevel.push_back(node->val);
 
 			if (node->left)
 			{
-				nextLevel.push_back(node->left);
+				nodeQueue.push(node->left);
 			}
 			if (node->right)
 			{
-				nextLevel.push_back(node->right);
+				nodeQueue.push(node->right);
 			}
 		}
 
 		if (!leftToRight)
 		{
-			reverse(result.back().begin(), result.back().end());
+			reverse(currentLevel.begin(), currentLevel.end());
 		}
 
-		currentLevel.swap(nextLevel);
-		nextLevel.clear();
+		result.push_back(currentLevel);
+
 		leftToRight = !leftToRight;
 	}
 

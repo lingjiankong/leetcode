@@ -1,4 +1,36 @@
+// ***
+//
+// Given a binary tree, determine if it is height-balanced.
+// For this problem, a height-balanced binary tree is defined as:
+// a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+// 
+// Example 1:
+// 
+// Given the following tree [3,9,20,null,null,15,7]:
+// 
+//     3
+//    / \
+//   9  20
+//     /  \
+//    15   7
+// Return true.
+// 
+// Example 2:
+// 
+// Given the following tree [1,2,2,3,3,null,null,4,4]:
+// 
+//        1
+//       / \
+//      2   2
+//     / \
+//    3   3
+//   / \
+//  4   4
+// Return false.
 // O(nlogn) solution.
+//
+// ***
+//
 // For every node, check the maxDepth of its left and right subtree, see if their difference <= 1.
 // Then, recursively check if its left and right subtrees are balanced.
 class Solution
@@ -35,7 +67,7 @@ class Solution
 
 // O(n) solution.
 // Previously when we check the maxDepth of left and right subtrees using maxDepth(),
-// we are visiting each node and the know the depth information of every subtree within left and right subtrees,
+// we are visiting each node and we know the depth information of every subtree within left and right subtrees,
 // but we didn't compare the depth inside maxDepth(), so why don't we just use that information.
 // Previous solution kind of does two redundant maxDepth calculation.
 class Solution
@@ -47,14 +79,14 @@ class Solution
 		{
 			bool balanced = true;
 
-			maxDepth(root, &balanced);
+			maxDepth(root, balanced);
 
 			return balanced;
 		}
 
 	private:
 
-		int maxDepth(TreeNode* node, bool* balanced)
+		int maxDepth(TreeNode* node, bool& balanced)
 		{
 			if (!node)
 			{
@@ -66,9 +98,9 @@ class Solution
 
 			if (abs(leftDepth - rightDepth) > 1)
 			{
-				*balanced = false;
+				balanced = false;
 
-				// Return whatever to break out of recursive calls.
+				// Return whatever here so we could break out of recursive calls.
 				return -1;
 			}
 
