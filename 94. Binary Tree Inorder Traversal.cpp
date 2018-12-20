@@ -17,11 +17,7 @@
 // ***
 //
 // A "solution template" for both preorder, inorder, and postorder traversal.
-// Iterative. You have to remember it. Read the code and think about it.
-// For in order traversal. The idea is to traverse along the left until the bottom,
-// along the way add all nodes seen to the stack, until you've reached the end,
-// then you pop the node (i.e. the left most element) from stack and add it to mResult.
-// Now you do the same for the right subtree of that node you just popped.
+// There's nothing special about this method. Just memorize it.
 class Solution
 {
 
@@ -36,13 +32,13 @@ class Solution
 				if (currentNode)
 				{
 					mNodeStack.push(currentNode);
-					currentNode = currentNode -> left;
+					currentNode = currentNode->left;
 				}
 				else
 				{
 					TreeNode* node = mNodeStack.top(); mNodeStack.pop();
 					mResult.push_back(node->val);
-					currentNode = node -> right;
+					currentNode = node->right;
 				}
 			}
 

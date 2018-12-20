@@ -1,3 +1,32 @@
+// ***
+//
+// Given a binary search tree and a node in it, find the in-order successor of that node in the BST.
+// Note: If the given node has no in-order successor in the tree, return null.
+// 
+// Example 1:
+// Input: root = [2,1,3], p = 1
+// 
+//   2
+//  / \
+// 1   3
+// 
+// Output: 2
+//
+// Example 2:
+// Input: root = [5,3,6,2,4,null,null,1], p = 6
+// 
+//       5
+//      / \
+//     3   6
+//    / \
+//   2   4
+//  /   
+// 1
+// 
+// Output: null
+//
+// ***
+//
 // This is a good question but not very intuitive to visualize. You might need to draw the tree to understand.
 //
 // Just remember:
@@ -7,29 +36,6 @@
 // to which the subtree p belongs to is that ancestor node's left subtree (first ancestor which "turns right").
 //
 // Note also that the smallest node in a binary search tree is just its left most node.
-//
-// Iteration solution:
-TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p)
-{
-	TreeNode* successor = nullptr;
-
-	while (root)
-	{
-		if (root->val <= p->val)
-		{
-			root = root->right;
-		}
-		else
-		{
-			successor = root;
-			root = root->left;
-		}
-	}
-
-	return successor;
-}
-
-// Same idea as above, if and else swapped, this might be more intuitive.
 //
 // If root->val > p->val, then node p must be in the left subtree of current root, we assign current root to successor,
 // and move current root to its left subtree. Now, keep comparing the value of root and node p.

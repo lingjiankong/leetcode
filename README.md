@@ -61,6 +61,8 @@
 | 280 | Wiggle Sort |
 | 324 | Wiggle Sort II | Exotic
 | 370 | Range Addition |
+| 349 | Intersection of Two Arrays | Basic, Hash table
+| 350 | Intersection of Two Arrays II | Basic, Hash table
 
 ## String
 | ID | Name | Note |
@@ -134,27 +136,25 @@
 | 103 | Binary Tree Zigzag Level Order Traversal |
 | 199 | Binary Tree Right Side View | Basic
 | 98 | Validate Binary Search Tree | Basic
+| 333 | Largest BST Subtree | Basic
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Basic; Memorize
 | 236 | Lowest Common Ancestor of a Binary Tree | Basic; Memorize
 | 108 | Convert Sorted Array to Binary Search Tree | Basic
 | 109 | Convert Sorted List to Binary Search Tree | Basic
-| 173 | Binary Search Tree Iterator |
+| 173 | Binary Search Tree Iterator | Basic, Memorize
 | 230 | Kth Smallest Element in a BST |
-| 297 | Serialize and Deserialize Binary Tree |
-| 285 | Inorder Successor in BST |
-| 270 | Closest Binary Search Tree Value |
-| 272 | Closest Binary Search Tree Value II |
-| 99 | Recover Binary Search Tree	inorder |
-| 156 | Binary Tree Upside Down |
-| 114 | Flatten Binary Tree to Linked List |
-| 255 | Verify Preorder Sequence in Binary Search Tree |
-| 333 | Largest BST Subtree |
+| 297 | Serialize and Deserialize Binary Tree | Basic
+| 285 | Inorder Successor in BST | Hard
+| 270 | Closest Binary Search Tree Value | Basic
+| 272 | Closest Binary Search Tree Value II | Basic
+| 114 | Flatten Binary Tree to Linked List | Basic
+| 255 | Verify Preorder Sequence in Binary Search Tree | Hard
 | 222 | Count Complete Tree Nodes |
-| 105 | Construct Binary Tree from Preorder and Inorder Traversal |
-| 106 | Construct Binary Tree from Inorder and Postorder Traversal |
-| 96 | Unique Binary Search Trees |
+| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Basic
+| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Basic
+| 96 | Unique Binary Search Trees | Basic
 | 95 | Unique Binary Search Trees II |
-| 331 | Verify Preorder Serialization of a Binary Tree |
+| 331 | Verify Preorder Serialization of a Binary Tree | Exotic, Memorize
 
 ## Backtracking
 | ID | Name | Note |
@@ -286,17 +286,42 @@
 | 202 | Happy Number | Basic
 | 263 | Ugly Number | Basic
 | 264 | Ugly Number II | Exotic
-| 313 | Super Ugly Number
-| 306 | Additive Number
-| 172 | Factorial Trailing Zeroes
-| 343 | Integer Break
-| 396 | Rotate Function
-| 390 | Elimination Game
-| 386 | Lexicographical Numbers
-| 357 | Count Numbers with Unique Digits
-| 360 | Sort Transformed Array
-| 397 | Integer Replacement
-| 368 | Largest Divisible Subset
+
+## Binary Search
+278	First Bad Version
+35	Search Insert Position
+33	Search in Rotated Sorted Array
+81	Search in Rotated Sorted Array II
+153	Find Minimum in Rotated Sorted Array
+154	Find Minimum in Rotated Sorted Array II
+162	Find Peak Element
+374	Guess Number Higher or Lower
+34	Search for a Range
+315	Count of Smaller Numbers After Self
+300	Longest Increasing Subsequence
+354	Russian Doll Envelopes
+
+## Stack & Priority Queue
+Stack
+155	Min Stack
+232	Implement Queue using Stacks
+225	Implement Stack using Queues
+150	Evaluate Reverse Polish Notation
+71	Simplify Path
+388	Longest Absolute File Path
+394	Decode String
+224	Basic Calculator
+227	Basic Calculator II
+385	Mini Parser
+84	Largest Rectangle in Histogram
+PriorityQueue
+215	Kth Largest Element in an Array
+347	Top K Frequent Elements
+313	Super Ugly Number	很少考
+373	Find K Pairs with Smallest Sums	很少考
+218	The Skyline Problem
+332	Reconstruct Itinerary
+341	Flatten Nested List Iterator
 
 
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.

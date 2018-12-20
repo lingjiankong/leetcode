@@ -1,5 +1,14 @@
-// Given root of a binary search tree, the smallest element is the left most node.
+// ***
 //
+// Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
+// Calling next() will return the next smallest number in the BST.
+// 
+// Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+//
+// ***
+
+
+// Given root of a binary search tree, the smallest element is the left most node.
 // Given root of a binary search tree, the next element that is bigger than current root is
 // the left most node of right subtree of current root.
 //
@@ -20,8 +29,7 @@ class BSTIterator
 
 		int next()
 		{
-			TreeNode* currentSmallest = mStack.top();
-			mStack.pop();
+			TreeNode* currentSmallest = mStack.top(); mStack.pop();
 
 			pushAllLeftNodes(currentSmallest->right);
 
@@ -40,4 +48,5 @@ class BSTIterator
 				node = node->left;
 			}
 		}
+
 };

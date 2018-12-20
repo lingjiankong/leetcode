@@ -1,3 +1,24 @@
+// ***
+//
+// Given inorder and postorder traversal of a tree, construct the binary tree.
+//
+// Note:
+// You may assume that duplicates do not exist in the tree.
+//
+// For example, given
+//
+// inorder = [9,3,15,20,7]
+// postorder = [9,15,7,20,3]
+// Return the following binary tree:
+//
+//     3
+//    / \
+//   9  20
+//     /  \
+//    15   7
+//
+// ***
+//
 // See also 105. Construct Binary Tree from Preorder and Inorder Traversal.
 // These two are basically the same question.
 //
@@ -15,14 +36,14 @@ class Solution
 
         TreeNode* buildTree(const vector<int>& inorder, const vector<int>& postorder)
         {
-            int postorderLeft = 0, postorderRight = postorder.size();  
-            int inorderLeft = 0, inorderRight =  inorder.size();    
+            int postorderLeft = 0, postorderRight = postorder.size();
+            int inorderLeft = 0, inorderRight =  inorder.size();
 
             return buildTree(postorder, postorderLeft, postorderRight, inorder, inorderLeft, inorderRight);
         }
 
     private:
-        
+
         TreeNode* buildTree(const vector<int>& postorder, int postorderLeft, int postorderRight, const vector<int>& inorder, int inorderLeft, int inorderRight)
         {
             if (postorderLeft >= postorderRight || inorderLeft >= inorderRight)
@@ -43,4 +64,3 @@ class Solution
         }
 
 };
-

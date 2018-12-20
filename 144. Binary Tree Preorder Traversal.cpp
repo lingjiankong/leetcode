@@ -33,12 +33,12 @@ class Solution
 				{
 					mNodeStack.push(currentNode);
 					mResult.push_back(currentNode->val);
-					currentNode = currentNode -> left;
+					currentNode = currentNode->left;
 				}
 				else
 				{
 					TreeNode* node = mNodeStack.top(); mNodeStack.pop();
-					currentNode = node -> right;
+					currentNode = node->right;
 				}
 			}
 
