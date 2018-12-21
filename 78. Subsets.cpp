@@ -28,9 +28,9 @@ class Solution
 
 		vector<vector<int>> subsets(vector<int>& nums)
 		{
-			vector<vector<int>> all;
-			vector<int> current;
 			int startIndex = 0;
+			vector<int> current;
+			vector<vector<int>> all;
 
 			sort(nums.begin(), nums.end());
 

@@ -49,25 +49,25 @@ class Solution
 	
 	private:
 
-		bool backtrack(vector<vector<char>>& board, const string& word, int index, int i, int j)
+		bool backtrack(vector<vector<char>>& board, const string& word, int letterCount, int i, int j)
 		{
-			if (index == word.size())
+			if (letterCount == word.size())
 			{
 				return true;
 			}
 
 			int m = board.size(), n = board[i].size();
-			if (i < 0 || j < 0 || i >= m || j >= n || board[i][j] != word[index])
+			if (i < 0 || j < 0 || i >= m || j >= n || board[i][j] != word[letterCount])
 			{
 				return false;
 			}
 
 			char letter = board[i][j];
 			board[i][j] = '#';
-			bool res = backtrack(board, word, index + 1, i - 1, j) 
-				|| backtrack(board, word, index + 1, i + 1, j)
-				|| backtrack(board, word, index + 1, i, j - 1)
-				|| backtrack(board, word, index + 1, i, j + 1);
+			bool res = backtrack(board, word, letterCount + 1, i - 1, j) 
+				|| backtrack(board, word, letterCount + 1, i + 1, j)
+				|| backtrack(board, word, letterCount + 1, i, j - 1)
+				|| backtrack(board, word, letterCount + 1, i, j + 1);
 			board[i][j] = letter;
 
 			return res;

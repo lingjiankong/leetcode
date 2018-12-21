@@ -22,9 +22,9 @@ class Solution
 
 		vector<vector<int>> combinationSum3(int k, int n)
 		{
-			vector<vector<int>> allCombinations;
-			vector<int> currentCombination;
 			int startNum = 1;
+			vector<int> currentCombination;
+			vector<vector<int>> allCombinations;
 
 			backtrack(k, n, startNum, currentCombination, allCombinations);
 

@@ -31,9 +31,9 @@ class Solution
 
         vector<vector<int>> combinationSum2(vector<int>& candidates, int target)
         {
+            int startIndex = 0;
             vector<int> currentCombination;
             vector<vector<int>> allCombinations;
-            int startIndex = 0;
 
 			sort(candidates.begin(), candidates.end());
 
@@ -59,13 +59,13 @@ class Solution
 					break;
 				}
 
-				if (i > startIndex && candidates[i-1] == candidates[i])
+				if (i > startIndex && candidates[i - 1] == candidates[i])
 				{
 					continue;
 				}
 
                 currentCombination.push_back(candidates[i]);
-                backtrack(candidates, target-candidates[i], i + 1, currentCombination, allCombinations);
+                backtrack(candidates, target - candidates[i], i + 1, currentCombination, allCombinations);
                 currentCombination.pop_back();
             }
         }

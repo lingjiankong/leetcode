@@ -23,7 +23,7 @@
 // because in the for loop for this question we always iterate from start number,
 // all numbers after startNumber is not used.
 //
-// Also note that in the for loop, we the next startNumber is num + 1,
+// Also note that in the for loop, the next startNumber is num + 1,
 // doing so we could avoid same element being used multiple times.
 // startNumber could be all numbers in [1, n].
 class Solution

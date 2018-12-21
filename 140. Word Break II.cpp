@@ -39,8 +39,7 @@
 //
 // ***
 //
-// Recursive solution. This question is hard to understand.
-// Given s, you find the all word s[0, word.size())that is in the dictionary,
+// Recursive solution. Given s, you find the all word s[0, word.size()) that is in the dictionary,
 // then recursively add all sentences composed by s[word.size(), end).
 //
 // wordBreak(catasanddog)

@@ -28,21 +28,20 @@ class Solution
 		{
 			sort(nums.begin(), nums.end());
 			
-			int level = 0;
 			vector<int> current;
 			vector<bool> used(nums.size(), false);
 			vector<vector<int>> all;
 			
-			dfs(nums, level, current, used, all);
+			backtrack(nums, current, used, all);
 
 			return all;
 		}
 
 	private:
 
-		void dfs(vector<int>& nums, int level, vector<int>& current, vector<bool>& used, vector<vector<int>>& all)
+		void backtrack(vector<int>& nums, vector<int>& current, vector<bool>& used, vector<vector<int>>& all)
 		{
-			if (level == nums.size())
+			if (current.size() == nums.size())
 			{
 				all.push_back(current);
 				return;
@@ -62,7 +61,7 @@ class Solution
 
 				used[i] = true;
 				current.push_back(nums[i]);
-				dfs(nums, level + 1, current, used, all);
+				backtrack(nums, current, used, all);
 				current.pop_back();
 				used[i] = false;
 			}

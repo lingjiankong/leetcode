@@ -48,9 +48,9 @@ class Solution
 
 		vector<vector<int>> getFactors(int n)
 		{
+			int startNumber = 2;
 			vector<int> current;
 			vector<vector<int>> all;
-			int startNumber = 2;
 			
 			backtrack(n, startNumber, current, all);
 
@@ -66,7 +66,7 @@ class Solution
 				all.push_back(current);
 			}
 
-			// Why num <= n here? because n might not be the original target so
+			// Why num <= n here? Because during recursive call, n might not be the original target so
 			// we have to consider this number.
 			for (int num = startNumber; num <= n; ++num)
 			{

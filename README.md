@@ -159,26 +159,20 @@
 ## Backtracking
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 77 | Combinations |
-| 46 | Permutations |
-| 47 | Permutations II |
-| 78 | Subsets |
-| 90 | Subsets II |
-| 39 | Combination Sum |
-| 40 | Combination Sum II |
-| 216 | Combination Sum III |
-| 377 | Combination Sum IV |
-| 254 | Factor Combinations |
-| 31 | Next Permutation |
-| 60 | Permutation Sequence |
-| 291 | Word Pattern II |
-| 17 | Letter Combinations of a Phone Number |
-| 320 | Generalized Abbreviation |
-| 93 | Restore IP Addresses |
-| 282 | Expression Add Operators |
+| 46 | Permutations | Basic
+| 47 | Permutations II | Basic
+| 77 | Combinations | Basic
+| 78 | Subsets | Basic
+| 90 | Subsets II | Basic
+| 39 | Combination Sum | Basic
+| 40 | Combination Sum II | Basic
+| 216 | Combination Sum III | Basic
+| 377 | Combination Sum IV | Exotic
+| 254 | Factor Combinations | Basic
+| 17 | Letter Combinations of a Phone Number | Basic
 | 140 | Word Break II |
-| 79 | Word Search
-| 329 | Longest Increasing Path in a Matrix | Hard
+| 79 | Word Search | Basic
+| 329 | Longest Increasing Path in a Matrix | Basic
 
 ## Dynamic Programming
 | ID | Name | Note |
@@ -266,7 +260,6 @@
 | 67 | Add Binary | Basic
 | 415 | Add Strings | Basic
 | 43 | Multiply Strings
-| 69 | Sqrt(x) | TODO: Move to Binary Search Section
 | 367 | Valid Perfect Square
 | 204 | Count Primes
 | 1 | Two Sum | Basic
@@ -286,20 +279,23 @@
 | 202 | Happy Number | Basic
 | 263 | Ugly Number | Basic
 | 264 | Ugly Number II | Exotic
+| 31 | Next Permutation | Memorize
+| 60 | Permutation Sequence | Exotic
 
 ## Binary Search
-278	First Bad Version
-35	Search Insert Position
-33	Search in Rotated Sorted Array
-81	Search in Rotated Sorted Array II
-153	Find Minimum in Rotated Sorted Array
-154	Find Minimum in Rotated Sorted Array II
-162	Find Peak Element
-374	Guess Number Higher or Lower
-34	Search for a Range
-315	Count of Smaller Numbers After Self
-300	Longest Increasing Subsequence
-354	Russian Doll Envelopes
+| 278 | First Bad Version
+| 35 | Search Insert Position | Basic
+| 33 | Search in Rotated Sorted Array | Memorize
+| 81 | Search in Rotated Sorted Array II | Unintuitive, Memorize
+| 153 | Find Minimum in Rotated Sorted Array | Basic
+| 154 | Find Minimum in Rotated Sorted Array II
+| 162 | Find Peak Element
+| 374 | Guess Number Higher or Lower
+| 34 | Search for a Range
+| 315 | Count of Smaller Numbers After Self
+| 300 | Longest Increasing Subsequence
+| 354 | Russian Doll Envelopes
+| 69 | Sqrt(x) |
 
 ## Stack & Priority Queue
 Stack

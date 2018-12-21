@@ -2,7 +2,30 @@
 //
 // Given a set of candidate numbers (candidates) (without duplicates) and a target number (target),
 // find all unique combinations in candidates where the candidate numbers sums to target.
+//
 // The same repeated number may be chosen from candidates unlimited number of times.
+//
+// Note:
+//
+// All numbers (including target) will be positive integers.
+// The solution set must not contain duplicate combinations.
+// Example 1:
+//
+// Input: candidates = [2,3,6,7], target = 7,
+// A solution set is:
+// [
+//   [7],
+//   [2,2,3]
+// ]
+// Example 2:
+//
+// Input: candidates = [2,3,5], target = 8,
+// A solution set is:
+// [
+//   [2,2,2,2],
+//   [2,3,3],
+//   [3,5]
+// ]
 //
 // ***
 //
@@ -11,7 +34,7 @@
 // In this question, when we backtrack, the startIndex = i;
 // In 77, when we backtrack, the startNum = num + 1;
 // This is because we are allowed to use same element multiple times in this question,
-// but we do not allow duplicate numbers to be used in 77. Combinations.
+// but in 77. Combinations, we do not allow duplicate numbers to be used.
 //
 class Solution
 {
@@ -28,7 +51,7 @@ class Solution
 
 			return allCombinations;
 		}
-	
+
 	private:
 
 		void backtrack(vector<int>& candidates, int target, int startIndex, vector<int>& currentCombination, vector<vector<int>>& allCombinations)
@@ -47,7 +70,7 @@ class Solution
 			for (int i = startIndex; i < candidates.size(); ++i)
 			{
 				currentCombination.push_back(candidates[i]);
-				backtrack(candidates, target-candidates[i], i, currentCombination, allCombinations);
+				backtrack(candidates, target - candidates[i], i, currentCombination, allCombinations);
 				currentCombination.pop_back();
 			}
 		}

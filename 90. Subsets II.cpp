@@ -18,7 +18,7 @@
 //
 // ***
 //
-// Only one line difference compare to 78. Subsets.
+// To check for duplicate, you need to sort nums. Otherwise, only one line difference compare to 78. Subsets.
 // See also 40. Combination Sum II. Very similar in the way they get rid of duplicate result.
 //
 // To check for duplicate elements, we add a condition if (i > startIndex && nums[i] == nums[i-1])
@@ -61,4 +61,5 @@ class Solution
                 current.pop_back();
             }
         }
+
 };
