@@ -177,10 +177,10 @@
 ## Dynamic Programming
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 70 | Climbing Stairs |
-| 62 | Unique Paths |
-| 63 | Unique Paths II |
-| 120 | Triangle |
+| 70 | Climbing Stairs | Important
+| 62 | Unique Paths | Important
+| 63 | Unique Paths II | Important
+| 120 | Triangle | Important
 | 279 | Perfect Squares |
 | 139 | Word Break |
 | 375 | Guess Number Higher or Lower II |
