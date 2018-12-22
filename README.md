@@ -285,12 +285,10 @@
 ## Binary Search
 | 278 | First Bad Version
 | 35 | Search Insert Position | Basic
-| 33 | Search in Rotated Sorted Array | Memorize
-| 81 | Search in Rotated Sorted Array II | Unintuitive, Memorize
+| 33 | Search in Rotated Sorted Array | Basic, Memorize
+| 81 | Search in Rotated Sorted Array II | Basic, Memorize
 | 153 | Find Minimum in Rotated Sorted Array | Basic
-| 154 | Find Minimum in Rotated Sorted Array II
-| 162 | Find Peak Element
-| 374 | Guess Number Higher or Lower
+| 154 | Find Minimum in Rotated Sorted Array II | Basic
 | 34 | Search for a Range
 | 315 | Count of Smaller Numbers After Self
 | 300 | Longest Increasing Subsequence

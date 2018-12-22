@@ -22,11 +22,15 @@
 // Altough you do not know where the pivot point is, either left half or right half of the array must be sorted.
 //
 // TODO: Verify if below is true:
+//
 // For these kinds of binary search questions which
-// 1. You need to take the index of left and right i.e. nums[left], nums[right], AND
-// 2. You to squeeze from outer part to inner part,
-// Then you must initialize left = 0 and right = nums.size() - 1 (not nums.size()), because you can't take index on nums when i = nums.size(),
-// If you do above, then the condition should be while (left <= right), because otherwise if nums has size 1 then the while loop will simply not execute.
+//
+// 1. You need to take the index of left and right i.e. left and right serve as indexes, not bounds: nums[left], nums[right]
+// -> Then you must initialize left = 0 and right = nums.size() - 1 (not nums.size()), because you can't take index on nums when i = nums.size(),
+//
+// 2. You are finding an element which might not be in the array (which you need to return -1)
+// -> Then the condition should be while (left <= right), because otherwise if nums has size 1 then the while loop will simply not execute.
+//
 // In all these cases, you can set right = mid instead of right = mid - 1 (In 33. and 81., set right = mid or right = mid - 1 will all pass the OJ)
 int search(vector<int>& nums, int target)
 {
