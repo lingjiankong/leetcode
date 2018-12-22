@@ -292,10 +292,10 @@
 | 162 | Find Peak Element
 | 374 | Guess Number Higher or Lower
 | 34 | Search for a Range
-| 315 | Count of Smaller Numbers After Self
-| 300 | Longest Increasing Subsequence
-| 354 | Russian Doll Envelopes
-| 69 | Sqrt(x) |
+| 315 | Count of Smaller Numbers After Self | Basic
+| 300 | Longest Increasing Subsequence | Basic, Memorize
+| 354 | Russian Doll Envelopes | Basic
+| 69 | Sqrt(x) | Memorize
 
 ## Stack & Priority Queue
 Stack
