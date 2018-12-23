@@ -13,8 +13,8 @@
 // 
 // Input: [2,3,2]
 // Output: 3
-// Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2),
-//              because they are adjacent houses.
+// Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2), because they are adjacent houses.
+//
 // Example 2:
 // 
 // Input: [1,2,3,1]
@@ -29,9 +29,17 @@ class Solution
 
 		int rob(vector<int>& nums)
 		{
-			if (nums.size() <= 1)
+			if (nums.size() == 0)
 			{
-				return nums.empty() ? 0 : nums[0];
+				return 0;
+			}
+			else if (nums.size() == 1)
+			{
+				return nums[0];
+			}
+			else if (nums.size() == 2)
+			{
+				return max(nums[0], nums[1]);
 			}
 
 			return max(rob(nums, 0, nums.size() - 1), rob(nums, 1, nums.size()));
@@ -41,11 +49,6 @@ class Solution
 
 		int rob(vector<int>& nums, int start, int end)
 		{
-			if (end - start <= 1)
-			{
-				return nums[start];
-			}
-
 			vector<int> dp(end);
 			dp[start] = nums[start];
 			dp[start + 1] = max(nums[start], nums[start + 1]);

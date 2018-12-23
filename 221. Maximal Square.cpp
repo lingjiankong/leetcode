@@ -15,11 +15,10 @@
 //
 // ***
 //
-// dp[i][j] the longest edge of the square which bottom right corner isGiven a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
+// dp[i][j] is the longest edge of the square which bottom right corner is at (i, j).
 int maximalSquare(vector<vector<char>>& matrix)
 {
-	// No need to check if matrix[0] is empty because [['1']] is valid.
-	if (matrix.empty())
+	if (matrix.empty() || matrix[0].empty())
 	{
 		return 0;
 	}
@@ -40,7 +39,7 @@ int maximalSquare(vector<vector<char>>& matrix)
 			}
 			else if (matrix[i][j] == '1')
 			{
-				dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1])) + 1;
+				dp[i][j] = min({dp[i-1][j-1], dp[i-1][j], dp[i][j-1]}) + 1;
 			}
 
 			longestEdge = max(longestEdge, dp[i][j]);

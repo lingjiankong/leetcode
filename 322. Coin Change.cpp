@@ -19,7 +19,7 @@
 // ***
 //
 // Set all initial values in dp to amount + 1
-// because number of coins to make changes for money amount n should not be greater than n.
+// because max number of coins to make changes for money amount n should not be greater than n.
 int coinChange(vector<int>& coins, int amount) 
 {
 	vector<int> dp(amount + 1, amount + 1);
