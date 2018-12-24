@@ -277,7 +277,7 @@
 | 81 | Search in Rotated Sorted Array II | Basic, Memorize
 | 153 | Find Minimum in Rotated Sorted Array | Basic
 | 154 | Find Minimum in Rotated Sorted Array II | Basic
-| 34 | Search for a Range
+| 34 | Find First and Last Position of Element in Sorted Array | Star
 | 315 | Count of Smaller Numbers After Self | Basic
 | 300 | Longest Increasing Subsequence | Basic, Memorize
 | 354 | Russian Doll Envelopes | Basic
