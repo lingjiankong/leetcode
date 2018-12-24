@@ -3,7 +3,6 @@
 // Implement int sqrt(int x).
 // 
 // Compute and return the square root of x, where x is guaranteed to be a non-negative integer.
-// 
 // Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
 // 
 // Example 1:
@@ -20,6 +19,9 @@
 // ***
 //
 // Binary search to find the last element that is not greater than the target element.
+//
+// i.e. We want to find the last element such that mid * mid <= x, therefore the target is x / mid
+//
 // In this case, the target element is x / mid, and we want to find the last element that isn't greater than it
 // Hence we return right - 1. If we return right, it is the first element that is greater than target.
 // See a summary of binary search here: http://www.cnblogs.com/grandyang/p/6854825.html

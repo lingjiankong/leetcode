@@ -1,8 +1,36 @@
-// Recursiong with memoization.
+// ***
 //
-// For finding the solution, we check every possible prefix of that string in the dictionary of words,
-// if it is found in the dictionary, then the recursive function is called for the remaining portion of that string.
-// And, if in some function call it is found that the complete string is in dictionary, then it will return true.
+// Given a non-empty string s and a dictionary wordDict containing a list of non-empty words,
+// determine if s can be segmented into a space-separated sequence of one or more dictionary words.
+// 
+// Note:
+// 
+// The same word in the dictionary may be reused multiple times in the segmentation.
+// You may assume the dictionary does not contain duplicate words.
+// Example 1:
+// 
+// Input: s = "leetcode", wordDict = ["leet", "code"]
+// Output: true
+// Explanation: Return true because "leetcode" can be segmented as "leet code".
+// Example 2:
+// 
+// Input: s = "applepenapple", wordDict = ["apple", "pen"]
+// Output: true
+// Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+//              Note that you are allowed to reuse a dictionary word.
+// Example 3:
+// 
+// Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
+// Output: false
+//
+// ***
+//
+// Recursion with memoization.
+//
+// We split a given string at every possible index (startIndex), check if the front portion of that string is in the dictionary,
+// if it is found in the dictionary, then the recursive function is called for the remaining portion of the string.
+// startIndex is where we want to split the string. If startIndex == s.size(),
+// then it means everything before startIndex can be partitioned, so return true.
 // cache[i] stores whether the substring s[0, i) can be partitioned.
 class Solution
 {
@@ -34,11 +62,11 @@ class Solution
 				return cache[startIndex];
 			}
 
-			for (int endIndex = startIndex + 1; endIndex <= s.size(); ++endIndex)
+			for (int i = startIndex + 1; i <= s.size(); ++i)
 			{
-				if (wordSet.count(s.substr(startIndex, endIndex - startIndex)) && wordBreak(endIndex, s, wordSet, cache))
+				if (wordSet.count(s.substr(startIndex, i - startIndex)) && wordBreak(i, s, wordSet, cache))
 				{
-					return cache[endIndex] = true;
+					return cache[i] = true;
 				}
 			}
 
@@ -48,7 +76,7 @@ class Solution
 };
 
 // Dynamic programming solution:
-// We use two index pointers i and j, where i refers to the *length* of the substring (s')
+// We use two index i and j, where i refers to the *length* (i.e. the end position) of the substring (s')
 // considered currently starting from the beginning of s, and j refers to the index partitioning the
 // current substring s' into smaller substring s'[0, j] and s'[j+1, i].
 //

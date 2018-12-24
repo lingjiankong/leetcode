@@ -156,7 +156,7 @@
 | 95 | Unique Binary Search Trees II |
 | 331 | Verify Preorder Serialization of a Binary Tree | Exotic, Memorize
 
-## Backtracking
+## Backtracking, DFS. BFS
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 46 | Permutations | Basic
@@ -170,48 +170,36 @@
 | 377 | Combination Sum IV | Exotic
 | 254 | Factor Combinations | Basic
 | 17 | Letter Combinations of a Phone Number | Basic
-| 140 | Word Break II |
 | 79 | Word Search | Basic
 | 329 | Longest Increasing Path in a Matrix | Basic
+| 200 | Number of Islands | Star
+| 286 | Walls and Gates | Basic
+| 130 | Surrounded Regions | Basic
+| 339 | Nested List Weight Sum | Exotic
+| 364 | Nested List Weight Sum II | Exotic
+| 127 | Word Ladder | Basic
+| 51 | N-Queens | Basic
+| 52 | N-Queens II | Basic
 
 ## Dynamic Programming
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 70 | Climbing Stairs |
-| 62 | Unique Paths |
-| 63 | Unique Paths II |
-| 120 | Triangle |
-| 279 | Perfect Squares |
-| 139 | Word Break |
-| 375 | Guess Number Higher or Lower II |
-| 312 | Burst Balloons |
-| 322 | Coin Change |
-| 256 | Paint House |
-| 265 | Paint House II |
-| 64 | Minimum Path Sum |
-| 72 | Edit Distance |
-| 97 | Interleaving String |
-| 174 | Dungeon Game |
-| 221 | Maximal Square |
-| 85 | Maximal Rectangle |
-| 363 | Max Sum of Rectangle No Larger Than K |
-| 198 | House Robber |
-| 213 | House Robber II |
-| 337 | House Robber III |
-| 10 | Regular Expression Matching |
-| 44 | Wildcard Matching |
-
-## DFS & BFS
-| ID | Name | Note |
-|:---:|:---:|:---:|
-| 200 | Number of Islands |
-| 286 | Walls and Gates |
-| 130 | Surrounded Regions |
-| 339 | Nested List Weight Sum | Exotic
-| 364 | Nested List Weight Sum II | Exotic
-| 127 | Word Ladder |
-| 51 | N-Queens |
-| 52 | N-Queens II |
+| 70 | Climbing Stairs | Star
+| 62 | Unique Paths | Star
+| 63 | Unique Paths II | Star
+| 120 | Triangle | Star
+| 279 | Perfect Squares | Star
+| 139 | Word Break | Star
+| 140 | Word Break II | Basic
+| 322 | Coin Change | Basic
+| 256 | Paint House | Basic
+| 265 | Paint House II | Basic
+| 64 | Minimum Path Sum | Basic
+| 72 | Edit Distance | Basic, Memorize
+| 221 | Maximal Square | Basic
+| 198 | House Robber | Star
+| 213 | House Robber II | Basic
+| 337 | House Robber III | Basic
 
 ## LinkedList
 | ID | Name | Note |
@@ -231,7 +219,7 @@
 | 2 | Add Two Numbers | Basic
 | 160 | Intersection of Two Linked Lists |
 | 21 | Merge Two Sorted Lists |
-| 143 | Reorder List | Important
+| 143 | Reorder List | Star
 | 148 | Sort List |
 | 61 | Rotate List |
 | 86 | Partition List |
@@ -290,10 +278,10 @@
 | 153 | Find Minimum in Rotated Sorted Array | Basic
 | 154 | Find Minimum in Rotated Sorted Array II | Basic
 | 34 | Search for a Range
-| 315 | Count of Smaller Numbers After Self
-| 300 | Longest Increasing Subsequence
-| 354 | Russian Doll Envelopes
-| 69 | Sqrt(x) |
+| 315 | Count of Smaller Numbers After Self | Basic
+| 300 | Longest Increasing Subsequence | Basic, Memorize
+| 354 | Russian Doll Envelopes | Basic
+| 69 | Sqrt(x) | Memorize
 
 ## Stack & Priority Queue
 Stack

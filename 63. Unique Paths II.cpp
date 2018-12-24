@@ -2,7 +2,7 @@
 //
 // A robot is located at the top-left corner of a m x n grid.
 // The robot can only move either down or right at any point in time. 
-// he robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+// he robot is trying to reach the bottom-right corner of the grid.
 // Now consider if some obstacles are added to the grids. How many unique paths would there be?
 //
 // ***
@@ -20,6 +20,7 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid)
 
 	vector<vector<int>> dp(m, vector<int>(n, 0));
 
+	// Initialize first column to 1 until obstacle.
 	for (int i = 0; i < m; ++i)
 	{
 		if (obstacleGrid[i][0])
@@ -30,6 +31,7 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid)
 		dp[i][0] = 1;
 	}
 
+	// Initialize first row to 1 until obstacle.
 	for (int j = 0; j < n; ++j)
 	{
 		if (obstacleGrid[0][j])

@@ -68,8 +68,8 @@ class Solution
 	private:
 
 		// Returns all sentences (in terms of vector<string>) that can be formed be string s.
-		vector<string> wordBreak(string s, vector<string>& wordDict, unordered_map<string, vector<string>>& cache) {
-
+		vector<string> wordBreak(string s, vector<string>& wordDict, unordered_map<string, vector<string>>& cache)
+		{
 			if (cache.count(s))
 			{
 				return cache[s];
@@ -88,9 +88,9 @@ class Solution
 			{
 				if (s.substr(0, word.size()) == word)
 				{
-					vector<string> rem = wordBreak(s.substr(word.size()), wordDict, cache);
+					vector<string> remain = wordBreak(s.substr(word.size()), wordDict, cache);
 
-					for (string sentence : rem)
+					for (string sentence : remain)
 					{
 						sentences.push_back(word + (sentence.empty() ? "" : " ") + sentence);
 					}

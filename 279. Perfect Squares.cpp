@@ -16,15 +16,13 @@
 //
 // ***
 //
-// DP solution is not the most efficient one, but the math solution is confusing.
-//
 int numSquares(int n)
 {
 	// dp[i]: the least number of perfect square numbers which sum to i.
 	vector<int> dp(n + 1, INT_MAX);
 	dp[0] = 0;
 
-	for (int i = 0; i <= n; ++i)
+	for (int i = 1; i <= n; ++i)
 	{
 		// For number i, traverse through all perfect square numbers whose square is less than or equal to i.
 		// For each i, it must be the sum of some number (i - j * j) and a perfect square number (j * j).
