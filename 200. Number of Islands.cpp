@@ -51,8 +51,8 @@ class Solution
 					}
 				}
 			}
+
 			return totalIslands; 
-			
 		}
 
 	private:

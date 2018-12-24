@@ -156,7 +156,7 @@
 | 95 | Unique Binary Search Trees II |
 | 331 | Verify Preorder Serialization of a Binary Tree | Exotic, Memorize
 
-## Backtracking
+## Backtracking, DFS. BFS
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 46 | Permutations | Basic
@@ -172,6 +172,14 @@
 | 17 | Letter Combinations of a Phone Number | Basic
 | 79 | Word Search | Basic
 | 329 | Longest Increasing Path in a Matrix | Basic
+| 200 | Number of Islands | Star
+| 286 | Walls and Gates | Basic
+| 130 | Surrounded Regions | Basic
+| 339 | Nested List Weight Sum | Exotic
+| 364 | Nested List Weight Sum II | Exotic
+| 127 | Word Ladder | Basic
+| 51 | N-Queens | Basic
+| 52 | N-Queens II | Basic
 
 ## Dynamic Programming
 | ID | Name | Note |
@@ -192,18 +200,6 @@
 | 198 | House Robber | Star
 | 213 | House Robber II | Basic
 | 337 | House Robber III | Basic
-
-## DFS & BFS
-| ID | Name | Note |
-|:---:|:---:|:---:|
-| 200 | Number of Islands |
-| 286 | Walls and Gates |
-| 130 | Surrounded Regions |
-| 339 | Nested List Weight Sum | Exotic
-| 364 | Nested List Weight Sum II | Exotic
-| 127 | Word Ladder |
-| 51 | N-Queens |
-| 52 | N-Queens II |
 
 ## LinkedList
 | ID | Name | Note |

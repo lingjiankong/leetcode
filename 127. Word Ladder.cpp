@@ -59,20 +59,20 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList)
 
 		// For all words in current level
 		int currentLevelSize = wordQueue.size();
-		for (int k = currentLevelSize; k > 0; k--)
+		for (int k = 0; k < currentLevelSize; ++k)
 		{				 
 			string word = wordQueue.front(); wordQueue.pop();
+
+			// Found the solution
+			if (word == endWord)
+			{
+				return level;
+			}
 
 			// For every letter in word
 			for (int i = 0; i < word.size(); i++)
 			{				 
 				char letter = word[i];
-
-				// Found the solution
-				if (word == endWord)
-				{
-					return level;
-				}
 
 				// For every letter in word, traverse 'a' -> 'z'.
 				for (int j = 'a'; j <= 'z'; j++)
