@@ -33,7 +33,7 @@ ListNode* rotateRight(ListNode* head, int k)
 	int listLength = 1;
 	ListNode* current = head;
 
-	// Find the length of the linked list, hook the tail element with head.
+	// Find the length of the linked list, hook the tail element with head. Now it forms a circle.
 	while (current->next)
 	{
 		++listLength;
@@ -47,7 +47,7 @@ ListNode* rotateRight(ListNode* head, int k)
 	{
 		current = current->next;
 	}
-	ListNode *newHead = current->next;
+	ListNode* newHead = current->next;
 	current->next = nullptr;
 
 	return newHead;

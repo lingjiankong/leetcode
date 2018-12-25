@@ -23,21 +23,26 @@ bool isPalindrome(ListNode* head)
 
 	// Find middle element
 	// slow is now the middle element:
+	//
+	// If the while condition is while (fast->next && fast->next->next):
 	// If the list is 1-2-3-4-5 the middle element is 3
 	// If the list is 1-2-3-4 the middle element is 2
+	// i.e. the mid element will be on the left part if even number of elements.
 	//
-	// If the while condition was while (fast && fast->next)
-	// then the mid element will be on the right part if even number of elements.
+	// If the while condition is while (fast && fast->next)
+	// If the list is 1-2-3-4-5 the middle element is 3
+	// If the list is 1-2-3-4 the middle element is 3
+	// i.e. the mid element will be on the right part if even number of elements.
 	ListNode* slow = head;
 	ListNode* fast = head;
-	while (fast->next && fast->next->next)
+	while (fast && fast->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
 	}
 
 	// Reverse second half of the linkedlist
-	ListNode* head2 = slow->next; // head of second half
+	ListNode* head2 = slow; // head of second half
 
 	ListNode* prevNode = nullptr;
 	while (head2)

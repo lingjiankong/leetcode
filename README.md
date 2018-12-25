@@ -204,26 +204,26 @@
 ## LinkedList
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 206 | Reverse Linked List | Basic
+| 206 | Reverse Linked List | Star
 | 92 | Reverse Linked List II | Hard
-| 141 | Linked List Cycle |
-| 142 | Linked List Cycle II |
-| 234 | Palindrome Linked List |
-| 24 | Swap Nodes in Pairs |
-| 237 | Delete Node in a Linked List |
-| 19 | Remove Nth Node From End of List |
-| 203 | Remove Linked List Elements |
-| 83 | Remove Duplicates from Sorted List |
+| 141 | Linked List Cycle | Star
+| 142 | Linked List Cycle II | Basic, Memorize
+| 234 | Palindrome Linked List | Star
+| 24 | Swap Nodes in Pairs | Basic
+| 237 | Delete Node in a Linked List | Basic
+| 19 | Remove Nth Node From End of List | Basic, Memorize
+| 203 | Remove Linked List Elements | Star
+| 83 | Remove Duplicates from Sorted List | Basic
 | 82 | Remove Duplicates from Sorted List II | Hard
-| 369 | Plus One Linked List |
-| 2 | Add Two Numbers | Basic
-| 160 | Intersection of Two Linked Lists |
-| 21 | Merge Two Sorted Lists |
-| 143 | Reorder List | Star
-| 148 | Sort List |
-| 61 | Rotate List |
-| 86 | Partition List |
-| 23 | Merge k Sorted Lists | Basic
+| 369 | Plus One Linked List | Basic
+| 2 | Add Two Numbers | Star
+| 160 | Intersection of Two Linked Lists | Basic
+| 21 | Merge Two Sorted Lists | Star
+| 143 | Reorder List | Basic
+| 148 | Sort List | Star
+| 61 | Rotate List | Basic
+| 86 | Partition List | Star
+| 23 | Merge k Sorted Lists | Star
 
 ## Matrix
 | ID | Name | Note |

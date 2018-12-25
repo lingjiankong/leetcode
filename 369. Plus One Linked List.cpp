@@ -30,7 +30,7 @@ class Solution
 
 			if (finalCarry == 1)
 			{
-				ListNode *newHead = new ListNode(1);
+				ListNode* newHead = new ListNode(1);
 				newHead->next = head;
 				return newHead;
 			}

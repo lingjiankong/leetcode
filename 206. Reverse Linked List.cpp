@@ -25,7 +25,7 @@ ListNode* reverseList(ListNode* head)
 	return prevNode;
 }
 
-// Recursive. Harder to understand.
+// Recursive. Harder to understand. No need to memorize it for now.
 // Visualize the case when you've reached the last node.
 ListNode* reverseList(ListNode* head)
 {

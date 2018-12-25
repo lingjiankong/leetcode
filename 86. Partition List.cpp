@@ -34,8 +34,8 @@ ListNode* partition(ListNode *head, int x)
 		head = head->next;
 	}
 
-	p2->next = nullptr;
 	p1->next = dummyRight.next;
+	p2->next = nullptr;
 
 	return dummyLeft.next;
 }

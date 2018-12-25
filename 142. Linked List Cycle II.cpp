@@ -26,7 +26,7 @@ ListNode *detectCycle(ListNode *head)
 		}
 	}
 
-	// There is no cycle in this case.
+	// fast has reached the end. There is no cycle in this case.
 	if (!fast || !fast->next)
 	{
 		return nullptr;

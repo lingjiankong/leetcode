@@ -17,7 +17,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n)
 		return nullptr;
 	}
 
-	// Pre is the position of the node we want to remove.
+	// pre->next is the node we would like to remove.
 	ListNode *pre = head, *cur = head;
 
 	for (int i = 0; i < n; ++i)
@@ -25,13 +25,16 @@ ListNode* removeNthFromEnd(ListNode* head, int n)
 		cur = cur->next;
 	}
 
-	// cur has reached on past the next element (thee nullptr)
-	// In this case we need to remove the first element in the LinkedList, so simply return the second element.
+	// cur has reached one past the last element (the nullptr)
+	// In this case number n given is the same as number of nodes in the linked list.
+	// which means we need to remove the first element in the LinkedList, so simply return the second element as the new head.
 	if (!cur)
 	{
 		return head->next;
 	}
 
+	// Otherwise, increment pre and cur together to the right,
+	// until cur->next == nullptr, at this point pre->next reached the element which we want to remove.
 	while (cur->next)
 	{
 		cur = cur->next;

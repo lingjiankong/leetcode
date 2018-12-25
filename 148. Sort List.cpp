@@ -26,7 +26,6 @@ class Solution
 			}
 
 			ListNode* mid = findMiddle(head);
-			
 			ListNode* rightHead = mid->next;
 			mid->next = nullptr;
 

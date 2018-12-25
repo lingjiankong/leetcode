@@ -14,6 +14,8 @@
 //
 // ***
 //
+// You don't have to add every single element to the priority_queue at the same time.
+// Just add all head elements to the priority_queue initially is fine.
 ListNode* mergeKLists(vector<ListNode*>& lists)
 {
 	// Want the smallest element to have the highest priority
@@ -36,13 +38,13 @@ ListNode* mergeKLists(vector<ListNode*>& lists)
 	while (!pq.empty())
 	{
 		ListNode* node = pq.top(); pq.pop();	
+		current->next = node;
 
 		if (node->next)
 		{
 			pq.push(node->next);
 		}
 
-		current->next = node;
 		current = current->next;
 	}
 
