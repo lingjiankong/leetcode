@@ -33,7 +33,6 @@
 | 309 | Best Time to Buy and Sell Stock with Cooldown | Basic
 | 714 | Best Time to Buy and Sell Stock with Transaction Fee | Basic
 | 11 | Container With Most Water | Basic
-| 42 | Trapping Rain Water | Basic
 | 334 | Increasing Triplet Subsequence |
 | 128 | Longest Consecutive Sequence |
 | 164 | Maximum Gap Bucket | Hard
@@ -269,6 +268,9 @@
 | 264 | Ugly Number II | Exotic
 | 31 | Next Permutation | Memorize
 | 60 | Permutation Sequence | Exotic
+| 224 | Basic Calculator | See 772
+| 227 | Basic Calculator II | See 772
+| 772 | Basic Calculator III | Basic, Memorize
 
 ## Binary Search
 | 278 | First Bad Version
@@ -284,26 +286,19 @@
 | 69 | Sqrt(x) | Memorize
 
 ## Stack & Priority Queue
-Stack
-155	Min Stack
-232	Implement Queue using Stacks
-225	Implement Stack using Queues
-150	Evaluate Reverse Polish Notation
-71	Simplify Path
-388	Longest Absolute File Path
-394	Decode String
-224	Basic Calculator
-227	Basic Calculator II
-385	Mini Parser
-84	Largest Rectangle in Histogram
-PriorityQueue
-215	Kth Largest Element in an Array
-347	Top K Frequent Elements
-313	Super Ugly Number	很少考
-373	Find K Pairs with Smallest Sums	很少考
-218	The Skyline Problem
-332	Reconstruct Itinerary
-341	Flatten Nested List Iterator
+| 155 | Min Stack | Basic
+| 232 | Implement Queue using Stacks | Basic
+| 225 | Implement Stack using Queues | Basic
+| 150 | Evaluate Reverse Polish Notation | Star
+| 42 | Trapping Rain Water | Basic
+| 84 | Largest Rectangle in Histogram
+| 215 | Kth Largest Element in an Array
+| 347 | Top K Frequent Elements
+| 313 | Super Ugly Number	很少考
+| 373 | Find K Pairs with Smallest Sums	很少考
+| 218 | The Skyline Problem
+| 332 | Reconstruct Itinerary
+| 341 | Flatten Nested List Iterator
 
 
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
