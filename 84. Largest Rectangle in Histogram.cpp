@@ -32,10 +32,16 @@ int largestRectangleArea(vector<int>& heights)
 			// Index of current highest histogram.
 			int currentHeightestIndex = heightStack.top(); heightStack.pop();	
 		
+			// Why i - heightStack.top() - 1?
+			// Say now i = 18 and heights[18] is very small, you entered the else loop
+			// you've just popped the currentHeightestIndex (currentHeightestIndex = 17)
+			// Here you top the remaining height stack (heightStack.top() = 16)
+			// Obviously, the width of the rectangle represented by heights[currentHeightestIndex] is 18 - 16 - 1 = 1.
 			int rectangleWidth = heightStack.empty() ? i : i - heightStack.top() - 1;
 
-			int currentArea = heights[currentHeightestIndex] * rectangleWidth;
+			int rectangleHeight = heights[currentHeightestIndex];
 
+			int currentArea = rectangleHeight * rectangleWidth;
 			maxArea = max(maxArea, currentArea);
 		}
 	}

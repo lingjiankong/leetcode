@@ -120,12 +120,12 @@ int trap(vector<int>& height)
 				continue;	
 			}
 
-			int rectangleHeight = min(height[i], height[heightStack.top()]) - height[currentValleyIndex];
-
 			// i is the index of right bar.
 			// The valley has already been popped.
 			// Current top of the stack is the index of left bar.
 			int rectangleWidth = i - heightStack.top() - 1;
+
+			int rectangleHeight = min(height[i], height[heightStack.top()]) - height[currentValleyIndex];
 
 			totalWater += rectangleHeight * rectangleWidth;
 		}

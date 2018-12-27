@@ -33,7 +33,6 @@
 | 309 | Best Time to Buy and Sell Stock with Cooldown | Basic
 | 714 | Best Time to Buy and Sell Stock with Transaction Fee | Basic
 | 11 | Container With Most Water | Basic
-| 334 | Increasing Triplet Subsequence |
 | 128 | Longest Consecutive Sequence |
 | 164 | Maximum Gap Bucket | Hard
 | 287 | Find the Duplicate Number |
@@ -62,6 +61,9 @@
 | 370 | Range Addition |
 | 349 | Intersection of Two Arrays | Basic, Hash table
 | 350 | Intersection of Two Arrays II | Basic, Hash table
+| 215 | Kth Largest Element in an Array | Star, Memorize, Quick Sort
+| 334 | Increasing Triplet Subsequence | Star
+| 414 | Third Maximum Number | Basic
 
 ## String
 | ID | Name | Note |
@@ -199,6 +201,7 @@
 | 198 | House Robber | Star
 | 213 | House Robber II | Basic
 | 337 | House Robber III | Basic
+| 313 | Super Ugly Number
 
 ## LinkedList
 | ID | Name | Note |
@@ -290,21 +293,23 @@
 | 232 | Implement Queue using Stacks | Basic
 | 225 | Implement Stack using Queues | Basic
 | 150 | Evaluate Reverse Polish Notation | Star
-| 42 | Trapping Rain Water | Basic
-| 84 | Largest Rectangle in Histogram
-| 215 | Kth Largest Element in an Array
-| 347 | Top K Frequent Elements
-| 313 | Super Ugly Number	很少考
+| 42 | Trapping Rain Water | Star
+| 84 | Largest Rectangle in Histogram | Star, Memorize
+| 347 | Top K Frequent Elements | Star
+| 451 | Sort Characters By Frequency | Basic
+
 | 373 | Find K Pairs with Smallest Sums	很少考
 | 218 | The Skyline Problem
 | 332 | Reconstruct Itinerary
 | 341 | Flatten Nested List Iterator
 
 
+
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
 **Notation**:
-- Basic: Well designed questions so important that you must know.
+- Star: Basic questions that you'd better memorize.
+- Basic: Good and well designed questions. You should understand them fully as well.
 - Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over.
 - Hard: Hard to understand questions. Should be skipped during a fast go-over. Don't spend too much time on it.
 - Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here unless you have plenty.
