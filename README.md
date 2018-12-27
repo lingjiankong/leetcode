@@ -45,7 +45,6 @@
 | 252 | Meeting Rooms | Basic
 | 253 | Meeting Rooms II | Basic
 | 239 | Sliding Window Maximum | Basic
-| 295 | Find Median from Data Stream | Basic
 | 53 | Maximum Subarray | Basic
 | 152 | Maximum Product Subarray | Basic
 | 325 | Maximum Size Subarray Sum Equals k | Basic
@@ -297,11 +296,69 @@
 | 84 | Largest Rectangle in Histogram | Star, Memorize
 | 347 | Top K Frequent Elements | Star
 | 451 | Sort Characters By Frequency | Basic
+| 295 | Find Median from Data Stream | Star
+| 373 | Find K Pairs with Smallest Sums | Star
 
-| 373 | Find K Pairs with Smallest Sums	很少考
-| 218 | The Skyline Problem
-| 332 | Reconstruct Itinerary
-| 341 | Flatten Nested List Iterator
+## Bit Manipulation
+136	Single Number | Basic, Memorize
+389	Find the Difference | Basic, Memorize
+268	Missing Number | Basic
+191	Number of 1 Bits | Basic
+190	Reverse Bits | Basic
+
+## Topological Sort
+207	Course Schedule
+210	Course Schedule II
+269	Alien Dictionary
+
+1.3.14. Random
+384	Shuffle an Array
+398	Random Pick Index
+382	Linked List Random Node
+380	Insert Delete GetRandom O(1)
+381	Insert Delete GetRandom O(1) - Duplicates allowed
+138	Copy List with Random Pointer
+
+1.3.15. Graph
+133	Clone Graph
+399	Evaluate Division
+310	Minimum Height Trees
+335	Self Crossing	很少考
+149	Max Points on a Line
+356	Line Reflection	很少考
+391	Perfect Rectangle	很少考
+223	Rectangle Area	很少考
+
+1.3.16. Union FInd
+261	Graph Valid Tree
+323	Number of Connected Components in an Undirected Graph
+305	Number of Islands II
+
+1.3.17. Trie
+211	Add and Search Word - Data structure design
+208	Implement Trie (Prefix Tree)
+212	Word Search II
+
+1.3.18. Design
+359	Logger Rate Limiter
+346	Moving Average from Data Stream	Sliding Window
+362	Design Hit Counter
+281	Zigzag Iterator
+284	Peeking Iterator
+251	Flatten 2D Vector
+288	Unique Word Abbreviation
+170	Two Sum III - Data structure design
+348	Design Tic-Tac-Toe
+379	Design Phone Directory
+353	Design Snake Game
+146	LRU Cache
+355	Design Twitter
+303	Range Sum Query - Immutable
+304	Range Sum Query 2D - Immutable
+307	Range Sum Query - Mutable	Binary Index Tree
+308	Range Sum Query 2D - Mutable	Binary Index Tree
+
+
 
 
 
