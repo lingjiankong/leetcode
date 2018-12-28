@@ -20,6 +20,7 @@
 //
 // ***
 //
+// Just memorize it:
 // Start with the upper right element, if target element is greater than it, search next row;
 // If target element is smaller than it, search previous element on the same row.
 bool searchMatrix(vector<vector<int>>& matrix, int target)
@@ -37,11 +38,11 @@ bool searchMatrix(vector<vector<int>>& matrix, int target)
 
 	while (i < m && j >= 0)
 	{
-		if (target > matrix[i][j])
+		if (matrix[i][j] < target)
 		{
 			++i;
 		}
-		else if (target < matrix[i][j])
+		else if (matrix[i][j] > target)
 		{
 			--j;
 		}

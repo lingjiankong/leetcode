@@ -54,6 +54,7 @@ void setZeroes(vector<vector<int>>& matrix)
 		if (matrix[0][i] == 0)
 		{
 			rowZero = true;
+			break;
 		}
 	} 
 	for (int i = 0; i < m; ++i)
@@ -61,6 +62,7 @@ void setZeroes(vector<vector<int>>& matrix)
 		if (matrix[i][0] == 0)
 		{
 			colZero = true;
+			break;
 		}
 	}
 

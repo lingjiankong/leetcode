@@ -172,6 +172,7 @@
 | 17 | Letter Combinations of a Phone Number | Basic
 | 79 | Word Search | Basic
 | 329 | Longest Increasing Path in a Matrix | Basic
+| 489 | Robot Room Cleaner | Star, Memorize
 | 200 | Number of Islands | Star
 | 286 | Walls and Gates | Basic
 | 130 | Surrounded Regions | Basic
@@ -201,6 +202,7 @@
 | 213 | House Robber II | Basic
 | 337 | House Robber III | Basic
 | 313 | Super Ugly Number
+| 361 | Bomb Enemy | Basic
 
 ## LinkedList
 | ID | Name | Note |
@@ -229,36 +231,32 @@
 ## Matrix
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 48 | Rotate Image
-| 54 | Spiral Matrix
-| 59 | Spiral Matrix II
-| 73 | Set Matrix Zeroes
-| 311 | Sparse Matrix Multiplication | Basic
-| 378 | Kth Smallest Element in a Sorted Matrix
-| 74 | Search a 2D Matrix | Basic
-| 240 | Search a 2D Matrix II
-| 361 | Bomb Enemy
-| 36 | Valid Sudoku
+| 48 | Rotate Image | Normal, Memorize
+| 54 | Spiral Matrix | Basic
+| 59 | Spiral Matrix II | Basic
+| 73 | Set Matrix Zeroes | Star
+| 311 | Sparse Matrix Multiplication | Star, Memorize
+| 36 | Valid Sudoku | Normal, Memorize
 
 ## Math
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 7 | Reverse Integer | Exotic
-| 66 | Plus One
-| 258 | Add Digits
-| 67 | Add Binary | Basic
-| 415 | Add Strings | Basic
-| 43 | Multiply Strings
-| 367 | Valid Perfect Square
-| 204 | Count Primes
-| 1 | Two Sum | Basic
-| 167 | Two Sum II - Input array is sorted | Basic
-| 170 | Two Sum III - Data structure design | Basic
-| 653 | Two Sum IV - Input is a BST | Basic
-| 15 | 3Sum | Basic
-| 16 | 3Sum Closest | Basic
+| 7 | Reverse Integer | Normal
+| 66 | Plus One | Basic
+| 258 | Add Digits | Basic
+| 415 | Add Strings | Star
+| 67 | Add Binary | Star
+| 43 | Multiply Strings | Normal, Memorize
+| 367 | Valid Perfect Square | Normal
+| 204 | Count Primes | Basic
+| 1 | Two Sum | Star
+| 167 | Two Sum II - Input array is sorted | Star
+| 170 | Two Sum III - Data structure design | Star
+| 653 | Two Sum IV - Input is a BST | Star
+| 15 | 3Sum | Star
+| 16 | 3Sum Closest | Star
 | 259 | 3Sum Smaller
-| 18 | 4Sum | Basic
+| 18 | 4Sum | Star
 | 454 | 4Sum II | Basic
 | 231 | Power of Two | Basic
 | 326 | Power of Three | Basic
@@ -275,6 +273,8 @@
 | 772 | Basic Calculator III | Basic, Memorize
 
 ## Binary Search
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 278 | First Bad Version
 | 35 | Search Insert Position | Basic
 | 33 | Search in Rotated Sorted Array | Basic, Memorize
@@ -286,8 +286,12 @@
 | 300 | Longest Increasing Subsequence | Basic, Memorize
 | 354 | Russian Doll Envelopes | Basic
 | 69 | Sqrt(x) | Memorize
+| 74 | Search a 2D Matrix | Star
+| 240 | Search a 2D Matrix II | Memorize
 
-## Stack & Priority Queue
+## Stack, Queue & Priority Queue
+| ID | Name | Note |
+|:---:|:---:|:---:|
 | 155 | Min Stack | Basic
 | 232 | Implement Queue using Stacks | Basic
 | 225 | Implement Stack using Queues | Basic
@@ -298,8 +302,11 @@
 | 451 | Sort Characters By Frequency | Basic
 | 295 | Find Median from Data Stream | Star
 | 373 | Find K Pairs with Smallest Sums | Star
+| 378 | Kth Smallest Element in a Sorted Matrix | Star
 
 ## Bit Manipulation
+| ID | Name | Note |
+|:---:|:---:|:---:|
 136	Single Number | Basic, Memorize
 389	Find the Difference | Basic, Memorize
 268	Missing Number | Basic
@@ -307,11 +314,15 @@
 190	Reverse Bits | Basic
 
 ## Topological Sort
+| ID | Name | Note |
+|:---:|:---:|:---:|
 207	Course Schedule
 210	Course Schedule II
 269	Alien Dictionary
 
 1.3.14. Random
+| ID | Name | Note |
+|:---:|:---:|:---:|
 384	Shuffle an Array
 398	Random Pick Index
 382	Linked List Random Node
@@ -320,6 +331,8 @@
 138	Copy List with Random Pointer
 
 1.3.15. Graph
+| ID | Name | Note |
+|:---:|:---:|:---:|
 133	Clone Graph
 399	Evaluate Division
 310	Minimum Height Trees
@@ -330,16 +343,22 @@
 223	Rectangle Area	很少考
 
 1.3.16. Union FInd
+| ID | Name | Note |
+|:---:|:---:|:---:|
 261	Graph Valid Tree
 323	Number of Connected Components in an Undirected Graph
 305	Number of Islands II
 
 1.3.17. Trie
+| ID | Name | Note |
+|:---:|:---:|:---:|
 211	Add and Search Word - Data structure design
 208	Implement Trie (Prefix Tree)
 212	Word Search II
 
 1.3.18. Design
+| ID | Name | Note |
+|:---:|:---:|:---:|
 359	Logger Rate Limiter
 346	Moving Average from Data Stream	Sliding Window
 362	Design Hit Counter

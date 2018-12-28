@@ -40,7 +40,7 @@ vector<int> plusOne(vector<int>& digits)
 		carry = sum / 10;
 	}
 
-	// For example, 9999 -> 10000
+	// Deal with final carry. For example, 9999 -> 10000
 	if (carry == 1)
 	{
 		digits.insert(digits.begin(), 1);

@@ -19,7 +19,7 @@
 // ***
 //
 // The solution is long but intuitive:
-// Keep 4 dp arrays which stores the number of enemy to each side at position (i, j).
+// Using DP, keep four 2D arrays which stores the number of enemy to each side at position (i, j).
 int maxKilledEnemies(vector<vector<char>>& grid)
 {
 	if (grid.empty() || grid[0].empty())
@@ -35,11 +35,13 @@ int maxKilledEnemies(vector<vector<char>>& grid)
 
 	for (int i = 0; i < m; ++i)
 	{
+		// Each row from left to right
 		for (int j = 0; j < n; ++j)
 		{
 			int val = (j == 0 || grid[i][j] == 'W') ? 0 : leftToRight[i][j - 1];
 			leftToRight[i][j] = grid[i][j] == 'E' ? val + 1 : val;
 		}
+		// Each row from right to left
 		for (int j = n - 1; j >= 0; --j)
 		{
 			int val = (j == n - 1 || grid[i][j] == 'W') ? 0 : rightToLeft[i][j + 1];
@@ -48,11 +50,13 @@ int maxKilledEnemies(vector<vector<char>>& grid)
 	}
 	for (int j = 0; j < n; ++j)
 	{
+		// Each column from top to bottom
 		for (int i = 0; i < m; ++i)
 		{
 			int val = (i == 0 || grid[i][j] == 'W') ? 0 : topToBottom[i - 1][j];
 			topToBottom[i][j] = grid[i][j] == 'E' ? val + 1 : val;
 		}
+		// Each bottom from bottom to top
 		for (int i = m - 1; i >= 0; --i)
 		{
 			int val = (i == m - 1 || grid[i][j] == 'W') ? 0 : bottomToTop[i + 1][j];

@@ -36,7 +36,7 @@ bool isPerfectSquare(int num)
 		return true;
 	}
 
-	long x = num / 2, t = x * x;
+	long x = num / 2;
 
 	while (x * x > num)
 	{

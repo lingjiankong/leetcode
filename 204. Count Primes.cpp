@@ -1,6 +1,6 @@
 // ***
 //
-// Count the number of prime numbers less than a non-negative number, n.
+// Count the number of prime numbers less than a non-negative number n.
 // 
 // Example:
 // 
@@ -16,6 +16,7 @@
 int countPrimes(int n)
 {
 	// Stores whether i is a prime number or not.
+	// By default everything is prime, and will be toggled to non-prime.
 	vector<bool> num(n, true);
 
 	// Number 0 and 1 is neither prime nor non-prime.
@@ -23,8 +24,8 @@ int countPrimes(int n)
 	num[1] = false;
 
 	int numOfPrimes = 0;
-	int limit = sqrt(n);
 
+	int limit = sqrt(n);
 	for (int i = 2; i <= limit; ++i)
 	{
 		if (num[i])

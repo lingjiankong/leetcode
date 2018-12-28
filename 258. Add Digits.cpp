@@ -12,6 +12,7 @@
 // ***
 int addDigits(int num)
 {
+	// Perform the operation as long as num is not a single digit
 	while (num / 10 > 0)
 	{
 		int sum = 0;

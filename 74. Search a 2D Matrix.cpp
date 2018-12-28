@@ -36,26 +36,25 @@ bool searchMatrix(vector<vector<int>>& matrix, int target)
 	int m = matrix.size();
 	int n = matrix[0].size();
 
-	int low = 0;
-	int high = m * n - 1;
+	int left = 0;
+	int right = m * n;
 	
-	while (low <= high)
+	while (left < right)
 	{
-		int mid = low + (high - low) / 2;
-		
+		int mid = left + (right - left) / 2;
 		int value = matrix[mid / n][mid % n];
 
-		if (target < value)
-		{
-			high = mid - 1;
-		}
-		else if (target > value)
-		{
-			low = mid + 1;
-		}
-		else 
+		if (value == target)
 		{
 			return true;
+		}
+		else if (value < target)
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			right = mid;
 		}
 	}
 

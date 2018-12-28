@@ -5,7 +5,7 @@
 //
 // ***
 //
-// One way is the first take the transpose, then reverse the rows.
+// One way is the first take the transpose, then reverse all rows.
 // 1  2  3　　　 　　 1  4  7　　　　　  7  4  1
 // 
 // 4  5  6　　-->　　 2  5  8　　 -->  　8  5  2　　
@@ -20,6 +20,7 @@ void rotate(vector<vector<int> > &matrix)
 		{
 			swap(matrix[i][j], matrix[j][i]);
 		}
+
 		reverse(matrix[i].begin(), matrix[i].end());
 	}
 }

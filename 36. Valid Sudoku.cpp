@@ -9,7 +9,6 @@
 // The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
 // 
 // Example 1:
-// 
 // Input:
 // [
 //   ["5","3",".",".","7",".",".",".","."],
@@ -25,7 +24,6 @@
 // Output: true
 //
 // Example 2:
-// 
 // Input:
 // [
 //   ["8","3",".",".","7",".",".",".","."],
@@ -52,7 +50,7 @@
 //
 // ***
 //
-// Here, k = 3 * (i / 3) + j / 3 will map all (i, j) that belongs to the same subbox to the same k.
+// Here, k = 3 * (i / 3) + j / 3 will map all (i, j) that belongs to the same subbox to the same k. This is important.
 // Top left subbox is 0, top middle subbox is 1, top right subbox is 2,
 // Mid left subbis is 3, mid middle subbox is 4, mid right subbox is 5,
 // Low left subbis is 6, low middle subbox is 7, low right subbox is 8,
@@ -65,6 +63,8 @@ bool isValidSudoku(vector<vector<char>>& board)
 
 	int m = board.size(), n = board[0].size();
 
+	// The following flag matrix have the same size as board.
+	// It keeps track of the numbers you have seen.
 	vector<vector<bool>> rowFlag(m, vector<bool>(n, false));
 	vector<vector<bool>> colFlag(m, vector<bool>(n, false));
 	vector<vector<bool>> subboxFlag(m, vector<bool>(n, false));

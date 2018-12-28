@@ -11,9 +11,13 @@
 // 
 // ***
 //
+// Note that the question specifies that the most significant digit is at the head of the list.
+//
 // This question can be done recursively, node by node.
 // First, deal with the tail element first, +1 and see if we have carry, change the node value and returns carry.
 // If there's still carry left after the entire dfs is finished, we simply add a new 1 to the front.
+//
+// See also 66. Plus One. Same idea.
 class Solution
 {
 
@@ -40,7 +44,8 @@ class Solution
 
 	private:
 
-		int dfs(ListNode *node)
+		// Returns carry
+		int dfs(ListNode* node)
 		{
 			if (!node)
 			{
@@ -50,6 +55,7 @@ class Solution
 			int carry = dfs(node->next);
 			int sum = node->val + carry;
 			node->val = sum % 10;
+
 			return sum / 10;
 		}
 

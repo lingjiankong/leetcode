@@ -23,7 +23,7 @@
 // Just follow the rules of multiplication, pay attention to the index,
 // Store the result in a vector of size num1.size() + num2.size().
 // You will realize that the resulting multiplication of two integers at num[i] and num[j]
-// are be placed at result[i+j] and result[i+j+1]. The result is between 0 and 81.
+// are placed at result[i+j] and result[i+j+1]. The result is between 0 and 81.
 //
 //     1 2 3
 //       4 5
@@ -86,7 +86,9 @@ string multiply(string num1, string num2)
 	// Get rid of leading zeros. If the string only has one zero,
 	// then it means the product is zero, and we shall return it.
 	int startpos = resultString.find_first_not_of("0");
-	if (string::npos != startpos)
+
+	// If we found any non-zero element, truncate all zeros and return everything from startpos.
+	if (startpos != string::npos)
 	{
 		return resultString.substr(startpos);
 	}

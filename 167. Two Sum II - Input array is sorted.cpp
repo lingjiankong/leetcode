@@ -21,7 +21,7 @@
 // until we found numbers[left] == numbers[right] or until left and right meet.
 //
 // See also 15. 3Sum and 18. 4Sum. They are all generalizations of this problem with almost identical code
-// (those questions must deal with issues of duplicate result).
+// (those questions must deal with issues of duplicate result, though).
 vector<int> twoSum(vector<int>& numbers, int target)
 {
 	int left = 0, right = numbers.size() - 1;

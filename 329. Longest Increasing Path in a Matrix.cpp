@@ -33,7 +33,7 @@ class Solution
 
 	public:
 
-		vector<vector<int>> directions = {{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
+		vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 		int longestIncreasingPath(vector<vector<int>>& matrix)
 		{
@@ -42,9 +42,10 @@ class Solution
 				return 0;
 			}
 
-			int maxLength = 1, m = matrix.size(), n = matrix[0].size();
+			int m = matrix.size(), n = matrix[0].size();
 			vector<vector<int>> cache(m, vector<int>(n, 0));
 
+			int maxLength = 1;
 			for (int i = 0; i < m; ++i)
 			{
 				for (int j = 0; j < n; ++j)
@@ -65,8 +66,9 @@ class Solution
 				return cache[i][j];
 			}
 
-			int maxLength = 1, m = matrix.size(), n = matrix[0].size();
+			int m = matrix.size(), n = matrix[0].size();
 
+			int maxLength = 1;
 			for (auto direction : directions)
 			{
 				int x = i + direction[0], y = j + direction[1];
