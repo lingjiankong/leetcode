@@ -42,8 +42,10 @@ int shortestWordDistance(vector<string>& words, string word1, string word2)
 			{
 				pos1 = pos2;
 			}
+
 			pos2 = i;
 		}
+
 		if (pos1 != -1 && pos2 != -1)
 		{
 			minDis = min(minDis, abs(pos2 - pos1));

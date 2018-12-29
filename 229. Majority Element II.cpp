@@ -82,11 +82,11 @@ vector<int> majorityElement(vector<int>& nums)
 		}
 	}
 
-	if (count1 > nums.size()/3)
+	if (count1 > nums.size() / 3)
 	{
 		res.push_back(candidate1);
 	}
-	if (count2 > nums.size()/3)
+	if (count2 > nums.size() / 3)
 	{
 		res.push_back(candidate2);
 	}

@@ -20,7 +20,7 @@ int jump(vector<int>& nums)
 {
 	int totalJump = 0;
 
-	// The ending index of current window.
+	// The ending index of current window. Initial window is [0, 0] so when i = 0 you initiate a jump.
 	// You can jump to every index in this window in the same number of step from previous window.
 	int currentEnd = 0;
 
@@ -28,7 +28,7 @@ int jump(vector<int>& nums)
 	// this will be used to update currentEnd when we've reached the end of current window.
 	int currentMaxReach = 0;
 
-	for (int i = 0; i < nums.size()-1; ++i)
+	for (int i = 0; i < nums.size() - 1; ++i)
 	{
 		currentMaxReach = max(currentMaxReach, i + nums[i]);
 

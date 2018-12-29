@@ -15,13 +15,13 @@
 // ***
 //
 // 1. Find the sorted nth element
+// std::nth_element(RandomIt first, RandomIt nth, RandomIt last)
+// std::nth_element(): rearranges the elements in the range [first,last),
+// in such way that the element at the nth position is the element that would be
+// in that position in a sorted sequence. The other elements are left without any specific order,
+// except that none of the elements preceding nth are greater than it, and none of the elements following it are less.
 int majorityElement(vector<int>& nums)
 {
-	// std::nth_element(RandomIt first, RandomIt nth, RandomIt last)
-	// std::nth_element(): rearranges the elements in the range [first,last),
-	// in such way that the element at the nth position is the element that would be
-	// in that position in a sorted sequence. The other elements are left without any specific order,
-	// except that none of the elements preceding nth are greater than it, and none of the elements following it are less.
 	nth_element(nums.begin(), nums.begin()+nums.size()/2, nums.end());
 	return nums[nums.size()/2];
 }
@@ -31,7 +31,7 @@ int majorityElement(vector<int>& nums)
 // Note that, in the problem statement, a majority element is guaranteed to exist.
 // If the majority element is not guaranteed to exist,
 // we need another iteration over the nums to check whether majorityElement is actually a majority element
-int majorityElement2(vector<int>& nums)
+int majorityElement(vector<int>& nums)
 {
 	// What majorityElement equal to in the beginning doesn't matter, it is arbitrary.
 	// majorityElement will be initialized when the loop starts.
@@ -73,7 +73,7 @@ int majorityElement2(vector<int>& nums)
 // Below code loops through each element and maintains a count of the element that has the potential of
 // being the majority element. If next element is same then increments the count, otherwise decrements the count.
 // If the count reaches 0 then update the potential index to the current element and sets count to 1.
-int majorityElement3(vector<int>& nums)
+int majorityElement(vector<int>& nums)
 {
 	int majorityIndex = 0;
 	int count = 1;

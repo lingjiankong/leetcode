@@ -3,29 +3,29 @@
 ## Array
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 27 | Remove Element | Basic
-| 283 | Move Zeroes | Basic
-| 26 | Remove Duplicates from Sorted Array | Basic
-| 80 | Remove Duplicates from Sorted Array II | Basic
-| 277 | Find the Celebrity |
+| 27 | Remove Element | Star
+| 283 | Move Zeroes | Star
+| 26 | Remove Duplicates from Sorted Array | Star
+| 80 | Remove Duplicates from Sorted Array II | Star
+| 277 | Find the Celebrity | Normal
 | 189 | Rotate Array | Star
-| 41 | First Missing Positive |
-| 299 | Bulls and Cows | Exotic
+| 41 | First Missing Positive | Basic
+| 299 | Bulls and Cows | Basic
 | 134 | Gas Station | Basic
-| 118 | Pascal's Triangle |
-| 119 | Pascal's Triangle II | Basic
-| 169 | Majority Element |
-| 229 | Majority Element II |
-| 274 | H-Index | Exotic
-| 275 | H-Index II | Exotic
-| 243 | Shortest Word Distance | Basic
-| 244 | Shortest Word Distance II |
-| 245 | Shortest Word Distance III |
-| 217 | Contains Duplicate | Basic
-| 219 | Contains Duplicate II |
-| 220 | Contains Duplicate III |
-| 55 | Jump Game |
-| 45 | Jump Game II |
+| 118 | Pascal's Triangle | Basic
+| 119 | Pascal's Triangle II | Normal
+| 169 | Majority Element | Star
+| 229 | Majority Element II | Star
+| 274 | H-Index | See 275
+| 275 | H-Index II | Basic
+| 243 | Shortest Word Distance | Star
+| 244 | Shortest Word Distance II | Basic
+| 245 | Shortest Word Distance III | Basic
+| 217 | Contains Duplicate | Star
+| 219 | Contains Duplicate II | Basic
+| 220 | Contains Duplicate III | Basic
+| 55 | Jump Game | Star
+| 45 | Jump Game II | Basic
 | 121 | Best Time to Buy and Sell Stock | Basic
 | 122 | Best Time to Buy and Sell Stock II | Basic
 | 123 | Best Time to Buy and Sell Stock III | Basic

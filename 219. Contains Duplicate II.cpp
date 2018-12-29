@@ -17,13 +17,13 @@
 //
 // ***
 //
-// Using unordered_set.
-// The basic idea is to maintain a set s of size k which contain unique values from nums[i - k] to nums[i - 1],
+// The key idea is to use a sliding window of size k using unordered_set.
+// Maintain a set s of size k which contain unique values from nums[i - k] to nums[i - 1],
 // if nums[i] is in set s then return true, else update the set.
 bool containsNearbyDuplicate(vector<int>& nums, int k)
 {
 	// A sliding window of last k elements
-	unordered_set<int> seen;
+	unordered_set<int> window;
 
 	for (int i = 0; i < nums.size(); ++i)
 	{
@@ -31,30 +31,29 @@ bool containsNearbyDuplicate(vector<int>& nums, int k)
 		{
 			// You want to compare num[i] with elements in [nums[i-k], nums[i-1]],
 			// therefore you erase nums[i - k - 1]
-			seen.erase(nums[i - k - 1]);
+			window.erase(nums[i - k - 1]);
 		}
 
-		if (seen.find(nums[i]) != seen.end())
+		if (window.count(nums[i]))
 		{
 			return true;
 		}
 
-		seen.insert(nums[i]);
+		window.insert(nums[i]);
 	}
 
 	return false;
 }
 
-// Using unordered_map
+// Using unordered_map.
 bool containsNearbyDuplicate(vector<int>& nums, int k)
 {
-	// Key: num
-	// Value: index
+	// key: num, value: index
 	unordered_map<int, int> seen;
 
 	for (int i = 0; i < nums.size(); ++i)
 	{
-		if (seen.find(nums[i]) != seen.end())
+		if (seen.count(nums[i]))
 		{
 			if (i - seen[nums[i]] <= k)
 			{
