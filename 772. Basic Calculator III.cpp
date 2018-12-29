@@ -54,10 +54,9 @@ int calculate(string s)
 			num = calculate(s.substr(j + 1, i - j - 1));
 		}
 		// Here 'c' is the *current* operator at s[i], 'op' is the *last* operator you've seen.
-		// i.e. The relationship is basically (curRes) (op) (num) (c)
+		// i.e. The relationship is (curRes) (op) (num) (c)
 		// This is basically saying that if you see a new operator, this new operator act like a break point,
 		// and you should perform the operation specified by the last seen operator.
-		// i.e. The relationship is basically (curRes) (op) (num) (c)
 		// So you can do calculation curRes = curRes op num
 		// if c is + or - then you can safely add curRes to the finalRes.
 		if (c == '+' || c == '-' || c == '*' || c == '/' || i == n - 1)

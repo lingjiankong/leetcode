@@ -255,18 +255,18 @@
 | 653 | Two Sum IV - Input is a BST | Star
 | 15 | 3Sum | Star
 | 16 | 3Sum Closest | Star
-| 259 | 3Sum Smaller
+| 259 | 3Sum Smaller | Normal
 | 18 | 4Sum | Star
-| 454 | 4Sum II | Basic
-| 231 | Power of Two | Basic
-| 326 | Power of Three | Basic
-| 342 | Power of Four | Basic
-| 319 | Bulb Switcher
+| 454 | 4Sum II | Star
+| 231 | Power of Two | Star
+| 326 | Power of Three | Star
+| 342 | Power of Four | Star
+| 319 | Bulb Switcher | Basic
 | 292 | Nim Game | Exotic
-| 202 | Happy Number | Basic
+| 202 | Happy Number | Star
 | 263 | Ugly Number | Basic
 | 264 | Ugly Number II | Exotic
-| 31 | Next Permutation | Memorize
+| 31 | Next Permutation | Basic, Memorize
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | See 772
 | 227 | Basic Calculator II | See 772
@@ -313,50 +313,13 @@
 191	Number of 1 Bits | Basic
 190	Reverse Bits | Basic
 
-## Topological Sort
+## Graph
 | ID | Name | Note |
 |:---:|:---:|:---:|
-207	Course Schedule
-210	Course Schedule II
-269	Alien Dictionary
+207	Course Schedule | Star
+210	Course Schedule II | Basic
 
-1.3.14. Random
-| ID | Name | Note |
-|:---:|:---:|:---:|
-384	Shuffle an Array
-398	Random Pick Index
-382	Linked List Random Node
-380	Insert Delete GetRandom O(1)
-381	Insert Delete GetRandom O(1) - Duplicates allowed
-138	Copy List with Random Pointer
-
-1.3.15. Graph
-| ID | Name | Note |
-|:---:|:---:|:---:|
-133	Clone Graph
-399	Evaluate Division
-310	Minimum Height Trees
-335	Self Crossing	很少考
-149	Max Points on a Line
-356	Line Reflection	很少考
-391	Perfect Rectangle	很少考
-223	Rectangle Area	很少考
-
-1.3.16. Union FInd
-| ID | Name | Note |
-|:---:|:---:|:---:|
-261	Graph Valid Tree
-323	Number of Connected Components in an Undirected Graph
-305	Number of Islands II
-
-1.3.17. Trie
-| ID | Name | Note |
-|:---:|:---:|:---:|
-211	Add and Search Word - Data structure design
-208	Implement Trie (Prefix Tree)
-212	Word Search II
-
-1.3.18. Design
+## Design
 | ID | Name | Note |
 |:---:|:---:|:---:|
 359	Logger Rate Limiter

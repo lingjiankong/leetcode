@@ -28,7 +28,6 @@ int threeSumClosest(vector<int>& nums, int target)
 		{
 			int sum = nums[i] + nums[left] + nums[right];
 			int newDiff = abs(sum - target);
-
 			if (newDiff < diff)
 			{
 				diff = newDiff;

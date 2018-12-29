@@ -25,6 +25,7 @@
 bool isHappy(int n)
 {
 	unordered_set<int> seen;
+
 	while (n != 1)
 	{
 		int currentSum = 0;
@@ -33,7 +34,6 @@ bool isHappy(int n)
 			currentSum += pow(n % 10, 2);
 			n /= 10;
 		}
-
 		n = currentSum;
 
 		if (seen.count(n))
@@ -43,7 +43,6 @@ bool isHappy(int n)
 		else
 		{
 			seen.insert(n);
-			
 		}
 	}
 

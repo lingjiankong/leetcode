@@ -18,7 +18,7 @@
 //
 // ***
 //
-// See also 167. Two Sum II - Input array is sorted
+// See also 167. Two Sum II - Input array is sorted Read 18. 4Sum first to see the general way of solving these problems.
 // This is a generalization of that problem with an added for loop.
 // The most important thing in this question is to eliminate possibly duplicate result.
 // This question can also ask you whether three number can form a target. In this question, that target is 0.
@@ -28,7 +28,8 @@ vector<vector<int>> threeSum(vector<int>& nums)
 
 	sort(nums.begin(), nums.end());
 
-	// A special case if target = 0.
+	// A special case if target = 0:
+	// If we want four sum = 0, then numbers cannot be all positive or all negative.
 	if (nums.empty() || nums.back() < 0 || nums.front() > 0)
 	{
 		return {};

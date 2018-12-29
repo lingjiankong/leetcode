@@ -22,14 +22,14 @@
 //
 // ***
 //
+// Note that the problem has specified that A, B, C, D have the same length.
 // 用两个哈希表分别记录AB和CB的两两之和出现次数，然后遍历其中一个哈希表，并在另一个哈希表中找和的相反数出现的次数
 //
 int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D)
 {
-	int count = 0, n = A.size();
-
 	unordered_map<int, int> hash1, hash2;
 
+	int n = A.size();
 	for (int i = 0; i < n; ++i)
 	{
 		for (int j = 0; j < n; ++j)
@@ -39,6 +39,7 @@ int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D)
 		}
 	}
 
+	int count = 0;
 	for (auto sumAB : hash1)
 	{
 		int target = 0 - sumAB.first;

@@ -27,12 +27,6 @@ vector<vector<int>> fourSum(vector<int>& nums, int target)
 
 	sort(nums.begin(), nums.end());
 
-	// If we want four sum = 0, then numbers cannot be all positive or all negative.
-    if (nums.empty() || nums.back() < 0 || nums.front() > 0)
-    {
-        return {};
-    }
-
 	int n = nums.size();
 	for (int i = 0; i < n - 3; ++i)
 	{
