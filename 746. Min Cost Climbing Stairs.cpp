@@ -23,10 +23,27 @@
 //
 // ***
 //
+// dp[i]: How much it cost when you *jump from* stair i.
+int minCostClimbingStairs(vector<int>& cost)
+{
+	vector<int> dp(cost.size(), 0);
+	dp[0] = cost[0];
+	dp[1] = cost[1];
+
+	int n = cost.size();
+	for (int i = 2; i < n; ++i)
+	{
+		dp[i] = cost[i] + min(dp[i-1], dp[i-2]);
+	}
+
+	return min(dp[n], dp[n-1]);
+}
+
+// Similar idea: dp[i]: How much it cost when you *reach* stair i (without jumping form it).
 int minCostClimbingStairs(vector<int>& cost)
 {
 	// dp vector has one more element that cost element
-	// because we must go one step beyond the last step
+	// because we must reach one step beyond the last step
 	vector<int> dp(cost.size() + 1, 0);
 
 	for (int i = 2; i < cost.size() + 1; ++1)
@@ -36,3 +53,4 @@ int minCostClimbingStairs(vector<int>& cost)
 
 	return dp.back();
 }
+

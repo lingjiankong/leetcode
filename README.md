@@ -8,12 +8,12 @@
 | 26 | Remove Duplicates from Sorted Array | Basic
 | 80 | Remove Duplicates from Sorted Array II | Basic
 | 277 | Find the Celebrity |
-| 189 | Rotate Array |
+| 189 | Rotate Array | Star
 | 41 | First Missing Positive |
 | 299 | Bulls and Cows | Exotic
-| 134 | Gas Station |
+| 134 | Gas Station | Basic
 | 118 | Pascal's Triangle |
-| 119 | Pascal's Triangle II |
+| 119 | Pascal's Triangle II | Basic
 | 169 | Majority Element |
 | 229 | Majority Element II |
 | 274 | H-Index | Exotic
@@ -88,23 +88,24 @@
 | 38 | Count and Say | Bad
 | 271 | Encode and Decode Strings | Basic
 | 168 | Excel Sheet Column Title | Exotic
-| 171 | Excel Sheet Column Number |
+| 171 | Excel Sheet Column Number | Basic
 | 13 | Roman to Integer | Bad
 | 12 | Integer to Roman | Bad
 | 246 | Strobogrammatic Number | Basic
 | 76 | Minimum Window Substring Sliding Window |
 | 3 | Longest Substring Without Repeating Characters Sliding Window | Basic
-| 125 | Valid Palindrome |
+| 125 | Valid Palindrome | Star
+| 680 | Valid Palindrome II | Basic
 | 266 | Palindrome Permutation | Basic
 | 5 | Longest Palindromic Substring | Basic
 | 9 | Palindrome Number | Basic
-| 20 | Valid Parentheses | Basic
+| 20 | Valid Parentheses | Star
 | 22 | Generate Parentheses | Basic
 | 241 | Different Ways to Add Parentheses | Basic
 | 392 | Is Subsequence | Basic
-| 792 | Number of Matching Subsequence |
+| 792 | Number of Matching Subsequence | Basic
 | 115 | Distinct Subsequences |
-| 187 | Repeated DNA Sequences |
+| 187 | Repeated DNA Sequences | Star
 
 ## Tree
 | ID | Name | Note |
@@ -185,6 +186,7 @@
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 70 | Climbing Stairs | Star
+| 746 | Min Cost Climbing Staris | Star
 | 62 | Unique Paths | Star
 | 63 | Unique Paths II | Star
 | 120 | Triangle | Star
@@ -194,7 +196,7 @@
 | 322 | Coin Change | Basic
 | 256 | Paint House | Basic
 | 265 | Paint House II | Basic
-| 64 | Minimum Path Sum | Basic
+| 64 | Minimum Path Sum | Star
 | 72 | Edit Distance | Basic, Memorize
 | 221 | Maximal Square | Basic
 | 198 | House Robber | Star

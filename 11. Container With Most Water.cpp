@@ -24,7 +24,7 @@ int maxArea(vector<int>& height)
 
 	while (left < right)
 	{
-		curVal = min(height[left], height[right]) * (right-left);
+		curVal = min(height[left], height[right]) * (right - left);
 
 		maxVal = max(curVal, maxVal);
 
