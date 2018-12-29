@@ -90,10 +90,3 @@ class MedianFinder
 		// We always need the min from the larger half nums, therefore we use std::greater<int>.
 		priority_queue<int, vector<int>, greater<int>> mLarger;
 };
-
-/**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder obj = new MedianFinder();
- * obj.addNum(num);
- * double param_2 = obj.findMedian();
- */

@@ -37,7 +37,7 @@ vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, in
 		}
 	}
 
-	sort(toReturn.begin(), toReturn.end(), [] (pair<int, int> &a, pair<int, int> &b) {return a.first + a.second < b.first + b.second;});
+	sort(toReturn.begin(), toReturn.end(), [] (pair<int, int>& a, pair<int, int>& b) {return a.first + a.second < b.first + b.second;});
 
 	if (toReturn.size() > k)
 	{
@@ -50,7 +50,7 @@ vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, in
 // Use priority queue so you don't need to sort
 vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k)
 {
-	auto compare = [] (pair<int, int>&a, pair<int, int>&b) {return a.first + a.second < b.first + b.second;};
+	auto compare = [] (pair<int, int>& a, pair<int, int>& b) {return a.first + a.second < b.first + b.second;};
 	priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(compare)> pq(compare);
 
 	for (int i = 0; i < nums1.size(); ++i)

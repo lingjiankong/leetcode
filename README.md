@@ -40,7 +40,6 @@
 | 330 | Patching Array | Hard
 | 4 | Median of Two Sorted Arrays | Hard
 | 321 | Create Maximum Number | Hard
-| 289 | Game of Life | Basic, TODO: Move to bit operation section
 | 56 | Merge Intervals | Basic
 | 252 | Meeting Rooms | Basic
 | 253 | Meeting Rooms II | Basic
@@ -304,41 +303,42 @@
 | 373 | Find K Pairs with Smallest Sums | Star
 | 378 | Kth Smallest Element in a Sorted Matrix | Star
 
-## Design
-| ID | Name | Note |
-|:---:|:---:|:---:|
-359	Logger Rate Limiter
-346	Moving Average from Data Stream	Sliding Window
-362	Design Hit Counter
-281	Zigzag Iterator
-284	Peeking Iterator
-251	Flatten 2D Vector
-288	Unique Word Abbreviation
-170	Two Sum III - Data structure design
-348	Design Tic-Tac-Toe
-379	Design Phone Directory
-353	Design Snake Game
-146	LRU Cache
-355	Design Twitter
-303	Range Sum Query - Immutable
-304	Range Sum Query 2D - Immutable
-307	Range Sum Query - Mutable	Binary Index Tree
-308	Range Sum Query 2D - Mutable	Binary Index Tree
-
 ## Bit Manipulation
 | ID | Name | Note |
 |:---:|:---:|:---:|
-136	Single Number | Basic, Memorize
-389	Find the Difference | Basic, Memorize
-268	Missing Number | Basic
-191	Number of 1 Bits | Basic
-190	Reverse Bits | Basic
+| 289 | Game of Life | Star
+| 136 | Single Number | Basic, Memorize
+| 389 | Find the Difference | Basic, Memorize
+| 268 | Missing Number | Basic
+| 191 | Number of 1 Bits | Basic
+| 190 | Reverse Bits | Basic
 
 ## Graph
 | ID | Name | Note |
 |:---:|:---:|:---:|
-207	Course Schedule | Star
-210	Course Schedule II | Basic
+| 207 | Course Schedule | Star
+| 210 | Course Schedule II | Basic
+
+## Design
+| ID | Name | Note |
+|:---:|:---:|:---:|
+| 359 | Logger Rate Limiter | Basic
+| 346 | Moving Average from Data Stream	Sliding Window | Star
+| 362 | Design Hit Counter | Star
+| 281 | Zigzag Iterator
+| 284 | Peeking Iterator
+| 251 | Flatten 2D Vector
+| 288 | Unique Word Abbreviation
+| 170 | Two Sum III - Data structure design
+| 348 | Design Tic-Tac-Toe
+| 379 | Design Phone Directory
+| 353 | Design Snake Game
+| 146 | LRU Cache
+| 355 | Design Twitter
+| 303 | Range Sum Query - Immutable
+| 304 | Range Sum Query 2D - Immutable
+| 307 | Range Sum Query - Mutable	Binary Index Tree
+| 308 | Range Sum Query 2D - Mutable	Binary Index Tree
 
 
 
