@@ -16,10 +16,8 @@
 //
 // ***
 //
-// Altough you do not know where the pivot point is, either left half or right half of the array must be sorted.
-// Just remember this version. The left = 0, right = nums.size() version binary search might give you an error.
-//
-// This question is very unintuitive.
+// Just remember this version. If you are asked to search in rotated sorted array but there's duplicate,
+// then you add an else loop in the end. See 33. Search in Rotated Sorted Array and compare the difference.
 int search(vector<int>& nums, int target)
 {
     int left = 0, right = nums.size() - 1;
@@ -48,7 +46,7 @@ int search(vector<int>& nums, int target)
         // Right half is not sorted.
         else if (nums[mid] > nums[right])
         {
-            // Target is in this sorted left half of the array.
+            // Target is in the sorted left half of the array.
             if (nums[left] <= target && target < nums[mid])
             {
                 right = mid;

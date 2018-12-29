@@ -45,5 +45,5 @@ int findMin(vector<int> &num)
 		}
     }
 
-    return num[left];
+    return num[right];
 };

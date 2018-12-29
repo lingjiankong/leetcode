@@ -18,6 +18,11 @@
 // minStack.getMin();   --> Returns -2.
 //
 // ***
+//
+// Keep two stacks s1 and s2:
+//
+// s1 is the stack of elements.
+// s2 is the stack of mininum element correspond to each element in s1.
 class MinStack
 {
 

@@ -25,15 +25,15 @@ int firstBadVersion(int n)
 	while (left < right)
 	{
 		int mid = left + (right - left) / 2;
-		if (isBadVersion(mid))
-		{
-			right = mid;
-		}
-		else
+		if (!isBadVersion(mid))
 		{
 			left = mid + 1;
 		}
+		else
+		{
+			right = mid;
+		}
 	}
 
-	return left;
+	return right;
 }

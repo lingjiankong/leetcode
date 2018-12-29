@@ -44,11 +44,14 @@ int lengthOfLIS(vector<int>& nums)
 // tails is an increasing array, so we can do binary search on it.
 //
 // Traverse through nums:
-// 1. If nums[i] > the right most element in tails, then add nums[i] to the end of tails (now tails.size() has in creased by 1).
+// 1. If nums[i] > the right most element in tails, then add nums[i] to the end of tails (now tails.size() has increased by 1).
 // 2. If nums[i] < the left most element in tails, replace the leftmost element to nums[i] (note tails.size() does not change in this case).
-// 3. Otherwise, find lower_bound(nums[i]) in tails, and replace that element with nums[i] (note tail.size() does not change in this case).
+// 3. Otherwise, find lower_bound(nums[i]) in tails, and replace that element with nums[i] (note tails.size() does not change in this case).
 //
 // Finally, tails.size() is the length of longest increasing subsequence.
+//
+// For example, in the above example, if our incoming nums[i] = 4, then lower_bound(tails.begin(), tails.end(), nums[i]) is tails[1] = 5,
+// so we can update tails[1] = 5  to tails[1] = 4. i.e. A subsequence of length 2: [3, 4] can be formed.
 int lengthOfLIS(vector<int>& nums)
 {
     vector<int> tails;

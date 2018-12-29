@@ -51,8 +51,8 @@ class MyStack
 		void moveLastElementToQueueFront()
 		{
 			// If you only have one element in the queue, no need to move it to the front.
-			// That is why i < mQueue.size()-1 : In order to move the newest element you just pushed to the front of the queue,
-			// we need to move all nums.size()-1 element originally in front of that new element to the back of the new element.
+			// That is why i < mQueue.size() - 1 : In order to move the newest element you just pushed to the front of the queue,
+			// we need to move all nums.size() - 1 element originally in front of that new element to the back of the new element.
 			for (int i = 0; i < mQueue.size() - 1; ++i)
 			{
 				mQueue.push(mQueue.front()); mQueue.pop();

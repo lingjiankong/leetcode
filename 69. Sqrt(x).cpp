@@ -19,7 +19,6 @@
 // ***
 //
 // Binary search to find the last element that is not greater than the target element.
-//
 // i.e. We want to find the last element such that mid * mid <= x, therefore the target is x / mid
 //
 // In this case, the target element is x / mid, and we want to find the last element that isn't greater than it
@@ -38,6 +37,8 @@ int mySqrt(int x)
 	{
 		int mid = left + (right - left) / 2;
 
+		// Theoretically you can also write if (mid * mid <= x),
+		// but mid * mid will overflow, so you write if (mid <= x / mid)
 		if (mid <= x / mid)
 		{
 			left = mid + 1;

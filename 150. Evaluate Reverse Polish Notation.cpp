@@ -45,16 +45,16 @@ int evalRPN(vector<string>& tokens)
 		{ "/" , [] (int a, int b) { return a / b; } }
 	};
 
-	tokenStack<int> tokenStack;
+	stack<int> tokenStack;
 
-	for (string& token : tokens)
+	for (string token : tokens)
 	{
-		// token is not an operator, push the number to stack.
+		// If token is not an operator, push the number to stack.
 		if (!map.count(token))
 		{
 			tokenStack.push(stoi(token));
 		}
-		// token is an operator, pop last two numbers (the operands) from stack,
+		// If token is an operator, pop last two numbers (the operands) from stack,
 		// perform the operation and append the result to stack again.
 		else
 		{

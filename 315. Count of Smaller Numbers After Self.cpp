@@ -28,6 +28,7 @@ vector<int> countSmaller(vector<int>& nums)
 		int left = 0, right = sortedSeen.size();
 
 		// Same as std::lower_bound, find the index of first number that >= target (nums[i])
+		// All elements in sortedSeen to the left of this index are smaller than nums[i].
 		while (left < right)
 		{
 			int mid = left + (right - left) / 2;

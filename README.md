@@ -275,24 +275,24 @@
 ## Binary Search
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 278 | First Bad Version
-| 35 | Search Insert Position | Basic
-| 33 | Search in Rotated Sorted Array | Basic, Memorize
-| 81 | Search in Rotated Sorted Array II | Basic, Memorize
-| 153 | Find Minimum in Rotated Sorted Array | Basic
-| 154 | Find Minimum in Rotated Sorted Array II | Basic
+| 278 | First Bad Version | Normal
+| 35 | Search Insert Position | Star
+| 33 | Search in Rotated Sorted Array | Star
+| 81 | Search in Rotated Sorted Array II | Star, Memorize
+| 153 | Find Minimum in Rotated Sorted Array | Star
+| 154 | Find Minimum in Rotated Sorted Array II | Star
 | 34 | Find First and Last Position of Element in Sorted Array | Star
-| 315 | Count of Smaller Numbers After Self | Basic
-| 300 | Longest Increasing Subsequence | Basic, Memorize
-| 354 | Russian Doll Envelopes | Basic
-| 69 | Sqrt(x) | Memorize
+| 315 | Count of Smaller Numbers After Self | Star
+| 300 | Longest Increasing Subsequence | Star, Memorize
+| 354 | Russian Doll Envelopes | Basic, Memorize
+| 69 | Sqrt(x) | Star
 | 74 | Search a 2D Matrix | Star
-| 240 | Search a 2D Matrix II | Memorize
+| 240 | Search a 2D Matrix II | Normal, Memorize
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 155 | Min Stack | Basic
+| 155 | Min Stack | Star
 | 232 | Implement Queue using Stacks | Basic
 | 225 | Implement Stack using Queues | Basic
 | 150 | Evaluate Reverse Polish Notation | Star
@@ -303,21 +303,6 @@
 | 295 | Find Median from Data Stream | Star
 | 373 | Find K Pairs with Smallest Sums | Star
 | 378 | Kth Smallest Element in a Sorted Matrix | Star
-
-## Bit Manipulation
-| ID | Name | Note |
-|:---:|:---:|:---:|
-136	Single Number | Basic, Memorize
-389	Find the Difference | Basic, Memorize
-268	Missing Number | Basic
-191	Number of 1 Bits | Basic
-190	Reverse Bits | Basic
-
-## Graph
-| ID | Name | Note |
-|:---:|:---:|:---:|
-207	Course Schedule | Star
-210	Course Schedule II | Basic
 
 ## Design
 | ID | Name | Note |
@@ -340,15 +325,29 @@
 307	Range Sum Query - Mutable	Binary Index Tree
 308	Range Sum Query 2D - Mutable	Binary Index Tree
 
+## Bit Manipulation
+| ID | Name | Note |
+|:---:|:---:|:---:|
+136	Single Number | Basic, Memorize
+389	Find the Difference | Basic, Memorize
+268	Missing Number | Basic
+191	Number of 1 Bits | Basic
+190	Reverse Bits | Basic
 
+## Graph
+| ID | Name | Note |
+|:---:|:---:|:---:|
+207	Course Schedule | Star
+210	Course Schedule II | Basic
 
 
 
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
 **Notation**:
-- Star: Basic questions that you'd better memorize.
-- Basic: Good and well designed questions. You should understand them fully as well.
+- Star: Three star questions
+- Basic: Two star questions
+- Normal: One star questions.
 - Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over.
 - Hard: Hard to understand questions. Should be skipped during a fast go-over. Don't spend too much time on it.
 - Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here unless you have plenty.

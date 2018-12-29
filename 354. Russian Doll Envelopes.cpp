@@ -2,6 +2,7 @@
 // DP solution O(n^2):
 int maxEnvelopes(vector<pair<int, int>>& envelopes)
 {
+	// dp[i] stores the length of longest subsequence that ends at position i (i.e. number of envelopes).
 	vector<int> dp(envelopes.size(), 1);
 	int maxEnvelopes = 0;
 
@@ -27,7 +28,7 @@ int maxEnvelopes(vector<pair<int, int>>& envelopes)
 // You would need to memorize it.
 int maxEnvelopes(vector<pair<int, int>>& envelopes)
 {
-	vector<int> heights;
+	vector<int> heightTails;
 
 	// Sort the width in ascending order. If witdh is the same, then sort height in DESCENDING order.
 	// Why sort width in ascending order but height in descending order? Because envelopes with the same width can't fit into each other,
@@ -41,16 +42,18 @@ int maxEnvelopes(vector<pair<int, int>>& envelopes)
 
 	for(int i = 0; i < envelopes.size(); ++i)
 	{
-		auto it = lower_bound(heights.begin(), heights.end(), envelopes[i].second);
-		if (it == heights.end())
+		int height = envelopes[i].second;
+
+		auto it = lower_bound(heightTails.begin(), heightTails.end(), height);
+		if (it == heightTails.end())
 		{
-			heights.push_back(envelopes[i].second);
+			heightTails.push_back(height);
 		}
 		else
 		{
-			*it = envelopes[i].second;
+			*it = height;
 		}
 	}
 
-	return heights.size();
+	return heightTails.size();
 }

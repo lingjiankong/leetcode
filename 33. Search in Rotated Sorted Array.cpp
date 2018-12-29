@@ -21,12 +21,10 @@
 //
 // Altough you do not know where the pivot point is, either left half or right half of the array must be sorted.
 //
-// TODO: Verify if below is true:
-//
 // For these kinds of binary search questions which
 //
 // 1. You need to take the index of left and right i.e. left and right serve as indexes, not bounds: nums[left], nums[right]
-// -> Then you must initialize left = 0 and right = nums.size() - 1 (not nums.size()), because you can't take index on nums when i = nums.size(),
+// -> Then you should initialize left = 0 and right = nums.size() - 1 (not nums.size()), because you can't take index on nums when i = nums.size(),
 //
 // 2. You are finding an element which might not be in the array (which you need to return -1)
 // -> Then the condition should be while (left <= right), because otherwise if nums has size 1 then the while loop will simply not execute.
