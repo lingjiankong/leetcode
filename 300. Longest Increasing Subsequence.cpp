@@ -10,11 +10,15 @@
 //
 // ***
 //
+// See also 128. Longest Consecutive Sequence. In that question, order of element does not matter.
+//
 // DP solution.
 int lengthOfLIS(vector<int>& nums)
 {
 	// dp[i] stores the length of longest subsequence that ends at position i.
+	// Remember to initialize all elements in dp to 1 because a single number itself is a subsequence of length 1.
 	vector<int> dp(nums.size(), 1);
+
 	int longestLength = 0;
 
 	for (int i = 0; i < nums.size(); ++i)

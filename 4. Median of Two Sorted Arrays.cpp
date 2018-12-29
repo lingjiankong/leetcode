@@ -21,6 +21,62 @@
 //
 // ***
 //
+// Code only. Detail explanation after the code.
+
+double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
+{
+	int n1 = nums1.size();
+	int n2 = nums2.size();
+	int len = n1 + n2;
+
+	if (n1 > n2)
+	{
+		return findMedianSortedArrays(nums2, nums1);
+	}
+
+	if (n1 == 0)
+	{
+		return (nums2[(n2 - 1) / 2] + nums2[n2 / 2]) / 2.0;
+	}
+
+	int left = 0, right = n1;
+
+	while (left <= n1)
+	{
+		int cut1 = left + (right - left) / 2;
+		int cut2 = len / 2 - cut1;
+
+		int L1 = (cut1 == 0) ? INT_MIN : nums1[cut1-1];
+		int L2 = (cut2 == 0) ? INT_MIN : nums2[cut2-1];
+		int R1 = (cut1 == n1) ? INT_MAX : nums1[cut1];
+		int R2 = (cut2 == n2) ? INT_MAX : nums2[cut2];
+
+		if (L2 > R1)
+		{
+			left = cut1 + 1;
+		}
+		else if (L1 > R2)
+		{
+			right = cut1;
+		}
+		else
+		{
+			if (len % 2 == 0)
+			{
+				return (max(L1, L2) + min(R1, R2)) / 2.0;
+			}
+			else
+			{
+				return min(R1, R2);
+			}
+		}
+	}
+
+	return -1;
+}
+
+// Detailed explanation:
+//
 // If nums1.size() + nums2.size() is even,
 // then (#elements to the left of cut1) + (#elements to the left of cut2)
 // = (#elements to the right of cut1) + (#elements to the right of cut2)
@@ -58,6 +114,8 @@
 // so read the comment in code. If you don't get it (which you should),
 // read https://blog.csdn.net/chen_xinjia/article/details/69258706
 //
+
+// Same code, with comments:
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 {
 
@@ -77,7 +135,7 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 	// so if n1 == 0 then nums2 must contain element.
 	if (n1 == 0)
 	{
-		return (nums2[(n2-1)/2] + nums2[n2/2]) / 2.0;
+		return (nums2[(n2 - 1) / 2] + nums2[n2 / 2]) / 2.0;
 	}
 
 	// i.e. low on nums1 - left bound for binary search of cut1 on nums1
@@ -93,9 +151,10 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 	while (left <= right)
 	{
 		// i.e. the `mid` is binary search
-		int cut1 = left + (right-left)/2;
+		int cut1 = left + (right - left) / 2;
 
-		int cut2 = len / 2 - cut1; // if we know cut1, then cut2 is just len/2-cut1 i.e. (n1+n2)/2-cut1.
+		// If we know cut1, then cut2 is just len/2-cut1 i.e. (n1+n2)/2-cut1.
+		int cut2 = len / 2 - cut1;
 
 		// If cut1 = 0, L1 is INT_MIN because nothing to cut1's left,
 		// thus we can think of L1 as a very small value;
@@ -107,15 +166,15 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 		int R1 = (cut1 == n1) ? INT_MAX : nums1[cut1];
 		int R2 = (cut2 == n2) ? INT_MAX : nums2[cut2];
 
-		// L1 too big, pulling down the range to search cut1 to the left by right = cut1 - 1
-		if (L1 > R2)
-		{
-			right = cut1 - 1;
-		}
 		// R1 too small, pushing up the range to search cut1 to the right left = cut1 + 1
-		else if (L2 > R1)
+		if (L2 > R1)
 		{
 			left = cut1 + 1;
+		}
+		// L1 too big, pulling down the range to search cut1 to the left by right = cut1 - 1
+		else if (L1 > R2)
+		{
+			right = cut1;
 		}
 		// Else, we've found the right cut, now we need to see whether n1+n2 (i.e. len) is even or odd:
 		//

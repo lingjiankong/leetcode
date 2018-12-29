@@ -19,6 +19,7 @@
 //
 // ***
 //
+// You cannot modify the array and you cannot copy the array to sort it (which will result in O(n) space, not allowed in this question).
 // Binary search is a O(nlogn), there's another O(n) method that uses the idea in linked list cycle.
 // You can do that if you have time in the future.
 //
@@ -41,27 +42,18 @@
 //
 // Every time you calculate a new mid, you iterate through all nums and find
 // how many elements are less than or equal to mid, and store it in count.
+// Either the first half or the second half of the range is "too crowded" (i.e. with duplicate element).
 //
-// If count > mid, then there are more than mid elements in the range [1, mid].
-// That is, there are more than mid element in a range of size (mid-1)+1 = mid.
-// Thus this range must contain a duplicate.
-//
-// If count <= mid, then there are n+1-count elements in the range [mid+1, n].
-// That is, at least n+1-mid elements in a range of size (n-(mid+1)+1 = n-mid.
-// Thus that range must contain a duplicate.
-//
-// In another word, We know that the whole range is "too crowded" and thus that the first half or the second half of the range
-// is too crowded. So you check to know whether the first half is too crowded, and if it isn't, you know that the second half is.
 int findDuplicate(vector<int>& nums)
 {
-	int low = 0;
-	int high = nums.size() - 1;
+	int left = 0;
+	int right = nums.size();
 
-	while (low <= high)
+	while (left < right)
 	{
-		int mid = low + (high-low)/2;
-		int count = 0;
+		int mid = left + (right - left) / 2;
 
+		int count = 0;
 		for (int num : nums)
 		{
 			if (num <= mid)
@@ -70,17 +62,17 @@ int findDuplicate(vector<int>& nums)
 			}
 		}
 
-		// Left half too crowded.
-		if (count > mid)
-		{
-			high = mid - 1;
-		}
 		// Right half too crowded.
+		if (count <= mid)
+		{
+			left = mid + 1;
+		}
+		// Left half too crowded.
 		else
 		{
-			low = mid + 1;
+			right = mid;
 		}
 	}
 
-	return low;
+	return right;
 }

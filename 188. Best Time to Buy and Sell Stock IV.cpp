@@ -50,7 +50,7 @@ int maxProfit(int k, vector<int>& prices)
 
 	// If you are limited by k transactions, this situation becomes a generalization of solution to
 	// 123. Best Time to Buy and Sell Stock III, if you understand that question, then understanding this one is easy,
-	// otherwise you will be confused
+	// otherwise you will be confused.
 	//
 	// Why k+1? because you need sold[0] to update hold[1] = max(hold[1], sold[0] - prices[1]),
 	// sold[0] will always be 0 and hold[0] will always be INT_MIN.
@@ -66,34 +66,13 @@ int maxProfit(int k, vector<int>& prices)
 	{
 		for (int j = k; j > 0; --j)
 		{
-			// You can only sold the jth stock after you've bought the jth stock, that's why
-			// hold[j] + prices[i]
+			// You can only sold the jth stock after you've bought the jth stock, that's why hold[j] + prices[i]
 			sold[j] = max(sold[j], hold[j] + prices[i]);
 
-			// You can only hold the jth stock after you've sold the j-1 th stock, that's why
-			// sold[j-1] - prices[i]
+			// You can only hold the jth stock after you've sold the j-1 th stock, that's why sold[j-1] - prices[i]
 			hold[j] = max(hold[j], sold[j-1] - prices[i]);
 		}
 	}
 
 	return sold[k];
-
-// Regardless of the actual number of transactions you have done
-// (whether it is 1, 2, or k transactions, as long as it is less than or equal to k transactions),
-// returning sold[k] will always give you the maximum possilbe profit you are able to get.
-//
-// For example, if you are allowed to do 30 transactions but you only have 10 days of stock,
-// you can still return sold[k] to get the maximum profit.
-//
-// We see below that sold[n] never decreases. If you have actually done only 1 transaction,
-// sold[1], sold[2] and sold[3] will have the same value as sold[1]
-
-//			  {3,  5,  7,  0,  3,  2,  9,  1}
-//
-// hold[1]	  -3, -3, -3,  0,  0,  0,  0,  0
-// hold[2]	  -3, -3, -3,  4,  4,  4,  4,  8
-// hold[3]	  -3, -3, -3,  4,  4,  5,  5,  12
-//
-// sold[1]	   0,  2,  4,  4,  4,  4,  9,  9
-// sold[2]	   0,  2,  4,  4,  7,  7,  13, 13
-// sold[3]	   0,  2,  4,  4,  7,  7,  14, 14
+}

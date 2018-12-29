@@ -11,25 +11,23 @@
 // the short edge of the container needs to be higher than current short edge.
 // Note we don't change the current high edge, since the container size is determined only by the short edge.
 // We try to find new containers whose width is shorter but short edge is higher than previous short edge.
-// and compare that container size with our maxVal, repeat until there are no more possible containers left.
+// and compare that container size with our maxArea, repeat until there are no more possible containers left.
 //
 int maxArea(vector<int>& height)
 {
 
-	int maxVal = 0;
-	int curVal = 0;
+	int maxArea = 0;
+	int currentArea = 0;
 
 	int left = 0;
 	int right = height.size() - 1;
 
 	while (left < right)
 	{
-		curVal = min(height[left], height[right]) * (right - left);
-
-		maxVal = max(curVal, maxVal);
-
+		currentArea = min(height[left], height[right]) * (right - left);
+		maxArea = max(maxArea, currentArea);
 		height[left] < height[right] ? ++left : --right;
 	}
 
-	return maxVal;
+	return maxArea;
 }

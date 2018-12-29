@@ -80,7 +80,7 @@ int maxProfit(vector<int>& prices)
 		// hold is the max of either:
 		// hold <- you've bought the stock before and is currently holding it now, and you do nothing
 		// -price <- you buy the stock now
-		hold = max(hold, -price);
+		hold = max(hold, 0 - price);
 	}
 
 	return sold;

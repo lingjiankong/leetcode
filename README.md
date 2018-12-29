@@ -26,19 +26,11 @@
 | 220 | Contains Duplicate III | Basic
 | 55 | Jump Game | Star
 | 45 | Jump Game II | Basic
-| 121 | Best Time to Buy and Sell Stock | Basic
-| 122 | Best Time to Buy and Sell Stock II | Basic
-| 123 | Best Time to Buy and Sell Stock III | Basic
-| 188 | Best Time to Buy and Sell Stock IV | Basic
-| 309 | Best Time to Buy and Sell Stock with Cooldown | Basic
-| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Basic
-| 11 | Container With Most Water | Basic
-| 128 | Longest Consecutive Sequence |
+| 11 | Container With Most Water | Star
+| 128 | Longest Consecutive Sequence | Star
 | 164 | Maximum Gap Bucket | Hard
-| 287 | Find the Duplicate Number |
-| 135 | Candy |
+| 135 | Candy | Basic
 | 330 | Patching Array | Hard
-| 4 | Median of Two Sorted Arrays | Hard
 | 321 | Create Maximum Number | Hard
 | 56 | Merge Intervals | Basic
 | 252 | Meeting Rooms | Basic
@@ -204,6 +196,12 @@
 | 337 | House Robber III | Basic
 | 313 | Super Ugly Number
 | 361 | Bomb Enemy | Basic
+| 121 | Best Time to Buy and Sell Stock | Star
+| 122 | Best Time to Buy and Sell Stock II | Star
+| 123 | Best Time to Buy and Sell Stock III | Star
+| 188 | Best Time to Buy and Sell Stock IV | Star
+| 309 | Best Time to Buy and Sell Stock with Cooldown | Star
+| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Star
 
 ## LinkedList
 | ID | Name | Note |
@@ -289,6 +287,8 @@
 | 69 | Sqrt(x) | Star
 | 74 | Search a 2D Matrix | Star
 | 240 | Search a 2D Matrix II | Normal, Memorize
+| 287 | Find the Duplicate Number | Normal
+| 4 | Median of Two Sorted Arrays | Star
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Note |

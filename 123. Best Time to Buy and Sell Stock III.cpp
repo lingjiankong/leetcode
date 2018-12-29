@@ -32,6 +32,12 @@
 // This problem can be done via dp, there are four states we keep in our dp, see comments in code for what these four states represent.
 // You need to keep in mind that all these states keep track of the MAX AMOUNT OF MOENY we have in each state.
 //
+// The four states we keep in our dp:
+// int hold1 = INT_MIN; Max amount of money we have when we are holding the first stock
+// int sold1 = 0;       Max amount of money we have when we've sold the first stock (occurs after first stock has been bought (i.e. hold))
+// int hold2 = INT_MIN; Max amount of money we have when we are holding the second stock (occurs after the first stock has been sold)
+// int sold2 = 0;       Max amount of money we have when we've sold the second stock (occurs after second stock has been bought (i.e. hold))
+//
 // Why update the states in this order (let's call it "decreasing order")
 //	   for (const auto& price : prices) {
 //		   sold2 = max(sold2, hold2 + price);
@@ -60,26 +66,7 @@
 // as if you were buying and selling stock on the same day, which result in useless transaction.
 //
 // See 121 for dp solution in the case when you are allowed to complete only 1 transaction instead of 2.
-
-int maxProfit(vector<int>& prices)
-{
-	// These are the four states we keep in our dp
-	int hold1 = INT_MIN; // Max amount of money we have when we are holding the first stock
-	int sold1 = 0; // Max amount of money we have when we've sold the first stock (occurs after first stock has been bought (i.e. hold))
-	int hold2 = INT_MIN; // Max amount of money we have when we are holding the second stock (occurs after the first stock has been sold)
-	int sold2 = 0; // Max amount of money we have when we've sold the second stock (occurs after second stock has been bought (i.e. hold))
-
-	for (auto price : prices)
-	{
-		sold2 = max(sold2, hold2 + price);
-		hold2 = max(hold2, sold1 - price);
-		sold1 = max(sold1, hold1 + price);
-		hold1 = max(hold1, -price);
-	}
-
-	return sold2;
-}
-
+//
 // Regardless of the actual number of transactions you have done
 // (whether it is 1, 2, or k transactions, as long as it is less than or equal to k transactions),
 // returning sold[k] will always give you the maximum possilbe profit you are able to get.
@@ -91,7 +78,7 @@ int maxProfit(vector<int>& prices)
 //
 // We see below that sold[n] never decreases. If you have actually done only 1 transaction,
 // sold[1], sold[2] and sold[3] will have the same value as sold[1]
-
+//
 //			  {3,  5,  7,  0,  3,  2,  9,  1}
 //
 // hold[1]	  -3, -3, -3,  0,  0,  0,  0,  0
@@ -101,3 +88,21 @@ int maxProfit(vector<int>& prices)
 // sold[1]	   0,  2,  4,  4,  4,  4,  9,  9
 // sold[2]	   0,  2,  4,  4,  7,  7,  13, 13
 // sold[3]	   0,  2,  4,  4,  7,  7,  14, 14
+
+int maxProfit(vector<int>& prices)
+{
+	int hold1 = INT_MIN;
+	int sold1 = 0;
+	int hold2 = INT_MIN;
+	int sold2 = 0;
+
+	for (auto price : prices)
+	{
+		sold2 = max(sold2, hold2 + price);
+		hold2 = max(hold2, sold1 - price);
+		sold1 = max(sold1, hold1 + price);
+		hold1 = max(hold1, 0 - price);
+	}
+
+	return sold2;
+}
