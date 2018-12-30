@@ -342,7 +342,8 @@
 ## Non LeetCode Questions
 | ID | Name | Note | Inspiration
 |:---:|:---:|:---:|:---:|
-| N1 | Shortest Distance Between Two Cells In A Matrix | Star | Amazon SDE OA Late 2018
+| N1 | Minimum Distance between Two Points in a Matrix | Star | Amazon SDE OA Late 2018
+| N2 | Shortest Path between Two Points in a Matrix | Star |
 
 
 

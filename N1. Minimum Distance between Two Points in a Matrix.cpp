@@ -1,12 +1,12 @@
 // ***
 //
-// Given a matrix of size m by n, find the shortest distance from a source cell to a destination cell.
+// Given a matrix of size m by n, find the shortest distance from a source cell to a goal cell.
 // You can only move up, down, left and right.
 //
-// If there's no path between start and destination, return -1.
+// If there's no path between start and goal, return -1.
 //
 // 's' represents source
-// 'd' represents destination
+// 'd' represents goal
 // '1' represents cell you can travel
 // '0' represents obstacles
 //
@@ -20,7 +20,7 @@
 
 using namespace std;
 
-int minDistance(const pair<int, int>& start, const pair<int, int>& destination, const vector<vector<char>>& grid)
+int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid)
 {
     int m = grid.size();
     int n = grid[0].size();
@@ -40,8 +40,7 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& destination, 
         pair<int, int> cell = cellQueue.front(); cellQueue.pop();
         int x = cell.first, y = cell.second;
 
-        // Found the destination.
-        if (grid[x][y] == 'd')
+        if (pair<int, int>(x, y) == goal)
         {
             return distance[x][y];
         }
@@ -85,12 +84,15 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& destination, 
 int main() 
 { 
     vector<vector<char>> grid = {
-		{ '0', '1', '0', 's' }, 
+		{ '0', '1', '0', '1' }, 
         { '1', '0', '1', '1' }, 
         { '0', '1', '1', '1' }, 
-        { 'd', '1', '1', '1' }}; 
+        { '1', '1', '1', '1' }}; 
   
-    cout << minDistance({0, 3}, {3, 0}, grid) << endl; 
+	pair<int, int> start = {0, 3};
+	pair<int, int> goal = {3, 0};
+
+    cout << minDistance(start, goal, grid) << endl; 
 
     return 0; 
 } 
