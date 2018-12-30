@@ -339,6 +339,12 @@
 | 307 | Range Sum Query - Mutable	Binary Index Tree
 | 308 | Range Sum Query 2D - Mutable	Binary Index Tree
 
+## Non LeetCode Questions
+| ID | Name | Note | Inspiration
+|:---:|:---:|:---:|:---:|
+| N1 | Shortest Distance Between Two Cells In A Matrix | Star | Amazon SDE OA Late 2018
+
+
 
 
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.

@@ -49,7 +49,6 @@ class Solution
             dfs(0, 0, m, n, current, all);
 
             return 0;
-
         }
 
     private:
