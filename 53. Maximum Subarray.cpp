@@ -29,19 +29,21 @@ int maxSubArray(vector<int>& nums)
 // Same thing.
 int maxSubArray(vector<int>& nums)
 {
-	if (nums.size() == 0)
+	if (nums.empty())
 	{
 		return 0;
 	}
 
 	// The maximum sum of subarray that ends at nums[i]
-	int curSum = nums[0];
+	vector<int> curSum(nums.size());
+	curSum[0] = nums[0];
+
 	int maxSum = nums[0];
 	
 	for (int i = 1; i < nums.size(); ++i)
 	{
-		curSum = max(curSum + nums[i], nums[i]);
-		maxSum = max(curSum, maxSum);
+		curSum[i] = max(curSum[i-1] + nums[i], nums[i]);
+		maxSum = max(curSum[i], maxSum);
 	}
 	
 	return maxSum;

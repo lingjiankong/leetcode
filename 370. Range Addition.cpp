@@ -28,7 +28,7 @@
 //
 // This question was confusing to me until someone told me how to do it. It is hard to explain in word.
 // The idea is mark the beginning with inc and mark one past the end with -inc,
-// After you've done it for all updates,  sum everything up later,
+// After you've done it for all updates, sum everything up later,
 // now middle element are incremented as well, until the final decrement marker.
 //
 //  0  0  0  0  0  0
@@ -38,7 +38,7 @@
 // -2  0  0  2  0  0 -> -2  0  3  5  3  0 
 vector<int> getModifiedArray(int length, vector<vector<int>>& updates)
 {
-	vector<int> res, nums(length + 1, 0);
+	vector<int> toReturn, nums(length + 1, 0);
 
 	for (int i = 0; i < updates.size(); ++i)
 	{
@@ -50,8 +50,8 @@ vector<int> getModifiedArray(int length, vector<vector<int>>& updates)
 	for (int i = 0; i < length; ++i)
 	{
 		sum += nums[i];
-		res.push_back(sum);
+		toReturn.push_back(sum);
 	}
 
-	return res;
+	return toReturn;
 }

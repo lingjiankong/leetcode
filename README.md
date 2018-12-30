@@ -32,27 +32,24 @@
 | 135 | Candy | Basic
 | 330 | Patching Array | Hard
 | 321 | Create Maximum Number | Hard
-| 56 | Merge Intervals | Basic
-| 252 | Meeting Rooms | Basic
+| 56 | Merge Intervals | Star
+| 252 | Meeting Rooms | Star
 | 253 | Meeting Rooms II | Basic
-| 239 | Sliding Window Maximum | Basic
-| 53 | Maximum Subarray | Basic
-| 152 | Maximum Product Subarray | Basic
-| 325 | Maximum Size Subarray Sum Equals k | Basic
+| 239 | Sliding Window Maximum | Star
+| 325 | Maximum Size Subarray Sum Equals k | Star
 | 209 | Minimum Size Subarray Sum | Basic
-| 238 | Product of Array Except Self | Basic
+| 238 | Product of Array Except Self | Star
 | 228 | Summary Ranges | Exotic
 | 163 | Missing Ranges | Exotic
-| 88 | Merge Sorted Array | Basic
-| 75 | Sort Colors |
-| 376 | Wiggle Subsequence |
-| 280 | Wiggle Sort |
-| 324 | Wiggle Sort II | Exotic
-| 370 | Range Addition |
-| 349 | Intersection of Two Arrays | Basic, Hash table
-| 350 | Intersection of Two Arrays II | Basic, Hash table
-| 215 | Kth Largest Element in an Array | Star, Memorize, Quick Sort
-| 334 | Increasing Triplet Subsequence | Star
+| 88 | Merge Sorted Array | Star
+| 75 | Sort Colors | Basic
+| 280 | Wiggle Sort | Normal
+| 324 | Wiggle Sort II | Normal
+| 370 | Range Addition | Normal
+| 349 | Intersection of Two Arrays | Star
+| 350 | Intersection of Two Arrays II | Star
+| 215 | Kth Largest Element in an Array | Star, Quick Sort, Memorize
+| 334 | Increasing Triplet Subsequence | Basic
 | 414 | Third Maximum Number | Basic
 
 ## String
@@ -202,6 +199,9 @@
 | 188 | Best Time to Buy and Sell Stock IV | Star
 | 309 | Best Time to Buy and Sell Stock with Cooldown | Star
 | 714 | Best Time to Buy and Sell Stock with Transaction Fee | Star
+| 53 | Maximum Subarray | Star
+| 152 | Maximum Product Subarray | Star
+| 376 | Wiggle Subsequence | Basic
 
 ## LinkedList
 | ID | Name | Note |

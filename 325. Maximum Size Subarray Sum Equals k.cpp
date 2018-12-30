@@ -29,8 +29,7 @@
 // To find the beginning index and end index of a subarray whose sum == k:
 // Simply find if cumulativeSumToIndex[cumulativeSum-k] exists in the unordered_map
 // If exists, then the beginning index of a subarray whose sum == k is just cumulativeSumToIndex[cumulativeSum-k] + 1
-// (i.e. Exculde everything from 0 to cumulativeSum-k inclusive)
-// and the end index is current index.
+// (i.e. Exculde everything from 0 to cumulativeSum-k inclusive), and the end index is current index.
 // The length of this subarray is index - cumulativeSumToIndex[cumulativeSum-k]
 //
 // If you read the code you would understand the idea.  
@@ -52,12 +51,12 @@ int maxSubArrayLen(vector<int>& nums, int k)
 			// this must be the maxLength seen so far.
 			maxLength = index + 1;
 		}
-		else if (cumulativeSumToIndex.count(cumulativeSum-k))
+		else if (cumulativeSumToIndex.count(cumulativeSum - k))
 		{
 			// If cumulativeSum-k exists in the unordered_map, then we found a subarray which sums to k.
 			// The index of this subarray starts from cumulativeSumToIndex[cumulativeSum-k] + 1 and end at current index,
 			// so the length is just index - cumulativeSumToIndex[cumulativeSum-k]
-			maxLength = max(maxLength, index - cumulativeSumToIndex[cumulativeSum-k]);
+			maxLength = max(maxLength, index - cumulativeSumToIndex[cumulativeSum - k]);
 		}
 		
 		if (cumulativeSumToIndex.count(cumulativeSum) == 0)

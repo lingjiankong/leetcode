@@ -13,7 +13,7 @@
 // nums[0] <= nums[1] >= nums[2] <= nums[3]...
 // Therefore, if i is odd, then nums[i] must be a ridge, we want nums[i-1] <= nums[i]
 // Likely, if the i is even, then nums[i] must be a valley, we want nums[i-1] >= nums[i]
-// So if this condistion is not satisfied, we just swap(nums[i-1], nums[i])
+// So if this condition is not satisfied, we just swap(nums[i-1], nums[i])
 // 
 // You might ask if we swap(nums[i-1], nums[i]), does previous vector still satifiy the condition.
 // It does. When you do the swap the previous condition will be maintained.

@@ -17,34 +17,38 @@
 //  1  3  -1 [-3  5  3] 6  7       5
 //  1  3  -1  -3 [5  3  6] 7       6
 //  1  3  -1  -3  5 [3  6  7]      7
+//
 // Note: 
 // You may assume k is always valid, 1 ≤ k ≤ input array's size for non-empty array.
 //
 // ***
 //
 // 1. Brute force
-// Time complexity: O((n – k + 1) * k)
+// Time complexity: O((n – k) * k)
 vector<int> maxSlidingWindow(vector<int>& nums, int k)
 {
-	vector<int> ans;
-	
-	// i is the right most element of the sliding window.
-	// i.e. i+1 is the right bound of the sliding window.
-	// So k - 1 is the right most elements of the first sliding window.
-	for (int i = k - 1; i < nums.size(); ++i)
+	// Need to check for empty nums due to *max_element
+	if (nums.empty())
 	{
-		int maxElement = *max_element(nums.begin() + i - k + 1, nums.begin() + i + 1);
-		ans.push_back(maxElement);
+		return {};
 	}
 
-	return ans;
+	vector<int> toReturn;
+	
+	for (int i = 0; i <= nums.size() - k; ++i)
+	{
+		int maxElement = *max_element(nums.begin() + i, nums.begin() + i + k);
+		toReturn.push_back(maxElement);
+	}
+
+	return toReturn;
 }
 
 // 2. BST (multiset), the most intuitive solution.
 // Time complexity: O((n – k + 1) * logk)
 vector<int> maxSlidingWindow(vector<int>& nums, int k)
 {
-	vector<int> ans;
+	vector<int> toReturn;
 	multiset<int> window;
 
 	for (int i = 0; i < nums.size(); ++i)
@@ -57,10 +61,10 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 		if (i - k + 1 >= 0)
 		{
 			// Iterator denoted by rbegin() is the biggest element in the multiset.
-			ans.push_back(*window.rbegin())	
+			toReturn.push_back(*window.rbegin())	
 			
 			// Remove the element no longer in the window. 
-			auto itr = window.find(nums[i-k+1]);
+			auto itr = window.find(nums[i - k + 1]);
 			if (itr != window.end())
 			{
 				window.erase(itr);
@@ -68,7 +72,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 		}
 	}
 		
-	return ans; 
+	return toReturn; 
 }
 
 // 3. Monotonic priority queue (using deque as underlying data structure)
@@ -112,7 +116,7 @@ class MonotonicQueue
 
 vector<int> maxSlidingWindow(vector<int>& nums, int k)
 {
-	vector<int> ans;
+	vector<int> toReturn;
 	MonotonicQueue q;
 
 	for (int i = 0; i < nums.size(); ++i)
@@ -121,7 +125,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 
 		if (i - k + 1 >= 0)
 		{
-			ans.push_back(q.peekMax());
+			toReturn.push_back(q.peekMax());
 
 			if (nums[i-k+1] == q.peekMax())
 			{
@@ -130,5 +134,5 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 		}
 	}
 
-	return ans;
+	return toReturn;
 }

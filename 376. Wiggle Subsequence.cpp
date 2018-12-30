@@ -60,7 +60,7 @@ int wiggleMaxLength(vector<int>& nums)
 		{
 			down = up + 1;
 		}
-		// else if nums[i] == nums[i-1], then up and down are not updated.
+		// Else, nums[i] == nums[i-1], then up and down are not updated.
 	}
 
 	return max(up, down);

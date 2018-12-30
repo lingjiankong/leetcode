@@ -36,18 +36,19 @@
 //
 vector<Interval> merge(vector<Interval>& intervals)
 {
-	sort(intervals.begin(), intervals.end(), [] (const Interval& a, const Interval& b) {return a.start < b.start;});
+	sort(intervals.begin(), intervals.end(), [](const Interval& a, const Interval& b){return a.start < b.start;});
 
 	vector<Interval> mergedIntervals;
 
 	for (auto interval : intervals)
 	{
 		// If mergedIntervals is empty, or if the start of current interval is greater than the end of last merged interval,
-		// then we shall start a brand new interval.
+		// then add a brand new interval to merged interval.
 		if (mergedIntervals.empty() || mergedIntervals.back().end < interval.start)
 		{
 			mergedIntervals.push_back(interval);
 		}
+		// Otherwise, merge two intervals.
 		else
 		{
 			// Must take the max of last merged interval end and current interval end

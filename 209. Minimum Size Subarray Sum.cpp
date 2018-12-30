@@ -25,11 +25,11 @@ int minSubArrayLen(int s, vector<int>& nums)
 	// Minimum length of the subarray which sum >= s.
 	int minLength = INT_MAX;
 
-	// Left bound of the sliding window.
-	int left = 0;
-
 	// Sum in the current sliding window.
 	int sum = 0;
+
+	// Left bound of the sliding window.
+	int left = 0;
 
 	for (int i = 0; i < nums.size(); ++i)
 	{
@@ -37,7 +37,7 @@ int minSubArrayLen(int s, vector<int>& nums)
 
 		while (left <= i && sum >= s)
 		{
-			minLength = min(minLength, i-left+1);
+			minLength = min(minLength, i - left + 1);
 			sum -= nums[left++];
 		}
 	}

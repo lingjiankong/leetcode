@@ -20,11 +20,11 @@
 // Just read the code and you'll understand it.
 vector<string> summaryRanges(vector<int>& nums)
 {
-	vector<string> res;
+	vector<string> toReturn;
 
 	if (nums.size() == 0)
 	{
-		return res;
+		return toReturn;
 	}
 
 	// Starting index of a for the a -> b you want to fill.
@@ -35,11 +35,11 @@ vector<string> summaryRanges(vector<int>& nums)
 		{
 			if (start == i - 1)
 			{
-				res.push_back(to_string(nums[i-1]));
+				toReturn.push_back(to_string(nums[i-1]));
 			}
 			else
 			{
-				res.push_back(to_string(nums[start]) + "->" + to_string(nums[i-1]));
+				toReturn.push_back(to_string(nums[start]) + "->" + to_string(nums[i-1]));
 			}
 			start = i;
 		}
@@ -47,12 +47,12 @@ vector<string> summaryRanges(vector<int>& nums)
 
 	if (start == nums.size() - 1) 
 	{
-		res.push_back(to_string(nums[start]));
+		toReturn.push_back(to_string(nums[start]));
 	}
 	else
 	{
-		res.push_back(to_string(nums[start]) + "->" + to_string(nums.back()));
+		toReturn.push_back(to_string(nums[start]) + "->" + to_string(nums.back()));
 	}
 
-	return res;
+	return toReturn;
 }

@@ -73,10 +73,10 @@ int minMeetingRooms(vector<Interval>& intervals)
 	return total;
 }
 
-// Using priority queue which stores the end time (the earliest end time has highest priority) of each meeting.
+// Using priority_queue which stores the *end time* (the earliest end time has highest priority) of each meeting.
 int minMeetingRooms(vector<Interval>& intervals)
 {
-	sort(intervals.begin(), intervals.end(), [] (const Interval &a, const Interval &b) {return a.start < b.start;});
+	sort(intervals.begin(), intervals.end(), [] (const Interval& a, const Interval& b) { return a.start < b.start; });
 	priority_queue<int, vector<int>, greater<int>> pq;
 
 	for (auto interval : intervals)

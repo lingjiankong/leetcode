@@ -14,11 +14,11 @@
 // A similar problem is 228. Summary Ranges.
 vector<string> findMissingRanges(vector<int>& nums, int lower, int upper)
 {
-	vector<string> res;
+	vector<string> toReturn;
 
 	long currentLow = lower;
 
-	for (const long& num : nums)
+	for (long num : nums)
 	{
 		if (num == currentLow)
 		{
@@ -29,13 +29,13 @@ vector<string> findMissingRanges(vector<int>& nums, int lower, int upper)
 			// We are missing a number
 			if (num - 1 == currentLow)
 			{
-				res.push_back(to_string(currentLow));
+				toReturn.push_back(to_string(currentLow));
 			}
 			// We are missing a range
 			// You can just put else here.
 			else if (num - 1 > currentLow)
 			{
-				res.push_back(to_string(currentLow) + "->" + to_string(num-1));
+				toReturn.push_back(to_string(currentLow) + "->" + to_string(num-1));
 			}
 			currentLow = num + 1;
 		}
@@ -43,12 +43,12 @@ vector<string> findMissingRanges(vector<int>& nums, int lower, int upper)
 
 	if (currentLow == upper)
 	{
-		res.push_back(to_string(upper));
+		toReturn.push_back(to_string(upper));
 	}
 	else if (currentLow < upper)
 	{
-		res.push_back(to_string(currentLow) + "->" + to_string(upper));
+		toReturn.push_back(to_string(currentLow) + "->" + to_string(upper));
 	}
 
-	return res;
+	return toReturn;
 }
