@@ -327,16 +327,13 @@
 | 359 | Logger Rate Limiter | Basic
 | 346 | Moving Average from Data Stream	Sliding Window | Star
 | 362 | Design Hit Counter | Star
-| 281 | Zigzag Iterator
-| 284 | Peeking Iterator
-| 251 | Flatten 2D Vector
-| 288 | Unique Word Abbreviation
-| 170 | Two Sum III - Data structure design
+| 281 | Zigzag Iterator | Basic
+| 251 | Flatten 2D Vector | Basic
 | 348 | Design Tic-Tac-Toe
 | 379 | Design Phone Directory
 | 353 | Design Snake Game
 | 146 | LRU Cache
-| 355 | Design Twitter
+| 355 | Design Twitter | Star
 | 303 | Range Sum Query - Immutable
 | 304 | Range Sum Query 2D - Immutable
 | 307 | Range Sum Query - Mutable	Binary Index Tree
