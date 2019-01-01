@@ -42,24 +42,22 @@ class Solution
 
 	private:
 
-		void dfs(TreeNode* node, int sum, vector<int> current, vector<vector<int>>& all)
+		void dfs(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all)
 		{
-			if (!node)
+			if (!root)
 			{
 				return;
 			}
 
-			current.push_back(node->val);
+			current.push_back(root->val);
 
-			if (node->val == sum && !node->left && !node->right)
+			if (root->val == sum && !root->left && !root->right)
 			{
 				all.push_back(current);
 			}
 
-			dfs(node->left, sum - node->val, current, all);
-			dfs(node->right, sum - node->val, current, all);
-
-			current.pop_back();
+			dfs(root->left, sum - root->val, current, all);
+			dfs(root->right, sum - root->val, current, all);
 		}
 
 };

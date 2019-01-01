@@ -18,21 +18,6 @@
 //
 // A "solution template" for both preorder, inorder, and postorder traversal.
 //
-// A post order traversal is
-//
-// postOrder(node->left)
-// postOrder(node->right)
-// print(node->val)
-//
-// The reverse of a post order traversal is
-//
-// print(node->val)
-// postOrder(node->right)
-// postOrder(node->left)
-//
-// This looks pretty much like a preorder traversal with right and left subtree traversal swapped.
-// We could use the iterative method similar to 144. Binary Tree Preorder Traversal
-// to calculate the result, then reverse it to get the post order traversal result.
 class Solution
 {
 
@@ -48,12 +33,12 @@ class Solution
 				{
 					mNodeStack.push(currentNode);
 					mResult.push_back(currentNode->val);
-					currentNode = currentNode -> right;
+					currentNode = currentNode->right;
 				}
 				else
 				{
 					TreeNode* node = mNodeStack.top(); mNodeStack.pop();
-					currentNode = node -> left;
+					currentNode = node->left;
 				}
 			}
 
@@ -69,6 +54,22 @@ class Solution
 };
 
 // Another iterative solution, see corresponding version for 144. Binary Tree Preorder Traversal.
+//
+// A post order traversal is
+//
+// postOrder(node->left)
+// postOrder(node->right)
+// print(node->val)
+//
+// The reverse of a post order traversal is
+//
+// print(node->val)
+// postOrder(node->right)
+// postOrder(node->left)
+//
+// This looks pretty much like a preorder traversal with right and left subtree traversal swapped.
+// We could use the iterative method similar to 144. Binary Tree Preorder Traversal
+// to calculate the result, then reverse it to get the post order traversal result.
 class Solution
 {
 

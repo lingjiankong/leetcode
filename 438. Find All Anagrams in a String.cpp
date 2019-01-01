@@ -31,7 +31,7 @@
 // ***
 //
 // Maintain a sliding window (sHashWindow) of size p in s, slide it to the right and check
-// if sHashWindow == pHash, if so then there's a valid anagram. add index to result.
+// if sHashWindow == pHash, if so then, there's a valid anagram. add index to result.
 vector<int> findAnagrams(string s, string p)
 {
 	if (s.size() < p.size())

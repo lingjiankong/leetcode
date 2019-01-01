@@ -51,6 +51,8 @@
 | 215 | Kth Largest Element in an Array | Star, Quick Sort, Memorize
 | 334 | Increasing Triplet Subsequence | Basic
 | 414 | Third Maximum Number | Basic
+| 560 | Subarray Sum Equals K | Star
+| 406 | Queue Reconstruction by Height | Normal
 
 ## String
 | ID | Name | Note |
@@ -91,55 +93,59 @@
 | 392 | Is Subsequence | Star
 | 792 | Number of Matching Subsequence | Star
 | 187 | Repeated DNA Sequences | Star
+| 771 | Jewels and Stongs | Basic
 
 ## Tree
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 144 | Binary Tree Preorder Traversal | Basic
-| 94 | Binary Tree Inorder Traversal | Basic
-| 145 | Binary Tree Postorder Traversal | Basic
-| 102 | Binary Tree Level Order Traversal | Basic
-| 314 | Binary Tree Vertical Order Traversal | Basic
-| 116 | Populating Next Right Pointers in Each Node |
-| 117 | Populating Next Right Pointers in Each Node II |
-| 100 | Same Tree | Basic
-| 101 | Symmetric Tree | Basic
-| 226 | Invert Binary Tree | Basic
-| 257 | Binary Tree Paths | Basic
-| 112 | Path Sum | Basic
-| 113 | Path Sum II | Basic
-| 129 | Sum Root to Leaf Numbers | Basic
-| 298 | Binary Tree Longest Consecutive Sequence | Basic
-| 111 | Minimum Depth of Binary Tree | Basic
-| 104 | Maximum Depth of Binary Tree | Basic
-| 250 | Count Univalue Subtrees | Basic
-| 687 | Longest Univalue Path | Basic
-| 543 | Diameter of Binary Tree | Basic
-| 110 | Balanced Binary Tree | Basic
-| 366 | Find Leaves of Binary Tree | Basic
-| 107 | Binary Tree Level Order Traversal II |
-| 103 | Binary Tree Zigzag Level Order Traversal |
+| 144 | Binary Tree Preorder Traversal | Star
+| 94 | Binary Tree Inorder Traversal | Star
+| 145 | Binary Tree Postorder Traversal | Star
+| 100 | Same Tree | Star
+| 101 | Symmetric Tree | Star
+| 572 | Subtree of Another Tree | Star
+| 226 | Invert Binary Tree | Star
+| 112 | Path Sum | Star
+| 113 | Path Sum II | Star
+| 437 | Path Sum III | Basic
+| 124 | Binary Tree Maximum Path Sum | Star
+| 257 | Binary Tree Paths | Star
+| 129 | Sum Root to Leaf Numbers | Star
+| 298 | Binary Tree Longest Consecutive Sequence | Star
+| 104 | Maximum Depth of Binary Tree | Star
+| 111 | Minimum Depth of Binary Tree | Star
+| 250 | Count Univalue Subtrees | Star
+| 687 | Longest Univalue Path | Star
+| 543 | Diameter of Binary Tree | Star
+| 110 | Balanced Binary Tree | Star
+| 366 | Find Leaves of Binary Tree | Star
+| 102 | Binary Tree Level Order Traversal | Star
+| 314 | Binary Tree Vertical Order Traversal | Star
+| 107 | Binary Tree Level Order Traversal II | Basic
+| 103 | Binary Tree Zigzag Level Order Traversal | Basic
 | 199 | Binary Tree Right Side View | Basic
-| 98 | Validate Binary Search Tree | Basic
-| 333 | Largest BST Subtree | Basic
-| 235 | Lowest Common Ancestor of a Binary Search Tree | Basic; Memorize
-| 236 | Lowest Common Ancestor of a Binary Tree | Basic; Memorize
-| 108 | Convert Sorted Array to Binary Search Tree | Basic
-| 109 | Convert Sorted List to Binary Search Tree | Basic
-| 173 | Binary Search Tree Iterator | Basic, Memorize
-| 230 | Kth Smallest Element in a BST |
-| 297 | Serialize and Deserialize Binary Tree | Basic
+| 98 | Validate Binary Search Tree | Star
+| 333 | Largest BST Subtree | Star
+| 235 | Lowest Common Ancestor of a Binary Search Tree | Star
+| 236 | Lowest Common Ancestor of a Binary Tree | Basic, Memorize
+| 108 | Convert Sorted Array to Binary Search Tree | Star
+| 109 | Convert Sorted List to Binary Search Tree | Star
+| 173 | Binary Search Tree Iterator | Star, Memorize
+| 230 | Kth Smallest Element in a BST | Star
+| 297 | Serialize and Deserialize Binary Tree | Star
 | 285 | Inorder Successor in BST | Hard
-| 270 | Closest Binary Search Tree Value | Basic
-| 272 | Closest Binary Search Tree Value II | Basic
-| 114 | Flatten Binary Tree to Linked List | Basic
+| 270 | Closest Binary Search Tree Value | Star
+| 272 | Closest Binary Search Tree Value II | Star
+| 114 | Flatten Binary Tree to Linked List | Star
 | 255 | Verify Preorder Sequence in Binary Search Tree | Hard
-| 222 | Count Complete Tree Nodes |
+| 222 | Count Complete Tree Nodes | Basic
 | 105 | Construct Binary Tree from Preorder and Inorder Traversal | Basic
 | 106 | Construct Binary Tree from Inorder and Postorder Traversal | Basic
-| 96 | Unique Binary Search Trees | Basic
-| 95 | Unique Binary Search Trees II |
-| 331 | Verify Preorder Serialization of a Binary Tree | Exotic, Memorize
+| 96 | Unique Binary Search Trees | Normal
+| 95 | Unique Binary Search Trees II | Normal
+| 331 | Verify Preorder Serialization of a Binary Tree | Normal, Memorize
+| 116 | Populating Next Right Pointers in Each Node | Normal
+| 117 | Populating Next Right Pointers in Each Node II | Star
 
 ## Backtracking, DFS. BFS
 | ID | Name | Note |

@@ -70,7 +70,7 @@ int numTrees(int n)
 
 	for (int i = 2; i <= n; ++i)
 	{
-		for (int j = 0; j <= i; ++j)
+		for (int j = 0; j < i; ++j)
 		{
 			dp[i] += dp[j] * dp[i-j-1];
 		}

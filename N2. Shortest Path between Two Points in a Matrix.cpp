@@ -32,69 +32,69 @@ using namespace std;
 
 vector<pair<int, int>> shortestPath(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid)
 {
-    int m = grid.size();
-    int n = grid[0].size();
+	int m = grid.size();
+	int n = grid[0].size();
 
-    vector<vector<pair<int, int>>> from(m, vector<pair<int, int>>(n, {INT_MAX, INT_MAX}));
-    vector<vector<bool>> visited(m, vector<bool>(n));
+	vector<vector<pair<int, int>>> from(m, vector<pair<int, int>>(n, {INT_MAX, INT_MAX}));
+	vector<vector<bool>> visited(m, vector<bool>(n));
 
-    // Applying BFS on matrix cells starting from start 
-    queue<pair<int, int>> cellQueue;
-    cellQueue.push(start);
-    visited[start.first][start.second] = true;
+	// Applying BFS on matrix cells starting from start 
+	queue<pair<int, int>> cellQueue;
+	cellQueue.push(start);
+	visited[start.first][start.second] = true;
 
-    while (!cellQueue.empty())
-    {
-        pair<int, int> cell = cellQueue.front(); cellQueue.pop();
-        int x = cell.first, y = cell.second;
+	while (!cellQueue.empty())
+	{
+		pair<int, int> cell = cellQueue.front(); cellQueue.pop();
+		int x = cell.first, y = cell.second;
 
-        // Found the goal.
-        if (pair<int, int>(x, y) == goal)
-        {
+		// Found the goal.
+		if (pair<int, int>(x, y) == goal)
+		{
 			break;
-        }
+		}
 
-        // Moving up 
-        if (x - 1 >= 0 && grid[x - 1][y] != '0' && !visited[x - 1][y])
-        {
-            cellQueue.push({x - 1, y});
-            from[x - 1][y] = {x, y};
-            visited[x - 1][y] = true;
-        }
+		// Moving up 
+		if (x - 1 >= 0 && grid[x - 1][y] != '0' && !visited[x - 1][y])
+		{
+			cellQueue.push({x - 1, y});
+			from[x - 1][y] = {x, y};
+			visited[x - 1][y] = true;
+		}
 
 		// Moving down 
 		if (x + 1 < m && grid[x + 1][y] != '0' && !visited[x + 1][y])
-        {
-            cellQueue.push({x + 1, y});
-            from[x + 1][y] = {x, y};
-            visited[x + 1][y] = true;
-        }
+		{
+			cellQueue.push({x + 1, y});
+			from[x + 1][y] = {x, y};
+			visited[x + 1][y] = true;
+		}
 
-        // Moving left 
-        if (y - 1 >= 0 && grid[x][y - 1] != '0' && !visited[x][y - 1])
-        {
-            cellQueue.push({x, y - 1});
-            from[x][y - 1] = {x, y};
-            visited[x][y - 1] = true;
-        }
+		// Moving left 
+		if (y - 1 >= 0 && grid[x][y - 1] != '0' && !visited[x][y - 1])
+		{
+			cellQueue.push({x, y - 1});
+			from[x][y - 1] = {x, y};
+			visited[x][y - 1] = true;
+		}
 
-        // Moving right 
-        if (y + 1 < n && grid[x][y + 1] != '0' && !visited[x][y + 1])
-        {
-            cellQueue.push({x, y + 1});
-            from[x][y + 1] = {x, y};
-            visited[x][y + 1] = true;
-        }
-    }
+		// Moving right 
+		if (y + 1 < n && grid[x][y + 1] != '0' && !visited[x][y + 1])
+		{
+			cellQueue.push({x, y + 1});
+			from[x][y + 1] = {x, y};
+			visited[x][y + 1] = true;
+		}
+	}
 
 	// Reconstruct path (from goal to start)
 	vector<pair<int, int>> toReturn;
 	pair<int, int> cell = goal;
-    while (cell != pair<int, int>(INT_MAX, INT_MAX))
-    {
+	while (cell != pair<int, int>(INT_MAX, INT_MAX))
+	{
 		toReturn.push_back({cell.first, cell.second});
 		cell = from[cell.first][cell.second]; 
-    }
+	}
 
 	// Reverse the path (so it is from start to goal)
 	reverse(toReturn.begin(), toReturn.end());
@@ -105,21 +105,21 @@ vector<pair<int, int>> shortestPath(const pair<int, int>& start, const pair<int,
 	}
 	cout << "Distance to goal is: " << toReturn.size() - 1 << endl;
 
-    return toReturn;
+	return toReturn;
 }
 
 int main()
 {
-    vector<vector<char>> grid = {
-        { '0', '1', '0', '1' },
-        { '1', '0', '1', '1' },
-        { '0', '1', '1', '1' },
-        { '1', '1', '1', '1' }};
+	vector<vector<char>> grid = {
+		{ '0', '1', '0', '1' },
+		{ '1', '0', '1', '1' },
+		{ '0', '1', '1', '1' },
+		{ '1', '1', '1', '1' }};
 
 	pair<int, int> start = {0, 3};
 	pair<int, int> goal = {3, 0};
 
-    vector<pair<int, int>> path = shortestPath(start, goal, grid);
+	vector<pair<int, int>> path = shortestPath(start, goal, grid);
 
-    return 0;
+	return 0;
 }

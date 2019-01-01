@@ -77,6 +77,7 @@ class Solution
 			}
 
 			maxLength = max(maxLength, currentLength);
+
 			dfs(node->left, currentLength, node->val + 1, maxLength);
 			dfs(node->right, currentLength, node->val + 1, maxLength);
 		}

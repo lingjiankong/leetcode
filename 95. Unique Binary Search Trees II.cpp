@@ -27,7 +27,7 @@
 // ***
 //
 // If 4 is the root node, then the left subtree can be formed using [1, 2, 3].
-// right subtree can be formed using [3, 6].
+// right subtree can be formed using [5, 6].
 // Do it recursively using pointer [start, end] (inclusive).
 // This one is hard... Took me some time. Read the code and think about it.
 class Solution

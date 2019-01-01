@@ -40,8 +40,7 @@ class Solution
 
 			while (!mPriorityQueue.empty())
 			{
-				result.push_back(mPriorityQueue.top().second);
-				mPriorityQueue.pop();
+				result.push_back(mPriorityQueue.top().second); mPriorityQueue.pop();
 			}
 
 			return result;

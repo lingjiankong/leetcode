@@ -74,7 +74,7 @@
 //
 // See also 102. Binary Tree Level Order Traversal.
 //
-// Horizontally level order traverse the tree,
+// Level order (horizontally) traverse the tree,
 // in the queue for level order traversal, also store the current vertical level for each node:
 // For a left node, vertical level -= 1,
 // for a right node node, vertical level += 1.
@@ -91,8 +91,6 @@ vector<vector<int>> verticalOrder(TreeNode* root)
 		return {};
 	}
 
-	vector<vector<int>> toReturn;
-
 	map<int, vector<int>> levelToNodes;
 
 	// Stores node as well as that node's vertical level.
@@ -101,8 +99,7 @@ vector<vector<int>> verticalOrder(TreeNode* root)
 
 	while (!nodeQueue.empty())
 	{
-		auto nodeToLevel = nodeQueue.front();
-		nodeQueue.pop();
+		auto nodeToLevel = nodeQueue.front(); nodeQueue.pop();
 
 		TreeNode* node = nodeToLevel.first;
 		int verticalLevel = nodeToLevel.second;
@@ -120,6 +117,7 @@ vector<vector<int>> verticalOrder(TreeNode* root)
 		}
 	}
 
+	vector<vector<int>> toReturn;
 	for (auto element : levelToNodes)
 	{
 		vector<int> sameLevelNodes = element.second;

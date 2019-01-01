@@ -26,7 +26,7 @@
 // ***
 
 // Note that in the linked list each node's right child points to the next node during preorder traversal.
-// The most intuitive solution to this question is to use reversed pre-order traversal,
+// The most intuitive solution to this question is to use *reversed* pre-order traversal,
 // and add the last node first, dealing with tail node to head node.
 class Solution
 {

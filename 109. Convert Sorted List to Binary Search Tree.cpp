@@ -28,12 +28,12 @@ class Solution
 
 		TreeNode* sortedListToBST(ListNode* head)
 		{
-			return sortedListToBST(head, nullptr);
+			return preorder(head, nullptr);
 		}
 
 	private:
 
-		TreeNode* sortedListToBST(ListNode* head, ListNode* tail)
+		TreeNode* preorder(ListNode* head, ListNode* tail)
 		{
 			if (head == tail)
 			{
@@ -43,8 +43,8 @@ class Solution
 			ListNode* mid = findMid(head, tail);
 
 			TreeNode* root = new TreeNode(mid->val);
-			root->left = sortedListToBST(head, mid);
-			root->right = sortedListToBST(mid->next, tail);
+			root->left = preorder(head, mid);
+			root->right = preorder(mid->next, tail);
 
 			return root;
 

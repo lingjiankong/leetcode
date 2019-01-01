@@ -16,19 +16,8 @@
 //
 // ***
 // 
-// IMPORTANT NOTE: In 104. Maximum Depth of Binary Tree, the definition of max depth is the
-// NUMBER OF NODE along the longest path. In this question (and some other questions), it talks about
-// the longest path (or longest length, longest height or whatever), which is THE NUMBER OF EDGES BETWEEN NODES,
-// so pay attention to what it asks and don't confuse yourself.
-//
-// When calculating maxLength (number of edges):
-// if (!node) return -1.
-//
-// When calculating maxDepth (number of nodes):
-// if (!node) return 0.
-//
-// In general, maxDepth = maxLength + 1.
-//
+// This is exactly the same as 104. Maximum Depth of Binary Tree,
+// with an added mDiameter to track the diameter (leftSubtreeMaxDepth + rightSubtreeMaxDepth)of the tree.
 class Solution
 {
 
@@ -38,7 +27,7 @@ class Solution
 		{
 			mDiameter = 0;
 
-			maxLength(root);
+			maxDepth(root);
 
 			return mDiameter;
 		}
@@ -47,19 +36,19 @@ class Solution
 
 		int mDiameter;
 
-		int maxLength(TreeNode* node)
+		int maxDepth(TreeNode* root)
 		{
-			if (!node)
+			if (!root)
 			{
-				return -1;
+				return 0;
 			}
 
-			int leftTreeMaxLength = maxLength(node->left);
-			int rightTreeMaxLength = maxLength(node->right);
+			int leftTreeMaxDepth = maxDepth(root->left);
+			int rightTreeMaxDepth = maxDepth(root->right);
 
-			mDiameter = max(mDiameter, leftTreeMaxLength + rightTreeMaxLength + 2);
+			mDiameter = max(mDiameter, leftTreeMaxDepth + rightTreeMaxDepth);
 
-			return 1 + max(leftTreeMaxLength, rightTreeMaxLength);
+			return 1 + max(leftTreeMaxDepth, rightTreeMaxDepth);
 		}
 
 };

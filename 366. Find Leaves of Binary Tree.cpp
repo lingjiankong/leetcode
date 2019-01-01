@@ -55,15 +55,18 @@ class Solution
 
 		vector<vector<int>> mLeaves;
 
-		int maxHeight(TreeNode* node)
+		int maxHeight(TreeNode* root)
 		{
-			if (!node)
+			// Here you need if (!root) {return -1;};, instead of if (!root->left && !root->right) {return 0;};
+			// because in mLeaves[currentMaxHeight].push_back(root->val);, you want to start pushing when currentMaxHeight = 0.
+			// If you use if (!root->left && !root->right) {return 0;}; then you will need to manually push_back to currentMaxHeight for the leaf nodes (i.e. when index=0).
+			if (!root)
 			{
 				return -1;
 			}
 
-			int leftSubtreeMaxHeight = maxHeight(node->left);
-			int rightSubtreeMaxHeight = maxHeight(node->right);
+			int leftSubtreeMaxHeight = maxHeight(root->left);
+			int rightSubtreeMaxHeight = maxHeight(root->right);
 			int currentMaxHeight = 1 + max(leftSubtreeMaxHeight, rightSubtreeMaxHeight);
 
 			// Make sure mLeaves has enough space.
@@ -72,11 +75,11 @@ class Solution
 				mLeaves.push_back({});
 			}
 
-			mLeaves[currentMaxHeight].push_back(node->val);
+			mLeaves[currentMaxHeight].push_back(root->val);
 
-			// Make node the nullptr (i.e. erase that node, since the question asks us to do so)
-			// Whether you set node to nullptr has no effect to the result mLeaves.
-			node = nullptr;
+			// Make root the nullptr (i.e. erase that node, since the question asks us to do so)
+			// Whether you set root to nullptr has no effect to the result mLeaves.
+			root = nullptr;
 
 			return currentMaxHeight;
 		}

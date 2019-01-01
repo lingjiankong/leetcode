@@ -72,7 +72,6 @@ class Solution
 // Iterative
 int kthSmallest(TreeNode* root, int k)
 {
-	int count = 1;
 	stack<TreeNode*> nodeStack;
 	TreeNode* currentNode = root;
 
@@ -86,7 +85,7 @@ int kthSmallest(TreeNode* root, int k)
 		else
 		{
 			TreeNode* node = nodeStack.top(); nodeStack.pop();
-			if (count++ == k)
+			if (k-- == 1)
 			{
 				return node->val;
 			}

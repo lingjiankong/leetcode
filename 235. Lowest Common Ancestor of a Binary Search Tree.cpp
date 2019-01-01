@@ -28,16 +28,19 @@ class Solution
 				return nullptr;
 			}
 
+			// LCA is in the left subtree.
 			else if (p->val < root->val && q->val < root->val)
 			{
 				return lowestCommonAncestor(root->left, p, q);
 			}
 
+			// LCA is in the right subtree.
 			else if (p->val > root->val && q->val > root->val)
 			{
 				return lowestCommonAncestor(root->right, p, q);
 			}
 
+			// LCA is the current root.
 			else
 			{
 				return root;

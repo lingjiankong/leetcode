@@ -83,8 +83,7 @@ vector<vector<int>> levelOrder(TreeNode *root)
 
 		for (int i = 0; i < currentLevelSize; ++i)
 		{
-			TreeNode* node = nodeQueue.front();
-			nodeQueue.pop();
+			TreeNode* node = nodeQueue.front(); nodeQueue.pop();
 
 			currentLevel.push_back(node->val);
 

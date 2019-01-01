@@ -1,6 +1,6 @@
 // ***
 //
-// Given a binary tree, find the length of the longest path where each node in the path has the same value. This path may or may not pass through the root.
+// Given a binary tree, find the length of the longest path where each root in the path has the same value. This path may or may not pass through the root.
 // Note: The length of path between two nodes is represented by the number of edges between them.
 // 
 // Example 1:
@@ -27,7 +27,7 @@
 //
 // ***
 //
-// You should develop your own sort of convention when doing tree problems.
+// Pay attention to the following terms:
 // Depth: number of nodes, can only go from parent to child.
 // Height (or length): number of edges connecting nodes, can only go from parent to child.
 // Path: number of edges connecting nodes, doesn't necessarily go from parent to child.
@@ -42,7 +42,9 @@ class Solution
 		int longestUnivaluePath(TreeNode* root)
 		{
 			mLongestPath = 0;
-			maxUnivalueLength(root);
+
+			maxUnivalueDepth(root);
+
 			return mLongestPath;
 		}
 
@@ -50,83 +52,30 @@ class Solution
 
 		int mLongestPath;	
 
-		int maxUnivalueLength(TreeNode* node)
+		int maxUnivalueDepth(TreeNode* root)
 		{
-			if (!node)
+			if (!root)
 			{
-				return -1;
+				return 0;
 			}
 
-			int leftSubtreeMaxUnivalLength = maxUnivalueLength(node->left);
-			int rightSubtreeMaxUnivalLength = maxUnivalueLength(node->right);
+			int leftSubtreeMaxUnivalDepth = maxUnivalueDepth(root->left);
+			int rightSubtreeMaxUnivalDepth = maxUnivalueDepth(root->right);
 
-			// Reset maxUnival of a subtree if its values != the value of our current node.
-			if (node->left && node->val != node->left->val)
+			// Reset maxUnival of a subtree if its values != the value of our current root.
+			if (root->left && root->val != root->left->val)
 			{
-				leftSubtreeMaxUnivalLength = -1;
+				leftSubtreeMaxUnivalDepth = 0;
 			}
 
-			if (node->right && node->val != node->right->val)
+			if (root->right && root->val != root->right->val)
 			{
-				rightSubtreeMaxUnivalLength = -1;
+				rightSubtreeMaxUnivalDepth = 0;
 			}
 
-			mLongestPath = max(mLongestPath, leftSubtreeMaxUnivalLength + rightSubtreeMaxUnivalLength + 2);
+			mLongestPath = max(mLongestPath, leftSubtreeMaxUnivalDepth + rightSubtreeMaxUnivalDepth);
 
-			return 1 + max(leftSubtreeMaxUnivalLength, rightSubtreeMaxUnivalLength);
-		}
-};
-
-// Same thing, just help you better understand the concept.
-class Solution
-{
-
-	public:
-
-		int longestUnivaluePath(TreeNode* root)
-		{
-			mLongestPath = 0;
-			maxUnivalueLength(root);
-			return mLongestPath;
-		}
-
-	private:
-
-		int mLongestPath;	
-
-		int maxUnivalueLength(TreeNode* node)
-		{
-			if (!node)
-			{
-				return -1;
-			}
-
-			int leftSubtreeMaxUnivalLength = maxUnivalueLength(node->left);
-			int rightSubtreeMaxUnivalLength = maxUnivalueLength(node->right);
-
-			// Calculate the new leftSubtreeMaxUnivalLength and rightSubtreeMaxUnivalLength
-			// with current node as the root node.
-			if (node->left && node->val == node->left->val)
-			{
-				leftSubtreeMaxUnivalLength += 1;
-			}
-			else
-			{
-				leftSubtreeMaxUnivalLength = 0;
-			}
-
-			if (node->right && node->val == node->right->val)
-			{
-				rightSubtreeMaxUnivalLength += 1;
-			}
-			else
-			{
-				rightSubtreeMaxUnivalLength = 0;
-			}
-
-			mLongestPath = max(mLongestPath, leftSubtreeMaxUnivalLength + rightSubtreeMaxUnivalLength);
-
-			return max(leftSubtreeMaxUnivalLength, rightSubtreeMaxUnivalLength);
+			return 1 + max(leftSubtreeMaxUnivalDepth, rightSubtreeMaxUnivalDepth);
 		}
 
 };

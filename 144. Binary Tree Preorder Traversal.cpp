@@ -68,8 +68,7 @@ class Solution
 
 			while (!mNodeStack.empty())
 			{
-				TreeNode* node = mNodeStack.top();
-				mNodeStack.pop();
+				TreeNode* node = mNodeStack.top(); mNodeStack.pop();
 
 				if (node)
 				{

@@ -15,7 +15,9 @@
 // 
 // You may only use constant extra space.
 // Recursive approach is fine, implicit stack space does not count as extra space for this problem.
+//
 // You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).
+//
 // Example:
 // 
 // Given the following perfect binary tree,

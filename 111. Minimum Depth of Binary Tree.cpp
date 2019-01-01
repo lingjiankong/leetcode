@@ -19,7 +19,6 @@
 //
 // ***
 
-
 // Compare this question with 104. Maximum Depth of Binary Tree,
 // Note the extra if and else if condition in this problem that checks if a node has only one subtree.
 int minDepth(TreeNode* root)

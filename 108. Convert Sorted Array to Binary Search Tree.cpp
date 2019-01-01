@@ -20,7 +20,7 @@
 // less than its right subtree. That is, the root of a binary serach tree is nums[mid].
 //
 // Remember you can calculate the mid index of an array using two ways:
-// 1. (nums.size() - 1) / 2 : mid is on the left part if even elements (I usually do this).
+// 1. (nums.size() - 1) / 2 : mid is on the left part if even elements.
 // 2. nums.size() / 2 : mid is on the right part if even elements.
 //
 class Solution
