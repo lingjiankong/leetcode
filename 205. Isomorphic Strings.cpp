@@ -37,7 +37,7 @@ bool isIsomorphic(string s, string t)
 		{
 			return false;
 		}
-		// We initialized the vetor to all -1 so we can start assigning from i = 0
+		// We initialized the vector to all -1 so we can start assigning from i = 0
 		// You don't have to assign i, you can assign = i + 456.
 		mapS[s[i]] = mapT[t[i]] = i;
 	}

@@ -26,7 +26,7 @@ string longestCommonPrefix(vector<string>& strs)
 		return "";
 	}
 
-	string res = "";
+	string toReturn = "";
 
 	// Iterate letters in the first word.
 	for (int j = 0; j < strs[0].size(); ++j)
@@ -38,12 +38,12 @@ string longestCommonPrefix(vector<string>& strs)
 		{
 			if (j >= strs[i].size() || strs[i][j] != c)
 			{
-				return res;
+				return toReturn;
 			}
 		}
 
-		res.push_back(c);
+		toReturn += c;
 	}
 
-	return res;
+	return toReturn;
 }

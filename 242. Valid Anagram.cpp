@@ -43,3 +43,29 @@ bool isAnagram(string s, string t)
 
 	return true;
 }
+
+// Quicker version. Only two for loops.
+bool isAnagram(string s, string t)
+{
+	if (s.size() != t.size())
+	{
+		return false;
+	}
+
+	vector<int> counts(26, 0);
+
+	for (char letter : s)
+	{
+		++counts[letter-'a'];
+	}
+
+	for (char letter : t)
+	{
+		if (--counts[letter-'a'] < 0)
+		{
+			return false;
+		}
+	} 
+
+	return true;
+}

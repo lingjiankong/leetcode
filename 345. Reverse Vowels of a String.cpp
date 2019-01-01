@@ -34,7 +34,7 @@ string reverseVowels(string s)
 
 		if (vowels.count(s[i]) && vowels.count(s[j]))	
 		{
-				swap(s[i++], s[j--]);
+			swap(s[i++], s[j--]);
 		}
 	}
 

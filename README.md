@@ -55,45 +55,41 @@
 ## String
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 28 | Implement strStr() |
-| 14 | Longest Common Prefix | Basic
-| 58 | Length of Last Word |
-| 344 | Reverse String | Basic
+| 28 | Implement strStr() | Basic
+| 14 | Longest Common Prefix | Star
+| 58 | Length of Last Word | Normal
+| 344 | Reverse String | Star
 | 151 | Reverse Words in a String | Bad
 | 186 | Reverse Words in a String II | Basic
-| 345 | Reverse Vowels of a String | Basic
-| 290 | Word Pattern | Basic
-| 205 | Isomorphic Strings | Basic
-| 293 | Flip Game |
-| 387 | First Unique Character in a String | Basic
-| 294 | Flip Game II | Basic
-| 383 | Ransom Note | Basic
-| 242 | Valid Anagram | Basic
-| 49 | Group Anagrams | Basic
+| 345 | Reverse Vowels of a String | Star
+| 205 | Isomorphic Strings | Star
+| 290 | Word Pattern | Star
+| 293 | Flip Game | Basic
+| 294 | Flip Game II | Star
+| 387 | First Unique Character in a String | Star
+| 383 | Ransom Note | Star
+| 242 | Valid Anagram | Star
+| 438 | Find All Anagrams in a String | Star
+| 49 | Group Anagrams | Star
 | 249 | Group Shifted Strings | Basic
 | 179 | Largest Number | Basic
-| 6 | ZigZag Conversion |
-| 161 | One Edit Distance | Basic
+| 6 | ZigZag Conversion | Exotic
+| 161 | One Edit Distance | Star
 | 38 | Count and Say | Bad
-| 271 | Encode and Decode Strings | Basic
+| 271 | Encode and Decode Strings | Star
 | 168 | Excel Sheet Column Title | Exotic
-| 171 | Excel Sheet Column Number | Basic
+| 171 | Excel Sheet Column Number | Normal
 | 13 | Roman to Integer | Bad
 | 12 | Integer to Roman | Bad
 | 246 | Strobogrammatic Number | Basic
-| 76 | Minimum Window Substring Sliding Window |
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Basic
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Star
 | 125 | Valid Palindrome | Star
-| 680 | Valid Palindrome II | Basic
-| 266 | Palindrome Permutation | Basic
+| 680 | Valid Palindrome II | Star
+| 266 | Palindrome Permutation | Star
 | 5 | Longest Palindromic Substring | Basic
-| 9 | Palindrome Number | Basic
 | 20 | Valid Parentheses | Star
-| 22 | Generate Parentheses | Basic
-| 241 | Different Ways to Add Parentheses | Basic
-| 392 | Is Subsequence | Basic
-| 792 | Number of Matching Subsequence | Basic
-| 115 | Distinct Subsequences |
+| 392 | Is Subsequence | Star
+| 792 | Number of Matching Subsequence | Star
 | 187 | Repeated DNA Sequences | Star
 
 ## Tree
@@ -170,6 +166,8 @@
 | 127 | Word Ladder | Basic
 | 51 | N-Queens | Basic
 | 52 | N-Queens II | Basic
+| 22 | Generate Parentheses | Star
+| 241 | Different Ways to Add Parentheses | Star
 
 ## Dynamic Programming
 | ID | Name | Note |
@@ -246,6 +244,7 @@
 | 415 | Add Strings | Star
 | 67 | Add Binary | Star
 | 43 | Multiply Strings | Normal, Memorize
+| 9 | Palindrome Number | Star
 | 367 | Valid Perfect Square | Normal
 | 204 | Count Primes | Basic
 | 1 | Two Sum | Star

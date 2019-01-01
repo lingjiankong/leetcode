@@ -19,6 +19,10 @@
 // ***
 //
 // Just brute force solution. Read the code.
+//
+// This question is just saying find the index of a substring in a string.
+// haystack: string, need: substring.
+//
 int strStr(string haystack, string needle)
 {
 	if (needle.size() == 0)
@@ -28,7 +32,6 @@ int strStr(string haystack, string needle)
 
 	for (int i = 0; i < haystack.size(); ++i)
 	{
-
 		// If this is the case then it is not possible for the remaining haystack to contain needle
 		if (i + needle.size() > haystack.size())
 		{
@@ -41,7 +44,6 @@ int strStr(string haystack, string needle)
 			{
 				break;
 			}
-
 			if (j == needle.size()-1)
 			{
 				return i;

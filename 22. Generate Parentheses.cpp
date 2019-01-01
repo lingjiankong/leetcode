@@ -13,6 +13,16 @@
 // ]
 //
 // ***
+//
+// See https://www.youtube.com/watch?v=XF0wh8M2A6E. Very good intuitive on these kinds of recursion problem.
+//
+//              (
+//            /   \
+//         ((       ()
+//        /  \     /
+//     (((  (()   ()(
+//     ...  ...  ...
+//
 class Solution 
 {
 
@@ -38,6 +48,8 @@ class Solution
 		
 		void backtrack(int left, int right, string current, vector<string>& all, int& total)
 		{
+			// Return when you see some thing like "())" i.e. number of ')' is greater than number of '('.
+			// Note that it is OK to have "((()" i.e. number of '(' is greater than number of ')'.
 			if (left < right)
 			{
 				return;

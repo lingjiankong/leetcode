@@ -3,7 +3,7 @@
 // Given an array of strings, group anagrams together.
 // 
 // Example:
-// 
+//
 // Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
 // Output:
 // [
@@ -32,14 +32,14 @@ vector<vector<string>> groupAnagrams(vector<string>& strs)
 		hash[sortedWord].push_back(word);
 	}
 
-	vector<vector<string>> res;
+	vector<vector<string>> toReturn;
 
 	for (auto element : hash)
 	{
-		res.push_back(element.second);
+		toReturn.push_back(element.second);
 	}
 
-	return res;
+	return toReturn;
 }
 
 // Alternatively, we can use the count sort idea similar to 242. Valid Anagram.
@@ -47,7 +47,6 @@ vector<vector<string>> groupAnagrams(vector<string>& strs)
 // and use that as a key. In this case you don't have the cost of sort.
 vector<vector<string>> groupAnagrams2(vector<string>& strs)
 {
-	
 	unordered_map<string, vector<string>> hash;
 
 	for (string word : strs)
@@ -69,12 +68,12 @@ vector<vector<string>> groupAnagrams2(vector<string>& strs)
 		hash[anagramIdentifier].push_back(word);
 	}
 
-	vector<vector<string>> res;
+	vector<vector<string>> toReturn;
 
 	for (auto element : hash)
 	{
-		res.push_back(element.second);
+		toReturn.push_back(element.second);
 	}
 
-	return res;
+	return toReturn;
 }

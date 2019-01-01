@@ -57,7 +57,10 @@ bool isValid(string s)
 			{
 				return false;
 			}
-			seen.pop();
+			else
+			{
+				seen.pop();
+			}
 		}
 	}
 

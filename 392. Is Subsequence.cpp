@@ -23,7 +23,6 @@
 //
 // Note: this question asks about whether s is a subsequence of t,
 // NOT if s is a substring of t. These two are different concepts.
-// The follow up of this question is 792. Number of Matching Subsequences.
 //
 // Iterate t, advance index of s when we found a matched char in t.
 // Stop the loop whenever it reaches the end of t or we found all characters in s (reach the end of s).

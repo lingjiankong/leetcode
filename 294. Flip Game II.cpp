@@ -28,7 +28,7 @@ bool canWin(string& s)
 {
 	for (int i = 1; i < s.size(); ++i)	
 	{
-		if(s[i-1] == '+' && s[i] == '+')
+		if (s[i-1] == '+' && s[i] == '+')
 		{
 			s[i-1] = s[i] = '-';
 			bool opponentWin = canWin(s);
@@ -53,7 +53,7 @@ bool canWin(string& s)
 
 bool backtrack(string& s, unordered_map<string, bool>& hash)
 {
-	if(hash.find(s) != hash.end())
+	if (hash.count(s))
 	{
 		return hash[s];
 	}
@@ -61,7 +61,7 @@ bool backtrack(string& s, unordered_map<string, bool>& hash)
 	for (int i = 1; i < s.size(); ++i)	
 	{
 
-		if(s[i-1] == '+' && s[i] == '+')
+		if (s[i-1] == '+' && s[i] == '+')
 		{
 			s[i-1] = s[i] = '-';
 			bool opponentWin = backtrack(s, hash);
