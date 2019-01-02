@@ -41,6 +41,7 @@
 int ladderLength(string beginWord, string endWord, vector<string>& wordList)
 {
 	unordered_set<string> dict(wordList.begin(), wordList.end());		 
+
 	if (!dict.count(endWord))
 	{
 		return 0;

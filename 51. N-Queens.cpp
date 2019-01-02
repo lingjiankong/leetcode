@@ -30,8 +30,9 @@ class Solution
 
 		vector<vector<string>> solveNQueens(int n)
 		{
-			vector<vector<string>> all;
 			vector<string> current(n, string(n, '.'));
+			vector<vector<string>> all;
+
 			solveNQueens(all, current, 0, n);
 
 			return all;
@@ -47,6 +48,7 @@ class Solution
 				return;
 			}
 
+			// Traverse every position of current row.
 			for (int col = 0; col < n; ++col)
 			{
 				if (isValid(current, row, col, n))

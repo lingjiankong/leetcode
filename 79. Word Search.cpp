@@ -63,7 +63,7 @@ class Solution
 			}
 
 			char letter = board[i][j];
-			board[i][j] = '#';
+			board[i][j] = '#'; // A temporary placeholder indicating the cell is being visited.
 			bool isFound = backtrack(board, word, letterCount + 1, i - 1, j) 
 				|| backtrack(board, word, letterCount + 1, i + 1, j)
 				|| backtrack(board, word, letterCount + 1, i, j - 1)

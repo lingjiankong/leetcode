@@ -165,18 +165,16 @@
 | 695 | Max Area of Island | Star
 | 694 | Number of Distinct Islands | Star
 | 463 | Island Perimeter | Star
-
-
 | 79 | Word Search | Star
-| 329 | Longest Increasing Path in a Matrix | Basic
+| 329 | Longest Increasing Path in a Matrix | Star
 | 489 | Robot Room Cleaner | Star
-| 286 | Walls and Gates | Basic
-| 130 | Surrounded Regions | Basic
+| 286 | Walls and Gates | Star
+| 130 | Surrounded Regions | Star
 | 339 | Nested List Weight Sum | Exotic
 | 364 | Nested List Weight Sum II | Exotic
-| 127 | Word Ladder | Basic
-| 51 | N-Queens | Basic
-| 52 | N-Queens II | Basic
+| 127 | Word Ladder | Star
+| 51 | N-Queens | Star
+| 52 | N-Queens II | Star
 | 22 | Generate Parentheses | Star
 | 241 | Different Ways to Add Parentheses | Star
 

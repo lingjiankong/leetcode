@@ -24,8 +24,8 @@
 // ***
 //
 // First traverse the four edges for 'O', dfs the 'O's and change all 'O' to '$'.
-// Now, all 'O' left (those that have not been dfs) are surrounded by 'X'. Change them to 'X'.
-// Change the '$'s to 'O'.
+// Now, all 'O' left (those that have not been dfs) are surrounded by 'X'. Change all of them to 'X'.
+// Change the '$'s back to 'O'.
 class Solution
 {
 

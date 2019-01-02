@@ -27,7 +27,7 @@
 //
 // ***
 //
-// This is a hard one. cache[i][j] is the longest increasing path which starts in i, j.
+// cache[i][j] is the longest increasing path which starts in i, j.
 class Solution
 {
 
@@ -59,11 +59,11 @@ class Solution
 
 		vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
-		int dfs(vector<vector<int>>& matrix, vector<vector<int>>& cache, int i, int j, vector<vector<int>>& directions)
+		int dfs(vector<vector<int>>& matrix, vector<vector<int>>& cache, int x, int y, vector<vector<int>>& directions)
 		{
-			if (cache[i][j])
+			if (cache[x][y])
 			{
-				return cache[i][j];
+				return cache[x][y];
 			}
 
 			int m = matrix.size(), n = matrix[0].size();
@@ -71,16 +71,16 @@ class Solution
 			int maxLength = 1;
 			for (auto direction : directions)
 			{
-				int x = i + direction[0], y = j + direction[1];
-				if (x < 0 || x >= m || y < 0 || y >= n || matrix[x][y] <= matrix[i][j])
+				int newX = x + direction[0], newY = y + direction[1];
+				if (newX < 0 || newX >= m || newY < 0 || newY >= n || matrix[newX][newY] <= matrix[x][y])
 				{
 					continue;
 				}
-				int currentLength = 1 + dfs(matrix, cache, x, y, directions);
+				int currentLength = 1 + dfs(matrix, cache, newX, newY, directions);
 				maxLength = max(maxLength, currentLength);
 			}
 
-			cache[i][j] = maxLength;
+			cache[x][y] = maxLength;
 			return maxLength;
 		}
 
