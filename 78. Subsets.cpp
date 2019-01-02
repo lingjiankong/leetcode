@@ -21,6 +21,7 @@
 // ***
 //
 // See also 78. Combinations. Note the difference when to push current to all.
+//
 class Solution
 {
 
@@ -28,9 +29,10 @@ class Solution
 
 		vector<vector<int>> subsets(vector<int>& nums)
 		{
-			int startIndex = 0;
 			vector<int> current;
 			vector<vector<int>> all;
+
+			int startIndex = 0;
 
 			sort(nums.begin(), nums.end());
 

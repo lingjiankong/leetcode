@@ -17,15 +17,54 @@
 //
 // ***
 //
-// See also 46. Permutations.
+// Solution when the input is vector<int>& nums. Clear to see what's going on.
 //
-// We don't need the "used" array as in 46. Permutations,
-// because in the for loop for this question we always iterate from start number,
-// all numbers after startNumber is not used.
+// We don't need the "visited" array as in 46. Permutations,
+// because in the for loop for this question we always iterate from nums[startIndex],
+// all numbers after nums[startIndex] are not used.
 //
-// Also note that in the for loop, the next startNumber is num + 1,
+// Also note that in the for loop, the next startIndex is i + 1,
 // doing so we could avoid same element being used multiple times.
-// startNumber could be all numbers in [1, n].
+// startIndex could be all index in nums.
+//
+class Solution
+{
+
+    public:
+
+		vector<vector<int>> combine(vector<int>& nums, int k)
+        {
+            vector<int> current;
+            vector<vector<int>> all;
+
+			int startIndex = 0;
+
+            backtrack(nums, k, startIndex, current, all);
+
+            return all;
+        }
+
+    private:
+
+        void backtrack(vector<int>& nums, int& k, int startIndex, vector<int>& current, vector<vector<int>>& all)
+        {
+            if (current.size() == k)
+            {
+                all.push_back(current);
+            }
+
+            for (int i = startIndex; i < nums.size(); ++i)
+            {
+                current.push_back(nums[i]);
+                backtrack(nums, k, i + 1, current, all);
+                current.pop_back();
+            }
+        }
+
+};
+
+
+// Solution when the input is n (given by the problem).
 class Solution
 {
 
@@ -34,28 +73,29 @@ class Solution
 		vector<vector<int>> combine(int n, int k)
         {
 			int startNumber = 1;
-            vector<int> currentCombination;
-            vector<vector<int>> allCombinations;
 
-            backtrack(n, k, startNumber, currentCombination, allCombinations);
+            vector<int> current;
+            vector<vector<int>> all;
 
-            return allCombinations;
+            backtrack(n, k, startNumber, current, all);
+
+            return all;
         }
 
     private:
 
-        void backtrack(int n, int k, int startNumber, vector<int>& currentCombination, vector<vector<int>>& allCombinations)
+        void backtrack(int n, int& k, int startNumber, vector<int>& current, vector<vector<int>>& all)
         {
-            if (currentCombination.size() == k)
+            if (current.size() == k)
             {
-                allCombinations.push_back(currentCombination);
+                all.push_back(current);
             }
 
             for (int num = startNumber; num <= n; ++num)
             {
-                currentCombination.push_back(num);
-                backtrack(n, k, num + 1, currentCombination, allCombinations);
-                currentCombination.pop_back();
+                current.push_back(num);
+                backtrack(n, k, num + 1, current, all);
+                current.pop_back();
             }
         }
 

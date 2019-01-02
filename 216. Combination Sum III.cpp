@@ -22,22 +22,23 @@ class Solution
 
 		vector<vector<int>> combinationSum3(int k, int n)
 		{
+			vector<int> current;
+			vector<vector<int>> all;
+
 			int startNum = 1;
-			vector<int> currentCombination;
-			vector<vector<int>> allCombinations;
 
-			backtrack(k, n, startNum, currentCombination, allCombinations);
+			backtrack(k, n, startNum, current, all);
 
-			return allCombinations;
+			return all;
 		}
 	
 	private:
 
-		void backtrack(int k, int n, int startNum, vector<int>& currentCombination, vector<vector<int>>& allCombinations)
+		void backtrack(int k, int n, int startNum, vector<int>& current, vector<vector<int>>& all)
 		{
 			if (k == 0 && n == 0)
 			{
-				allCombinations.push_back(currentCombination);
+				all.push_back(current);
 				return;
 			}
 
@@ -48,9 +49,9 @@ class Solution
 					break;
 				}
 
-				currentCombination.push_back(num);
-				backtrack(k - 1, n - num, num + 1, currentCombination, allCombinations);
-				currentCombination.pop_back();
+				current.push_back(num);
+				backtrack(k - 1, n - num, num + 1, current, all);
+				current.pop_back();
 			}
 		}
 

@@ -32,8 +32,9 @@ class Solution
 
         vector<vector<int>> subsetsWithDup(vector<int>& nums)
         {
-            vector<vector<int>> all;
             vector<int> current;
+            vector<vector<int>> all;
+
             int startIndex = 0;
 
             sort(nums.begin(), nums.end());

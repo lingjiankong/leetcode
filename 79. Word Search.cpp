@@ -64,13 +64,13 @@ class Solution
 
 			char letter = board[i][j];
 			board[i][j] = '#';
-			bool res = backtrack(board, word, letterCount + 1, i - 1, j) 
+			bool isFound = backtrack(board, word, letterCount + 1, i - 1, j) 
 				|| backtrack(board, word, letterCount + 1, i + 1, j)
 				|| backtrack(board, word, letterCount + 1, i, j - 1)
 				|| backtrack(board, word, letterCount + 1, i, j + 1);
 			board[i][j] = letter;
 
-			return res;
+			return isFound;
 		}
 
 };

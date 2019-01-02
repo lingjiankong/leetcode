@@ -145,26 +145,31 @@
 | 95 | Unique Binary Search Trees II | Normal
 | 331 | Verify Preorder Serialization of a Binary Tree | Normal, Memorize
 | 116 | Populating Next Right Pointers in Each Node | Normal
-| 117 | Populating Next Right Pointers in Each Node II | Star
+| 117 | Populating Next Right Pointers in Each Node II | Basic
 
 ## Backtracking, DFS. BFS
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 46 | Permutations | Basic
-| 47 | Permutations II | Basic
-| 77 | Combinations | Basic
-| 78 | Subsets | Basic
-| 90 | Subsets II | Basic
-| 39 | Combination Sum | Basic
-| 40 | Combination Sum II | Basic
-| 216 | Combination Sum III | Basic
-| 377 | Combination Sum IV | Exotic
+| 46 | Permutations | Star
+| 47 | Permutations II | Star
+| 77 | Combinations | Star
+| 78 | Subsets | Star
+| 90 | Subsets II | Star
+| 39 | Combination Sum | Star
+| 40 | Combination Sum II | Star
+| 216 | Combination Sum III | Star
+| 377 | Combination Sum IV | Normal
 | 254 | Factor Combinations | Basic
-| 17 | Letter Combinations of a Phone Number | Basic
-| 79 | Word Search | Basic
-| 329 | Longest Increasing Path in a Matrix | Basic
-| 489 | Robot Room Cleaner | Star, Memorize
+| 17 | Letter Combinations of a Phone Number | Star
 | 200 | Number of Islands | Star
+| 695 | Max Area of Island | Star
+| 694 | Number of Distinct Islands | Star
+| 463 | Island Perimeter | Star
+
+
+| 79 | Word Search | Star
+| 329 | Longest Increasing Path in a Matrix | Basic
+| 489 | Robot Room Cleaner | Star
 | 286 | Walls and Gates | Basic
 | 130 | Surrounded Regions | Basic
 | 339 | Nested List Weight Sum | Exotic

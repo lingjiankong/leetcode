@@ -42,6 +42,7 @@
 // dp[0] = 1 because there is only one way to form target 0: empty vector {}.
 // INT_MIN in mCache is just a placeholder to be updated.
 //
+// 96. Unique Binary Search Trees is a similar problem.
 class Solution
 {
 
@@ -62,11 +63,6 @@ class Solution
 
 		int dp(vector<int>& nums, int target)
 		{
-			if (target < 0)
-			{
-				return 0;
-			}
-
 			if (mCache[target] != INT_MIN)
 			{
 				return mCache[target];
@@ -75,7 +71,10 @@ class Solution
 			int totalCombinations = 0;
 			for (int num : nums)
 			{
-				totalCombinations += dp(nums, target - num);
+				if (num <= target)
+				{
+					totalCombinations += dp(nums, target - num);
+				}
 			}
 
 			return mCache[target] = totalCombinations;

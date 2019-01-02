@@ -19,10 +19,6 @@
 //
 // See also 47. Permutations II.
 //
-// current: Current permutation.
-// used: Numbers in nums which have already recursively visited before.
-// all: All permutations.
-//
 class Solution
 {
 
@@ -31,17 +27,18 @@ class Solution
 		vector<vector<int>> permute(vector<int>& nums)
 		{
 			vector<int> current;
-			vector<bool> used(nums.size(), false);
 			vector<vector<int>> all;
 
-			backtrack(nums, current, used, all);
+			vector<bool> visited(nums.size(), false);
+
+			backtrack(nums, visited, current, all);
 
 			return all;
 		}
 
 	private:
 
-		void backtrack(vector<int>& nums, vector<int>& current, vector<bool>& used, vector<vector<int>>& all)
+		void backtrack(vector<int>& nums, vector<bool>& visited, vector<int>& current, vector<vector<int>>& all)
 		{
 			if (current.size() == nums.size())
 			{
@@ -51,16 +48,16 @@ class Solution
 
 			for (int i = 0; i < nums.size(); ++i)
 			{
-				if (used[i])
+				if (visited[i])
 				{
 					continue;
 				}
 
-				used[i] = true;
+				visited[i] = true;
 				current.push_back(nums[i]);
-				backtrack(nums, current, used, all);
+				backtrack(nums, visited, current, all);
 				current.pop_back();
-				used[i] = false;
+				visited[i] = false;
 			}
 		}
 

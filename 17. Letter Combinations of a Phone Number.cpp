@@ -22,9 +22,10 @@ class Solution
 		{
 			mDict = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-			int startIndex = 0;
 			string current;
 			vector<string> all;
+
+			int startIndex = 0;
 
 			backtrack(digits, startIndex, current, all);
 
@@ -35,8 +36,8 @@ class Solution
 
 		void backtrack(string& digits, int startIndex, string& current, vector<string>& all)
 		{
-			// We check if !current.empty() simply to deal with the case when digits = "",
-			// we do not want to return {""}. You can move it to letterCombinations if you wish.
+			// We check if !current.empty() simply to deal with the case when input digits = "",
+			// we do not want to return {""}. You can move it to parent function letterCombinations if you wish.
 			if (startIndex == digits.size() && !current.empty())
 			{
 				all.push_back(current);

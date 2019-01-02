@@ -70,7 +70,7 @@ class Solution
 		// Orientation is the robot's absolute (global) orientation: 0: up, 1: right, 2: down, 3: left
 		void backtrack(Robot& robot, int x, int y, int orientation, unordered_set<string>& visited)
 		{
-			string position = to_string(x) + ", " + to_string(y);
+			string position = to_string(x) + "," + to_string(y);
 
 			if (visited.count(position))
 			{

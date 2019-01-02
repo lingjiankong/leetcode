@@ -48,9 +48,10 @@ class Solution
 
 		vector<vector<int>> getFactors(int n)
 		{
-			int startNumber = 2;
 			vector<int> current;
 			vector<vector<int>> all;
+
+			int startNumber = 2;
 			
 			backtrack(n, startNumber, current, all);
 

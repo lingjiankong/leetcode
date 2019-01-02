@@ -33,8 +33,6 @@ class Solution
 
 	public:
 
-		vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-
 		int longestIncreasingPath(vector<vector<int>>& matrix)
 		{
 			if (matrix.empty() || matrix[0].empty())
@@ -58,6 +56,8 @@ class Solution
 		}
 	
 	private:
+
+		vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 		int dfs(vector<vector<int>>& matrix, vector<vector<int>>& cache, int i, int j, vector<vector<int>>& directions)
 		{

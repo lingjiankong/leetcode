@@ -25,21 +25,22 @@
 // Output: 3
 //
 // ***
+//
 class Solution
 {
 
 	public:
 		 
-		int numIslands(vector<vector<char>>& grid) 
+		int numIslands(vector<vector<char>>& grid)
 		{
 			if (grid.empty() || grid[0].empty())
 			{
-				return 0; 
+				return 0;
 			}
 			 
 			vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
 
-			int totalIslands = 0; 
+			int totalIslands = 0;
 			for (int i = 0; i < grid.size(); ++i)
 			{
 				for (int j = 0; j < grid[0].size(); ++j)
@@ -47,32 +48,32 @@ class Solution
 					if (grid[i][j] == '1' && !visited[i][j])
 					{
 						dfs(i, j, grid, visited);
-						++totalIslands; 
+						++totalIslands;
 					}
 				}
 			}
 
-			return totalIslands; 
+			return totalIslands;
 		}
 
 	private:
 
-		void dfs(int i, int j, const vector<vector<char>>& grid, vector<vector<bool>>& visited)
-		{
-			if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size() || visited[i][j])
+		vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
+		void dfs(int x, int y, const vector<vector<char>>& grid, vector<vector<bool>>& visited)
+		{	
+			if (x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() || visited[x][y] || grid[x][y] != '1')
 			{	
 				return;
 			}
+			
+			visited[x][y] = true;
 
-			visited[i][j] = true;
-			if (grid[i][j] == '1')
+			for (auto direction : directions)
 			{
-				dfs(i-1, j, grid, visited);
-				dfs(i+1, j, grid, visited);
-				dfs(i, j-1, grid, visited);
-				dfs(i, j+1, grid, visited);
+				int newX = x + direction[0], newY = y + direction[1];
+				dfs(newX, newY, grid, visited);
 			}
-
 		}
 
 };
