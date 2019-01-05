@@ -27,7 +27,7 @@ int maxKilledEnemies(vector<vector<char>>& grid)
 		return 0;
 	}
 
-	int m = grid.size(), n = grid[0].size(), res = 0;
+	int m = grid.size(), n = grid[0].size(), maxEnemy = 0;
 	vector<vector<int>> leftToRight(m, vector<int>(n, 0));
 	vector<vector<int>> rightToLeft(m, vector<int>(n, 0));
 	vector<vector<int>> topToBottom(m, vector<int>(n, 0));
@@ -70,10 +70,10 @@ int maxKilledEnemies(vector<vector<char>>& grid)
 		{
 			if (grid[i][j] == '0')
 			{
-				res = max(res, leftToRight[i][j] + rightToLeft[i][j] + topToBottom[i][j] + bottomToTop[i][j]);
+				maxEnemy = max(maxEnemy, leftToRight[i][j] + rightToLeft[i][j] + topToBottom[i][j] + bottomToTop[i][j]);
 			}
 		}
 	}
 
-	return res;
+	return maxEnemy;
 }

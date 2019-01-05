@@ -10,7 +10,7 @@
 // When meet, slow has travelled a + b, fast has travelled a + b + c + b.
 // => 2(a+b) = a+b+c+d => 2a = a+c => a = c => the distance from head to cycle start and the distance from meet point to cycle start
 // MUST be the same. Start from head and the meet point, when they are equal it is the cycle start.
-ListNode *detectCycle(ListNode *head)
+ListNode* detectCycle(ListNode *head)
 {
 	ListNode *slow = head, *fast = head;
 	while (fast && fast->next)

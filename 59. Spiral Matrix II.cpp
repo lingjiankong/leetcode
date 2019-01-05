@@ -17,7 +17,7 @@
 // See 54. Spiral Matrix. Same method.
 vector<vector<int>> generateMatrix(int n)
 {
-	vector<vector<int>> res(n, vector<int>(n, 0));
+	vector<vector<int>> toReturn(n, vector<int>(n, 0));
 
 	int up = 0, down = n - 1, left = 0, right = n - 1;
 	int val = 1;
@@ -26,7 +26,7 @@ vector<vector<int>> generateMatrix(int n)
 	{
 		for (int j = left; j <= right; ++j)
 		{
-			res[up][j] = val++;
+			toReturn[up][j] = val++;
 		}
 		if (++up > down)
 		{
@@ -35,7 +35,7 @@ vector<vector<int>> generateMatrix(int n)
 
 		for (int i = up; i <= down; ++i)
 		{
-			res[i][right] = val++;
+			toReturn[i][right] = val++;
 		}
 		if (--right < left)
 		{
@@ -44,7 +44,7 @@ vector<vector<int>> generateMatrix(int n)
 
 		for (int j = right; j >= left; --j)
 		{
-			res[down][j] = val++;
+			toReturn[down][j] = val++;
 		}
 		if (--down < up)
 		{
@@ -53,7 +53,7 @@ vector<vector<int>> generateMatrix(int n)
 
 		for (int i = down; i >= up; --i)
 		{
-			res[i][left] = val++;
+			toReturn[i][left] = val++;
 		}
 		if (++left > right)
 		{
@@ -61,5 +61,5 @@ vector<vector<int>> generateMatrix(int n)
 		}
 	}
 
-	return res;
+	return toReturn;
 }

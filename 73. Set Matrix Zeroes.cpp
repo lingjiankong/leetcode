@@ -48,15 +48,7 @@ void setZeroes(vector<vector<int>>& matrix)
 	int m = matrix.size(), n = matrix[0].size();
 	bool rowZero = false, colZero = false;
 
-	// Traverse the first column and first row to set rowZero and colZero.
-	for (int i = 0; i < n; ++i)
-	{
-		if (matrix[0][i] == 0)
-		{
-			rowZero = true;
-			break;
-		}
-	} 
+	// Traverse the first column to set colZero.
 	for (int i = 0; i < m; ++i)
 	{
 		if (matrix[i][0] == 0)
@@ -65,6 +57,16 @@ void setZeroes(vector<vector<int>>& matrix)
 			break;
 		}
 	}
+
+	// Traverse first row to set rowZero.
+	for (int j = 0; j < n; ++j)
+	{
+		if (matrix[0][j] == 0)
+		{
+			rowZero = true;
+			break;
+		}
+	} 
 
 	// Traverse the entire matrix except the first row and first column
 	// to set the flag for that row and column.
@@ -94,12 +96,12 @@ void setZeroes(vector<vector<int>>& matrix)
 	}
 
 	// Now deal with the first row and first column according to their flags.
-	if (rowZero)
-	{
-		for (int i = 0; i < n; ++i) matrix[0][i] = 0;
-	}
 	if (colZero)
 	{
 		for (int i = 0; i < m; ++i) matrix[i][0] = 0;
+	}
+	if (rowZero)
+	{
+		for (int j = 0; j < n; ++j) matrix[0][j] = 0;
 	}
 }

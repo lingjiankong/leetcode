@@ -18,7 +18,8 @@
 //
 // ***
 //
-// Set all initial values in dp to amount + 1
+// Why set all initial values in dp to amount + 1?
+// You can't set initial values to INT_MAX because you might end up +1 to it which result in overflow.
 // because max number of coins to make changes for money amount n should not be greater than n.
 int coinChange(vector<int>& coins, int amount) 
 {
@@ -27,11 +28,11 @@ int coinChange(vector<int>& coins, int amount)
 
 	for (int i = 1; i <= amount; ++i)
 	{
-		for (int j = 0; j < coins.size(); ++j)
+		for (int coin : coins)
 		{
-			if (coins[j] <= i)
+			if (coin <= i)
 			{
-				dp[i] = min(dp[i], dp[i - coins[j]] + 1);
+				dp[i] = min(dp[i], dp[i - coin] + 1);
 			}
 		}
 	}

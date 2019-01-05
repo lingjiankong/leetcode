@@ -46,12 +46,12 @@ void reorderList(ListNode *head)
 
 	// 3. Add the reversed second half of the linked list to the first half of the linked list.
 	// prevNode is now the reversed head of the right half of the linked list.
-	ListNode* rightHead = prevNode;
-	while (head && rightHead)
+	ListNode* head2 = prevNode;
+	while (head && head2)
 	{
 		ListNode* nextNode = head->next;
-		head->next = rightHead;
-		rightHead = rightHead->next;
+		head->next = head2;
+		head2 = head2->next;
 		head->next->next = nextNode;
 		head = nextNode;
 	}

@@ -8,8 +8,7 @@
 // 
 // Input: n = 12, primes = [2,7,13,19]
 // Output: 32 
-// Explanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 
-//              super ugly numbers given primes = [2,7,13,19] of size 4.
+// Explanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 super ugly numbers given primes = [2,7,13,19] of size 4.
 // Note:
 // 
 // 1 is a super ugly number for any given primes.
@@ -21,23 +20,23 @@
 //
 // This question uses the exact same idea as 264. Ugly Number II.
 // We use for loops to iterate the prime numbers.
+
 int nthSuperUglyNumber(int n, vector<int>& primes)
 {
-	vector<int> dp(1, 1);
-	vector<int> indexes(primes.size(), 0);
+	vector<int> dp(n, 1), indexes(primes.size(), 0);
 
-	while (dp.size() < n)
+	for (int i = 1; i < n; ++i)
 	{
-		int minNextUglyNumber = INT_MAX;
-		for (int j = 0; j < primes.size(); ++j)
-		{
-			minNextUglyNumber = min(minNextUglyNumber, dp[indexes[j]] * primes[j]);
-		}
-		dp.push_back(minNextUglyNumber);
+		dp[i] = INT_MAX;
 
 		for (int j = 0; j < primes.size(); ++j)
 		{
-			if (minNextUglyNumber == dp[indexes[j]] * primes[j])
+			dp[i] = min(dp[i], dp[indexes[j]] * primes[j]);
+		}
+
+		for (int j = 0; j < primes.size(); ++j)
+		{
+			if (dp[i] == dp[indexes[j]] * primes[j])
 			{
 				++indexes[j];
 			}

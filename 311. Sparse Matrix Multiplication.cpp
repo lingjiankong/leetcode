@@ -28,8 +28,11 @@
 // ***
 //
 // A of size (m, k) * B of size (k, n) -> C of size (m, n),
+//
 // C[i][j] = A[i][0] * B[0][j] + A[i][1] * B[1][j] + A[i][2] * B[2][j] + ... + A[i][k] * B[k][j]
+//
 // Therefore we need to make sure that A[i][k] != 0 and B[k][j] != 0 when calculating for C[i][j]
+//
 vector<vector<int>> multiply(vector<vector<int>>& A, vector<vector<int>>& B)
 {
 	vector<vector<int>> toReturn(A.size(), vector<int>(B[0].size()));

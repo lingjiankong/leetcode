@@ -18,6 +18,7 @@
 // Explanation: Paint house 0 into blue, paint house 1 into green, paint house 2 into blue. Minimum cost: 2 + 5 + 3 = 10.
 //
 // ***
+//
 int minCost(vector<vector<int>>& costs) 
 {	
 	if (costs.empty() || costs[0].empty())

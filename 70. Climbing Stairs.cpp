@@ -28,7 +28,11 @@
 //
 // Number of stairs:        0 0 1 2 3 4 5 6 ...
 // Number of ways to climb: 0 1 1 2 3 5 8 13 ...
-// 					        ^ ^
+// 					          ^ ^
+//                            a b
+//
+// dp[i]: distinct ways to climb to stair i.
+//
 int climbStairs(int n)
 {
 	vector<int> dp(n + 1);
@@ -42,4 +46,20 @@ int climbStairs(int n)
 	}
 
 	return dp.back();
+}
+
+// O(1) space. 
+int climbStairs(int n)
+{
+	int a = 1;
+	int b = 1;
+
+	for (int i = 2; i <= n; ++i)
+	{
+		int newA = a + b;
+		a = b;
+		b = newA;
+	}
+	
+	return b;
 }

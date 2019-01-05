@@ -18,6 +18,7 @@
 // This a dynamic programming problem.
 //
 // See also 53. Maximum Subarray.
+//
 // The maximum product of subarray ending in nums[i] depends on both its own sign and
 // the max and min product of the subarray ending in nums[i-1], and the value of nums[i] itself.
 // 

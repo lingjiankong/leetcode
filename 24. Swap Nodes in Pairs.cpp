@@ -19,9 +19,11 @@ ListNode* swapPairs(ListNode* head)
 		return head;
 	}
 
-	ListNode* temp = head->next;
+	// ... -> head -> second -> ...
+	// ... -> second -> head -> ...
+	ListNode* second = head->next;
 	head->next = swapPairs(head->next->next);
-	temp->next = head;
+	second->next = head;
 
-	return temp;
+	return second;
 }

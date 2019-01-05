@@ -94,6 +94,7 @@
 | 792 | Number of Matching Subsequence | Star
 | 187 | Repeated DNA Sequences | Star
 | 771 | Jewels and Stongs | Basic
+| 76 | Minimum Window Substring | Star
 
 ## Tree
 | ID | Name | Note |
@@ -177,29 +178,28 @@
 | 52 | N-Queens II | Star
 | 22 | Generate Parentheses | Star
 | 241 | Different Ways to Add Parentheses | Star
+| 139 | Word Break | Star
+| 140 | Word Break II | Basic
 
 ## Dynamic Programming
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 70 | Climbing Stairs | Star
 | 746 | Min Cost Climbing Staris | Star
-| 62 | Unique Paths | Star
-| 63 | Unique Paths II | Star
 | 120 | Triangle | Star
 | 279 | Perfect Squares | Star
-| 139 | Word Break | Star
-| 140 | Word Break II | Basic
-| 322 | Coin Change | Basic
-| 256 | Paint House | Basic
-| 265 | Paint House II | Basic
+| 322 | Coin Change | Star
+| 256 | Paint House | Star
+| 265 | Paint House II | Star
+| 198 | House Robber | Star
+| 213 | House Robber II | Star
+| 337 | House Robber III | Star
+| 62 | Unique Paths | Star
+| 63 | Unique Paths II | Star
 | 64 | Minimum Path Sum | Star
 | 72 | Edit Distance | Basic, Memorize
-| 221 | Maximal Square | Basic
-| 198 | House Robber | Star
-| 213 | House Robber II | Basic
-| 337 | House Robber III | Basic
-| 313 | Super Ugly Number
-| 361 | Bomb Enemy | Basic
+| 221 | Maximal Square | Star
+| 361 | Bomb Enemy | Star
 | 121 | Best Time to Buy and Sell Stock | Star
 | 122 | Best Time to Buy and Sell Stock II | Star
 | 123 | Best Time to Buy and Sell Stock III | Star
@@ -208,29 +208,29 @@
 | 714 | Best Time to Buy and Sell Stock with Transaction Fee | Star
 | 53 | Maximum Subarray | Star
 | 152 | Maximum Product Subarray | Star
-| 376 | Wiggle Subsequence | Basic
+| 376 | Wiggle Subsequence | Star
 
 ## LinkedList
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 206 | Reverse Linked List | Star
-| 92 | Reverse Linked List II | Hard
+| 92 | Reverse Linked List II | Hard, Exotic
 | 141 | Linked List Cycle | Star
-| 142 | Linked List Cycle II | Basic, Memorize
+| 142 | Linked List Cycle II | Star
 | 234 | Palindrome Linked List | Star
 | 24 | Swap Nodes in Pairs | Basic
 | 237 | Delete Node in a Linked List | Basic
-| 19 | Remove Nth Node From End of List | Basic, Memorize
+| 19 | Remove Nth Node From End of List | Star
 | 203 | Remove Linked List Elements | Star
 | 83 | Remove Duplicates from Sorted List | Basic
 | 82 | Remove Duplicates from Sorted List II | Hard
 | 369 | Plus One Linked List | Basic
 | 2 | Add Two Numbers | Star
-| 160 | Intersection of Two Linked Lists | Basic
+| 160 | Intersection of Two Linked Lists | Star
 | 21 | Merge Two Sorted Lists | Star
 | 143 | Reorder List | Basic
 | 148 | Sort List | Star
-| 61 | Rotate List | Basic
+| 61 | Rotate List | Star
 | 86 | Partition List | Star
 | 23 | Merge k Sorted Lists | Star
 
@@ -242,7 +242,7 @@
 | 59 | Spiral Matrix II | Basic
 | 73 | Set Matrix Zeroes | Star
 | 311 | Sparse Matrix Multiplication | Star, Memorize
-| 36 | Valid Sudoku | Normal, Memorize
+| 36 | Valid Sudoku | Basic, Memorize
 
 ## Math
 | ID | Name | Note |
@@ -273,6 +273,7 @@
 | 202 | Happy Number | Star
 | 263 | Ugly Number | Basic
 | 264 | Ugly Number II | Exotic
+| 313 | Super Ugly Number | Exotic
 | 31 | Next Permutation | Basic, Memorize
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | See 772
@@ -337,21 +338,17 @@
 | 362 | Design Hit Counter | Star
 | 281 | Zigzag Iterator | Basic
 | 251 | Flatten 2D Vector | Basic
-| 348 | Design Tic-Tac-Toe
-| 379 | Design Phone Directory
-| 353 | Design Snake Game
-| 146 | LRU Cache
-| 355 | Design Twitter | Star
-| 303 | Range Sum Query - Immutable
-| 304 | Range Sum Query 2D - Immutable
-| 307 | Range Sum Query - Mutable	Binary Index Tree
-| 308 | Range Sum Query 2D - Mutable	Binary Index Tree
+| 348 | Design Tic-Tac-Toe | Normal
+| 146 | LRU Cache | Star
+| 303 | Range Sum Query - Immutable | Basic
+| 304 | Range Sum Query 2D - Immutable | Basic
 
 ## Non LeetCode Questions
 | ID | Name | Note | Inspiration
 |:---:|:---:|:---:|:---:|
 | N1 | Minimum Distance between Two Points in a Matrix | Star | Amazon SDE OA Late 2018
 | N2 | Shortest Path between Two Points in a Matrix | Star |
+| N3 | Unique Paths from Top Left to Bottom Right | Star | Generalization of 62. Unique Paths
 
 
 
