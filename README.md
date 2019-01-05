@@ -180,6 +180,7 @@
 | 241 | Different Ways to Add Parentheses | Star
 | 139 | Word Break | Star
 | 140 | Word Break II | Basic
+| 131 | Palindrome Partitioning | Normal
 
 ## Dynamic Programming
 | ID | Name | Note |
@@ -248,12 +249,12 @@
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 7 | Reverse Integer | Normal
-| 66 | Plus One | Basic
-| 258 | Add Digits | Basic
+| 9 | Palindrome Number | Star
+| 66 | Plus One | Star
+| 258 | Add Digits | Star
 | 415 | Add Strings | Star
 | 67 | Add Binary | Star
-| 43 | Multiply Strings | Normal, Memorize
-| 9 | Palindrome Number | Star
+| 43 | Multiply Strings | Exotic
 | 367 | Valid Perfect Square | Normal
 | 204 | Count Primes | Basic
 | 1 | Two Sum | Star

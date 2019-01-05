@@ -27,7 +27,7 @@ bool isPerfectSquare(int num)
 	return false;
 }
 
-// Another method, find the first x such that x * x is less than num, this defines the upper bound of our serach.
+// Another method, find the first x such that x * x is less than num, this defines the lower bound of our serach.
 // Our range of search for square root of num must between x (since x * x < num) and 2x (since (2x) * (2x) > num).
 bool isPerfectSquare(int num)
 {

@@ -60,9 +60,9 @@ string multiply(string num1, string num2)
 {
 	vector<int> resultVector(num1.size() + num2.size());
 
-    for(int i = num1.size() - 1; i >= 0; --i)
+    for (int i = num1.size() - 1; i >= 0; --i)
 	{
-        for(int j = num2.size() - 1; j >= 0; --j)
+        for (int j = num2.size() - 1; j >= 0; --j)
 		{
             int mul = (num1[i] - '0') * (num2[j] - '0'); 
 

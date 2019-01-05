@@ -21,13 +21,13 @@
 // ***
 int reverse(int x)
 {
-	long long toReturn = 0;
+	long long reversed = 0;
 
 	while (x != 0)
 	{
-		toReturn = 10 * toReturn + x % 10;
+		reversed = 10 * reversed + x % 10;
 		x /= 10;
 	}
 
-	return (toReturn > INT_MAX || toReturn < INT_MIN) ? 0 : toReturn;
+	return (reversed > INT_MAX || reversed < INT_MIN) ? 0 : reversed;
 }
