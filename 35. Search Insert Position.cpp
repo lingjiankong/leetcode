@@ -21,7 +21,7 @@
 //
 // ***
 //
-// This is just std::lower_bound:
+// This is just std::lower_bound.
 // Returns an iterator pointing to the first element in the range [first, last) that is *not less than*
 // (i.e. greater or equal to) value, or last if no such element is found.
 int searchInsert(vector<int>& nums, int target)

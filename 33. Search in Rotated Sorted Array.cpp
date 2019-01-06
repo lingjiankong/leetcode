@@ -59,7 +59,7 @@ int search(vector<int>& nums, int target)
 		else
 		{
 			// Target is in this sorted left half of the array.
-			if (nums[left] <= target && nums[mid] > target)
+			if (nums[left] <= target && target < nums[mid])
 			{
 				right = mid;
 			}

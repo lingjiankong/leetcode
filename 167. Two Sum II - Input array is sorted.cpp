@@ -45,3 +45,44 @@ vector<int> twoSum(vector<int>& numbers, int target)
 
 	return {};
 }
+
+
+// If given array is unsorted and the question's requirement was to return all unique pairs which sum to target:
+// Generalization of 15. 3Sum and 18. 4Sum. so it is easy to compare among these questions.
+vector<vector<int>> twoSum(vector<int>& nums, int target)
+{
+	vector<vector<int>> toReturn;
+	
+	sort(nums.begin(), nums.end());
+
+	int left = 0, right = nums.size() - 1;
+
+	while (left < right)
+	{
+		int sum = nums[left] + nums[right];
+		if (sum == target)
+		{
+			toReturn.push_back({nums[left], nums[right]});
+			while (left < right && nums[left] == nums[left + 1])
+			{
+				++left;
+			}
+			while (left < right && nums[right] == nums[right - 1])
+			{
+				--right;
+			}
+			++left, --right;
+		}
+		else if (sum < target)
+		{
+			++left;
+		}
+		else
+		{
+			--right;
+		}
+
+	}
+
+	return {};
+}

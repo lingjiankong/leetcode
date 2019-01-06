@@ -37,7 +37,7 @@ void nextPermutation(vector<int>& nums)
 {
 	for (int i = nums.size() - 2; i >= 0; --i)
 	{
-		if (nums[i] > nums[i+1])
+		if (nums[i] < nums[i+1])
 		{
 			for (int j = nums.size() - 1; j > i; --j)
 			{

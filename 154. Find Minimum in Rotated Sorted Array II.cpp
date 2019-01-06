@@ -21,21 +21,21 @@
 // For these kinds of binary search problems, where there's a sorted array rotated at some unknown pivot, AND
 // there exists duplicate element in the array, the method is the same.
 // Look at the if, else if, and else loop to get the intuition.
-int findMin(vector<int> &num)
+int findMin(vector<int>& nums)
 {
-    int left = 0, right = num.size() - 1;
+    int left = 0, right = nums.size() - 1;
     
     while (left < right)
     {    
         int mid = left + (right - left) / 2;
 
         // In this case, the pivot is on the right half of the array.
-        if (num[mid] > num[right])
+        if (nums[mid] > nums[right])
         {
             left = mid + 1;
         }
 		// In this case, the pivot is on the left half of the array.
-        else if (num[mid] < num[right])
+        else if (nums[mid] < nums[right])
         {
             right = mid;
         }
@@ -45,5 +45,5 @@ int findMin(vector<int> &num)
 		}
     }
 
-    return num[right];
+    return nums[right];
 };

@@ -263,7 +263,7 @@
 | 653 | Two Sum IV - Input is a BST | Star
 | 15 | 3Sum | Star
 | 16 | 3Sum Closest | Star
-| 259 | 3Sum Smaller | Normal
+| 259 | 3Sum Smaller | Basic
 | 18 | 4Sum | Star
 | 454 | 4Sum II | Star
 | 231 | Power of Two | Star
@@ -287,7 +287,7 @@
 | 278 | First Bad Version | Normal
 | 35 | Search Insert Position | Star
 | 33 | Search in Rotated Sorted Array | Star
-| 81 | Search in Rotated Sorted Array II | Star, Memorize
+| 81 | Search in Rotated Sorted Array II | Star
 | 153 | Find Minimum in Rotated Sorted Array | Star
 | 154 | Find Minimum in Rotated Sorted Array II | Star
 | 34 | Find First and Last Position of Element in Sorted Array | Star
@@ -296,7 +296,7 @@
 | 354 | Russian Doll Envelopes | Basic, Memorize
 | 69 | Sqrt(x) | Star
 | 74 | Search a 2D Matrix | Star
-| 240 | Search a 2D Matrix II | Normal, Memorize
+| 240 | Search a 2D Matrix II | Basic, Memorize
 | 287 | Find the Duplicate Number | Normal
 | 4 | Median of Two Sorted Arrays | Star
 

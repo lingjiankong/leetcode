@@ -20,16 +20,16 @@
 //
 // The smallest element is the rotation pivot.
 // This question is the same as asking you where that rotation pivot is.
-int findMin(vector<int> &num)
+int findMin(vector<int>& nums)
 {
-    int left = 0, right = num.size() - 1;
+    int left = 0, right = nums.size() - 1;
 
     while (left < right)
     {
         int mid = left + (right - left) / 2;
 
 		// In this case, the pivot is on the right half of the array
-        if (num[mid] > num[right])
+        if (nums[mid] > nums[right])
         {
             left = mid + 1;
         }
@@ -39,5 +39,5 @@ int findMin(vector<int> &num)
         }
     }
 
-    return num[right];
+    return nums[right];
 };

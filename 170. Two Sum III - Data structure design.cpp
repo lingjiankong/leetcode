@@ -22,7 +22,7 @@
 // For each numA, we want to see if there is a numB, such that numA + numB = target.
 // A special case here to pay attention to is that is numA = numB, then we must check
 // if that same element occured more than once (hence we check whether numACount > 1).
-// One of the operation in add() and find() must be O(n). You decide the trade-off.
+// One of the operation in add() and find() will inevitably be O(n). You decide the trade-off.
 class TwoSum
 {
 
@@ -30,19 +30,19 @@ class TwoSum
 
 		void add(int number)
 		{
-			++hash[number];
+			++mHash[number];
 		}
 
 		bool find(int target)
 		{
-			for (auto element : hash)
+			for (auto element : mHash)
 			{
 				int numA = element.first;
 				int numACount = element.second;
 
 				int numB = target - numA;
 
-				if ((numB != numA && hash.count(numB)) || (numB == numA && numACount > 1))
+				if ((numB != numA && mHash.count(numB)) || (numB == numA && numACount > 1))
 				{
 					return true;
 				}
@@ -53,6 +53,6 @@ class TwoSum
 
 	private:
 
-		unordered_map<int, int> hash;
+		unordered_map<int, int> mHash;
 
 };

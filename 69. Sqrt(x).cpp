@@ -18,12 +18,10 @@
 //
 // ***
 //
-// Binary search to find the last element that is not greater than the target element.
-// i.e. We want to find the last element such that mid * mid <= x, therefore the target is x / mid
+// Want to find last mid such that mid * mid <= x.
+// So we use std::upper_bound to find the first mid such that mid * mid > x
+// Then index right - 1 is the last mid such that mid * mid <= x
 //
-// In this case, the target element is x / mid, and we want to find the last element that isn't greater than it
-// Hence we return right - 1. If we return right, it is the first element that is greater than target.
-// See a summary of binary search here: http://www.cnblogs.com/grandyang/p/6854825.html
 int mySqrt(int x)
 {
 	if (x <= 1)

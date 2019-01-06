@@ -28,7 +28,7 @@ bool isPowerOfTwo(int n)
 
 	while (n > 0)
 	{
-		numberOfOne += (n & 0b00000001);
+		numberOfOne += (n & 1);
 		n >>= 1;
 	}
 	

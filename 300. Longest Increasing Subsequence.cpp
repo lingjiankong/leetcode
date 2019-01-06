@@ -1,15 +1,16 @@
 // ***
 //
 // Given an unsorted array of integers, find the length of longest increasing subsequence.
-// 
+//
 // Example:
-// 
+//
 // Input: [10,9,2,5,3,7,101,18]
-// Output: 4 
-// Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4. 
+// Output: 4
+// Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
 //
 // ***
 //
+// This question asks about the longest sequence, NOT the longeset *consesutive* sequence.
 // See also 128. Longest Consecutive Sequence. In that question, order of element does not matter.
 //
 // DP solution.
@@ -38,9 +39,9 @@ int lengthOfLIS(vector<int>& nums)
 }
 
 // Binary search. Took me a while to understand it. Just memorize it.
-// tails is an array storing the smallest tail (i.e. the last elemet) of all increasing subsequences with length i + 1 in tails[i].
+// tails is an array storing the smallest tail (i.e. the last element) of all increasing subsequences with length i + 1 in tails[i].
 // For example, say we have nums = [4, 5, 6, 3], then all the available increasing subsequences are:
-// 
+//
 // length = 1   :      [4], [5], [6], [3]   => tails[0] = 3
 // length = 2   :      [4, 5], [5, 6]       => tails[1] = 5
 // length = 3   :      [4, 5, 6]            => tails[2] = 6

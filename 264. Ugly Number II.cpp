@@ -48,7 +48,7 @@ int nthUglyNumber(int n)
 
 	while (uglyNumber.size() < n)
 	{
-		uglyNumber.push_back(min(uglyNumber[i] * 2, min(uglyNumber[j] * 3, uglyNumber[k] * 5)));
+		uglyNumber.push_back(min({uglyNumber[i] * 2, uglyNumber[j] * 3, uglyNumber[k] * 5}));
 
 		if (uglyNumber.back() == uglyNumber[i] * 2)
 		{
