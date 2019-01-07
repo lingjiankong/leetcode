@@ -305,10 +305,10 @@
 |:---:|:---:|:---:|
 | 155 | Min Stack | Star
 | 232 | Implement Queue using Stacks | Basic
-| 225 | Implement Stack using Queues | Basic
+| 225 | Implement Stack using Queues | Normal
 | 150 | Evaluate Reverse Polish Notation | Star
 | 42 | Trapping Rain Water | Star
-| 84 | Largest Rectangle in Histogram | Star, Memorize
+| 84 | Largest Rectangle in Histogram | Star
 | 347 | Top K Frequent Elements | Star
 | 451 | Sort Characters By Frequency | Basic
 | 295 | Find Median from Data Stream | Star
@@ -357,8 +357,8 @@
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
 **Notation**:
-- Star: Three star questions
-- Basic: Two star questions
+- Star: Three star questions.
+- Basic: Two star questions.
 - Normal: One star questions.
 - Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over.
 - Hard: Hard to understand questions. Should be skipped during a fast go-over. Don't spend too much time on it.

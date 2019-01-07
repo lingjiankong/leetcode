@@ -37,7 +37,7 @@
 // 这个运算符和之前两个数字完成运算后从原数组中删去，把得到一个新的数字插入到原来的位置，继续做相同运算，直至整个数组变为一个数字。
 int evalRPN(vector<string>& tokens)
 {
-	unordered_map<string, function<int (int, int)> > map =
+	unordered_map<string, function<int (int, int)> > operatorHash =
 	{
 		{ "+" , [] (int a, int b) { return a + b; } },
 		{ "-" , [] (int a, int b) { return a - b; } },
@@ -50,7 +50,7 @@ int evalRPN(vector<string>& tokens)
 	for (string token : tokens)
 	{
 		// If token is not an operator, push the number to stack.
-		if (!map.count(token))
+		if (!operatorHash.count(token))
 		{
 			tokenStack.push(stoi(token));
 		}
@@ -60,7 +60,7 @@ int evalRPN(vector<string>& tokens)
 		{
 			int left = tokenStack.top(); tokenStack.pop();
 			int right = tokenStack.top(); tokenStack.pop();
-			tokenStack.push(map[token](right, left));
+			tokenStack.push(operatorHash[token](right, left));
 		}
 	}
 

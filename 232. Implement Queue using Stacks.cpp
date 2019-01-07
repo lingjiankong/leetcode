@@ -14,17 +14,14 @@ class MyQueue
 
 	public:
 
-		/** Initialize your data structure here. */
 		MyQueue()
 		{}
 		
-		/** Push element x to the back of queue. */
 		void push(int x)
 		{
 			inStack.push(x);
 		}
 		
-		/** Removes the element from in front of queue and returns that element. */
 		int pop()
 		{
 			shiftStack();
@@ -32,14 +29,12 @@ class MyQueue
 			return toReturn;
 		}
 		
-		/** Get the front element. */
 		int peek()
 		{
 			shiftStack();
 			return outStack.top();
 		}
 		
-		/** Returns whether the queue is empty. */
 		bool empty()
 		{
 			return inStack.empty() && outStack.empty();

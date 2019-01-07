@@ -57,7 +57,6 @@ int trap(vector<int>& height)
 // 2. Minimum of (max height of walls to the left, max height of walls to the right)
 int trap(vector<int>& height)
 {
-
 	int totalWater = 0;
 
 	// Well, you can think of leftMaxHeight = height[left] and rightMaxHeight = height[right]
@@ -90,7 +89,7 @@ int trap(vector<int>& height)
 	return totalWater;
 }
 
-// Maintain a monotonic decreasing stack (which stores the index) of bars.
+// Maintain a monotonic decreasing stack (which stores the *index*) of bars.
 // Whenever we see a higher bar we might be able to form a valley to store water.
 // In the process of popping elements which are smaller than current height[i], we do our calculation.
 // See also 84. Largest Rectangle In Histogram. Very similar.
@@ -108,7 +107,7 @@ int trap(vector<int>& height)
 		{
 			heightStack.push(i++);
 		}
-		// Else, we see a higher bar, the top element of stack might be a valley.
+		// Else, we see a higher bar, the top() element of stack might be a valley.
 		// Popping all elements which are smaller than current heights[i] (the right wall)
 		else
 		{
@@ -128,6 +127,43 @@ int trap(vector<int>& height)
 			int rectangleHeight = min(height[i], height[heightStack.top()]) - height[currentValleyIndex];
 
 			totalWater += rectangleHeight * rectangleWidth;
+		}
+	}
+
+	return totalWater;
+}
+
+// Exactly same as above, with named variables to make it clear.
+int trap(vector<int>& height)
+{
+	stack<int> heightStack;
+
+	int totalWater = 0;
+
+	int i = 0;
+	while (i < height.size())
+	{
+		if (heightStack.empty() || height[i] < height[heightStack.top()])
+		{
+			heightStack.push(i++);
+		}
+		else
+		{
+			int rightBarIndex = i;
+
+			int currentValleyIndex = heightStack.top(); heightStack.pop();
+
+			if (heightStack.empty())
+			{
+				continue;
+			}
+
+			int leftBarIndex = heightStack.top();
+
+			int rectangleWidth = rightBarIndex - leftBarIndex - 1;
+			int rectangleHeight = min(height[leftBarIndex], height[rightBarIndex]) - height[currentValleyIndex];
+
+			totalWater += rectangleWidth * rectangleHeight;
 		}
 	}
 
