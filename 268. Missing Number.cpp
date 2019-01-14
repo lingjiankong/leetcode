@@ -12,7 +12,7 @@
 //
 // ***
 //
-// Bitwise XOR everything in the array [0, 1, ..., n] (one number is missing in the array) with [1, 2, ..., n], the leftover number must be the missing number.
+// Bitwise XOR everything in the array [0, 1, 2, ..., n] (one number is missing in the array) with [1, 2, 3, ..., n], the leftover number must be the missing number.
 int missingNumber(vector<int>& nums)
 {
 	int result = 0;
