@@ -67,7 +67,7 @@
 | 205 | Isomorphic Strings | Star
 | 290 | Word Pattern | Star
 | 293 | Flip Game | Basic
-| 294 | Flip Game II | Star
+| 294 | Flip Game II | Basic
 | 387 | First Unique Character in a String | Star
 | 383 | Ransom Note | Star
 | 242 | Valid Anagram | Star
@@ -305,10 +305,10 @@
 |:---:|:---:|:---:|
 | 155 | Min Stack | Star
 | 232 | Implement Queue using Stacks | Basic
-| 225 | Implement Stack using Queues | Normal
+| 225 | Implement Stack using Queues | Basic
 | 150 | Evaluate Reverse Polish Notation | Star
 | 42 | Trapping Rain Water | Star
-| 84 | Largest Rectangle in Histogram | Star
+| 84 | Largest Rectangle in Histogram | Star, Memorize
 | 347 | Top K Frequent Elements | Star
 | 451 | Sort Characters By Frequency | Basic
 | 295 | Find Median from Data Stream | Star
@@ -342,7 +342,7 @@
 | 348 | Design Tic-Tac-Toe | Normal
 | 146 | LRU Cache | Star
 | 303 | Range Sum Query - Immutable | Basic
-| 304 | Range Sum Query 2D - Immutable | Basic
+| 304 | Range Sum Query 2D - Immutable | Normal
 
 ## Non LeetCode Questions
 | ID | Name | Note | Inspiration
@@ -357,8 +357,8 @@
 **Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
 
 **Notation**:
-- Star: Three star questions.
-- Basic: Two star questions.
+- Star: Three star questions
+- Basic: Two star questions
 - Normal: One star questions.
 - Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over.
 - Hard: Hard to understand questions. Should be skipped during a fast go-over. Don't spend too much time on it.

@@ -61,14 +61,11 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 		if (i - k + 1 >= 0)
 		{
 			// Iterator denoted by rbegin() is the biggest element in the multiset.
-			toReturn.push_back(*window.rbegin())	
+			toReturn.push_back(*window.rbegin());
 			
 			// Remove the element no longer in the window. 
 			auto itr = window.find(nums[i - k + 1]);
-			if (itr != window.end())
-			{
-				window.erase(itr);
-			}
+			window.erase(itr);
 		}
 	}
 		

@@ -59,7 +59,7 @@ vector<int> findAnagrams(string s, string p)
 		++sHashWindow[s[i]];
 		--sHashWindow[s[i-p.size()]];
 
-		if (pHash == sHashWindow)
+		if (sHashWindow == pHash)
 		{
 		   toReturn.push_back(i - p.size() + 1);
 		}

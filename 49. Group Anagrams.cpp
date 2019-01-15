@@ -43,7 +43,7 @@ vector<vector<string>> groupAnagrams(vector<string>& strs)
 }
 
 // Alternatively, we can use the count sort idea similar to 242. Valid Anagram.
-// Instead use sorted word as a key, you just convert counts to a string.
+// Instead use sorted word as a key, you can just convert counts to a string.
 // and use that as a key. In this case you don't have the cost of sort.
 vector<vector<string>> groupAnagrams2(vector<string>& strs)
 {

@@ -14,14 +14,14 @@ class Solution
     
     public:
 
-        int uniquePaths(int m, int n) 
+        vector<vector<int>> uniquePaths(int m, int n) 
         {
             vector<string> current;
             vector<vector<string>> all;
 
             dfs(0, 0, m, n, current, all);
 
-            return 0;
+            return all;
         }
 
     private:

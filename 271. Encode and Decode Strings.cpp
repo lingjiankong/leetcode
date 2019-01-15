@@ -68,8 +68,8 @@ class Codec
 				toReturn.push_back(s.substr(slashPosition + 1, stringLength));
 				
 				// slashPoisition + 1 is where the string starts
-				// slashPosition + 1 + stringLength is where the number representing
-				// the size of next string starts.
+				// slashPosition + 1 + stringLength is where the number which
+				// representing the size of next string starts.
 				head = slashPosition + 1 + stringLength;
 			}
 

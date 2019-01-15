@@ -62,6 +62,7 @@ class LRUCache
 				it->second->second = value;
 
 				// Move this entry to the front of the LinkedList.
+				// it->second is iterator of type pair<int, int>::iterator, i.e. of element in the linked list
 				mList.splice(mList.begin(), mList, it->second);
 
 				return;
@@ -84,7 +85,9 @@ class LRUCache
 	private:
 
 		int mCapacity;
-		list<pair<int,int>> mList;
-		unordered_map<int, list<pair<int,int>>::iterator> mHash;
+
+		list<pair<int, int>> mList;
+
+		unordered_map<int, list<pair<int, int>>::iterator> mHash;
 
 };

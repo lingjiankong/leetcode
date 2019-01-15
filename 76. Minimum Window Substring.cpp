@@ -15,8 +15,6 @@
 //
 string minWindow(string s, string t)
 {
-	string toReturn = "";
-
 	unordered_map<char, int> letterCount;
 
 	int left = 0, count = 0, minLength = INT_MAX;
@@ -25,6 +23,8 @@ string minWindow(string s, string t)
 	{
 		++letterCount[c];
 	}
+
+	string toReturn = "";
 
 	for (int i = 0; i < s.size(); ++i)
 	{
@@ -58,4 +58,3 @@ string minWindow(string s, string t)
 	
 	return toReturn;
 }
-

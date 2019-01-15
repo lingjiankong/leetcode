@@ -13,14 +13,14 @@
 // ***
 int subarraySum(vector<int>& nums, int k)
 {
-	int count = 0, sum = 0, n = nums.size();
+	int count = 0, sum = 0;
 
 	// Key: Sum you saw before
 	// Value: How many times you've seen that sum
 	// Initially, we have seen sum = 0 for 1 time.
 	unordered_map<int, int> seen{{0, 1}};
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < nums.size(); ++i)
 	{
 		sum += nums[i];
 		count += seen[sum - k];

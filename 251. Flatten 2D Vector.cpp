@@ -39,7 +39,7 @@ class Vector2D
 		bool hasNext()
 		{
 			// Need while loop here instead of if statement because
-			// the when you ++x the next vector<int> pointed by *x might be empty.
+			// when you ++x the next vector<int> pointed by *x might be empty.
 			// In this case we should keep ++x and looking for a non-empty vector.
 			while (x != end && y == x->end())
 			{
