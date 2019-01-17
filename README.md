@@ -131,7 +131,7 @@
 | 236 | Lowest Common Ancestor of a Binary Tree | Basic, Memorize
 | 108 | Convert Sorted Array to Binary Search Tree | Star
 | 109 | Convert Sorted List to Binary Search Tree | Star
-| 173 | Binary Search Tree Iterator | Star, Memorize
+| 173 | Binary Search Tree Iterator | Basic, Memorize
 | 230 | Kth Smallest Element in a BST | Star
 | 297 | Serialize and Deserialize Binary Tree | Star
 | 285 | Inorder Successor in BST | Hard

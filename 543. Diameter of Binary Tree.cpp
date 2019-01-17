@@ -17,7 +17,7 @@
 // ***
 // 
 // This is exactly the same as 104. Maximum Depth of Binary Tree,
-// with an added mDiameter to track the diameter (leftSubtreeMaxDepth + rightSubtreeMaxDepth)of the tree.
+// with an added mDiameter to track the diameter (leftSubtreeMaxDepth + rightSubtreeMaxDepth) of the tree.
 class Solution
 {
 

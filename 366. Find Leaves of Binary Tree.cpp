@@ -57,9 +57,9 @@ class Solution
 
 		int maxHeight(TreeNode* root)
 		{
-			// Here you need if (!root) {return -1;};, instead of if (!root->left && !root->right) {return 0;};
+			// Here you need if (!root) {return -1;}, instead of if (!root->left && !root->right) {return 0;}
 			// because in mLeaves[currentMaxHeight].push_back(root->val);, you want to start pushing when currentMaxHeight = 0.
-			// If you use if (!root->left && !root->right) {return 0;}; then you will need to manually push_back to currentMaxHeight for the leaf nodes (i.e. when index=0).
+			// If you use if (!root->left && !root->right) {return 0;}, then you will need to manually push_back to currentMaxHeight for the leaf nodes (i.e. when index=0).
 			if (!root)
 			{
 				return -1;

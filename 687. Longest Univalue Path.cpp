@@ -50,7 +50,7 @@ class Solution
 
 	private:
 
-		int mLongestPath;	
+		int mLongestPath;
 
 		int maxUnivalueDepth(TreeNode* root)
 		{

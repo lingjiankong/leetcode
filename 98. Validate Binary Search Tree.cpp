@@ -30,7 +30,8 @@
 //
 // For a binary search tree, all nodes in left subtree must be smaller than current node, and all nodes in right subtree must be larger than current node.
 // Therefore we can use preorder traversal to see whether a node satisfy this condition, and recursively check its left and right subtrees.
-// We use nullptr so that we don't need to hard code things like INT_MIN or INT_MAX. The root node does not have any constraint on the min and max value it can take.
+// If you do not want to hard code things like INT_MIN or INT_MAX, then you can use use nullptr, because the root node does not have any constraint on the min and max value it can take.
+// For clarity we use INT_MAX here. This won't pass the OJ.
 class Solution
 {
 
@@ -38,24 +39,24 @@ class Solution
 
 		bool isValidBST(TreeNode* root)
 		{
-			return isValidBST(root, nullptr, nullptr);
+			return isValidBST(root, INT_MIN, INT_MAX);
 		}
 
 	private:
 
-		bool isValidBST(TreeNode* node, int* minValue, int* maxValue)
+		bool isValidBST(TreeNode* node, int minValue, int maxValue)
 		{
 			if (!node)
 			{
 				return true;
 			}
 
-			if ((minValue && node->val <= *minValue) || (maxValue && node->val >= *maxValue))
+			if ((node->val <= minValue) || (node->val >= maxValue))
 			{
 				return false;
 			}
 
-			return isValidBST(node->left, minValue, &node->val) && isValidBST(node->right, &node->val, maxValue);
+			return isValidBST(node->left, minValue, node->val) && isValidBST(node->right, node->val, maxValue);
 		}
 
 };

@@ -62,6 +62,8 @@ class Solution
 			if (mCount-- == 1)
 			{
 				mResult = node->val;
+
+				return;
 			}
 
 			inOrder(node->right);

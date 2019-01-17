@@ -12,7 +12,8 @@
 // Given root of a binary search tree, the next element that is bigger than current root is
 // the left most node of right subtree of current root.
 //
-// It is hard to describe in words. Just look at the code. This is a good question.
+// It is hard to describe in words. Just look at the code.
+//
 class BSTIterator
 {
 	public:

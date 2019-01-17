@@ -46,7 +46,7 @@ class Solution
 		int longestConsecutive(TreeNode* root)
 		{
 			// Initial target doesn't matter, you can set taret = 12345.
-			// currentLength will either be increased to 1 (if we pass in target = root->val),
+			// currentLength will either be increased by 1 (if we pass in target = root->val),
 			// or currentLength will be reset to 1 (if we pass in a random number).
 			int currentLength = 0;
 			int target = 0;

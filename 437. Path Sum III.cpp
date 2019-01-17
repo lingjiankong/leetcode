@@ -83,12 +83,12 @@ class Solution
 			pathSum(root->left, sum);
 			pathSum(root->right, sum);
 
-			return total;
+			return mTotal;
 		}
 
 	private:
 
-		int total = 0;
+		int mTotal = 0;
 
 		void dfs(TreeNode* node, int sum)
 		{
@@ -99,7 +99,7 @@ class Solution
 
 			if (node->val == sum)
 			{
-				++total;
+				++mTotal;
 			}
 
 			dfs(node->left, sum - node->val);

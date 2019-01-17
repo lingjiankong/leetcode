@@ -18,25 +18,27 @@
 //
 // A "solution template" for both preorder, inorder, and postorder traversal.
 // There's nothing special about this method. Just memorize it.
+
 class Solution
 {
 
 	public:
 
-		vector<int> inorderTraversal(TreeNode* root)
+		vector<int> inOrderTraversal(TreeNode* root)
 		{
+			stack<TreeNode*> nodeStack;
 			TreeNode* currentNode = root;
 
-			while (currentNode || !mNodeStack.empty())
+			while (currentNode || !nodeStack.empty())
 			{
 				if (currentNode)
 				{
-					mNodeStack.push(currentNode);
+					nodeStack.push(currentNode);
 					currentNode = currentNode->left;
 				}
 				else
 				{
-					TreeNode* node = mNodeStack.top(); mNodeStack.pop();
+					TreeNode* node = nodeStack.top(); nodeStack.pop();
 					mResult.push_back(node->val);
 					currentNode = node->right;
 				}
@@ -48,40 +50,5 @@ class Solution
 	private:
 
 		vector<int> mResult;
-		stack<TreeNode*> mNodeStack;
-
-};
-
-// Iterative. Same idea as above, slightly modify the code to help you 
-// better visualize the concept.
-class Solution
-{
-
-	public:
-
-		vector<int> inorderTraversal(TreeNode* root)
-		{
-			TreeNode* currentNode = root;
-
-			while (currentNode || !mNodeStack.empty())
-			{
-				while (currentNode)
-				{
-					mNodeStack.push(currentNode);
-					currentNode = currentNode -> left;
-				}
-
-				TreeNode* node = mNodeStack.top(); mNodeStack.pop();
-				mResult.push_back(node->val);
-				currentNode = node -> right;
-			}
-
-			return mResult;
-		}
-
-	private:
-
-		vector<int> mResult;
-		stack<TreeNode*> mNodeStack;
 
 };

@@ -25,19 +25,20 @@ class Solution
 
 		vector<int> preorderTraversal(TreeNode* root)
 		{
+			stack<TreeNode*> nodeStack;
 			TreeNode* currentNode = root;
 
-			while (currentNode || !mNodeStack.empty())
+			while (currentNode || !nodeStack.empty())
 			{
 				if (currentNode)
 				{
-					mNodeStack.push(currentNode);
+					nodeStack.push(currentNode);
 					mResult.push_back(currentNode->val);
 					currentNode = currentNode->left;
 				}
 				else
 				{
-					TreeNode* node = mNodeStack.top(); mNodeStack.pop();
+					TreeNode* node = nodeStack.top(); nodeStack.pop();
 					currentNode = node->right;
 				}
 			}
@@ -48,7 +49,6 @@ class Solution
 	private:
 
 		vector<int> mResult;
-		stack<TreeNode*> mNodeStack;
 
 };
 
