@@ -31,14 +31,14 @@ class Solution
 		{
 			int totalSolutions = 0;
 			vector<string> current(n, string(n, '.'));
-			solveNQueens(totalSolutions, current, 0, n);
+			backtrack(totalSolutions, current, 0, n);
 
 			return totalSolutions;
 		}
 
 	private:
 
-		void solveNQueens(int& totalSolutions, vector<string>& current, int row, int &n)
+		void backtrack(int& totalSolutions, vector<string>& current, int row, int &n)
 		{
 			if (row == n)
 			{
@@ -51,10 +51,9 @@ class Solution
 				if (isValid(current, row, col, n))
 				{
 					current[row][col] = 'Q';
-					solveNQueens(totalSolutions, current, row + 1, n);
+					backtrack(totalSolutions, current, row + 1, n);
 					current[row][col] = '.';
 				}
-
 			}
 		}
 

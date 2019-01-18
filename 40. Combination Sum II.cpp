@@ -17,7 +17,8 @@
 //
 // ***
 //
-// In this question, we are no longer guaranteed that we have all unique elements like in 39. Combination Sum,
+// In this question, we cannot use the same element multiple times,
+// and we are no longer guaranteed that we have all unique elements like in 39. Combination Sum,
 // so we must sort the array. This question is pretty much the same as 39. Combination Sum, with two differences:
 //
 // 1. In this question, startIndex in the backtracking function is i + 1 (i.e. next element) instead of i, this prevent multiple use of the same element.

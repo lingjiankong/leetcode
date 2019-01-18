@@ -33,14 +33,14 @@ class Solution
 			vector<string> current(n, string(n, '.'));
 			vector<vector<string>> all;
 
-			solveNQueens(all, current, 0, n);
+			backtrack(all, current, 0, n);
 
 			return all;
 		}
 
 	private:
 
-		void solveNQueens(vector<vector<string>>& all, vector<string>& current, int row, int &n)
+		void backtrack(vector<vector<string>>& all, vector<string>& current, int row, int &n)
 		{
 			if (row == n)
 			{
@@ -54,10 +54,9 @@ class Solution
 				if (isValid(current, row, col, n))
 				{
 					current[row][col] = 'Q';
-					solveNQueens(all, current, row + 1, n);
+					backtrack(all, current, row + 1, n);
 					current[row][col] = '.';
 				}
-				
 			}
 		}
 

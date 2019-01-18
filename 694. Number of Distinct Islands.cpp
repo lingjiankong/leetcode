@@ -30,9 +30,9 @@
 //
 // ***
 //
-// During dfs of each island, maintain a vector<pair<int, int>> of the coordinates and push_back every (x - x0, y - y0) to it,
-// where x0, y0 is the initial position when dfs starts. This off set i.e. (x - x0, y - y0) is needed so all islands with same shape will have
-// the same vector<pair<int, int>>. Finally, insert vector<pair<int, int>> to a set and the size of set is the number of distinct islands.
+// During dfs of each island, maintain a string of the coordinates and push_back every (x - x0, y - y0) to it,
+// where x0, y0 is the initial position when dfs starts. This offset i.e. (x - x0, y - y0) is needed so all islands with same shape will have
+// the same string of coordinates. Finally, insert the string of coordinates to an unordered_set and its size is the number of distinct islands.
 class Solution
 {
 
@@ -47,14 +47,15 @@ class Solution
 			 
 			vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
 
-			set<vector<pair<int, int>>> islandHash;
+			unordered_set<string> islandHash;
+
 			for (int i = 0; i < grid.size(); ++i)
 			{
 				for (int j = 0; j < grid[0].size(); ++j)
 				{
 					if (grid[i][j] == 1 && !visited[i][j])
 					{
-						vector<pair<int, int>> current;
+						string current;
 
 						dfs(i, j, i, j, current, grid, visited);
 
@@ -70,7 +71,7 @@ class Solution
 
 		vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
-		void dfs(int x0, int y0, int x, int y, vector<pair<int, int>>& current, const vector<vector<int>>& grid, vector<vector<bool>>& visited)
+		void dfs(int x0, int y0, int x, int y, string& current, const vector<vector<int>>& grid, vector<vector<bool>>& visited)
 		{
 			if (x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() || visited[x][y] || grid[x][y] != 1)
 			{
@@ -78,7 +79,7 @@ class Solution
 			}
 
 			visited[x][y] = true;
-			current.push_back({x - x0, y - y0});
+			current += " " + to_string(x - x0) + " " + to_string(y - y0);
 
 			for (auto direction : directions)
 			{

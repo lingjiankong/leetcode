@@ -54,7 +54,7 @@ class Solution
 		void dfs(int i, int j, int distance, vector<vector<int>>& rooms)
 		{
 			// When rooms[i][j] < distance, either the cell is an obstacle, a gate,
-			// or we've found a gate distance that is smaller for current distance, therefore return.
+			// or we have already found a gate distance that is smaller than current distance, therefore return.
 			if (i < 0 || j < 0 || i >= rooms.size() || j >= rooms[0].size() || rooms[i][j] < distance)	
 			{
 				return;

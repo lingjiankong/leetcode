@@ -50,7 +50,7 @@ class Solution
 		{
 			// Return when you see some thing like "())" i.e. number of ')' is greater than number of '('.
 			// Note that it is OK to have "((()" i.e. number of '(' is greater than number of ')'.
-			if (left < right)
+			if (left < right || left > total || right > total)
 			{
 				return;
 			}
@@ -60,15 +60,8 @@ class Solution
 				all.push_back(current); 
 			}
 
-			if (left < total)
-			{
-				backtrack(left + 1, right, current + '(', all, total); 
-			}
-
-			if (right < total)
-			{
-				backtrack(left, right + 1, current + ')', all, total); 
-			}
+			backtrack(left + 1, right, current + '(', all, total); 
+			backtrack(left, right + 1, current + ')', all, total); 
 		}
 		 
 };

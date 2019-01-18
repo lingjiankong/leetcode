@@ -23,7 +23,7 @@
 //
 // ***
 //
-// dp[i]: How much it cost when you *jump from* stair i.
+// dp[i]: How much it costs when you *jump from* stair i.
 int minCostClimbingStairs(vector<int>& cost)
 {
 	vector<int> dp(cost.size(), 0);
@@ -43,7 +43,7 @@ int minCostClimbingStairs(vector<int>& cost)
 // Similar idea: dp[i]: How much it cost when you *reach* stair i (without jumping form it).
 int minCostClimbingStairs(vector<int>& cost)
 {
-	// dp vector has one more element that cost element
+	// dp vector has one more element than cost element
 	// because we must reach one step beyond the last step
 	vector<int> dp(cost.size() + 1, 0);
 

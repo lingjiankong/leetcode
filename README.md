@@ -178,7 +178,7 @@
 | 52 | N-Queens II | Star
 | 22 | Generate Parentheses | Star
 | 241 | Different Ways to Add Parentheses | Star
-| 139 | Word Break | Star
+| 139 | Word Break | Basic
 | 140 | Word Break II | Basic
 | 131 | Palindrome Partitioning | Normal
 

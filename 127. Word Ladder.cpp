@@ -18,9 +18,9 @@
 // beginWord = "hit",
 // endWord = "cog",
 // wordList = ["hot","dot","dog","lot","log","cog"]
-// 
+//
 // Output: 5
-// 
+//
 // Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
 // return its length 5.
 //
@@ -30,9 +30,9 @@
 // beginWord = "hit"
 // endWord = "cog"
 // wordList = ["hot","dot","dog","lot","log"]
-// 
+//
 // Output: 0
-// 
+//
 // Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 //
 // ***
@@ -40,19 +40,19 @@
 // BFS solution.
 int ladderLength(string beginWord, string endWord, vector<string>& wordList)
 {
-	unordered_set<string> dict(wordList.begin(), wordList.end());		 
+	unordered_set<string> dict(wordList.begin(), wordList.end());
 
 	if (!dict.count(endWord))
 	{
 		return 0;
 	}
-	
+
 	queue<string> wordQueue;
 	wordQueue.push(beginWord);
-	
+
 	// BFS level, this is the number of steps between words.
 	int level = 0;
-	
+
 	while (!wordQueue.empty())
 	{
 		// Every time we enter this loop we enter a new BFS level.
@@ -61,7 +61,7 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList)
 		// For all words in current level
 		int currentLevelSize = wordQueue.size();
 		for (int k = 0; k < currentLevelSize; ++k)
-		{				 
+		{
 			string word = wordQueue.front(); wordQueue.pop();
 
 			// Found the solution
@@ -72,19 +72,20 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList)
 
 			// For every letter in word
 			for (int i = 0; i < word.size(); i++)
-			{				 
+			{
 				char letter = word[i];
 
-				// For every letter in word, traverse 'a' -> 'z'.
+				// Replace that letter with 'a' thru 'z'.
 				for (int j = 'a'; j <= 'z'; j++)
 				{
 					word[i] = j;
 
+					// If word exists in dict, push it to the queue for next bfs level.
 					if (dict.count(word))
 					{
 						// Remember to erase the word from dict!
 						dict.erase(word);
-						wordQueue.push(word);					  
+						wordQueue.push(word);
 					}
 
 				}

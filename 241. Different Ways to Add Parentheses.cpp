@@ -55,7 +55,7 @@ vector<int> diffWaysToCompute(const string& input)
 	return output.size() ? output : std::vector<int>({stoi(input)});
 }
 
-// Same idea as above, using recursion with memoization
+// Same idea as above, with memoization
 class Solution
 {
 

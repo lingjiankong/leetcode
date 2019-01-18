@@ -33,6 +33,7 @@ class Solution
 
 		void solve(vector<vector<char> >& board)
 		{
+			// Traverse first and last column j first and last row.
 			for (int i = 0; i < board.size(); ++i)
 			{
 				for (int j = 0; j < board[i].size(); ++j)
@@ -68,11 +69,13 @@ class Solution
 			{
 				return;
 			}
-				board[i][j] = '$';
-				dfs(board, i + 1, j);
-				dfs(board, i - 1, j);
-				dfs(board, i, j + 1);
-				dfs(board, i, j - 1);
+
+			// Turn all 'O' to '$'.
+			board[i][j] = '$';
+			dfs(board, i + 1, j);
+			dfs(board, i - 1, j);
+			dfs(board, i, j + 1);
+			dfs(board, i, j - 1);
 		}
 
 };
