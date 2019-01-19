@@ -196,6 +196,7 @@
 | 213 | House Robber II | Star
 | 337 | House Robber III | Star
 | 62 | Unique Paths | Star
+| N3 | Unique Paths from Top Left to Bottom Right | Star
 | 63 | Unique Paths II | Star
 | 64 | Minimum Path Sum | Star
 | 72 | Edit Distance | Basic, Memorize
@@ -349,7 +350,6 @@
 |:---:|:---:|:---:|:---:|
 | N1 | Minimum Distance between Two Points in a Matrix | Star | Amazon SDE OA Late 2018
 | N2 | Shortest Path between Two Points in a Matrix | Star |
-| N3 | Unique Paths from Top Left to Bottom Right | Star | Generalization of 62. Unique Paths
 
 
 

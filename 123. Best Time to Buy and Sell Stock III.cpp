@@ -91,10 +91,10 @@
 
 int maxProfit(vector<int>& prices)
 {
-	int hold1 = INT_MIN;
-	int sold1 = 0;
-	int hold2 = INT_MIN;
 	int sold2 = 0;
+	int hold2 = INT_MIN;
+	int sold1 = 0;
+	int hold1 = INT_MIN;
 
 	for (auto price : prices)
 	{

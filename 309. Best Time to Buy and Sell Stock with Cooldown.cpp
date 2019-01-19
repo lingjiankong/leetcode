@@ -45,13 +45,13 @@ int maxProfit(vector<int>& prices)
 
 	for (auto price : prices)
 	{
-		int prevHold = hold;
-		int prevSold = sold;
-		int prevRest = rest;
+		int newHold = max(hold, rest - price);
+		int newSold = hold + price;
+		int newRest = max(rest, sold);
 
-		hold = max(prevHold, prevRest - price);
-		sold = prevHold + price;
-		rest = max(prevRest, prevSold);
+		hold = newHold;
+		sold = newSold;
+		rest = newRest;
 	}
 
 	return max(sold, rest);

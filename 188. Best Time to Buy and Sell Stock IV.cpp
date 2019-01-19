@@ -56,11 +56,11 @@ int maxProfit(int k, vector<int>& prices)
 	// sold[0] will always be 0 and hold[0] will always be INT_MIN.
 	// Note here the index i in hold/sold records the ith time you buy/sell.
 
-	// Element i represents the max amount of money you could have in the state when you are holding the ith stock
-	vector<int> hold (k + 1, INT_MIN);
-
 	// Element i represents the max amount of money you could have in the state when you've sold the ith stock
 	vector<int> sold (k + 1, 0);
+
+	// Element i represents the max amount of money you could have in the state when you are holding the ith stock
+	vector<int> hold (k + 1, INT_MIN);
 
 	for (int i = 0; i < prices.size(); ++i)
 	{
