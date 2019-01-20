@@ -32,7 +32,7 @@ int calculate(string s)
 		}
 		else if (c == '(')
 		{
-			int j = i, count = 0;
+			int iOriginal = i, count = 0;
 			for (; i < n; ++i)
 			{
 				if (s[i] == '(')
@@ -49,9 +49,9 @@ int calculate(string s)
 				}
 			}
 			// Recusively deal with calculations inside parenthesis.
-			// j is the index of '(' and i is now the index of ')'.
+			// iOriginal is the index of '(' and i is now the index of ')'.
 			// Everything inside parenthesis is now num.
-			num = calculate(s.substr(j + 1, i - j - 1));
+			num = calculate(s.substr(iOriginal + 1, i - iOriginal - 1));
 		}
 		// Here 'c' is the *current* operator at s[i], 'op' is the *last* operator you've seen.
 		// i.e. The relationship is "curRes op num c".

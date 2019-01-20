@@ -43,7 +43,8 @@ class LRUCache
 				return -1;
 			}
 	 
-			// Move this key to the front of the LinkedList.
+			// Else if the key exists,
+			// move this key to the front of the LinkedList.
 			mList.splice(mList.begin(), mList, it->second);
 
 			// Return the value of the key.

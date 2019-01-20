@@ -35,7 +35,6 @@
 // ***
 void gameOfLife(vector<vector<int>>& board)
 {
-
 	if (board.empty() || board[0].empty())
 	{
 		return;

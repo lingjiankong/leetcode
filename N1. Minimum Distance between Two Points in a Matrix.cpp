@@ -1,11 +1,11 @@
 // ***
 //
-// Given a matrix of size m by n, find the shortest distance from a source cell to a goal cell.
+// Given a matrix of size m by n, find the shortest distance from a start cell to a goal cell.
 // You can only move up, down, left and right.
 //
 // If there's no path between start and goal, return -1.
 //
-// 's' represents source
+// 's' represents start
 // 'd' represents goal
 // '1' represents cell you can travel
 // '0' represents obstacles

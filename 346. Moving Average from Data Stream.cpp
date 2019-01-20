@@ -41,4 +41,5 @@ class MovingAverage
 		int mWindowSize;
 
 		double mSum;
+
 };

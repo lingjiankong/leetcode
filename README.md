@@ -181,6 +181,8 @@
 | 139 | Word Break | Basic
 | 140 | Word Break II | Basic
 | 131 | Palindrome Partitioning | Normal
+| N1 | Minimum Distance between Two Points in a Matrix | Star
+| N2 | Shortest Path between Two Points in a Matrix | Star
 
 ## Dynamic Programming
 | ID | Name | Note |
@@ -240,7 +242,7 @@
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 48 | Rotate Image | Normal, Memorize
-| 54 | Spiral Matrix | Basic
+| 54 | Spiral Matrix | Star
 | 59 | Spiral Matrix II | Basic
 | 73 | Set Matrix Zeroes | Star
 | 311 | Sparse Matrix Multiplication | Star, Memorize
@@ -280,7 +282,7 @@
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | See 772
 | 227 | Basic Calculator II | See 772
-| 772 | Basic Calculator III | Basic, Memorize
+| 772 | Basic Calculator III | Star, Memorize
 
 ## Binary Search
 | ID | Name | Note |
@@ -329,14 +331,14 @@
 ## Graph
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 207 | Course Schedule | Star
+| 207 | Course Schedule | Basic
 | 210 | Course Schedule II | Basic
 
 ## Design
 | ID | Name | Note |
 |:---:|:---:|:---:|
 | 359 | Logger Rate Limiter | Basic
-| 346 | Moving Average from Data Stream	Sliding Window | Star
+| 346 | Moving Average from Data Stream | Star
 | 362 | Design Hit Counter | Star
 | 281 | Zigzag Iterator | Basic
 | 251 | Flatten 2D Vector | Basic
@@ -344,13 +346,6 @@
 | 146 | LRU Cache | Star
 | 303 | Range Sum Query - Immutable | Basic
 | 304 | Range Sum Query 2D - Immutable | Normal
-
-## Non LeetCode Questions
-| ID | Name | Note | Inspiration
-|:---:|:---:|:---:|:---:|
-| N1 | Minimum Distance between Two Points in a Matrix | Star | Amazon SDE OA Late 2018
-| N2 | Shortest Path between Two Points in a Matrix | Star |
-
 
 
 

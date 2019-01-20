@@ -35,7 +35,7 @@
 //
 vector<vector<int>> multiply(vector<vector<int>>& A, vector<vector<int>>& B)
 {
-	vector<vector<int>> toReturn(A.size(), vector<int>(B[0].size()));
+	vector<vector<int>> C(A.size(), vector<int>(B[0].size()));
 
 	for (int i = 0; i < A.size(); ++i)
 	{
@@ -47,12 +47,12 @@ vector<vector<int>> multiply(vector<vector<int>>& A, vector<vector<int>>& B)
 				{
 					if (B[k][j] != 0)
 					{
-						toReturn[i][j] += A[i][k] * B[k][j];
+						C[i][j] += A[i][k] * B[k][j];
 					}
 				}
 			}
 		}
 	}
 
-	return toReturn;
+	return C;
 }

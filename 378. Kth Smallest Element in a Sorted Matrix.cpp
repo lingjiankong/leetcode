@@ -24,7 +24,7 @@ int kthSmallest(vector<vector<int>>& matrix, int k)
 	{
 		for (int j = 0; j < matrix[0].size(); ++j)
 		{
-			pq.emplace(matrix[i][j]);
+			pq.push(matrix[i][j]);
 
 			// Always keep the k smalleset elements in the priority_queue.
 			// So the top() of the priority_queue is always the kth smallest element.

@@ -26,9 +26,9 @@ vector<int> plusOne(vector<int>& digits)
 		return digits;
 	}
 
-	int carry = 1, n = digits.size();
+	int carry = 1;
 
-	for (int i = n - 1; i >= 0; --i)
+	for (int i = digits.size() - 1; i >= 0; --i)
 	{
 		if (carry == 0)
 		{
