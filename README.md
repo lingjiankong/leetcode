@@ -283,6 +283,7 @@
 | 224 | Basic Calculator | See 772
 | 227 | Basic Calculator II | See 772
 | 772 | Basic Calculator III | Star, Memorize
+| 50 | Pow(x, n) | Star
 
 ## Binary Search
 | ID | Name | Note |
