@@ -47,7 +47,7 @@ class Solution
 			// For each letter, store the index where it has been seen.
 			for (int i = 0; i < s.size(); ++i)
 			{
-				letterIndex[s[i]].push_back(i);
+				mLetterIndex[s[i]].push_back(i);
 			}
 
 			for (string word : words)
@@ -74,9 +74,9 @@ class Solution
 
 			for (char letter : word)
 			{
-				auto itr = upper_bound(letterIndex[letter].begin(), letterIndex[letter].end(), previousIndex);
+				auto itr = upper_bound(mLetterIndex[letter].begin(), mLetterIndex[letter].end(), previousIndex);
 
-				if (itr == letterIndex[letter].end())
+				if (itr == mLetterIndex[letter].end())
 				{
 					return mCache[word] = false;
 				}
@@ -91,7 +91,7 @@ class Solution
 		// so we can reuse our result if we see duplicate words.
 		unordered_map<string, bool> mCache;
 
-		array<vector<int>, 256> letterIndex;
+		array<vector<int>, 256> mLetterIndex;
 
 };
 
