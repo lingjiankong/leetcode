@@ -1,5 +1,13 @@
 # Coding challenges from www.leetcode.com.
 
+## Note
+- Star: Three star questions. These are the questions that you must know.
+- Basic: Two star questions. It is also good to know these questions.
+- Normal: One star questions.
+- Exotic: Exotic questions (not necessarily a bad question). Can be skipped.
+- Hard: Hard to understand questions. If you can't get it, then don't spend too much time on it.
+- Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here.
+
 ## Array
 | ID | Name | Note |
 |:---:|:---:|:---:|
@@ -347,17 +355,3 @@
 | 146 | LRU Cache | Star
 | 303 | Range Sum Query - Immutable | Basic
 | 304 | Range Sum Query 2D - Immutable | Normal
-
-
-
-**Note**: The list is not mutually exclusive. It stores the chronological information of when each question was done.
-
-**Notation**:
-- Star: Three star questions
-- Basic: Two star questions
-- Normal: One star questions.
-- Exotic: Exotic questions (not necessarily a bad question). Should be skipped during a fast go-over.
-- Hard: Hard to understand questions. Should be skipped during a fast go-over. Don't spend too much time on it.
-- Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here unless you have plenty.
-
-**Credit**: The list above was modified based on information obtained on www.cspiration.com
