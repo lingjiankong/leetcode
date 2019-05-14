@@ -48,7 +48,7 @@ class Solution
 		
 		void backtrack(int left, int right, string current, vector<string>& all, int& total)
 		{
-			// Return when you see some thing like "())" i.e. number of ')' is greater than number of '('.
+			// Return when you see something like "())" i.e. number of ')' is greater than number of '('.
 			// Note that it is OK to have "((()" i.e. number of '(' is greater than number of ')'.
 			if (left < right || left > total || right > total)
 			{
