@@ -286,9 +286,9 @@
 | 313 | Super Ugly Number | Exotic
 | 31 | Next Permutation | Bravo, Memorize
 | 60 | Permutation Sequence | Exotic
-| 224 | Bravo Calculator | See 772
-| 227 | Bravo Calculator II | See 772
-| 772 | Bravo Calculator III | Alpha, Memorize
+| 224 | Basic Calculator | See 772
+| 227 | Basic Calculator II | See 772
+| 772 | Basic Calculator III | Alpha, Memorize
 | 50 | Pow(x, n) | Alpha
 
 ## Binary Search
