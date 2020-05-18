@@ -1,8 +1,8 @@
 // ***
 //
-// Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that
-// nums[i] = nums[j] and the absolute difference between i and j is at most k.
-// 
+// Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array
+// such that nums[i] = nums[j] and the absolute difference between i and j is at most k.
+//
 // Example 1:
 // Input: nums = [1,2,3,1], k = 3
 // Output: true
@@ -17,51 +17,48 @@
 //
 // ***
 //
+// This problem can be rephrased as:
+// Find if there is any duplicates in a sliding window of size k over array nums.
 // The key idea is to use a sliding window of size k using unordered_set.
-// Maintain a set s of size k which contain unique values from nums[i - k] to nums[i - 1],
+// Maintain a set of size k which contain unique values from nums[i - k] to nums[i - 1],
 // if nums[i] is in set s then return true, else update the set.
-bool containsNearbyDuplicate(vector<int>& nums, int k)
-{
-	// A sliding window of last k elements
-	unordered_set<int> window;
 
-	for (int i = 0; i < nums.size(); ++i)
-	{
-		if (i > k)
-		{
-			// You want to compare num[i] with elements in [nums[i-k], nums[i-1]],
-			// therefore you erase nums[i - k - 1]
-			window.erase(nums[i - k - 1]);
-		}
+// O(n) Sliding window using unordered_set
+bool containsNearbyDuplicate(vector<int>& nums, int k) {
+    // A sliding window of last k elements
+    unordered_set<int> window;
 
-		if (window.count(nums[i]))
-		{
-			return true;
-		}
+    for (int i = 0; i < nums.size(); ++i) {
+        if (i > k) {
+            // You want to compare num[i] with elements in [nums[i-k], nums[i-1]],
+            // therefore you erase nums[i - k - 1] (which you don't care anymore in the sliding window)
+            window.erase(nums[i - k - 1]);
+        }
 
-		window.insert(nums[i]);
-	}
+        // If the window has already seen nums[i], then the window contains duplicate.
+        if (window.count(nums[i])) {
+            return true;
+        }
 
-	return false;
+        window.insert(nums[i]);
+    }
+
+    return false;
 }
 
-// Using unordered_map.
-bool containsNearbyDuplicate(vector<int>& nums, int k)
-{
-	// key: num, value: index
-	unordered_map<int, int> seen;
+// O(n) Sliding window using unordered_map.
+bool containsNearbyDuplicate(vector<int>& nums, int k) {
+    // key value pairs of num : index
+    unordered_map<int, int> seen;
 
-	for (int i = 0; i < nums.size(); ++i)
-	{
-		if (seen.count(nums[i]))
-		{
-			if (i - seen[nums[i]] <= k)
-			{
-				return true;
-			}
-		}
-		seen[nums[i]] = i;
-	}
+    for (int i = 0; i < nums.size(); ++i) {
+        if (seen.count(nums[i])) {
+            if (i - seen[nums[i]] <= k) {
+                return true;
+            }
+        }
+        seen[nums[i]] = i;
+    }
 
-	return false;
+    return false;
 }

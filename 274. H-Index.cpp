@@ -13,4 +13,5 @@
 //
 // ***
 //
-// See 275. H-Index II. Just sort the array first.
+// See 275. H-Index II.
+// This problem just needs the array to be sorted first.

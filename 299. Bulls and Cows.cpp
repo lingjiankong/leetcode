@@ -35,7 +35,7 @@
 // secret: 4 4 4 5 6 7 8 9 9 9
 // guess:  1 2 3 4 5 4 4 4 4 5
 // then the number of cows for number 4 is just 3.
-//
+
 string getHint(string secret, string guess) {
     // Secret and guess always equal, as in the problem description, therefore no need to check.
     if (secret.empty()) {

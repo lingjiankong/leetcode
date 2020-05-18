@@ -26,7 +26,7 @@
 //
 // Everything to the left of valStart does not contain val.
 // i.e. we are sure that nums at [0, valStart) do not contain val.
-//
+
 int removeElement(vector<int>& nums, int val) {
     int valStart = 0;
 

@@ -19,7 +19,7 @@
 // ***
 //
 // See 27. Remove Element and 283. Move Zeros. The idea is the same.
-//
+
 int removeDuplicates(vector<int>& nums) {
     if (nums.size() <= 1) {
         return nums.size();

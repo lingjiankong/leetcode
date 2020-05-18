@@ -33,7 +33,7 @@
 // [0 1 2 3 4 5 6 7]
 // At position 2, we should get 3, but we didn't, therefore, first missing positive is 3
 // [1 2 ? 4 5 6 ? ?]
-//
+
 int firstMissingPositive(vector<int>& nums) {
     if (nums.empty()) {
         return 1;

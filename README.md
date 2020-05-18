@@ -24,16 +24,14 @@
 | 119 | Pascal's Triangle II | Charlie
 | 169 | Majority Element | Alpha
 | 229 | Majority Element II | Alpha
-| 274 | H-Index | See 275
-| 275 | H-Index II | Bravo
 | 243 | Shortest Word Distance | Alpha
-| 244 | Shortest Word Distance II | Bravo
-| 245 | Shortest Word Distance III | Bravo
+| 245 | Shortest Word Distance III | Alpha
+| 244 | Shortest Word Distance II | Alpha
 | 217 | Contains Duplicate | Alpha
-| 219 | Contains Duplicate II | Bravo
-| 220 | Contains Duplicate III | Bravo
+| 219 | Contains Duplicate II | Alpha
+| 220 | Contains Duplicate III | Alpha
 | 55 | Jump Game | Alpha
-| 45 | Jump Game II | Bravo
+| 45 | Jump Game II | Alpha
 | 11 | Container With Most Water | Alpha
 | 128 | Longest Consecutive Sequence | Alpha
 | 164 | Maximum Gap Bucket | Hard
@@ -311,6 +309,8 @@
 | 240 | Search a 2D Matrix II | Bravo, Memorize
 | 287 | Find the Duplicate Number | Charlie
 | 4 | Median of Two Sorted Arrays | Alpha
+| 274 | H-Index | See 275
+| 275 | H-Index II | Bravo
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Note |

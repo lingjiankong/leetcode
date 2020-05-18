@@ -12,7 +12,7 @@
 // celebrity in the party. If there is no celebrity, return -1.
 //
 // ***
-//
+
 bool knows(int a, int b);
 
 int findCelebrity(int n) {

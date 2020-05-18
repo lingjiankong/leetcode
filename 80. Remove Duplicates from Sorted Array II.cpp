@@ -18,7 +18,7 @@
 //
 // This problem uses the same logic as
 // 26. Remove Duplicates from Sorted Array. See that problem for intuition.
-//
+
 int removeDuplicates(vector<int>& nums) {
     if (nums.size() <= 2) {
         return nums.size();

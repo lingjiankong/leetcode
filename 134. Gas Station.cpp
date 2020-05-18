@@ -55,7 +55,7 @@
 // There is no need to test start from cities between old start and city i because we have traveled through them with
 // positive tank (every time when we arrive in a city, we must have non negative gas left in our gas tank; if we test
 // that city again, we will be initilized with 0 initial gas, which will not perform any better)
-//
+
 int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
     int total = 0;
     int tank = 0;
