@@ -1,7 +1,7 @@
 // ***
 //
 // Given an array, rotate the array to the right by k steps, where k is non-negative.
-// 
+//
 // Example 1:
 // Input: [1,2,3,4,5,6,7] and k = 3
 // Output: [5,6,7,1,2,3,4]
@@ -21,15 +21,15 @@
 //
 // ***
 //
+// Example: if k = 3,
 // reverse(nums.begin(), nums.end());       -> [7 6 5 4 3 2 1]
 // reverse(nums.begin(), nums.begin() + k); -> [5 6 7 4 3 2 1]
 // reverse(nums.begin() + k, nums.end());   -> [5 6 7 1 2 3 4]
 //
-void rotate(vector<int>& nums, int k)
-{
-	k %= nums.size();
+void rotate(vector<int>& nums, int k) {
+    k %= nums.size();
 
-	reverse(nums.begin(), nums.end());
-	reverse(nums.begin(), nums.begin() + k);
-	reverse(nums.begin() + k, nums.end());
+    reverse(nums.begin(), nums.end());
+    reverse(nums.begin(), nums.begin() + k);
+    reverse(nums.begin() + k, nums.end());
 }
