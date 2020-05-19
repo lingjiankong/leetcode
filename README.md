@@ -35,7 +35,7 @@
 | 11 | Container With Most Water | Alpha
 | 128 | Longest Consecutive Sequence | Alpha
 | 164 | Maximum Gap Bucket | Hard
-| 135 | Candy | Bravo
+| 135 | Candy | Alpha
 | 330 | Patching Array | Hard
 | 321 | Create Maximum Number | Hard
 | 56 | Merge Intervals | Alpha
