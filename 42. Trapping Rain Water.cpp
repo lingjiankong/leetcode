@@ -18,154 +18,135 @@
 // 0 1 2 3 4 5 6 7 8 10 ... 97 98 99
 // ^                              ^
 // L                              R
-//
+
 // DP solution, very intuitive.
 // For current position i, keep track of its left max height and right max height.
-int trap(vector<int>& height)
-{
-	if (height.empty())		 
-	{
-		return 0;
-	}
+int trap(vector<int>& height) {
+    if (height.empty()) {
+        return 0;
+    }
 
-	vector<int> leftMaxHeight(height.size(), 0);
-	vector<int> rightMaxHeight(height.size(), 0);
+    vector<int> leftMaxHeight(height.size(), 0);
+    vector<int> rightMaxHeight(height.size(), 0);
 
-	for (int i = 1; i < height.size(); ++i)
-	{
-		leftMaxHeight[i] = max(leftMaxHeight[i-1], height[i-1]);
-	}
+    for (int i = 1; i < height.size(); ++i) {
+        leftMaxHeight[i] = max(leftMaxHeight[i - 1], height[i - 1]);
+    }
 
-	for (int j = height.size() - 2; j >= 0; --j)
-	{
-		rightMaxHeight[j] = max(rightMaxHeight[j+1], height[j+1]);
-	}
+    for (int j = height.size() - 2; j >= 0; --j) {
+        rightMaxHeight[j] = max(rightMaxHeight[j + 1], height[j + 1]);
+    }
 
-	int totalWater = 0;
-	for (int i = 1; i < height.size() - 1; ++i)
-	{
-		int minHeight = min(leftMaxHeight[i], rightMaxHeight[i]);
-		totalWater += min(0, minHeight - height[i]);
-	}
+    int totalWater = 0;
+    for (int i = 1; i < height.size() - 1; ++i) {
+        int minHeight = min(leftMaxHeight[i], rightMaxHeight[i]);
+        totalWater += min(0, minHeight - height[i]);
+    }
 
-	return totalWater;
+    return totalWater;
 }
 
 // Maintain two pointers left and right, we keep track of the maximum height of left wall and right wall.
 // The amount of water we can fill at certain position is controlled by:
 // 1. The height at current position,
 // 2. Minimum of (max height of walls to the left, max height of walls to the right)
-int trap(vector<int>& height)
-{
-	int totalWater = 0;
+int trap(vector<int>& height) {
+    int totalWater = 0;
 
-	// Well, you can think of leftMaxHeight = height[left] and rightMaxHeight = height[right]
-	// We assign 0 to them simply because we don't have to check the size of the vector.
-	// leftMaxHeight and rightMaxHeight will be assigned once we enter the while loop.
-	// Otherwise we would need to make sure height.size() != 0.
-	int leftMaxHeight = 0;
-	int rightMaxHeight = 0;
+    // Well, you can think of leftMaxHeight = height[left] and rightMaxHeight = height[right]
+    // We assign 0 to them simply because we don't have to check the size of the vector.
+    // leftMaxHeight and rightMaxHeight will be assigned once we enter the while loop.
+    // Otherwise we would need to make sure height.size() != 0.
+    int leftMaxHeight = 0;
+    int rightMaxHeight = 0;
 
-	int left = 0;
-	int right = height.size() - 1;
+    int left = 0;
+    int right = height.size() - 1;
 
-	while (left < right)
-	{
-		leftMaxHeight = max(leftMaxHeight, height[left]);
-		rightMaxHeight = max(rightMaxHeight, height[right]);
+    while (left < right) {
+        leftMaxHeight = max(leftMaxHeight, height[left]);
+        rightMaxHeight = max(rightMaxHeight, height[right]);
 
-		if (leftMaxHeight < rightMaxHeight)
-		{
-			totalWater += leftMaxHeight - height[left];
-			++left;
-		}
-		else
-		{
-			totalWater += rightMaxHeight - height[right];
-			--right;
-		}
-	}
+        if (leftMaxHeight < rightMaxHeight) {
+            totalWater += leftMaxHeight - height[left];
+            ++left;
+        } else {
+            totalWater += rightMaxHeight - height[right];
+            --right;
+        }
+    }
 
-	return totalWater;
+    return totalWater;
 }
 
+// See also 84. Largest Rectangle In Histogram. Very similar.
 // Maintain a monotonic decreasing stack (which stores the *index*) of bars.
 // Whenever we see a higher bar we might be able to form a valley to store water.
 // In the process of popping elements which are smaller than current height[i], we do our calculation.
-// See also 84. Largest Rectangle In Histogram. Very similar.
-int trap(vector<int>& height)
-{
-	stack<int> heightStack;
+int trap(vector<int>& height) {
+    stack<int> heightIndexStack;
 
-	int totalWater = 0;
+    int totalWater = 0;
 
-	int i = 0;
-	while (i < height.size())
-	{
-		// < and <= all works here.
-		if (heightStack.empty() || height[i] < height[heightStack.top()])	
-		{
-			heightStack.push(i++);
-		}
-		// Else, we see a higher bar, the top() element of stack might be a valley.
-		// Popping all elements which are smaller than current heights[i] (the right wall)
-		else
-		{
-			int currentValleyIndex = heightStack.top(); heightStack.pop();
+    int i = 0;
+    while (i < height.size()) {
+        // > and >= all works here.
+        if (heightIndexStack.empty() || height[heightIndexStack.top()] > height[i]) {
+            heightIndexStack.push(i++);
+        }
+        // Else, we see a higher bar, the top() element of stack might be a valley.
+        // Popping all elements which are smaller than current heights[i] (the right wall)
+        else {
+            int currentValleyIndex = heightIndexStack.top();
+            heightIndexStack.pop();
 
-			// No left bar, must continue.
-			if (heightStack.empty())
-			{
-				continue;	
-			}
+            // No left bar, must continue.
+            if (heightIndexStack.empty()) {
+                continue;
+            }
 
-			// i is the index of right bar.
-			// The valley has already been popped.
-			// Current top of the stack is the index of left bar.
-			int rectangleWidth = i - heightStack.top() - 1;
+            // i is the index of right bar.
+            // The valley has already been popped.
+            // Current top of the stack is the index of left bar.
+            int rectangleWidth = i - heightIndexStack.top() - 1;
 
-			int rectangleHeight = min(height[i], height[heightStack.top()]) - height[currentValleyIndex];
+            int rectangleHeight = min(height[i], height[heightIndexStack.top()]) - height[currentValleyIndex];
 
-			totalWater += rectangleHeight * rectangleWidth;
-		}
-	}
+            totalWater += rectangleHeight * rectangleWidth;
+        }
+    }
 
-	return totalWater;
+    return totalWater;
 }
 
 // Exactly same as above, with named variables to make it clear.
-int trap(vector<int>& height)
-{
-	stack<int> heightStack;
+int trap(vector<int>& height) {
+    stack<int> heightIndexStack;
 
-	int totalWater = 0;
+    int totalWater = 0;
 
-	int i = 0;
-	while (i < height.size())
-	{
-		if (heightStack.empty() || height[i] < height[heightStack.top()])
-		{
-			heightStack.push(i++);
-		}
-		else
-		{
-			int rightBarIndex = i;
+    int i = 0;
+    while (i < height.size()) {
+        if (heightIndexStack.empty() || height[heightIndexStack.top()] > heights[i]) {
+            heightIndexStack.push(i++);
+        } else {
+            int rightBarIndex = i;
 
-			int currentValleyIndex = heightStack.top(); heightStack.pop();
+            int currentValleyIndex = heightIndexStack.top();
+            heightIndexStack.pop();
 
-			if (heightStack.empty())
-			{
-				continue;
-			}
+            if (heightIndexStack.empty()) {
+                continue;
+            }
 
-			int leftBarIndex = heightStack.top();
+            int leftBarIndex = heightIndexStack.top();
 
-			int rectangleWidth = rightBarIndex - leftBarIndex - 1;
-			int rectangleHeight = min(height[leftBarIndex], height[rightBarIndex]) - height[currentValleyIndex];
+            int rectangleWidth = rightBarIndex - leftBarIndex - 1;
+            int rectangleHeight = min(height[leftBarIndex], height[rightBarIndex]) - height[currentValleyIndex];
 
-			totalWater += rectangleWidth * rectangleHeight;
-		}
-	}
+            totalWater += rectangleWidth * rectangleHeight;
+        }
+    }
 
-	return totalWater;
+    return totalWater;
 }
