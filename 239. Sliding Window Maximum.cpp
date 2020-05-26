@@ -72,7 +72,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
 // Time complexity: O(n)
 class MonotonicQueue {
 public:
-    // Push an element e to the monotonic  queue.
+    // Push an element e to the monotonic queue.
     // All elements smaller than e will be popped from the queue,
     // so the queue will always be sorted in non-ascending order,
     // with the largest element on the left and smallest element on the right.

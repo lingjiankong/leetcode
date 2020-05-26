@@ -1,4 +1,6 @@
-# Coding challenges from www.leetcode.com.
+# Coding challenges from www.leetcode.com
+
+I am currently reorganize the problem categories, so this page might be a little messy.
 
 ## Note
 - Alpha: Three star questions. These are the questions that you must know.
@@ -41,7 +43,7 @@
 | 56 | Merge Intervals | Alpha
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Bravo
-| 239 | Sliding Window Maximum | Alpha
+| 239 | Sliding Window Maximum | Alpha, Monotoic Queue, Sliding Window
 | 325 | Maximum Size Subarray Sum Equals k | Alpha
 | 209 | Minimum Size Subarray Sum | Bravo
 | 238 | Product of Array Except Self | Alpha
