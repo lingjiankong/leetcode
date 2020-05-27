@@ -11,8 +11,8 @@ I am currently reorganize the problem categories, so this page might be a little
 - Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here.
 
 ## Array
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 27 | Remove Element | Alpha
 | 283 | Move Zeroes | Alpha
 | 26 | Remove Duplicates from Sorted Array | Alpha
@@ -43,9 +43,9 @@ I am currently reorganize the problem categories, so this page might be a little
 | 56 | Merge Intervals | Alpha
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Bravo
-| 239 | Sliding Window Maximum | Alpha, Monotoic Queue, Sliding Window
-| 325 | Maximum Size Subarray Sum Equals k | Alpha
-| 209 | Minimum Size Subarray Sum | Bravo
+| 239 | Sliding Window Maximum | Alpha | Monotoic Queue, Sliding Window
+| 325 | Maximum Size Subarray Sum Equals k | Alpha | Sliding Window
+| 209 | Minimum Size Subarray Sum | Bravo | Sliding Window
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
 | 163 | Missing Ranges | Exotic

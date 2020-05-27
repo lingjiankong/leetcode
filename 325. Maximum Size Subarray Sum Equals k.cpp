@@ -33,18 +33,19 @@
 // (i.e. Exculde everything from 0 to cumulativeSum-k inclusive), and the end index is current index.
 // The length of this subarray is index - cumulativeSumToIndex[cumulativeSum-k]
 //
-//                     k
-//                     |
-// cumulativeSum - k   |
-//       |             |
-//       |             |
-//       v             V
-//  |-----------|-------------|
-//  |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
-//            |             ^ 
-//            |             i
-//            ^
-//            cumulativeSumToIndex[cumulativeSum - k]
+//                    k
+//                    |
+// cumulativeSum - k  |
+//       |            |
+//       |            |
+//       V            V
+// |-----------|-------------|
+// |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+//           |             | 
+//           |             V
+//           |             i
+//           V
+//           cumulativeSumToIndex[cumulativeSum - k]
 //
 // If you read the code you would understand the idea.
 
