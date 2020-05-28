@@ -19,7 +19,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 80 | Remove Duplicates from Sorted Array II | Alpha
 | 277 | Find the Celebrity | Bravo
 | 189 | Rotate Array | Alpha
-| 41 | First Missing Positive | Bravo
 | 299 | Bulls and Cows | Bravo
 | 134 | Gas Station | Bravo
 | 118 | Pascal's Triangle | Bravo
@@ -43,23 +42,23 @@ I am currently reorganize the problem categories, so this page might be a little
 | 56 | Merge Intervals | Alpha
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Bravo
-| 239 | Sliding Window Maximum | Alpha | Monotoic Queue, Sliding Window
+| 239 | Sliding Window Maximum | Alpha | Monotoic queue, Sliding Window
 | 325 | Maximum Size Subarray Sum Equals k | Alpha | Sliding Window
+| 560 | Subarray Sum Equals K | Alpha, Hash Map
 | 209 | Minimum Size Subarray Sum | Bravo | Sliding Window
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
 | 163 | Missing Ranges | Exotic
 | 88 | Merge Sorted Array | Alpha
-| 75 | Sort Colors | Bravo
+| 75 | Sort Colors | Bravo, Two Pointers
+| 41 | First Missing Positive | Bravo, Two Pointers
 | 280 | Wiggle Sort | Charlie
 | 324 | Wiggle Sort II | Charlie
 | 370 | Range Addition | Charlie
 | 349 | Intersection of Two Arrays | Alpha
 | 350 | Intersection of Two Arrays II | Alpha
-| 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Memorize
-| 334 | Increasing Triplet Subsequence | Bravo
-| 414 | Third Maximum Number | Bravo
-| 560 | Subarray Sum Equals K | Alpha
+| 334 | Increasing Triplet Subsequence | Alpha
+| 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Charlie
 
 ## String
@@ -195,6 +194,12 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Dynamic Programming
 | ID | Name | Note |
 |:---:|:---:|:---:|
+| 121 | Best Time to Buy and Sell Stock | Alpha
+| 122 | Best Time to Buy and Sell Stock II | Alpha
+| 123 | Best Time to Buy and Sell Stock III | Alpha
+| 188 | Best Time to Buy and Sell Stock IV | Alpha
+| 309 | Best Time to Buy and Sell Stock with Cooldown | Alpha
+| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Alpha
 | 70 | Climbing Stairs | Alpha
 | 746 | Min Cost Climbing Staris | Alpha
 | 120 | Triangle | Alpha
@@ -212,12 +217,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 72 | Edit Distance | Bravo, Memorize
 | 221 | Maximal Square | Alpha
 | 361 | Bomb Enemy | Alpha
-| 121 | Best Time to Buy and Sell Stock | Alpha
-| 122 | Best Time to Buy and Sell Stock II | Alpha
-| 123 | Best Time to Buy and Sell Stock III | Alpha
-| 188 | Best Time to Buy and Sell Stock IV | Alpha
-| 309 | Best Time to Buy and Sell Stock with Cooldown | Alpha
-| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Alpha
 | 53 | Maximum Subarray | Alpha
 | 152 | Maximum Product Subarray | Alpha
 | 376 | Wiggle Subsequence | Alpha
@@ -313,6 +312,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 4 | Median of Two Sorted Arrays | Alpha
 | 274 | H-Index | See 275
 | 275 | H-Index II | Bravo
+| 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Memorize
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Note |

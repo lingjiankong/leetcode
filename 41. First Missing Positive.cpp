@@ -40,13 +40,16 @@ int firstMissingPositive(vector<int>& nums) {
     }
 
     for (int i = 0; i < nums.size(); ++i) {
-        // If 0 < nums[i] < nums.size(), we want to put nums[i] at the place it belongs to (i.e. nums[nums[i]-1])
-        // After swap(nums[i], nums[nums[i]-1]), nums[nums[i]-1] has the correct value (i.e. nums[i]),
-        // but the new nums[i] might still be incorrect, so we must have WHILE loop here instead of an IF statement.
-        // For example, if we have [3, 8, 4, -1], when i = 0, num[0] = 3, we swap nums[0] with nums[3-1]
-        // and get [4, 8, 3, -1]. Now, nums[2] = 3, which is correct. However, nums[0] = 4, if we were using an if loop,
-        // nums[0] still has the wrong value, hence, we must now swap nums[0] with nums[4-1] and get [-1, 8, 3, 4].
-        while (nums[i] > 0 && nums[i] <= nums.size() && nums[nums[i] - 1] != nums[i]) {
+        // If 0 < nums[i] <= nums.size(), we want to put nums[i] at the place it belongs to (i.e. at nums[nums[i]-1])
+        // After swap(nums[i], nums[nums[i]-1]), nums[nums[i]-1] now has the correct value (i.e. previous nums[i] that
+        // we just swapped there), but the updated number at poisition i where we are currently at (i.e. nums[i]) might
+        // be still not at the place where it belongs, so we must have a WHILE loop here instead of an IF statement to
+        // KEEP SWAPPING until nums[i] == nums[nums[i]-1] (or until nums[i] < 0 or > nums.size() which we don't care
+        // about its position). For example, if we have [3, 8, 4, -1], when i = 0, num[0] = 3, we swap nums[0] with
+        // nums[3-1] and get [4, 8, 3, -1]. Now, 3 has been put to the right place: nums[2] = 3, nice. However, 4 at
+        // nums[0] does not belong to the right place yet (4 should be at nums[3]). If we were using an IF loop, nums[0]
+        // still has the wrong value, hence, we must now swap nums[0] with nums[4-1] to get [-1, 8, 3, 4].
+        while (nums[i] > 0 && nums[i] <= nums.size() && nums[i] != nums[nums[i] - 1]) {
             swap(nums[i], nums[nums[i] - 1]);
         }
     }

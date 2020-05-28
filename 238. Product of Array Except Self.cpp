@@ -19,48 +19,39 @@
 // Product to the left of nums[i]:  [1,  1,  2,  6]
 // Product to the right of nums[i]: [24, 12, 4,  1]
 // Multiplying to combine together: [24, 12, 8,  6]
-//
-vector<int> productExceptSelf(vector<int>& nums)
-{
-	int n = nums.size();
-	vector<int> forward(n, 1), backward(n, 1), toReturn(n);
 
-	for (int i = 0; i < n - 1; ++i)
-	{
-		forward[i + 1] = forward[i] * nums[i];
-	}
-	for (int i = n - 1; i > 0; --i)
-	{
-		backward[i - 1] = backward[i] * nums[i];
-	}
-	for (int i = 0; i < n; ++i)
-	{
-		toReturn[i] = forward[i] * backward[i];
-	}
+vector<int> productExceptSelf(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> forward(n, 1), backward(n, 1), toReturn(n);
 
-	return toReturn;
+    for (int i = 1; i < n; ++i) {
+        forward[i] = forward[i - 1] * nums[i - 1];
+    }
+    for (int i = n - 2; i >= 0; --i) {
+        backward[i] = backward[i + 1] * nums[i + 1];
+    }
+    for (int i = 0; i < n; ++i) {
+        toReturn[i] = forward[i] * backward[i];
+    }
+
+    return toReturn;
 }
 
 // Same thing, no extra space.
-vector<int> productExceptSelf(vector<int>& nums)
-{
-	vector<int> toReturn(nums.size(), 1);
+vector<int> productExceptSelf(vector<int>& nums) {
+    vector<int> toReturn(nums.size(), 1);
 
-	int leftProduct = 1;
+    int leftProduct = 1;
+    for (int i = 0; i < nums.size(); ++i) {
+        toReturn[i] = leftProduct;
+        leftProduct *= nums[i];  // Update for next interation
+    }
 
-	for (int i = 0; i < nums.size(); ++i)
-	{
-		toReturn[i] = leftProduct;
-		leftProduct *= nums[i];
-	}
+    int rightProduct = 1;
+    for (int i = nums.size() - 1; i >= 0; --i) {
+        toReturn[i] *= rightProduct;
+        rightProduct *= nums[i];  // Update for next iteration
+    }
 
-	int rightProduct = 1;
-
-	for (int i = nums.size()-1; i >= 0; --i)
-	{
-		toReturn[i] *= rightProduct;
-		rightProduct *= nums[i];
-	}
-
-	return toReturn;
+    return toReturn;
 }
