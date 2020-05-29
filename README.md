@@ -22,7 +22,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 299 | Bulls and Cows | Bravo
 | 134 | Gas Station | Bravo
 | 118 | Pascal's Triangle | Bravo
-| 119 | Pascal's Triangle II | Charlie
+| 119 | Pascal's Triangle II | Bravo
 | 169 | Majority Element | Alpha
 | 229 | Majority Element II | Alpha
 | 243 | Shortest Word Distance | Alpha
@@ -59,7 +59,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 350 | Intersection of Two Arrays II | Alpha
 | 334 | Increasing Triplet Subsequence | Alpha
 | 414 | Third Maximum Number | Alpha
-| 406 | Queue Reconstruction by Height | Charlie
+| 406 | Queue Reconstruction by Height | Bravo, Memorize
 
 ## String
 | ID | Name | Note |

@@ -11,18 +11,28 @@
 // Output: [1,3,3,1]
 //
 // ***
+//
+// [
+//  [1],
+//  [1,1],
+//  [1,2,1],
+//  [1,3,3,1],
+//  [1,4,6,4,1]
+// ]
 
+// Can be solved same way as in 118. Pascal Triangle.
 vector<int> getRow(int rowIndex) {
-    vector<int> res(rowIndex + 1, 1);
+    vector<vector<int>> triangle;
 
-    for (int i = 0; i < rowIndex; ++i) {
-        // This trick is important, assign res[j] = res[j-1] + res[j] from end to beginning.
-        // This way we don't need to create a temp variable for res[j] as if
-        // we were doing the operation from beginning to end
-        for (int j = i; j > 0; --j) {
-            res[j] = res[j - 1] + res[j];
+    int total_levels = rowIndex + 1;
+    for (int i = 0; i < total_levels; ++i) {
+        triangle.push_back(vector<int>(i + 1, 1));
+
+        for (int j = 1; j < i; ++j) {
+            triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
         }
     }
 
-    return res;
+    return triangle[rowIndex];
 }
+
