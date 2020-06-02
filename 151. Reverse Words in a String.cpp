@@ -1,81 +1,34 @@
 // ***
 //
 // Given an input string, reverse the string word by word.
-// 
-// Example:  
-// 
+//
+// Example:
+//
 // Input: "the sky is blue",
 // Output: "blue is sky the".
 // Note:
-// 
+//
 // A word is defined as a sequence of non-space characters.
-// Input string may contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces.
-// You need to reduce multiple spaces between two words to a single space in the reversed string.
+// Input string may contain leading or trailing spaces. However, your reversed string should not contain leading or
+// trailing spaces. You need to reduce multiple spaces between two words to a single space in the reversed string.
 //
 // ***
 //
-// This question is somewhat stupid. Doesn't involve too many algorithms.
-// Don't worry too much if you don't get it.
-// See https://leetcode.com/problems/reverse-words-in-a-string/discuss/47740/In-place-simple-solution
-void reverseWords(string &s)
-{
-	// First, reverse the whole string, then reverse each word.
-	reverse(s.begin(), s.end());
+// The difference between this question and 186. Reverse Words in a String II is that in this question, there might be
+// multiple spaces between words, and the string might contain leading and trailing spaces. Therefore you need to use
+// istringstream.
 
-	// Current position available for insertion
-	// We do this so we don't need to deal with multiple white spaces in between words.
-	// We place reversed words at position denoted by storeIndex, separate each one by only one space
-	int storeIndex = 0;
+string reverseWords(string &s) {
+    istringstream stream(s);
 
-	// i: the beginning of one word
-	for (int i = 0; i < s.size(); i++)
-	{
-		// Now we've seen the beginning index of a new word, which is i
-		if (s[i] != ' ')
-		{
-			// Put blank space after storeIndex if word is not the first one.
-			// This is important because we can separate each word with only one space.
-			// Example:
-			// world_myxxxxxxxxxxolleh
-			//         ^         ^
-			//     storeIndex    i
-			// 
-			// world_my_xxxxxxxxxolleh
-			//          ^ 
-			//      storeIndex
-			//
-			// world_my_ollehxxxxolleh
-			//
-			// world_my_helloxxxxolleh
-			//
-			if (storeIndex != 0)
-			{
-				s[storeIndex++] = ' ';
-			}
+    // Need to get first word separately because there should not be any space in front of the first word.
+    string word;
+    stream >> word;
+    string toReturn = word;
 
-			// j is one past the end of one word
-			// i.e. j points to the trailing space of that word
-			// (assume word is not the last one with no trailing space)
-			int j = i;
+    while (stream >> word) {
+        toReturn = " " + word;
+    }
 
-			// Copy the the entire word (including the trailing space)
-			// one by one to start at storeIndex.
-			while (j < s.size() && s[j] != ' ')
-			{
-				s[storeIndex++] = s[j++];
-			}
-
-			// Copy is finished, now
-			// storeIndex and j are now both pointing to a space
-			// (if word is not the last one with no trailing space)
-			// We do not care about this space when reverse
-			// s.begin() + storeIndex is this space. It is not among what we reverse.
-			reverse(s.begin() + storeIndex - (j - i), s.begin() + storeIndex);
-
-			// Current begin becomes one past end of last word (i.e. the trailing space).
-			i = j;
-		}
-	}
-
-	s.erase(s.begin() + storeIndex, s.end());
+    return toReturn;
 }

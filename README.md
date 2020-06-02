@@ -62,14 +62,14 @@ I am currently reorganize the problem categories, so this page might be a little
 | 406 | Queue Reconstruction by Height | Bravo, Memorize
 
 ## String
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 28 | Implement strStr() | Bravo
 | 14 | Longest Common Prefix | Alpha
 | 58 | Length of Last Word | Charlie
 | 344 | Reverse String | Alpha
-| 151 | Reverse Words in a String | Bad
-| 186 | Reverse Words in a String II | Bravo
+| 186 | Reverse Words in a String II | Alpha
+| 151 | Reverse Words in a String | Beta
 | 345 | Reverse Vowels of a String | Alpha
 | 205 | Isomorphic Strings | Alpha
 | 290 | Word Pattern | Alpha
