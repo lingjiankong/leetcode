@@ -74,11 +74,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 205 | Isomorphic Strings | Alpha
 | 290 | Word Pattern | Alpha
 | 293 | Flip Game | Bravo
-| 294 | Flip Game II | Bravo
+| 294 | Flip Game II | Alpha, Recursion
 | 387 | First Unique Character in a String | Alpha
 | 383 | Ransom Note | Alpha
 | 242 | Valid Anagram | Alpha
-| 438 | Find All Anagrams in a String | Alpha
+| 438 | Find All Anagrams in a String | Alpha, Sliding Window
 | 49 | Group Anagrams | Alpha
 | 249 | Group Shifted Strings | Bravo
 | 179 | Largest Number | Bravo
