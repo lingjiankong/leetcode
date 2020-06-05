@@ -1,13 +1,13 @@
 // ***
 //
 // Given a list of non negative integers, arrange them such that they form the largest number.
-// 
+//
 // Example 1:
-// 
+//
 // Input: [10,2]
 // Output: "210"
 // Example 2:
-// 
+//
 // Input: [3,30,34,5,9]
 // Output: "9534330"
 // Note: The result may be very large, so you need to return a string instead of an integer.
@@ -31,20 +31,17 @@
 //
 // Note on comparator: Binary function that accepts two elements in the range as arguments,
 // and returns a value convertible to bool.
-// The value returned indicates whether the element passed as first argument is considered
-// to go before the second in the specific strict weak ordering it defines.
-//
+// The value returned indicates whether the element passed as first argument should go before the second.
 // In our case, obviously a needs to go before b if string version of a+b is greater than b+a.
-string largestNumber(vector<int>& nums)
-{
-	sort(nums.begin(), nums.end(), [](int a, int b){ return to_string(a) + to_string(b) > to_string(b) + to_string(a); });
+string largestNumber(vector<int>& nums) {
+    sort(nums.begin(), nums.end(),
+         [](int a, int b) { return to_string(a) + to_string(b) > to_string(b) + to_string(a); });
 
-	string result = "";
+    string result = "";
 
-	for (int num : nums)
-	{
-		result += to_string(num);
-	}
+    for (int num : nums) {
+        result += to_string(num);
+    }
 
-	return result[0] == '0' ? "0" : result;
+    return result[0] == '0' ? "0" : result;
 }

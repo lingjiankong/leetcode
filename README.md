@@ -80,10 +80,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 242 | Valid Anagram | Alpha
 | 438 | Find All Anagrams in a String | Alpha, Sliding Window
 | 49 | Group Anagrams | Alpha
-| 249 | Group Shifted Strings | Bravo
+| 249 | Group Shifted Strings | Alpha
 | 179 | Largest Number | Bravo
 | 6 | ZigZag Conversion | Exotic
-| 161 | One Edit Distance | Alpha
+| 161 | One Edit Distance | Bravo
 | 38 | Count and Say | Bad
 | 271 | Encode and Decode Strings | Alpha
 | 168 | Excel Sheet Column Title | Exotic

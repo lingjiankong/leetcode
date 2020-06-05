@@ -33,99 +33,77 @@
 // s: international
 // t: interxnational
 //
-// Iterate all letters in the shorter string,
-// When we see the difference at i = 5 (s[5] = n, t[5] = x)
-// We inserting 'x' from t to s at i = 5, and then check if s and t are the same
+// Iterate all letters in the shorter string.
+// When we see the difference at i = 5 (s[5] = n, t[5] = x),
+// we insert 'x' from t to s at i = 5, and then check if s and t are the same
 //
 // Example:
 // s. redpig
-// t. retpig
+// t. reopig
 //
 // Now s and t has equal length, similar idea as above, replace 'd' in s with
-// 't' in t, and check if s and t are the same
-//
-// 1. Better solution, without modifying existing string.
-bool isOneEditDistance(const string& s, const string& t)
-{
-	int m = s.size();
-	int n = t.size();
+// 'o' in t, and check if s and t are the same
 
-	// Want s to be the smaller string.
-	if (m > n)
-	{
-		return isOneEditDistance(t, s);
-	}
+// 1. The better solution is second one. This one just gives you intuition about the problem
+bool isOneEditDistance(string s, string t) {
+    // Make sure s is the shorter string.
+    if (s.size() > t.size()) {
+        return isOneEditDistance(t, s);
+    }
 
-	if (m + 1 < n || s == t)
-	{
-		return false;
-	}
+    // If length of s and t differs more than one, or s and t are exactly the same,
+    // then it is not possible for s and t to have exactly one edit distance, return false.
+    if (s.size() + 1 < t.size() || s == t) {
+        return false;
+    }
 
-	// i traverse string s, j traverse string t.
-	int i = 0, j = 0;
-	int mismatchCount = 0;
+    for (int i = 0; i < s.size(); ++i) {
+        if (s[i] != t[i]) {
+            if (s.size() == t.size()) {
+                s[i] = t[i];
+            } else {
+                s.insert(i, 1, t[i]);  // Insert char t[i] to string s at position i
+            }
 
-	while (i < m && j < n)
-	{
-		if (s[i] != t[j])
-		{
-			if (++mismatchCount > 1)
-			{
-				return false;
-			}
-			if (m + 1 == n)
-			{
-				++j;
-				continue;
-			}
-		}
+            break;
+        }
+    }
 
-		++i, ++j;
-	}
-
-	return true;
+    // (s + t[t.size()-1] == t) checks the edge case when the difference is at the last letter
+    // For example,
+    // s = "abc"
+    // t = "abcd"
+    return (s == t) || (s + t[t.size() - 1] == t);
 }
 
-// 2. The better solution is first one. This one just gives you intuition about the problem
-// in case you didn't get the first onee. Otherwise no need to read it.
-bool isOneEditDistance(string s, string t)
-{
-	int m = s.size();
-	int n = t.size();
+// 2. Better solution, without modifying existing string.
+bool isOneEditDistance(const string& s, const string& t) {
+    // Want s to be the smaller string.
+    if (s.size() > t.size()) {
+        return isOneEditDistance(t, s);
+    }
 
-	// Make sure s is the shorter string.
-	if (m > n)
-	{
-		return isOneEditDistance(t, s);
-	}
+    if (s.size() + 1 < t.size() || s == t) {
+        return false;
+    }
 
-	// If length of s and t differs more than one, or s and t are exactly the same,
-	// then it is not possible for s and t to have exactly one edit distance, return false.
-	if (m + 1 < n || s == t)
-	{
-		return false;
-	}
+    // i traverses string s, j traverses string t.
+    int i = 0, j = 0;
+    int mismatchCount = 0;
 
-	for (int i = 0; i < m; ++i)
-	{
-		if (s[i] != t[i])
-		{
-			if (m == n)
-			{
-				s[i] = t[i];
-			}
-			else
-			{
-				s.insert(i, 1, t[i]);
-			}
+    while (i < s.size() && j < t.size()) {
+        if (s[i] != t[j]) {
+            if (++mismatchCount > 1) {
+                return false;
+            }
+            if (s.size() + 1 == t.size()) {
+                ++j;
+                continue;
+            }
+        }
 
-			break;
-		}
-	}
+        ++i, ++j;
+    }
 
-	// (s + t[n-1] == t) checks the edge case when the difference is at the last letter
-	// For example,
-	// s = "abc"
-	// t = "abcd"
-	return (s == t) || (s + t[n-1] == t);
+    return true;
 }
