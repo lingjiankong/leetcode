@@ -78,7 +78,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 387 | First Unique Character in a String | Alpha
 | 383 | Ransom Note | Alpha
 | 242 | Valid Anagram | Alpha
-| 438 | Find All Anagrams in a String | Alpha, Sliding Window
+| 438 | Find All Anagrams in a String | Alpha | Sliding Window
 | 49 | Group Anagrams | Alpha
 | 249 | Group Shifted Strings | Alpha
 | 179 | Largest Number | Bravo
