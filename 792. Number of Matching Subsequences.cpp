@@ -1,25 +1,27 @@
 // ***
 //
 // Given string S and a dictionary of words words, find the number of words[i] that is a subsequence of S.
-// 
+//
 // Example :
-// Input: 
+// Input:
 // S = "abcde"
 // words = ["a", "bb", "acd", "ace"]
 // Output: 3
 // Explanation: There are three words in words that are a subsequence of S: "a", "acd", "ace".
 // Note:
-// 
+//
 // All words in words and S will only consists of lowercase letters.
 // The length of S will be in the range of [1, 50000].
 // The length of words will be in the range of [1, 5000].
 // The length of words[i] will be in the range of [1, 50].
 //
 // ***
-
+//
+// This question is exactly the same as the follow up question of 392. Is Subsequence.
+//
 // Note: this question asks about whether word is a *subsequence* of s,
 // not if word is a *substring* of s. These two concepts are different.
-// 
+//
 // Frist, traverse through s, for each letter, store the index where it has been seen.
 //
 // For example:
@@ -35,63 +37,50 @@
 // If you find such index, set it as the new previous index and continue to next letter in word;
 // If you cannot find such index, it means you couldn't find the next letter after current index,
 // which means word is not a subsequence of s.
-class Solution
-{
 
-	public:
+class Solution {
+public:
+    int numMatchingSubseq(const string& s, vector<string>& words) {
+        int subsequenceCount = 0;
 
-		int numMatchingSubseq(const string& s, vector<string>& words)
-		{
-			int subsequenceCount = 0;
+        // For each letter, store the index where it has been seen.
+        for (int i = 0; i < s.size(); ++i) {
+            mLetterIndex[s[i]].push_back(i);
+        }
 
-			// For each letter, store the index where it has been seen.
-			for (int i = 0; i < s.size(); ++i)
-			{
-				mLetterIndex[s[i]].push_back(i);
-			}
+        for (string word : words) {
+            if (mCache.count(word)) {
+                subsequenceCount += mCache[word];
+            } else {
+                subsequenceCount += _isSubsequence(word);
+            }
+        }
 
-			for (string word : words)
-			{
-				if (mCache.count(word))
-				{
-					subsequenceCount += mCache[word];
-				}
-				else
-				{
-					subsequenceCount += isSubsequence(word);
-				}
+        return subsequenceCount;
+    }
 
-			}
+private:
+    bool _isSubsequence(const string& word) {
 
-			return subsequenceCount;
-		}
-	
-	private:
+        int previousIndex = -1;
+        for (char letter : word) {
+            auto itr = upper_bound(mLetterIndex[letter].begin(), mLetterIndex[letter].end(), previousIndex);
 
-		bool isSubsequence(const string& word)
-		{
-			int previousIndex = -1;
+            if (itr == mLetterIndex[letter].end()) {
+                return mCache[word] = false;
+            }
 
-			for (char letter : word)
-			{
-				auto itr = upper_bound(mLetterIndex[letter].begin(), mLetterIndex[letter].end(), previousIndex);
+            previousIndex = *itr;
+        }
 
-				if (itr == mLetterIndex[letter].end())
-				{
-					return mCache[word] = false;
-				}
+        return mCache[word] = true;
+    }
 
-				previousIndex = *itr;
-			}
+    // Cache if word string is a subsequence of s,
+    // so we can reuse our result if we see duplicate words.
+    unordered_map<string, bool> mCache;
 
-			return mCache[word] = true;
-		}
-
-		// Cache if word string is a subsequence of s,
-		// so we can reuse our result if we see duplicate words.
-		unordered_map<string, bool> mCache;
-
-		array<vector<int>, 256> mLetterIndex;
-
+    // Using array as hash map.
+    array<vector<int>, 256> mLetterIndex;
 };
 

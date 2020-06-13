@@ -1,7 +1,7 @@
 // ***
 //
 // Given a string, determine if a permutation of the string could form a palindrome.
-// 
+//
 // Example 1:
 // Input: "code"
 // Output: false
@@ -18,15 +18,14 @@
 //
 // Just check that no more than one character appears an odd number of times.
 // Because if there is one, then it must be in the middle of the palindrome.
-// So we can't have two of them.
-bool canPermutePalindrome(const string& s)
-{
-	bitset<256> seen;
+// So we can not have more than one character that appears an odd number of times.
 
-	for (char letter : s)
-	{
-		seen.flip(letter);
-	}
+bool canPermutePalindrome(const string& s) {
+    bitset<256> seen;
 
-	return seen.count() <= 1;
+    for (char letter : s) {
+        seen.flip(letter);
+    }
+
+    return seen.count() <= 1;
 }

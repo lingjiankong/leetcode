@@ -91,7 +91,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 13 | Roman to Integer | Bad
 | 12 | Integer to Roman | Bad
 | 246 | Strobogrammatic Number | Bravo
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | Sliding Window
 | 125 | Valid Palindrome | Alpha
 | 680 | Valid Palindrome II | Alpha
 | 266 | Palindrome Permutation | Alpha
