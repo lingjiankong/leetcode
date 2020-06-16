@@ -14,28 +14,24 @@
 // ***
 //
 // The idea is very simple:
-// Move a sliding window of size 10 (i.e. substring = s.substr(i, 10)), if the substring has never been seen before, add it to firstSeen.
-// If we have seen the substring before (i.e. firstSeen.count(substring)), then add this substring to repeated.
-// Note here that repeated is also an unordered_map because we don't want duplicate in our result.
-// Finally, return the substrings in repeated.
-vector<string> findRepeatedDnaSequences(string s)
-{
-	unordered_set<string> firstSeen;
-	unordered_set<string> repeated;
+// Move a sliding window of size 10 (i.e. substring = s.substr(i, 10)), if the substring has never been seen before, add
+// it to firstSeen. If we have seen the substring before (i.e. firstSeen.count(substring)), then add this substring to
+// repeated. Note here that repeated is also an unordered_map because we don't want duplicate in our result. Finally,
+// return the substrings in repeated.
 
-	for (int i = 0; i + 9 < s.size(); ++i)
-	{
-		string substring = s.substr(i, 10);
+vector<string> findRepeatedDnaSequences(string s) {
+    unordered_set<string> firstSeen;
+    unordered_set<string> repeated;
 
-		if (firstSeen.count(substring))
-		{
-			repeated.insert(substring);
-		}
-		else
-		{
-			firstSeen.insert(substring);
-		}
-	}
+    for (int i = 0; i + 9 < s.size(); ++i) {
+        string substring = s.substr(i, 10);
 
-	return vector<string>(repeated.begin(), repeated.end());
+        if (firstSeen.count(substring)) {
+            repeated.insert(substring);
+        } else {
+            firstSeen.insert(substring);
+        }
+    }
+
+    return vector<string>(repeated.begin(), repeated.end());
 }
