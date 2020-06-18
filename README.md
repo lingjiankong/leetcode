@@ -106,9 +106,9 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Tree
 | ID | Name | Note |
 |:---:|:---:|:---:|
-| 144 | Binary Tree Preorder Traversal | Alpha
-| 94 | Binary Tree Inorder Traversal | Alpha
-| 145 | Binary Tree Postorder Traversal | Alpha
+| 144 | Binary Tree Preorder Traversal | Charlie
+| 94 | Binary Tree Inorder Traversal | Charlie
+| 145 | Binary Tree Postorder Traversal | Charlie
 | 100 | Same Tree | Alpha
 | 101 | Symmetric Tree | Alpha
 | 572 | Subtree of Another Tree | Alpha

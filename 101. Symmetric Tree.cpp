@@ -1,9 +1,9 @@
 // ***
 //
 // Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
-// 
+//
 // For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
-// 
+//
 //     1
 //    / \
 //   2   2
@@ -17,46 +17,28 @@
 //    3    3
 //
 // ***
-//
+
 // This question is just a slight modification based on 100. Same Tree
-class Solution
-{
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        if (!root) {
+            return true;
+        }
 
-	public:
+        return _dfs(root->left, root->right);
+    }
 
-		bool isSymmetric(TreeNode* root)
-		{
-			if (!root)
-			{
-				return true;
-			}
-
-			return dfs(root->left, root->right);
-		}
-
-	private:
-
-		bool dfs(TreeNode* l, TreeNode* r)
-		{
-			if (!l && !r)
-			{
-				return true;
-			}
-
-			else if (!l || !r)
-			{
-				return false;
-			}
-
-			else if (l->val != r->val)
-			{
-				return false;
-			}
-
-			else
-			{
-				return dfs(l->left, r->right) && dfs(l->right, r->left);
-			}
-		}
-
+private:
+    bool _dfs(TreeNode* l, TreeNode* r) {
+        if (!l && !r) {
+            return true;
+        } else if (!l || !r) {
+            return false;
+        } else if (l->val != r->val) {
+            return false;
+        } else {
+            return _dfs(l->left, r->right) && _dfs(l->right, r->left);
+        }
+    }
 };
