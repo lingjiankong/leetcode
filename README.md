@@ -328,6 +328,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 295 | Find Median from Data Stream | Alpha
 | 373 | Find K Pairs with Smallest Sums | Alpha
 | 378 | Kth Smallest Element in a Sorted Matrix | Alpha
+| 218 | The Skyline Problem | Alpha
 
 ## Bit Manipulation
 | ID | Name | Note |
