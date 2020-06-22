@@ -1,13 +1,13 @@
 // ***
 //
 // Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
-// 
+//
 // Note: A leaf is a node with no children.
-// 
+//
 // Example:
-// 
+//
 // Given the below binary tree and sum = 22,
-// 
+//
 //       5
 //      / \
 //     4   8
@@ -16,7 +16,7 @@
 //  /  \    / \
 // 7    2  5   1
 // Return:
-// 
+//
 // [
 //    [5,4,11,2],
 //    [5,8,4,5]
@@ -25,39 +25,31 @@
 // ***
 //
 // See also 122. Path Sum, and 257. Binary Tree Paths.
-class Solution
-{
 
-	public:
+class Solution {
+public:
+    vector<vector<int>> pathSum(TreeNode* root, int sum) {
+        vector<vector<int>> all;
+        vector<int> current;
 
-		vector<vector<int>> pathSum(TreeNode* root, int sum)
-		{
-			vector<vector<int>> all;
-			vector<int> current;
+        _dfs(root, sum, current, all);
 
-			dfs(root, sum, current, all);
+        return all;
+    }
 
-			return all;
-		}
+private:
+    void _dfs(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all) {
+        if (!root) {
+            return;
+        }
 
-	private:
+        current.push_back(root->val);
 
-		void dfs(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all)
-		{
-			if (!root)
-			{
-				return;
-			}
+        if (root->val == sum && !root->left && !root->right) {
+            all.push_back(current);
+        }
 
-			current.push_back(root->val);
-
-			if (root->val == sum && !root->left && !root->right)
-			{
-				all.push_back(current);
-			}
-
-			dfs(root->left, sum - root->val, current, all);
-			dfs(root->right, sum - root->val, current, all);
-		}
-
+        _dfs(root->left, sum - root->val, current, all);
+        _dfs(root->right, sum - root->val, current, all);
+    }
 };
