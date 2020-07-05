@@ -26,16 +26,21 @@
 //
 // ***
 
+// See also 687. Longest Univalue Path. Very similar structure.
 class Solution {
 public:
     int maxPathSum(TreeNode* root) {
         _dfs(root);
+
         return _maxSum;
     }
 
 private:
+    // Note that a path must contain at least one node (which can be negative), therefore the maxSum might be negative.
+    int _maxSum = INT_MIN;
+
     // Returns max sum from current root,
-    // either leftSubtreeMaxPathSum + root->val, or rightSubtreeMaxPathSum + root->val.
+    // This will return either leftSubtreeMaxSum + root->val, or rightSubtreeMaxSum + root->val.
     int _dfs(TreeNode* root) {
         if (!root) {
             return 0;
@@ -53,7 +58,4 @@ private:
         // Return max sum from current root.
         return max(leftSubtreeMaxPathSum, rightSubtreeMaxPathSum) + root->val;
     }
-
-    // Note that a path must contain at least one node (which can be negative), therefore the maxSum might be negative.
-    int _maxSum = INT_MIN;
 };

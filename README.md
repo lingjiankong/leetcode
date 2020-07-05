@@ -104,27 +104,27 @@ I am currently reorganize the problem categories, so this page might be a little
 | 76 | Minimum Window Substring | Alpha
 
 ## Tree
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Note | Note
+|:---:|:---:|:---:|:---:|
 | 144 | Binary Tree Preorder Traversal | Charlie
 | 94 | Binary Tree Inorder Traversal | Charlie
 | 145 | Binary Tree Postorder Traversal | Charlie
 | 100 | Same Tree | Alpha
-| 101 | Symmetric Tree | Alpha
 | 572 | Subtree of Another Tree | Alpha
+| 101 | Symmetric Tree | Alpha
 | 226 | Invert Binary Tree | Alpha
 | 112 | Path Sum | Alpha
 | 113 | Path Sum II | Alpha
 | 437 | Path Sum III | Bravo
-| 124 | Binary Tree Maximum Path Sum | Alpha
+| 124 | Binary Tree Maximum Path Sum | Alpha | Postorder
+| 687 | Longest Univalue Path | Alpha | Postorder
+| 250 | Count Univalue Subtrees | Alpha | Postorder
+| 543 | Diameter of Binary Tree | Alpha | Postorder
+| 104 | Maximum Depth of Binary Tree | Alpha | Postorder
+| 111 | Minimum Depth of Binary Tree | Alpha | Postorder
 | 257 | Binary Tree Paths | Alpha
 | 129 | Sum Root to Leaf Numbers | Alpha
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
-| 104 | Maximum Depth of Binary Tree | Alpha
-| 111 | Minimum Depth of Binary Tree | Alpha
-| 250 | Count Univalue Subtrees | Alpha
-| 687 | Longest Univalue Path | Alpha
-| 543 | Diameter of Binary Tree | Alpha
 | 110 | Balanced Binary Tree | Alpha
 | 366 | Find Leaves of Binary Tree | Alpha
 | 102 | Binary Tree Level Order Traversal | Alpha
@@ -326,6 +326,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 347 | Top K Frequent Elements | Alpha
 | 451 | Sort Characters By Frequency | Bravo
 | 295 | Find Median from Data Stream | Alpha
+| 480 | Sliding Window Median | Alpha
 | 373 | Find K Pairs with Smallest Sums | Alpha
 | 378 | Kth Smallest Element in a Sorted Matrix | Alpha
 | 218 | The Skyline Problem | Alpha

@@ -39,7 +39,12 @@ public:
 
 private:
     void _dfs(TreeNode* node, string current, vector<string>& all) {
-        // If a node has no children, then it is the end of a path,
+        // Learning: In tree problems, we generally need to check whether the node we are instereted in right now is a
+        // nullptr i.e. checkt if (!node) { return; }. However, in the case when we have already performed check for
+        // nullptrs during recursion for subtrees (i.e. if (node->left) and if (node->right)), checking if (!node) is no
+        // longer necessary
+
+        // If a node is a leaf node, then it is the end of a path,
         // so we just push back that entire path to result.
         if (!node->left && !node->right) {
             all.push_back(current + to_string(node->val));

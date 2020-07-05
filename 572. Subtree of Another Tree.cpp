@@ -39,7 +39,7 @@
 class Solution {
 public:
     bool isSubtree(TreeNode* s, TreeNode* t) {
-        // if s is a nullptr, then s should not be considered as a subtree as t.
+        // if s is a nullptr, then t should not be considered as a subtree of s.
         if (!s) {
             return false;
         }
