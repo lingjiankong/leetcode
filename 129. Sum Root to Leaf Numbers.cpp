@@ -40,6 +40,7 @@ public:
     int sumNumbers(TreeNode* root) { return _dfs(root, 0); }
 
 private:
+    // Returns the sum from root to leaf whenever we see a leaf node.
     int _dfs(TreeNode* root, int sum) {
         if (!root) {
             return 0;
@@ -64,26 +65,26 @@ public:
         }
 
         int totalSum = 0;
-        string currentNumber;
+        int currentSum;
 
-        _dfs(root, currentNumber, totalSum);
+        _dfs(root, currentSum, totalSum);
 
         return totalSum;
     }
 
 private:
-    void _dfs(TreeNode* node, string currentNumber, int& totalSum) {
-        if (!node) {
+    void _dfs(TreeNode* root, int currentSum, int& totalSum) {
+        if (!root) {
             return;
         }
 
-        currentNumber += to_string(node->val);
+        currentSum = currentSum * 10 + root->val;
 
-        if (!node->left && !node->right) {
-            totalSum += stoi(currentNumber);
+        if (!root->left && !root->right) {
+            totalSum += currentSum;
         }
 
-        _dfs(node->left, currentNumber, totalSum);
-        _dfs(node->right, currentNumber, totalSum);
+        _dfs(root->left, currentSum, totalSum);
+        _dfs(root->right, currentSum, totalSum);
     }
 };

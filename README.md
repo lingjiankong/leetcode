@@ -123,19 +123,29 @@ I am currently reorganize the problem categories, so this page might be a little
 | 250 | Count Univalue Subtrees | Alpha | Postorder
 | 543 | Diameter of Binary Tree | Alpha | Postorder
 | 104 | Maximum Depth of Binary Tree | Alpha | Postorder
+| 366 | Find Leaves of Binary Tree | Alpha | Postorder
 | 111 | Minimum Depth of Binary Tree | Alpha | Postorder
 | 257 | Binary Tree Paths | Alpha
 | 129 | Sum Root to Leaf Numbers | Alpha
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
-| 110 | Balanced Binary Tree | Alpha
-| 366 | Find Leaves of Binary Tree | Alpha
-| 99 | Reconver Binary Search Tree | Bravo
-| 102 | Binary Tree Level Order Traversal | Alpha
-| 314 | Binary Tree Vertical Order Traversal | Alpha
-| 107 | Binary Tree Level Order Traversal II | Bravo
-| 103 | Binary Tree Zigzag Level Order Traversal | Bravo
-| 199 | Binary Tree Right Side View | Bravo
+| 110 | Balanced Binary Tree | Bravo
+| 102 | Binary Tree Level Order Traversal | Alpha | Postorder, BFS
+| 107 | Binary Tree Level Order Traversal II | Bravo | Postorder, BFS
+| 314 | Binary Tree Vertical Order Traversal | Alpha | BFS
+| 103 | Binary Tree Zigzag Level Order Traversal | Bravo | BFS
+| 199 | Binary Tree Right Side View | Bravo | Preorder
+| 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
+| 222 | Count Complete Tree Nodes | Alpha
+| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo, Memorize
+| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo, Memorize
+| 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Memorize
+| 116 | Populating Next Right Pointers in Each Node | Charlie
+| 117 | Populating Next Right Pointers in Each Node II | Bravo
+
+## Binary Search Tree
+| ID | Name | Rating | Note
 | 98 | Validate Binary Search Tree | Alpha
+| 99 | Recover Binary Search Tree | Bravo
 | 333 | Largest BST Subtree | Alpha
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
 | 236 | Lowest Common Ancestor of a Binary Tree | Bravo, Memorize
@@ -147,16 +157,9 @@ I am currently reorganize the problem categories, so this page might be a little
 | 285 | Inorder Successor in BST | Hard
 | 270 | Closest Binary Search Tree Value | Alpha
 | 272 | Closest Binary Search Tree Value II | Alpha
-| 114 | Flatten Binary Tree to Linked List | Alpha
 | 255 | Verify Preorder Sequence in Binary Search Tree | Hard
-| 222 | Count Complete Tree Nodes | Bravo
-| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo
-| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo
 | 96 | Unique Binary Search Trees | Charlie
 | 95 | Unique Binary Search Trees II | Charlie
-| 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Memorize
-| 116 | Populating Next Right Pointers in Each Node | Charlie
-| 117 | Populating Next Right Pointers in Each Node II | Bravo
 
 ## Backtracking, DFS. BFS
 | ID | Name | Rating | Note

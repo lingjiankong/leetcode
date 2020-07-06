@@ -1,6 +1,7 @@
 // ***
 //
-// Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves, repeat until the tree is empty.
+// Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves, repeat until
+// the tree is empty.
 //
 // Example:
 // Input: [1,2,3,4,5]
@@ -31,57 +32,51 @@
 //
 // ***
 //
-// We need to use a bottom up approach, all leaves should have a height of 0 (and therefore be pushed back to mLeaves[0]).
-// i.e. When you traverse down to a leaf node, its lefSubtreeMaxHeight = -1 and rightSubtreeMaxHeight = -1, that's why all leaves have a height of 0.
 // This is just 104. Maximum Depth of Binary Tree, while adding depth of node to a vector along the way.
 //
-// The height of every node in the tree is the max height of its left or right subtree.
-// Use *postorder* traversal to recursively deal with leaves (subtrees) first, append those leaves to mLeaves with their corresponding height.
+// We need to use a bottom up approach, all leaves should have a height of 0.
 //
-// Compare this question with 102. Binary Tree Level Order Traversal, which is a similar question but uese a top-down appraoch.
-class Solution
-{
+// The height of every node in the tree is the max height of its left or right subtree.
+// Use *postorder* traversal to recursively deal with leaves (subtrees) first, append those leaves to _leaves with their
+// corresponding height.
+//
+// Compare this question with 102. Binary Tree Level Order Traversal, which is a similar question but uese a top-down
+// appraoch.
 
-	public:
+class Solution {
+public:
+    vector<vector<int>> findLeaves(TreeNode* root) {
+        _maxHeight(root);
 
-		vector<vector<int>> findLeaves(TreeNode* root)
-		{
-			maxHeight(root);
+        return _leaves;
+    }
 
-			return mLeaves;
-		}
+private:
+    vector<vector<int>> _leaves;
 
-	private:
+    // Note here we are returning the max *height* of a root, which is the number of edges along a path,
+    // not the max *depth* of a root, which is the number of nodes along a path.
+    // that's why if (!root) { return -1; }, instead of if (!root) { return 0; }.
+    int _maxHeight(TreeNode* root) {
+        if (!root) {
+            return -1;
+        }
 
-		vector<vector<int>> mLeaves;
+        int leftSubtreeMaxHeight = _maxHeight(root->left);
+        int rightSubtreeMaxHeight = _maxHeight(root->right);
+        int currentMaxHeight = 1 + max(leftSubtreeMaxHeight, rightSubtreeMaxHeight);
 
-		int maxHeight(TreeNode* root)
-		{
-			// Here you need if (!root) {return -1;}, instead of if (!root->left && !root->right) {return 0;}
-			// because in mLeaves[currentMaxHeight].push_back(root->val);, you want to start pushing when currentMaxHeight = 0.
-			// If you use if (!root->left && !root->right) {return 0;}, then you will need to manually push_back to currentMaxHeight for the leaf nodes (i.e. when index=0).
-			if (!root)
-			{
-				return -1;
-			}
+        // Make sure _leaves has enough space.
+        while (_leaves.size() <= currentMaxHeight) {
+            _leaves.push_back({});
+        }
 
-			int leftSubtreeMaxHeight = maxHeight(root->left);
-			int rightSubtreeMaxHeight = maxHeight(root->right);
-			int currentMaxHeight = 1 + max(leftSubtreeMaxHeight, rightSubtreeMaxHeight);
+        _leaves[currentMaxHeight].push_back(root->val);
 
-			// Make sure mLeaves has enough space.
-			while (mLeaves.size() <= currentMaxHeight)
-			{
-				mLeaves.push_back({});
-			}
+        // Make root the nullptr (i.e. erase that node, since the question asks us to do so)
+        // Whether you set root to nullptr has no effect to the result _leaves.
+        root = nullptr;
 
-			mLeaves[currentMaxHeight].push_back(root->val);
-
-			// Make root the nullptr (i.e. erase that node, since the question asks us to do so)
-			// Whether you set root to nullptr has no effect to the result mLeaves.
-			root = nullptr;
-
-			return currentMaxHeight;
-		}
-
+        return currentMaxHeight;
+    }
 };

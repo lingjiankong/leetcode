@@ -24,32 +24,29 @@
 //           6
 //
 // ***
-
+//
 // Note that in the linked list each node's right child points to the next node during preorder traversal.
 // The most intuitive solution to this question is to use *reversed* pre-order traversal,
-// and add the last node first, dealing with tail node to head node.
-class Solution
-{
+// and add the last node first, dealing from tail node to head node.
+//
+// Note: Reversed pre-order traversal gives you the exact opposite result as pre-order traversal.
+// Same for reversed in-order traversal and reversed post-order traversal.
 
-	public:
+class Solution {
+public:
+    void flatten(TreeNode* root) {
+        if (!root) {
+            return;
+        }
 
-		void flatten(TreeNode* root)
-		{
-			if (!root)
-			{
-				return;
-			}
+        flatten(root->right);
+        flatten(root->left);
 
-			flatten(root->right);
-			flatten(root->left);
+        root->right = _prevNode;
+        root->left = nullptr;
+        _prevNode = root;
+    }
 
-			root->right = mPreviousNode;
-			root->left = nullptr;
-			mPreviousNode = root;
-		}
-
-	private:
-
-		TreeNode* mPreviousNode = nullptr;
-
+private:
+    TreeNode* _prevNode = nullptr;
 };
