@@ -1,3 +1,5 @@
+// ***
+//
 // Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*'.
 //
 // '?' Matches any single character.
@@ -42,11 +44,15 @@
 // s = "acdcb"
 // p = "a*c?b"
 // Output: false
+//
+// ***
 
-// Dynamic programming
 // dp[i][j] indicates whether the first i letters in s match the first j letters in p.
 // dp needs size (s.size() + 1, p.size() + 1) because when s and p are both empty, they are considered match,
 // so we initialize dp[0][0] to be true.
+//
+// Similar questions:
+// 97. Interleaving String
 class Solution {
 public:
     bool isMatch(string s, string p) {
@@ -61,14 +67,16 @@ public:
             }
         }
 
-        // When we see a star at position j in p, then first i letters in s will match first j letters in p when
+        // When we see a star at j-th letter in p, then first i letters in s will match first j letters in p when
         // first i - 1 letters in s match first j letter in p, OR
-        // first i letters in s match first j - 1 letters in p
+        // first i letters in s match first j - 1 letters in p.
         for (int i = 1; i <= s.size(); ++i) {
             for (int j = 1; j <= p.size(); ++j) {
                 if (p[j - 1] == '*') {
                     dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
                 } else {
+                    // If we do not see a star at j-th letter in p,
+                    // we just comapre whether the i-th letter in s equal to the j-th letter in p.
                     dp[i][j] = (s[i - 1] == p[j - 1] || p[j - 1] == '?') && dp[i - 1][j - 1];
                 }
             }
