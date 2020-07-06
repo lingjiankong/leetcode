@@ -40,6 +40,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 330 | Patching Array | Hard
 | 321 | Create Maximum Number | Hard
 | 56 | Merge Intervals | Alpha
+| 57 | Insert Intervals | Alpha | Merge Interval
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Bravo
 | 239 | Sliding Window Maximum | Alpha | Monotoic queue, Sliding Window
@@ -97,6 +98,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 266 | Palindrome Permutation | Alpha
 | 5 | Longest Palindromic Substring | Bravo
 | 20 | Valid Parentheses | Alpha
+| 32 | Longest Valid Parentheses | Bravo
 | 392 | Is Subsequence | Alpha
 | 792 | Number of Matching Subsequence | Alpha
 | 187 | Repeated DNA Sequences | Alpha
@@ -104,7 +106,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 76 | Minimum Window Substring | Alpha
 
 ## Tree
-| ID | Name | Note | Note
+| ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 144 | Binary Tree Preorder Traversal | Charlie
 | 94 | Binary Tree Inorder Traversal | Charlie
@@ -156,8 +158,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 117 | Populating Next Right Pointers in Each Node II | Bravo
 
 ## Backtracking, DFS. BFS
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 46 | Permutations | Alpha
 | 47 | Permutations II | Alpha
 | 77 | Combinations | Alpha
@@ -192,8 +194,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | N2 | Shortest Path between Two Points in a Matrix | Alpha
 
 ## Dynamic Programming
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 121 | Best Time to Buy and Sell Stock | Alpha
 | 122 | Best Time to Buy and Sell Stock II | Alpha
 | 123 | Best Time to Buy and Sell Stock III | Alpha
@@ -220,10 +222,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 53 | Maximum Subarray | Alpha
 | 152 | Maximum Product Subarray | Alpha
 | 376 | Wiggle Subsequence | Alpha
+| 44 | Wildcard Matching | Alpha
 
 ## LinkedList
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 206 | Reverse Linked List | Alpha
 | 92 | Reverse Linked List II | Hard, Exotic
 | 141 | Linked List Cycle | Alpha
@@ -246,8 +249,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 23 | Merge k Sorted Lists | Alpha
 
 ## Matrix
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 48 | Rotate Image | Charlie, Memorize
 | 54 | Spiral Matrix | Alpha
 | 59 | Spiral Matrix II | Bravo
@@ -256,8 +259,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 36 | Valid Sudoku | Bravo, Memorize
 
 ## Math
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 7 | Reverse Integer | Charlie
 | 9 | Palindrome Number | Alpha
 | 66 | Plus One | Alpha
@@ -293,8 +296,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 50 | Pow(x, n) | Alpha
 
 ## Binary Search
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 278 | First Bad Version | Charlie
 | 35 | Search Insert Position | Alpha
 | 33 | Search in Rotated Sorted Array | Alpha
@@ -315,8 +318,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Memorize
 
 ## Stack, Queue & Priority Queue
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 155 | Min Stack | Alpha
 | 232 | Implement Queue using Stacks | Bravo
 | 225 | Implement Stack using Queues | Bravo
@@ -332,8 +335,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 218 | The Skyline Problem | Alpha
 
 ## Bit Manipulation
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 289 | Game of Life | Alpha
 | 136 | Single Number | Bravo, Memorize
 | 389 | Find the Difference | Bravo, Memorize
@@ -342,14 +345,14 @@ I am currently reorganize the problem categories, so this page might be a little
 | 190 | Reverse Bits | Bravo
 
 ## Graph
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 207 | Course Schedule | Bravo
 | 210 | Course Schedule II | Bravo
 
 ## Design
-| ID | Name | Note |
-|:---:|:---:|:---:|
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 359 | Logger Rate Limiter | Bravo
 | 346 | Moving Average from Data Stream | Alpha
 | 362 | Design Hit Counter | Alpha
