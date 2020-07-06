@@ -129,6 +129,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
 | 110 | Balanced Binary Tree | Alpha
 | 366 | Find Leaves of Binary Tree | Alpha
+| 99 | Reconver Binary Search Tree | Bravo
 | 102 | Binary Tree Level Order Traversal | Alpha
 | 314 | Binary Tree Vertical Order Traversal | Alpha
 | 107 | Binary Tree Level Order Traversal II | Bravo
