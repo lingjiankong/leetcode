@@ -9,6 +9,7 @@ I am currently reorganize the problem categories, so this page might be a little
 - Exotic: Exotic questions (not necessarily a bad question). Can be skipped.
 - Hard: Hard to understand questions. If you can't get it, then don't spend too much time on it.
 - Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here.
+- Mechanical: There might not be some obvious pattern to the solution. Just memorize it.
 
 ## Array
 | ID | Name | Rating | Note
@@ -60,7 +61,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 350 | Intersection of Two Arrays II | Alpha
 | 334 | Increasing Triplet Subsequence | Alpha
 | 414 | Third Maximum Number | Alpha
-| 406 | Queue Reconstruction by Height | Bravo, Memorize
+| 406 | Queue Reconstruction by Height | Bravo, Mechanical
 
 ## String
 | ID | Name | Rating | Note
@@ -136,11 +137,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 199 | Binary Tree Right Side View | Bravo | Preorder
 | 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
 | 222 | Count Complete Tree Nodes | Alpha
-| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo, Memorize
-| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo, Memorize
-| 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Memorize
-| 116 | Populating Next Right Pointers in Each Node | Charlie
-| 117 | Populating Next Right Pointers in Each Node II | Bravo
+| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo, Mechanical
+| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo, Mechanical
+| 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
+| 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
+| 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
@@ -148,10 +149,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 99 | Recover Binary Search Tree | Bravo
 | 333 | Largest BST Subtree | Alpha
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
-| 236 | Lowest Common Ancestor of a Binary Tree | Bravo, Memorize
+| 236 | Lowest Common Ancestor of a Binary Tree | Bravo, Mechanical
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha
 | 109 | Convert Sorted List to Binary Search Tree | Alpha
-| 173 | Binary Search Tree Iterator | Bravo, Memorize
+| 173 | Binary Search Tree Iterator | Bravo, Mechanical
 | 230 | Kth Smallest Element in a BST | Alpha
 | 297 | Serialize and Deserialize Binary Tree | Alpha
 | 285 | Inorder Successor in BST | Hard
@@ -220,7 +221,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 63 | Unique Paths II | Alpha
 | 64 | Minimum Path Sum | Alpha
-| 72 | Edit Distance | Bravo, Memorize
+| 72 | Edit Distance | Bravo, Mechanical
 | 221 | Maximal Square | Alpha
 | 361 | Bomb Enemy | Alpha
 | 53 | Maximum Subarray | Alpha
@@ -256,12 +257,12 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Matrix
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 48 | Rotate Image | Charlie, Memorize
+| 48 | Rotate Image | Charlie, Mechanical
 | 54 | Spiral Matrix | Alpha
 | 59 | Spiral Matrix II | Bravo
 | 73 | Set Matrix Zeroes | Alpha
-| 311 | Sparse Matrix Multiplication | Alpha, Memorize
-| 36 | Valid Sudoku | Bravo, Memorize
+| 311 | Sparse Matrix Multiplication | Alpha, Mechanical
+| 36 | Valid Sudoku | Bravo, Mechanical
 
 ## Math
 | ID | Name | Rating | Note
@@ -293,11 +294,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 263 | Ugly Number | Bravo
 | 264 | Ugly Number II | Exotic
 | 313 | Super Ugly Number | Exotic
-| 31 | Next Permutation | Bravo, Memorize
+| 31 | Next Permutation | Bravo, Mechanical
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | See 772
 | 227 | Basic Calculator II | See 772
-| 772 | Basic Calculator III | Alpha, Memorize
+| 772 | Basic Calculator III | Alpha, Mechanical
 | 50 | Pow(x, n) | Alpha
 
 ## Binary Search
@@ -311,16 +312,16 @@ I am currently reorganize the problem categories, so this page might be a little
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha
 | 315 | Count of Smaller Numbers After Self | Alpha
-| 300 | Longest Increasing Subsequence | Alpha, Memorize
-| 354 | Russian Doll Envelopes | Bravo, Memorize
+| 300 | Longest Increasing Subsequence | Alpha, Mechanical
+| 354 | Russian Doll Envelopes | Bravo, Mechanical
 | 69 | Sqrt(x) | Alpha
 | 74 | Search a 2D Matrix | Alpha
-| 240 | Search a 2D Matrix II | Bravo, Memorize
+| 240 | Search a 2D Matrix II | Bravo, Mechanical
 | 287 | Find the Duplicate Number | Charlie
 | 4 | Median of Two Sorted Arrays | Alpha
 | 274 | H-Index | See 275
 | 275 | H-Index II | Bravo
-| 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Memorize
+| 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Mechanical
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Rating | Note
@@ -330,7 +331,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 225 | Implement Stack using Queues | Bravo
 | 150 | Evaluate Reverse Polish Notation | Alpha
 | 42 | Trapping Rain Water | Alpha
-| 84 | Largest Rectangle in Histogram | Alpha, Memorize
+| 84 | Largest Rectangle in Histogram | Alpha, Mechanical
 | 347 | Top K Frequent Elements | Alpha
 | 451 | Sort Characters By Frequency | Bravo
 | 295 | Find Median from Data Stream | Alpha
@@ -343,8 +344,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 289 | Game of Life | Alpha
-| 136 | Single Number | Bravo, Memorize
-| 389 | Find the Difference | Bravo, Memorize
+| 136 | Single Number | Bravo, Mechanical
+| 389 | Find the Difference | Bravo, Mechanical
 | 268 | Missing Number | Bravo
 | 191 | Number of 1 Bits | Bravo
 | 190 | Reverse Bits | Bravo

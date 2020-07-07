@@ -16,6 +16,7 @@
 //   9  20
 //     /  \
 //    15   7
+//
 // ***
 //
 // See also 106. Construct Binary Tree from Inorder and Postorder Traversal.
@@ -26,8 +27,8 @@
 //
 // Preorder traversing implies that preorder[0] is the root node.
 // Then we can find this preorder[0] in inorder, say it's inorder[5].
-// Now we know that inorder[5] is root, so we know that inorder[0] to inorder[4] is on the left side, inorder[6] to the
-// end is on the right side. Recursively doing this on subarrays, we can build a tree from it.
+// Now we know that inorder[5] is root, so we know that inorder[0] to inorder[4] is its left subtress, inorder[6] to the
+// end is its right subtree. Recursively doing this on subarrays, we can build a tree from it.
 
 class Solution {
 public:
@@ -40,7 +41,7 @@ public:
 
 private:
     TreeNode* _buildTree(const vector<int>& preorder, int preorderLeft, int preorderRight, const vector<int>& inorder,
-                        int inorderLeft, int inorderRight) {
+                         int inorderLeft, int inorderRight) {
         if (preorderLeft >= preorderRight || inorderLeft >= inorderRight) {
             return nullptr;
         }
@@ -52,9 +53,9 @@ private:
 
         TreeNode* root = new TreeNode(rootValue);
         root->left = _buildTree(preorder, preorderLeft + 1, preorderLeft + 1 + leftSubtreeSize, inorder, inorderLeft,
-                               inorderLeft + leftSubtreeSize);
+                                inorderLeft + leftSubtreeSize);
         root->right = _buildTree(preorder, preorderLeft + 1 + leftSubtreeSize, preorderRight, inorder,
-                                inorderLeft + leftSubtreeSize + 1, inorderRight);
+                                 inorderLeft + leftSubtreeSize + 1, inorderRight);
 
         return root;
     }

@@ -27,40 +27,36 @@
 //
 // Postorder traversing implies that the last element in post order is the root node.
 // Then we can find this root in inorder, say it's inorder[5].
-// Now we know that inorder[5] is root, so we know that inorder[0] - inorder[4] is on the left side, inorder[6] to the end is on the right side.
-// Recursively doing this on subarrays, we can build a tree out of it.
-class Solution
-{
+// Now we know that inorder[5] is root, so we know that inorder[0] to inorder[4] is its left subtree;
+// inorder[6] to the end is its right subtree. Recursively doing this on subarrays, we can build a tree.
 
-    public:
+class Solution {
+public:
+    TreeNode* buildTree(const vector<int>& inorder, const vector<int>& postorder) {
+        int postorderLeft = 0, postorderRight = postorder.size();
+        int inorderLeft = 0, inorderRight = inorder.size();
 
-        TreeNode* buildTree(const vector<int>& inorder, const vector<int>& postorder)
-        {
-            int postorderLeft = 0, postorderRight = postorder.size();
-            int inorderLeft = 0, inorderRight =  inorder.size();
+        return buildTree(postorder, postorderLeft, postorderRight, inorder, inorderLeft, inorderRight);
+    }
 
-            return buildTree(postorder, postorderLeft, postorderRight, inorder, inorderLeft, inorderRight);
+private:
+    TreeNode* buildTree(const vector<int>& postorder, int postorderLeft, int postorderRight, const vector<int>& inorder,
+                        int inorderLeft, int inorderRight) {
+        if (postorderLeft >= postorderRight || inorderLeft >= inorderRight) {
+            return nullptr;
         }
 
-    private:
+        int rootValue = postorder[postorderRight - 1];
 
-        TreeNode* buildTree(const vector<int>& postorder, int postorderLeft, int postorderRight, const vector<int>& inorder, int inorderLeft, int inorderRight)
-        {
-            if (postorderLeft >= postorderRight || inorderLeft >= inorderRight)
-            {
-                return nullptr;
-            }
+        auto itr = find(inorder.begin() + inorderLeft, inorder.begin() + inorderRight, rootValue);
+        int leftSubtreeSize = itr - inorder.begin() - inorderLeft;
 
-            int rootValue = postorder[postorderRight - 1];
+        TreeNode* root = new TreeNode(rootValue);
+        root->left = buildTree(postorder, postorderLeft, postorderLeft + leftSubtreeSize, inorder, inorderLeft,
+                               inorderLeft + leftSubtreeSize);
+        root->right = buildTree(postorder, postorderLeft + leftSubtreeSize, postorderRight - 1, inorder,
+                                inorderLeft + leftSubtreeSize + 1, inorderRight);
 
-            auto itr = find(inorder.begin() + inorderLeft, inorder.begin() + inorderRight, rootValue);
-            int leftSubtreeSize = itr - inorder.begin() - inorderLeft;
-
-            TreeNode* root = new TreeNode(rootValue);
-            root->left = buildTree(postorder, postorderLeft, postorderLeft + leftSubtreeSize, inorder, inorderLeft, inorderLeft + leftSubtreeSize);
-            root->right = buildTree(postorder, postorderLeft + leftSubtreeSize, postorderRight - 1, inorder, inorderLeft + leftSubtreeSize + 1, inorderRight);
-
-            return root;
-        }
-
+        return root;
+    }
 };
