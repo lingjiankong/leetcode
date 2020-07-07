@@ -26,7 +26,7 @@
 // ***
 
 // Two recursion. One to iterate all subtree in a tree (pathSum), i.e. treat each node as the root,
-// the other recursion counts the sum in that tree (_dfs).
+// the other recursion counts the sum in that tree (_preorder).
 class Solution {
 public:
     int pathSum(TreeNode* root, int sum) {
@@ -34,11 +34,11 @@ public:
             return 0;
         }
 
-        return _dfs(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
+        return _preorder(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
     }
 
 private:
-    int _dfs(TreeNode* node, int sum) {
+    int _preorder(TreeNode* node, int sum) {
         if (!node) {
             return 0;
         }
@@ -48,7 +48,7 @@ private:
             ++count;
         }
 
-        count += _dfs(node->left, sum - node->val) + _dfs(node->right, sum - node->val);
+        count += _preorder(node->left, sum - node->val) + _preorder(node->right, sum - node->val);
 
         return count;
     }
@@ -62,7 +62,7 @@ public:
             return 0;
         }
 
-        _dfs(root, sum);
+        _preorder(root, sum);
         pathSum(root->left, sum);
         pathSum(root->right, sum);
 
@@ -72,7 +72,7 @@ public:
 private:
     int _count = 0;
 
-    void _dfs(TreeNode* node, int sum) {
+    void _preorder(TreeNode* node, int sum) {
         if (!node) {
             return;
         }
@@ -81,8 +81,8 @@ private:
             ++_count;
         }
 
-        _dfs(node->left, sum - node->val);
-        _dfs(node->right, sum - node->val);
+        _preorder(node->left, sum - node->val);
+        _preorder(node->right, sum - node->val);
     }
 };
 

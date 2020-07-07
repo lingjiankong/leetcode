@@ -30,7 +30,7 @@
 class Solution {
 public:
     int maxPathSum(TreeNode* root) {
-        _dfs(root);
+        _postorder(root);
 
         return _maxSum;
     }
@@ -41,16 +41,16 @@ private:
 
     // Returns max sum from current root,
     // This will return either leftSubtreeMaxSum + root->val, or rightSubtreeMaxSum + root->val.
-    int _dfs(TreeNode* root) {
+    int _postorder(TreeNode* root) {
         if (!root) {
             return 0;
         }
 
-        // We need to take max(_dfs(root->left), 0)
+        // We need to take max(_postorder(root->left), 0)
         // because for example if leftSubtreeMaxPathSum is negative, then we simply don't need the left subtree at all
         // when we are calculating the path sum for leftSubtree -> root -> rightSubtree.
-        int leftSubtreeMaxPathSum = max(_dfs(root->left), 0);
-        int rightSubtreeMaxPathSum = max(_dfs(root->right), 0);
+        int leftSubtreeMaxPathSum = max(_postorder(root->left), 0);
+        int rightSubtreeMaxPathSum = max(_postorder(root->right), 0);
 
         // Update global max sum.
         _maxSum = max(_maxSum, leftSubtreeMaxPathSum + rightSubtreeMaxPathSum + root->val);

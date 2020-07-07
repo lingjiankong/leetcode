@@ -112,13 +112,13 @@ I am currently reorganize the problem categories, so this page might be a little
 | 144 | Binary Tree Preorder Traversal | Charlie
 | 94 | Binary Tree Inorder Traversal | Charlie
 | 145 | Binary Tree Postorder Traversal | Charlie
-| 100 | Same Tree | Alpha
-| 572 | Subtree of Another Tree | Alpha
-| 101 | Symmetric Tree | Alpha
-| 226 | Invert Binary Tree | Alpha
-| 112 | Path Sum | Alpha
-| 113 | Path Sum II | Alpha
-| 437 | Path Sum III | Bravo
+| 100 | Same Tree | Alpha | Preorder
+| 572 | Subtree of Another Tree | Alpha | Preorder
+| 101 | Symmetric Tree | Alpha | Preorder
+| 226 | Invert Binary Tree | Alpha | Postorder
+| 112 | Path Sum | Alpha | Preorder
+| 113 | Path Sum II | Alpha | Preorder
+| 437 | Path Sum III | Bravo | Preorder
 | 124 | Binary Tree Maximum Path Sum | Alpha | Postorder
 | 687 | Longest Univalue Path | Alpha | Postorder
 | 250 | Count Univalue Subtrees | Alpha | Postorder
@@ -145,7 +145,7 @@ I am currently reorganize the problem categories, so this page might be a little
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
-| 98 | Validate Binary Search Tree | Alpha
+| 98 | Validate Binary Search Tree | Alpha | Preorder, Inorder
 | 99 | Recover Binary Search Tree | Bravo
 | 333 | Largest BST Subtree | Alpha
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha

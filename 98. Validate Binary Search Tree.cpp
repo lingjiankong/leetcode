@@ -1,14 +1,14 @@
 // ***
 //
 // Given a binary tree, determine if it is a valid binary search tree (BST).
-// 
+//
 // Assume a BST is defined as follows:
-// 
+//
 // The left subtree of a node contains only nodes with keys less than the node's key.
 // The right subtree of a node contains only nodes with keys greater than the node's key.
 // Both the left and right subtrees must also be binary search trees.
 // Example 1:
-// 
+//
 // Input:
 //     2
 //    / \
@@ -16,7 +16,7 @@
 // Output: true
 //
 // Example 2:
-// 
+//
 //     5
 //    / \
 //   1   4
@@ -28,75 +28,53 @@
 //
 // ***
 //
-// For a binary search tree, all nodes in left subtree must be smaller than current node, and all nodes in right subtree must be larger than current node.
-// Therefore we can use preorder traversal to see whether a node satisfy this condition, and recursively check its left and right subtrees.
-// If you do not want to hard code things like INT_MIN or INT_MAX, then you can use use nullptr, because the root node does not have any constraint on the min and max value it can take.
-// For clarity we use INT_MAX here. This won't pass the OJ.
-class Solution
-{
+// For a binary search tree, all nodes in left subtree must be smaller than current node, and all nodes in right subtree
+// must be larger than current node. Therefore we can use preorder traversal to see whether a node satisfy this
+// condition, and recursively check its left and right subtrees. If you do not want to hard code things like INT_MIN or
+// INT_MAX, then you can use use nullptr, because the root node does not have any constraint on the min and max value it
+// can take. For clarity we use INT_MAX here. This won't pass the OJ.
 
-	public:
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) { return _preorder(root, INT_MIN, INT_MAX); }
 
-		bool isValidBST(TreeNode* root)
-		{
-			return isValidBST(root, INT_MIN, INT_MAX);
-		}
+private:
+    bool _preorder(TreeNode* node, int minValue, int maxValue) {
+        if (!node) {
+            return true;
+        }
 
-	private:
+        if ((node->val <= minValue) || (node->val >= maxValue)) {
+            return false;
+        }
 
-		bool isValidBST(TreeNode* node, int minValue, int maxValue)
-		{
-			if (!node)
-			{
-				return true;
-			}
-
-			if ((node->val <= minValue) || (node->val >= maxValue))
-			{
-				return false;
-			}
-
-			return isValidBST(node->left, minValue, node->val) && isValidBST(node->right, node->val, maxValue);
-		}
-
+        return _preorder(node->left, minValue, node->val) && _preorder(node->right, node->val, maxValue);
+    }
 };
 
 // In order traversal of a binary search tree gives ascending order.
-class Solution
-{
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) { return _inorder(root); }
 
-	public:
+private:
+    TreeNode* _prevNode = nullptr;
 
-		bool isValidBST(TreeNode* root)
-		{
-			mPreviousNode = nullptr;
+    // Returns false if during in order traversal we do not see elements in ascending order.
+    bool _inorder(TreeNode* node) {
+        if (!node) {
+            return true;
+        }
 
-			return inOrder(root);
-		}
+        if (!_inorder(node->left)) {
+            return false;
+        }
 
-	private:
+        if (_prevNode && _prevNode->val >= node->val) {
+            return false;
+        }
+        _prevNode = node;
 
-		TreeNode* mPreviousNode;
-
-		bool inOrder(TreeNode* node)
-		{
-			if (!node)
-			{
-				return true;
-			}
-
-			if (!inOrder(node->left))
-			{
-				return false;
-			}
-
-			if (mPreviousNode && node->val <= mPreviousNode->val) 
-			{
-				return false;
-			}
-			mPreviousNode = node;
-
-			return inOrder(node->right);
-		}
-
+        return _inorder(node->right);
+    }
 };

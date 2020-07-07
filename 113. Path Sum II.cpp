@@ -32,13 +32,13 @@ public:
         vector<vector<int>> all;
         vector<int> current;
 
-        _dfs(root, sum, current, all);
+        _preorder(root, sum, current, all);
 
         return all;
     }
 
 private:
-    void _dfs(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all) {
+    void _preorder(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all) {
         if (!root) {
             return;
         }
@@ -49,7 +49,7 @@ private:
             all.push_back(current);
         }
 
-        _dfs(root->left, sum - root->val, current, all);
-        _dfs(root->right, sum - root->val, current, all);
+        _preorder(root->left, sum - root->val, current, all);
+        _preorder(root->right, sum - root->val, current, all);
     }
 };
