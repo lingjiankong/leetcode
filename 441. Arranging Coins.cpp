@@ -49,10 +49,10 @@ public:
     }
 };
 
-// Binary search, O(nlogn).
+// Type II Binary search, O(logn).
 class Solution {
 public:
-    int arrangeCoins(int n) {
+    int arrangeCoins(long n) {
         if (n <= 1) {
             return n;
         }
@@ -61,15 +61,17 @@ public:
         while (left < right) {
             long mid = left + (right - left) / 2;
 
-            // To be able to build stairs with n level, we need at least n(n+1)/2 coins.
-            if (mid * (mid + 1) / 2 <= n) {
+            // To be able to build stairs with m level, we need at least m(m+1)/2 coins.
+            totalCoins = mid * (mid + 1) / 2;
+            if (totalCoins <= n) {
                 left = mid + 1;
             } else {
                 right = mid;
             }
         }
 
-        // Returns the last number that is less than target n
+        // We know that the value (i.e. level) returns here will be the largest number,
+        // that does not exceed n (i.e. level * (level + 1) / 2 is at most n).
         return right - 1;
     }
 };

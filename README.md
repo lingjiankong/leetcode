@@ -63,6 +63,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 862 | Shortest Subarray with Sum at Least K | Bravo | Running Sum, Mechanical
+| 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
 
 ## String
 | ID | Name | Rating | Note
@@ -110,6 +111,10 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Binary Search
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
+| 475 | Heaters | Alpha | Type II Binary Search
+| 441 | Arranging Coins | Alpha | Type II Binary Search
+| 367 | Valid Perfect Square | Alpha | Type II Binary Search
+
 | 35 | Search Insert Position | Alpha
 | 33 | Search in Rotated Sorted Array | Alpha
 | 81 | Search in Rotated Sorted Array II | Alpha
@@ -128,7 +133,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 275 | H-Index II | Bravo
 | 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Mechanical
 | 278 | First Bad Version | Bravo
-| 495 | Heaters | Alpha | Type I Binary Search
 
 ## Backtracking, DFS. BFS
 | ID | Name | Rating | Note
@@ -219,7 +223,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 415 | Add Strings | Alpha
 | 67 | Add Binary | Alpha
 | 43 | Multiply Strings | Exotic
-| 367 | Valid Perfect Square | Charlie
 | 204 | Count Primes | Bravo
 | 1 | Two Sum | Alpha
 | 167 | Two Sum II - Input array is sorted | Alpha
