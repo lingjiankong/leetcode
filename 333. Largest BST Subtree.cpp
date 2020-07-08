@@ -1,6 +1,7 @@
 // ***
 //
-// Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with largest number of nodes in it.
+// Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with
+// largest number of nodes in it.
 //
 // Note:
 // A subtree must include all of its descendants.
@@ -20,54 +21,43 @@
 //              The return value is the subtree's size, which is 3.
 //
 // ***
-//
+
 // This is not the optimized solution, but is very clear.
 // See also 98. Validate Binary Search Tree.
-class Solution
-{
+class Solution {
+public:
+    int largestBSTSubtree(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
 
-	public:
+        // Because we are using preorder traversal, the first time you see a valid BST it is
+        // guaranteed be be the largest BST among its subtrees, simply return the number of nodes.
+        if (_isValidBST(root, INT_MIN, INT_MAX)) {
+            return _countNodes(root);
+        }
 
-		int largestBSTSubtree(TreeNode* root)
-		{
-			if (!root)
-			{
-				return 0;
-			}
+        return max(largestBSTSubtree(root->left), largestBSTSubtree(root->right));
+    }
 
-			if (isValidBST(root, INT_MIN, INT_MAX))
-			{
-				return countNodes(root);
-			}
+private:
+    bool _isValidBST(TreeNode* root, int minValue, int maxValue) {
+        if (!root) {
+            return true;
+        }
 
-			return max(largestBSTSubtree(root->left), largestBSTSubtree(root->right));
-		}
+        if (root->val <= minValue || root->val >= maxValue) {
+            return false;
+        }
 
-	private:
+        return (_isValidBST(root->left, minValue, root->val) && _isValidBST(root->right, root->val, maxValue));
+    }
 
-		bool isValidBST(TreeNode* root, int minValue, int maxValue)
-		{
-			if (!root)
-			{
-				return true;
-			}
+    int _countNodes(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
 
-			if (root->val <= minValue || root->val >= maxValue)
-			{
-				return false;
-			}
-
-			return (isValidBST(root->left, minValue, root->val) && isValidBST(root->right, root->val, maxValue));
-		}
-
-		int countNodes(TreeNode* root)
-		{
-			if (!root)
-			{
-				return 0;
-			}
-
-			return 1 + countNodes(root->left) + countNodes(root->right);
-		}
-
+        return 1 + _countNodes(root->left) + _countNodes(root->right);
+    }
 };

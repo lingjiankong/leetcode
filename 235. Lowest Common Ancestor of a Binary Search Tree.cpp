@@ -2,7 +2,8 @@
 //
 // Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
 // According to the definition of LCA on Wikipedia:
-// “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+// “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as
+// descendants (where we allow a node to be a descendant of itself).”
 //
 // Example:
 //
@@ -16,35 +17,19 @@
 //
 // Just uses the property of a binary search tree: left subtree < root < right subtree.
 // Compare the value of p and q with current root node to decide which subtree we should search.
-class Solution
-{
+// If p->val < root < q->val or q->val < root < p->val then current root is the LCA.
 
-	public:
-
-		TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
-		{
-			if (!root)
-			{
-				return nullptr;
-			}
-
-			// LCA is in the left subtree.
-			else if (p->val < root->val && q->val < root->val)
-			{
-				return lowestCommonAncestor(root->left, p, q);
-			}
-
-			// LCA is in the right subtree.
-			else if (p->val > root->val && q->val > root->val)
-			{
-				return lowestCommonAncestor(root->right, p, q);
-			}
-
-			// LCA is the current root.
-			else
-			{
-				return root;
-			}
-		}
-
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (!root) {
+            return nullptr;
+        } else if (p->val < root->val && q->val < root->val) {  // LCA is in the left subtree.
+            return lowestCommonAncestor(root->left, p, q);
+        } else if (p->val > root->val && q->val > root->val) {  // LCA is in the right subtree.
+            return lowestCommonAncestor(root->right, p, q);
+        } else {  // LCA is the current root.
+            return root;
+        }
+    }
 };

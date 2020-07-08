@@ -62,6 +62,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 334 | Increasing Triplet Subsequence | Alpha
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
+| 862 | Shortest Subarray with Sum at Least K | Bravo | Running Sum, Mechanical
 
 ## String
 | ID | Name | Rating | Note
@@ -106,61 +107,28 @@ I am currently reorganize the problem categories, so this page might be a little
 | 771 | Jewels and Stongs | Bravo
 | 76 | Minimum Window Substring | Alpha
 
-## Tree
+## Binary Search
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 144 | Binary Tree Preorder Traversal | Charlie
-| 94 | Binary Tree Inorder Traversal | Charlie
-| 145 | Binary Tree Postorder Traversal | Charlie
-| 100 | Same Tree | Alpha | Preorder
-| 572 | Subtree of Another Tree | Alpha | Preorder
-| 101 | Symmetric Tree | Alpha | Preorder
-| 226 | Invert Binary Tree | Alpha | Postorder
-| 112 | Path Sum | Alpha | Preorder
-| 113 | Path Sum II | Alpha | Preorder
-| 437 | Path Sum III | Bravo | Preorder
-| 124 | Binary Tree Maximum Path Sum | Alpha | Postorder
-| 687 | Longest Univalue Path | Alpha | Postorder
-| 250 | Count Univalue Subtrees | Alpha | Postorder
-| 543 | Diameter of Binary Tree | Alpha | Postorder
-| 104 | Maximum Depth of Binary Tree | Alpha | Postorder
-| 366 | Find Leaves of Binary Tree | Alpha | Postorder
-| 111 | Minimum Depth of Binary Tree | Alpha | Postorder
-| 257 | Binary Tree Paths | Alpha
-| 129 | Sum Root to Leaf Numbers | Alpha
-| 298 | Binary Tree Longest Consecutive Sequence | Alpha
-| 110 | Balanced Binary Tree | Bravo
-| 102 | Binary Tree Level Order Traversal | Alpha | Postorder, BFS
-| 107 | Binary Tree Level Order Traversal II | Bravo | Postorder, BFS
-| 314 | Binary Tree Vertical Order Traversal | Alpha | BFS
-| 103 | Binary Tree Zigzag Level Order Traversal | Bravo | BFS
-| 199 | Binary Tree Right Side View | Bravo | Preorder
-| 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
-| 222 | Count Complete Tree Nodes | Alpha
-| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo, Mechanical
-| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo, Mechanical
-| 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
-| 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
-| 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
-
-## Binary Search Tree
-| ID | Name | Rating | Note
-| 98 | Validate Binary Search Tree | Alpha | Preorder, Inorder
-| 99 | Recover Binary Search Tree | Bravo
-| 333 | Largest BST Subtree | Alpha
-| 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
-| 236 | Lowest Common Ancestor of a Binary Tree | Bravo, Mechanical
-| 108 | Convert Sorted Array to Binary Search Tree | Alpha
-| 109 | Convert Sorted List to Binary Search Tree | Alpha
-| 173 | Binary Search Tree Iterator | Bravo, Mechanical
-| 230 | Kth Smallest Element in a BST | Alpha
-| 297 | Serialize and Deserialize Binary Tree | Alpha
-| 285 | Inorder Successor in BST | Hard
-| 270 | Closest Binary Search Tree Value | Alpha
-| 272 | Closest Binary Search Tree Value II | Alpha
-| 255 | Verify Preorder Sequence in Binary Search Tree | Hard
-| 96 | Unique Binary Search Trees | Charlie
-| 95 | Unique Binary Search Trees II | Charlie
+| 35 | Search Insert Position | Alpha
+| 33 | Search in Rotated Sorted Array | Alpha
+| 81 | Search in Rotated Sorted Array II | Alpha
+| 153 | Find Minimum in Rotated Sorted Array | Alpha
+| 154 | Find Minimum in Rotated Sorted Array II | Alpha
+| 34 | Find First and Last Position of Element in Sorted Array | Alpha
+| 315 | Count of Smaller Numbers After Self | Alpha
+| 300 | Longest Increasing Subsequence | Alpha, Mechanical
+| 354 | Russian Doll Envelopes | Bravo, Mechanical
+| 69 | Sqrt(x) | Alpha
+| 74 | Search a 2D Matrix | Alpha
+| 240 | Search a 2D Matrix II | Bravo, Mechanical
+| 287 | Find the Duplicate Number | Charlie
+| 4 | Median of Two Sorted Arrays | Alpha
+| 274 | H-Index | Bravo | See 275
+| 275 | H-Index II | Bravo
+| 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Mechanical
+| 278 | First Bad Version | Bravo
+| 495 | Heaters | Alpha | Type I Binary Search
 
 ## Backtracking, DFS. BFS
 | ID | Name | Rating | Note
@@ -229,30 +197,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 376 | Wiggle Subsequence | Alpha
 | 44 | Wildcard Matching | Alpha | 2D, String
 | 97 | Interleaving String | Alpha | 2D, String
-
-## LinkedList
-| ID | Name | Rating | Note
-|:---:|:---:|:---:|:---:|
-| 206 | Reverse Linked List | Alpha
-| 92 | Reverse Linked List II | Hard, Exotic
-| 141 | Linked List Cycle | Alpha
-| 142 | Linked List Cycle II | Alpha
-| 234 | Palindrome Linked List | Alpha
-| 24 | Swap Nodes in Pairs | Bravo
-| 237 | Delete Node in a Linked List | Bravo
-| 19 | Remove Nth Node From End of List | Alpha
-| 203 | Remove Linked List Elements | Alpha
-| 83 | Remove Duplicates from Sorted List | Bravo
-| 82 | Remove Duplicates from Sorted List II | Hard
-| 369 | Plus One Linked List | Bravo
-| 2 | Add Two Numbers | Alpha
-| 160 | Intersection of Two Linked Lists | Alpha
-| 21 | Merge Two Sorted Lists | Alpha
-| 143 | Reorder List | Bravo
-| 148 | Sort List | Alpha
-| 61 | Rotate List | Alpha
-| 86 | Partition List | Alpha
-| 23 | Merge k Sorted Lists | Alpha
+| 115 | Distinct Subsequences | Bravo | 2D, String
 
 ## Matrix
 | ID | Name | Rating | Note
@@ -301,28 +246,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 772 | Basic Calculator III | Alpha, Mechanical
 | 50 | Pow(x, n) | Alpha
 
-## Binary Search
-| ID | Name | Rating | Note
-|:---:|:---:|:---:|:---:|
-| 278 | First Bad Version | Charlie
-| 35 | Search Insert Position | Alpha
-| 33 | Search in Rotated Sorted Array | Alpha
-| 81 | Search in Rotated Sorted Array II | Alpha
-| 153 | Find Minimum in Rotated Sorted Array | Alpha
-| 154 | Find Minimum in Rotated Sorted Array II | Alpha
-| 34 | Find First and Last Position of Element in Sorted Array | Alpha
-| 315 | Count of Smaller Numbers After Self | Alpha
-| 300 | Longest Increasing Subsequence | Alpha, Mechanical
-| 354 | Russian Doll Envelopes | Bravo, Mechanical
-| 69 | Sqrt(x) | Alpha
-| 74 | Search a 2D Matrix | Alpha
-| 240 | Search a 2D Matrix II | Bravo, Mechanical
-| 287 | Find the Duplicate Number | Charlie
-| 4 | Median of Two Sorted Arrays | Alpha
-| 274 | H-Index | See 275
-| 275 | H-Index II | Bravo
-| 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Mechanical
-
 ## Stack, Queue & Priority Queue
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -349,6 +272,86 @@ I am currently reorganize the problem categories, so this page might be a little
 | 268 | Missing Number | Bravo
 | 191 | Number of 1 Bits | Bravo
 | 190 | Reverse Bits | Bravo
+
+## Tree
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 144 | Binary Tree Preorder Traversal | Charlie
+| 94 | Binary Tree Inorder Traversal | Charlie
+| 145 | Binary Tree Postorder Traversal | Charlie
+| 100 | Same Tree | Alpha | Preorder
+| 572 | Subtree of Another Tree | Alpha | Preorder
+| 101 | Symmetric Tree | Alpha | Preorder
+| 226 | Invert Binary Tree | Alpha | Postorder
+| 112 | Path Sum | Alpha | Preorder
+| 113 | Path Sum II | Alpha | Preorder
+| 437 | Path Sum III | Bravo | Preorder
+| 124 | Binary Tree Maximum Path Sum | Alpha | Postorder
+| 687 | Longest Univalue Path | Alpha | Postorder
+| 250 | Count Univalue Subtrees | Alpha | Postorder
+| 543 | Diameter of Binary Tree | Alpha | Postorder
+| 104 | Maximum Depth of Binary Tree | Alpha | Postorder
+| 366 | Find Leaves of Binary Tree | Alpha | Postorder
+| 111 | Minimum Depth of Binary Tree | Alpha | Postorder
+| 257 | Binary Tree Paths | Alpha
+| 129 | Sum Root to Leaf Numbers | Alpha
+| 298 | Binary Tree Longest Consecutive Sequence | Alpha
+| 110 | Balanced Binary Tree | Bravo
+| 102 | Binary Tree Level Order Traversal | Alpha | Postorder, BFS
+| 107 | Binary Tree Level Order Traversal II | Bravo | Postorder, BFS
+| 314 | Binary Tree Vertical Order Traversal | Alpha | BFS
+| 103 | Binary Tree Zigzag Level Order Traversal | Bravo | BFS
+| 199 | Binary Tree Right Side View | Bravo | Preorder
+| 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
+| 222 | Count Complete Tree Nodes | Alpha
+| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo, Mechanical
+| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo, Mechanical
+| 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
+| 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
+| 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
+
+## Binary Search Tree
+| ID | Name | Rating | Note
+| 98 | Validate Binary Search Tree | Alpha | Preorder, Inorder
+| 333 | Largest BST Subtree | Alpha | Preorder
+| 99 | Recover Binary Search Tree | Bravo | Inorder
+| 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
+| 236 | Lowest Common Ancestor of a Binary Tree | Bravo, Mechanical
+| 108 | Convert Sorted Array to Binary Search Tree | Alpha
+| 109 | Convert Sorted List to Binary Search Tree | Alpha
+| 173 | Binary Search Tree Iterator | Bravo, Mechanical
+| 230 | Kth Smallest Element in a BST | Alpha
+| 297 | Serialize and Deserialize Binary Tree | Alpha
+| 285 | Inorder Successor in BST | Hard
+| 270 | Closest Binary Search Tree Value | Alpha
+| 272 | Closest Binary Search Tree Value II | Alpha
+| 255 | Verify Preorder Sequence in Binary Search Tree | Hard
+| 96 | Unique Binary Search Trees | Charlie
+| 95 | Unique Binary Search Trees II | Charlie
+
+## Linked List
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 206 | Reverse Linked List | Alpha
+| 92 | Reverse Linked List II | Hard, Exotic
+| 141 | Linked List Cycle | Alpha
+| 142 | Linked List Cycle II | Alpha
+| 234 | Palindrome Linked List | Alpha
+| 24 | Swap Nodes in Pairs | Bravo
+| 237 | Delete Node in a Linked List | Bravo
+| 19 | Remove Nth Node From End of List | Alpha
+| 203 | Remove Linked List Elements | Alpha
+| 83 | Remove Duplicates from Sorted List | Bravo
+| 82 | Remove Duplicates from Sorted List II | Hard
+| 369 | Plus One Linked List | Bravo
+| 2 | Add Two Numbers | Alpha
+| 160 | Intersection of Two Linked Lists | Alpha
+| 21 | Merge Two Sorted Lists | Alpha
+| 143 | Reorder List | Bravo
+| 148 | Sort List | Alpha
+| 61 | Rotate List | Alpha
+| 86 | Partition List | Alpha
+| 23 | Merge k Sorted Lists | Alpha
 
 ## Graph
 | ID | Name | Rating | Note

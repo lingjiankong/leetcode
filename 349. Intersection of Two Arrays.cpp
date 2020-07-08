@@ -14,15 +14,52 @@
 //
 // ***
 
-vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-    unordered_set<int> seen(nums1.begin(), nums1.end());
-    unordered_set<int> intersection;
+// Use unordered set, O(n)
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        unordered_set<int> seen(nums1.begin(), nums1.end());
+        unordered_set<int> intersection;
 
-    for (int num : nums2) {
-        if (seen.count(num)) {
-            intersection.insert(num);
+        for (int num : nums2) {
+            if (seen.count(num)) {
+                intersection.insert(num);
+            }
         }
+
+        return vector<int>(intersection.begin(), intersection.end());
+    }
+};
+
+// Use binary search, O(nlogn).
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        unordered_set<int> result;
+        sort(nums2.begin(), nums2.end());
+        for (int num : nums1) {
+            if (_binarySearch(nums2, num)) {
+                result.insert(num);
+            }
+        }
+
+        return vector<int>(result.begin(), result.end());
     }
 
-    return vector<int>(intersection.begin(), intersection.end());
-}
+private:
+    bool _binarySearch(vector<int>& nums, int target) {
+        int left = 0, right = nums.size();
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target)
+                return true;
+            else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        return false;
+    }
+};

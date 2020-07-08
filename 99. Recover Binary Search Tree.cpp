@@ -45,6 +45,7 @@
 //
 // ***
 
+// O(n) space complexity.
 class Solution {
 public:
     void recoverTree(TreeNode* root) {
@@ -71,4 +72,42 @@ private:
 
         _inorder(root->right, inOrderTreeNodePtrs, inOrderTreeNodeValues);
     }
+};
+
+// O(1) space complexity not counting recursion.
+// Since we know exactly one pair has been swapped, we can find that pair.
+class Solution {
+public:
+    void recoverTree(TreeNode* root) {
+        _inorder(root);
+        swap(first->val, second->val);
+    }
+
+    void _inorder(TreeNode* root) {
+        if (!root) {
+            return;
+        }
+        _inorder(root->left);
+
+        if (!prev) {
+            prev = root;
+        } else {
+            // We know only two elements have been swapped, so if prev->val > root->val,
+            // then prev is a misplaced node, assign it to first;
+            // current root is also a misplace rnode, assign it to second.
+            if (prev->val > root->val) {
+                if (!first) {
+                    first = prev;
+                }
+                second = root;
+            }
+
+            prev = root;
+        }
+
+        _inorder(root->right);
+    }
+
+private:
+    TreeNode *prev = nullptr, *first = nullptr, *second = nullptr;
 };
