@@ -35,7 +35,12 @@ I am currently reorganize the problem categories, so this page might be a little
 | 55 | Jump Game | Alpha
 | 45 | Jump Game II | Alpha
 | 11 | Container With Most Water | Alpha
+
 | 128 | Longest Consecutive Sequence | Alpha
+| 674 | Longest Continuous Increasing Subsequence | Alpha
+| 491 | Increasing Subsequence | Alpha
+
+
 | 164 | Maximum Gap Bucket | Hard
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
