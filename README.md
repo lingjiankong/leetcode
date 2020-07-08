@@ -315,6 +315,7 @@ I am currently reorganize the problem categories, so this page might be a little
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 98 | Validate Binary Search Tree | Alpha | Preorder, Inorder
 | 333 | Largest BST Subtree | Alpha | Preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
