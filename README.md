@@ -111,10 +111,10 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Binary Search
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 475 | Heaters | Alpha | Type II Binary Search
-| 441 | Arranging Coins | Alpha | Type II Binary Search
-| 367 | Valid Perfect Square | Alpha | Type II Binary Search
-
+| 475 | Heaters | Alpha
+| 441 | Arranging Coins | Alpha
+| 367 | Valid Perfect Square | Alpha
+| 611 | Valid Triangle Number | Alpha
 | 35 | Search Insert Position | Alpha
 | 33 | Search in Rotated Sorted Array | Alpha
 | 81 | Search in Rotated Sorted Array II | Alpha

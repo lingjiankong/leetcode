@@ -49,7 +49,7 @@ public:
     }
 };
 
-// Type II Binary search, O(logn).
+// Binary search, O(logn).
 class Solution {
 public:
     int arrangeCoins(long n) {
