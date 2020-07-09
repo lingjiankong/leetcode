@@ -1,7 +1,7 @@
 // ***
 //
 // Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
-// 
+//
 // Integers in each row are sorted from left to right.
 // The first integer of each row is greater than the last integer of the previous row.
 //
@@ -26,37 +26,30 @@
 // Output: false
 //
 // ***
-bool searchMatrix(vector<vector<int>>& matrix, int target)
-{
-	if (matrix.empty() || matrix[0].empty())
-	{
-		return false;	
-	}
 
-	int m = matrix.size();
-	int n = matrix[0].size();
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+    if (matrix.empty() || matrix[0].empty()) {
+        return false;
+    }
 
-	int left = 0;
-	int right = m * n;
-	
-	while (left < right)
-	{
-		int mid = left + (right - left) / 2;
-		int value = matrix[mid / n][mid % n];
+    int m = matrix.size();
+    int n = matrix[0].size();
 
-		if (value == target)
-		{
-			return true;
-		}
-		else if (value < target)
-		{
-			left = mid + 1;
-		}
-		else
-		{
-			right = mid;
-		}
-	}
+    int left = 0;
+    int right = m * n;
 
-	return false;
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        int value = matrix[mid / n][mid % n];
+
+        if (value == target) {
+            return true;
+        } else if (value < target) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+
+    return false;
 }

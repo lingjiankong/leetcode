@@ -35,12 +35,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 55 | Jump Game | Alpha
 | 45 | Jump Game II | Alpha
 | 11 | Container With Most Water | Alpha
-
 | 128 | Longest Consecutive Sequence | Alpha
 | 674 | Longest Continuous Increasing Subsequence | Alpha
-| 491 | Increasing Subsequence | Alpha
-
-
 | 164 | Maximum Gap Bucket | Hard
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
@@ -116,6 +112,7 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Binary Search
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
+| 704 | Binary Search | Alpha
 | 475 | Heaters | Alpha
 | 441 | Arranging Coins | Alpha
 | 367 | Valid Perfect Square | Alpha
@@ -131,12 +128,13 @@ I am currently reorganize the problem categories, so this page might be a little
 | 354 | Russian Doll Envelopes | Bravo, Mechanical
 | 69 | Sqrt(x) | Alpha
 | 74 | Search a 2D Matrix | Alpha
+| 378 | Kth Smallest Element in a Sorted Matrix | Alpha | Binary Search, Priority Queue
 | 240 | Search a 2D Matrix II | Bravo, Mechanical
 | 287 | Find the Duplicate Number | Charlie
 | 4 | Median of Two Sorted Arrays | Alpha
 | 274 | H-Index | Bravo | See 275
 | 275 | H-Index II | Bravo
-| 215 | Kth Largest Element in an Array | Alpha, Quick Sort, Binary Search, Mechanical
+| 215 | Kth Largest Element in an Array | Alpha | Quick Sort, Binary Search, Mechanical
 | 278 | First Bad Version | Bravo
 
 ## Backtracking, DFS. BFS
@@ -147,6 +145,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 77 | Combinations | Alpha
 | 78 | Subsets | Alpha
 | 90 | Subsets II | Alpha
+| 491 | Increasing Subsequence | Alpha
 | 39 | Combination Sum | Alpha
 | 40 | Combination Sum II | Alpha
 | 216 | Combination Sum III | Alpha
@@ -268,7 +267,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 295 | Find Median from Data Stream | Alpha
 | 480 | Sliding Window Median | Alpha
 | 373 | Find K Pairs with Smallest Sums | Alpha
-| 378 | Kth Smallest Element in a Sorted Matrix | Alpha
 | 218 | The Skyline Problem | Alpha
 
 ## Bit Manipulation

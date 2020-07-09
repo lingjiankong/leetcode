@@ -12,67 +12,56 @@
 //
 // This question asks about the longest sequence, NOT the longeset *consesutive* sequence.
 // See also 128. Longest Consecutive Sequence. In that question, order of element does not matter.
-//
-// DP solution.
-int lengthOfLIS(vector<int>& nums)
-{
-	// dp[i] stores the length of longest subsequence that ends at position i.
-	// Remember to initialize all elements in dp to 1 because a single number itself is a subsequence of length 1.
-	vector<int> dp(nums.size(), 1);
 
-	int longestLength = 0;
+// DP solution. O(n2). Might not be very straightfoward to understand.
+int lengthOfLIS(vector<int>& nums) {
+    // dp[i] stores the length of longest subsequence that ends at position i (nums[i] must be used).
+    // Remember to initialize all elements in dp to 1 because a single number itself is a subsequence of length 1.
+    vector<int> dp(nums.size(), 1);
 
-	for (int i = 0; i < nums.size(); ++i)
-	{
-		for (int j = 0; j < i; ++j)
-		{
-			if (nums[j] < nums[i])
-			{
-				dp[i] = max(dp[i], dp[j] + 1);
-			}
-		}
+    int longestLength = 0;
 
-		longestLength = max(longestLength, dp[i]);
-	}
+    for (int i = 0; i < nums.size(); ++i) {
+        for (int j = 0; j < i; ++j) {
+            if (nums[j] < nums[i]) {
+                // In this case, the longest subsequence that ends at position i, must be the larger one of
+                // the longest subsequence that ends at position j + 1 (since nums[j] < nums[i]),
+                // or the current longest subsequence that ends at position i.
+                dp[i] = max(dp[i], dp[j] + 1);
+            }
+        }
 
-	return longestLength;
-}
-
-// Binary search. Took me a while to understand it. Just memorize it.
-// tails is an array storing the smallest tail (i.e. the last element) of all increasing subsequences with length i + 1 in tails[i].
-// For example, say we have nums = [4, 5, 6, 3], then all the available increasing subsequences are:
-//
-// length = 1   :      [4], [5], [6], [3]   => tails[0] = 3
-// length = 2   :      [4, 5], [5, 6]       => tails[1] = 5
-// length = 3   :      [4, 5, 6]            => tails[2] = 6
-//
-// tails is an increasing array, so we can do binary search on it.
-//
-// Traverse through nums:
-// 1. If nums[i] > the right most element in tails, then add nums[i] to the end of tails (now tails.size() has increased by 1).
-// 2. If nums[i] < the left most element in tails, replace the leftmost element to nums[i] (note tails.size() does not change in this case).
-// 3. Otherwise, find lower_bound(nums[i]) in tails, and replace that element with nums[i] (note tails.size() does not change in this case).
-//
-// Finally, tails.size() is the length of longest increasing subsequence.
-//
-// For example, in the above example, if our incoming nums[i] = 4, then lower_bound(tails.begin(), tails.end(), nums[i]) is tails[1] = 5,
-// so we can update tails[1] = 5  to tails[1] = 4. i.e. A subsequence of length 2: [3, 4] can be formed.
-int lengthOfLIS(vector<int>& nums)
-{
-    vector<int> tails;
-
-    for(int i = 0; i < nums.size(); ++i)
-	{
-        auto it = lower_bound(tails.begin(), tails.end(), nums[i]);
-        if (it == tails.end())
-		{
-			tails.push_back(nums[i]);
-		}
-        else
-		{
-			*it = nums[i];
-		}
+        longestLength = max(longestLength, dp[i]);
     }
 
-    return tails.size();
+    return longestLength;
+}
+
+// Binary search. Not straightfoward to understand.
+//
+// Traverse through nums:
+// 1. If nums[i] > the right most element in elements, then add nums[i] to the end of elements (now elements.size() has
+// increased by 1).
+//
+// 2. If nums[i] < the left most element in elements, replace the leftmost element to nums[i] (note elements.size() does
+// not change in this case).
+//
+// 3. Otherwise, find lower_bound(nums[i]) in elements, and replace that element with nums[i] (note elements.size() does
+// not change in this case).
+//
+// Finally, elements.size() is the length of longest increasing subsequence.
+// Note that element in elements might not be a real LIS (we only need the size of elements).
+int lengthOfLIS(vector<int>& nums) {
+    vector<int> elements;
+
+    for (int i = 0; i < nums.size(); ++i) {
+        auto itr = lower_bound(elements.begin(), elements.end(), nums[i]);
+        if (itr == elements.end()) {
+            elements.push_back(nums[i]);
+        } else {
+            *itr = nums[i];
+        }
+    }
+
+    return elements.size();
 }
