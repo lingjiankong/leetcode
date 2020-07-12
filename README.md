@@ -108,6 +108,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 187 | Repeated DNA Sequences | Alpha
 | 771 | Jewels and Stongs | Bravo
 | 76 | Minimum Window Substring | Alpha
+| 844 | Backspace String Compare | Bravo
 
 ## Binary Search
 | ID | Name | Rating | Note
