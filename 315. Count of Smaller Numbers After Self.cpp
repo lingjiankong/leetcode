@@ -18,6 +18,7 @@
 //
 // 将给定数组nums从最后一个开始，用二分法插入到一个新的数组sortedSeen，这样新数组sortedSeen就是有序的，
 // 那么此时该数字在新数组sortedSeen中的坐标就是原数组nums中其右边所有较小数字的个数
+// Why not implement sortedSeen using priority queue? Because you can't do binary search on it.
 
 vector<int> countSmaller(vector<int>& nums) {
     vector<int> sortedSeen;
@@ -26,11 +27,10 @@ vector<int> countSmaller(vector<int>& nums) {
     for (int i = nums.size() - 1; i >= 0; --i) {
         int left = 0, right = sortedSeen.size();
 
-        // Same as std::lower_bound, find the index of first number that >= target (nums[i])
+        // Same as std::lower_bound(), find the index of first number that >= target (nums[i])
         // All elements in sortedSeen to the left of this index are smaller than nums[i].
         while (left < right) {
             int mid = left + (right - left) / 2;
-
             if (sortedSeen[mid] < nums[i]) {
                 left = mid + 1;
             } else {

@@ -119,10 +119,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 367 | Valid Perfect Square | Alpha
 | 611 | Valid Triangle Number | Alpha
 | 35 | Search Insert Position | Alpha
-| 33 | Search in Rotated Sorted Array | Alpha
-| 81 | Search in Rotated Sorted Array II | Alpha
-| 153 | Find Minimum in Rotated Sorted Array | Alpha
-| 154 | Find Minimum in Rotated Sorted Array II | Alpha
+| 33 | Search in Rotated Sorted Array | Alpha, Mechanical
+| 81 | Search in Rotated Sorted Array II | Alpha, Mechanical
+| 153 | Find Minimum in Rotated Sorted Array | Alpha, Mechanical
+| 154 | Find Minimum in Rotated Sorted Array II | Alpha, Mechanical
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha
 | 315 | Count of Smaller Numbers After Self | Alpha
 | 300 | Longest Increasing Subsequence | Alpha, Mechanical

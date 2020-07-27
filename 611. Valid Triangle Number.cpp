@@ -1,4 +1,5 @@
 // ***
+//
 // Given an array consists of non-negative integers, your task is to count the number of triplets chosen from the array
 // that can make triangles if we take them as side lengths of a triangle.
 //
@@ -32,10 +33,11 @@ public:
                 int left = j + 1, right = nums.size();
                 while (left < right) {
                     int mid = left + (right - left) / 2;
-                    if (nums[mid] < target)
+                    if (nums[mid] < target) {
                         left = mid + 1;
-                    else
+                    } else {
                         right = mid;
+                    }
                 }
 
                 // right is the first index in nums which is greater or equal to target

@@ -39,6 +39,7 @@ public:
             return n;
         }
 
+        // At least we can form 1 level with 1 coin
         int levels = 1, remainingCoins = n - 1;
         while (remainingCoins >= levels + 1) {
             ++levels;
@@ -50,6 +51,7 @@ public:
 };
 
 // Binary search, O(logn).
+// Find the last number no larger the target
 class Solution {
 public:
     int arrangeCoins(long n) {
@@ -61,7 +63,7 @@ public:
         while (left < right) {
             long mid = left + (right - left) / 2;
 
-            // To be able to build stairs with m level, we need at least m(m+1)/2 coins.
+            // To be able to build stairs with m level, we need at least m(m+1)/2 coins (triangular number).
             totalCoins = mid * (mid + 1) / 2;
             if (totalCoins <= n) {
                 left = mid + 1;

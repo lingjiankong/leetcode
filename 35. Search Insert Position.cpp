@@ -22,8 +22,8 @@
 // ***
 
 // This is just the implementation of std::lower_bound().
-// Returns an iterator pointing to the first element in the range [first, last) that is *not less than*
-// (i.e. greater or equal to) value, or last if no such element is found.
+// Returns an iterator pointing to the first element in the range [first, last) that is not less than
+// (i.e. greater or equal to) value.
 int searchInsert(vector<int>& nums, int target) {
     int left = 0, right = nums.size();
 
@@ -40,6 +40,7 @@ int searchInsert(vector<int>& nums, int target) {
     return right;
 }
 
+// Recap: vanilla binary search
 // If the question were asking us to find the location of target and return -1 if it is not found, then the code becomes
 int searchInsert(vector<int>& nums, int target) {
     int left = 0, right = nums.size();

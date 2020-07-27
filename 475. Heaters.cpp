@@ -46,16 +46,16 @@ public:
         for (int house : houses) {
             // Find the first heater position that is no less than house position.
             auto pos = lower_bound(heaters.begin(), heaters.end(), house);
-            int nextHeaterToHouse = (pos == heaters.end()) ? INT_MAX : *pos - house;
-            int previousHeaterToHouse = (pos == heaters.begin()) ? INT_MAX : house - *(--pos);
-            maxRadius = max(maxRadius, min(nextHeaterToHouse, previousHeaterToHouse));
+            int nextHeaderToHouseDistance = (pos == heaters.end()) ? INT_MAX : *pos - house;
+            int prevHeaderToHourDistance = (pos == heaters.begin()) ? INT_MAX : house - *(--pos);
+            maxRadius = max(maxRadius, min(nextHeaderToHouseDistance, prevHeaderToHourDistance));
         }
 
         return maxRadius;
     }
 };
 
-// Write out binary search instead of built in std::lower_bound()
+// Wtih binary search implementation instead of built-in std::lower_bound()
 class Solution {
 public:
     int findRadius(vector<int>& houses, vector<int>& heaters) {
@@ -72,9 +72,9 @@ public:
                     right = mid;
                 }
             }
-            int nextHeaterToHouse = (right == heaters.size()) ? INT_MAX : heaters[right] - house;
-            int prevHeaterToHouse = (right == 0) ? INT_MAX : house - heaters[right - 1];
-            maxRadius = max(maxRadius, min(nextHeaterToHouse, prevHeaterToHouse));
+            int nextHeaderToHouseDistance = (right == heaters.size()) ? INT_MAX : heaters[right] - house;
+            int prevHeaterToHouseDistance = (right == 0) ? INT_MAX : house - heaters[right - 1];
+            maxRadius = max(maxRadius, min(nextHeaderToHouseDistance, prevHeaterToHouseDistance));
         }
 
         return maxRadius;

@@ -19,25 +19,29 @@
 // ***
 //
 // The smallest element is the rotation pivot.
-// This question is the same as asking you where that rotation pivot is.
-int findMin(vector<int>& nums)
-{
-    int left = 0, right = nums.size() - 1;
+// This question is the same as asking you where the rotation pivot is. This pivot is guaranteed to exist,
+// that is why the condition in this question is while (left < right) instead of while (left <= right).
+// Compare this question with the condition in 33. Search in Rotated Sotrted Array,
+// in which element might not exist at all (therefore in that question the condition is while (left <= right))
 
-    while (left < right)
-    {
-        int mid = left + (right - left) / 2;
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int left = 0, right = nums.size() - 1;
 
-		// In this case, the pivot is on the right half of the array
-        if (nums[mid] > nums[right])
-        {
-            left = mid + 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            // In this case, the pivot is on the right half of the array
+            if (nums[mid] > nums[right]) {
+                left = mid + 1;
+            }
+            // In this case, the pivot is on the left half of the array.
+            else {
+                right = mid;
+            }
         }
-        else
-        {
-            right = mid;
-        }
+
+        return nums[right];
     }
-
-    return nums[right];
 };
