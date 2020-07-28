@@ -275,6 +275,7 @@ I am currently reorganize the problem categories, so this page might be a little
 |:---:|:---:|:---:|:---:|
 | 289 | Game of Life | Alpha
 | 136 | Single Number | Bravo, Mechanical
+| 137 | Single Number II | Charlie, Mechanical
 | 389 | Find the Difference | Bravo, Mechanical
 | 268 | Missing Number | Bravo
 | 191 | Number of 1 Bits | Bravo
