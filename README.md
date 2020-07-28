@@ -109,6 +109,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 771 | Jewels and Stongs | Bravo
 | 76 | Minimum Window Substring | Alpha
 | 844 | Backspace String Compare | Bravo
+| 159 | Longest Substring with At Most Two Distinct Characters | Alpha
+
 
 ## Binary Search
 | ID | Name | Rating | Note
