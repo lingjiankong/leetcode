@@ -121,23 +121,23 @@ I am currently reorganize the problem categories, so this page might be a little
 | 367 | Valid Perfect Square | Alpha
 | 611 | Valid Triangle Number | Alpha
 | 35 | Search Insert Position | Alpha
+| 69 | Sqrt(x) | Alpha
 | 33 | Search in Rotated Sorted Array | Alpha, Mechanical
 | 81 | Search in Rotated Sorted Array II | Alpha, Mechanical
 | 153 | Find Minimum in Rotated Sorted Array | Alpha, Mechanical
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha, Mechanical
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha
 | 315 | Count of Smaller Numbers After Self | Alpha
-| 300 | Longest Increasing Subsequence | Alpha, Mechanical
-| 354 | Russian Doll Envelopes | Bravo, Mechanical
-| 69 | Sqrt(x) | Alpha
-| 74 | Search a 2D Matrix | Alpha
+| 300 | Longest Increasing Subsequence | Bravo, Mechanical | Dynamic Programming, Binary Search
+| 354 | Russian Doll Envelopes | Bravo, Mechanical | Dynamic Programming, Binary Search
 | 378 | Kth Smallest Element in a Sorted Matrix | Alpha | Binary Search, Priority Queue
-| 240 | Search a 2D Matrix II | Bravo, Mechanical
+| 74 | Search a 2D Matrix | Alpha
+| 240 | Search a 2D Matrix II | Alpha, Mechanical
 | 287 | Find the Duplicate Number | Charlie
-| 4 | Median of Two Sorted Arrays | Alpha
+| 4 | Median of Two Sorted Arrays | Alpha, Mechanical
 | 274 | H-Index | Bravo | See 275
 | 275 | H-Index II | Bravo
-| 215 | Kth Largest Element in an Array | Alpha | Quick Sort, Binary Search, Mechanical
+| 215 | Kth Largest Element in an Array | Alpha, Mechanical | Quick Sort, Binary Search
 | 278 | First Bad Version | Bravo
 
 ## Backtracking, DFS. BFS

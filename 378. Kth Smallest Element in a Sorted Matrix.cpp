@@ -18,6 +18,25 @@
 //
 // ***
 
+// Prioirty queue, O(nlogn) time, O(n) space.
+int kthSmallest(vector<vector<int>>& matrix, int k) {
+    priority_queue<int> pq;
+
+    for (int i = 0; i < matrix.size(); ++i) {
+        for (int j = 0; j < matrix[0].size(); ++j) {
+            pq.push(matrix[i][j]);
+
+            // Always keep the k smalleset elements in the priority_queue.
+            // So the top() of the priority_queue is always the kth smallest element.
+            if (pq.size() > k) {
+                pq.pop();
+            }
+        }
+    }
+
+    return pq.top();
+}
+
 // Binary search, O(nlogn) time, O(1) space.
 class Solution {
 public:
@@ -25,6 +44,7 @@ public:
         // Note here that left and right are numbers, not index.
         int left = matrix[0][0], right = matrix.back().back();
 
+        // Eventually, left and right will converge to the Kth smallest element.
         while (left < right) {
             int mid = left + (right - left) / 2;
 
@@ -45,21 +65,3 @@ public:
     }
 };
 
-// Prioirty queue, O(nlogn) time, O(n) space.
-int kthSmallest(vector<vector<int>>& matrix, int k) {
-    priority_queue<int> pq;
-
-    for (int i = 0; i < matrix.size(); ++i) {
-        for (int j = 0; j < matrix[0].size(); ++j) {
-            pq.push(matrix[i][j]);
-
-            // Always keep the k smalleset elements in the priority_queue.
-            // So the top() of the priority_queue is always the kth smallest element.
-            if (pq.size() > k) {
-                pq.pop();
-            }
-        }
-    }
-
-    return pq.top();
-}

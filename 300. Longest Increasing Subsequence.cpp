@@ -13,7 +13,7 @@
 // This question asks about the longest sequence, NOT the longeset *consesutive* sequence.
 // See also 128. Longest Consecutive Sequence. In that question, order of element does not matter.
 
-// DP solution. O(n2). Might not be very straightfoward to understand.
+// DP solution. O(n2).
 int lengthOfLIS(vector<int>& nums) {
     // dp[i] stores the length of longest subsequence that ends at position i (nums[i] must be used).
     // Remember to initialize all elements in dp to 1 because a single number itself is a subsequence of length 1.
@@ -25,7 +25,7 @@ int lengthOfLIS(vector<int>& nums) {
         for (int j = 0; j < i; ++j) {
             if (nums[j] < nums[i]) {
                 // In this case, the longest subsequence that ends at position i, must be the larger one of
-                // the longest subsequence that ends at position j + 1 (since nums[j] < nums[i]),
+                // the longest subsequence that ends at position j, then + 1 (since nums[j] < nums[i]),
                 // or the current longest subsequence that ends at position i.
                 dp[i] = max(dp[i], dp[j] + 1);
             }
@@ -51,6 +51,24 @@ int lengthOfLIS(vector<int>& nums) {
 //
 // Finally, elements.size() is the length of longest increasing subsequence.
 // Note that element in elements might not be a real LIS (we only need the size of elements).
+//
+// elements doesn't contain the actual LIS, only it's length is valid.
+// For each num we are traversing in nums we have 2 options:
+// if it's the highest found value, we push it back, since a high value obviously makes our increasing sequence longer
+// if it's not the highest found value, then it could be a nice start (or continuation) of a shorter sequence.
+//
+// [1,2,7,8,3,4,5,9,0]
+// 1 -> [1]
+// 2 -> [1,2]
+// 7 -> [1,2,7]
+// 8 -> [1,2,7,8]
+// 3 -> [1,2,3,8] // we replaced 7 with 3, since for the longest sequence we need only the last number and 1,2,3 is our
+// new shorter sequence
+//
+// 4 -> [1,2,3,4] // we replaced 8 with 4, since the max length is the same but 4 has more chances for longer sequence
+// 5 -> [1,2,3,4,5]
+// 9 -> [1,2,3,4,5,9]
+// 0 -> [0,2,3,4,5,9] // we replaced 1 with 0, so that it can become a new sequence
 int lengthOfLIS(vector<int>& nums) {
     vector<int> elements;
 
