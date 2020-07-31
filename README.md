@@ -111,7 +111,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 844 | Backspace String Compare | Bravo
 | 159 | Longest Substring with At Most Two Distinct Characters | Alpha
 
-
 ## Binary Search
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -134,6 +133,9 @@ I am currently reorganize the problem categories, so this page might be a little
 | 74 | Search a 2D Matrix | Alpha
 | 240 | Search a 2D Matrix II | Alpha, Mechanical
 | 287 | Find the Duplicate Number | Charlie
+| 162 | Find Peak Element | Alpha
+| 852 | Peack Index in a Mountain Array | Alpha
+| 1095 | Find in Mountain Array | Alpha
 | 4 | Median of Two Sorted Arrays | Alpha, Mechanical
 | 274 | H-Index | Bravo | See 275
 | 275 | H-Index II | Bravo
