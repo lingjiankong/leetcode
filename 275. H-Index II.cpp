@@ -19,8 +19,8 @@
 // ***
 //
 // By definition on Wikipedia, we can find H-index in the following way:
-// Sort the array descending order, give each a index start from 1.
-// From left to right, find the last number >= its index, the result is its H-index.
+// Sort citations descending order, give each a index start from 1.
+// From left to right, find the last citation >= its index, the result is its H-index.
 // i.e. h of his paper have at least h citations each
 // In the case below, the H-index is 3.
 //
@@ -32,25 +32,23 @@
 // citations: 0, 2, 2, 3, 3, 5, 8, 25
 // index0:	  0, 1, 2, 3, 4, 5, 6, 7
 //
-// We can covert the index from 0-based to reverse 1-based by converting the original index to (n - index):
+// We can covert the index from 0-based to reverse 1-based by converting the original index to (citations.size() - index):
 //
 // citations: 0, 2, 2, 3, 3, 5, 8, 25
 // index1:	  8, 7, 6, 5, 4, 3, 2, 1
 //                           ^
 //                           H-Index
 //
-// The problem now becomes equivalent to using binary search (i.e. std::lower_bound)
+// The problem now becomes equivalent to using binary search (i.e. std::lower_bound())
 // to find the first number in citations that is greater or equal to target
-// (in this case the target is the correponding reversed 1-based index, i.e. n - mid)
-int hIndex(vector<int>& citations) {
-    int n = citations.size();
+// (in this case the target is the correponding reversed 1-based index, i.e. citations.size() - mid)
 
-    int left = 0;
-    int right = citations.size();
+int hIndex(vector<int>& citations) {
+    int left = 0, right = citations.size();
 
     while (left < right) {
         int mid = left + (right - left) / 2;
-        if (citations[mid] < n - mid) {
+        if (citations[mid] < citations.size() - mid) {
             left = mid + 1;
         } else {
             right = mid;
@@ -58,6 +56,6 @@ int hIndex(vector<int>& citations) {
     }
 
     // right is the 0-based index,
-    // so n - right is the reversed 1-based index.
-    return n - right;
+    // so citations.size() - right is the reversed 1-based index.
+    return citations.size() - right;
 }

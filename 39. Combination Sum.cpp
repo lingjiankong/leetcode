@@ -34,46 +34,37 @@
 // In this question, when we backtrack, the startIndex = i;
 // In 77, when we backtrack, the startIndex = i + 1;
 // This is because we are allowed to use same element multiple times in this question,
-// but in 77. Combinations, we do not allow to use the same element multiple times.
-//
-class Solution
-{
+// but in 77. Combinations, we do not allow using same element multiple times.
 
-	public:
+class Solution {
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<int> current;
+        vector<vector<int>> all;
 
-		vector<vector<int>> combinationSum(vector<int>& candidates, int target)
-		{
-			vector<int> current;
-			vector<vector<int>> all;
+        int startIndex = 0;
 
-			int startIndex = 0;
+        _backtrack(candidates, target, startIndex, current, all);
 
-			backtrack(candidates, target, startIndex, current, all);
+        return all;
+    }
 
-			return all;
-		}
+private:
+    void _backtrack(vector<int>& candidates, int target, int startIndex, vector<int>& current,
+                    vector<vector<int>>& all) {
+        if (target < 0) {
+            return;
+        }
 
-	private:
+        if (target == 0) {
+            all.push_back(current);
+            return;
+        }
 
-		void backtrack(vector<int>& candidates, int target, int startIndex, vector<int>& current, vector<vector<int>>& all)
-		{
-			if (target < 0)
-			{
-				return;
-			}
-
-			if (target == 0)
-			{
-				all.push_back(current);
-				return;
-			}
-
-			for (int i = startIndex; i < candidates.size(); ++i)
-			{
-				current.push_back(candidates[i]);
-				backtrack(candidates, target - candidates[i], i, current, all);
-				current.pop_back();
-			}
-		}
-
+        for (int i = startIndex; i < candidates.size(); ++i) {
+            current.push_back(candidates[i]);
+            _backtrack(candidates, target - candidates[i], i, current, all);
+            current.pop_back();
+        }
+    }
 };

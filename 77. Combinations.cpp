@@ -16,7 +16,7 @@
 // ]
 //
 // ***
-//
+
 // Solution when the input is vector<int>& nums. Clear to see what's going on.
 //
 // We don't need the "visited" array as in 46. Permutations,
@@ -26,77 +26,57 @@
 // Also note that in the for loop, the next startIndex is i + 1,
 // doing so we could avoid same element being used multiple times.
 // startIndex could be all index in nums.
-//
-class Solution
-{
+class Solution {
+public:
+    vector<vector<int>> combine(vector<int>& nums, int k) {
+        vector<int> current;
+        vector<vector<int>> all;
 
-    public:
+        int startIndex = 0;
 
-		vector<vector<int>> combine(vector<int>& nums, int k)
-        {
-            vector<int> current;
-            vector<vector<int>> all;
+        _backtrack(nums, k, startIndex, current, all);
 
-			int startIndex = 0;
+        return all;
+    }
 
-            backtrack(nums, k, startIndex, current, all);
-
-            return all;
+private:
+    void _backtrack(vector<int>& nums, int k, int startIndex, vector<int>& current, vector<vector<int>>& all) {
+        if (current.size() == k) {
+            all.push_back(current);
         }
 
-    private:
-
-        void backtrack(vector<int>& nums, int& k, int startIndex, vector<int>& current, vector<vector<int>>& all)
-        {
-            if (current.size() == k)
-            {
-                all.push_back(current);
-            }
-
-            for (int i = startIndex; i < nums.size(); ++i)
-            {
-                current.push_back(nums[i]);
-                backtrack(nums, k, i + 1, current, all);
-                current.pop_back();
-            }
+        for (int i = startIndex; i < nums.size(); ++i) {
+            current.push_back(nums[i]);
+            _backtrack(nums, k, i + 1, current, all);
+            current.pop_back();
         }
-
+    }
 };
 
-
 // Solution when the input is n (given by the problem).
-class Solution
-{
+class Solution {
+public:
+    vector<vector<int>> combine(int n, int k) {
+        int startNumber = 1;
 
-    public:
+        vector<int> current;
+        vector<vector<int>> all;
 
-		vector<vector<int>> combine(int n, int k)
-        {
-			int startNumber = 1;
+        _backtrack(n, k, startNumber, current, all);
 
-            vector<int> current;
-            vector<vector<int>> all;
+        return all;
+    }
 
-            backtrack(n, k, startNumber, current, all);
-
-            return all;
+private:
+    void _backtrack(int n, int k, int startNumber, vector<int>& current, vector<vector<int>>& all) {
+        if (current.size() == k) {
+            all.push_back(current);
         }
 
-    private:
-
-        void backtrack(int n, int& k, int startNumber, vector<int>& current, vector<vector<int>>& all)
-        {
-            if (current.size() == k)
-            {
-                all.push_back(current);
-            }
-
-            for (int num = startNumber; num <= n; ++num)
-            {
-                current.push_back(num);
-                backtrack(n, k, num + 1, current, all);
-                current.pop_back();
-            }
+        for (int num = startNumber; num <= n; ++num) {
+            current.push_back(num);
+            _backtrack(n, k, num + 1, current, all);
+            current.pop_back();
         }
-
+    }
 };

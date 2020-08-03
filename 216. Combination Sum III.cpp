@@ -15,44 +15,35 @@
 // ***
 //
 // This question looks more like 77. Combinations. Look at the code and see their difference.
-class Solution
-{
 
-	public:
+class Solution {
+public:
+    vector<vector<int>> combinationSum3(int k, int n) {
+        vector<int> current;
+        vector<vector<int>> all;
 
-		vector<vector<int>> combinationSum3(int k, int n)
-		{
-			vector<int> current;
-			vector<vector<int>> all;
+        int startNum = 1;
 
-			int startNum = 1;
+        backtrack(k, n, startNum, current, all);
 
-			backtrack(k, n, startNum, current, all);
+        return all;
+    }
 
-			return all;
-		}
-	
-	private:
+private:
+    void backtrack(int k, int n, int startNum, vector<int>& current, vector<vector<int>>& all) {
+        if (k == 0 && n == 0) {
+            all.push_back(current);
+            return;
+        }
 
-		void backtrack(int k, int n, int startNum, vector<int>& current, vector<vector<int>>& all)
-		{
-			if (k == 0 && n == 0)
-			{
-				all.push_back(current);
-				return;
-			}
+        for (int num = startNum; num <= 9; ++num) {
+            if (num > n) {
+                break;
+            }
 
-			for (int num = startNum; num <= 9; ++num)
-			{
-				if (num > n)
-				{
-					break;
-				}
-
-				current.push_back(num);
-				backtrack(k - 1, n - num, num + 1, current, all);
-				current.pop_back();
-			}
-		}
-
+            current.push_back(num);
+            backtrack(k - 1, n - num, num + 1, current, all);
+            current.pop_back();
+        }
+    }
 };

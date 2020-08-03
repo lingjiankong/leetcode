@@ -17,8 +17,19 @@
 // You may assume k is always valid, 1 ≤ k ≤ array's length.
 //
 // ***
-//
+
 // You can sort the array, use std::nth_element, or use priority_queue and this question can be solved in one line.
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        priority_queue<int> pq(nums.begin(), nums.end());
+        for (int i = 0; i < k - 1; ++i) {
+            pq.pop();
+        }
+        return pq.top();
+    }
+};
+
 // However this question tests your knowledge in applying quick sort.
 //
 // Memorize the logic in quick sort partition (all elements greater than nums[pivot] to one side, all elements less than
@@ -26,7 +37,6 @@
 // because you want to find the kth *largest* element i.e. Put all elements greater than nums[pivot] to the left and all
 // elements less than nums[pivot] to the right. (If you were to find kth *smallest* element, then you can sort the array
 // in *ascending* order).
-
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {

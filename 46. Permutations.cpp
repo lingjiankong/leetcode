@@ -18,47 +18,37 @@
 // ***
 //
 // See also 47. Permutations II.
-//
-class Solution
-{
 
-	public:
+class Solution {
+public:
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<int> current;
+        vector<vector<int>> all;
 
-		vector<vector<int>> permute(vector<int>& nums)
-		{
-			vector<int> current;
-			vector<vector<int>> all;
+        vector<bool> visited(nums.size(), false);
 
-			vector<bool> visited(nums.size(), false);
+        _backtrack(nums, visited, current, all);
 
-			backtrack(nums, visited, current, all);
+        return all;
+    }
 
-			return all;
-		}
+private:
+    void _backtrack(vector<int>& nums, vector<bool>& visited, vector<int>& current, vector<vector<int>>& all) {
+        if (current.size() == nums.size()) {
+            all.push_back(current);
+            return;
+        }
 
-	private:
+        for (int i = 0; i < nums.size(); ++i) {
+            if (visited[i]) {
+                continue;
+            }
 
-		void backtrack(vector<int>& nums, vector<bool>& visited, vector<int>& current, vector<vector<int>>& all)
-		{
-			if (current.size() == nums.size())
-			{
-				all.push_back(current);
-				return;
-			}
-
-			for (int i = 0; i < nums.size(); ++i)
-			{
-				if (visited[i])
-				{
-					continue;
-				}
-
-				visited[i] = true;
-				current.push_back(nums[i]);
-				backtrack(nums, visited, current, all);
-				current.pop_back();
-				visited[i] = false;
-			}
-		}
-
+            visited[i] = true;
+            current.push_back(nums[i]);
+            _backtrack(nums, visited, current, all);
+            current.pop_back();
+            visited[i] = false;
+        }
+    }
 };

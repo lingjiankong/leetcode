@@ -96,6 +96,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 13 | Roman to Integer | Bad
 | 12 | Integer to Roman | Bad
 | 246 | Strobogrammatic Number | Bravo
+| 247 | Strobogrammatic Number II | Charlie
 | 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | Sliding Window
 | 125 | Valid Palindrome | Alpha
 | 680 | Valid Palindrome II | Alpha
@@ -139,8 +140,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 4 | Median of Two Sorted Arrays | Alpha, Mechanical
 | 274 | H-Index | Bravo | See 275
 | 275 | H-Index II | Bravo
-| 215 | Kth Largest Element in an Array | Alpha, Mechanical | Quick Sort, Binary Search
-| 278 | First Bad Version | Bravo
+| 215 | Kth Largest Element in an Array | Bravo, Mechanical | Quick Sort, Binary Search
+| 278 | First Bad Version | Alpha
 
 ## Backtracking, DFS. BFS
 | ID | Name | Rating | Note
@@ -150,7 +151,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 77 | Combinations | Alpha
 | 78 | Subsets | Alpha
 | 90 | Subsets II | Alpha
-| 491 | Increasing Subsequence | Alpha
 | 39 | Combination Sum | Alpha
 | 40 | Combination Sum II | Alpha
 | 216 | Combination Sum III | Alpha
@@ -178,6 +178,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 131 | Palindrome Partitioning | Charlie
 | N1 | Minimum Distance between Two Points in a Matrix | Alpha
 | N2 | Shortest Path between Two Points in a Matrix | Alpha
+| 491 | Increasing Subsequence | Alpha
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -257,6 +258,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 227 | Basic Calculator II | See 772
 | 772 | Basic Calculator III | Alpha, Mechanical
 | 50 | Pow(x, n) | Alpha
+| 223 | Rectangle Area | Bravo | Geometry
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Rating | Note
@@ -278,12 +280,14 @@ I am currently reorganize the problem categories, so this page might be a little
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 289 | Game of Life | Alpha
-| 136 | Single Number | Bravo, Mechanical
+| 136 | Single Number | Alpha
 | 137 | Single Number II | Bravo, Mechanical
+| 260 | Single Number III | Bravo, Mechanical
 | 389 | Find the Difference | Bravo, Mechanical
 | 268 | Missing Number | Bravo
 | 191 | Number of 1 Bits | Bravo
 | 190 | Reverse Bits | Bravo
+| 201 | Bitwise AND of Numbers Range | Bravo, Mechanical
 
 ## Tree
 | ID | Name | Rating | Note
