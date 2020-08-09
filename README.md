@@ -275,6 +275,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 480 | Sliding Window Median | Alpha
 | 373 | Find K Pairs with Smallest Sums | Alpha
 | 218 | The Skyline Problem | Alpha
+| 856 | Score of Parentheses | Alpha
 
 ## Bit Manipulation
 | ID | Name | Rating | Note
@@ -388,3 +389,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 146 | LRU Cache | Alpha
 | 303 | Range Sum Query - Immutable | Bravo
 | 304 | Range Sum Query 2D - Immutable | Charlie
+
+## Parentheses Series
+| 20 | Valid Parentheses | Alpha
+| 32 | Longest Valid Parentheses | Bravo
+| 22 | Generate Parentheses | Alpha
+| 241 | Different Ways to Add Parentheses | Alpha
+| 856 | Score of Parentheses | Bravo
+
