@@ -74,8 +74,9 @@ I am currently reorganize the problem categories, so this page might be a little
 | 58 | Length of Last Word | Charlie
 | 344 | Reverse String | Alpha
 | 186 | Reverse Words in a String II | Alpha
-| 151 | Reverse Words in a String | Beta
+| 151 | Reverse Words in a String | Bravo
 | 345 | Reverse Vowels of a String | Alpha
+| 434 | Number of Segments in a String | Bravo
 | 205 | Isomorphic Strings | Alpha
 | 290 | Word Pattern | Alpha
 | 293 | Flip Game | Bravo
@@ -102,8 +103,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 680 | Valid Palindrome II | Alpha
 | 266 | Palindrome Permutation | Alpha
 | 5 | Longest Palindromic Substring | Bravo
-| 20 | Valid Parentheses | Alpha
-| 32 | Longest Valid Parentheses | Bravo
 | 392 | Is Subsequence | Alpha
 | 792 | Number of Matching Subsequence | Alpha
 | 187 | Repeated DNA Sequences | Alpha
@@ -275,7 +274,12 @@ I am currently reorganize the problem categories, so this page might be a little
 | 480 | Sliding Window Median | Alpha
 | 373 | Find K Pairs with Smallest Sums | Alpha
 | 218 | The Skyline Problem | Alpha
+| 20 | Valid Parentheses | Alpha
+| 32 | Longest Valid Parentheses | Bravo
 | 856 | Score of Parentheses | Alpha
+| 921 | Minimum Add to Make Parentheses Valid | Alpha
+| 1249 | Minimum Remove to Make Valid Parentheses | Alpha
+| 1190 | Reverse Substrings Between Each Pair of Parentheses | Bravo
 
 ## Bit Manipulation
 | ID | Name | Rating | Note
@@ -396,4 +400,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 22 | Generate Parentheses | Alpha
 | 241 | Different Ways to Add Parentheses | Alpha
 | 856 | Score of Parentheses | Bravo
+| 921 | Minimum Add to Make Parentheses Valid | Alpha
+| 1249 | Minimum Remove to Make Valid Parentheses | Alpha
+| 1190 | Reverse Substrings Between Each Pair of Parentheses | Bravo, Mechanical
 
