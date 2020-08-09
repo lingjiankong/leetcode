@@ -36,64 +36,57 @@
 // Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 //
 // ***
-//
+
 // BFS solution.
-int ladderLength(string beginWord, string endWord, vector<string>& wordList)
-{
-	unordered_set<string> dict(wordList.begin(), wordList.end());
+int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+    unordered_set<string> dict(wordList.begin(), wordList.end());
 
-	if (!dict.count(endWord))
-	{
-		return 0;
-	}
+    if (!dict.count(endWord)) {
+        return 0;
+    }
 
-	queue<string> wordQueue;
-	wordQueue.push(beginWord);
+    queue<string> wordQueue;
+    wordQueue.push(beginWord);
 
-	// BFS level, this is the number of steps between words.
-	int level = 0;
+    // BFS level, this is the number of steps between words.
+    int level = 0;
 
-	while (!wordQueue.empty())
-	{
-		// Every time we enter this loop we enter a new BFS level.
-		++level;
+    while (!wordQueue.empty()) {
+        // Every time we enter this loop we enter a new BFS level.
+        ++level;
 
-		// For all words in current level
-		int currentLevelSize = wordQueue.size();
-		for (int k = 0; k < currentLevelSize; ++k)
-		{
-			string word = wordQueue.front(); wordQueue.pop();
+        // For all words in current level
+        int currentLevelSize = wordQueue.size();
+        for (int k = 0; k < currentLevelSize; ++k) {
+            string word = wordQueue.front();
+            wordQueue.pop();
 
-			// Found the solution
-			if (word == endWord)
-			{
-				return level;
-			}
+            // Found the solution
+            if (word == endWord) {
+                return level;
+            }
 
-			// For every letter in word
-			for (int i = 0; i < word.size(); i++)
-			{
-				char letter = word[i];
+            // For every letter in word
+            for (int i = 0; i < word.size(); ++i) {
+                char original_letter = word[i];
 
-				// Replace that letter with 'a' thru 'z'.
-				for (int j = 'a'; j <= 'z'; j++)
-				{
-					word[i] = j;
+                // Replace that letter with 'a' thru 'z'.
+                for (int replaced_letter = 'a'; replaced_letter <= 'z'; ++replaced_letter) {
+                    word[i] = replaced_letter;
 
-					// If word exists in dict, push it to the queue for next bfs level.
-					if (dict.count(word))
-					{
-						// Remember to erase the word from dict!
-						dict.erase(word);
-						wordQueue.push(word);
-					}
+                    // If word exists in dict, push it to the queue for next bfs level.
+                    if (dict.count(word)) {
+                        // Remember to erase the word from dict!
+                        dict.erase(word);
+                        wordQueue.push(word);
+                    }
+                }
 
-				}
+                // Don't forget to revert word[i] back to original_letter!
+                word[i] = original_letter;
+            }
+        }
+    }
 
-				word[i] = letter;
-			}
-		}
-	}
-
-	return 0;
+    return 0;
 }

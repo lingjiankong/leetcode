@@ -1,10 +1,11 @@
 // ***
 //
-// Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.)
-// You may assume all four edges of the grid are surrounded by water.
-// 
-// Count the number of distinct islands. An island is considered to be the same as another if and only if one island can be translated (and not rotated or reflected) to equal the other.
-// 
+// Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected
+// 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
+//
+// Count the number of distinct islands. An island is considered to be the same as another if and only if one island can
+// be translated (and not rotated or reflected) to equal the other.
+//
 // Example 1:
 // 11000
 // 11000
@@ -17,8 +18,7 @@
 // 10000
 // 00001
 // 11011
-// Given the above grid map, return 3.
-// 
+// Given the above grid map, return 3.  //
 // Notice that:
 // 11
 // 1
@@ -31,61 +31,52 @@
 // ***
 //
 // During dfs of each island, maintain a string of the coordinates and push_back every (x - x0, y - y0) to it,
-// where x0, y0 is the initial position when dfs starts. This offset i.e. (x - x0, y - y0) is needed so all islands with same shape will have
-// the same string of coordinates. Finally, insert the string of coordinates to an unordered_set and its size is the number of distinct islands.
-class Solution
-{
+// where x0, y0 is the initial position when dfs starts (for all islands which are the same, dfs will start at the same
+// relative position). This offset i.e. (x - x0, y - y0) is needed so all islands with same shape will have the same
+// string of coordinates. Finally, insert the string of coordinates to an unordered_set and its size is the number of
+// distinct islands.
 
-	public:
-		 
-		int numDistinctIslands(vector<vector<int>>& grid)
-		{
-			if (grid.empty() || grid[0].empty())
-			{
-				return 0;
-			}
-			 
-			vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
+class Solution {
+public:
+    int numDistinctIslands(vector<vector<int>>& grid) {
+        if (grid.empty() || grid[0].empty()) {
+            return 0;
+        }
 
-			unordered_set<string> islandHash;
+        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
 
-			for (int i = 0; i < grid.size(); ++i)
-			{
-				for (int j = 0; j < grid[0].size(); ++j)
-				{
-					if (grid[i][j] == 1 && !visited[i][j])
-					{
-						string current;
+        unordered_set<string> islandHash;
 
-						dfs(i, j, i, j, current, grid, visited);
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[0].size(); ++j) {
+                if (grid[i][j] == 1 && !visited[i][j]) {
+                    string current;
 
-						islandHash.insert(current);
-					}
-				}
-			}
+                    _dfs(i, j, i, j, current, grid, visited);
 
-			return islandHash.size();
-		}
+                    islandHash.insert(current);
+                }
+            }
+        }
 
-	private:
+        return islandHash.size();
+    }
 
-		vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+private:
+    void _dfs(int x0, int y0, int x, int y, string& current, const vector<vector<int>>& grid,
+              vector<vector<bool>>& visited) {
+        if (x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() || visited[x][y] || grid[x][y] != 1) {
+            return;
+        }
 
-		void dfs(int x0, int y0, int x, int y, string& current, const vector<vector<int>>& grid, vector<vector<bool>>& visited)
-		{
-			if (x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() || visited[x][y] || grid[x][y] != 1)
-			{
-				return;
-			}
+        visited[x][y] = true;
+        current += " " + to_string(x - x0) + " " + to_string(y - y0);
 
-			visited[x][y] = true;
-			current += " " + to_string(x - x0) + " " + to_string(y - y0);
+        for (auto direction : directions) {
+            int newX = x + direction[0], newY = y + direction[1];
+            _dfs(x0, y0, newX, newY, current, grid, visited);
+        }
+    }
 
-			for (auto direction : directions)
-			{
-				int newX = x + direction[0], newY = y + direction[1];
-				dfs(x0, y0, newX, newY, current, grid, visited);
-			}
-		}
-
+    vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };

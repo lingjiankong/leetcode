@@ -1,9 +1,9 @@
 // ***
 //
 // Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-// 
+//
 // For example, given n = 3, a solution set is:
-// 
+//
 // [
 //   "((()))",
 //   "(()())",
@@ -22,46 +22,37 @@
 //        /  \     /
 //     (((  (()   ()(
 //     ...  ...  ...
-//
-class Solution 
-{
 
-	public:
-	 
-		vector<string> generateParenthesis(int n) 
-		{
-			// Number of total '(' so far.
-			int left = 0;
+class Solution {
+public:
+    vector<string> generateParenthesis(int n) {
+        // Number of total '(' so far.
+        int left = 0;
 
-			// Number of total ')' so far.
-			int right = 0;
+        // Number of total ')' so far.
+        int right = 0;
 
-			string current;
-			vector<string> all;
-			 
-			backtrack(left, right, current, all, n);
+        string current;
+        vector<string> all;
 
-			return all; 
-		}
+        _backtrack(left, right, current, all, n);
 
-	private:
-		
-		void backtrack(int left, int right, string current, vector<string>& all, int& total)
-		{
-			// Return when you see something like "())" i.e. number of ')' is greater than number of '('.
-			// Note that it is OK to have "((()" i.e. number of '(' is greater than number of ')'.
-			if (left < right || left > total || right > total)
-			{
-				return;
-			}
-			 
-			if (left == total && right == total)
-			{
-				all.push_back(current); 
-			}
+        return all;
+    }
 
-			backtrack(left + 1, right, current + '(', all, total); 
-			backtrack(left, right + 1, current + ')', all, total); 
-		}
-		 
+private:
+    void _backtrack(int left, int right, string current, vector<string>& all, int& total) {
+        // Return when you see something like "())" i.e. number of ')' is greater than number of '('.
+        // Note that it is OK to have "((()" i.e. number of '(' is greater than number of ')'.
+        if (left < right || left > total || right > total) {
+            return;
+        }
+
+        if (left == total && right == total) {
+            all.push_back(current);
+        }
+
+        _backtrack(left + 1, right, current + '(', all, total);
+        _backtrack(left, right + 1, current + ')', all, total);
+    }
 };
