@@ -150,6 +150,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 77 | Combinations | Alpha
 | 78 | Subsets | Alpha
 | 90 | Subsets II | Alpha
+| 491 | Increasing Subsequence | Alpha
 | 39 | Combination Sum | Alpha
 | 40 | Combination Sum II | Alpha
 | 216 | Combination Sum III | Alpha
@@ -172,12 +173,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 52 | N-Queens II | Alpha
 | 22 | Generate Parentheses | Alpha
 | 241 | Different Ways to Add Parentheses | Alpha
-| 139 | Word Break | Bravo
-| 140 | Word Break II | Bravo
+| 139 | Word Break | Alpha | Dynamic Programming
+| 140 | Word Break II | Alpha
 | 131 | Palindrome Partitioning | Charlie
-| N1 | Minimum Distance between Two Points in a Matrix | Alpha
-| N2 | Shortest Path between Two Points in a Matrix | Alpha
-| 491 | Increasing Subsequence | Alpha
+| N1 | Minimum Distance Between Two Points in a Matrix | Alpha | BFS
+| N2 | Shortest Path Between Two Points in a Matrix | Alpha
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -211,6 +211,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 44 | Wildcard Matching | Alpha | 2D, String
 | 97 | Interleaving String | Alpha | 2D, String
 | 115 | Distinct Subsequences | Bravo | 2D, String
+| 139 | Word Break | Alpha
 
 ## Matrix
 | ID | Name | Rating | Note

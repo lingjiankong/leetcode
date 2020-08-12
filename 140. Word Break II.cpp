@@ -1,10 +1,11 @@
 // ***
 //
 // Given a non-empty string s and a dictionary wordDict containing a list of non-empty words,
-// add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
-// 
+// add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible
+// sentences.
+//
 // Note:
-// 
+//
 // The same word in the dictionary may be reused multiple times in the segmentation.
 // You may assume the dictionary does not contain duplicate words.
 //
@@ -39,67 +40,55 @@
 //
 // ***
 //
-// Recursive solution. Given s, you find the all word s[0, word.size()) that is in the dictionary,
+// Recursive solution. Given s, you find all words s[0, word.size()) that is in the dictionary,
 // then recursively add all sentences composed by s[word.size(), end).
 //
 // wordBreak(catasanddog)
-// = {cats + wordBreak(anddog),
-//    cat + wordBreak(sanddog)}
+// = {cats + _wordBreak(anddog),
+//    cat + _wordBreak(sanddog)}
 //
 // wordBreak(anddog)
-// = {and + wordBreak(dog)}
+// = {and + _wordBreak(dog)}
 //
 // wordBreak(dog)
-// = {dog + wordBreak("")}
+// = {dog + _wordBreak("")}
 //
 // wordBreak("")
 // = {""}
-//
-class Solution
-{
 
-	public:
+class Solution {
+public:
+    vector<string> wordBreak(const string& s, const vector<string>& wordDict) {
+        unordered_map<string, vector<string>> cache;
 
-		vector<string> wordBreak(string s, vector<string>& wordDict)
-		{
-			unordered_map<string, vector<string>> cache;
+        return _wordBreak(s, wordDict, cache);
+    }
 
-			return wordBreak(s, wordDict, cache);
-		}
+private:
+    // Returns all sentences (in terms of vector<string>) that can be formed be string s.
+    vector<string> _wordBreak(const string& s, const vector<string>& wordDict, unordered_map<string, vector<string>>& cache) {
+        if (cache.count(s)) {
+            return cache[s];
+        }
 
-	private:
+        // If s.empty() it indicates that there's nothing to the right of s,
+        // meaning we are at the last word, no space is needed.
+        if (s.empty()) {
+            return {""};
+        }
 
-		// Returns all sentences (in terms of vector<string>) that can be formed be string s.
-		vector<string> wordBreak(string s, vector<string>& wordDict, unordered_map<string, vector<string>>& cache)
-		{
-			if (cache.count(s))
-			{
-				return cache[s];
-			}
+        vector<string> sentences;
 
-			// If s.empty() it indicates that there's nothing to the right of s,
-			// meaning we are at the last word, no space is needed.
-			if (s.empty())
-			{
-				return {""};
-			}
+        for (string word : wordDict) {
+            if (s.substr(0, word.size()) == word) {
+                vector<string> remain = _wordBreak(s.substr(word.size()), wordDict, cache);
 
-			vector<string> sentences;
+                for (string sentence : remain) {
+                    sentences.push_back(word + (sentence.empty() ? "" : " ") + sentence);
+                }
+            }
+        }
 
-			for (string word : wordDict)
-			{
-				if (s.substr(0, word.size()) == word)
-				{
-					vector<string> remain = wordBreak(s.substr(word.size()), wordDict, cache);
-
-					for (string sentence : remain)
-					{
-						sentences.push_back(word + (sentence.empty() ? "" : " ") + sentence);
-					}
-				}
-			}
-
-			return cache[s] = sentences;
-		}
-
+        return cache[s] = sentences;
+    }
 };
