@@ -1,16 +1,16 @@
 // ***
 //
 // Say you have an array for which the ith element is the price of a given stock on day i.
-// 
+//
 // Design an algorithm to find the maximum profit. You may complete as many transactions as you like
 // (ie, buy one and sell one share of the stock multiple times) with the following restrictions:
-// 
+//
 // You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 // After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)
 // Example:
-// 
+//
 // Input: [1,2,3,0,2]
-// Output: 3 
+// Output: 3
 // Explanation: transactions = [buy, sell, cooldown, buy, sell]
 //
 // ***
@@ -37,22 +37,20 @@
 // In the end, the maximum profit only occurs either in state sold or rest.
 // Because if you hold any stock on hand, that stock has not been cashed!
 
-int maxProfit(vector<int>& prices)
-{
-	int hold = INT_MIN;
-	int sold = 0;
-	int rest = 0;
+int maxProfit(vector<int>& prices) {
+    int sold = 0;
+    int rest = 0;
+    int hold = INT_MIN;
 
-	for (auto price : prices)
-	{
-		int newHold = max(hold, rest - price);
-		int newSold = hold + price;
-		int newRest = max(rest, sold);
+    for (int price : prices) {
+        int newSold = hold + price;
+        int newRest = max(rest, sold);
+        int newHold = max(hold, rest - price);
 
-		hold = newHold;
-		sold = newSold;
-		rest = newRest;
-	}
+        sold = newSold;
+        rest = newRest;
+        hold = newHold;
+    }
 
-	return max(sold, rest);
+    return max(sold, rest);
 }

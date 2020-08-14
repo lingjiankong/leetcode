@@ -22,24 +22,6 @@
 //
 // ***
 
-// Intuitive solution
-int maxProfit(vector<int>& prices) {
-    if (prices.empty()) {
-        return 0;
-    }
-
-    int minPrice = prices[0];
-    int maxProfit = 0;
-
-    for (int i = 1; i < prices.size(); ++i) {
-        int profit = prices[i] - minPrice;
-        maxProfit = max(profit, maxProfit);
-        minPrice = min(prices[i], minPrice);
-    }
-
-    return maxProfit;
-}
-
 // DP solution. This builds the intuition for question 123. Best Time to Buy and Sell Stock III
 //
 // At any day, we keep two state in dp:
@@ -79,5 +61,23 @@ int maxProfit(vector<int>& prices) {
     }
 
     return sold;
+}
+
+// Intuitive solution
+int maxProfit(vector<int>& prices) {
+    if (prices.empty()) {
+        return 0;
+    }
+
+    int minPrice = prices[0];
+    int maxProfit = 0;
+
+    for (int i = 1; i < prices.size(); ++i) {
+        int profit = prices[i] - minPrice;
+        maxProfit = max(profit, maxProfit);
+        minPrice = min(prices[i], minPrice);
+    }
+
+    return maxProfit;
 }
 

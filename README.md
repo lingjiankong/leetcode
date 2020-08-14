@@ -46,6 +46,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Bravo
 | 239 | Sliding Window Maximum | Alpha | Monotoic queue, Sliding Window
+| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Multiset
 | 325 | Maximum Size Subarray Sum Equals k | Alpha | Sliding Window
 | 560 | Subarray Sum Equals K | Alpha, Hash Map
 | 209 | Minimum Size Subarray Sum | Bravo | Sliding Window
@@ -102,6 +103,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 125 | Valid Palindrome | Alpha
 | 680 | Valid Palindrome II | Alpha
 | 266 | Palindrome Permutation | Alpha
+| 267 | Palindrome Permutation II | Alpha
 | 5 | Longest Palindromic Substring | Bravo
 | 392 | Is Subsequence | Alpha
 | 792 | Number of Matching Subsequence | Alpha
@@ -178,6 +180,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 131 | Palindrome Partitioning | Charlie
 | N1 | Minimum Distance Between Two Points in a Matrix | Alpha | BFS
 | N2 | Shortest Path Between Two Points in a Matrix | Alpha
+| 267 | Palindrome Permutation II | Alpha
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -259,6 +262,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 772 | Basic Calculator III | Alpha, Mechanical
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry
+| 1447 | Simplified Fractions.cpp | GCD
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Rating | Note

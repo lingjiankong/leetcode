@@ -30,13 +30,13 @@ public:
 
         sort(nums.begin(), nums.end());
 
-        backtrack(nums, visited, current, all);
+        _backtrack(nums, visited, current, all);
 
         return all;
     }
 
 private:
-    void backtrack(vector<int>& nums, vector<bool>& visited, vector<int>& current, vector<vector<int>>& all) {
+    void _backtrack(vector<int>& nums, vector<bool>& visited, vector<int>& current, vector<vector<int>>& all) {
         if (current.size() == nums.size()) {
             all.push_back(current);
             return;
@@ -53,7 +53,7 @@ private:
 
             visited[i] = true;
             current.push_back(nums[i]);
-            backtrack(nums, visited, current, all);
+            _backtrack(nums, visited, current, all);
             current.pop_back();
             visited[i] = false;
         }
