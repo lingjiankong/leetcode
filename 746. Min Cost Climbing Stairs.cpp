@@ -1,10 +1,10 @@
 // ***
 //
 // On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).
-// 
-// Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor,
-// and you can either start from the step with index 0, or the step with index 1.
-// 
+//
+// Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the
+// floor, and you can either start from the step with index 0, or the step with index 1.
+//
 // Example 1:
 // Input: cost = [10, 15, 20]
 // Output: 15
@@ -22,35 +22,29 @@
 // - Every cost[i] will be an integer in the range [0, 999].
 //
 // ***
-//
+
 // dp[i]: How much it costs when you *jump from* stair i.
-int minCostClimbingStairs(vector<int>& cost)
-{
-	vector<int> dp(cost.size(), 0);
-	dp[0] = cost[0];
-	dp[1] = cost[1];
+int minCostClimbingStairs(const vector<int>& cost) {
+    vector<int> dp(cost.size(), 0);
+    dp[0] = cost[0];
+    dp[1] = cost[1];
 
-	for (int i = 2; i < cost.size(); ++i)
-	{
-		dp[i] = cost[i] + min(dp[i-1], dp[i-2]);
-	}
+    for (int i = 2; i < cost.size(); ++i) {
+        dp[i] = cost[i] + min(dp[i - 1], dp[i - 2]);
+    }
 
-	return min(dp[n], dp[n-1]);
+    return min(dp[dp.size() - 1], dp[dp.size() - 2]);
 }
 
-
-
 // Similar idea: dp[i]: How much it cost when you *reach* stair i (without jumping form it).
-int minCostClimbingStairs(vector<int>& cost)
-{
-	// dp vector has one more element than cost element
-	// because we must reach one step beyond the last step
-	vector<int> dp(cost.size() + 1, 0);
+int minCostClimbingStairs(const vector<int>& cost) {
+    // dp vector has one more element than cost element
+    // because we must reach one step beyond the last step
+    vector<int> dp(cost.size() + 1, 0);
 
-	for (int i = 2; i < cost.size() + 1; ++1)
-	{
-		dp[i] = min(dp[i-2] + cost[i-2], dp[i-1] + cost[i-1]);
-	}
+    for (int i = 2; i < cost.size() + 1; ++i) {
+        dp[i] = min(dp[i - 2] + cost[i - 2], dp[i - 1] + cost[i - 1]);
+    }
 
-	return dp.back();
+    return dp.back();
 }
