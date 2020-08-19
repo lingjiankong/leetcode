@@ -200,7 +200,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 265 | Paint House II | Alpha
 | 198 | House Robber | Alpha
 | 213 | House Robber II | Alpha
-| 337 | House Robber III | Alpha
+| 337 | House Robber III | Alpha | Postorder
 | 62 | Unique Paths | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 63 | Unique Paths II | Alpha
