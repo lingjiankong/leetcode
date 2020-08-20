@@ -180,6 +180,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 131 | Palindrome Partitioning | Charlie
 | N1 | Minimum Distance Between Two Points in a Matrix | Alpha | BFS
 | N2 | Shortest Path Between Two Points in a Matrix | Alpha
+| N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 267 | Palindrome Permutation II | Alpha
 
 ## Dynamic Programming
