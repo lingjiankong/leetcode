@@ -36,9 +36,11 @@
 //
 // word1 = "", word2 = "ros"
 // 1. If word1 is empty, then the min edit distance is word2.size();
+// (This is how the top row gets initialized)
 //
 // word1 = "horse", word2 = ""
 // 2. If word2 is empty, then the min edit distance is word1.size();
+// (This is how the left column gets initialized)
 //
 // word1 = "hors", word2 = "ros"
 // 3. If word1[i-1] = word2[j-1] (i.e. last letter is the same),
@@ -59,6 +61,8 @@
 // b 1 1 1 2 3
 // b 2 2 1 2 3
 // c 3 3 2 1 2
+//
+// Draw the state transition matrix and figure out the state transition function.
 
 int minDistance(string word1, string word2) {
     int m = word1.size(), n = word2.size();
