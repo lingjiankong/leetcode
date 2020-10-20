@@ -24,6 +24,10 @@
 // c F F T T T T
 // c F F F T F T
 //
+// The index of dp and s1 s2 s3 is a bit confusing since dp has one more element in each dimension,
+// If you read the code carefully you should understand it.
+// s1[i - 1]: i-th letter in s1
+// s2[j - 1]: j-th letter in s2
 // dp[i][j]: Whether the first (i + j) letters of s3 can be formed by
 // interleaving the first i letters of s1 and the first j letters of s2.
 //
@@ -44,16 +48,24 @@ public:
         // If s2 is empty, then to test whether s3 can be formed by s1,
         // we just need to to compare whether s1[i-1] == s3[i-1] (once they are not equal then the rest will be false).
         for (int i = 1; i <= s1.size(); ++i) {
-            dp[i][0] = dp[i - 1][0] && (s1[i - 1] == s3[i - 1]);
+            if (s1[i - 1] != s3[i - 1]) {
+                break;
+            }
+            dp[i][0] = true;
         }
 
         // Same idea as previous for loop.
         for (int j = 1; j <= s2.size(); ++j) {
-            dp[0][j] = dp[0][j - 1] && (s2[j - 1] == s3[j - 1]);
+            if (s2[j - 1] != s3[j - 1]) {
+                break;
+            }
+            dp[0][j] = true;
         }
 
-        // If first i-1 letters in s1 + first j letters in s2 are able to form first i-1+j letters in s3,
-        // AND if the i-th letter in s1 == the (i + j)-th letter in s3, then
+        // If first i-1 letters in s1 + first j letters in s2 are able to form first i-1+j letters in s3
+        // (indicated by dp[i-1][j] = true),
+        // AND if the i-th letter in s1 == the (i + j)-th letter in s3
+        // (indicated by s1[i-1] == s3[i-1+j]:
         // then the first i letters in s1 + first j letters in s2 will form first i+j letters in s3.
         // Same idea for s2 and s3.
         for (int i = 1; i <= s1.size(); ++i) {

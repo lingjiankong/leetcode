@@ -53,6 +53,7 @@
 //
 // Similar questions:
 // 97. Interleaving String
+
 class Solution {
 public:
     bool isMatch(string s, string p) {
@@ -67,12 +68,14 @@ public:
             }
         }
 
-        // When we see a star at j-th letter in p, then first i letters in s will match first j letters in p when
-        // first i - 1 letters in s match first j letter in p, OR
-        // first i letters in s match first j - 1 letters in p.
         for (int i = 1; i <= s.size(); ++i) {
             for (int j = 1; j <= p.size(); ++j) {
                 if (p[j - 1] == '*') {
+                    // If the j-th letter in p is a "*", then first i letters in s will match first j letters in p:
+                    // - when first i - 1 letters in s match first j letters in p
+                    // (because the j-th letter of p is a "*", we can match more letters in s), OR
+                    // - when first i letters in s match first j - 1 letters in p
+                    // (because the j-th letter of p is a "*", p[0:j] can match whatever p[0:j-1] matches)
                     dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
                 } else {
                     // If we do not see a star at j-th letter in p,

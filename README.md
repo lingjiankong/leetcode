@@ -212,10 +212,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 53 | Maximum Subarray | Alpha
 | 152 | Maximum Product Subarray | Alpha
 | 376 | Wiggle Subsequence | Alpha
-| 44 | Wildcard Matching | Alpha | 2D, String
-| 97 | Interleaving String | Alpha | 2D, String
-| 115 | Distinct Subsequences | Bravo | 2D, String
-| 139 | Word Break | Alpha
+| 97 | Interleaving String | Alpha | 2D DP String
+| 44 | Wildcard Matching | Bravo | 2D DP String, Mechanical
+| 115 | Distinct Subsequences | Bravo | 2D DP String
+| 139 | Word Break | Alpha | 1D DP String
 
 ## Matrix
 | ID | Name | Rating | Note

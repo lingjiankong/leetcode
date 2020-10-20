@@ -16,6 +16,18 @@
 // 2. The value of nums[i] itself.
 // That is, currentSum[i] = max(currentSum[i-1] + nums[i], nums[i]).
 
+// O(1) space
+int maxSubArray(vector<int>& nums) {
+    int maxSum = INT_MIN, currentSum = 0;
+
+    for (int num : nums) {
+        currentSum = max(currentSum + num, num);
+        maxSum = max(maxSum, currentSum);
+    }
+
+    return maxSum;
+}
+
 // O(n) space
 int maxSubArray(vector<int>& nums) {
     if (nums.empty()) {
@@ -36,14 +48,3 @@ int maxSubArray(vector<int>& nums) {
     return maxSum;
 }
 
-// O(1) space
-int maxSubArray(vector<int>& nums) {
-    int maxSum = INT_MIN, currentSum = 0;
-
-    for (int num : nums) {
-        currentSum = max(currentSum + num, num);
-        maxSum = max(maxSum, currentSum);
-    }
-
-    return maxSum;
-}

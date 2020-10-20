@@ -43,7 +43,7 @@
 //
 // ***
 //
-//   Ø r a b b b i t
+//   Ø r a b b b i t   S
 // Ø 1 1 1 1 1 1 1 1
 // r 0 1 1 1 1 1 1 1
 // a 0 0 1 1 1 1 1 1
@@ -52,8 +52,10 @@
 // i 0 0 0 0 0 0 3 3
 // t 0 0 0 0 0 0 0 3
 //
+// T
+//
 // dp[i][j]: *number of* distinct subsequence of first i letters in t can be formed by first j letters in s.
-// dp[0][0] = 1 because an empty string is a subsequence of an empty string.
+// dp[0][j] = 1 because an empty string is a subsequence of an empty string.
 // dp[i][0] = 0 because a non-empty string cannot be formed by an empty string.
 
 class Solution {
