@@ -220,9 +220,9 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Matrix
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 48 | Rotate Image | Charlie, Mechanical
+| 48 | Rotate Image | Alpha
 | 54 | Spiral Matrix | Alpha
-| 59 | Spiral Matrix II | Bravo
+| 59 | Spiral Matrix II | Alpha
 | 73 | Set Matrix Zeroes | Alpha
 | 311 | Sparse Matrix Multiplication | Alpha, Mechanical
 | 36 | Valid Sudoku | Bravo, Mechanical
@@ -230,9 +230,10 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Math
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 7 | Reverse Integer | Charlie
+| 7 | Reverse Integer | Bravo
 | 9 | Palindrome Number | Alpha
 | 66 | Plus One | Alpha
+| 369 | Plus One Linked List | Bravo
 | 258 | Add Digits | Alpha
 | 415 | Add Strings | Alpha
 | 67 | Add Binary | Alpha

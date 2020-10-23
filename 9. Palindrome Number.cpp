@@ -1,20 +1,21 @@
 // ***
 //
 // Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
-// 
+//
 // Example 1:
-// 
+//
 // Input: 121
 // Output: true
 //
 // Example 2:
-// 
+//
 // Input: -121
 // Output: false
-// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a
+// palindrome.
 //
 // Example 3:
-// 
+//
 // Input: 10
 // Output: false
 // Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
@@ -43,7 +44,7 @@
 //
 // x /= 10
 // x = 3642 / 10 = 364
-// 
+//
 // reversed = reversed * 10 + x % 10;
 // reversed = 52 * 10 + 364 % 10
 // reversed = 524
@@ -53,22 +54,20 @@
 // ...
 //
 // reversed will eventually be 52463
-//
-bool isPalindrome(int x)
-{
-	if (x < 0)
-	{
-		return false;
-	}
 
-	int original = x;
-	int reversed = 0;
+bool isPalindrome(int x) {
+    // Negative number cannot be a palindrome.
+    if (x < 0) {
+        return false;
+    }
 
-	while (x != 0)
-	{
-		reversed = reversed * 10 + x % 10;
-		x /= 10;
-	}
+    int original = x;
+    int reversed = 0;
 
-	return reversed == original;
+    while (x != 0) {
+        reversed = reversed * 10 + x % 10;
+        x /= 10;
+    }
+
+    return reversed == original;
 }

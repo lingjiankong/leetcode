@@ -16,13 +16,15 @@
 //
 // DP array for the first example given in the problem:
 //
-//   Ø d b b c a
+//   Ø d b b c a   s2
 // Ø T F F F F F
 // a T F F F F F
 // a T T T T T F
 // b F T T F T F
 // c F F T T T T
 // c F F F T F T
+//
+// s1
 //
 // The index of dp and s1 s2 s3 is a bit confusing since dp has one more element in each dimension,
 // If you read the code carefully you should understand it.
@@ -67,6 +69,7 @@ public:
         // AND if the i-th letter in s1 == the (i + j)-th letter in s3
         // (indicated by s1[i-1] == s3[i-1+j]:
         // then the first i letters in s1 + first j letters in s2 will form first i+j letters in s3.
+        //
         // Same idea for s2 and s3.
         for (int i = 1; i <= s1.size(); ++i) {
             for (int j = 1; j <= s2.size(); ++j) {
