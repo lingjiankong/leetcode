@@ -235,18 +235,19 @@ I am currently reorganize the problem categories, so this page might be a little
 | 66 | Plus One | Alpha
 | 369 | Plus One Linked List | Bravo
 | 258 | Add Digits | Alpha
+| 2 | Add Two Numbers | Alpha
 | 415 | Add Strings | Alpha
 | 67 | Add Binary | Alpha
 | 43 | Multiply Strings | Exotic
 | 204 | Count Primes | Bravo
 | 1 | Two Sum | Alpha
-| 167 | Two Sum II - Input array is sorted | Alpha
 | 170 | Two Sum III - Data structure design | Alpha
 | 653 | Two Sum IV - Input is a BST | Alpha
+| 167 | Two Sum II - Input array is sorted | Alpha
 | 15 | 3Sum | Alpha
-| 16 | 3Sum Closest | Alpha
-| 259 | 3Sum Smaller | Bravo
 | 18 | 4Sum | Alpha
+| 16 | 3Sum Closest | Bravo
+| 259 | 3Sum Smaller | Bravo
 | 454 | 4Sum II | Alpha
 | 231 | Power of Two | Alpha
 | 326 | Power of Three | Alpha

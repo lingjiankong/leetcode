@@ -38,8 +38,10 @@ public:
     }
 
 private:
-    // Returns carry
+    // Returns carry to parent node.
     int _dfs(ListNode* node) {
+
+        // Returns carry 1 to right most tail node.
         if (!node) {
             return 1;
         }

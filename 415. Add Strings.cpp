@@ -1,9 +1,9 @@
 // ***
 //
 // Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
-// 
+//
 // Note:
-// 
+//
 // The length of both num1 and num2 is < 5100.
 // Both num1 and num2 contains only digits 0-9.
 // Both num1 and num2 does not contain any leading zero.
@@ -12,38 +12,34 @@
 // ***
 //
 // See also 2. Add Two Numbers.
-string addStrings(string num1, string num2)
-{
-	int i = num1.size() - 1;
-	int j = num2.size() - 1;
-	int carry = 0;
 
-	string result = "";
+string addStrings(string num1, string num2) {
+    int i = num1.size() - 1;
+    int j = num2.size() - 1;
+    int carry = 0;
 
-	while (i >= 0 || j >= 0 || carry)
-	{
-		int sum = 0;
-		
-		if (i >= 0)
-		{
-			sum += num1[i--] - '0';
-		}
+    string result = "";
 
-		if (j >= 0)
-		{
-			sum += num2[j--] - '0';
-		}
+    while (i >= 0 || j >= 0 || carry) {
+        int sum = 0;
 
-		if (carry)
-		{
-			sum += 1;
-		}
+        if (i >= 0) {
+            sum += num1[i--] - '0';
+        }
 
-		result += to_string(sum % 10);
-		carry = sum / 10;
-	}
+        if (j >= 0) {
+            sum += num2[j--] - '0';
+        }
 
-	reverse(result.begin(), result.end());
+        if (carry) {
+            sum += 1;
+        }
 
-	return result;
+        result += to_string(sum % 10);
+        carry = sum / 10;
+    }
+
+    reverse(result.begin(), result.end());
+
+    return result;
 }

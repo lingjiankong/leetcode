@@ -34,22 +34,19 @@
 // reversed = reversed * 10 + x % 10;
 // reversed = 0 * 10 + 36425 % 10
 // reversed = 5
-//
-// x /= 10
+// x /= 10;
 // x = 36425 / 10 = 3642
 //
 // reversed = reversed * 10 + x % 10;
 // reversed = 5 * 10 + 3642 % 10
 // reversed = 52
-//
-// x /= 10
+// x /= 10;
 // x = 3642 / 10 = 364
 //
 // reversed = reversed * 10 + x % 10;
 // reversed = 52 * 10 + 364 % 10
 // reversed = 524
-//
-// x /= 10
+// x /= 10;
 // x = 364 / 10 = 36
 // ...
 //
