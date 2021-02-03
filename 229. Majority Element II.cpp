@@ -55,7 +55,7 @@ vector<int> majorityElement(vector<int>& nums) {
     }
 
     // The problem does not guarantee that there are two elements appear more than ⌊ n/3 ⌋ times.
-    // Therefore we need to validate if count of each candidate is greater than n/3p
+    // Therefore we need to validate if count of each candidate is greater than n/3.
     count1 = 0;
     count2 = 0;
     vector<int> majorityElements;

@@ -49,27 +49,29 @@
 //
 // ***
 //
-// If we want to travel around the circuit, then it must be the case that total = sum(gas) - sum(cost) >= 0.
-// tank records what we have left in our gas tank when we leave each city, if this number is less than or equal to 0,
-// this means we cannot leave city i. So we set the next start to city i + 1.
-// There is no need to test start from cities between old start and city i because we have traveled through them with
-// positive tank (every time when we arrive in a city, we must have non negative gas left in our gas tank; if we test
-// that city again, we will be initilized with 0 initial gas, which will not perform any better)
+// If we want to travel around the circuit, then it must be the case that netGasLeft = sum(gas) - sum(cost) >= 0.
+// currentGas is what we have left in our gas tank when we *leave* each city, if this number is less than or equal to
+// 0, this means we cannot leave city i. So we set the next start to city i + 1. There is no need to test start from
+// cities between old start and city i because we have traveled through them with positive tank (every time when we
+// arrive in a city, we must have non negative gas left in our gas tank; if we test that city again, we will be
+// initilized with 0 initial gas, which will not perform any better)
+//
+// Note that gas[i] is how much gas you can fill when you *leave* city i;
+// cost[i] is how much it costs when you *leave* city i.
 
 int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
-    int total = 0;
-    int tank = 0;
-    int start = 0;
+    int netGasLeft = 0;  // Remaining gas after travel through all the cities.
+    int currentGas = 0;  // How much gas we have in the tank after *leaving* each city.
+    int startCityCandidate = 0;
 
     for (int i = 0; i < gas.size(); ++i) {
-        total += gas[i] - cost[i];
-        tank += gas[i] - cost[i];
-
-        if (tank < 0) {
-            start = i + 1;
-            tank = 0;
+        netGasLeft += gas[i] - cost[i];
+        currentGas += gas[i] - cost[i];
+        if (currentGas < 0) {
+            startCityCandidate = i + 1;
+            currentGas = 0;
         }
     }
 
-    return total < 0 ? -1 : start;
+    return netGasLeft < 0 ? -1 : startCityCandidate;
 }

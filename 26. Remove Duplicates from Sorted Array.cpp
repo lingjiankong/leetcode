@@ -25,10 +25,10 @@ int removeDuplicates(vector<int>& nums) {
         return nums.size();
     }
 
-    // Because nums is a sorted array, nums[0] just stays at where it is, therefore dupStart starts at 1.
     // dupStart is the position of first occurance of possible duplicate elements, i.e. it is possible that
     // nums[dupStart] = nums[dupStart-1]. All elements to the left of dupStart i.e. [0, dupStart) are guaranteed to
     // contain no duplicate.
+    // Since nums is a sorted array, nums[0] just stays at where it is, therefore dupStart starts at 1.
     int dupStart = 1;
 
     for (int i = 1; i < nums.size(); ++i) {

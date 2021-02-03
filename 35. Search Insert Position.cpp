@@ -22,8 +22,8 @@
 // ***
 
 // This is just the implementation of std::lower_bound().
-// Returns an iterator pointing to the first element in the range [first, last) that is not less than
-// (i.e. greater or equal to) value.
+// std::lower_bound - returns an iterator pointing to the first element in the range [first, last) that is not less than
+// (i.e. greater or equal to) value, or last if no such element is found.
 int searchInsert(vector<int>& nums, int target) {
     int left = 0, right = nums.size();
 
@@ -58,4 +58,23 @@ int searchInsert(vector<int>& nums, int target) {
     }
 
     return -1;
+}
+
+// Side note: std::upper_bound() would be:
+// std::upper_bound - returns an iterator pointing to the first element in the range [first, last) that is greater than
+// value, or last if no such element is found.
+int searchInsert(vector<int>& nums, int target) {
+    int left = 0, right = nums.size();
+
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+
+        if (nums[mid] <= target) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+
+    return right;
 }

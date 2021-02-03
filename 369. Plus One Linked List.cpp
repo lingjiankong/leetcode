@@ -46,6 +46,7 @@ private:
             return 1;
         }
 
+        // Get carry as you are going from right to left.
         int carry = _dfs(node->next);
         int sum = node->val + carry;
         node->val = sum % 10;

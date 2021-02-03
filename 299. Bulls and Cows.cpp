@@ -37,11 +37,6 @@
 // then the number of cows for number 4 is just 3.
 
 string getHint(string secret, string guess) {
-    // Secret and guess always equal, as in the problem description, therefore no need to check.
-    if (secret.empty()) {
-        return "0A0B";
-    }
-
     // Count how many times a particular digit appear in secret
     // (exculding digits that match in the first place i.e. bulls)
     vector<int> secretCount(10, 0);
@@ -50,21 +45,20 @@ string getHint(string secret, string guess) {
     // (exculding digits that match in the first place i.e. bulls)
     vector<int> guessCount(10, 0);
 
-    int numBull = 0;
-    int numCow = 0;
-
+    int numBulls = 0;
     for (int i = 0; i < secret.size(); ++i) {
         if (secret[i] == guess[i]) {
-            ++numBull;
+            ++numBulls;
         } else {
             ++secretCount[secret[i] - '0'];
             ++guessCount[guess[i] - '0'];
         }
     }
 
+    int numCows = 0;
     for (int i = 0; i < secretCount.size(); ++i) {
-        numCow += min(secretCount[i], guessCount[i]);
+        numCows += min(secretCount[i], guessCount[i]);
     }
 
-    return to_string(numBull) + 'A' + to_string(numCow) + 'B';
+    return to_string(numBulls) + 'A' + to_string(numCows) + 'B';
 }

@@ -21,21 +21,21 @@ int findCelebrity(int n) {
     }
 
     // Candidate of the celebrity.
-    int possible = 0;
+    int candidate = 0;
 
     for (int i = 1; i < n; ++i) {
-        if (knows(possible, i)) {
-            possible = i;
+        if (knows(candidate, i)) {
+            candidate = i;
         }
     }
 
     for (int i = 0; i < n; ++i) {
-        // If possible knows anyone (except himself),
-        // or if there's anyone who doesn't know possible, then there's no celebrity.
-        if ((possible != i && (knows(possible, i)) || !knows(i, possible))) {
+        // If candidate knows anyone (except himself),
+        // or if there's anyone who doesn't know candidate, then there's no celebrity.
+        if ((candidate != i && (knows(candidate, i)) || !knows(i, candidate))) {
             return -1;
         }
     }
 
-    return possible;
+    return candidate;
 }

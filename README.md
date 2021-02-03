@@ -22,10 +22,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 189 | Rotate Array | Alpha
 | 299 | Bulls and Cows | Bravo
 | 134 | Gas Station | Bravo
-| 118 | Pascal's Triangle | Bravo
-| 119 | Pascal's Triangle II | Bravo
-| 169 | Majority Element | Alpha
-| 229 | Majority Element II | Alpha
+| 118 | Pascal's Triangle | Alpha
+| 119 | Pascal's Triangle II | Charlie | Duplicate with 118
+| 169 | Majority Element | Alpha | Mechanical
+| 229 | Majority Element II | Alpha | Mechanical
+| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha
 | 243 | Shortest Word Distance | Alpha
 | 245 | Shortest Word Distance III | Alpha
 | 244 | Shortest Word Distance II | Alpha
@@ -117,6 +118,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 704 | Binary Search | Alpha
+| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha
 | 475 | Heaters | Alpha
 | 441 | Arranging Coins | Alpha
 | 367 | Valid Perfect Square | Alpha
