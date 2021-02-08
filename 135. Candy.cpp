@@ -29,7 +29,7 @@
 // In the first for loop, you iterate from left to right and make sure if right child has higher rating than left child,
 // he gets one more candy than left child.
 //
-// In the second for loop, you iterate from right to left, and make sure if left child has higher rating than right
+// In the second for loop, you iterate from right to left, and make sure that if left child has higher rating than right
 // child, he gets more candy than right child. During this iteration, it is possible that left child already has many
 // candies (for example in the case of [1, 2, 3, 4, 5, 1], the child with rating of 5 already has 5 candies when we
 // scanned from left to right), thus we want candies[i] = max(candies[i], candies[i+1] + 1) if child i has higher rating
@@ -46,16 +46,15 @@
 // Second scan: [1, 2, 1, 3, 2, 1, 2, 3, 4, 1]
 
 int candy(vector<int>& ratings) {
-    int n = ratings.size();
-    vector<int> candies(n, 1);
+    vector<int> candies(ratings.size(), 1);
 
-    for (int i = 1; i < n; ++i) {
+    for (int i = 1; i < ratings.size(); ++i) {
         if (ratings[i] > ratings[i - 1]) {
             candies[i] = candies[i - 1] + 1;
         }
     }
 
-    for (int i = n - 2; i >= 0; --i) {
+    for (int i = ratings.size() - 2; i >= 0; --i) {
         if (ratings[i] > ratings[i + 1]) {
             candies[i] = max(candies[i], candies[i + 1] + 1);
         }

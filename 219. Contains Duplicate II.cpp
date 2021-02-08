@@ -18,7 +18,7 @@
 // ***
 //
 // This problem can be rephrased as:
-// Find if there is any duplicates in a sliding window of size k over array nums.
+// When traversing nums[i], find if the sliding window of size k left to nums[i] contains the value nums[i].
 // The key idea is to use a sliding window of size k using unordered_set.
 // Maintain a set of size k which contain unique values from nums[i - k] to nums[i - 1],
 // if nums[i] is in set s then return true, else update the set.

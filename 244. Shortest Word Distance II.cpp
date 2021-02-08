@@ -33,13 +33,13 @@ public:
     }
 
     int shortest(string word1, string word2) {
-        int res = INT_MAX;
-        for (int i = 0; i < _wordToIndexes[word1].size(); ++i) {
-            for (int j = 0; j < _wordToIndexes[word2].size(); ++j) {
-                res = min(res, abs(_wordToIndexes[word1][i] - _wordToIndexes[word2][j]));
+        int minDis = INT_MAX;
+        for (int i : _wordToIndexes[word1]) {
+            for (int j : _wordToIndexes[word2]) {
+                minDis = min(minDis, abs(i - j));
             }
         }
-        return res;
+        return minDis;
     }
 
 private:

@@ -38,6 +38,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 11 | Container With Most Water | Alpha
 | 128 | Longest Consecutive Sequence | Alpha
 | 674 | Longest Continuous Increasing Subsequence | Alpha
+| 673 | Number of Increasing Subsequence | Alpha | Dynamic Programming
 | 164 | Maximum Gap Bucket | Hard
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
@@ -45,12 +46,13 @@ I am currently reorganize the problem categories, so this page might be a little
 | 56 | Merge Intervals | Alpha
 | 57 | Insert Intervals | Alpha | Merge Interval
 | 252 | Meeting Rooms | Alpha
-| 253 | Meeting Rooms II | Bravo
+| 253 | Meeting Rooms II | Alpha |
 | 239 | Sliding Window Maximum | Alpha | Monotoic queue, Sliding Window
 | 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Multiset
 | 325 | Maximum Size Subarray Sum Equals k | Alpha | Sliding Window
 | 560 | Subarray Sum Equals K | Alpha, Hash Map
 | 209 | Minimum Size Subarray Sum | Bravo | Sliding Window
+| 1640 | Check Array Formation Through Concatenation | Alpha
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
 | 163 | Missing Ranges | Exotic
@@ -218,6 +220,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 44 | Wildcard Matching | Bravo | 2D DP String, Mechanical
 | 115 | Distinct Subsequences | Bravo | 2D DP String
 | 139 | Word Break | Alpha | 1D DP String
+| 673 | Number of Increasing Subsequence | Alpha
 
 ## Matrix
 | ID | Name | Rating | Note
@@ -327,6 +330,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 257 | Binary Tree Paths | Alpha
 | 129 | Sum Root to Leaf Numbers | Alpha
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
+| 549 | Binary Tree Longest Consecutive Sequence II | TODO | Compare with 673
 | 110 | Balanced Binary Tree | Bravo
 | 102 | Binary Tree Level Order Traversal | Alpha | Postorder, BFS
 | 107 | Binary Tree Level Order Traversal II | Bravo | Postorder, BFS

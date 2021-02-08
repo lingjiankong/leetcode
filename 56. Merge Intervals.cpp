@@ -1,31 +1,21 @@
 // ***
 //
-// Given a collection of intervals, merge all overlapping intervals.
+// Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array
+// of the non-overlapping intervals that cover all the intervals in the input.
 //
 // Example 1:
-//
-// Input: [[1,3],[2,6],[8,10],[15,18]]
+// Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
 // Output: [[1,6],[8,10],[15,18]]
 // Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 //
 // Example 2:
-//
-// Input: [[1,4],[4,5]]
+// Input: intervals = [[1,4],[4,5]]
 // Output: [[1,5]]
 // Explanation: Intervals [1,4] and [4,5] are considered overlapping.
 //
-// Definition for an interval:
-// struct Interval
-// {
-//    int start;
-//    int end;
-//    Interval() : start(0), end(0) {}
-//    Interval(int s, int e) : start(s), end(e) {}
-// };
-//
 // ***
 //
-// After sorting by Interval::start
+// After sorting by start position of intervals
 //
 // |__________|
 //  |______|
@@ -34,22 +24,26 @@
 //                       |___________|
 //                         |__|
 
-vector<Interval> merge(vector<Interval>& intervals) {
-    sort(intervals.begin(), intervals.end(), [](const Interval& a, const Interval& b) { return a.start < b.start; });
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        sort(intervals.begin(), intervals.end(),
+             [](const vector<int>& a, const vector<int>& b) { return a[0] < b[0]; });
 
-    vector<Interval> mergedIntervals;
+        vector<vector<int>> mergedIntervals;
 
-    for (auto interval : intervals) {
-        // If mergedIntervals is empty, or if the start of current interval is greater than the end of last merged
-        // interval, then add a brand new interval to merged interval.
-        if (mergedIntervals.empty() || mergedIntervals.back().end < interval.start) {
-            mergedIntervals.push_back(interval);
-        } else {  // Otherwise, merge two intervals.
-            // Must take the max of last merged interval end and current interval end in case last merged interval end
-            // is greater than current end (i.e. current interval is inside previously merged interval).
-            mergedIntervals.back().end = max(mergedIntervals.back().end, interval.end);
+        for (auto interval : intervals) {
+            // If mergedIntervals is empty, or if the start of current interval is greater than the end of last merged
+            // interval, then add a brand new interval to merged interval.
+            if (mergedIntervals.empty() || mergedIntervals.back()[1] < interval[0]) {
+                mergedIntervals.push_back(interval);
+            } else {  // Otherwise, merge two intervals.
+                // Must take the max of last merged interval end and current interval end in case last merged interval
+                // end is greater than current end (i.e. current interval is inside previously merged interval).
+                mergedIntervals.back()[1] = max(mergedIntervals.back()[1], interval[1]);
+            }
         }
-    }
 
-    return mergedIntervals;
-}
+        return mergedIntervals;
+    }
+};

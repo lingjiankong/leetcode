@@ -25,8 +25,8 @@
 // then see among these numbers, if there is a number such that nums[i]-t <= nums[i] <= nums[i]+t.
 
 bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-    // A sliding window of last k elements, use <long> to prevent overflow when nums[i]+t
-    set<long> window;
+    // A sliding window of last k elements
+    set<int> window;
 
     for (int i = 0; i < nums.size(); ++i) {
         if (i > k) {
@@ -34,11 +34,33 @@ bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
         }
 
         // See if we can find a number >= nums[i]-t
-        auto itr = window.lower_bound((long)(nums[i]) - (long)(t));
+        auto itr = window.lower_bound(nums[i] - t);
 
         // If we found a number >= nums[i]-t
         if (itr != window.end()) {
             // Then check if also that number <= nums[i]+t
+            if (*itr <= nums[i] + t) {
+                return true;
+            }
+        }
+
+        window.insert(nums[i]);
+    }
+
+    return false;
+}
+
+// To submit on leetcode, need to cast with <long>
+bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
+    set<long> window;
+
+    for (int i = 0; i < nums.size(); ++i) {
+        if (i > k) {
+            window.erase(nums[i - k - 1]);
+        }
+
+        auto itr = window.lower_bound((long)(nums[i]) - (long)(t));
+        if (itr != window.end()) {
             if (*itr <= (long)(nums[i]) + (long)(t)) {
                 return true;
             }

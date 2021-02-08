@@ -23,6 +23,8 @@ bool canJump(vector<int>& nums) {
     int maxReachIndex = 0;
 
     for (int i = 0; i < nums.size(); ++i) {
+        // This needs to be checked first to make sure that i is reachable.
+        // If you increment maxReachIndex first instead, the result won't be accurate.
         if (i > maxReachIndex) {
             return false;
         }
