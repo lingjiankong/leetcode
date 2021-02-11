@@ -12,25 +12,35 @@
 // The range of numbers in the array is [-1000, 1000] and the range of the integer k is [-1e7, 1e7].
 //
 // ***
+//
+// This is a very classic question. You should understand how it works.
+// See https://www.youtube.com/watch?v=GZOBCV-soyE for intuition.
+//
+// This question is exactly the same as 930. Binary Subarrays With Sum.
+//
+// X X [i X X X X j] X X X X
+// We have two pointers i and j that traverse through the array,
+// we want to find all i, j such that the subarray [i, j] (inclusive) is sum to k.
+// By constructing an array of prefix sums, we want to know all i, j such that prefixSum[j] - prefixSum[i - 1] = k.
+// That is, for every j, how many i such that prefixSum[i - 1] = prefixSum[j] - k?
+// To count this, we can simply use a hash table of (prefix sum) : (count of occurances we've seen the prefix sum).
 
 int subarraySum(vector<int>& nums, int k) {
-    int count = 0, cumulativeSum = 0;
+    // Key: prefixSum that you have seen before
+    // Value: How many times you've seen that prefixSum
+    // Initially, we have seen prefixSum = 0 for 1 time (this is needed to capture the case when prefixSum - k = 0)
+    unordered_map<int, int> prefixSumToCount{{0, 1}};
 
-    // Key: cumulativeSum that you have seen before
-    // Value: How many times you've seen that cumulativeSum
-    // Initially, we have seen cumulativeSum = 0 for 1 time.
-    unordered_map<int, int> cumulativeSumToCount{{0, 1}};
+    int prefixSum = 0, numSubarrays = 0;
+    for (int j = 0; j < nums.size(); ++j) {
+        prefixSum += nums[j];
 
-    for (int i = 0; i < nums.size(); ++i) {
-        cumulativeSum += nums[i];
+        // If seen[prefixSum - k] exists, this means we've seen our prefixSum - k at some point before (let's say
+        // at index i - 1, for example, which means that subarray [i, j] (inclusive) adds up to k).
+        numSubarrays += prefixSumToCount[prefixSum - k];
 
-        // If seen[cumulativeSum - k] exists, this means we've seen our cumulative sum at some point before (let's say
-        // at index j, for example) to be (cumulativeSum - k). This means that there exists a subarray from (j + 1) to i
-        // that adds up to k.
-        count += cumulativeSumToCount[cumulativeSum - k];
-
-        ++cumulativeSumToCount[cumulativeSum];
+        ++prefixSumToCount[prefixSum];
     }
 
-    return count;
+    return numSubarrays;
 }

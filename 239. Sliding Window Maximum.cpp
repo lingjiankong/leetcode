@@ -49,7 +49,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
 
         // Initially, the window builds up, we just add elements to the multiset. However, when we've reached a "full
         // window", we start removing elements to the left of the left bound of the sliding window. Here, i - k is the
-        // element to the left of of the left bound of the current window, i - k + 1 is therefore the first element in
+        // element to the left of the left bound of the current window, i - k + 1 is therefore the first element in
         // current window. We first calculate the max value in current window by getting the biggest element denoted by
         // rbegin() and push the result to toReturn. After this is done, the first element in the window is no longer
         // needed, and we thus erase that element from the multiset.
@@ -67,7 +67,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
 }
 
 // 3. Monotonic queue in non-ascending order (using deque as underlying data structure)
-// A monotonic Queue is a data structure the elements from the front to the end is strictly either increasing or
+// A monotonic queue is a data structure the elements from the front to the end is strictly either increasing or
 // decreasing.
 // Time complexity: O(n)
 class MonotonicQueue {

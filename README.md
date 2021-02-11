@@ -38,27 +38,29 @@ I am currently reorganize the problem categories, so this page might be a little
 | 11 | Container With Most Water | Alpha
 | 128 | Longest Consecutive Sequence | Alpha
 | 674 | Longest Continuous Increasing Subsequence | Alpha
-| 673 | Number of Increasing Subsequence | Alpha | Dynamic Programming
+| 673 | Number of Increasing Subsequence | Alpha | Dynamic programming
 | 164 | Maximum Gap Bucket | Hard
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
 | 321 | Create Maximum Number | Hard
 | 56 | Merge Intervals | Alpha
-| 57 | Insert Intervals | Alpha | Merge Interval
+| 57 | Insert Intervals | Alpha | Merge interval
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Alpha |
-| 239 | Sliding Window Maximum | Alpha | Monotoic queue, Sliding Window
-| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Multiset
-| 325 | Maximum Size Subarray Sum Equals k | Alpha | Sliding Window
-| 560 | Subarray Sum Equals K | Alpha, Hash Map
-| 209 | Minimum Size Subarray Sum | Bravo | Sliding Window
+| 239 | Sliding Window Maximum | Alpha | Multiset, monotoic queue, sliding window
+| 209 | Minimum Size Subarray Sum | Alpha | Sliding window, mechanical
+| 862 | Shortest Subarray with Sum at Least K | Hard | Running sum, mechanical
+| 560 | Subarray Sum Equals K | Alpha | Prefix sum, hash map
+| 930 | Binary Subarrays With Sum | Alpha | Prefix sum, hash map
+| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Bravo | Multiset, mechanical
+| 325 | Maximum Size Subarray Sum Equals k | Alpha | Sliding window
 | 1640 | Check Array Formation Through Concatenation | Alpha
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
 | 163 | Missing Ranges | Exotic
 | 88 | Merge Sorted Array | Alpha
-| 75 | Sort Colors | Bravo, Two Pointers
-| 41 | First Missing Positive | Bravo, Two Pointers
+| 75 | Sort Colors | Bravo |  Two pointers
+| 41 | First Missing Positive | Bravo | Two pointers
 | 280 | Wiggle Sort | Charlie
 | 324 | Wiggle Sort II | Charlie
 | 370 | Range Addition | Charlie
@@ -67,7 +69,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 334 | Increasing Triplet Subsequence | Alpha
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
-| 862 | Shortest Subarray with Sum at Least K | Bravo | Running Sum, Mechanical
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
 
 ## String
