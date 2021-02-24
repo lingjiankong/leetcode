@@ -21,13 +21,13 @@ int threeSumSmaller(vector<int>& nums, int target) {
         int left = i + 1, right = nums.size() - 1;
         while (left < right) {
             // Explanation of total += right - left:
-            // As we have sort the elements in nums array, then for a triple i, left, right that matches requirement
-            // (sum < target), any elements that smaller than nums[right] and larger than nums[left] can still match it,
-            // as the sum can only go smaller. How many alternatives/elements that are smaller than nums[right] and
-            // larger than nums[left]? right - left.
+            // As we have sort the elements in nums array, then for a triple {i, left, right} that matches requirement
+            // (sum < target), any thrid elements that smaller than nums[right] and larger than nums[left] can still
+            // match it, as the sum can only go smaller. How many alternatives/elements that are smaller than
+            // nums[right] and larger than nums[left]? right - left.
             //
             // Here if nums[i] + nums[left] + nums[right] < target, then we will increment left (++left) and go to the
-            // next while loop. We must also take into account valid answers nums[i] + nums[left] + nums[right-1],
+            // next while loop. We must also take into account valid answers nums[i] + nums[left] + nums[right - 1],
             // nums[i] + nums[left] + nums[right - 2] ... There are total of right - left such combinations -> therefore
             // total += right - left.
             if (nums[i] + nums[left] + nums[right] < target) {

@@ -43,17 +43,19 @@ I am currently reorganize the problem categories, so this page might be a little
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
 | 321 | Create Maximum Number | Hard
+| 1 | Two Sum | Alpha
+| 170 | Two Sum III - Data structure design | Alpha
+| 653 | Two Sum IV - Input is a BST | Alpha
+| 167 | Two Sum II - Input array is sorted | Alpha
+| 15 | 3Sum | Alpha
+| 18 | 4Sum | Alpha
+| 16 | 3Sum Closest | Alpha
+| 259 | 3Sum Smaller | Alpha
+| 454 | 4Sum II | Alpha
 | 56 | Merge Intervals | Alpha
 | 57 | Insert Intervals | Alpha | Merge interval
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Alpha |
-| 239 | Sliding Window Maximum | Alpha | Multiset, monotoic queue, sliding window
-| 209 | Minimum Size Subarray Sum | Alpha | Sliding window, mechanical
-| 862 | Shortest Subarray with Sum at Least K | Hard | Running sum, mechanical
-| 560 | Subarray Sum Equals K | Alpha | Prefix sum, hash map
-| 930 | Binary Subarrays With Sum | Alpha | Prefix sum, hash map
-| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Bravo | Multiset, mechanical
-| 325 | Maximum Size Subarray Sum Equals k | Alpha | Sliding window
 | 1640 | Check Array Formation Through Concatenation | Alpha
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
@@ -70,6 +72,15 @@ I am currently reorganize the problem categories, so this page might be a little
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
+
+## Sliding window
+| 239 | Sliding Window Maximum | Alpha | multiset, monotoic queue, sliding window
+| 209 | Minimum Size Subarray Sum | Alpha | sliding window
+| 325 | Maximum Size Subarray Sum Equals k | Alpha | sliding window, prefix sum
+| 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
+| 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
+| 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
+| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha | multiset
 
 ## String
 | ID | Name | Rating | Note
@@ -246,15 +257,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 67 | Add Binary | Alpha
 | 43 | Multiply Strings | Exotic
 | 204 | Count Primes | Bravo
-| 1 | Two Sum | Alpha
-| 170 | Two Sum III - Data structure design | Alpha
-| 653 | Two Sum IV - Input is a BST | Alpha
-| 167 | Two Sum II - Input array is sorted | Alpha
-| 15 | 3Sum | Alpha
-| 18 | 4Sum | Alpha
-| 16 | 3Sum Closest | Bravo
-| 259 | 3Sum Smaller | Bravo
-| 454 | 4Sum II | Alpha
 | 231 | Power of Two | Alpha
 | 326 | Power of Three | Alpha
 | 342 | Power of Four | Alpha

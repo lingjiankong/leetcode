@@ -14,16 +14,16 @@
 // ***
 
 vector<int> twoSum(vector<int>& nums, int target) {
-    unordered_map<int, int> hash;
+    unordered_map<int, int> seen;  // number : index
 
     for (int i = 0; i < nums.size(); ++i) {
-        int numberToFind = target - nums[i];
+        int numToFind = target - nums[i];
 
-        if (hash.count(numberToFind)) {
-            return {hash[numberToFind], i};
+        if (seen.count(numToFind)) {
+            return {seen[numToFind], i};
         }
 
-        hash[nums[i]] = i;
+        seen[nums[i]] = i;
     }
 
     return {0, 0};

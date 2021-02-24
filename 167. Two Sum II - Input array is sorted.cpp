@@ -29,8 +29,7 @@ vector<int> twoSum(vector<int>& numbers, int target) {
     while (left < right) {
         int sum = numbers[left] + numbers[right];
         if (sum == target) {
-            // The question asks us to return using 1-based index.
-            return {left + 1, right + 1};
+            return {left + 1, right + 1};  // The question asks us to return using 1-based index.
         } else if (sum < target) {
             ++left;
         } else {
@@ -44,7 +43,7 @@ vector<int> twoSum(vector<int>& numbers, int target) {
 // If given array is unsorted (and contains duplicate elements) and the question's requirement was to return all unique
 // pairs which sum to target: Generalization of 15. 3Sum and 18. 4Sum. so it is easy to compare among these questions.
 vector<vector<int>> twoSum(vector<int>& nums, int target) {
-    vector<vector<int>> toReturn;
+    vector<vector<int>> allPairs;
 
     sort(nums.begin(), nums.end());
 
@@ -53,7 +52,7 @@ vector<vector<int>> twoSum(vector<int>& nums, int target) {
     while (left < right) {
         int sum = nums[left] + nums[right];
         if (sum == target) {
-            toReturn.push_back({nums[left], nums[right]});
+            allPairs.push_back({nums[left], nums[right]});
             while (left < right && nums[left] == nums[left + 1]) {
                 ++left;
             }
@@ -68,5 +67,5 @@ vector<vector<int>> twoSum(vector<int>& nums, int target) {
         }
     }
 
-    return toReturn;
+    return allPairs;
 }

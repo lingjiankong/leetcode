@@ -23,7 +23,7 @@
 // See also 15. 3Sum. Same idea. This question just add one more for loop.
 
 vector<vector<int>> fourSum(vector<int>& nums, int target) {
-    vector<vector<int>> toReturn;
+    vector<vector<int>> allPairs;
 
     sort(nums.begin(), nums.end());
 
@@ -44,7 +44,7 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
             while (left < right) {
                 int sum = nums[i] + nums[j] + nums[left] + nums[right];
                 if (sum == target) {
-                    toReturn.push_back({nums[i], nums[j], nums[left], nums[right]});
+                    allPairs.push_back({nums[i], nums[j], nums[left], nums[right]});
                     while (left < right && nums[left] == nums[left + 1]) {
                         ++left;
                     }
@@ -62,5 +62,5 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
         }
     }
 
-    return toReturn;
+    return allPairs;
 }

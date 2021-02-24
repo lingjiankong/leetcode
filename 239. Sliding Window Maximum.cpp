@@ -28,20 +28,20 @@
 // 1. Brute force
 // Time complexity: O((n – k) * k)
 vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-    vector<int> toReturn;
+    vector<int> maximums;
 
     for (int i = 0; i <= nums.size() - k; ++i) {
         int maxElement = *max_element(nums.begin() + i, nums.begin() + i + k);
-        toReturn.push_back(maxElement);
+        maximums.push_back(maxElement);
     }
 
-    return toReturn;
+    return maximums;
 }
 
 // 2. BST (multiset), the most intuitive solution.
 // Time complexity: O((n – k + 1) * logk)
 vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-    vector<int> toReturn;
+    vector<int> maximums;
     multiset<int> window;
 
     for (int i = 0; i < nums.size(); ++i) {
@@ -51,11 +51,11 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         // window", we start removing elements to the left of the left bound of the sliding window. Here, i - k is the
         // element to the left of the left bound of the current window, i - k + 1 is therefore the first element in
         // current window. We first calculate the max value in current window by getting the biggest element denoted by
-        // rbegin() and push the result to toReturn. After this is done, the first element in the window is no longer
+        // rbegin() and push the result to maximums. After this is done, the first element in the window is no longer
         // needed, and we thus erase that element from the multiset.
         if (i - k + 1 >= 0) {
             // Iterator denoted by rbegin() is the biggest element in the multiset.
-            toReturn.push_back(*window.rbegin());
+            maximums.push_back(*window.rbegin());
 
             // Remove the element no longer needed in the window.
             auto itr = window.find(nums[i - k + 1]);
@@ -63,7 +63,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         }
     }
 
-    return toReturn;
+    return maximums;
 }
 
 // 3. Monotonic queue in non-ascending order (using deque as underlying data structure)
@@ -96,14 +96,14 @@ private:
 };
 
 vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-    vector<int> toReturn;
+    vector<int> maximums;
     MonotonicQueue q;
 
     for (int i = 0; i < nums.size(); ++i) {
         q.push(nums[i]);
 
         if (i - k + 1 >= 0) {
-            toReturn.push_back(q.peekMax());
+            maximums.push_back(q.peekMax());
 
             // Only pop the max element if it equals to the element that we no longer need in the window.
             // There might be multiple max element with the samle value. We only pop one of them.
@@ -113,6 +113,6 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         }
     }
 
-    return toReturn;
+    return maximums;
 }
 

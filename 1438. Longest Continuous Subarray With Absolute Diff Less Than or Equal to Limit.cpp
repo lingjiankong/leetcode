@@ -44,22 +44,25 @@
 // 0 <= limit <= 10^9
 //
 // ***
-//
-// TODO: I didn't understand why this solution works. Add comments here when you get it.
 
+// Use a sliding window of tree set
+// X X X X X [l X X X X X X X r] X X X
+// It might not be super intuitive so you need to memorize the solutions to these types of problems.
 class Solution {
 public:
     int longestSubarray(vector<int>& nums, int limit) {
-        multiset<int> subarray;
+        multiset<int> window;
 
-        int startIndex = 0;
-        for (int i = 0; i < nums.size(); ++i) {
-            subarray.insert(nums[i]);
-            if (*subarray.rbegin() - *subarray.begin() > limit) {
-                subarray.erase(subarray.find(nums[startIndex++]));
+        int left = 0;
+        int longest = 0;
+        for (int right = 0; right < nums.size(); ++right) {
+            window.insert(nums[right]);
+            while (*window.rbegin() - *window.begin() > limit) {
+                window.erase(window.find(nums[left++]));
             }
+            longest = max(longest, right - left + 1);
         }
 
-        return subarray.size();
+        return longest;
     }
 };

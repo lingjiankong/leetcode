@@ -35,7 +35,7 @@ int subarraySum(vector<int>& nums, int k) {
     for (int j = 0; j < nums.size(); ++j) {
         prefixSum += nums[j];
 
-        // If seen[prefixSum - k] exists, this means we've seen our prefixSum - k at some point before (let's say
+        // If prefixSumToCount[prefixSum - k] exists, this means we've seen our prefixSum - k at some point before (let's say
         // at index i - 1, for example, which means that subarray [i, j] (inclusive) adds up to k).
         numSubarrays += prefixSumToCount[prefixSum - k];
 

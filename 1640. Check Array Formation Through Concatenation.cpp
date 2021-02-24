@@ -61,17 +61,17 @@ public:
 
         int currentPos = 0;
         while (currentPos < arr.size()) {
-            int targetPieceIndex = arr[currentPos];
-            if (pieceIndexToPiece.count(targetPieceIndex)) {
-                for (int i = 0; i < pieceIndexToPiece[targetPieceIndex].size(); ++i) {
-                    if (arr[currentPos + i] != pieceIndexToPiece[targetPieceIndex][i]) {
-                        return false;
-                    }
-                }
-                currentPos += pieceIndexToPiece[targetPieceIndex].size();
-            } else {
+            if (!pieceIndexToPiece.count(arr[currentPos])) {
                 return false;
             }
+
+            vector<int> piece = pieceIndexToPiece[arr[currentPos]];
+            for (int i = 0; i < piece.size(); ++i) {
+                if (arr[currentPos + i] != piece[i]) {
+                    return false;
+                }
+            }
+            currentPos += piece.size();
         }
 
         return true;

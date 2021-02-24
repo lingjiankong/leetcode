@@ -26,12 +26,12 @@
 //
 // The solution below can be solved for all three sum questions which target can be anything.
 vector<vector<int>> threeSum(vector<int>& nums, int target) {
-    vector<vector<int>> toReturn;
+    vector<vector<int>> allPairs;
 
     sort(nums.begin(), nums.end());
 
-    // the stop condition is i < nums.size() - 2 because you are trying to find 3 sum, so you must have at least 2 numbers to
-    // search from from your current number nums[i].
+    // the stop condition is i < nums.size() - 2 because you are trying to find 3 sum, so you must have at least 2
+    // numbers to search from your current number nums[i].
     for (int i = 0; i < nums.size() - 2; ++i) {
         if (i > 0 && nums[i] == nums[i - 1]) {
             continue;
@@ -41,7 +41,7 @@ vector<vector<int>> threeSum(vector<int>& nums, int target) {
         while (left < right) {
             int sum = nums[i] + nums[left] + nums[right];
             if (sum == target) {
-                toReturn.push_back({nums[i], nums[left], nums[right]});
+                allPairs.push_back({nums[i], nums[left], nums[right]});
                 while (left < right && nums[left] == nums[left + 1]) {
                     ++left;
                 }
@@ -58,13 +58,14 @@ vector<vector<int>> threeSum(vector<int>& nums, int target) {
         }
     }
 
-    return toReturn;
+    return allPairs;
 }
 
+// No need to look at this solution if you are just reviewing.
 // The question asks you whether three number can form a target. In this question specifically, that target is 0.
 // Solution below addresses what the question asks (target = 0) and will pass the OJ.
 vector<vector<int>> threeSum(vector<int>& nums) {
-    vector<vector<int>> toReturn;
+    vector<vector<int>> allPairs;
 
     sort(nums.begin(), nums.end());
 
@@ -90,7 +91,7 @@ vector<vector<int>> threeSum(vector<int>& nums) {
         while (left < right) {
             int sum = nums[i] + nums[left] + nums[right];
             if (sum == 0) {
-                toReturn.push_back({nums[i], nums[left], nums[right]});
+                allPairs.push_back({nums[i], nums[left], nums[right]});
                 while (left < right && nums[left] == nums[left + 1]) {
                     ++left;
                 }
@@ -108,5 +109,5 @@ vector<vector<int>> threeSum(vector<int>& nums) {
         }
     }
 
-    return toReturn;
+    return allPairs;
 }
