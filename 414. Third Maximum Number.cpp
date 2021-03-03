@@ -44,7 +44,7 @@ int thirdMax(vector<int>& nums) {
             firstMax = num;
         } else if (num > secondMax && num < firstMax) {
             // firstMax, secondMax, and thirdMax have to be distinctive,
-            // that is why we have an additional condition here checking if... && num < firstMax
+            // that is why we have an additional condition here checking if num < firstMax
             // Same for the next else if loop.
             thirdMax = secondMax;
             secondMax = num;
@@ -53,7 +53,7 @@ int thirdMax(vector<int>& nums) {
         }
     }
 
-    // The questions asks that if the third max doesn't exist, return the max number.
+    // The question asks that if the third max doesn't exist, return the max number.
     if (thirdMax != LONG_MIN) {
         return thirdMax;
     } else {

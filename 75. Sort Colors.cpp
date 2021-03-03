@@ -48,7 +48,7 @@ void sortColors(vector<int>& nums) {
     int i = 0;
 
     // Why do we use while(i <= r) instead of using for(int i = 0; i <= nums.size(); ++i) ?
-    // Because you see in the last else if loop (when nums[i]==2), i is not incremented.
+    // Because you see in the second else if loop (when nums[i] == 2), i is not incremented.
     // See the example above. When nums[i] and nums[r] are swapped (second line to third line),
     // nums[i] becomes 0, and it is still NOT in the right position.
     // So there must be another swap between nums[l] and nums[i] (third line to fourth line).

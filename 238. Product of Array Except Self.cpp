@@ -44,7 +44,7 @@ vector<int> productExceptSelf(vector<int>& nums) {
     int leftProduct = 1;
     for (int i = 0; i < nums.size(); ++i) {
         toReturn[i] = leftProduct;
-        leftProduct *= nums[i];  // Update for next interation
+        leftProduct *= nums[i];  // Update for next iteration
     }
 
     int rightProduct = 1;

@@ -14,12 +14,10 @@
 //
 // ***
 //
-// We were told that:
+// Note that we were told that:
 //
 // 1. The input string does not contain leading or trailing spaces.
 // 2. The words are always separated by a single space.
-//
-// This makes the problem much easier compare to 151. Reverse Words in a String.
 
 class Solution {
 public:
@@ -32,7 +30,7 @@ public:
         for (int i = 0; i < str.size(); ++i) {
             if (str[i] == ' ') {
                 reverse(str.begin() + start, str.begin() + i);
-                start = i + 1;
+                start = i + 1; // i + 1 because we are skipping the space.
             }
         }
 

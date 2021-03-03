@@ -20,6 +20,25 @@
 //
 // This question is slightly different from 414. Third Maximum Number.
 
+// DP. This method can be generalized to solving whether an increasing subsequence of length n exists or not.
+// Will TLE but you need to know this solution.
+bool increasingTriplet(const vector<int>& nums, int n = 3) {
+    vector<int> dp(nums.size(), 1);  // How many elements before nums[i] (including nums[i] itself) are less than nums[i]
+
+    for (int i = 0; i < nums.size(); ++i) {
+        for (int j = 0; j < i; ++j) {
+            if (nums[j] < nums[i]) {
+                dp[i] = max(dp[i], dp[j] + 1);
+                if (dp[i] >= n) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+
 bool increasingTriplet(const vector<int>& nums) {
     int firstMin = INT_MAX;   // Most minimum element
     int secondMin = INT_MAX;  // Second most minimum element

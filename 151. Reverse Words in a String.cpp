@@ -21,14 +21,14 @@
 string reverseWords(string &s) {
     istringstream stream(s);
 
-    // Need to get first word separately because there should not be any space in front of the first word.
+    // Need to get first word separately because you don't want extra space after the first word.
     string word;
     stream >> word;
-    string toReturn = word;
+    string reversed = word;
 
     while (stream >> word) {
-        toReturn = " " + word;
+        reversed = word + " " + reversed;
     }
 
-    return toReturn;
+    return reversed;
 }

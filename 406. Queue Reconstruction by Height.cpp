@@ -17,7 +17,7 @@
 //
 // ***
 //
-// Sort by height (higher person to the left, shorter person to the right)
+// Sort by height (taller person to the left, shorter person to the right)
 // When two people have the same height, the person with less people in front of him takes precedence over the person
 // with more people in front.
 //
@@ -30,13 +30,14 @@ vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
          [](vector<int>& a, vector<int>& b) { return a[0] > b[0] || (a[0] == b[0] && a[1] < b[1]); });
 
     vector<vector<int>> toReturn;
-    for (auto current_person : people) {
-        // For current_person, we know there are current_person[1] number of people who are in front of current_person
-        // and whose heights are higher than current_person. Since people array has already been sorted by decreasing
-        // height, we simply insert current_person to the the position at (toReturn.begin() + current_person[1]), which
-        // is the postiion current_person belongs to.
-        int num_of_people_in_front_of_current_person = current_person[1];
-        toReturn.insert(toReturn.begin() + num_of_people_in_front_of_current_person, current_person);
+    for (auto currentPerson : people) {
+        // For currentPerson, we know there are currentPerson[1] number of people who are in front of currentPerson
+        // and whose heights are higher than currentPerson. Since people array has already been sorted by decreasing
+        // height, we simply insert currentPerson to the position at (toReturn.begin() + currentPerson[1]), which
+        // is the postiion currentPerson belongs to.
+        int numOfPeopleInFrontOfCurrentPerson = currentPerson[1];
+        toReturn.insert(toReturn.begin() + numOfPeopleInFrontOfCurrentPerson, currentPerson);
     }
+
     return toReturn;
 }

@@ -51,17 +51,17 @@
 //
 // If we want to travel around the circuit, then it must be the case that netGasLeft = sum(gas) - sum(cost) >= 0.
 // currentGas is what we have left in our gas tank when we *leave* each city, if this number is less than or equal to
-// 0, this means we cannot leave city i. So we set the next start to city i + 1. There is no need to test start from
-// cities between old start and city i because we have traveled through them with positive tank (every time when we
-// arrive in a city, we must have non negative gas left in our gas tank; if we test that city again, we will be
-// initilized with 0 initial gas, which will not perform any better)
+// 0, this means we cannot *leave* city i. So we set the next start to city i + 1. There is no need to test start from
+// cities between old start and city i + 1 because we have traveled through them with positive tank (every time we leave
+// city, we must have non negative gas left in our gas tank; if we test that city again, we will be initilized with 0
+// initial gas, which will not perform any better)
 //
 // Note that gas[i] is how much gas you can fill when you *leave* city i;
 // cost[i] is how much it costs when you *leave* city i.
 
 int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
     int netGasLeft = 0;  // Remaining gas after travel through all the cities.
-    int currentGas = 0;  // How much gas we have in the tank after *leaving* each city.
+    int currentGas = 0;  // How much gas we have in the tank when you *leave* each city.
     int startCityCandidate = 0;
 
     for (int i = 0; i < gas.size(); ++i) {

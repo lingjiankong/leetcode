@@ -34,8 +34,7 @@
 //
 // See also 53. Maximum Subarray, which finds the maximum contiguous subarray (without the constraint from K) using
 // dynamic programming
-//
-//
+
 class Solution {
 public:
     int maxSumSubmatrix(vector<vector<int>>& matrix, int k) {

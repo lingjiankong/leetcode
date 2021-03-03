@@ -61,16 +61,17 @@ I am currently reorganize the problem categories, so this page might be a little
 | 228 | Summary Ranges | Exotic
 | 163 | Missing Ranges | Exotic
 | 88 | Merge Sorted Array | Alpha
-| 75 | Sort Colors | Bravo |  Two pointers
+| 75 | Sort Colors | Bravo |  Two pointers, mechanical
 | 41 | First Missing Positive | Bravo | Two pointers
 | 280 | Wiggle Sort | Charlie
 | 324 | Wiggle Sort II | Charlie
 | 370 | Range Addition | Charlie
 | 349 | Intersection of Two Arrays | Alpha
 | 350 | Intersection of Two Arrays II | Alpha
-| 334 | Increasing Triplet Subsequence | Alpha
+| 334 | Increasing Triplet Subsequence | Alpha | Dynamic programming
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
+| 53 | Maximum Subarray | Alpha | Dynamic programming
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
 
 ## Sliding window

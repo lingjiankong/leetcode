@@ -57,32 +57,32 @@ int majorityElement(vector<int>& nums) {
 // after which the element left must be the majority element.
 // Note that, in the problem statement, a majority element is guaranteed to exist.
 // If the majority element is not guaranteed to exist,
-// we need another iteration over the nums to check whether majorityElementCandidate is actually a majority element
+// we need another iteration over the nums to check whether candidate is actually a majority element
 int majorityElement(vector<int>& nums) {
-    // What majorityElementCandidate equal to in the beginning doesn't matter, it is just an arbitrary guess.
-    // majorityElementCandidate will be initialized when the loop starts.
-    int majorityElementCandidate = 0;
+    // What candidate equal to in the beginning doesn't matter, it is just an arbitrary guess.
+    // candidate will be initialized when the loop starts.
+    int candidate = 0;
     int count = 0;
 
     // You may swap the position of if and else if in this problem if you want,
     // however you cannot do that in 229. Majority Element II, see that question for reasons.
     for (int num : nums) {
-        if (num == majorityElementCandidate) {
+        if (num == candidate) {
             ++count;
         } else if (count == 0) {
             // If count == 0, then we've got rid of pairs of different elements,
-            // Hence we set the new majorityElementCandidate to current num, all subsequent iterations compare num with
-            // current majorityElementCandidate. If they are different, then we get rid of a pair of
-            // (majorityElementCandidate, num) and --count, else we get another majorityElementCandidate and ++count.
-            majorityElementCandidate = num;
+            // Hence we set the new candidate to current num, all subsequent iterations compare num with
+            // current candidate. If they are different, then we get rid of a pair of
+            // (candidate, num) and --count, else we get another candidate and ++count.
+            candidate = num;
             count = 1;
         } else {
-            // In this case, nums != majorityElementCandidate, thus we get rid of one pair of different number
-            // (majorityElementCandidate, num)
+            // In this case, nums != candidate, thus we get rid of one pair of different number
+            // (candidate, num)
             --count;
         }
     }
 
-    return majorityElementCandidate;
+    return candidate;
 }
 

@@ -12,7 +12,7 @@
 //
 // This is a DP problem.
 // The maximum sum of subarray that *ends at nums[i]* is the maximum of:
-// 1. The maximum sum of subarray that ends at nums[i-1] + nums[i], and
+// 1. The maximum sum of subarray that ends at nums[i-1] plus nums[i], and
 // 2. The value of nums[i] itself.
 // That is, currentSum[i] = max(currentSum[i-1] + nums[i], nums[i]).
 

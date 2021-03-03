@@ -23,8 +23,8 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     int j = n - 1;      // right most element of nums2
     int k = m + n - 1;  // right most element of combined
 
-    // Once all of the numbers from nums2 have been merged into nums1, the rest of the numbers in nums1 that were not
-    // moved are already in the correct place. So when we j = 0, we are done.
+    // Once all numbers from nums2 have been merged into nums1, the rest of the numbers in nums1 that were not
+    // moved are already in the correct place. So when j = 0, we are done.
     while (j >= 0) {
         if (i >= 0 && nums1[i] > nums2[j]) {
             nums1[k--] = nums1[i--];
@@ -36,30 +36,26 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
 
 // Standard way of merging two sorted list:
 vector<int> merge(vector<int>& nums1, int m, vector<int> nums2, int n) {
-    if (m <= 0 && n <= 0) {
-        return {};
-    }
-
-    vector<int> toReturn;
+    vector<int> result;
 
     int i = 0;
     int j = 0;
     while (i < m && j < n) {
         if (nums1[i] < nums2[j]) {
-            toReturn.push_back(nums1[i++]);
+            result.push_back(nums1[i++]);
         } else {
-            toReturn.push_back(nums2[j++]);
+            result.push_back(nums2[j++]);
         }
     }
 
     while (i < m) {
-        toReturn.push_back(nums1[i++]);
+        result.push_back(nums1[i++]);
     }
 
     while (j < n) {
-        toReturn.push_back(nums2[j++]);
+        result.push_back(nums2[j++]);
     }
 
-    return toReturn;
+    return result;
 }
 

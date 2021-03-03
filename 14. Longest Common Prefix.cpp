@@ -29,7 +29,7 @@ string longestCommonPrefix(vector<string>& strs) {
         // Iterate the rest of words in strs.
         for (int i = 1; i < strs.size(); ++i) {
             if (j >= strs[i].size() || strs[i][j] != letter) {
-                return strs[i].substr(0, j);
+                return strs[0].substr(0, j);
             }
         }
     }

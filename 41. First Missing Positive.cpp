@@ -17,13 +17,26 @@
 // Your algorithm should run in O(n) time and uses constant extra space.
 //
 // ***
-//
+
 // Easiest solution to this question is to use a HashSet to store values seen, but it is not Space O(1).
-//
+int firstMissingPositive(vector<int>& nums) {
+    unordered_set<int> seen(nums.begin(), nums.end());
+
+    int candidate = 1;
+
+    while (candidate <= nums.size()) {
+        if (!seen.count(candidate)) {
+            return candidate;
+        }
+        ++candidate;
+    }
+
+    return nums.size() + 1;
+}
+
 // The idea of the question is to put positive elements in their corresponding spots.
 // i.e. Put 1 at nums[0], 2 at nums[1] ... nums[i] at nums[nums[i]-1]
 // We don't care about elements that are non positive and elements that are larger than nums.size(),
-// because they can't be the first missing postive.
 //
 // Example:
 //
@@ -33,7 +46,6 @@
 // [0 1 2 3 4 5 6 7]
 // At position 2, we should get 3, but we didn't, therefore, first missing positive is 3
 // [1 2 ? 4 5 6 ? ?]
-
 int firstMissingPositive(vector<int>& nums) {
     if (nums.empty()) {
         return 1;
