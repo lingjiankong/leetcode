@@ -33,29 +33,29 @@
 class Solution {
 public:
     TreeNode* buildTree(const vector<int>& preorder, const vector<int>& inorder) {
-        int preorderLeft = 0, preorderRight = preorder.size();
-        int inorderLeft = 0, inorderRight = inorder.size();
+        int preStart = 0, preEnd = preorder.size();
+        int inStart = 0, inEnd = inorder.size();
 
-        return _buildTree(preorder, preorderLeft, preorderRight, inorder, inorderLeft, inorderRight);
+        return _buildTree(preorder, preStart, preEnd, inorder, inStart, inEnd);
     }
 
 private:
-    TreeNode* _buildTree(const vector<int>& preorder, int preorderLeft, int preorderRight, const vector<int>& inorder,
-                         int inorderLeft, int inorderRight) {
-        if (preorderLeft >= preorderRight || inorderLeft >= inorderRight) {
+    TreeNode* _buildTree(const vector<int>& preorder, int preStart, int preEnd, const vector<int>& inorder,
+                         int inStart, int inEnd) {
+        if (preStart >= preEnd || inStart >= inEnd) {
             return nullptr;
         }
 
-        int rootValue = preorder[preorderLeft];
+        int rootValue = preorder[preStart];
 
-        auto itr = find(inorder.begin() + inorderLeft, inorder.begin() + inorderRight, rootValue);
-        int leftSubtreeSize = itr - inorder.begin() - inorderLeft;
+        auto itr = find(inorder.begin() + inStart, inorder.begin() + inEnd, rootValue);
+        int leftSubtreeSize = itr - inorder.begin() - inStart;
 
         TreeNode* root = new TreeNode(rootValue);
-        root->left = _buildTree(preorder, preorderLeft + 1, preorderLeft + 1 + leftSubtreeSize, inorder, inorderLeft,
-                                inorderLeft + leftSubtreeSize);
-        root->right = _buildTree(preorder, preorderLeft + 1 + leftSubtreeSize, preorderRight, inorder,
-                                 inorderLeft + leftSubtreeSize + 1, inorderRight);
+        root->left = _buildTree(preorder, preStart + 1, preStart + 1 + leftSubtreeSize, inorder, inStart,
+                                inStart + leftSubtreeSize);
+        root->right = _buildTree(preorder, preStart + 1 + leftSubtreeSize, preEnd, inorder,
+                                 inStart + leftSubtreeSize + 1, inEnd);
 
         return root;
     }

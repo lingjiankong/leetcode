@@ -21,7 +21,7 @@
 
 // O(n)
 bool containsDuplicate(vector<int>& nums) {
-    return nums.size() > unordered_set<int>(nums.cbegin(), nums.cend()).size();
+    return nums.size() > unordered_set<int>(nums.begin(), nums.end()).size();
 }
 
 // O(nlogn)

@@ -29,14 +29,16 @@
 //
 // You should understand the problem just by reading the code.
 //
+// When two strings are of different lengths:
 // Example:
 // s: international
 // t: interxnational
 //
-// Iterate all letters in the shorter string.
+// Iterate all letters in the *shorter* string.
 // When we see the difference at i = 5 (s[5] = n, t[5] = x),
 // we insert 'x' from t to s at i = 5, and then check if s and t are the same
 //
+// When two strings are of same length:
 // Example:
 // s. redpig
 // t. reopig
@@ -62,7 +64,10 @@ bool isOneEditDistance(string s, string t) {
             if (s.size() == t.size()) {
                 s[i] = t[i];
             } else {
-                s.insert(i, 1, t[i]);  // Insert char t[i] to string s at position i
+                // Insert char t[i] to string s at position i. The second parameter, is the number of times to insert c
+                // into the string at position i (i.e., the number of times to repeat the character. If you only want to
+                // insert one instance of the character, simply pass it 1
+                s.insert(i, 1, t[i]);
             }
 
             break;

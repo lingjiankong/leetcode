@@ -51,7 +51,8 @@ private:
         for (char letter : word) {
             int diff = (letter - 'a') - offset;
             if (diff < 0) {
-                diff += 26;
+                diff += 26;  // This step is important. Otherwise, "ba" would #0#-1, but "az" would be #0#25. With this
+                             // step, they would both share the same "shifting sequence" of #0#25.
             }
             shiftedWord += '#' + to_string(diff);
         }

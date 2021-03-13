@@ -22,15 +22,15 @@
 // then in that case the opponent is guaranteed to NOT WIN the game.
 // Therefore, if we figured out that the opponent is guaranteed not to win the game, then we know we must win the game.
 
-// 1. Recursive only solution:
+// 1. Recursive only:
 bool canWin(string& s) {
     for (int i = 1; i < s.size(); ++i) {
         if (s[i - 1] == '+' && s[i] == '+') {
             s[i - 1] = s[i] = '-';
-            bool opponentWin = canWin(s);
+            bool oppoWins = canWin(s);
             s[i - 1] = s[i] = '+';
 
-            if (!opponentWin) {
+            if (!oppoWins) {
                 return true;
             }
         }
@@ -44,7 +44,7 @@ bool canWin(string& s) {
 
 // 2. Recursion + memoization:
 bool canWin(string& s) {
-    // hash[s] tracks whether we can win (i.e. !opponentWin) given string s.
+    // hash[s] tracks whether we can win (i.e. !oppoWins) given string s.
     unordered_map<string, bool> hash;
     return backtrack(s, hash);
 }
@@ -57,11 +57,11 @@ bool backtrack(string& s, unordered_map<string, bool>& hash) {
     for (int i = 1; i < s.size(); ++i) {
         if (s[i - 1] == '+' && s[i] == '+') {
             s[i - 1] = s[i] = '-';
-            bool opponentWin = backtrack(s, hash);
+            bool oppoWins = backtrack(s, hash);
             s[i - 1] = s[i] = '+';
 
-            hash[s] = !opponentWin;
-            if (!opponentWin) {
+            hash[s] = !oppoWins;
+            if (!oppoWins) {
                 return true;
             }
         }

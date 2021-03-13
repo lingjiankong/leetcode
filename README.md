@@ -26,7 +26,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 119 | Pascal's Triangle II | Charlie | Duplicate with 118
 | 169 | Majority Element | Alpha | Mechanical
 | 229 | Majority Element II | Alpha | Mechanical
-| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha
+| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha | Binary search
 | 243 | Shortest Word Distance | Alpha
 | 245 | Shortest Word Distance III | Alpha
 | 244 | Shortest Word Distance II | Alpha
@@ -38,7 +38,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 11 | Container With Most Water | Alpha
 | 128 | Longest Consecutive Sequence | Alpha
 | 674 | Longest Continuous Increasing Subsequence | Alpha
-| 673 | Number of Increasing Subsequence | Alpha | Dynamic programming
+| 673 | Number of Increasing Subsequence | Bravo | Dynamic programming
 | 164 | Maximum Gap Bucket | Hard
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
@@ -82,6 +82,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
 | 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
 | 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha | multiset
+| 219 | Contains Duplicate II | Alpha
+| 220 | Contains Duplicate III | Alpha
+| 438 | Find All Anagrams in a String | Alpha | Sliding Window
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | Sliding Window
 
 ## String
 | ID | Name | Rating | Note
@@ -113,7 +117,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 171 | Excel Sheet Column Number | Charlie
 | 13 | Roman to Integer | Bad
 | 12 | Integer to Roman | Bad
-| 246 | Strobogrammatic Number | Bravo
+| 246 | Strobogrammatic Number | Alpha
 | 247 | Strobogrammatic Number II | Charlie
 | 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | Sliding Window
 | 125 | Valid Palindrome | Alpha
@@ -133,7 +137,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 704 | Binary Search | Alpha
-| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha
+| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha | Binary search
 | 475 | Heaters | Alpha
 | 441 | Arranging Coins | Alpha
 | 367 | Valid Perfect Square | Alpha
@@ -343,7 +347,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 199 | Binary Tree Right Side View | Bravo | Preorder
 | 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
 | 222 | Count Complete Tree Nodes | Alpha
-| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo, Mechanical
+| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo | Preorder
 | 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo, Mechanical
 | 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
 | 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder

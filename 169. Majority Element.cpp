@@ -70,10 +70,10 @@ int majorityElement(vector<int>& nums) {
         if (num == candidate) {
             ++count;
         } else if (count == 0) {
-            // If count == 0, then we've got rid of pairs of different elements,
-            // Hence we set the new candidate to current num, all subsequent iterations compare num with
-            // current candidate. If they are different, then we get rid of a pair of
-            // (candidate, num) and --count, else we get another candidate and ++count.
+            // If count == 0, then we've got rid of pairs of different elements, hence we set the new candidate to
+            // current num and reset count to 1, all subsequent iterations compare num with current candidate. If they
+            // are different, then we get rid of a pair of (candidate, num) and --count, else we get another candidate
+            // and ++count.
             candidate = num;
             count = 1;
         } else {

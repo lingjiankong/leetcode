@@ -30,7 +30,7 @@ public:
         int currentLength = 1;
 
         for (int i = 1; i < nums.size(); ++i) {
-            if (num[i] > nums[i-1]) {
+            if (num[i-1] < nums[i]) {
                 ++currentLength;
             } else {
                 currentLength = 1;

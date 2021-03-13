@@ -51,7 +51,7 @@ vector<vector<string>> groupAnagrams2(vector<string>& strs) {
             ++counts[letter - 'a'];
         }
 
-        string anagramIdentifier = "";
+        string anagramIdentifier;
         for (int i = 0; i < counts.size(); ++i) {
             anagramIdentifier += '#';
             anagramIdentifier += to_string(counts[i]);

@@ -23,7 +23,7 @@ int firstUniqChar(string s) {
 
     for (int i = 0; i < s.size(); ++i) {
         if (counts[s[i] - 'a'] == 1) {
-            return s[i];
+            return i;
         }
     }
 
@@ -49,12 +49,12 @@ int firstUniqChar(string s) {
         counts[s[i] - 'a'].second = i;
     }
 
-    int index = s.size();
+    int index = INT_MAX;
     for (int i = 0; i < counts.size(); ++i) {
         if (counts[i].first == 1) {
             index = min(index, counts[i].second);
         }
     }
 
-    return index == s.size() ? -1 : index;
+    return index == INT_MAX ? -1 : index;
 }

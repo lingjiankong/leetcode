@@ -94,11 +94,15 @@ public:
         } else {
             // We know only two elements have been swapped, so if prev->val > root->val,
             // then prev is a misplaced node, assign it to first;
-            // current root is also a misplace rnode, assign it to second.
+            // current root is also a misplace node, assign it to second.
             if (prev->val > root->val) {
                 if (!first) {
                     first = prev;
                 }
+                // Note that "first" will not change once assigned (because the first prev we encounter which prev->val
+                // > root->val is a misplaced node). However, we will keep assigning current root to "second" as long as
+                // prev->val > root->val since current root is also a mislaced node (we only have a pair of misplaced
+                // node).
                 second = root;
             }
 

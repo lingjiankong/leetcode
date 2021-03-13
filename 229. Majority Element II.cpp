@@ -23,7 +23,6 @@ vector<int> majorityElement(vector<int>& nums) {
     // What candidate1 and candidate2 equal to in the beginning are just arbitrary guesses. It doesn't matter.
     // Regardless of what candidates are set to, when the loop starts, count will be 1.
     // i.e. candidate and count will be initialized when the loop starts.
-    // See 169. Majority Element for intuition.
     int candidate1, candidate2 = 0;
     int count1, count2 = 0;
 

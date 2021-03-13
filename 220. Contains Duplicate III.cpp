@@ -33,12 +33,12 @@ bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
             window.erase(nums[i - k - 1]);
         }
 
-        // See if we can find a number >= nums[i]-t
+        // See if we can find a number >= nums[i]-t in the window
         auto itr = window.lower_bound(nums[i] - t);
 
         // If we found a number >= nums[i]-t
         if (itr != window.end()) {
-            // Then check if also that number <= nums[i]+t
+            // then check if also that number <= nums[i]+t
             if (*itr <= nums[i] + t) {
                 return true;
             }

@@ -31,8 +31,7 @@ int shortestWordDistance(vector<string>& words, string word1, string word2) {
             pos1 = i;
         }
         if (words[i] == word2) {
-            // If you remove the if statement below, the solution is exactly the same as 243. Shortest Word Distance I.
-            // If word1 and word2 are the same, we assign current index to pos2, and pos1 becomes last pos2 (last pos2
+            // If word1 and word2 are the same, we assign current index i to pos2, and pos1 becomes last pos2 (last pos2
             // is the last time we've seen the same word) (if we don't do it, and word1 is the same as word2, then pos1
             // and pos2 will be the same everytime that same word is encountered, which will give minDis = 0).
             if (word1 == word2) {

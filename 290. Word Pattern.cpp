@@ -38,6 +38,11 @@ bool wordPattern(string pattern, string str) {
 
     int i = 0;
     for (string word; stream >> word; ++i) {
+        // In this case, numberOfWords(str) > lengthOf(pattern), return false.
+        if (i >= pattern.size()) {
+            return false;
+        }
+
         if (charToInt.count(pattern[i]) && stringToInt.count(word)) {
             if (charToInt[pattern[i]] != stringToInt[word]) {
                 return false;
@@ -50,8 +55,8 @@ bool wordPattern(string pattern, string str) {
     }
 
     // In this case, we've finished all words in str but still have char in pattern left.
-    // This is the case where lengthOf(pattern) != numberOfWords(str), must return false.
-    if (i != pattern.size()) {
+    // This is the case where lengthOf(pattern) < numberOfWords(str), return false.
+    if (i < pattern.size()) {
         return false;
     }
 

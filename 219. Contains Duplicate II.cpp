@@ -31,6 +31,7 @@ bool containsNearbyDuplicate(vector<int>& nums, int k) {
     for (int i = 0; i < nums.size(); ++i) {
         if (i > k) {
             // You want to compare num[i] with elements in [nums[i-k], nums[i-1]],
+            // ..., i-k-1, [i-k, ..., i-1] i, ...
             // therefore you erase nums[i - k - 1] (which you don't care anymore in the sliding window)
             window.erase(nums[i - k - 1]);
         }

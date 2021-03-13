@@ -45,7 +45,7 @@
 class Codec {
 public:
     string encode(vector<string>& strs) {
-        string toReturn = "";
+        string toReturn;
 
         for (string word : strs) {
             toReturn += to_string(word.size()) + '/' + word;
@@ -58,16 +58,16 @@ public:
         vector<string> toReturn;
 
         // Starting position of number which stores each string length.
-        int head = 0;
+        int numStart = 0;
 
-        while (head < s.size()) {
-            int slashPosition = s.find_first_of('/', head);
-            int stringLength = stoi(s.substr(head, slashPosition - head));
-            toReturn.push_back(s.substr(slashPosition + 1, stringLength));
+        while (numStart < s.size()) {
+            int slashPos = s.find_first_of('/', numStart);
+            int wordLen = stoi(s.substr(numStart, slashPos - numStart));
+            toReturn.push_back(s.substr(slashPos + 1, wordLen));
 
-            // slashPoisition + 1 is where the string starts
-            // slashPosition + 1 + stringLength is where the number which stores the size of next string starts.
-            head = slashPosition + 1 + stringLength;
+            // slashPos + 1 is where the string starts
+            // slashPos + 1 + wordLen is where the number which stores the size of next string starts.
+            numStart = slashPos + 1 + wordLen;
         }
 
         return toReturn;
