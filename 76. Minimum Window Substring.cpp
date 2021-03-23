@@ -14,45 +14,90 @@
 //
 // ***
 
+// labuladong sliding window template
 string minWindow(string s, string t) {
-    unordered_map<char, int> letterCount;
+    unordered_map<char, int> need, window;
 
     for (char c : t) {
-        ++letterCount[c];
+        ++need[c];
     }
 
-    int left = 0, count = 0, minLength = INT_MAX;
-    string toReturn = "";
-    for (int i = 0; i < s.size(); ++i) {
-        // Why do you need only ++count when letterCount[s[i]] >= 0?
-        // (When count == t.size(), we know all letters in t appear in current sliding window)
-        // Suppose T = AABCCC (letterCount = {A: 2, B: 1, C: 3}), S = AAAAAAAABCCCCC. When you traverse S, you see bunch
-        // of As. You want the number of As in your sliding window to be at least 2 (the more As the better, of course,
-        // but you don't really care about those extra As). So when you first see two As you
-        // ++count, but your don't need to ++count as you see more As because you have enough As to match As in T
-        if (--letterCount[s[i]] >= 0) {
-            ++count;
+    int left = 0, right = 0;
+    int validCount = 0;
+    int start = 0, minLen = INT_MAX;
+
+    while (right < s.size()) {
+        // Move right boundary of the window to the right.
+        char c = s[right++];
+        if (need.count(c)) {
+            ++window[c];
+            if (window[c] == need[c]) {
+                ++validCount;
+            }
         }
 
-        // When count == t.size(), all letters in t appear in current sliding window.
-        // Therefore you start increasing left pointer and "squeeze" the sliding window from left,
-        // until right before count < t.size() (meaning a letter from t will be missing in the current sliding window),
-        // that's when you start increasing the right pointer again.
-        while (count == t.size()) {
-            if (i - left + 1 < minLength) {
-                minLength = i - left + 1;
-                toReturn = s.substr(left, minLength);
+        // Determine if we need to move left bounrdary of the window to the right.
+        while (validCount == need.size()) {
+            if (right - left < minLen) {
+                minLen = right - left;  // [left, right)
+                start = left;
             }
 
-            // If s[left] is a letter not in t, it will not affect count at all,
-            // because that letterCounter[s[left]] is never be greater than 0.
-            if (++letterCount[s[left]] > 0) {
-                --count;
+            char c = s[left++];
+            if (need.count(c)) {
+                if (window[c] == need[c]) {
+                    --validCount;
+                }
+                --window[c];
+            }
+        }
+    }
+
+    return minLen == INT_MAX ? "" : s.substr(start, minLen);
+}
+
+// Similar idea
+string minWindow(string s, string t) {
+    unordered_map<char, int> need;
+
+    for (char c : t) {
+        ++need[c];
+    }
+
+    // [left, right]
+    int left = 0, totalMatch = 0;
+    int start = 0, minLen = INT_MAX;
+
+    for (int right = 0; right < s.size(); ++right) {
+        // Why do you need only ++totalMatch when need[s[right]] >= 0?
+        // (When totalMatch == t.size(), we know all letters in t appear in current sliding window)
+        // Suppose T = AABCCC (need = {A: 2, B: 1, C: 3}), S = AAAAAAAABCCCCC. When you traverse S, you see
+        // bunch of As. You want the number of As in your sliding window to be at least 2 (the more As the better,
+        // of course, but you don't really care about those extra As). So when you first see two As you
+        // ++totalMatch, but your don't need to ++totalMatch as you see more As because you have enough As to match
+        // As in T
+        if (--need[s[right]] >= 0) {
+            ++totalMatch;
+        }
+
+        // When totalMatch == t.size(), all letters in t appear in current sliding window.
+        // Therefore you start increasing left pointer and "squeeze" the sliding window from left,
+        // until right before totalMatch < t.size() (meaning a letter from t will be missing in the current sliding
+        // window), that's when you start increasing the right pointer again.
+        while (totalMatch == t.size()) {
+            if (right - left + 1 < minLen) {
+                start = left;
+                minLen = right - left + 1;  // [left, right]
+            }
+
+            // If s[left] is a letter not in t, it will not affect totalMatch at all,
+            // because that need[s[left]] is never going to be greater than 0.
+            if (++need[s[left]] > 0) {
+                --totalMatch;
             }
 
             ++left;
         }
     }
 
-    return toReturn;
-}
+    return minLen == INT_MAX ? "" : s.substr(start, minLen);

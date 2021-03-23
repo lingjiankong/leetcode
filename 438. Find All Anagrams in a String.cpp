@@ -30,43 +30,82 @@
 //
 // ***
 //
-// Read the code. Very intuitive. Idea is similar to 438. Find All Anagrams in a String.
-//
-// Maintain a sliding window (sHashWindow) of size p in s, slide it to the right and check
-// if sHashWindow == pHash, if so then there's a valid anagram. add index to result.
+// Almost exactly the same as 567. Permutation in String.
 
+// Maintain a sliding window of size p in s, slide it to the right and check
+// if window == need, if so then there's a valid anagram. add index to result.
 vector<int> findAnagrams(string s, string p) {
     if (s.size() < p.size()) {
         return {};
     }
 
-    vector<int> sHashWindow(256, 0);
-    vector<int> pHash(256, 0);
-    vector<int> toReturn;
+    vector<int> window(256), need(256);
+    vector<int> res;
 
     for (int i = 0; i < p.size(); ++i) {
-        ++pHash[p[i]];
-        ++sHashWindow[s[i]];  // Initial sliding window
+        ++need[p[i]];
+        ++window[s[i]];  // Initial sliding window
     }
 
     // Check if initial windows match
-    if (pHash == sHashWindow) {
-        toReturn.push_back(0);
+    if (need == window) {
+        res.push_back(0);
     }
 
     // i is the index of the last element in the *new* window to be moved
     for (int i = p.size(); i < s.size(); ++i) {
         // Move window to the right
-        ++sHashWindow[s[i]];
-        --sHashWindow[s[i - p.size()]];
+        ++window[s[i]];
+        --window[s[i - p.size()]];
 
-        if (sHashWindow == pHash) {
+        if (window == need) {
             // Since i is the index (not the right most bound) of the last element in the window, the beginning index of
             // the window is just i - p.size() + 1
-            toReturn.push_back(i - p.size() + 1);
+            res.push_back(i - p.size() + 1);
         }
     }
 
-    return toReturn;
+    return res;
 }
 
+// labuladong sliding window template.
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+        unordered_map<char, int> need, window;
+
+        for (char c : p) {
+            ++need[c];
+        }
+
+        int left = 0, right = 0;
+        int validCount = 0;
+        vector<int> res;
+
+        while (right < s.size()) {
+            char c = s[right++];
+            if (need.count(c)) {
+                ++window[c];
+                if (window[c] == need[c]) {
+                    ++validCount;
+                }
+            }
+
+            while (right - left == p.size()) {
+                if (validCount == need.size()) {
+                    res.push_back(left);
+                }
+
+                char c = s[left++];
+                if (need.count(c)) {
+                    if (window[c] == need[c]) {
+                        --validCount;
+                    }
+                    --window[c];
+                }
+            }
+        }
+
+        return res;
+    }
+};

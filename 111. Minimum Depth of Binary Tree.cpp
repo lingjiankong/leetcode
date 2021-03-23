@@ -18,8 +18,10 @@
 // return its minimum depth = 2.
 //
 // ***
-
+//
 // Compare this question with 104. Maximum Depth of Binary Tree,
+
+// DFS
 // Note the extra if and else if condition in this problem that checks if a node has only one subtree.
 int minDepth(TreeNode* root) {
     if (!root) {
@@ -38,4 +40,38 @@ int minDepth(TreeNode* root) {
     } else {  // both subtrees exist
         return 1 + min(minDepth(root->left), minDepth(root->right));
     }
+}
+
+// BFS
+int minDepth(TreeNode* root) {
+    if (!root) {
+        return 0;
+    }
+
+    queue<TreeNode*> q;
+    q.push(root);
+    int depth = 1;
+
+    while (!q.empty()) {
+        int currentSize = q.size();
+        for (int i = 0; i < currentSize; ++i) {
+            TreeNode* node = q.front();
+            q.pop();
+
+            if (!node->left && !node->right) {
+                return depth;
+            }
+
+            if (node->left) {
+                q.push(node->left);
+            }
+
+            if (node->right) {
+                q.push(node->right);
+            }
+        }
+        ++depth;
+    }
+
+    return depth;
 }

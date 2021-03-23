@@ -20,7 +20,7 @@
 //
 // X X [i X X X X j] X X X X
 // We have two pointers i and j that traverse through the array,
-// we want to find all i, j such that the subarray [i, j] (inclusive) is sum to k.
+// we want to find all i, j such that the subarray [i, j] (inclusive) sums to k.
 // By constructing an array of prefix sums, we want to know all i, j such that prefixSum[j] - prefixSum[i - 1] = k.
 // That is, for every j, how many i such that prefixSum[i - 1] = prefixSum[j] - k?
 // To count this, we can simply use a hash table of (prefix sum) : (count of occurances we've seen the prefix sum).

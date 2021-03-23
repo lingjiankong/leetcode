@@ -3,21 +3,19 @@
 // Given a linked list, determine if it has a cycle in it.
 //
 // ***
-bool hasCycle(ListNode *head)
-{
-	ListNode* slow = head;
-	ListNode* fast = head;
 
-	while (fast && fast->next)
-	{
-		slow = slow->next;
-		fast = fast->next->next;
+bool hasCycle(ListNode* head) {
+    ListNode* slow = head;
+    ListNode* fast = head;
 
-		if (slow == fast)
-		{
-			return true;
-		}
-	}
+    while (fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
 
-	return false;
+        if (slow == fast) {
+            return true;
+        }
+    }
+
+    return false;
 }

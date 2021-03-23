@@ -45,24 +45,28 @@
 //
 // ***
 
+// labuladong template
 // Use a sliding window of tree set
 // X X X X X [l X X X X X X X r] X X X
-// It might not be super intuitive so you need to memorize the solutions to these types of problems.
 class Solution {
 public:
     int longestSubarray(vector<int>& nums, int limit) {
         multiset<int> window;
 
-        int left = 0;
-        int longest = 0;
-        for (int right = 0; right < nums.size(); ++right) {
-            window.insert(nums[right]);
+        int left = 0, right = 0;
+        int maxLen = 0;
+        while (right < nums.size()) {
+            int num = nums[right++];
+            window.insert(num);
+
             while (*window.rbegin() - *window.begin() > limit) {
-                window.erase(window.find(nums[left++]));
+                int num = nums[left++];
+                window.erase(window.lower_bound(num));
             }
-            longest = max(longest, right - left + 1);
+
+            maxLen = max(maxLen, right - left);
         }
 
-        return longest;
+        return maxLen;
     }
 };

@@ -23,6 +23,28 @@
 //
 // ***
 
+// labuladong sliding window template
+int lengthOfLongestSubstring(string s) {
+    unordered_map<char, int> window;
+
+    int left = 0, right = 0;
+    int maxLen = 0;
+
+    while (right < s.size()) {
+        char c = s[right++];
+        ++window[c];
+
+        while (window[c] > 1) {
+            char c = s[left++];
+            --window[c];
+        }
+
+        maxLen = max(maxLen, right - left);
+    }
+
+    return maxLen;
+}
+
 // Keep a hashmap which stores the characters in string as keys and their positions as values,
 // and keep two pointers which define the max non-repeating substring (the left pointer is `start` and the right pointer
 // is `i`). Move the right pointer (i) to scan through the string, and meanwhile update the hashmap.

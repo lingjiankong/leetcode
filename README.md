@@ -77,15 +77,21 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Sliding window
 | 239 | Sliding Window Maximum | Alpha | multiset, monotoic queue, sliding window
 | 209 | Minimum Size Subarray Sum | Alpha | sliding window
+| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha | multiset
+| 219 | Contains Duplicate II | Alpha
+| 220 | Contains Duplicate III | Alpha
+| 438 | Find All Anagrams in a String | Alpha | sliding window
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding window
+| 76 | Minimum Window Substring | Alpha | sliding window
+| 438 | Find All Anagrams in a String | Alpha | sliding Window
+| 567 | Permutation in String | Alpha | sliding window
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding Window
+
+## Prefix sum
 | 325 | Maximum Size Subarray Sum Equals k | Alpha | sliding window, prefix sum
 | 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
 | 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
 | 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
-| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha | multiset
-| 219 | Contains Duplicate II | Alpha
-| 220 | Contains Duplicate III | Alpha
-| 438 | Find All Anagrams in a String | Alpha | Sliding Window
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | Sliding Window
 
 ## String
 | ID | Name | Rating | Note
@@ -105,7 +111,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 387 | First Unique Character in a String | Alpha
 | 383 | Ransom Note | Alpha
 | 242 | Valid Anagram | Alpha
-| 438 | Find All Anagrams in a String | Alpha | Sliding Window
+| 438 | Find All Anagrams in a String | Alpha | sliding Window
+| 567 | Permutation in String | Alpha | sliding window
 | 49 | Group Anagrams | Alpha
 | 249 | Group Shifted Strings | Alpha
 | 179 | Largest Number | Bravo
@@ -119,7 +126,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 12 | Integer to Roman | Bad
 | 246 | Strobogrammatic Number | Alpha
 | 247 | Strobogrammatic Number II | Charlie
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | Sliding Window
 | 125 | Valid Palindrome | Alpha
 | 680 | Valid Palindrome II | Alpha
 | 266 | Palindrome Permutation | Alpha
@@ -129,8 +135,9 @@ I am currently reorganize the problem categories, so this page might be a little
 | 792 | Number of Matching Subsequence | Alpha
 | 187 | Repeated DNA Sequences | Alpha
 | 771 | Jewels and Stongs | Bravo
-| 76 | Minimum Window Substring | Alpha
+| 76 | Minimum Window Substring | Alpha | sliding window
 | 844 | Backspace String Compare | Bravo
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding Window
 | 159 | Longest Substring with At Most Two Distinct Characters | Alpha
 
 ## Binary Search
@@ -203,6 +210,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | N2 | Shortest Path Between Two Points in a Matrix | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 267 | Palindrome Permutation II | Alpha
+| 752 | Open the Lock | Alpha | BFS
+
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -380,6 +389,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 92 | Reverse Linked List II | Hard, Exotic
 | 141 | Linked List Cycle | Alpha
 | 142 | Linked List Cycle II | Alpha
+| 876 | Middle of the Linked List | Alpha
 | 234 | Palindrome Linked List | Alpha
 | 24 | Swap Nodes in Pairs | Bravo
 | 237 | Delete Node in a Linked List | Bravo

@@ -23,16 +23,20 @@
 
 // This is just the implementation of std::lower_bound().
 // std::lower_bound - returns an iterator pointing to the first element in the range [first, last) that is not less than
-// (i.e. greater or equal to) value, or last if no such element is found.
+// (i.e. equal to or greater than) value, or last if no such element is found.
+//
+// i.e. How many elements in nums are *less than* target
 int searchInsert(vector<int>& nums, int target) {
     int left = 0, right = nums.size();
 
     while (left < right) {
         int mid = left + (right - left) / 2;
 
-        if (nums[mid] < target) {
+        if (nums[mid] == target) {
+            right = mid;
+        } else if (nums[mid] < target) {
             left = mid + 1;
-        } else {
+        } else if (nums[mid] > target) {
             right = mid;
         }
     }
@@ -52,7 +56,7 @@ int searchInsert(vector<int>& nums, int target) {
             return mid;
         } else if (nums[mid] < target) {
             left = mid + 1;
-        } else {
+        } else if (nums[mid] > target) {
             right = mid;
         }
     }
@@ -63,15 +67,19 @@ int searchInsert(vector<int>& nums, int target) {
 // Side note: std::upper_bound() would be:
 // std::upper_bound - returns an iterator pointing to the first element in the range [first, last) that is greater than
 // value, or last if no such element is found.
+//
+// i.e. How many elements are *less than or equal to * target
 int searchInsert(vector<int>& nums, int target) {
     int left = 0, right = nums.size();
 
     while (left < right) {
         int mid = left + (right - left) / 2;
 
-        if (nums[mid] <= target) {
+        if (nums[mid] == target) {
             left = mid + 1;
-        } else {
+        } else if (nums[mid] < target) {
+            left = mid + 1
+        } else if (nums[mid] > target) {
             right = mid;
         }
     }

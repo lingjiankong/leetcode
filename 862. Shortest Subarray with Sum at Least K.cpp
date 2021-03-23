@@ -32,7 +32,7 @@
 class Solution {
 public:
     int shortestSubarray(vector<int>& A, int K) {
-        int shortestLength = INT_MAX, runningSum = 0;
+        int minLen = INT_MAX, runningSum = 0;
 
         // Priority queue of runningSum : index, with smallest runningSum having the highest priority.
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
@@ -40,20 +40,20 @@ public:
         for (int i = 0; i < A.size(); ++i) {
             runningSum += A[i];
 
-            // This is needed here to capture the case such as shortestLength = A.size().
+            // This is needed here to capture the case such as minLen = A.size().
             if (runningSum >= K) {
-                shortestLength = min(shortestLength, i + 1);
+                minLen = min(minLen, i + 1);
             }
 
             while (!pq.empty() && runningSum - pq.top().first >= K) {
-                shortestLength = min(shortestLength, i - pq.top().second);
+                minLen = min(minLen, i - pq.top().second);
                 pq.pop();  // Didn't understand why pq.pop() is needed here.
             }
 
             pq.push({runningSum, i});
         }
 
-        return shortestLength == INT_MAX ? -1 : shortestLength;
+        return minLen == INT_MAX ? -1 : minLen;
     }
 };
 
@@ -63,7 +63,7 @@ public:
     int shortestSubarray(vector<int>& A, int K) {
         map<int, int> runningSumToIndex;
         vector<int> runningSum(A.size() + 1);
-        int shortestLength = INT_MAX;
+        int minLen = INT_MAX;
 
         for (int i = 1; i <= A.size(); ++i) {
             runningSum[i] = runningSum[i - 1] + A[i - 1];
@@ -75,7 +75,7 @@ public:
             // searchEndPos->first > runningSum[i] - K.
             auto searchEndPos = runningSumToIndex.upper_bound(runningSum[i] - K);
             for (auto itr = runningSumToIndex.begin(); itr != searchEndPos; ++itr) {
-                shortestLength = min(shortestLength, i - itr->second);
+                minLen = min(minLen, i - itr->second);
             }
 
             runningSumToIndex.erase(runningSumToIndex.begin(),
@@ -84,7 +84,7 @@ public:
             runningSumToIndex[runningSum[i]] = i;
         }
 
-        return shortestLength == INT_MAX ? -1 : shortestLength;
+        return minLen == INT_MAX ? -1 : minLen;
     }
 };
 
@@ -92,7 +92,7 @@ public:
 class Solution {
 public:
     int shortestSubarray(vector<int>& A, int K) {
-        int shortestLength = INT_MAX;
+        int minLen = INT_MAX;
 
         // Stores the running sum of A. For example,
         // A = [84, -37, 32, 40, 95]
@@ -108,9 +108,9 @@ public:
         for (int i = 0; i <= A.size(); ++i) {
             while (!dq.empty() && runningSums[i] - runningSums[dq.front()] >= K) {
                 // In this case, there is a contiguous subarray of A indexed by [dq.front(), i] (inclusive)
-                // with sum at least K, we compare shortestLength with current length i - dq.front().
+                // with sum at least K, we compare minLen with current length i - dq.front().
                 // We keep popping index from deque and keep comparing in the while loop.
-                shortestLength = min(shortestLength, i - dq.front());
+                minLen = min(minLen, i - dq.front());
                 dq.pop_front();
             }
 
@@ -132,6 +132,6 @@ public:
             dq.push_back(i);
         }
 
-        return shortestLength == INT_MAX ? -1 : shortestLength;
+        return minLen == INT_MAX ? -1 : minLen;
     }
 };

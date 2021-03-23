@@ -10,7 +10,30 @@
 // Explanation: the subarray [4,3] has the minimal length under the problem constraint.
 //
 // ***
-//
+
+// labuladong sliding window template
+class Solution {
+public:
+    int minSubArrayLen(int s, vector<int>& nums) {
+        int sumInWindow = 0;
+        int left = 0, right = 0;
+        int minLen = INT_MAX;
+
+        while (right < nums.size()) {
+            int num = nums[right++];
+            sumInWindow += num;
+
+            while (sumInWindow >= s) {
+                minLen = min(right - left, minLen);
+                num = nums[left++];
+                sumInWindow -= num;
+            }
+        }
+
+        return minLen == INT_MAX ? 0 : minLen;
+    }
+};
+
 // left: leftmost element of the sliding window.
 // right: rightmost element of the sliding window.
 // sumInWindow: sum in the current sliding window.
@@ -20,9 +43,8 @@
 // If sumInWindow is greater than s, then start pushing the left bound of the sliding window and see whether the
 // remaining sumInWindow is still greater than s, and compare the length of the remaining sliding
 // window with maxLength.
-
 int minSubArrayLen(int s, vector<int>& nums) {
-    int minLength = INT_MAX;
+    int minLen = INT_MAX;
     int sumInWindow = 0;
     int left = 0;
 
@@ -30,10 +52,10 @@ int minSubArrayLen(int s, vector<int>& nums) {
         sumInWindow += nums[right];
 
         while (left <= right && sumInWindow >= s) {
-            minLength = min(minLength, right - left + 1);
+            minLen = min(minLen, right - left + 1);
             sumInWindow -= nums[left++];
         }
     }
 
-    return minLength == INT_MAX ? 0 : minLength;
+    return minLen == INT_MAX ? 0 : minLen;
 }

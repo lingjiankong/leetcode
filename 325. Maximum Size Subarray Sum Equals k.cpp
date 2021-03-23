@@ -43,30 +43,30 @@ int maxSubArrayLen(vector<int>& nums, int k) {
     unordered_map<int, int> prefixSumToIndex;
 
     int prefixSum = 0;
-    int maxLength = 0;
+    int maxLen = 0;
 
     for (int index = 0; index < nums.size(); ++index) {
         prefixSum += nums[index];
 
         if (prefixSum == k) {
-            // Since we are trying to find the maxLength of subarray which sums to k,
+            // Since we are trying to find the maxLen of subarray which sums to k,
             // if we see the prefixSum from 0 to current index is k, then
-            // this must be the maxLength seen so far.
-            maxLength = index + 1;
+            // this must be the maxLen seen so far.
+            maxLen = index + 1;
         } else if (prefixSumToIndex.count(prefixSum - k)) {
-            // If prefixSum-k exists in the unordered_map, then we found a subarray which sums to k.
+            // If prefixSum - k exists in the unordered_map, then we found a subarray which sums to k.
             // The index of this subarray starts from prefixSumToIndex[prefixSum-k] + 1 and end at current
             // index, so the length is just index - prefixSumToIndex[prefixSum-k]
-            maxLength = max(maxLength, index - prefixSumToIndex[prefixSum - k]);
+            maxLen = max(maxLen, index - prefixSumToIndex[prefixSum - k]);
         }
 
         if (!prefixSumToIndex.count(prefixSum)) {
             // Only update prefixSumToIndex if prefixSum does not exist,
-            // since you are trying to get maxLength of the subarray,
+            // since you are trying to get maxLen of the subarray,
             // the smaller the index is, the larger the resulting length.
             prefixSumToIndex[prefixSum] = index;
         }
     }
 
-    return maxLength;
+    return maxLen;
 }
