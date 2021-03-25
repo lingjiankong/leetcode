@@ -28,7 +28,7 @@ int lengthOfLongestSubstring(string s) {
     unordered_map<char, int> window;
 
     int left = 0, right = 0;
-    int maxLen = 0;
+    int maxLen = INT_MIN;
 
     while (right < s.size()) {
         char c = s[right++];

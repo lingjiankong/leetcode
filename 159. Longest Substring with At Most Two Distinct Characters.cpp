@@ -14,33 +14,32 @@
 // Explanation: t is "aabbb" which its length is 5.
 //
 // ***
+//
+// Exactly the same as 340. Longest Substring with At Most K Distinct Characters
 
 class Solution {
 public:
     int lengthOfLongestSubstringTwoDistinct(string s) {
-        // left is the left boundary of the resulting substring t
-        int length = 0, left = 0;
+        unordered_map<char, int> window;
 
-        // Maintain a hash map of how many times you've seen a particular letter
-        unordered_map<char, int> letterCount;
-        for (int i = 0; i < s.size(); ++i) {
-            ++letterCount[s[i]];
-            // Pop elements from the hash map when there are more than to letters
-            while (letterCount.size() > 2) {
-                if (--letterCount[s[left]] == 0) {
-                    letterCount.erase(s[left]);
+        int left = 0, right = 0;
+        int maxLen = INT_MIN;
+
+        while (right < s.size()) {
+            char c = s[right++];
+            ++window[c];
+
+            while (window.size() > 2) {
+                char c = s[left++];
+                if (--window[c] == 0) {
+                    window.erase(c);
                 }
-                ++left;
             }
 
-            // ccaabbb
-            //   ^
-            //   left
-            //       ^
-            //       i
-            length = max(length, i - left + 1);
+            maxLen = max(maxLen, right - left);
         }
 
-        return length;
+        return maxLen;
     }
 };
+

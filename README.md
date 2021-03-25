@@ -75,17 +75,25 @@ I am currently reorganize the problem categories, so this page might be a little
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
 
 ## Sliding window
-| 239 | Sliding Window Maximum | Alpha | multiset, monotoic queue, sliding window
-| 209 | Minimum Size Subarray Sum | Alpha | sliding window
-| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha | multiset
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 239 | Sliding Window Maximum | Alpha
+| 209 | Minimum Size Subarray Sum | Alpha
+| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha
 | 219 | Contains Duplicate II | Alpha
 | 220 | Contains Duplicate III | Alpha
-| 567 | Permutation in String | Alpha | sliding window
-| 438 | Find All Anagrams in a String | Alpha | sliding window
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding window
-| 76 | Minimum Window Substring | Alpha | sliding window
+| 567 | Permutation in String | Alpha
+| 438 | Find All Anagrams in a String | Alpha
+| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha
+| 159 | Longest Substring with At Most Two Distinct Characters | Alpha
+| 340 | Longest Substring with At Most K Distinct Characters | Alpha
+| 424 | Longest Repeating Character Replacement | Alpha
+| 395 | Longest Substring with At Least K Repeating Characters | Alpha
+| 76 | Minimum Window Substring | Alpha
 
 ## Prefix sum
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 325 | Maximum Size Subarray Sum Equals k | Alpha | sliding window, prefix sum
 | 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
 | 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
@@ -136,7 +144,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 76 | Minimum Window Substring | Alpha | sliding window
 | 844 | Backspace String Compare | Bravo
 | 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding Window
-| 159 | Longest Substring with At Most Two Distinct Characters | Alpha
 
 ## Binary Search
 | ID | Name | Rating | Note
