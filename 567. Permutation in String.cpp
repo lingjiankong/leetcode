@@ -26,73 +26,66 @@
 //
 // Almost exactly the same as 438. Find All Anagrams in a String.
 
-class Solution {
-public:
-    bool checkInclusion(string s1, string s2) {
-        if (s1.size() > s2.size()) {
-            return false;
-        }
+// labuladong sliding window template.
+bool checkInclusion(string s1, string s2) {
+    vector<int> need(256), window(256);
 
-        vector<int> need(256), window(256);
-        for (int i = 0; i < s1.size(); ++i) {
-            ++need[s1[i]];
-            ++window[s2[i]];
-        }
+    for (char c : s1) {
+        ++need[c];
+    }
 
-        if (window == need) {
-            return true;
-        }
+    int left = 0, right = 0;
+    while (right < s2.size()) {
+        char c = s2[right++];
+        ++window[c];
 
-        for (int i = s1.size(); i < s2.size(); ++i) {
-            ++window[s2[i]];
-            --window[s2[i - s1.size()]];
-            if (window == need) {
+        while (right - left == s1.size()) {
+            if (need == window) {
                 return true;
             }
-        }
 
-        return false;
+            char c = s2[left++];
+            --window[c];
+        }
     }
-};
 
-// Using labuladong sliding window template
-// (In this quesion you don't need to use sliding window, but the template can be used here.)
-class Solution {
-public:
-    bool checkInclusion(string s1, string s2) {
-        unordered_map<char, int> need, window;
+    return false;
+}
 
-        for (char c : s1) {
-            ++need[c];
+// Same idea.
+bool checkInclusion(string s1, string s2) {
+    unordered_map<char, int> need, window;
+
+    for (char c : s1) {
+        ++need[c];
+    }
+
+    int left = 0, right = 0;
+    int validCount = 0;
+
+    while (right < s2.size()) {
+        char c = s2[right++];
+        if (need.count(c)) {
+            ++window[c];
+            if (window[c] == need[c]) {
+                ++validCount;
+            }
         }
 
-        int left = 0, right = 0;
-        int validCount = 0;
+        while (right - left == s1.size()) {
+            if (validCount == need.size()) {
+                return true;
+            }
 
-        while (right < s2.size()) {
-            char c = s2[right++];
+            char c = s2[left++];
             if (need.count(c)) {
-                ++window[c];
                 if (window[c] == need[c]) {
-                    ++validCount;
+                    --validCount;
                 }
-            }
-
-            while (right - left == s1.size()) {
-                if (validCount == need.size()) {
-                    return true;
-                }
-
-                char c = s2[left++];
-                if (need.count(c)) {
-                    if (window[c] == need[c]) {
-                        --validCount;
-                    }
-                    --window[c];
-                }
+                --window[c];
             }
         }
-
-        return false;
     }
-};
+
+    return false;
+}

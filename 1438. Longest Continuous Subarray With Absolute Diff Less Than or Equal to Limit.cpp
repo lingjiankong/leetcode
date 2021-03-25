@@ -45,9 +45,7 @@
 //
 // ***
 
-// labuladong template
-// Use a sliding window of tree set
-// X X X X X [l X X X X X X X r] X X X
+// labuladong sliding window template
 class Solution {
 public:
     int longestSubarray(vector<int>& nums, int limit) {

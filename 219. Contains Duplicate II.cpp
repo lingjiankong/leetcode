@@ -16,38 +16,28 @@
 // Output: false
 //
 // ***
-//
-// This problem can be rephrased as:
-// When traversing nums[i], find if the sliding window of size k left to nums[i] contains the value nums[i].
-// The key idea is to use a sliding window of size k using unordered_set.
-// Maintain a set of size k which contain unique values from nums[i - k] to nums[i - 1],
-// if nums[i] is in set s then return true, else update the set.
 
-// O(n) Sliding window using unordered_set
+// labuladong sliding window template
 bool containsNearbyDuplicate(vector<int>& nums, int k) {
-    // A sliding window of last k elements
     unordered_set<int> window;
 
-    for (int i = 0; i < nums.size(); ++i) {
-        if (i > k) {
-            // You want to compare num[i] with elements in [nums[i-k], nums[i-1]],
-            // ..., i-k-1, [i-k, ..., i-1] i, ...
-            // therefore you erase nums[i - k - 1] (which you don't care anymore in the sliding window)
-            window.erase(nums[i - k - 1]);
-        }
-
-        // If the window has already seen nums[i], then the window contains duplicate.
-        if (window.count(nums[i])) {
+    int left = 0, right = 0;
+    while (right < nums.size()) {
+        int num = nums[right++];
+        if (window.count(num)) {
             return true;
         }
+        window.insert(num);
 
-        window.insert(nums[i]);
+        while (window.size() == k + 1) {
+            int num = nums[left++];
+            window.erase(num);
+        }
     }
-
     return false;
 }
 
-// O(n) Sliding window using unordered_map.
+// Sliding window using unordered_map.
 bool containsNearbyDuplicate(vector<int>& nums, int k) {
     // key value pairs of num : index
     unordered_map<int, int> seen;

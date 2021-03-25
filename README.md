@@ -80,12 +80,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha | multiset
 | 219 | Contains Duplicate II | Alpha
 | 220 | Contains Duplicate III | Alpha
+| 567 | Permutation in String | Alpha | sliding window
 | 438 | Find All Anagrams in a String | Alpha | sliding window
 | 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding window
 | 76 | Minimum Window Substring | Alpha | sliding window
-| 438 | Find All Anagrams in a String | Alpha | sliding Window
-| 567 | Permutation in String | Alpha | sliding window
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding Window
 
 ## Prefix sum
 | 325 | Maximum Size Subarray Sum Equals k | Alpha | sliding window, prefix sum

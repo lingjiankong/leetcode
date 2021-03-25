@@ -19,54 +19,25 @@
 // Output: false
 //
 // ***
-//
-// The idea is to store all numbers that satisfy the index requirement
-// (the absolute difference between i and j is at most k) in a *tree* set, like a sliding window,
-// then see among these numbers, if there is a number such that nums[i]-t <= nums[i] <= nums[i]+t.
 
+// labuladong sliding window template
+// (cast to long to submit on leetcode)
 bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-    // A sliding window of last k elements
     set<int> window;
 
-    for (int i = 0; i < nums.size(); ++i) {
-        if (i > k) {
-            window.erase(nums[i - k - 1]);
+    int left = 0, right = 0;
+    while (right < nums.size()) {
+        int num = nums[right++];
+        auto itr = window.lower_bound(num - t);
+        if ((itr != window.end()) and (*itr <= num + t)) {
+            return true;
         }
+        window.insert(num);
 
-        // See if we can find a number >= nums[i]-t in the window
-        auto itr = window.lower_bound(nums[i] - t);
-
-        // If we found a number >= nums[i]-t
-        if (itr != window.end()) {
-            // then check if also that number <= nums[i]+t
-            if (*itr <= nums[i] + t) {
-                return true;
-            }
+        while (window.size() == k + 1) {
+            int num = nums[left++];
+            window.erase(window.lower_bound(num));
         }
-
-        window.insert(nums[i]);
-    }
-
-    return false;
-}
-
-// To submit on leetcode, need to cast with <long>
-bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-    set<long> window;
-
-    for (int i = 0; i < nums.size(); ++i) {
-        if (i > k) {
-            window.erase(nums[i - k - 1]);
-        }
-
-        auto itr = window.lower_bound((long)(nums[i]) - (long)(t));
-        if (itr != window.end()) {
-            if (*itr <= (long)(nums[i]) + (long)(t)) {
-                return true;
-            }
-        }
-
-        window.insert(nums[i]);
     }
 
     return false;
