@@ -90,6 +90,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 424 | Longest Repeating Character Replacement | Alpha
 | 395 | Longest Substring with At Least K Repeating Characters | Alpha
 | 76 | Minimum Window Substring | Alpha
+| 727 | Minimum Window Subsequence | Bravo | sliding window, dynamic programming
+| 978 | Longest Turbulent Subarray | Alpha
+| 992 | Subarrays with K Different Integers | Alpha
+| 995 | Minimum Number of K Consecutive Bit Flips | Alpha | greedy
 
 ## Prefix sum
 | ID | Name | Rating | Note
@@ -252,6 +256,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 115 | Distinct Subsequences | Bravo | 2D DP String
 | 139 | Word Break | Alpha | 1D DP String
 | 673 | Number of Increasing Subsequence | Alpha
+| 978 | Longest Turbulent Subarray | Alpha
 
 ## Matrix
 | ID | Name | Rating | Note

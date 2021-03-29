@@ -42,10 +42,10 @@ class Solution {
 public:
     int characterReplacement(string s, int k) {
         vector<int> window(26, 0);
-         
-        // the char which appears the most in current window and its count 
-        char maxFreqChar; 
-        int maxFreqCount = 0; 
+
+        // the char which appears the most in current window and its count
+        char maxFreqChar;
+        int maxFreqCount = 0;
 
         int left = 0, right = 0;
         int maxLen = 0;
@@ -54,23 +54,24 @@ public:
             char c = s[right++];
             ++window[c - 'A'];
 
+            // needs >= here to have the most up-to-date char (to have correct deletion)
             if (window[c - 'A'] >= maxFreqCount) {
-                maxFreqCount = window[c - 'A']; 
-                maxFreqChar = c; 
+                maxFreqCount = window[c - 'A'];
+                maxFreqChar = c;
             }
 
             while (right - left - maxFreqCount > k) {
                 char c = s[left++];
-                --window[c - 'A']; 
+                --window[c - 'A'];
 
                 if (maxFreqChar == c) {
-                    maxFreqCount -= 1; 
+                    maxFreqCount -= 1;
                 }
             }
-        
+
             maxLen = max(maxLen, right - left);
         }
-    
-        return maxLen; 
+
+        return maxLen;
     }
 };

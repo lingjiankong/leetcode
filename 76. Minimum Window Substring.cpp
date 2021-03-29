@@ -27,7 +27,6 @@ string minWindow(string s, string t) {
     int start = 0, minLen = INT_MAX;
 
     while (right < s.size()) {
-        // Move right boundary of the window to the right.
         char c = s[right++];
         if (need.count(c)) {
             ++window[c];
