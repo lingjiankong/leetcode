@@ -73,6 +73,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 53 | Maximum Subarray | Alpha | Dynamic programming
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
+| 45 | Max Consecutive Ones | Alpha
 
 ## Sliding window
 | ID | Name | Rating | Note
@@ -94,6 +95,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 978 | Longest Turbulent Subarray | Alpha
 | 992 | Subarrays with K Different Integers | Alpha
 | 995 | Minimum Number of K Consecutive Bit Flips | Alpha | greedy
+| 1004 | Max Consecutive Ones III | Alpha
+| 487 | Max Consecutive Ones II | Alpha
 
 ## Prefix sum
 | ID | Name | Rating | Note
