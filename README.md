@@ -97,6 +97,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 995 | Minimum Number of K Consecutive Bit Flips | Alpha | greedy
 | 1004 | Max Consecutive Ones III | Alpha
 | 487 | Max Consecutive Ones II | Alpha
+| 1052 | Grumpy Bookstore Ownder | Alpha
+| 1100 | Find K-Length Substrings With No Repeated Characters | Alpha
+| 1151 | Minimum Swaps to Group All 1's Together | Alpha
+
 
 ## Prefix sum
 | ID | Name | Rating | Note
@@ -105,6 +109,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
 | 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
 | 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
+| 1074 | Number of Submatriecs That Sum To Target | TODO
 
 ## String
 | ID | Name | Rating | Note
