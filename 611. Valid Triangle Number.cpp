@@ -22,7 +22,7 @@
 class Solution {
 public:
     int triangleNumber(vector<int>& nums) {
-        int numberOfTriangles = 0;
+        int numTriangles = 0;
         sort(nums.begin(), nums.end());
         for (int i = 0; i < nums.size(); ++i) {
             for (int j = i + 1; j < nums.size(); ++j) {
@@ -43,10 +43,10 @@ public:
                 // right is the first index in nums which is greater or equal to target
                 // Therefore, right - 1 is the last index in nums which is smaller than target.
                 // Hence, right - 1 - j is the count of such numbers.
-                numberOfTriangles += right - 1 - j;
+                numTriangles += right - 1 - j;
             }
         }
 
-        return numberOfTriangles;
+        return numTriangles;
     }
 };

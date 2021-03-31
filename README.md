@@ -31,8 +31,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 245 | Shortest Word Distance III | Alpha
 | 244 | Shortest Word Distance II | Alpha
 | 217 | Contains Duplicate | Alpha
-| 219 | Contains Duplicate II | Alpha
-| 220 | Contains Duplicate III | Alpha
 | 55 | Jump Game | Alpha
 | 45 | Jump Game II | Alpha
 | 11 | Container With Most Water | Alpha
@@ -92,7 +90,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 395 | Longest Substring with At Least K Repeating Characters | Alpha
 | 76 | Minimum Window Substring | Alpha
 | 727 | Minimum Window Subsequence | Bravo | sliding window, dynamic programming
-| 978 | Longest Turbulent Subarray | Alpha
 | 992 | Subarrays with K Different Integers | Alpha
 | 995 | Minimum Number of K Consecutive Bit Flips | Alpha | greedy
 | 1004 | Max Consecutive Ones III | Alpha
@@ -100,7 +97,11 @@ I am currently reorganize the problem categories, so this page might be a little
 | 1052 | Grumpy Bookstore Ownder | Alpha
 | 1100 | Find K-Length Substrings With No Repeated Characters | Alpha
 | 1151 | Minimum Swaps to Group All 1's Together | Alpha
-
+| 1208 | Get Equal Substrings Within Budget | Alpha
+| 1423 | Maximum Points You Can Obtain from Cards | Alpha
+| 1176 | Diet Plan Performance | Alpha
+| 1456 | Maximum Number of Vowels in a Substring of Given Length | Alpha
+| 1658 | Minimum Operations to Reduce X to Zero | Alpha
 
 ## Prefix sum
 | ID | Name | Rating | Note
@@ -129,8 +130,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 387 | First Unique Character in a String | Alpha
 | 383 | Ransom Note | Alpha
 | 242 | Valid Anagram | Alpha
-| 438 | Find All Anagrams in a String | Alpha | sliding Window
-| 567 | Permutation in String | Alpha | sliding window
 | 49 | Group Anagrams | Alpha
 | 249 | Group Shifted Strings | Alpha
 | 179 | Largest Number | Bravo
@@ -153,9 +152,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 792 | Number of Matching Subsequence | Alpha
 | 187 | Repeated DNA Sequences | Alpha
 | 771 | Jewels and Stongs | Bravo
-| 76 | Minimum Window Substring | Alpha | sliding window
 | 844 | Backspace String Compare | Bravo
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha | sliding Window
 
 ## Binary Search
 | ID | Name | Rating | Note
@@ -445,6 +442,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 304 | Range Sum Query 2D - Immutable | Charlie
 
 ## Parentheses Series
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 20 | Valid Parentheses | Alpha
 | 32 | Longest Valid Parentheses | Bravo
 | 22 | Generate Parentheses | Alpha
@@ -453,4 +452,9 @@ I am currently reorganize the problem categories, so this page might be a little
 | 921 | Minimum Add to Make Parentheses Valid | Alpha
 | 1249 | Minimum Remove to Make Valid Parentheses | Alpha
 | 1190 | Reverse Substrings Between Each Pair of Parentheses | Bravo, Mechanical
+
+## Uncategorized
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 
