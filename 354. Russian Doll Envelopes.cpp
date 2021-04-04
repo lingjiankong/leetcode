@@ -19,7 +19,7 @@
 //
 // This is the 2D version of 300. Longest Increasing Subsequence.
 // Compare these two questions for intuition.
-
+//
 class Solution {
 public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
@@ -43,12 +43,12 @@ public:
     }
 };
 
-// Binary search solution O(nlogn). This is almost the same as 300. Longest Increasing Subsequence.
-// You would need to memorize it.
 class Solution {
 public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
-        vector<int> heightTails;
+        // dp[i] stores the length of longest subsequence that ends at position i (i.e. number of envelopes).
+        vector<int> dp(envelopes.size(), 1);
+        int maxEnvelopes = 0;
 
         // Sort the width in ascending order. If width is the same, then sort height in DESCENDING order.
         // Why sort width in ascending order but height in descending order? Because envelopes with the same width can't
@@ -62,9 +62,34 @@ public:
         // After sorting we have
         // [2,3] [3,7] [4,8] [4,6]
         // 
-        // Now just Do LIS on the all height values, you will get the answer
         sort(envelopes.begin(), envelopes.end(), [](const vector<int>& a, const vector<int>& b) {
-            return a[0] < b[0] || a[0] == b[0] && a[1] > b[1];
+            return (a[0] < b[0]) || (a[0] == b[0] && a[1] > b[1]);
+        });
+
+        // Now just do LIS on the all height values (you don't have to care about width anymore)
+        for (int i = 0; i < envelopes.size(); ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (envelopes[j][1] < envelopes[i][1]) {
+                    dp[i] = max(dp[i], dp[j] + 1);
+                }
+            }
+
+            maxEnvelopes = max(maxEnvelopes, dp[i]);
+        }
+
+        return maxEnvelopes;
+    }
+};
+
+// Binary search solution O(nlogn). This is almost the same as 300. Longest Increasing Subsequence.
+// You would need to memorize it.
+class Solution {
+public:
+    int maxEnvelopes(vector<vector<int>>& envelopes) {
+        vector<int> heightTails;
+
+        sort(envelopes.begin(), envelopes.end(), [](const vector<int>& a, const vector<int>& b) {
+            return (a[0] < b[0]) || (a[0] == b[0] && a[1] > b[1]);
         });
 
         for (int i = 0; i < envelopes.size(); ++i) {

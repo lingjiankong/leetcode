@@ -15,26 +15,23 @@
 
 // DP solution. O(n2).
 int lengthOfLIS(vector<int>& nums) {
-    // dp[i] stores the length of longest subsequence that ends at position i (nums[i] must be used).
-    // Remember to initialize all elements in dp to 1 because a single number itself is a subsequence of length 1.
+    // dp[i]: the length of longest subsequence that ends at position i (nums[i] must be used).
+    // All elements in dp are initialized to 1 because a single number itself is a subsequence of length 1.
     vector<int> dp(nums.size(), 1);
 
-    int longestLength = 0;
+    int maxLen = 0;
 
     for (int i = 0; i < nums.size(); ++i) {
         for (int j = 0; j < i; ++j) {
             if (nums[j] < nums[i]) {
-                // In this case, the longest subsequence that ends at position i, must be the larger one of
-                // the longest subsequence that ends at position j, then + 1 (since nums[j] < nums[i]),
-                // or the current longest subsequence that ends at position i.
                 dp[i] = max(dp[i], dp[j] + 1);
             }
         }
 
-        longestLength = max(longestLength, dp[i]);
+        maxLen = max(maxLen, dp[i]);
     }
 
-    return longestLength;
+    return maxLen;
 }
 
 // Binary search. Not straightfoward to understand.

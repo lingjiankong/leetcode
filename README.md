@@ -69,7 +69,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 334 | Increasing Triplet Subsequence | Alpha | Dynamic programming
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
-| 53 | Maximum Subarray | Alpha | Dynamic programming
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
 | 45 | Max Consecutive Ones | Alpha
 
@@ -171,8 +170,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha, Mechanical
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha
 | 315 | Count of Smaller Numbers After Self | Alpha
-| 300 | Longest Increasing Subsequence | Bravo, Mechanical | Dynamic Programming, Binary Search
-| 354 | Russian Doll Envelopes | Bravo, Mechanical | Dynamic Programming, Binary Search
 | 378 | Kth Smallest Element in a Sorted Matrix | Alpha | Binary Search, Priority Queue
 | 74 | Search a 2D Matrix | Alpha
 | 240 | Search a 2D Matrix II | Alpha, Mechanical
@@ -185,8 +182,10 @@ I am currently reorganize the problem categories, so this page might be a little
 | 275 | H-Index II | Bravo
 | 215 | Kth Largest Element in an Array | Bravo, Mechanical | Quick Sort, Binary Search
 | 278 | First Bad Version | Alpha
+| 300 | Longest Increasing Subsequence | Alpha | Dynamic Programming, Binary Search
+| 354 | Russian Doll Envelopes | Alpha | Dynamic Programming, Binary Search
 
-## Backtracking, DFS. BFS
+## Backtracking
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 46 | Permutations | Alpha
@@ -212,7 +211,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 130 | Surrounded Regions | Alpha
 | 339 | Nested List Weight Sum | Exotic
 | 364 | Nested List Weight Sum II | Exotic
-| 127 | Word Ladder | Alpha
 | 51 | N-Queens | Alpha
 | 52 | N-Queens II | Alpha
 | 22 | Generate Parentheses | Alpha
@@ -220,12 +218,15 @@ I am currently reorganize the problem categories, so this page might be a little
 | 139 | Word Break | Alpha | Dynamic Programming
 | 140 | Word Break II | Alpha
 | 131 | Palindrome Partitioning | Charlie
+| 267 | Palindrome Permutation II | Alpha
+
+## BFS
 | N1 | Minimum Distance Between Two Points in a Matrix | Alpha | BFS
 | N2 | Shortest Path Between Two Points in a Matrix | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
-| 267 | Palindrome Permutation II | Alpha
-| 752 | Open the Lock | Alpha | BFS
-
+| 127 | Word Ladder | Alpha
+| 126 | Word Ladder II | Bravo
+| 752 | Open the Lock | Alpha 
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -250,7 +251,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 63 | Unique Paths II | Alpha
 | 64 | Minimum Path Sum | Alpha
-| 72 | Edit Distance | Bravo, Mechanical
+| 72 | Edit Distance | Alpha
 | 221 | Maximal Square | Alpha
 | 361 | Bomb Enemy | Alpha
 | 53 | Maximum Subarray | Alpha
@@ -262,6 +263,9 @@ I am currently reorganize the problem categories, so this page might be a little
 | 139 | Word Break | Alpha | 1D DP String
 | 673 | Number of Increasing Subsequence | Alpha
 | 978 | Longest Turbulent Subarray | Alpha
+| 300 | Longest Increasing Subsequence | Alpha | Dynamic Programming, Binary Search
+| 354 | Russian Doll Envelopes | Alpha | Dynamic Programming, Binary Search
+| 1143 | Longest Common Subsequence | Alpha
 
 ## Matrix
 | ID | Name | Rating | Note
