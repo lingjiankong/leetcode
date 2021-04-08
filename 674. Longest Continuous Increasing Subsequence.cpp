@@ -26,19 +26,19 @@ public:
             return 0;
         }
 
-        int maxLength = 1;
-        int currentLength = 1;
+        int maxLen = 1;
+        int curLen = 1;
 
         for (int i = 1; i < nums.size(); ++i) {
             if (num[i-1] < nums[i]) {
-                ++currentLength;
+                ++curLen;
             } else {
-                currentLength = 1;
+                curLen = 1;
             }
 
-            maxLength = max(maxLength, currentLength);
+            maxLen = max(maxLen, curLen);
         }
 
-        return maxLength;
+        return maxLen;
     }
 };

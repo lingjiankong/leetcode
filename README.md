@@ -266,6 +266,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 300 | Longest Increasing Subsequence | Alpha | Dynamic Programming, Binary Search
 | 354 | Russian Doll Envelopes | Alpha | Dynamic Programming, Binary Search
 | 1143 | Longest Common Subsequence | Alpha
+| 516 | Longest Palindromic Subsequence | Alpha
 
 ## Matrix
 | ID | Name | Rating | Note

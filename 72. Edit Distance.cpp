@@ -27,34 +27,35 @@
 // exection -> execution (insert 'u')
 //
 // ***
+
+// dp[i][j] stores the minimum edit distance to convert word1[0, i) to word2[0, j)
 //
-// Just memorize the code. Memorizing the code might be more efficient.
-//
-// dp[i][j] stores the minimum edit distance for word1[0, i) and word2[0, j) (i and j are the right bounds).
-//
-// Given two string word1 and word2, there are four cases when you calculate the minimum edit distance:
-//
+// Base case:
 // word1 = "", word2 = "ros"
-// 1. If word1 is empty, then the min edit distance is word2.size();
-// (This is how the top row gets initialized)
+// 1. If word1 is empty, then the min edit distance is word2.size() (insertion).
 //
 // word1 = "horse", word2 = ""
-// 2. If word2 is empty, then the min edit distance is word1.size();
-// (This is how the left column gets initialized)
+// 2. If word2 is empty, then the min edit distance is word1.size() (deletion).
 //
+// State transition:
 // word1 = "hors", word2 = "ros"
 // 3. If word1[i-1] = word2[j-1] (i.e. last letter is the same),
-// then the min edit distance = dp[i-1][j-1].
-// That is, the min edit distance for (word1 = "hors", word2 = "ros") is the same as the min edit distance for (word1 =
-// "hor", word2 = "ro").
+// then the min edit distance = dp[i-1][j-1] (skip).
+// That is, the min edit distance for (word1 = "hors", word2 = "ros")
+// is the same as the min edit distance for (word1 = "hor", word2 = "ro").
 //
 // word1 = "horse", word2 = "ros"
 // 4. If word1[i-1] != word2[j-1] (i.e. last letter not the same),
-// then the min edit distance is: dp[i][j] = min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}) + 1,
-// where dp[i][j-1] stores the edit distance between (horse, ro), so (horse, ros) can be obtained by insertion (add one
-// additional editing distance); where dp[i-1][j] stores the edit distance between (hors, ros), so (horse, ros) can be
-// obtained by insertion (add one additional editing distance); where dp[i-1][j-1] stores the edit distance between
-// (hors, ro), so (horse, ros) can be obtained by replacement (add one additional editing distance)
+// then the min edit distance is: dp[i][j] = min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}) + 1, where
+//
+// a). dp[i][j-1] stores the edit distance between (horse, ro), so (horse, ros) can be obtained by insertion to s1.
+// horse (ro) + s (add one additional editing distance);
+//
+// b). dp[i-1][j] stores the edit distance between (hors, ros), so (horse, ros) can be obtained by deletion from s1.
+// horse - e = hors (ros) (add one additional editing distance);
+//
+// c). dp[i-1][j-1] stores the edit distance between (hors, ro), so (horse, ros) can be obtained by replacement
+// (add one additional editing distance)
 //
 //   Ø a b c d
 // Ø 0 1 2 3 4
@@ -63,7 +64,6 @@
 // c 3 3 2 1 2
 //
 // Draw the state transition matrix and figure out the state transition function.
-
 int minDistance(string word1, string word2) {
     int m = word1.size(), n = word2.size();
     vector<vector<int>> dp(m + 1, vector<int>(n + 1));
@@ -88,3 +88,37 @@ int minDistance(string word1, string word2) {
 
     return dp[m][n];
 }
+
+// Same idea. Recursion from labuladong. See book pp. 124 for detail.
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        int m = word1.length(), n = word2.length();
+        _memo = vector<vector<int>>(m, vector<int>(n, -1));
+
+        return _dp(word1, word2, m - 1, n - 1);
+    }
+
+private:
+    int _dp(const string& word1, const string& word2, int i, int j) {
+        if (i == -1) {
+            return j + 1;
+        }
+        if (j == -1) {
+            return i + 1;
+        }
+        if (_memo[i][j] != -1) {
+            return _memo[i][j];
+        }
+
+        if (word1[i] == word2[j]) {
+            return _memo[i][j] = _dp(word1, word2, i - 1, j - 1);
+        } else {
+            return _memo[i][j] = min({_dp(word1, word2, i, j - 1) + 1,        // insert word2[j] to word1[i]
+                                      _dp(word1, word2, i - 1, j) + 1,        // delete word1[i]
+                                      _dp(word1, word2, i - 1, j - 1) + 1});  // replace word1[i] with word2[j]
+        }
+    }
+
+    vector<vector<int>> _memo;
+};
