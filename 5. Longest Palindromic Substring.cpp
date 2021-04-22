@@ -16,16 +16,20 @@
 // Note: this question is different from 516. Longest Palindromic Subsequence.
 
 
-// TODO: not done
 // DP
-// dp[i][j]: whether s[j, i] is a palindrome
+// dp[i][j]: whether s[j:i] is a palindrome
 // 我们维护一个二维数组 dp，其中 dp[i][j] 表示字符串区间 [j, i] 是否为回文串，当 i = j
 // 时，只有一个字符，肯定是回文串，如果 i = j + 1，说明是相邻字符，此时需要判断 s[i] 是否等于 s[j]，如果i和j不相邻，即 i
-// - j >= 2 时，除了判断 s[i] 和 s[j] 相等之外，dp[i - 1][j + 1] 若为真，就是回文串
+// - j >= 2 时，除了判断 s[i] 和 s[j] 相等之外，dp[i - 1][j + 1] 若为真，s[j:i]就是回文串
+//
+// Note that we are only interested in the lower left half of the dp table (where j <= i),
+// and we traverse from top to bottom, left to right.
+//
+// See also 516. Longest Palindromic Subsequence.
 class Solution {
 public:
     string longestPalindrome(string s) {
-        int n = s.size(), start = 0, len = 1;
+        int n = s.size(), start = 0, maxLen = 1;
         vector<vector<int>> dp(n, vector<int>(n, 0));
 
         for (int i = 0; i < n; ++i) {
@@ -35,13 +39,13 @@ public:
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < i; ++j) {
                 dp[i][j] = (s[i] == s[j] && (i - j < 2 || dp[i - 1][j + 1]));
-                if (dp[i][j] && len < i - j + 1) {
-                    len = i - j + 1;
+                if (dp[i][j] && maxLen < i - j + 1) {
+                    maxLen = i - j + 1;
                     start = j;
                 }
             }
         }
-        return s.substr(start, len);
+        return s.substr(start, maxLen);
     }
 };
 

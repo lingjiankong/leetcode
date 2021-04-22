@@ -44,7 +44,7 @@ int searchInsert(vector<int>& nums, int target) {
     return right;
 }
 
-// Recap: vanilla binary search
+// Side note: vanilla binary search
 // If the question were asking us to find the location of target and return -1 if it is not found, then the code becomes
 int searchInsert(vector<int>& nums, int target) {
     int left = 0, right = nums.size();

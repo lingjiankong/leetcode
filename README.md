@@ -146,7 +146,6 @@ I am currently reorganize the problem categories, so this page might be a little
 | 680 | Valid Palindrome II | Alpha
 | 266 | Palindrome Permutation | Alpha
 | 267 | Palindrome Permutation II | Alpha
-| 5 | Longest Palindromic Substring | Bravo
 | 392 | Is Subsequence | Alpha
 | 792 | Number of Matching Subsequence | Alpha
 | 187 | Repeated DNA Sequences | Alpha
@@ -156,13 +155,13 @@ I am currently reorganize the problem categories, so this page might be a little
 ## Binary Search
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
+| 35 | Search Insert Position | Alpha
 | 704 | Binary Search | Alpha
 | 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha | Binary search
 | 475 | Heaters | Alpha
 | 441 | Arranging Coins | Alpha
 | 367 | Valid Perfect Square | Alpha
 | 611 | Valid Triangle Number | Alpha
-| 35 | Search Insert Position | Alpha
 | 69 | Sqrt(x) | Alpha
 | 33 | Search in Rotated Sorted Array | Alpha, Mechanical
 | 81 | Search in Rotated Sorted Array II | Alpha, Mechanical
@@ -184,6 +183,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 278 | First Bad Version | Alpha
 | 300 | Longest Increasing Subsequence | Alpha | Dynamic Programming, Binary Search
 | 354 | Russian Doll Envelopes | Alpha | Dynamic Programming, Binary Search
+| 887 | Super Egg Drop | Alpha | Dynamic programming, binary search
 
 ## Backtracking
 | ID | Name | Rating | Note
@@ -267,6 +267,12 @@ I am currently reorganize the problem categories, so this page might be a little
 | 354 | Russian Doll Envelopes | Alpha | Dynamic Programming, Binary Search
 | 1143 | Longest Common Subsequence | Alpha
 | 516 | Longest Palindromic Subsequence | Alpha
+| 5 | Longest Palindromic Substring | Alpha
+| 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha
+| 10 | Reguar Expression Matching | Bravo
+| 650 | 2 Keys Keyboard | Alpha
+| 651 | 4 Keys Keyboard | Alpha
+| 887 | Super Egg Drop | Alpha | dynamic programming, binary search
 
 ## Matrix
 | ID | Name | Rating | Note
