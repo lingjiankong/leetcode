@@ -22,7 +22,7 @@
 //
 // Why set all initial values in dp to amount + 1?
 // Because max number of coins to make changes for money amount n should not be greater than n.
-// You can't set initial values to INT_MAX because you might end up +1 to it which result in overflow.
+// You can't set initial values to INT_MAX because you might end up + 1 to it which result in overflow.
 int coinChange(vector<int>& coins, int amount) {
     vector<int> dp(amount + 1, amount + 1);
     dp[0] = 0;
@@ -39,6 +39,7 @@ int coinChange(vector<int>& coins, int amount) {
 }
 
 // Recursive.
+// Postorder traversal of n-tree.
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
@@ -54,7 +55,7 @@ public:
         for (int coin : coins) {
             int subproblem = coinChange(coins, amount - coin);
 
-            // (amount - coint) cannot be made up by any combination of the coins, subproblem has no solution. Continue.
+            // (amount - coin) cannot be made up by any combination of the coins, subproblem has no solution. Continue.
             if (subproblem == -1) {
                 continue;
             }

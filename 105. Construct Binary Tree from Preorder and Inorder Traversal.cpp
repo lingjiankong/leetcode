@@ -27,7 +27,7 @@
 //
 // Preorder traversing implies that preorder[0] is the root node.
 // Then we can find this preorder[0] in inorder, say it's inorder[5].
-// Now we know that inorder[5] is root, so we know that inorder[0] to inorder[4] is its left subtress, inorder[6] to the
+// Now we know that inorder[5] is root, so we know that inorder[0] to inorder[4] is its left subtree, inorder[6] to the
 // end is its right subtree. Recursively doing this on subarrays, we can build a tree from it.
 
 class Solution {
@@ -49,7 +49,7 @@ private:
         int rootValue = preorder[preStart];
 
         auto itr = find(inorder.begin() + inStart, inorder.begin() + inEnd, rootValue);
-        int leftSubtreeSize = itr - inorder.begin() - inStart;
+        int leftSubtreeSize = (itr - inorder.begin()) - inStart;
 
         TreeNode* root = new TreeNode(rootValue);
         root->left = _buildTree(preorder, preStart + 1, preStart + 1 + leftSubtreeSize, inorder, inStart,

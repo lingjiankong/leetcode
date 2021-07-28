@@ -20,6 +20,75 @@
 
 using namespace std;
 
+// Obtain the shortest distance from start to goal
+int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
+    int m = grid.size();
+    int n = grid[0].size();
+
+    vector<vector<bool>> visited(m, vector<bool>(n));
+
+    // Applying BFS on matrix cells starting from start
+    queue<pair<int, int>> cellQueue;
+
+    cellQueue.push(start);
+    visited[start.first][start.second] = true;
+    int distance = 0;
+
+    while (!cellQueue.empty()) {
+        int qSize = cellQueue.size();
+        for (int i = 0; i < qSize; ++i) {
+            pair<int, int> cell = cellQueue.front();
+            cellQueue.pop();
+            int x = cell.first, y = cell.second;
+
+            if (pair<int, int>(x, y) == goal) {
+                return distance;
+            }
+
+            // Moving up
+            if (x - 1 >= 0 && grid[x - 1][y] != 'x' && !visited[x - 1][y]) {
+                cellQueue.push({x - 1, y});
+                visited[x - 1][y] = true;
+            }
+
+            // Moving down
+            if (x + 1 < m && grid[x + 1][y] != 'x' && !visited[x + 1][y]) {
+                cellQueue.push({x + 1, y});
+                visited[x + 1][y] = true;
+            }
+
+            // Moving left
+            if (y - 1 >= 0 && grid[x][y - 1] != 'x' && !visited[x][y - 1]) {
+                cellQueue.push({x, y - 1});
+                visited[x][y - 1] = true;
+            }
+
+            // Moving right
+            if (y + 1 < n && grid[x][y + 1] != 'x' && !visited[x][y + 1]) {
+                cellQueue.push({x, y + 1});
+                visited[x][y + 1] = true;
+            }
+        }
+
+        ++distance;
+    }
+
+    return -1;
+}
+
+int main() {
+    vector<vector<char>> grid = {
+        {'x', 'o', 'x', 'o'}, {'o', 'x', 'o', 'o'}, {'x', 'o', 'o', 'o'}, {'o', 'o', 'o', 'o'}};
+
+    pair<int, int> start = {0, 3};
+    pair<int, int> goal = {3, 0};
+
+    cout << minDistance(start, goal, grid) << endl;
+
+    return 0;
+}
+
+// Obtain the shortest distance from start to every (x, y).
 int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
     int m = grid.size();
     int n = grid[0].size();
@@ -75,14 +144,3 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
     return -1;
 }
 
-int main() {
-    vector<vector<char>> grid = {
-        {'x', 'o', 'x', 'o'}, {'o', 'x', 'o', 'o'}, {'x', 'o', 'o', 'o'}, {'o', 'o', 'o', 'o'}};
-
-    pair<int, int> start = {0, 3};
-    pair<int, int> goal = {3, 0};
-
-    cout << minDistance(start, goal, grid) << endl;
-
-    return 0;
-}

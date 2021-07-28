@@ -53,6 +53,7 @@
 // ***
 
 // BFS
+// You may also add deadends to visited and check only visited.
 class Solution {
 public:
     int openLock(vector<string>& deadends, string target) {
@@ -66,8 +67,8 @@ public:
         visited.insert("0000");
 
         while (not q.empty()) {
-            int curSize = q.size();
-            for (int i = 0; i < curSize; ++i) {
+            int qSize = q.size();
+            for (int i = 0; i < qSize; ++i) {
                 string curCode = q.front();
                 q.pop();
 

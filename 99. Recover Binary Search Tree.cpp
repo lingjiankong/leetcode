@@ -62,7 +62,7 @@ public:
 
 private:
     void _inorder(TreeNode* root, vector<TreeNode*>& inOrderTreeNodePtrs, vector<int>& inOrderTreeNodeValues) {
-        if (!root) {
+        if (not root) {
             return;
         }
         _inorder(root->left, inOrderTreeNodePtrs, inOrderTreeNodeValues);
@@ -84,34 +84,35 @@ public:
     }
 
     void _inorder(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return;
         }
         _inorder(root->left);
 
-        if (!prev) {
-            prev = root;
-        } else {
+        if (prev) {
             // We know only two elements have been swapped, so if prev->val > root->val,
             // then prev is a misplaced node, assign it to first;
-            // current root is also a misplace node, assign it to second.
+            // current root is also a misplaced node, assign it to second.
             if (prev->val > root->val) {
-                if (!first) {
+                if (not first) {
                     first = prev;
                 }
                 // Note that "first" will not change once assigned (because the first prev we encounter which prev->val
                 // > root->val is a misplaced node). However, we will keep assigning current root to "second" as long as
-                // prev->val > root->val since current root is also a mislaced node (we only have a pair of misplaced
+                // prev->val > root->val since current root is also a misplaced node (we only have a pair of misplaced
                 // node).
                 second = root;
             }
-
-            prev = root;
         }
+
+        prev = root;
 
         _inorder(root->right);
     }
 
 private:
+    // prev: previous element during in order traversal
+    // first: first misplaced node
+    // second: second misplaced node
     TreeNode *prev = nullptr, *first = nullptr, *second = nullptr;
 };

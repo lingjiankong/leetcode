@@ -22,7 +22,8 @@
 // Compare this question with 104. Maximum Depth of Binary Tree,
 
 // DFS
-// Note the extra if and else if condition in this problem that checks if a node has only one subtree.
+// Note: A leaf is a node with no children (no left chidren and no right children).
+// The extra if conditions in this problem that checks if a node has only one subtree.
 int minDepth(TreeNode* root) {
     if (!root) {
         return 0;
@@ -33,16 +34,21 @@ int minDepth(TreeNode* root) {
     // node which only has one subtree has minimum depth of 0.
     if (!root->left && !root->right) {
         return 1;
-    } else if (!root->left && root->right) {
-        return 1 + minDepth(root->right);
-    } else if (root->left && !root->right) {
-        return 1 + minDepth(root->left);
-    } else {  // both subtrees exist
-        return 1 + min(minDepth(root->left), minDepth(root->right));
     }
+    if (!root->left && root->right) {
+        return 1 + minDepth(root->right);
+    }
+    if (root->left && !root->right) {
+        return 1 + minDepth(root->left);
+    }
+
+    // both subtrees exist
+    return 1 + min(minDepth(root->left), minDepth(root->right));
 }
 
 // BFS
+// start: the root node
+// goal: the first node with no children
 int minDepth(TreeNode* root) {
     if (!root) {
         return 0;

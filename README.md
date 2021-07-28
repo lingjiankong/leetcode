@@ -227,6 +227,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 127 | Word Ladder | Alpha
 | 126 | Word Ladder II | Bravo
 | 752 | Open the Lock | Alpha 
+| 111 | Minimum Depth of Binary Tree | Alpha | Postorder, BFS
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -369,7 +370,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 543 | Diameter of Binary Tree | Alpha | Postorder
 | 104 | Maximum Depth of Binary Tree | Alpha | Postorder
 | 366 | Find Leaves of Binary Tree | Alpha | Postorder
-| 111 | Minimum Depth of Binary Tree | Alpha | Postorder
+| 111 | Minimum Depth of Binary Tree | Alpha | Postorder, BFS
 | 257 | Binary Tree Paths | Alpha
 | 129 | Sum Root to Leaf Numbers | Alpha
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
@@ -382,8 +383,8 @@ I am currently reorganize the problem categories, so this page might be a little
 | 199 | Binary Tree Right Side View | Bravo | Preorder
 | 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
 | 222 | Count Complete Tree Nodes | Alpha
-| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Bravo | Preorder
-| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Bravo, Mechanical
+| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Alpha | Preorder
+| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Alpha | Postorder
 | 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
 | 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
 | 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
@@ -468,4 +469,3 @@ I am currently reorganize the problem categories, so this page might be a little
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
-

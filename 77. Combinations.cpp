@@ -43,6 +43,7 @@ private:
     void _backtrack(vector<int>& nums, int k, int startIndex, vector<int>& current, vector<vector<int>>& all) {
         if (current.size() == k) {
             all.push_back(current);
+            return;
         }
 
         for (int i = startIndex; i < nums.size(); ++i) {
@@ -71,6 +72,7 @@ private:
     void _backtrack(int n, int k, int startNumber, vector<int>& current, vector<vector<int>>& all) {
         if (current.size() == k) {
             all.push_back(current);
+            return;
         }
 
         for (int num = startNumber; num <= n; ++num) {
