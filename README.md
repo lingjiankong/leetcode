@@ -421,6 +421,7 @@ I am currently reorganize the problem categories, so this page might be a little
 | 24 | Swap Nodes in Pairs | Bravo
 | 237 | Delete Node in a Linked List | Bravo
 | 19 | Remove Nth Node From End of List | Alpha
+| 1474 | Delete N Nodes After M Nodes of a Linked List | Alpha
 | 203 | Remove Linked List Elements | Alpha
 | 83 | Remove Duplicates from Sorted List | Bravo
 | 82 | Remove Duplicates from Sorted List II | Hard

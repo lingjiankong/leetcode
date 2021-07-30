@@ -12,22 +12,19 @@
 // ***
 
 ListNode* removeNthFromEnd(ListNode* head, int n) {
-    if (!head->next) {
-        return nullptr;
-    }
-
     // slow->next is the node we would like to remove.
     ListNode *slow = head, *fast = head;
 
+    // equivalent to while (n-- > 0)
     for (int i = 0; i < n; ++i) {
         fast = fast->next;
     }
 
-    // fast has reached one past the last element (the nullptr)
+    // if (fast == nullptr), fast has reached one past the last element (the nullptr)
     // In this case number n given is the same as number of nodes in the linked list.
     // which means we need to remove the first element in the LinkedList, so simply return the second element as the new
     // head.
-    if (!fast) {
+    if (not fast) {
         ListNode* toReturn = head->next;
         delete head;
         return toReturn;

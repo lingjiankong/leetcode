@@ -72,7 +72,7 @@ public:
                 string curCode = q.front();
                 q.pop();
 
-                if (notAllowed.count(curCode)) {
+                if (notAllowed.count(curCode)) { // You can also check this while you are checking visited. See N1.
                     continue;
                 }
 
@@ -84,7 +84,7 @@ public:
                     string up = plusOne(curCode, j);
                     if (not visited.count(up)) {
                         q.push(up);
-                        visited.insert(up);
+                        visited.insert(up);  // Note where we insert element to visited. Compare to bidirectional BFS.
                     }
 
                     string down = minusOne(curCode, j);
@@ -95,6 +95,78 @@ public:
                 }
             }
             ++numTurns;
+        }
+
+        return -1;
+    }
+
+private:
+    string plusOne(const string& code, int i) {
+        string res = code;
+        if (code[i] == '9') {
+            res[i] = '0';
+        } else {
+            res[i] = ((code[i] - '0') + 1) + '0';
+        }
+        return res;
+    }
+
+    string minusOne(const string& code, int i) {
+        string res = code;
+        if (code[i] == '0') {
+            res[i] = '9';
+        } else {
+            res[i] = ((code[i] - '0') - 1) + '0';
+        }
+        return res;
+    }
+};
+
+// Bidirectional BFS
+class Solution {
+public:
+    int openLock(vector<string>& deadends, string target) {
+        unordered_set<string> visited;
+        unordered_set<string> notAllowed(deadends.begin(), deadends.end());
+
+        int numTurns = 0;
+
+        unordered_set<string> q1;
+        q1.insert("0000");
+
+        unordered_set<string> q2;
+        q2.insert(target);
+
+        while (not q1.empty() and not q2.empty()) {
+            // Always expand q1 (the smaller set).
+            if (q1.size() > q2.size()) {
+                swap(q1, q2);
+            }
+
+            unordered_set<string> temp;  // to be assigned later to q1.
+            for (string s : q1) {
+                if (notAllowed.count(s)) {
+                    continue;
+                }
+                if (q2.count(s)) {
+                    return numTurns;
+                }
+                visited.insert(s);  // Note where we insert element to visited. Compare to unidirectional BFS.
+
+                for (int j = 0; j < 4; ++j) {
+                    string up = plusOne(s, j);
+                    if (not visited.count(up)) {
+                        temp.insert(up);
+                    }
+
+                    string down = minusOne(s, j);
+                    if (not visited.count(down)) {
+                        temp.insert(down);
+                    }
+                }
+            }
+            ++numTurns;
+            q1 = temp;
         }
 
         return -1;
