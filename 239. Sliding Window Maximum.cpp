@@ -25,19 +25,6 @@
 //
 // ***
 
-// Brute force
-// Time complexity: O((n – k) * k)
-vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-    vector<int> maximums;
-
-    for (int i = 0; i <= nums.size() - k; ++i) {
-        int maxElement = *max_element(nums.begin() + i, nums.begin() + i + k);
-        maximums.push_back(maxElement);
-    }
-
-    return maximums;
-}
-
 // Multiset
 // labuladong sliding window template
 // Time complexity: O(n * logk)
@@ -61,6 +48,19 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
     }
 
     return res;
+}
+
+// Brute force
+// Time complexity: O((n – k) * k)
+vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+    vector<int> maximums;
+
+    for (int i = 0; i <= nums.size() - k; ++i) {
+        int maxElement = *max_element(nums.begin() + i, nums.begin() + i + k);
+        maximums.push_back(maxElement);
+    }
+
+    return maximums;
 }
 
 // Monotonic queue in descending order (using deque as the underlying data structure)

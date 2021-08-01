@@ -29,10 +29,10 @@ vector<int> twoSum(vector<int>& numbers, int target) {
     while (left < right) {
         int sum = numbers[left] + numbers[right];
         if (sum == target) {
-            return {left + 1, right + 1};  // The question asks us to return using 1-based index.
+            return {left + 1, right + 1};  // the question asks us to return using 1-based index.
         } else if (sum < target) {
             ++left;
-        } else {
+        } else if (sum > target) {
             --right;
         }
     }
@@ -59,10 +59,11 @@ vector<vector<int>> twoSum(vector<int>& nums, int target) {
             while (left < right && nums[right] == nums[right - 1]) {
                 --right;
             }
-            ++left, --right;
+            ++left;
+            --right;
         } else if (sum < target) {
             ++left;
-        } else {
+        } else if (sum > target) {
             --right;
         }
     }

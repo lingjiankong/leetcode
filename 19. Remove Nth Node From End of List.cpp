@@ -32,6 +32,8 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
 
     // Otherwise, increment slow and fast together to the right,
     // until fast->next == nullptr, at this point slow->next reached the element which we want to remove.
+    // Note if using while (fast), slow *is* the element we want to remove;
+    // if using while (fast->next), slow *points to* the element we want to remove.
     while (fast->next) {
         fast = fast->next;
         slow = slow->next;

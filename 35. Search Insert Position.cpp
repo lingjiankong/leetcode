@@ -68,7 +68,7 @@ int searchInsert(vector<int>& nums, int target) {
 // std::upper_bound - returns an iterator pointing to the first element in the range [first, last) that is greater than
 // value, or last if no such element is found.
 //
-// i.e. How many elements are *less than or equal to * target
+// i.e. How many elements are *less than or equal to* target
 int searchInsert(vector<int>& nums, int target) {
     int left = 0, right = nums.size();
 

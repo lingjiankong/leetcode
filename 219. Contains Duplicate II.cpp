@@ -18,22 +18,26 @@
 // ***
 
 // labuladong sliding window template
+// window is of size up to k and contains all the unique elements you've seen
 bool containsNearbyDuplicate(vector<int>& nums, int k) {
     unordered_set<int> window;
 
     int left = 0, right = 0;
     while (right < nums.size()) {
         int num = nums[right++];
+
+        // When we perform the check here, window.size() will never be > k.
         if (window.count(num)) {
             return true;
         }
         window.insert(num);
 
-        while (window.size() == k + 1) {
+        while (right - left == k + 1) {
             int num = nums[left++];
             window.erase(num);
         }
     }
+
     return false;
 }
 

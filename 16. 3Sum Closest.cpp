@@ -32,9 +32,11 @@ public:
                     closest = sum;
                 }
 
-                if (sum < target) {
+                if (sum == target) {
+                    return closest;
+                } else if (sum < target) {
                     ++left;
-                } else {
+                } else if (sum > target) {
                     --right;
                 }
             }

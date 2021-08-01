@@ -52,7 +52,7 @@ bool checkInclusion(string s1, string s2) {
     return false;
 }
 
-// Same idea.
+// Same idea. See 76. Minimum Window Substring for similar question.
 bool checkInclusion(string s1, string s2) {
     unordered_map<char, int> need, window;
 

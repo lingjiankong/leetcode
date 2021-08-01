@@ -27,21 +27,24 @@
 int lengthOfLongestSubstring(string s) {
     unordered_map<char, int> window;
 
-    int left = 0, right = 0;
     int maxLen = INT_MIN;
 
+    int left = 0, right = 0;
     while (right < s.size()) {
         char c = s[right++];
         ++window[c];
 
         while (window[c] > 1) {
             char c = s[left++];
-            --window[c];
+
+            if (--window[c] == 0) {
+                window.erase(c);
+            }
         }
 
         maxLen = max(maxLen, right - left);
     }
 
-    return maxLen;
+    return maxLen == INT_MIN ? 0 : maxLen;
 }
 

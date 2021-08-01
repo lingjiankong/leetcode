@@ -22,23 +22,27 @@
 
 // labuladong sliding window template
 // (cast to long to submit on leetcode)
-bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-    set<int> window;
+class Solution {
+public:
+    bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
+        set<long> window;
 
-    int left = 0, right = 0;
-    while (right < nums.size()) {
-        int num = nums[right++];
-        auto itr = window.lower_bound(num - t);
-        if ((itr != window.end()) and (*itr <= num + t)) {
-            return true;
-        }
-        window.insert(num);
+        int left = 0, right = 0;
+        while (right < nums.size()) {
+            long num = nums[right++];
 
-        while (window.size() == k + 1) {
-            int num = nums[left++];
-            window.erase(window.lower_bound(num));
+            auto itr = window.lower_bound(num - t);
+            if (itr != window.end() and *itr <= num + t) {
+                return true;
+            }
+            window.insert(num);
+
+            while (right - left == k + 1) {
+                int num = nums[left++];
+                window.erase(num);
+            }
         }
+
+        return false;
     }
-
-    return false;
-}
+};

@@ -34,7 +34,7 @@
 //
 // ***
 
-// The idea is very simple. For each house, you find the two heaters that are next to it (using binary search).
+// The idea is very simple. For each house, you find the *two* heaters that are next to it (using binary search).
 // You compare the distance between heater and the house. Final radius of the heater is the maximum distance ever seen.
 // You need to pay special attention when pos = heaters.begin() or pos = heaters.end().
 class Solution {
@@ -46,35 +46,9 @@ public:
         for (int house : houses) {
             // Find the first heater position that is no less than house position.
             auto pos = lower_bound(heaters.begin(), heaters.end(), house);
-            int nextHeaderToHouseDistance = (pos == heaters.end()) ? INT_MAX : *pos - house;
-            int prevHeaderToHourDistance = (pos == heaters.begin()) ? INT_MAX : house - *(--pos);
-            maxRadius = max(maxRadius, min(nextHeaderToHouseDistance, prevHeaderToHourDistance));
-        }
-
-        return maxRadius;
-    }
-};
-
-// Wtih binary search implementation instead of built-in std::lower_bound()
-class Solution {
-public:
-    int findRadius(vector<int>& houses, vector<int>& heaters) {
-        int maxRadius = 0;
-        sort(heaters.begin(), heaters.end());
-
-        for (int house : houses) {
-            int left = 0, right = heaters.size();
-            while (left < right) {
-                int mid = left + (right - left) / 2;
-                if (heaters[mid] < house) {
-                    left = mid + 1;
-                } else {
-                    right = mid;
-                }
-            }
-            int nextHeaderToHouseDistance = (right == heaters.size()) ? INT_MAX : heaters[right] - house;
-            int prevHeaterToHouseDistance = (right == 0) ? INT_MAX : house - heaters[right - 1];
-            maxRadius = max(maxRadius, min(nextHeaderToHouseDistance, prevHeaterToHouseDistance));
+            int rightDist = (pos == heaters.end()) ? INT_MAX : *pos - house;
+            int leftDist = (pos == heaters.begin()) ? INT_MAX : house - *(--pos);
+            maxRadius = max(maxRadius, min(rightDist, leftDist));
         }
 
         return maxRadius;

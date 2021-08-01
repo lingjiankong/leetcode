@@ -21,6 +21,7 @@
 // ***
 //
 // See also 15. 3Sum. Same idea. This question just add one more for loop.
+// Read this question before you read 15. 3Sum.
 
 vector<vector<int>> fourSum(vector<int>& nums, int target) {
     vector<vector<int>> allPairs;
@@ -55,7 +56,7 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
                     --right;
                 } else if (sum < target) {
                     ++left;
-                } else {
+                } else if (sum > target) {
                     --right;
                 }
             }

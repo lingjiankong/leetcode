@@ -19,6 +19,8 @@
 //
 // ***
 //
+// The question asks you whether three number can form a target. In this question specifically, that target is 0.
+//
 // See also 167. Two Sum II - Input array is sorted.
 // Read. 18. 4Sum first to see the general way of solving these problems.
 // This is a generalization of that problem with an added for loop. The most important thing in this question
@@ -52,7 +54,7 @@ vector<vector<int>> threeSum(vector<int>& nums, int target) {
                 --right;
             } else if (sum < target) {
                 ++left;
-            } else {
+            } else if (sum > target) {
                 --right;
             }
         }
@@ -61,53 +63,3 @@ vector<vector<int>> threeSum(vector<int>& nums, int target) {
     return allPairs;
 }
 
-// No need to look at this solution if you are just reviewing.
-// The question asks you whether three number can form a target. In this question specifically, that target is 0.
-// Solution below addresses what the question asks (target = 0) and will pass the OJ.
-vector<vector<int>> threeSum(vector<int>& nums) {
-    vector<vector<int>> allPairs;
-
-    sort(nums.begin(), nums.end());
-
-    // A special case if target = 0:
-    // If we want three sum = 0, then numbers cannot be all positive or all negative.
-    if (nums.empty() || nums.back() < 0 || nums.front() > 0) {
-        return {};
-    }
-
-    int nums.size() = nums.size();
-    for (int i = 0; i < nums.size() - 2; ++i) {
-        // A special case if target = 0.
-        if (nums[i] > 0) {
-            break;
-        }
-
-        // Skip duplicated element.
-        if (i > 0 && nums[i] == nums[i - 1]) {
-            continue;
-        }
-
-        int left = i + 1, right = nums.size() - 1;
-        while (left < right) {
-            int sum = nums[i] + nums[left] + nums[right];
-            if (sum == 0) {
-                allPairs.push_back({nums[i], nums[left], nums[right]});
-                while (left < right && nums[left] == nums[left + 1]) {
-                    ++left;
-                }
-                while (left < right && nums[right] == nums[right - 1]) {
-                    --right;
-                }
-
-                ++left;
-                --right;
-            } else if (sum < 0) {
-                ++left;
-            } else {
-                --right;
-            }
-        }
-    }
-
-    return allPairs;
-}

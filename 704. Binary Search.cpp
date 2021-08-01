@@ -35,7 +35,7 @@ public:
                 return mid;
             } else if (nums[mid] < target) {
                 left = mid + 1;
-            } else {
+            } else if (nums[mid] > target) {
                 right = mid;
             }
         }

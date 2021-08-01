@@ -19,6 +19,37 @@
 //
 // ***
 
+// O(n) in sliding window template
+bool containsDuplicate(vector<int>& nums) {
+
+    unordered_set<int> seen;
+
+    int right = 0;
+    while (right < nums.size()) {
+        int num = nums[right++];
+        if (seen.count(num)) {
+            return true;
+        }
+        seen.insert(num);
+
+        // No need for any adjustment to the left boundary of the sliding window.
+    }
+
+    return false;
+}
+
+// O(n)
+bool containsDuplicate(vector<int>& nums) {
+    unordered_set<int> seen;
+    for (int num : nums) {
+        if (seen.count(num)) {
+            return true;
+        }
+        seen.insert(num);
+    }
+    return false;
+}
+
 // O(n)
 bool containsDuplicate(vector<int>& nums) {
     return nums.size() > unordered_set<int>(nums.begin(), nums.end()).size();
@@ -31,18 +62,6 @@ bool containsDuplicate(vector<int>& nums) {
         if (nums[i] == nums[i - 1]) {
             return true;
         }
-    }
-    return false;
-}
-
-// O(n)
-bool containsDuplicate(vector<int>& nums) {
-    unordered_set<int> seen;
-    for (int num : nums) {
-        if (seen.count(num)) {
-            return true;
-        }
-        seen.insert(num);
     }
     return false;
 }
