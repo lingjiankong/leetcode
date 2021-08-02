@@ -153,8 +153,6 @@
 | 275 | H-Index II | Bravo
 | 215 | Kth Largest Element in an Array | Bravo, Mechanical | Quick Sort, Binary Search
 | 278 | First Bad Version | Alpha
-| 300 | Longest Increasing Subsequence | Alpha | Dynamic Programming, Binary Search
-| 354 | Russian Doll Envelopes | Alpha | Dynamic Programming, Binary Search
 | 887 | Super Egg Drop | Alpha | Dynamic programming, binary search
 
 ## Backtracking
@@ -224,7 +222,6 @@
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 63 | Unique Paths II | Alpha
 | 64 | Minimum Path Sum | Alpha
-| 72 | Edit Distance | Alpha
 | 221 | Maximal Square | Alpha
 | 361 | Bomb Enemy | Alpha
 | 53 | Maximum Subarray | Alpha
@@ -236,9 +233,11 @@
 | 139 | Word Break | Alpha | 1D DP String
 | 673 | Number of Increasing Subsequence | Alpha
 | 978 | Longest Turbulent Subarray | Alpha
-| 300 | Longest Increasing Subsequence | Alpha | Dynamic Programming, Binary Search
-| 354 | Russian Doll Envelopes | Alpha | Dynamic Programming, Binary Search
+| 300 | Longest Increasing Subsequence | Alpha
+| 354 | Russian Doll Envelopes | Alpha
 | 1143 | Longest Common Subsequence | Alpha
+| 583 | Delete Operation for Two Strings | Alpha
+| 72 | Edit Distance | Alpha
 | 516 | Longest Palindromic Subsequence | Alpha
 | 5 | Longest Palindromic Substring | Alpha
 | 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha

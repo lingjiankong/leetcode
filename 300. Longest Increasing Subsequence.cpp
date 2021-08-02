@@ -12,6 +12,9 @@
 //
 // This question asks about the longest sequence, NOT the longeset *consesutive* sequence.
 // See also 128. Longest Consecutive Sequence. In that question, order of element does not matter.
+//
+// This is the 1D version of 354. Russian Doll Envelopes.
+// Compare these two questions for intuition.
 
 // DP solution. O(n2).
 int lengthOfLIS(vector<int>& nums) {
@@ -34,22 +37,24 @@ int lengthOfLIS(vector<int>& nums) {
     return maxLen;
 }
 
-// Binary search. Not straightfoward to understand.
+// Binary search O(nlogn).
+// This algorithm is not intuitive. No need to understand it.
+// See labuladong book pp. 101 for drawing.
 //
 // Traverse through nums:
-// 1. If nums[i] > the right most element in elements, then add nums[i] to the end of elements (now elements.size() has
+// 1. If nums[i] > the right most element in piles, then add nums[i] to the end of piles (now piles.size() has
 // increased by 1).
 //
-// 2. If nums[i] < the left most element in elements, replace the leftmost element to nums[i] (note elements.size() does
+// 2. If nums[i] < the left most element in piles, replace the leftmost element with nums[i] (note piles.size()
+// does not change in this case).
+//
+// 3. Otherwise, find lower_bound(nums[i]) in piles, and replace that element with nums[i] (note piles.size() does
 // not change in this case).
 //
-// 3. Otherwise, find lower_bound(nums[i]) in elements, and replace that element with nums[i] (note elements.size() does
-// not change in this case).
+// Finally, piles.size() is the length of longest increasing subsequence.
+// Note that element in piles might not be a real LIS (we only need the size of piles).
 //
-// Finally, elements.size() is the length of longest increasing subsequence.
-// Note that element in elements might not be a real LIS (we only need the size of elements).
-//
-// elements doesn't contain the actual LIS, only it's length is valid.
+// piles doesn't contain the actual LIS, only it's length is valid.
 // For each num we are traversing in nums we have 2 options:
 // if it's the highest found value, we push it back, since a high value obviously makes our increasing sequence longer
 // if it's not the highest found value, then it could be a nice start (or continuation) of a shorter sequence.
@@ -67,16 +72,16 @@ int lengthOfLIS(vector<int>& nums) {
 // 9 -> [1,2,3,4,5,9]
 // 0 -> [0,2,3,4,5,9] // we replaced 1 with 0, so that it can become a new sequence
 int lengthOfLIS(vector<int>& nums) {
-    vector<int> elements;
+    vector<int> piles;
 
     for (int i = 0; i < nums.size(); ++i) {
-        auto itr = lower_bound(elements.begin(), elements.end(), nums[i]);
-        if (itr == elements.end()) {
-            elements.push_back(nums[i]);
+        auto itr = lower_bound(piles.begin(), piles.end(), nums[i]);
+        if (itr == piles.end()) {
+            piles.push_back(nums[i]);
         } else {
             *itr = nums[i];
         }
     }
 
-    return elements.size();
+    return piles.size();
 }

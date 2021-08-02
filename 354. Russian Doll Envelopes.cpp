@@ -19,30 +19,6 @@
 //
 // This is the 2D version of 300. Longest Increasing Subsequence.
 // Compare these two questions for intuition.
-//
-class Solution {
-public:
-    int maxEnvelopes(vector<vector<int>>& envelopes) {
-        // dp[i] stores the length of longest subsequence that ends at position i (i.e. number of envelopes).
-        vector<int> dp(envelopes.size(), 1);
-        int maxEnvelopes = 0;
-
-        sort(envelopes.begin(), envelopes.end());
-
-        for (int i = 0; i < envelopes.size(); ++i) {
-            for (int j = 0; j < i; ++j) {
-                if (envelopes[j][0] < envelopes[i][0] && envelopes[j][1] < envelopes[i][1]) {
-                    dp[i] = max(dp[i], dp[j] + 1);
-                }
-            }
-
-            maxEnvelopes = max(maxEnvelopes, dp[i]);
-        }
-
-        return maxEnvelopes;
-    }
-};
-
 class Solution {
 public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
@@ -81,12 +57,39 @@ public:
     }
 };
 
-// Binary search solution O(nlogn). This is almost the same as 300. Longest Increasing Subsequence.
-// You would need to memorize it.
+// Same idea, if you sort both width and height in asending order.
+// (i.e. default sorting with no comparator provided).
 class Solution {
 public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
-        vector<int> heightTails;
+        // dp[i] stores the length of longest subsequence that ends at position i (i.e. number of envelopes).
+        vector<int> dp(envelopes.size(), 1);
+        int maxEnvelopes = 0;
+
+        sort(envelopes.begin(), envelopes.end());
+
+        for (int i = 0; i < envelopes.size(); ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (envelopes[j][0] < envelopes[i][0] && envelopes[j][1] < envelopes[i][1]) {
+                    dp[i] = max(dp[i], dp[j] + 1);
+                }
+            }
+
+            maxEnvelopes = max(maxEnvelopes, dp[i]);
+        }
+
+        return maxEnvelopes;
+    }
+};
+
+
+// Binary search solution O(nlogn). This is almost the same as 300. Longest Increasing Subsequence.
+// This algorithm is not intuitive. No need to understand it.
+// See labuladong book pp. 101 for drawing.
+class Solution {
+public:
+    int maxEnvelopes(vector<vector<int>>& envelopes) {
+        vector<int> piles;
 
         sort(envelopes.begin(), envelopes.end(), [](const vector<int>& a, const vector<int>& b) {
             return (a[0] < b[0]) || (a[0] == b[0] && a[1] > b[1]);
@@ -95,14 +98,14 @@ public:
         for (int i = 0; i < envelopes.size(); ++i) {
             int height = envelopes[i][1];
 
-            auto itr = lower_bound(heightTails.begin(), heightTails.end(), height);
-            if (itr == heightTails.end()) {
-                heightTails.push_back(height);
+            auto itr = lower_bound(piles.begin(), piles.end(), height);
+            if (itr == piles.end()) {
+                piles.push_back(height);
             } else {
                 *itr = height;
             }
         }
 
-        return heightTails.size();
+        return piles.size();
     }
 };

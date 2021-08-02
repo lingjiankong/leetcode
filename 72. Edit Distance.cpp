@@ -49,13 +49,17 @@
 // then the min edit distance is: dp[i][j] = min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}) + 1, where
 //
 // a). dp[i][j-1] stores the edit distance between (horse, ro), so (horse, ros) can be obtained by insertion to s1.
-// horse (ro) + s (add one additional editing distance);
+// You know how to go from horse -> ro,
+// so you can insert s to horse (indicated by s[i]) to get to ros.
 //
 // b). dp[i-1][j] stores the edit distance between (hors, ros), so (horse, ros) can be obtained by deletion from s1.
-// horse - e = hors (ros) (add one additional editing distance);
+// You know how to go from hors -> ros,
+// so you can delete e from horse (indicated by s[i]) to get to ros.
 //
 // c). dp[i-1][j-1] stores the edit distance between (hors, ro), so (horse, ros) can be obtained by replacement
-// (add one additional editing distance)
+// You know how to go from hors -> ro,
+// which indicates horse can go to "roe",
+// so you can replace e in horse (indicated by s[i]) with s to get to ros.
 //
 //   Ø a b c d
 // Ø 0 1 2 3 4
