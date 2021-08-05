@@ -25,8 +25,8 @@
 // ***
 //
 // Almost exactly the same as 438. Find All Anagrams in a String.
+// Very similar to 76. Minimum Window Substring.
 
-// labuladong sliding window template.
 bool checkInclusion(string s1, string s2) {
     vector<int> need(256), window(256);
 
@@ -52,7 +52,7 @@ bool checkInclusion(string s1, string s2) {
     return false;
 }
 
-// Same idea. See 76. Minimum Window Substring for similar question.
+// Same idea.
 bool checkInclusion(string s1, string s2) {
     unordered_map<char, int> need, window;
 

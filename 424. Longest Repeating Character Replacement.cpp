@@ -46,9 +46,9 @@ public:
         // the char which appears the most in current window and its count
         char maxFreqChar;
         int maxFreqCount = 0;
+        int maxLen = 0;
 
         int left = 0, right = 0;
-        int maxLen = 0;
 
         while (right < s.size()) {
             char c = s[right++];

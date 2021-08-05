@@ -55,7 +55,8 @@ int longestPalindromeSubseq(string s) {
 
 // Same idea, swap the meaning of i and j.
 // dp[i][j]: longest palindrome subsequence formed by s[j:i]
-// Now you are only interested in the lower left half of the dp table (where j <= i), and we traverse from top to bottom, right to left.
+// Now you are only interested in the lower left half of the dp table (where j <= i), and we traverse from top to
+// bottom, right to left.
 class Solution {
 public:
     int longestPalindromeSubseq(string s) {

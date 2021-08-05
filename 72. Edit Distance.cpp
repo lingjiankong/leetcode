@@ -48,18 +48,17 @@
 // 4. If word1[i-1] != word2[j-1] (i.e. last letter not the same),
 // then the min edit distance is: dp[i][j] = min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}) + 1, where
 //
-// a). dp[i][j-1] stores the edit distance between (horse, ro), so (horse, ros) can be obtained by insertion to s1.
+// a). dp[i][j-1] stores the edit distance between (horse, ro), so ros can be obtained by insertion to s1.
 // You know how to go from horse -> ro,
-// so you can insert s to horse (indicated by s[i]) to get to ros.
+// so you can insert s to horse to get to ros.
 //
-// b). dp[i-1][j] stores the edit distance between (hors, ros), so (horse, ros) can be obtained by deletion from s1.
+// b). dp[i-1][j] stores the edit distance between (hors, ros), so ros can be obtained by deletion from s1.
 // You know how to go from hors -> ros,
-// so you can delete e from horse (indicated by s[i]) to get to ros.
+// so you can delete e from horse to get to ros.
 //
-// c). dp[i-1][j-1] stores the edit distance between (hors, ro), so (horse, ros) can be obtained by replacement
-// You know how to go from hors -> ro,
-// which indicates horse can go to "roe",
-// so you can replace e in horse (indicated by s[i]) with s to get to ros.
+// c). dp[i-1][j-1] stores the edit distance between (hors, ro), so ros can be obtained by replacement
+// You know how to go from hors -> ro, which indicates "horse" can go to "roe",
+// so you can replace e in horse with s to get to ros.
 //
 //   Ø a b c d
 // Ø 0 1 2 3 4
@@ -67,7 +66,6 @@
 // b 2 2 1 2 3
 // c 3 3 2 1 2
 //
-// Draw the state transition matrix and figure out the state transition function.
 int minDistance(string word1, string word2) {
     int m = word1.size(), n = word2.size();
     vector<vector<int>> dp(m + 1, vector<int>(n + 1));

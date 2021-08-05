@@ -13,8 +13,7 @@
 //
 // ***
 //
-// Note: this question is different from 516. Longest Palindromic Subsequence.
-
+// Note: this question is similar but different from 516. Longest Palindromic Subsequence.
 
 // DP
 // dp[i][j]: whether s[j:i] is a palindrome
@@ -30,21 +29,27 @@ class Solution {
 public:
     string longestPalindrome(string s) {
         int n = s.size(), start = 0, maxLen = 1;
-        vector<vector<int>> dp(n, vector<int>(n, 0));
+        vector<vector<bool>> dp(n, vector<bool>(n, 0));
 
         for (int i = 0; i < n; ++i) {
-            dp[i][i] = 1;
+            dp[i][i] = true;
         }
 
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < i; ++j) {
-                dp[i][j] = (s[i] == s[j] && (i - j < 2 || dp[i - 1][j + 1]));
-                if (dp[i][j] && maxLen < i - j + 1) {
-                    maxLen = i - j + 1;
-                    start = j;
+                if (s[i] == s[j]) {
+                    if (i - j < 2 or dp[i - 1][j + 1]) {
+                        dp[i][j] = true;
+
+                        if (maxLen < i - j + 1) {
+                            maxLen = i - j + 1;
+                            start = j;
+                        }
+                    }
                 }
             }
         }
+
         return s.substr(start, maxLen);
     }
 };

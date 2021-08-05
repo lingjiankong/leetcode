@@ -100,6 +100,7 @@
 | 209 | Minimum Size Subarray Sum | Alpha
 | 567 | Permutation in String | Alpha
 | 438 | Find All Anagrams in a String | Alpha
+| 76 | Minimum Window Substring | Alpha
 | 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha
 | 217 | Contains Duplicate | Alpha
 | 219 | Contains Duplicate II | Alpha
@@ -109,10 +110,9 @@
 | 340 | Longest Substring with At Most K Distinct Characters | Alpha
 | 424 | Longest Repeating Character Replacement | Alpha
 | 395 | Longest Substring with At Least K Repeating Characters | Alpha
-| 76 | Minimum Window Substring | Alpha
 | 727 | Minimum Window Subsequence | Bravo | sliding window, dynamic programming
 | 992 | Subarrays with K Different Integers | Alpha
-| 995 | Minimum Number of K Consecutive Bit Flips | Alpha | greedy
+| 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
 | 1004 | Max Consecutive Ones III | Alpha
 | 487 | Max Consecutive Ones II | Alpha
 | 1052 | Grumpy Bookstore Ownder | Alpha
@@ -185,7 +185,7 @@
 | 52 | N-Queens II | Alpha
 | 22 | Generate Parentheses | Alpha
 | 241 | Different Ways to Add Parentheses | Alpha
-| 139 | Word Break | Alpha | Dynamic Programming
+| 139 | Word Break | Alpha | dynamic programming
 | 140 | Word Break II | Alpha
 | 131 | Palindrome Partitioning | Charlie
 | 267 | Palindrome Permutation II | Alpha

@@ -22,9 +22,9 @@ string minWindow(string s, string t) {
         ++need[c];
     }
 
-    int left = 0, right = 0;
     int validCount = 0;
     int start = 0, minLen = INT_MAX;
+    int left = 0, right = 0;
 
     while (right < s.size()) {
         char c = s[right++];

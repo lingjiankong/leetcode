@@ -31,8 +31,8 @@
 // ***
 //
 // Almost exactly the same as 567. Permutation in String.
+// Very similar to 76. Minimum Window Substring.
 
-// labuladong sliding window template.
 vector<int> findAnagrams(string s, string p) {
     vector<int> need(256), window(256);
 
@@ -60,7 +60,6 @@ vector<int> findAnagrams(string s, string p) {
 }
 
 // Same idea.
-// labuladong sliding window template.
 vector<int> findAnagrams(string s, string p) {
     unordered_map<char, int> need, window;
 

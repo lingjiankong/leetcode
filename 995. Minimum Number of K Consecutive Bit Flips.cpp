@@ -33,15 +33,17 @@
 // Flip A[5],A[6],A[7]: A becomes [1,1,1,1,1,1,1,1]
 //
 // ***
+//
+// Hard to explain in words but once you understand what happens it is very intuitive.
 
 class Solution {
 public:
     int minKBitFlips(vector<int>& A, int K) {
         int res = 0, n = A.size();
 
-        // Whether the net effect of all previous flips actualy flipped A[i] (the current value you are
-        // looking at when you enter the loop). This is used to update isFlipped[i].
-        int curFlipped = 0;
+        // Whether the net effect of all flips you've done so far have flipped A[i] (the current value you are
+        // looking at when you are in the loop). This is used to update isFlipped[i].
+        int isCurFlipped = 0;
 
         // Whether A[i] has actually been flipped.
         vector<int> isFlipped(n);
@@ -50,22 +52,55 @@ public:
             // Each flip will only affect a window of K subsequent elements, so once your window moves right,
             // you should undo the effect before you enter the window.
             if (i >= K) {
-                curFlipped ^= isFlipped[i - K];
+                isCurFlipped ^= isFlipped[i - K];
             }
 
-            // If curFlipped == 0 and A[i] == 0, you need to flip A[i] from 0 to 1.
-            // If curFlipped == 1 and A[i] == 1, meaning alghouth A[i] was originally 1, it has been flipped to 0, in
+            // If isCurFlipped == 0 and A[i] == 0, you need to flip A[i] from 0 to 1.
+            // If isCurFlipped == 1 and A[i] == 1, meaning although A[i] was originally 1, it has been flipped to 0, in
             // which case you need to flip A[i] from 0 to 1.
-            if (curFlipped ^ A[i] == 0) {
+            if (isCurFlipped ^ A[i] == 0) {
                 // In this case, it is not possible to flip K consecutive elements from i.
                 if (i + K > n) {
                     return -1;
                 }
                 isFlipped[i] = 1;
-                curFlipped ^= 1;
+                isCurFlipped ^= 1;
                 ++res;
             }
         }
+
         return res;
     }
 };
+
+// Similar idea. Use a queue to store the indexes of the elements which have been flipped.
+class Solution {
+public:
+    int minKBitFlips(vector<int>& A, int K) {
+        int res = 0, n = A.size();
+        queue<int> q;
+
+        for (int i = 0; i < n; ++i) {
+            if (not q.empty() and q.front() <= i - K) {
+                q.pop();
+            }
+
+            // If queue size is even and A[i] == 0 (A[i] was originally 0 and is still 0 after even number of flips),
+            // you need to flip A[i] from 0 to 1;
+            //
+            // If queue size is odd and A[i] == 1 (A[i] was originally 0 but have been filpped from 0 to 1 after odd
+            // number of flips), meaning although A[i] was originally 1, it has been flipped to 0, so you need to flip
+            // A[i] from 0 back to 1 again.
+            if (q.size() % 2 == A[i]) {
+                if (i + K > n) {
+                    return -1;
+                }
+                q.push(i);
+                ++res;
+            }
+        }
+
+        return res;
+    }
+};
+

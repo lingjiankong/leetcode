@@ -25,6 +25,8 @@ public:
         int maxLen = 0;
 
         for (int numUnique = minUnique; numUnique <= maxUnique; ++numUnique) {
+            // Find the size of the string with exactly numUnique unique characters,
+            // and the frequency of each character is greater than or equal to k.
             unordered_map<char, int> window;
             int left = 0, right = 0;
             int curMaxLen = 0;
