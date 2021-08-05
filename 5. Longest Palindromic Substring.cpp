@@ -29,7 +29,7 @@ class Solution {
 public:
     string longestPalindrome(string s) {
         int n = s.size(), start = 0, maxLen = 1;
-        vector<vector<bool>> dp(n, vector<bool>(n, 0));
+        vector<vector<bool>> dp(n, vector<bool>(n, false));
 
         for (int i = 0; i < n; ++i) {
             dp[i][i] = true;
@@ -44,6 +44,37 @@ public:
                         if (maxLen < i - j + 1) {
                             maxLen = i - j + 1;
                             start = j;
+                        }
+                    }
+                }
+            }
+        }
+
+        return s.substr(start, maxLen);
+    }
+};
+
+// Same idea. dp[i][j]: whether s[i:j] is a palindrome.
+// Now we are only interested in the upper right half of the dp table (where i <= j),
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        int n = s.size(), start = 0, maxLen = 1;
+        vector<vector<bool>> dp(n, vector<bool>(n, false));
+
+        for (int i = 0; i < n; ++i) {
+            dp[i][i] = true;
+        }
+
+        for (int i = n - 2; i >= 0; --i) {
+            for (int j = i + 1; j < n; ++j) {
+                if (s[i] == s[j]) {
+                    if (j - i < 2 or dp[i + 1][j - 1]) {
+                        dp[i][j] = true;
+
+                        if (maxLen < j - i + 1) {
+                            maxLen = j - i + 1;
+                            start = i;
                         }
                     }
                 }
