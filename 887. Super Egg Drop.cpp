@@ -129,9 +129,9 @@ private:
     unordered_map<int, unordered_map<int, int>> _memo;
 };
 
-// Not very easy to understand.
+// Not very intuitive to understand.
 //
-// Other definition of state:
+// Faster definition of state:
 // dp[m][k]: Given m moves and k eggs, what is the *maximum* number of floors we can check.
 //
 // Base case:
@@ -151,11 +151,9 @@ public:
                 //
                 // dp[m][k] is the *maximum* levels we can confirm with m moves and k eggs. When we look at floor
                 // dp[m-1][k-1] + 1, the egg will either break, or not. If the egg breaks, it means we should find the
-                // answer under this level, and it also means this level can not be higher than dp[m-1][k-1] + 1,
-                // otherwise we will are unable to get the answer. If the egg doesn't break, we can still use this egg,
-                // meaning we will use the k eggs and m-1 moves to go higher. So the maximum level we can touch at
-                // dp[m][k] is dp[m-1][k-1] + 1 + dp[m-1][k]. We can find the answer use k eggs and m moves in any level
-                // which not higher than it.
+                // answer under this level. If the egg doesn't break, we can still use this egg, meaning we will use the
+                // k eggs and m-1 moves to go to higher floor. So the maximum level we can reach at dp[m][k] is
+                // dp[m-1][k-1] + 1 + dp[m-1][k].
                 dp[m][k] = dp[m - 1][k - 1] + 1 + dp[m - 1][k];
             }
 

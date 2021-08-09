@@ -153,7 +153,8 @@
 | 275 | H-Index II | Bravo
 | 215 | Kth Largest Element in an Array | Bravo, Mechanical | Quick Sort, Binary Search
 | 278 | First Bad Version | Alpha
-| 887 | Super Egg Drop | Bravo | Dynamic programming, binary search
+| 887 | Super Egg Drop | Alpha | Dynamic programming, binary search
+| 312 | Burst Balloons | Alpha
 
 ## Backtracking
 | ID | Name | Rating | Note
@@ -244,7 +245,7 @@
 | 10 | Reguar Expression Matching | Alpha
 | 651 | 4 Keys Keyboard | Alpha
 | 650 | 2 Keys Keyboard | Alpha
-| 887 | Super Egg Drop | Alpha | dynamic programming, binary search
+| 887 | Super Egg Drop | Bravo | dynamic programming, binary search
 
 ## Two Sum Series
 | 1 | Two Sum | Alpha
