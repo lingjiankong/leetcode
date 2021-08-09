@@ -92,6 +92,7 @@ int minDistance(string word1, string word2) {
 }
 
 // Same idea. Recursion from labuladong. See book pp. 124 for detail.
+// Understanding dp table solution is sufficient.
 class Solution {
 public:
     int minDistance(string word1, string word2) {

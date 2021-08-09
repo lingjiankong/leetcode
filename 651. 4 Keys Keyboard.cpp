@@ -33,38 +33,6 @@
 //
 // ***
 
-// See labuladong book pp. 162.
-// Easy to understand, TLE.
-class Solution {
-public:
-    int maxA(int N) { return _dp(N, 0, 0); }
-
-private:
-    // n: remaining ops
-    // nums_A_screen: current number of A on the screen
-    // nums_A_clipboard: current number of A on the clipboard
-    int _dp(int n, int nums_A_screen, int nums_A_clipboard) {
-        if (n <= 0) {
-            return nums_A_screen;
-        }
-
-        string key = to_string(n) + "," + to_string(nums_A_screen) + "," + to_string(nums_A_clipboard);
-        if (_memo.count(key)) {
-            return _memo[key];
-        }
-
-        // Cases:
-        // 1. Print one 'A' on screen (A: 1 ops)
-        // 2. Append clipboard content to current screen (Ctrl-V: 1 ops)
-        // 3. Select current screen, then copy selected to clipboard (Ctrl-A, then Ctrl-C: 2 ops)
-        return _memo[key] = max({_dp(n - 1, nums_A_screen + 1, nums_A_clipboard),
-                                 _dp(n - 1, nums_A_screen + nums_A_clipboard, nums_A_clipboard),
-                                 _dp(n - 2, nums_A_screen, nums_A_screen)});
-    }
-
-    unordered_map<string, int> _memo;
-};
-
 // See labuladong book pp. 166.
 // dp[i]: Max numbers of 'A's on screen after i times of operations.
 class Solution {
@@ -72,9 +40,10 @@ public:
     int maxA(int N) {
         vector<int> dp(N + 1, 0);
         for (int i = 1; i <= N; ++i) {
-            // If we print another 'A'
+            // Choice 1: Print another 'A'
             dp[i] = dp[i - 1] + 1;
             for (int j = 2; j < i; ++j) {
+                // Choice 2: Ctrl-V whatever in the clipboard.
                 // If we Ctrl-A and Ctrl-C dp[j - 2], and then Ctrl-V (i - j) times,
                 // then there are total of dp[j - 2] * (i - j + 1) 'A's currently on the screen.
                 // (We Ctrl-V (i - j) times, plus dp[j - 2] itself)

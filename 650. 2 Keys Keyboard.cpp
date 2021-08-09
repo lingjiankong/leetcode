@@ -32,28 +32,8 @@
 // AA + 3 ops (copy AA, then paste 2 times)
 // A + 6 ops (copy A, then paste 5 times)
 
-// Recursion
-class Solution {
-public:
-    int minSteps(int n) {
-        if (n == 1) {
-            return 0; 
-        }
-
-        int res = n; 
-        for (int factor = 2; factor <= n; ++factor) {
-            if (n % factor == 0) {
-                res = min(res, minSteps(n / factor) + factor);
-            }
-        }
-        return res; 
-    }
-};
-
-
 // dp[i]: minimum number of steps needed to get exactly i 'A's.
 // base case: dp[0] = 0, dp[1] = 0
-// See https://www.youtube.com/watch?v=t-msCeBTlBY
 class Solution {
 public:
     int minSteps(int n) {
@@ -62,13 +42,31 @@ public:
         dp[1] = 0;
 
         for (int i = 2; i <= n; ++i) {
-            dp[i] = i; // in the worst case, you need i steps to get i 'A's (keep pasting 'A')
-            for (int factor = 2; factor <= i; ++factor) {
+            dp[i] = i;  // in the worst case, you need i steps to get i 'A's (keep pasting 'A')
+            for (int factor = 2; factor < i; ++factor) {
                 if (i % factor == 0) {
-                    dp[i] = min(dp[i], dp[i / factor] + factor);
+                    dp[i] = min(dp[i], dp[i / factor] + factor);  // copy dp[i / factor] factor number of times
                 }
             }
         }
         return dp[n];
+    }
+};
+
+// Recursion
+class Solution {
+public:
+    int minSteps(int n) {
+        if (n == 1) {
+            return 0;
+        }
+
+        int res = n;
+        for (int factor = 2; factor <= n; ++factor) {
+            if (n % factor == 0) {
+                res = min(res, minSteps(n / factor) + factor);
+            }
+        }
+        return res;
     }
 };

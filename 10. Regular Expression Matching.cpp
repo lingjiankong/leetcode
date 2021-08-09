@@ -48,7 +48,59 @@
 //
 // ***
 
-// Recursion
+// dp[i][j]: whether s[0: i) can be matched by p[0: j)
+//
+// Note s and p's index have -1 offset from dp array's index, since you initialized to
+// vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false)), like many other dp problems.
+//
+class Solution {
+public:
+    bool isMatch(string s, string p) {
+        int m = s.size(), n = p.size();
+        vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false));
+        // base conditions:
+        // dp[0][0] = true
+        // dp[i][0] = false since if p contains no regex then nothing in s can be mateched
+        dp[0][0] = true;
+
+        for (int i = 0; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                //   i-3, i-2, i-1
+                // s ...  ...  ...
+                // p ...  ...   *
+                //   j-3, j-2, j-1
+                if (j > 1 && p[j - 1] == '*') {
+                    // Skip matching the pattern at p[j-2]
+                    if (dp[i][j - 2]) {
+                        dp[i][j] = true;
+                    }
+
+                    // Matching the pattern at p[j-2]
+                    else if (i > 0 and dp[i - 1][j]) {
+                        if (s[i - 1] == p[j - 2] or p[j - 2] == '.') {
+                            dp[i][j] = true;
+                        }
+                    }
+                }
+                //   i-3, i-2, i-1
+                // s ...  ...  ...
+                // p ...  ...  ...
+                //   j-3, j-2, j-1
+                else {
+                    if (i > 0 and dp[i - 1][j - 1]) {
+                        // Simple single letter matching.
+                        if (s[i - 1] == p[j - 1] or p[j - 1] == '.') {
+                            dp[i][j] = true;
+                        }
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+};
+
+// Recursion. Understanding dp table solution is sufficient.
 // See labuladong book pp. 155
 // _dp(s, i, p, j): Whether s[i:) can be matched by p[j:)
 class Solution {
@@ -102,38 +154,4 @@ private:
     }
 
     unordered_map<string, bool> _memo;
-};
-
-// Similar idea, using dp table.
-// Might be not straightforward to understand.
-//
-// dp[i][j]: whether s[0: i) can be matched by p[0: j)
-//
-// base condition:
-// dp[0][0] = true
-// dp[i][0] = false since if p contains no regex then nothing in s can be mateched
-//
-// state transition function:
-// 1. dp[i][j] = dp[i - 1][j - 1], if (s[i - 1] == p[j - 1] || p[j - 1] == '.');
-// 2. dp[i][j] = dp[i][j - 2], if p[j - 1] == '*' and the pattern at p[j - 2] repeats for 0 times (i.e. skip this
-// matching);
-// 3. dp[i][j] = dp[i - 1][j] && (s[i - 1] == p[j - 2] || p[j - 2] == '.'), if p[j - 1] == '*' and the pattern at p[j -
-// 2] repeats for at least 1 times.
-class Solution {
-public:
-    bool isMatch(string s, string p) {
-        int m = s.size(), n = p.size();
-        vector<vector<bool>> dp(m + 1, vector<bool>(n + 1, false));
-        dp[0][0] = true;
-        for (int i = 0; i <= m; ++i) {
-            for (int j = 1; j <= n; ++j) {
-                if (j > 1 && p[j - 1] == '*') {
-                    dp[i][j] = dp[i][j - 2] || (i > 0 && (s[i - 1] == p[j - 2] || p[j - 2] == '.') && dp[i - 1][j]);
-                } else {
-                    dp[i][j] = i > 0 && dp[i - 1][j - 1] && (s[i - 1] == p[j - 1] || p[j - 1] == '.');
-                }
-            }
-        }
-        return dp[m][n];
-    }
 };

@@ -153,7 +153,7 @@
 | 275 | H-Index II | Bravo
 | 215 | Kth Largest Element in an Array | Bravo, Mechanical | Quick Sort, Binary Search
 | 278 | First Bad Version | Alpha
-| 887 | Super Egg Drop | Alpha | Dynamic programming, binary search
+| 887 | Super Egg Drop | Bravo | Dynamic programming, binary search
 
 ## Backtracking
 | ID | Name | Rating | Note
@@ -241,9 +241,9 @@
 | 516 | Longest Palindromic Subsequence | Alpha
 | 5 | Longest Palindromic Substring | Alpha
 | 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha
-| 10 | Reguar Expression Matching | Bravo
-| 650 | 2 Keys Keyboard | Alpha
+| 10 | Reguar Expression Matching | Alpha
 | 651 | 4 Keys Keyboard | Alpha
+| 650 | 2 Keys Keyboard | Alpha
 | 887 | Super Egg Drop | Alpha | dynamic programming, binary search
 
 ## Two Sum Series
@@ -470,3 +470,4 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
+| 991 | Broken Calculator | Bravo | math

@@ -129,3 +129,42 @@ private:
     unordered_map<int, unordered_map<int, int>> _memo;
 };
 
+// Not very easy to understand.
+//
+// Other definition of state:
+// dp[m][k]: Given m moves and k eggs, what is the *maximum* number of floors we can check.
+//
+// Base case:
+// dp[0][k] = 0. No moves can be performed. Nothing we can check.
+// dp[m][0] = 0. No eggs. Nothing we can do.
+class Solution {
+public:
+    int superEggDrop(int K, int N) {
+        vector<vector<int>> dp(N + 1, vector<int>(K + 1));
+
+        int m = 1;
+        for (; m <= N; ++m) {
+            for (int k = 1; k <= K; ++k) {
+                // It takes 1 move to check a floor,
+                // if egg breaks, then we can check dp[m - 1][k - 1] floors.
+                // if egg doesn't breaks, then we can check dp[m - 1][k] floors.
+                //
+                // dp[m][k] is the *maximum* levels we can confirm with m moves and k eggs. When we look at floor
+                // dp[m-1][k-1] + 1, the egg will either break, or not. If the egg breaks, it means we should find the
+                // answer under this level, and it also means this level can not be higher than dp[m-1][k-1] + 1,
+                // otherwise we will are unable to get the answer. If the egg doesn't break, we can still use this egg,
+                // meaning we will use the k eggs and m-1 moves to go higher. So the maximum level we can touch at
+                // dp[m][k] is dp[m-1][k-1] + 1 + dp[m-1][k]. We can find the answer use k eggs and m moves in any level
+                // which not higher than it.
+                dp[m][k] = dp[m - 1][k - 1] + 1 + dp[m - 1][k];
+            }
+
+            // Return as soon as we've found number of moves m to check for at least N floors using K eggs.
+            if (dp[m][K] >= N) {
+                break;
+            }
+        }
+
+        return m;
+    }
+};
