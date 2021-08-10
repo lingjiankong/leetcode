@@ -153,7 +153,7 @@
 | 275 | H-Index II | Bravo
 | 215 | Kth Largest Element in an Array | Bravo, Mechanical | Quick Sort, Binary Search
 | 278 | First Bad Version | Alpha
-| 887 | Super Egg Drop | Alpha | Dynamic programming, binary search
+| 887 | Super Egg Drop | Alpha | dynamic programming, binary search
 | 312 | Burst Balloons | Alpha
 
 ## Backtracking
@@ -192,6 +192,8 @@
 | 267 | Palindrome Permutation II | Alpha
 
 ## BFS
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | N1 | Minimum Distance Between Two Points in a Matrix | Alpha | BFS
 | N2 | Shortest Path Between Two Points in a Matrix | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
@@ -246,8 +248,13 @@
 | 651 | 4 Keys Keyboard | Alpha
 | 650 | 2 Keys Keyboard | Alpha
 | 887 | Super Egg Drop | Bravo | dynamic programming, binary search
+| N4 | 1-0 Knapsack | Alpha | Knapsack
+| 416 | Partition Equal Subset Sum | Alpha | Knapsack
+| 516 | Coin Change 2 | Alpha | Knapsack
 
 ## Two Sum Series
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 1 | Two Sum | Alpha
 | 170 | Two Sum III - Data structure design | Alpha
 | 653 | Two Sum IV - Input is a BST | Alpha
@@ -358,7 +365,7 @@
 | 11 | Container With Most Water | Alpha
 | 128 | Longest Consecutive Sequence | Alpha
 | 674 | Longest Continuous Increasing Subsequence | Alpha
-| 673 | Number of Increasing Subsequence | Bravo | Dynamic programming
+| 673 | Number of Increasing Subsequence | Bravo | dynamic programming
 | 164 | Maximum Gap Bucket | Hard
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
@@ -379,7 +386,7 @@
 | 370 | Range Addition | Charlie
 | 349 | Intersection of Two Arrays | Alpha
 | 350 | Intersection of Two Arrays II | Alpha
-| 334 | Increasing Triplet Subsequence | Alpha | Dynamic programming
+| 334 | Increasing Triplet Subsequence | Alpha | dynamic programming
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
