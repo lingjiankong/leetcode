@@ -25,13 +25,7 @@
 
 class Solution {
 public:
-    int rob(TreeNode* root) { return _dfs(root); }
-
-private:
-    // Cache max amount of money each node can have.
-    unordered_map<TreeNode*, int> _hash;
-
-    int _dfs(TreeNode* root) {
+    int rob(TreeNode* root) {
         if (!root) {
             return 0;
         }
@@ -41,21 +35,25 @@ private:
         }
 
         // Amount of money we can have if we rob current node.
-        int moneyRobCurrent = root->val;
+        int robCur = root->val;
         if (root->left) {
-            moneyRobCurrent += _dfs(root->left->left) + _dfs(root->left->right);
+            robCur += rob(root->left->left) + rob(root->left->right);
         }
         if (root->right) {
-            moneyRobCurrent += _dfs(root->right->left) + _dfs(root->right->right);
+            robCur += rob(root->right->left) + rob(root->right->right);
         }
 
         // Amount of money we can have if we do not rob current node.
-        int moneyDoNotRobCurrent = _dfs(root->left) + _dfs(root->right);
+        int notRobCur = rob(root->left) + rob(root->right);
 
         // Return max amount of money we can have in this node.
-        int maxMoney = max(moneyRobCurrent, moneyDoNotRobCurrent);
+        int maxMoney = max(robCur, notRobCur);
         return _hash[root] = maxMoney;
     }
+
+private:
+    // Cache max amount of money each node can have.
+    unordered_map<TreeNode*, int> _hash;
 };
 
 class Solution {
@@ -78,11 +76,11 @@ private:
         array<int, 2> rightChild = _dfs(root->right);
 
         // If you rob current root, you cannot rob the left and right child.
-        int robCurrentRoot = root->money + leftChild[1] + rightChild[1];
+        int robCur = root->money + leftChild[1] + rightChild[1];
 
         // If you do not rob current root, you can either rob or don't rob your left and right child.
-        int notRobCurrentRoot = max(leftChild[0], leftChild[1]) + max(rightChild[0], rightChild[1]);
+        int notRobCur = max(leftChild[0], leftChild[1]) + max(rightChild[0], rightChild[1]);
 
-        return {robCurrentRoot, notRobCurrentRoot};
+        return {robCur, notRobCur};
     }
 };

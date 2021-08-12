@@ -22,6 +22,7 @@
 //
 // ***
 
+// dp[i]: max amount of money you can have when you are making choice at house i.
 int rob(vector<int>& nums) {
     if (nums.size() == 0) {
         return 0;
@@ -34,7 +35,7 @@ int rob(vector<int>& nums) {
     dp[1] = max(nums[0], nums[1]);
 
     for (int i = 2; i < nums.size(); ++i) {
-        dp[i] = max(nums[i] + dp[i - 2], dp[i - 1]);
+        dp[i] = max(dp[i - 2] + nums[i], dp[i - 1]);
     }
 
     return dp.back();

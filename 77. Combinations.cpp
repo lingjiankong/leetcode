@@ -21,7 +21,7 @@
 //
 // We don't need the "visited" array as in 46. Permutations,
 // because in the for loop for this question we always iterate from nums[startIndex],
-// all numbers after nums[startIndex] are not used.
+// all numbers before nums[startIndex] are not used.
 //
 // Also note that in the for loop, the next startIndex is i + 1,
 // doing so we could avoid same element being used multiple times.
