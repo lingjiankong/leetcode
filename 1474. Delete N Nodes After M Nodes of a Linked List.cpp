@@ -54,19 +54,29 @@ public:
             int mTemp = m;
             int nTemp = n;
 
+            // fast is now the 1 st node
+            // slow is now the 1 st node
+
             while (fast and mTemp-- > 0) {
-                // 1-based indexing: slow points to the m th element, fast points to the m + n + 1 th element
-                // 0-based indexing: slow points to the m - 1 th element, fast points to the m + n th element
-                // that's why we update slow 1 step "slower" here.
+                // We update slow 1 step "slower" here because
+                // we want slow to be the m th node (so it points to the m + 1 th node).
                 slow = fast;
                 fast = fast->next;
             }
+
+            // fast is now the m + 1 th node
+            // slow is now the m th node
 
             while (fast and nTemp-- > 0) {
                 fast = fast->next;
             }
 
+            // fast is now the m + n + 1 th node
+            // slow is now the m th node
+
             // Remove all elements between slow and fast.
+            // the m th node now points to the m + n + 1 th elements.
+            // So we kept the first m elements and removed the n elements in between.
             slow->next = fast;
         }
 

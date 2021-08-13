@@ -248,9 +248,10 @@
 | 651 | 4 Keys Keyboard | Alpha
 | 650 | 2 Keys Keyboard | Alpha
 | 887 | Super Egg Drop | Bravo | dynamic programming, binary search
-| N4 | 1-0 Knapsack | Alpha | Knapsack
-| 416 | Partition Equal Subset Sum | Alpha | Knapsack
-| 516 | Coin Change 2 | Alpha | Knapsack
+| N4 | 1-0 Knapsack | Alpha | knapsack
+| 416 | Partition Equal Subset Sum | Alpha | knapsack
+| 518 | Coin Change 2 | Alpha | knapsack
+| 494 | Target Sum | Alpha | backtracking, dynamic programming, knapsack
 
 ## Two Sum Series
 | ID | Name | Rating | Note

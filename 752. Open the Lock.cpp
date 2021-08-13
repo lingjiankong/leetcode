@@ -151,7 +151,10 @@ public:
                 if (q2.count(s)) {
                     return numTurns;
                 }
-                visited.insert(s);  // Note where we insert element to visited. Compare to unidirectional BFS.
+
+                // Unidirectional BFS: add to visited when adding to queue.
+                // Bidirectional BFS: add to visited when popping from queue.
+                visited.insert(s);
 
                 for (int j = 0; j < 4; ++j) {
                     string up = plusOne(s, j);
