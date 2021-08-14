@@ -221,6 +221,7 @@
 | 198 | House Robber | Alpha
 | 213 | House Robber II | Alpha
 | 337 | House Robber III | Alpha | Postorder
+| 740 | Delete and Earn | Alpha
 | 62 | Unique Paths | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 63 | Unique Paths II | Alpha
@@ -252,6 +253,9 @@
 | 416 | Partition Equal Subset Sum | Alpha | knapsack
 | 518 | Coin Change 2 | Alpha | knapsack
 | 494 | Target Sum | Alpha | backtracking, dynamic programming, knapsack
+| 1048 | Longest String Chain | Alpha
+| 1027 | Longest Arithmetic Subsequence | Alpha
+| 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
 
 ## Two Sum Series
 | ID | Name | Rating | Note
