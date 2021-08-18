@@ -50,7 +50,10 @@
 ## Binary Search Tree
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 98 | Validate Binary Search Tree | Alpha | Preorder, Inorder
+| 98 | Validate Binary Search Tree | Alpha | preorder, inorder
+| 700 | Search in a Binary Search Tree | Alpha | preorder
+| 701 | Insert into a Binary Search Tree | Alpha | preorder
+| 450 | Delete Node in a BST | Alpha | preorder
 | 333 | Largest BST Subtree | Alpha | Preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha

@@ -30,25 +30,27 @@
 //
 // For a binary search tree, all nodes in left subtree must be smaller than current node, and all nodes in right subtree
 // must be larger than current node. Therefore we can use preorder traversal to see whether a node satisfy this
-// condition, and recursively check its left and right subtrees. If you do not want to hard code things like INT_MIN or
-// INT_MAX, then you can use use nullptr, because the root node does not have any constraint on the min and max value it
-// can take. For clarity we use INT_MAX here. This won't pass the OJ.
+// condition, and recursively check its left and right subtrees.
 
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) { return _preorder(root, INT_MIN, INT_MAX); }
+    bool isValidBST(TreeNode* root) { return _preorder(root, nullptr, nullptr); }
 
 private:
-    bool _preorder(TreeNode* node, int minValue, int maxValue) {
-        if (!node) {
+    bool _preorder(TreeNode* root, TreeNode* minNode, TreeNode* maxNode) {
+        if (not root) {
             return true;
         }
 
-        if ((node->val <= minValue) || (node->val >= maxValue)) {
+        if (minNode and root->val <= minNode->val) {
             return false;
         }
 
-        return _preorder(node->left, minValue, node->val) && _preorder(node->right, node->val, maxValue);
+        if (maxNode and root->val >= maxNode->val) {
+            return false;
+        }
+
+        return _preorder(root->left, minNode, root) and _preorder(root->right, root, maxNode);
     }
 };
 
@@ -61,20 +63,20 @@ private:
     TreeNode* _prevNode = nullptr;
 
     // Returns false if during in order traversal we do not see elements in ascending order.
-    bool _inorder(TreeNode* node) {
-        if (!node) {
+    bool _inorder(TreeNode* root) {
+        if (not root) {
             return true;
         }
 
-        if (!_inorder(node->left)) {
+        if (not _inorder(root->left)) {
             return false;
         }
 
-        if (_prevNode && _prevNode->val >= node->val) {
+        if (_prevNode and _prevNode->val >= root->val) {
             return false;
         }
-        _prevNode = node;
+        _prevNode = root;
 
-        return _inorder(node->right);
+        return _inorder(root->right);
     }
 };
