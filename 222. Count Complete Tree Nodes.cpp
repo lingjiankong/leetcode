@@ -31,23 +31,25 @@ int countNodes(TreeNode* root) {
         return 0;
     }
 
-    TreeNode *pLeft = root, *pRight = root;
+    TreeNode *left = root, *right = root;
     int heightLeft = 0, heightRight = 0;
 
-    while (pLeft) {
+    while (left) {
         ++heightLeft;
-        pLeft = pLeft->left;
+        left = left->left;
     }
 
-    while (pRight) {
+    while (right) {
         ++heightRight;
-        pRight = pRight->right;
+        right = right->right;
     }
 
+    // If left most node and right most node has the same height, it is a perfect binary tree.
     if (heightLeft == heightRight) {
         return pow(2, heightLeft) - 1;
     }
 
+    // Otherwise, count node like you would normally for vanilla binary tree.
     return 1 + countNodes(root->left) + countNodes(root->right);
 }
 

@@ -46,6 +46,7 @@
 | 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
 | 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
 | 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
+| 297 | Serialize and Deserialize Binary Tree | Alpha | preorder
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
@@ -62,7 +63,6 @@
 | 109 | Convert Sorted List to Binary Search Tree | Alpha
 | 173 | Binary Search Tree Iterator | Bravo, Mechanical
 | 230 | Kth Smallest Element in a BST | Alpha
-| 297 | Serialize and Deserialize Binary Tree | Alpha
 | 285 | Inorder Successor in BST | Hard
 | 270 | Closest Binary Search Tree Value | Alpha
 | 272 | Closest Binary Search Tree Value II | Alpha

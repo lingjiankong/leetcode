@@ -30,6 +30,7 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
 
     // Find the first candidate element.
     for (int i = 0; i < nums.size() - 3; ++i) {
+        // Remove duplicate elements. Don't forget.
         if (i > 0 && nums[i] == nums[i - 1]) {
             continue;
         }

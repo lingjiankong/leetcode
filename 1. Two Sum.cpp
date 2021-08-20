@@ -13,6 +13,26 @@
 //
 // ***
 
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> seen;
+        for (int i = 0; i < nums.size(); ++i) {
+            seen[nums[i]] = i;
+        }
+
+        for (int i = 0; i < nums.size(); ++i) {
+            int numToFind = target - nums[i];
+            if (seen.count(numToFind) && seen[numToFind] != i) {
+                return {i, seen[numToFind]};
+            }
+        }
+
+        return {0, 0};
+    }
+};
+
+// Same idea.
 vector<int> twoSum(vector<int>& nums, int target) {
     unordered_map<int, int> seen;  // number : index
 

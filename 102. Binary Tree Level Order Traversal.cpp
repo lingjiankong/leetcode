@@ -31,45 +31,85 @@ public:
     vector<vector<int>> levelOrder(TreeNode* root) {
         int level = 0;
         _dfs(root, level);
-        return _listOfLevels;
+        return _levels;
     }
 
 private:
-    vector<vector<int>> _listOfLevels;
+    // Store nodes of the same value.
+    vector<vector<int>> _levels;
 
     void _dfs(TreeNode* root, int level) {
         if (!root) {
             return;
         }
 
-        while (_listOfLevels.size() <= level) {
-            _listOfLevels.push_back({});
+        while (_levels.size() <= level) {
+            _levels.push_back({});
         }
 
-        _listOfLevels[level].push_back(root->val);
+        _levels[level].push_back(root->val);
 
         _dfs(root->left, level + 1);
         _dfs(root->right, level + 1);
     }
 };
 
-// BFS solution.
+// BFS solution, only one queue.
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        if (!root) {
+            return {};
+        }
+
+        vector<vector<int>> levels;
+
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            vector<int> currentLevel;
+            int qSize = q.size();
+
+            for (int i = 0; i < qSize; ++i) {
+                TreeNode* node = q.front();
+                q.pop();
+
+                currentLevel.push_back(node->val);
+
+                if (node->left) {
+                    q.push(node->left);
+                }
+
+                if (node->right) {
+                    q.push(node->right);
+                }
+            }
+
+            levels.push_back(currentLevel);
+        }
+
+        return levels;
+    }
+};
+
+// BFS solution, two queues.
 // Similar question that uses the idea: 116. Populating Next Right Pointers in Each Node.
 vector<vector<int>> levelOrder(TreeNode* root) {
     if (!root) {
         return {};
     }
 
-    vector<vector<int>> listOfLevels;
+    vector<vector<int>> levels;
 
     vector<TreeNode*> currentLevel = {root};
     vector<TreeNode*> nextLevel = {};
 
     while (!currentLevel.empty()) {
-        listOfLevels.push_back({});
+        levels.push_back({});
 
         for (auto node : currentLevel) {
-            listOfLevels.back().push_back(node->val);
+            levels.back().push_back(node->val);
 
             if (node->left) {
                 nextLevel.push_back(node->left);
@@ -83,45 +123,6 @@ vector<vector<int>> levelOrder(TreeNode* root) {
         nextLevel.clear();
     }
 
-    return listOfLevels;
+    return levels;
 }
-
-// BFS solution, only one queue.
-class Solution {
-public:
-    vector<vector<int>> levelOrder(TreeNode* root) {
-        if (!root) {
-            return {};
-        }
-
-        vector<vector<int>> listOfLevels;
-
-        queue<TreeNode*> nodeQueue;
-        nodeQueue.push(root);
-
-        while (!nodeQueue.empty()) {
-            vector<int> currentLevel;
-            int currentLevelSize = nodeQueue.size();
-
-            for (int i = 0; i < currentLevelSize; ++i) {
-                TreeNode* node = nodeQueue.front();
-                nodeQueue.pop();
-
-                currentLevel.push_back(node->val);
-
-                if (node->left) {
-                    nodeQueue.push(node->left);
-                }
-
-                if (node->right) {
-                    nodeQueue.push(node->right);
-                }
-            }
-
-            listOfLevels.push_back(currentLevel);
-        }
-
-        return listOfLevels;
-    }
-};
 
