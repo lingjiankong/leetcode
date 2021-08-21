@@ -22,13 +22,13 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if (!root) {
+        if (not root) {
             return nullptr;
-        } else if (p->val < root->val && q->val < root->val) {  // LCA is in the left subtree.
+        } else if (p->val < root->val and q->val < root->val) {  // LCA is in the left subtree.
             return lowestCommonAncestor(root->left, p, q);
-        } else if (p->val > root->val && q->val > root->val) {  // LCA is in the right subtree.
+        } else if (p->val > root->val and q->val > root->val) {  // LCA is in the right subtree.
             return lowestCommonAncestor(root->right, p, q);
-        } else {  // LCA is the current root.
+        } else {  // p and q are in diffrent subtrees, LCA is the current root.
             return root;
         }
     }

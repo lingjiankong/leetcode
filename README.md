@@ -1,4 +1,4 @@
-# Coding challenges from www.leetcode.com
+#Coding challenges from www.leetcode.com
 
 ## Note
 - Alpha: Three star questions. These are the questions that you must know.
@@ -51,6 +51,7 @@
 | 1644 | Lowest Common Ancestor of a Binary Tree II | Alpha | postorder
 | 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha | postorder
 | 1676 | Lowest Common Ancestor of a Binary Tree IV | Alpha | postorder
+| 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
@@ -61,7 +62,6 @@
 | 450 | Delete Node in a BST | Alpha | preorder
 | 333 | Largest BST Subtree | Alpha | Preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
-| 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha
 | 109 | Convert Sorted List to Binary Search Tree | Alpha
 | 173 | Binary Search Tree Iterator | Bravo, Mechanical
@@ -402,6 +402,9 @@
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
 | 45 | Max Consecutive Ones | Alpha
+| 503 | Next Greater Element II | Alpha | monotonic stack
+| 739 | Daily Temperatures | Alpha | monotonic stack
+| 496 | Next Greater Element I | Alpha | monotonic stack
 
 ## String
 | ID | Name | Rating | Note
@@ -483,10 +486,11 @@
 | 772 | Basic Calculator III | Alpha, Mechanical
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry
-| 1447 | Simplified Fractions.cpp | GCD
+| 1447 | Simplified Fractions | GCD
 
 ## Uncategorized
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 | 991 | Broken Calculator | Bravo | math
+| 556 | Next Greater Element III | Bravo
