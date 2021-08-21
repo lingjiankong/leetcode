@@ -16,30 +16,42 @@
 //
 // ***
 //
-// This question is kind of abstract... You need to memorize it.
+// This question is a little bit abstract. See labuladong book pp. 261.
+//
 // Use postorder traversal, return the common ancester upward to the top level.
-// The basic idea is that, if you see p or q, you return that node upward.
+// The basic idea is that, if you see p or q, you return that node upward (bubble up).
 // For any root in the recursion process, if you find the left subtree contains a valid returned node,
 // and the right subtree also contains a valid returned node, then current root must be the common ancester.
 // and then, you keep return that common ancester node upward until it reaches the top level.
+//
+// 1. if p and q are in the tree starting at root, return the lowest common ancester.
+// 2. if neither p nor q are in the tree starting at root, return the nullptr.
+// 3. if p is in the tree strating at root but not q,  return p.
+// 4. if q is in the tree strating at root but not p,  return q.
+//
+// Note, this question guarantees that lowest common ancester exists.
 
 TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-    if (!root) {
+    if (not root) {
         return nullptr;
-    } else if (root == p || root == q) {
+    }
+
+    if (root == p || root == q) {
         return root;
     }
 
     TreeNode* left = lowestCommonAncestor(root->left, p, q);
     TreeNode* right = lowestCommonAncestor(root->right, p, q);
 
-    if (!left && !right) {
+    if (not left and not right) {
         return nullptr;
-    } else if (left && !right) {
+    } else if (left) {
         return left;
-    } else if (!left && right) {
+    } else if (right) {
         return right;
     } else {
+        // If left and right both exist, then root must be the lowest common ancester.
+        // (root is guaranteed to be the lowest because of postorder traversal).
         return root;
     }
 }

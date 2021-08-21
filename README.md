@@ -47,6 +47,10 @@
 | 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
 | 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
 | 297 | Serialize and Deserialize Binary Tree | Alpha | preorder
+| 236 | Lowest Common Ancestor of a Binary Tree | Alpha | postorder
+| 1644 | Lowest Common Ancestor of a Binary Tree II | Alpha | postorder
+| 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha | postorder
+| 1676 | Lowest Common Ancestor of a Binary Tree IV | Alpha | postorder
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
@@ -58,7 +62,6 @@
 | 333 | Largest BST Subtree | Alpha | Preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
-| 236 | Lowest Common Ancestor of a Binary Tree | Bravo, Mechanical
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha
 | 109 | Convert Sorted List to Binary Search Tree | Alpha
 | 173 | Binary Search Tree Iterator | Bravo, Mechanical
