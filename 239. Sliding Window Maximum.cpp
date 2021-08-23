@@ -70,9 +70,11 @@ class MonotonicQueue {
 public:
     // Push an element e to the monotonic queue.
     // All elements smaller than e will be popped from the queue,
-    // so the queue will always be sorted in non-ascending order,
+    // so the queue will always be sorted in descending order,
     // with the largest element on the left and smallest element on the right.
     // The underlying deque looks something like this: (9, 7, 7, 4, 1}
+    // Note: we should allow duplicate elements in the queue because there might be multiple elements of the same value
+    // in the window.
     void push(int e) {
         while (not _data.empty() and e > _data.back()) {
             _data.pop_back();

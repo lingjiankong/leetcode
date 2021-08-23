@@ -76,8 +76,6 @@
 ## Linked List
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 206 | Reverse Linked List | Alpha
-| 92 | Reverse Linked List II | Hard, Exotic
 | 141 | Linked List Cycle | Alpha
 | 142 | Linked List Cycle II | Alpha
 | 876 | Middle of the Linked List | Alpha
@@ -98,6 +96,9 @@
 | 61 | Rotate List | Alpha
 | 86 | Partition List | Alpha
 | 23 | Merge k Sorted Lists | Alpha
+| 206 | Reverse Linked List | Alpha
+| 92 | Reverse Linked List II | Bravo
+| 25 | Reverse Nodes in k-Group | Alpha
 
 ## Sliding window
 | ID | Name | Rating | Note

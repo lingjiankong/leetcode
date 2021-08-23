@@ -1,43 +1,91 @@
 // ***
 //
 // Reverse a singly linked list.
-// 
+//
 // Example:
-// 
+//
 // Input: 1->2->3->4->5->NULL
 // Output: 5->4->3->2->1->NULL
 //
 // ***
-//
+
 // Iterative.
-ListNode* reverseList(ListNode* head)
-{
-	ListNode* prevNode = nullptr;
+// This question is essentially asking you to reverse a linkedlist from head to nullptr.
+// If you would like to reverse from head to node target, simply change
+// "while (head != nullptr)" to "while (head != target)" (note however, linkedlist is cut in this case)
+//
+// a -> b -> c -> d -> e
+// a    b -> c -> d -> e
+// a <- b    c -> d -> e
+// a <- b <- c    d -> e
+// a <- b <- c <- d    e
+// a <- b <- c <- d <- e
+ListNode* reverseList(ListNode* head) {
+    ListNode* prevNode = nullptr;
 
-	while (head)
-	{
-		ListNode* nextNode = head->next;
-		head->next = prevNode;
-		prevNode = head;
-		head = nextNode;
-	}
+    while (head) {
+        ListNode* nextNode = head->next;
+        head->next = prevNode;
+        prevNode = head;
+        head = nextNode;
+    }
 
-	return prevNode;
+    return prevNode;
 }
 
-// Recursive. Harder to understand. No need to memorize it for now.
-// Visualize the case when you've reached the last node.
-ListNode* reverseList(ListNode* head)
-{
-	if (!head || !head->next)
-	{
-		return head;
-	}
+// Recursive (postorder). See labuladong book pp.284 for an elegant visualization.
+// By recursion's definition, what you are doing when you give "head" as input is this:
+//
+// head
+// v
+// 1 -> 2 -> 3 -> 4 -> 5-> null
+//
+//
+// ListNode* last = reverse(head.next):
+//
+// head
+// v
+// 1 -> reverse(2 -> 3 -> 4 -> 5 -> null)
+//
+// head                last
+// v                   v
+// 1 -> 2 <- 3 <- 4 <- 5
+//      |
+//      v
+//      null
+//
+//
+//
+// head->next->next = head:
+// (2 now points to 1 instead of null)
+//
+// head                last
+// v                   v
+// 1 -> 2 <- 3 <- 4 <- 5
+//   <-
+//
+//
+//
+// head->next = null:
+// (1 points to null instead of 2)
+//
+//         head                last
+//         v                   v
+// null <- 1 <- 2 <- 3 <- 4 <- 5
+//
+//
+//
+//
+// Finally, return last.
+ListNode* reverseList(ListNode* head) {
+    if (!head || !head->next) {
+        return head;
+    }
 
-	ListNode *newHead = reverseList(head->next);
+    ListNode* last = reverseList(head->next);
 
-	head->next->next = head;
-	head->next = nullptr;
+    head->next->next = head;
+    head->next = nullptr;
 
-	return newHead;
+    return last;
 }
