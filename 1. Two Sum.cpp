@@ -23,7 +23,7 @@ public:
 
         for (int i = 0; i < nums.size(); ++i) {
             int numToFind = target - nums[i];
-            if (seen.count(numToFind) && seen[numToFind] != i) {
+            if (seen.count(numToFind) and seen[numToFind] != i) {
                 return {i, seen[numToFind]};
             }
         }

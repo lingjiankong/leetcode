@@ -23,7 +23,6 @@
 // A special case here to pay attention to is that is numA = numB, then we must check
 // if that same element occured more than once (hence we check whether numACount > 1).
 // One of the operation in add() and find() will inevitably be O(n). You decide the trade-off.
-
 class TwoSum {
 public:
     void add(int number) { ++_hash[number]; }
@@ -35,7 +34,7 @@ public:
 
             int numB = target - numA;
 
-            if ((numB != numA && _hash.count(numB)) || (numB == numA && numACount > 1)) {
+            if ((numB != numA and _hash.count(numB)) or (numB == numA and numACount > 1)) {
                 return true;
             }
         }

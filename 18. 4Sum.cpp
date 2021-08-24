@@ -66,3 +66,67 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
 
     return allPairs;
 }
+
+// Generalization: n sum. See labuladong book pp. 326.
+// In this solution, we eliminate duplicate element in the end instead of from the beginning,
+// which can be cleaner.
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        sort(nums.begin(), nums.end());
+
+        int n = 4, start = 0;
+        return nSum(n, nums, start, target);
+    }
+
+private:
+    vector<vector<int>> nSum(int n, const vector<int>& nums, int start, int target) {
+        if (n == 2) {
+            return twoSum(nums, start, target);
+        }
+
+        vector<vector<int>> res;
+        for (int i = start; i < nums.size(); ++i) {
+            vector<vector<int>> subs = nSum(n - 1, nums, i + 1, target - nums[i]);
+            for (vector<int>& sub : subs) {
+                sub.push_back(nums[i]);
+                res.push_back(sub);
+            }
+
+            // Skip duplicate element.
+            while (i < nums.size() - 1 and nums[i] == nums[i + 1]) {
+                ++i;
+            }
+        }
+
+        return res;
+    }
+
+    vector<vector<int>> twoSum(const vector<int>& nums, int start, int target) {
+        vector<vector<int>> res;
+        int left = start;
+        int right = nums.size() - 1;
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+            int leftVal = nums[left], rightVal = nums[right];
+            if (sum == target) {
+                res.push_back({nums[left], nums[right]});
+                while (left < right and leftVal == nums[left]) {
+                    ++left;
+                }
+                while (left < right and rightVal == nums[right]) {
+                    --right;
+                }
+            } else if (sum < target) {
+                while (left < right and leftVal == nums[left]) {
+                    ++left;
+                }
+            } else if (sum > target) {
+                while (left < right and rightVal == nums[right]) {
+                    --right;
+                }
+            }
+        }
+        return res;
+    }
+};

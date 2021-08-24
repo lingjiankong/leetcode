@@ -45,7 +45,8 @@ public:
                     //
                     // in this case, current valid parentheses length is i - start + 1 => 9 - 2 + 1 = 8
                     //
-                    // Otherwise if stack is non-empty after popping, then from seen.top() to i we have valid parenthesis.
+                    // Otherwise if stack is non-empty after popping, then from seen.top() to i we have valid
+                    // parenthesis.
                     //
                     //   valid parenthesis
                     //     -------------
@@ -68,3 +69,35 @@ public:
     }
 };
 
+// DP solution. Should be intuitive.
+//
+// Definition:
+// dp[i]: longest valid parentheses substring ending in s[i-1].
+//
+// Base condition:
+// dp[0] = 0: A single parentheses cannot be valid.
+class Solution {
+public:
+    int longestValidParentheses(string s) {
+        int res = 0;
+        vector<int> dp(s.size() + 1);
+
+        for (int i = 1; i < dp.size(); ++i) {
+            // j is the index of matching parentheses of s[i-1]
+            // dp[i] == dp[i-1] + 2 only if s[i-1] == ')' and s[j] == '('
+            int j = i - dp[i - 1] - 2;
+            if (s[i - 1] == '(' or j < 0 or s[j] == ')') {
+                dp[i] = 0;
+            } else {
+                // Case s[j] == '(' and s[i-1] = ')'
+                // Note: you need to add dp[j] for scenarios like this:
+                // dp[j] + '(' + dp[j-1] + ')'
+                // ()(())          ((()()
+                dp[i] = dp[i - 1] + 2 + dp[j];
+                res = max(res, dp[i]);
+            }
+        }
+
+        return res;
+    }
+};

@@ -28,13 +28,13 @@
 
 // Recursive see also. 206. Reverse Linked List.
 //
-//          _______________
-// newHead  |             |
-//      v   |             v
-// 1 <- 2   3 <- 4   5 <- 6    7
-// |             ^   |         ^
-// |             |   |         |
-// ---------------   -----------
+//               _________________________
+//      newHead  |                       |
+//           v   |                       v
+// 1 <- 2 <- 3   4 <- 5 <- 6   7 <- 8 <- 9    10 -> 11
+// |                       ^   |              ^
+// |                       |   |              |
+// -------------------------   ----------------
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {

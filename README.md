@@ -191,6 +191,7 @@
 | 364 | Nested List Weight Sum II | Exotic
 | 51 | N-Queens | Alpha
 | 52 | N-Queens II | Alpha
+| 37 | Sudoku Solver | Alpha
 | 22 | Generate Parentheses | Alpha
 | 241 | Different Ways to Add Parentheses | Alpha
 | 139 | Word Break | Alpha | dynamic programming
@@ -208,6 +209,7 @@
 | 126 | Word Ladder II | Bravo
 | 752 | Open the Lock | Alpha 
 | 111 | Minimum Depth of Binary Tree | Alpha | Postorder, BFS
+| 773 | Sliding Puzzle | Alpha
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -484,7 +486,7 @@
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | See 772
 | 227 | Basic Calculator II | See 772
-| 772 | Basic Calculator III | Alpha, Mechanical
+| 772 | Basic Calculator III | Alpha | mechanical, recursion
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry
 | 1447 | Simplified Fractions | GCD

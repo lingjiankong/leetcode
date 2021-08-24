@@ -19,13 +19,7 @@
 
 // Solution when the input is vector<int>& nums. Clear to see what's going on.
 //
-// We don't need the "visited" array as in 46. Permutations,
-// because in the for loop for this question we always iterate from nums[startIndex],
-// all numbers before nums[startIndex] are not used.
-//
-// Also note that in the for loop, the next startIndex is i + 1,
-// doing so we could avoid same element being used multiple times.
-// startIndex could be all index in nums.
+// Combination is just a collection of subset with a particular length. See 78. Subsets.
 class Solution {
 public:
     vector<vector<int>> combine(vector<int>& nums, int k) {

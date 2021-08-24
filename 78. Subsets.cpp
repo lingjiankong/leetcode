@@ -8,9 +8,9 @@
 // Input: nums = [1,2,3]
 // Output:
 // [
-//   [3],
 //   [1],
 //   [2],
+//   [3],
 //   [1,2,3],
 //   [1,3],
 //   [2,3],
@@ -21,6 +21,23 @@
 // ***
 //
 // See also 77. Combinations. Note the difference when to push current to all.
+//
+// Using startIndex, we can eliminate duplicate while traversing the tree.
+// (numbers in current always increasing)
+//
+//                       [ ]
+//
+//                       /|\
+//
+//        [1]            [2]            [3]
+//
+//        / \             |
+//
+//  [1,2]    [1,3]      [2,3]
+//
+//    /
+//
+// [1,2,3]
 
 class Solution {
 public:
