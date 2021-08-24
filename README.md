@@ -295,7 +295,8 @@
 ## Prefix Sum
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 325 | Maximum Size Subarray Sum Equals k | Alpha | sliding window, prefix sum
+| 325 | Maximum Size Subarray Sum Equals k | Alpha | prefix sum
+| 525 | Contiguous Array | Alpha
 | 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
 | 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
 | 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
@@ -322,6 +323,7 @@
 | 921 | Minimum Add to Make Parentheses Valid | Alpha
 | 1249 | Minimum Remove to Make Valid Parentheses | Alpha
 | 1190 | Reverse Substrings Between Each Pair of Parentheses | Bravo
+| 973 | K CLosest Points to Origin | Alpha | priority queue, custom sort
 
 ## Bit Manipulation
 | ID | Name | Rating | Note
@@ -497,3 +499,4 @@
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 | 991 | Broken Calculator | Bravo | math
 | 556 | Next Greater Element III | Bravo
+| 969 | Pancake Sorting | Bravo | recursion

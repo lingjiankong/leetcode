@@ -19,7 +19,33 @@
 // Explanation: The subarray [-1, 2] sums to 1 and is the longest.
 //
 // ***
-//
+
+int maxSubArrayLen(vector<int>& nums, int k) {
+    unordered_map<int, int> prefixSumToIndex;
+
+    int prefixSum = 0;
+    int maxLen = 0;
+
+    for (int index = 0; index < nums.size(); ++index) {
+        prefixSum += nums[index];
+
+        if (prefixSum == k) {
+            maxLen = index + 1;
+        }
+
+        if (prefixSumToIndex.count(prefixSum - k)) {
+            maxLen = max(maxLen, index - prefixSumToIndex[prefixSum - k]);
+        }
+
+        if (not prefixSumToIndex.count(prefixSum)) {
+            prefixSumToIndex[prefixSum] = index;
+        }
+    }
+
+    return maxLen;
+}
+
+// Detailed explanation:
 // The idea of this question is similar to Two Sum.
 //
 // You keep an unordered_map which stores:
@@ -38,7 +64,6 @@
 // Compare this question with 209. Minimum Size Subarray Sum. In that question, we are looking for a minimum sliding
 // window. In this question, we are looking for a maximum sliding window. They use different methods. Think about it
 // yourself.
-
 int maxSubArrayLen(vector<int>& nums, int k) {
     unordered_map<int, int> prefixSumToIndex;
 
@@ -53,16 +78,18 @@ int maxSubArrayLen(vector<int>& nums, int k) {
             // if we see the prefixSum from 0 to current index is k, then
             // this must be the maxLen seen so far.
             maxLen = index + 1;
-        } else if (prefixSumToIndex.count(prefixSum - k)) {
+        }
+
+        if (prefixSumToIndex.count(prefixSum - k)) {
             // If prefixSum - k exists in the unordered_map, then we found a subarray which sums to k.
             // The index of this subarray starts from prefixSumToIndex[prefixSum-k] + 1 and end at current
             // index, so the length is just index - prefixSumToIndex[prefixSum-k]
             maxLen = max(maxLen, index - prefixSumToIndex[prefixSum - k]);
         }
 
-        if (!prefixSumToIndex.count(prefixSum)) {
+        if (not prefixSumToIndex.count(prefixSum)) {
             // Only update prefixSumToIndex if prefixSum does not exist,
-            // since you are trying to get maxLen of the subarray,
+            // since you are trying to get *maxLen* of the subarray,
             // the smaller the index is, the larger the resulting length.
             prefixSumToIndex[prefixSum] = index;
         }
