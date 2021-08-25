@@ -165,7 +165,9 @@
 | 278 | First Bad Version | Alpha
 | 887 | Super Egg Drop | Alpha | dynamic programming, binary search
 | 312 | Burst Balloons | Alpha
-| 875 | Koko Eating Bananas | Alpha
+| 875 | Koko Eating Bananas | Alpha | koko
+| 1011 | Capacity To Ship Packages Within D Days | Alpha | koko
+| 1891 | Cutting Ribbons | koko
 
 ## Backtracking
 | ID | Name | Rating | Note

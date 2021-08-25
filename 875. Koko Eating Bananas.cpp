@@ -36,6 +36,7 @@
 //
 // ***
 
+// Almost the same as 1011. Capacity To Ship Packages Within D Days
 class Solution {
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
@@ -44,17 +45,24 @@ public:
             maxPile = max(maxPile, pile);
         }
 
+        // Min speed she can eat banana is 1 banana per hour
+        // Max speed she can eat banana is max(piles) bananas per hour
         int left = 1, right = maxPile + 1;
+
+        // lower_bound: binary search on eat speed to find the minimum eat speed such that totalHours == h
+        // (eat slowly before the guards coms back)
         while (left < right) {
             // mid is the candidate eat speed (bananas per hour)
             int mid = left + (right - left) / 2;
 
+            // Hours take to finish all piles.
             int totalHours = 0;
             for (int pile : piles) {
-                totalHours += (pile + mid - 1) / mid; // (p + m - 1) / m equal to ceil(p / m)
+                totalHours += (pile + mid - 1) / mid;  // (p + m - 1) / m is equivalent to ceil(p / m)
             }
 
             if (totalHours == h) {
+                // Try to reduce the minimum eat speed (lower_bound)
                 right = mid;
             } else if (totalHours < h) {
                 // Finished all before guard is back, we should decrease eat speed.
