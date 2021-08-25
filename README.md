@@ -52,6 +52,9 @@
 | 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha | postorder
 | 1676 | Lowest Common Ancestor of a Binary Tree IV | Alpha | postorder
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
+| 341 | Flatten Nested List Iterator | Bravo
+| 339 | Nested List Weight Sum | Alpha | preorder
+| 364 | Nested List Weight Sum II | preorder
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
@@ -112,7 +115,7 @@
 | 217 | Contains Duplicate | Alpha
 | 219 | Contains Duplicate II | Alpha
 | 220 | Contains Duplicate III | Alpha
-| 3 | Longest Substring Without Repeating Characters Sliding Window | Alpha
+| 3 | Longest Substring Without Repeating Characters | Alpha
 | 159 | Longest Substring with At Most Two Distinct Characters | Alpha
 | 340 | Longest Substring with At Most K Distinct Characters | Alpha
 | 424 | Longest Repeating Character Replacement | Alpha
@@ -148,7 +151,7 @@
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha, Mechanical
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha
 | 315 | Count of Smaller Numbers After Self | Alpha
-| 378 | Kth Smallest Element in a Sorted Matrix | Alpha | Binary Search, Priority Queue
+| 378 | Kth Smallest Element in a Sorted Matrix | Alpha | binary search, priority queue
 | 74 | Search a 2D Matrix | Alpha
 | 240 | Search a 2D Matrix II | Alpha, Mechanical
 | 287 | Find the Duplicate Number | Charlie
@@ -158,10 +161,11 @@
 | 4 | Median of Two Sorted Arrays | Alpha, Mechanical
 | 274 | H-Index | Bravo | See 275
 | 275 | H-Index II | Bravo
-| 215 | Kth Largest Element in an Array | Bravo, Mechanical | Quick Sort, Binary Search
+| 215 | Kth Largest Element in an Array | Bravo, Mechanical | quick sort, binary search
 | 278 | First Bad Version | Alpha
 | 887 | Super Egg Drop | Alpha | dynamic programming, binary search
 | 312 | Burst Balloons | Alpha
+| 875 | Koko Eating Bananas | Alpha
 
 ## Backtracking
 | ID | Name | Rating | Note
@@ -187,8 +191,6 @@
 | 489 | Robot Room Cleaner | Alpha
 | 286 | Walls and Gates | Alpha
 | 130 | Surrounded Regions | Alpha
-| 339 | Nested List Weight Sum | Exotic
-| 364 | Nested List Weight Sum II | Exotic
 | 51 | N-Queens | Alpha
 | 52 | N-Queens II | Alpha
 | 37 | Sudoku Solver | Alpha
@@ -451,6 +453,8 @@
 | 187 | Repeated DNA Sequences | Alpha
 | 771 | Jewels and Stongs | Bravo
 | 844 | Backspace String Compare | Bravo
+| 1967 | Number of Strings That Appear as Substrings in Word | Bravo
+| 372 | Super Pos | Exotic
 
 ## Matrix
 | ID | Name | Rating | Note
@@ -486,8 +490,8 @@
 | 313 | Super Ugly Number | Exotic
 | 31 | Next Permutation | Bravo, Mechanical
 | 60 | Permutation Sequence | Exotic
-| 224 | Basic Calculator | See 772
-| 227 | Basic Calculator II | See 772
+| 224 | Basic Calculator | Alpha | See 772
+| 227 | Basic Calculator II | Alpha | See 772
 | 772 | Basic Calculator III | Alpha | mechanical, recursion
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry

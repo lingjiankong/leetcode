@@ -52,6 +52,36 @@ bool checkInclusion(string s1, string s2) {
     return false;
 }
 
+// same idea.
+bool checkInclusion(string s1, string s2) {
+    unordered_map<char, int> need, window;
+
+    for (char c : s1) {
+        ++need[c];
+    }
+
+    int left = 0, right = 0;
+    int validCount = 0;
+
+    while (right < s2.size()) {
+        char c = s2[right++];
+        ++window[c];
+
+        while (right - left == s1.size()) {
+            if (window == need) {
+                return true;
+            }
+
+            char c = s2[left++];
+            if (--window[c] == 0) {
+                window.erase(c);
+            }
+        }
+    }
+
+    return false;
+}
+
 // Same idea.
 bool checkInclusion(string s1, string s2) {
     unordered_map<char, int> need, window;

@@ -15,6 +15,12 @@
 // Input: nums = [1,2,3,1,2,3], k = 2
 // Output: false
 //
+// Constraints:
+// 
+// 1 <= nums.length <= 10^5
+// -10^9 <= nums[i] <= 10^9
+// 0 <= k <= 105
+//
 // ***
 
 // labuladong sliding window template

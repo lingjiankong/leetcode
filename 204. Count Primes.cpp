@@ -14,28 +14,32 @@
 // The idea is, if isPrime[i] is a prime number, then it multiples are non-prime number.
 // i.e. isPrime[i] is prime, then we know isPrime[i * i], isPrime[i * i * i] ... are non-prime.
 
+// The question asks for the number of prime numbers between [2, n) (not including n)
 class Solution {
 public:
     int countPrimes(int n) {
+        if (n <= 2) {
+            return 0;
+        }
+
         // Stores whether i is a prime number or not.
         // By default everything is prime, and will be toggled to non-prime.
-        vector<bool> isPrime(n + 1, true);
+        vector<bool> isPrime(n, true);
 
         // Number 0 and 1 is neither prime nor non-prime.
         isPrime[0] = false;
         isPrime[1] = false;
 
         int numOfPrimes = 0;
-        int limit = sqrt(n);
-        for (int i = 2; i <= limit; ++i) {
+        for (int i = 2; i * i < n; ++i) {
             if (isPrime[i]) {
-                for (int j = 2; i * j <= n; ++j) {
+                for (int j = 2; i * j < n; ++j) {
                     isPrime[i * j] = false;
                 }
             }
         }
 
-        for (int i = 2; i <= n; ++;) {
+        for (int i = 2; i < n; ++i) {
             if (isPrime[i]) {
                 ++numOfPrimes;
             }
