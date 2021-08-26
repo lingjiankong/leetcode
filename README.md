@@ -313,13 +313,11 @@
 | 232 | Implement Queue using Stacks | Bravo
 | 225 | Implement Stack using Queues | Bravo
 | 150 | Evaluate Reverse Polish Notation | Alpha
-
 | 42 | Trapping Rain Water | Alpha | dynamic programming, two pointers, monotonic stack
 | 84 | Largest Rectangle in Histogram | monotonic stack
 | 503 | Next Greater Element II | Alpha | monotonic stack
 | 739 | Daily Temperatures | Alpha | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
-
 | 347 | Top K Frequent Elements | Alpha
 | 451 | Sort Characters By Frequency | Bravo
 | 295 | Find Median from Data Stream | Alpha
@@ -401,7 +399,6 @@
 | 253 | Meeting Rooms II | Alpha |
 | 435 | Non-overlapping Intervals | Alpha | greedy
 | 452 | Minimum Number of Arrows to Burst Balloons | Alpha | greedy
-
 | 1640 | Check Array Formation Through Concatenation | Alpha
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
