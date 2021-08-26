@@ -84,33 +84,33 @@ int trap(vector<int>& height) {
 // Whenever we see a higher bar we might be able to form a valley to store water.
 // In the process of popping elements which are smaller than current height[i], we do our calculation.
 int trap(vector<int>& height) {
-    stack<int> heightIndexStack;
+    stack<int> s;
 
     int totalWater = 0;
 
     int i = 0;
     while (i < height.size()) {
         // > and >= all works here.
-        if (heightIndexStack.empty() || height[heightIndexStack.top()] > height[i]) {
-            heightIndexStack.push(i++);
+        if (s.empty() || height[s.top()] > height[i]) {
+            s.push(i++);
         }
         // Else, we see a higher bar, the top() element of stack might be a valley.
         // Popping all elements which are smaller than current heights[i] (the right wall)
         else {
-            int currentValleyIndex = heightIndexStack.top();
-            heightIndexStack.pop();
+            int currentValleyIndex = s.top();
+            s.pop();
 
             // No left bar, must continue.
-            if (heightIndexStack.empty()) {
+            if (s.empty()) {
                 continue;
             }
 
             // i is the index of right bar.
             // The valley has already been popped.
             // Current top of the stack is the index of left bar.
-            int rectangleWidth = i - heightIndexStack.top() - 1;
+            int rectangleWidth = i - s.top() - 1;
 
-            int rectangleHeight = min(height[i], height[heightIndexStack.top()]) - height[currentValleyIndex];
+            int rectangleHeight = min(height[s.top()], height[i]) - height[currentValleyIndex];
 
             totalWater += rectangleHeight * rectangleWidth;
         }
@@ -121,25 +121,25 @@ int trap(vector<int>& height) {
 
 // Exactly same as above, with named variables to make it clear.
 int trap(vector<int>& height) {
-    stack<int> heightIndexStack;
+    stack<int> s;
 
     int totalWater = 0;
 
     int i = 0;
     while (i < height.size()) {
-        if (heightIndexStack.empty() || height[heightIndexStack.top()] > heights[i]) {
-            heightIndexStack.push(i++);
+        if (s.empty() || height[s.top()] > heights[i]) {
+            s.push(i++);
         } else {
             int rightBarIndex = i;
 
-            int currentValleyIndex = heightIndexStack.top();
-            heightIndexStack.pop();
+            int currentValleyIndex = s.top();
+            s.pop();
 
-            if (heightIndexStack.empty()) {
+            if (s.empty()) {
                 continue;
             }
 
-            int leftBarIndex = heightIndexStack.top();
+            int leftBarIndex = s.top();
 
             int rectangleWidth = rightBarIndex - leftBarIndex - 1;
             int rectangleHeight = min(height[leftBarIndex], height[rightBarIndex]) - height[currentValleyIndex];

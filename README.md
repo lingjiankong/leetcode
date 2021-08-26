@@ -88,7 +88,7 @@
 | 19 | Remove Nth Node From End of List | Alpha
 | 1474 | Delete N Nodes After M Nodes of a Linked List | Alpha
 | 203 | Remove Linked List Elements | Alpha
-| 83 | Remove Duplicates from Sorted List | Bravo
+| 83 | Remove Duplicates from Sorted List | Alpha
 | 82 | Remove Duplicates from Sorted List II | Hard
 | 369 | Plus One Linked List | Bravo
 | 2 | Add Two Numbers | Alpha
@@ -313,8 +313,13 @@
 | 232 | Implement Queue using Stacks | Bravo
 | 225 | Implement Stack using Queues | Bravo
 | 150 | Evaluate Reverse Polish Notation | Alpha
-| 42 | Trapping Rain Water | Alpha
-| 84 | Largest Rectangle in Histogram | Alpha, Mechanical
+
+| 42 | Trapping Rain Water | Alpha | dynamic programming, two pointers, monotonic stack
+| 84 | Largest Rectangle in Histogram | monotonic stack
+| 503 | Next Greater Element II | Alpha | monotonic stack
+| 739 | Daily Temperatures | Alpha | monotonic stack
+| 496 | Next Greater Element I | Alpha | monotonic stack
+
 | 347 | Top K Frequent Elements | Alpha
 | 451 | Sort Characters By Frequency | Bravo
 | 295 | Find Median from Data Stream | Alpha
@@ -394,6 +399,9 @@
 | 57 | Insert Intervals | Alpha | Merge interval
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Alpha |
+| 435 | Non-overlapping Intervals | Alpha | greedy
+| 452 | Minimum Number of Arrows to Burst Balloons | Alpha | greedy
+
 | 1640 | Check Array Formation Through Concatenation | Alpha
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
@@ -410,10 +418,7 @@
 | 414 | Third Maximum Number | Alpha
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
-| 45 | Max Consecutive Ones | Alpha
-| 503 | Next Greater Element II | Alpha | monotonic stack
-| 739 | Daily Temperatures | Alpha | monotonic stack
-| 496 | Next Greater Element I | Alpha | monotonic stack
+| 485 | Max Consecutive Ones | Alpha
 
 ## String
 | ID | Name | Rating | Note

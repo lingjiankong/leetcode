@@ -1,3 +1,5 @@
+// ***
+//
 // The next greater element of some element x in an array is the first greater element that is to the right of x in the
 // same array.
 //
@@ -34,16 +36,20 @@
 // 0 <= nums1[i], nums2[i] <= 10^4
 // All integers in nums1 and nums2 are unique.
 // All the integers of nums1 also appear in nums2.
+//
+// ***
 
+// Monotonic increasing stack.
 // Same as 503. Next Greater Element III.
+// Note that we are told all integers are unique and all integers of num1 also appear in num2.
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         stack<int> s;
-        unordered_map<int, int> hash; // Stores (number : next greater number) in num2
+        unordered_map<int, int> hash;  // Stores (number : next greater number) in num2
 
         for (int i = nums2.size() - 1; i >= 0; --i) {
-            while (not s.empty() and nums2[i] >= s.top()) {
+            while (not s.empty() and s.top() <= nums2[i]) {
                 s.pop();
             }
             hash[nums2[i]] = s.empty() ? -1 : s.top();

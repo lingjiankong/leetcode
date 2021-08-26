@@ -29,7 +29,7 @@
 // ***
 
 // Almost exactly the same as 503. Next Greater Element II.
-// In this question, the increasing monotonic stack stores index instead of numbers.
+// In this question, the monotonic increasing stack stores index instead of numbers.
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
@@ -39,7 +39,7 @@ public:
         stack<int> s;
 
         for (int i = n - 1; i >= 0; i--) {
-            while (not s.empty() and temperatures[i] >= temperatures[s.top()]) {
+            while (not s.empty() and temperatures[s.top()] <= temperatures[i]) {
                 s.pop();
             }
             res[i] = s.empty() ? 0 : s.top() - i;

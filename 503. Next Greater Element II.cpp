@@ -27,11 +27,12 @@
 //
 // ***
 
-// This would be the solution if we are not dealing with a circular array. Read this one first.
-// Maintain a monotonic stack of increasing elements
+// Monotonic increasing stack.
 //
-// Traverse nums from *right to left*, pop all elements which are shorter than nums[i] from the stack
-// the top of the remaining stack would be the value of next greater number of nums[i].
+// This would be the solution if we are not dealing with a circular array. Read this one first.
+//
+// Traverse nums from *right to left*, pop all elements which are shorter than nums[i] from the stack.
+// The top of the remaining stack would be the value of next greater number of nums[i].
 // Push nums[i] to the stack and continue traversing left.
 class Solution {
 public:
@@ -42,7 +43,7 @@ public:
         stack<int> s;
 
         for (int i = n - 1; i >= 0; --i) {
-            while (not s.empty() and nums[i] >= s.top()) {
+            while (not s.empty() and s.top() <= nums[i]) {
                 s.pop();
             }
             res[i] = s.empty() ? -1 : s.top();
@@ -63,7 +64,7 @@ public:
         stack<int> s;
 
         for (int i = n * 2 - 1; i >= 0; --i) {
-            while (not s.empty() and nums[i % n] >= s.top()) {
+            while (not s.empty() and s.top() <= nums[i % n]) {
                 s.pop();
             }
             res[i % n] = s.empty() ? -1 : s.top();
