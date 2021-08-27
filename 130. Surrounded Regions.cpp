@@ -24,13 +24,13 @@
 // ***
 //
 // First traverse the four edges for 'O', dfs the 'O's and change all 'O' to '$'.
-// Now, all 'O' left (those that have not been dfs-ed) are surrounded by 'X'. Change all of them to 'X'.
+// Now, all 'O' left (those that have not been dfs-ed) must have been surrounded by 'X'. Change all of them to 'X'.
 // Then, change the '$'s back to 'O'.
 
 class Solution {
 public:
     void solve(vector<vector<char>>& board) {
-        // Traverse first and last column j first and last row.
+        // Traverse four edges and change all O to $
         for (int i = 0; i < board.size(); ++i) {
             for (int j = 0; j < board[i].size(); ++j) {
                 if ((i == 0 || i == board.size() - 1 || j == 0 || j == board[i].size() - 1) && board[i][j] == 'O') {
@@ -39,6 +39,7 @@ public:
             }
         }
 
+        // Flip remaining O to X and flip $ back to O
         for (int i = 0; i < board.size(); ++i) {
             for (int j = 0; j < board[i].size(); ++j) {
                 if (board[i][j] == 'O') {

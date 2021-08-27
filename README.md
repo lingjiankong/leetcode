@@ -350,6 +350,9 @@
 |:---:|:---:|:---:|:---:|
 | 207 | Course Schedule | Bravo
 | 210 | Course Schedule II | Bravo
+| N5 | Union Find | Alpha | union find
+| 990 | Satisfiability of Equality Equations | union find
+| 261 | Graph Valid Tree | union find
 
 ## Design
 | ID | Name | Rating | Note
