@@ -48,32 +48,34 @@ public:
 
     int seat() {
         // prevIdx: last seat which was occupied.
-        int prevIdx = -1, maxDist = 0, idx = 0;
-        for (int i : _occupied) {
+        // curIdx: current seat which is occupied.
+        // chosenIdx: seat which we will choose.
+        int prevIdx = -1, maxDist = 0, chosenIdx = 0;
+        for (int curIdx : _occupied) {
             if (prevIdx == -1) {
                 // Sit next to left wall
-                if (maxDist < i) {
-                    maxDist = i;
-                    idx = 0;
+                if (maxDist < curIdx) {
+                    maxDist = curIdx;
+                    chosenIdx = 0;
                 }
             } else {
                 // Sit in between two people.
-                if (maxDist < (i - prevIdx) / 2) {
-                    maxDist = (i - prevIdx) / 2;
-                    idx = prevIdx + maxDist;
+                if (maxDist < (curIdx - prevIdx) / 2) {
+                    maxDist = (curIdx - prevIdx) / 2;
+                    chosenIdx = prevIdx + maxDist;
                 }
             }
-            prevIdx = i;
+            prevIdx = curIdx;
         }
 
         // Sit next to right wall.
         if (prevIdx != -1 and maxDist < _n - prevIdx - 1) {
             maxDist = _n - 1 - prevIdx;
-            idx = _n - 1;
+            chosenIdx = _n - 1;
         }
 
-        _occupied.insert(idx);
-        return idx;
+        _occupied.insert(chosenIdx);
+        return chosenIdx;
     }
 
     void leave(int p) { _occupied.erase(p); }

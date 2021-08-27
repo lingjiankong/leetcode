@@ -44,6 +44,8 @@
 //
 // ***
 
+// See also 855. Exam Room.
+//
 // Traverse from left to right to find all seats with someone sitting.
 // The max distance between two people is to sit in the middle.
 // Note that we need to handle cases where we sit right next to the left wall and the right wall.
