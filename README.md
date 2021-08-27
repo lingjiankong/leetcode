@@ -416,6 +416,9 @@
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
 | 485 | Max Consecutive Ones | Alpha
+| 849 | Maximize Distance to Closest Person | Bravo
+| 855 | Exam Room | Bravo
+
 
 ## String
 | ID | Name | Rating | Note
