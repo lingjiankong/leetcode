@@ -350,9 +350,15 @@
 |:---:|:---:|:---:|:---:|
 | 207 | Course Schedule | Bravo
 | 210 | Course Schedule II | Bravo
-| N5 | Union Find | Alpha | union find
-| 990 | Satisfiability of Equality Equations | union find
-| 261 | Graph Valid Tree | union find
+| N5 | Union Find | Alpha | union-find
+| 990 | Satisfiability of Equality Equations | Alpha | union-find
+| 261 | Graph Valid Tree | Alpha | union-find
+| 305 | Number of Islands II | Alpha | union-find
+| 323 | Number of Connected Components in an Undirected Graph | Alpha | union-find
+| 547 | Number of Provinces | Alpha | union-find
+| 399 | Evaluate Division | Alpha | DFS (graph traversal)
+| 684 | Redundant Connection | Alpha | union-find
+| 721 | Accounts Merge | Alpha | union-find
 
 ## Design
 | ID | Name | Rating | Note
