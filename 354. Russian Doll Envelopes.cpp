@@ -24,7 +24,7 @@ public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
         // dp[i] stores the length of longest subsequence that ends at position i (i.e. number of envelopes).
         vector<int> dp(envelopes.size(), 1);
-        int maxEnvelopes = 0;
+        int maxLen = 0;
 
         // Sort the width in ascending order. If width is the same, then sort height in DESCENDING order.
         // Why sort width in ascending order but height in descending order? Because envelopes with the same width can't
@@ -34,13 +34,12 @@ public:
         //
         // Let's suppose the values (width, height) are given as...
         // [2,3] [4,6] [3,7] [4,8]
-        // 
+        //
         // After sorting we have
         // [2,3] [3,7] [4,8] [4,6]
-        // 
-        sort(envelopes.begin(), envelopes.end(), [](const vector<int>& a, const vector<int>& b) {
-            return (a[0] < b[0]) || (a[0] == b[0] && a[1] > b[1]);
-        });
+        //
+        sort(envelopes.begin(), envelopes.end(),
+             [](const vector<int>& a, const vector<int>& b) { return (a[0] < b[0]) || (a[0] == b[0] && a[1] > b[1]); });
 
         // Now just do LIS on the all height values (you don't have to care about width anymore)
         for (int i = 0; i < envelopes.size(); ++i) {
@@ -50,10 +49,10 @@ public:
                 }
             }
 
-            maxEnvelopes = max(maxEnvelopes, dp[i]);
+            maxLen = max(maxLen, dp[i]);
         }
 
-        return maxEnvelopes;
+        return maxLen;
     }
 };
 
@@ -64,7 +63,7 @@ public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
         // dp[i] stores the length of longest subsequence that ends at position i (i.e. number of envelopes).
         vector<int> dp(envelopes.size(), 1);
-        int maxEnvelopes = 0;
+        int maxLen = 0;
 
         sort(envelopes.begin(), envelopes.end());
 
@@ -75,13 +74,12 @@ public:
                 }
             }
 
-            maxEnvelopes = max(maxEnvelopes, dp[i]);
+            maxLen = max(maxLen, dp[i]);
         }
 
-        return maxEnvelopes;
+        return maxLen;
     }
 };
-
 
 // Binary search solution O(nlogn). This is almost the same as 300. Longest Increasing Subsequence.
 // This algorithm is not intuitive. No need to understand it.
@@ -91,9 +89,8 @@ public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
         vector<int> piles;
 
-        sort(envelopes.begin(), envelopes.end(), [](const vector<int>& a, const vector<int>& b) {
-            return (a[0] < b[0]) || (a[0] == b[0] && a[1] > b[1]);
-        });
+        sort(envelopes.begin(), envelopes.end(),
+             [](const vector<int>& a, const vector<int>& b) { return (a[0] < b[0]) || (a[0] == b[0] && a[1] > b[1]); });
 
         for (int i = 0; i < envelopes.size(); ++i) {
             int height = envelopes[i][1];

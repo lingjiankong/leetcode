@@ -107,7 +107,6 @@ vector<int> findAnagrams(string s, string p) {
     }
 
     int left = 0, right = 0;
-    int validCount = 0;
     vector<int> res;
 
     while (right < s.size()) {

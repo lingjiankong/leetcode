@@ -65,7 +65,7 @@ public:
                 --window[c - 'A'];
 
                 if (maxFreqChar == c) {
-                    maxFreqCount -= 1;
+                    --maxFreqCount;
                 }
             }
 
