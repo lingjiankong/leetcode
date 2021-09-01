@@ -23,7 +23,7 @@
 
 // DFS
 // Note: A leaf is a node with no children (no left chidren and no right children).
-// The extra if conditions in this problem that checks if a node has only one subtree.
+// The extra if conditions in this problem checks if a node has only one subtree.
 int minDepth(TreeNode* root) {
     if (!root) {
         return 0;
@@ -42,7 +42,7 @@ int minDepth(TreeNode* root) {
         return 1 + minDepth(root->left);
     }
 
-    // both subtrees exist
+    // Both subtrees exist
     return 1 + min(minDepth(root->left), minDepth(root->right));
 }
 

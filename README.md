@@ -18,9 +18,10 @@
 | 429 | N-ary Tree Level Order Traversal | Alpha
 | 589 | N-ary Tree Preorder Traversal | Alpha
 | 590 | N-ary Tree Postorder Traversal | Alpha
-| 100 | Same Tree | Alpha | Preorder
-| 572 | Subtree of Another Tree | Alpha | Preorder
-| 101 | Symmetric Tree | Alpha | Preorder
+| 100 | Same Tree | Alpha
+| 572 | Subtree of Another Tree | Alpha
+| 101 | Symmetric Tree | Alpha
+| 965 | Univalued Binary Tree | Alpha
 | 226 | Invert Binary Tree | Alpha | Postorder
 | 112 | Path Sum | Alpha | Preorder
 | 113 | Path Sum II | Alpha | Preorder
@@ -36,7 +37,7 @@
 | 129 | Sum Root to Leaf Numbers | Alpha
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
 | 549 | Binary Tree Longest Consecutive Sequence II | TODO | Compare with 673
-| 110 | Balanced Binary Tree | Bravo
+| 110 | Balanced Binary Tree | Alpha
 | 102 | Binary Tree Level Order Traversal | Alpha | Postorder, BFS
 | 107 | Binary Tree Level Order Traversal II | Bravo | Postorder, BFS
 | 314 | Binary Tree Vertical Order Traversal | Alpha | BFS
@@ -58,6 +59,8 @@
 | 341 | Flatten Nested List Iterator | Bravo
 | 339 | Nested List Weight Sum | Alpha | preorder
 | 364 | Nested List Weight Sum II | preorder
+| 987 | Vertical Order Traversal of a Binary Tree | Alpha
+| 1302 | Deepest Leaves Sum | Alpha
 
 ## Binary Search Tree
 | ID | Name | Rating | Note

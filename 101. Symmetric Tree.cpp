@@ -26,19 +26,23 @@ public:
             return true;
         }
 
-        return _preorder(root->left, root->right);
+        return _dfs(root->left, root->right);
     }
 
 private:
-    bool _preorder(TreeNode* l, TreeNode* r) {
-        if (!l && !r) {
+    bool _dfs(TreeNode* l, TreeNode* r) {
+        if (!l and !r) {
             return true;
-        } else if (!l || !r) {
-            return false;
-        } else if (l->val != r->val) {
-            return false;
-        } else {
-            return _preorder(l->left, r->right) && _preorder(l->right, r->left);
         }
+
+        if (!l or !r) {
+            return false;
+        }
+
+        if (l->val or r->val) {
+            return false;
+        }
+
+        return _dfs(l->left, r->right) and _dfs(l->right, r->left);
     }
 };

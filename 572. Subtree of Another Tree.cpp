@@ -48,19 +48,21 @@ public:
             return true;
         }
 
-        return isSubtree(s->left, t) || isSubtree(s->right, t);
+        return isSubtree(s->left, t) or isSubtree(s->right, t);
     }
 
 private:
     bool _isSameTree(TreeNode* p, TreeNode* q) {
-        if (!p && !q) {
+        if (!p and !q) {
             return true;
-        } else if (!p || !q) {
-            return false;
-        } else if (p->val != q->val) {
-            return false;
-        } else {
-            return _isSameTree(p->left, q->left) && _isSameTree(p->right, q->right);
         }
+        if (!p or !q) {
+            return false;
+        }
+        if (p->val != q->val) {
+            return false;
+        }
+
+        return _isSameTree(p->left, q->left) and _isSameTree(p->right, q->right);
     }
 };

@@ -35,18 +35,22 @@
 // ***
 
 bool isSameTree(TreeNode* p, TreeNode* q) {
-    if (!p && !q) {
-        // Both nodes are empty: same.
+    // Both nodes are empty: same.
+    if (!p and !q) {
         return true;
-    } else if (!p || !q) {
-        // Only one of the node is empty: not the same.
-        return false;
-    } else if (p->val != q->val) {
-        // Both nodes are non-empty but have different values: not the same.
-        return false;
-    } else {
-        // Both nodes are non-empty and nodes have the same values,
-        // then recursively check if left subtrees and right subtrees are equal to each other.
-        return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
     }
+
+    // Only one of the node is empty: not the same.
+    if (!p or !q) {
+        return false;
+    }
+
+    // Both nodes are non-empty but have different values: not the same.
+    if (p->val != q->val) {
+        return false;
+    }
+
+    // Otherwise, both nodes are non-empty and nodes have the same values,
+    // then recursively check if left subtrees and right subtrees are equal to each other.
+    return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
 }
