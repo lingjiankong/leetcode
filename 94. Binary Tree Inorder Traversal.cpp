@@ -20,24 +20,26 @@
 // Recursive solution. Trivial.
 class Solution {
 public:
-    vector<int> preorderTraversal(TreeNode* root) {
-        _preorder(root);
+    vector<int> inorderTraversal(TreeNode* root) {
+        _inorder(root);
         return _result;
     }
 
 private:
     vector<int> _result;
-    void _preorder(TreeNode* root) {
-        if (root) {
-            _preorder(root->left);
-            _result.push_back(root->val);
-            _preorder(root->right);
+    void _inorder(TreeNode* root) {
+        if (not root) {
+            return;
         }
+
+        _inorder(root->left);
+        _result.push_back(root->val);
+        _inorder(root->right);
     }
 }
 
 // A "solution template" for both preorder, inorder, and postorder traversal.
-// There's nothing special about this method. Just memorize it.
+// No need to memorize it.
 class Solution {
 public:
     vector<int> inOrderTraversal(TreeNode* root) {

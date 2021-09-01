@@ -12,9 +12,12 @@
 ## Tree
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 144 | Binary Tree Preorder Traversal | Charlie
-| 94 | Binary Tree Inorder Traversal | Charlie
-| 145 | Binary Tree Postorder Traversal | Charlie
+| 144 | Binary Tree Preorder Traversal | Alpha
+| 94 | Binary Tree Inorder Traversal | Alpha
+| 145 | Binary Tree Postorder Traversal | Alpha
+| 429 | N-ary Tree Level Order Traversal | Alpha
+| 589 | N-ary Tree Preorder Traversal | Alpha
+| 590 | N-ary Tree Postorder Traversal | Alpha
 | 100 | Same Tree | Alpha | Preorder
 | 572 | Subtree of Another Tree | Alpha | Preorder
 | 101 | Symmetric Tree | Alpha | Preorder

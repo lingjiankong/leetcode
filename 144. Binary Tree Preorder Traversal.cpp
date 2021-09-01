@@ -27,15 +27,48 @@ public:
 private:
     vector<int> _result;
     void _preorder(TreeNode* root) {
-        if (root) {
-            _result.push_back(root->val);
-            _preorder(root->left);
-            _preorder(root->right);
+        if (not root) {
+            return;
         }
+
+        _result.push_back(root->val);
+        _preorder(root->left);
+        _preorder(root->right);
     }
 }
 
-// A "solution template" for both preorder, inorder, and postorder traversal. You have to remember it.
+// Iterative using stack
+// Pay attention to the sequence which you push the left and right nodes to the stack.
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        if (not root) {
+            return {};
+        }
+
+        vector<int> res;
+
+        stack<TreeNode*> s;
+        s.push(root);
+        while (!s.empty()) {
+            TreeNode* node = s.top();
+            s.pop();
+
+            _result.push_back(node->val);
+
+            if (node->right) {
+                s.push(node->right);
+            }
+            if (node->left) {
+                s.push(node->left);
+            }
+        }
+
+        return res;
+    }
+};
+
+// A "solution template" for both preorder, inorder, and postorder traversal. No need to remember it.
 // See also 94. Binary Tree Inorder Traversal and 145. Binary Tree Postorder Traversal.
 class Solution {
 public:
@@ -61,33 +94,3 @@ public:
 private:
     vector<int> _result;
 };
-
-// Another iterative solution.
-// Pay attention to the sequence which you push the left and right nodes to the stack.
-// When pushing node to stack you could have check if node->left and node->right is nullptr,
-// but this doesn't make a big difference since you could push nullptr to stack and when
-// it is popped, if(node) will return false and we do nothing, just continue popping the next element.
-class Solution {
-public:
-    vector<int> preorderTraversal(TreeNode* root) {
-        _nodeStack.push(root);
-
-        while (!_nodeStack.empty()) {
-            TreeNode* node = _nodeStack.top();
-            _nodeStack.pop();
-
-            if (node) {
-                _result.push_back(node->val);
-                _nodeStack.push(node->right);
-                _nodeStack.push(node->left);
-            }
-        }
-
-        return _result;
-    }
-
-private:
-    vector<int> _result;
-    stack<TreeNode*> _nodeStack;
-};
-
