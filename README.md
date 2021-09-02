@@ -61,6 +61,10 @@
 | 364 | Nested List Weight Sum II | preorder
 | 987 | Vertical Order Traversal of a Binary Tree | Alpha
 | 1302 | Deepest Leaves Sum | Alpha
+| 872 | Leaf-Similar Trees | Alpha
+| 814 | Binary Tree Pruning | Alpha | postorder
+| 669 | Trim a Binary Search Tree | Alpha | BST, postorder
+| 1325 | Delete Leaves With a Given Value | Alpha | postorder
 
 ## Binary Search Tree
 | ID | Name | Rating | Note
