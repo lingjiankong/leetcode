@@ -41,7 +41,7 @@ public:
     int minKBitFlips(vector<int>& A, int K) {
         int res = 0, n = A.size();
 
-        // Whether the net effect of all flips you've done so far have flipped A[i] (the current value you are
+        // Whether the net effect of all previous flips you've done so far have flipped A[i] (the current value you are
         // looking at when you are in the loop). This is used to update isFlipped[i].
         int isCurFlipped = 0;
 
@@ -55,6 +55,9 @@ public:
                 isCurFlipped ^= isFlipped[i - K];
             }
 
+            // While traversing A,
+            // See if we need to flip everything in [i, i + K]
+            //
             // If isCurFlipped == 0 and A[i] == 0, you need to flip A[i] from 0 to 1.
             // If isCurFlipped == 1 and A[i] == 1, meaning although A[i] was originally 1, it has been flipped to 0, in
             // which case you need to flip A[i] from 0 to 1.
@@ -73,7 +76,7 @@ public:
     }
 };
 
-// Similar idea. Use a queue to store the indexes of the elements which have been flipped.
+// Similar idea. Use a queue to store the *indexes* of the elements which have been flipped.
 class Solution {
 public:
     int minKBitFlips(vector<int>& A, int K) {

@@ -23,8 +23,8 @@
 | 101 | Symmetric Tree | Alpha
 | 965 | Univalued Binary Tree | Alpha
 | 226 | Invert Binary Tree | Alpha | Postorder
-| 112 | Path Sum | Alpha | Preorder
-| 113 | Path Sum II | Alpha | Preorder
+| 112 | Path Sum | Alpha
+| 113 | Path Sum II | Alpha
 | 437 | Path Sum III | Bravo | Preorder
 | 124 | Binary Tree Maximum Path Sum | Alpha | Postorder
 | 687 | Longest Univalue Path | Alpha | Postorder
@@ -130,7 +130,7 @@
 | 340 | Longest Substring with At Most K Distinct Characters | Alpha
 | 424 | Longest Repeating Character Replacement | Alpha
 | 395 | Longest Substring with At Least K Repeating Characters | Alpha
-| 727 | Minimum Window Subsequence | Bravo | sliding window, dynamic programming
+| 727 | Minimum Window Subsequence | Bravo | sliding window
 | 992 | Subarrays with K Different Integers | Alpha
 | 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
 | 1004 | Max Consecutive Ones III | Alpha

@@ -32,24 +32,24 @@ public:
         vector<vector<int>> all;
         vector<int> current;
 
-        _preorder(root, sum, current, all);
+        _dfs(root, sum, current, all);
 
         return all;
     }
 
 private:
-    void _preorder(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all) {
-        if (!root) {
+    void _dfs(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all) {
+        if (not root) {
             return;
         }
 
         current.push_back(root->val);
 
-        if (root->val == sum && !root->left && !root->right) {
+        if (root->val == sum and not root->left and not root->right) {
             all.push_back(current);
         }
 
-        _preorder(root->left, sum - root->val, current, all);
-        _preorder(root->right, sum - root->val, current, all);
+        _dfs(root->left, sum - root->val, current, all);
+        _dfs(root->right, sum - root->val, current, all);
     }
 };

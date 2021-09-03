@@ -65,7 +65,7 @@ public:
         }
 
         int totalSum = 0;
-        int currentSum;
+        int currentSum = 0;
 
         _dfs(root, currentSum, totalSum);
 

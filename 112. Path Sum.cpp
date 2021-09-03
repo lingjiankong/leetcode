@@ -22,13 +22,13 @@
 // ***
 
 bool hasPathSum(TreeNode* root, int sum) {
-    if (!root) {
+    if (not root) {
         return false;
     }
 
-    if (root->val == sum && !root->left && !root->right) {
+    if (root->val == sum and not root->left and not root->right) {
         return true;
     }
 
-    return hasPathSum(root->left, sum - root->val) || hasPathSum(root->right, sum - root->val);
+    return hasPathSum(root->left, sum - root->val) or hasPathSum(root->right, sum - root->val);
 }
