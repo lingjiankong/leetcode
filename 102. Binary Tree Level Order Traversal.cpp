@@ -68,14 +68,14 @@ public:
         q.push(root);
 
         while (!q.empty()) {
-            vector<int> currentLevel;
+            vector<int> curLevel;
             int qSize = q.size();
 
             for (int i = 0; i < qSize; ++i) {
                 TreeNode* node = q.front();
                 q.pop();
 
-                currentLevel.push_back(node->val);
+                curLevel.push_back(node->val);
 
                 if (node->left) {
                     q.push(node->left);
@@ -86,7 +86,7 @@ public:
                 }
             }
 
-            levels.push_back(currentLevel);
+            levels.push_back(curLevel);
         }
 
         return levels;
@@ -102,13 +102,13 @@ vector<vector<int>> levelOrder(TreeNode* root) {
 
     vector<vector<int>> levels;
 
-    vector<TreeNode*> currentLevel = {root};
+    vector<TreeNode*> curLevel = {root};
     vector<TreeNode*> nextLevel = {};
 
-    while (!currentLevel.empty()) {
+    while (!curLevel.empty()) {
         levels.push_back({});
 
-        for (auto node : currentLevel) {
+        for (auto node : curLevel) {
             levels.back().push_back(node->val);
 
             if (node->left) {
@@ -119,7 +119,7 @@ vector<vector<int>> levelOrder(TreeNode* root) {
             }
         }
 
-        currentLevel.swap(nextLevel);
+        curLevel.swap(nextLevel);
         nextLevel.clear();
     }
 

@@ -38,40 +38,40 @@ class Codec {
 public:
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        ostringstream out;
-        serialize(root, out);
-        return out.str();
+        ostringstream oss;
+        serialize(root, oss);
+        return oss.str();
     }
 
     // Decodes your encoded data to tree.
     TreeNode* deserialize(const string& data) {
-        istringstream in(data);
-        return deserialize(in);
+        istringstream iss(data);
+        return deserialize(iss);
     }
 
 private:
-    void serialize(TreeNode* root, ostringstream& out) {
+    void serialize(TreeNode* root, ostringstream& oss) {
         if (!root) {
-            out << "# ";
+            oss << "# ";
             return;
         }
 
-        out << root->val << " ";
-        serialize(root->left, out);
-        serialize(root->right, out);
+        oss << root->val << " ";
+        serialize(root->left, oss);
+        serialize(root->right, oss);
     }
 
-    TreeNode* deserialize(istringstream& in) {
+    TreeNode* deserialize(istringstream& iss) {
         string value;
-        in >> value;
+        iss >> value;
 
         if (value == "#") {
             return nullptr;
         }
 
         TreeNode* root = new TreeNode(stoi(value));
-        root->left = deserialize(in);
-        root->right = deserialize(in);
+        root->left = deserialize(iss);
+        root->right = deserialize(iss);
 
         return root;
     }
@@ -82,19 +82,19 @@ class Codec {
 public:
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        ostringstream out;
-        serialize(root, out);
-        return out.str();
+        ostringstream oss;
+        serialize(root, oss);
+        return oss.str();
     }
 
     // Decodes your encoded data to tree.
     TreeNode* deserialize(const string& data) {
-        istringstream in(data);
-        return deserialize(in);
+        istringstream iss(data);
+        return deserialize(iss);
     }
 
 private:
-    void serialize(TreeNode* root, ostringstream& out) {
+    void serialize(TreeNode* root, ostringstream& oss) {
         queue<TreeNode*> q;
         q.push(root);
 
@@ -103,19 +103,19 @@ private:
             q.pop();
 
             if (not node) {
-                out << "# ";
+                oss << "# ";
                 continue;
             }
-            out << node->val << " ";
+            oss << node->val << " ";
 
             q.push(node->left);
             q.push(node->right);
         }
     }
 
-    TreeNode* deserialize(istringstream& in) {
+    TreeNode* deserialize(istringstream& iss) {
         string value;
-        in >> value;
+        iss >> value;
 
         if (value == "#") {
             return nullptr;
@@ -130,8 +130,7 @@ private:
             TreeNode* node = q.front();
             q.pop();
 
-            in >> value;
-
+            iss >> value;
             if (value != "#") {
                 node->left = new TreeNode(stoi(value));
                 q.push(node->left);
@@ -139,7 +138,7 @@ private:
                 node->left = nullptr;
             }
 
-            in >> value;
+            iss >> value;
             if (value != "#") {
                 node->right = new TreeNode(stoi(value));
                 q.push(node->right);

@@ -36,23 +36,24 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         return nullptr;
     }
 
+    TreeNode* left = lowestCommonAncestor(root->left, p, q);
+    TreeNode* right = lowestCommonAncestor(root->right, p, q);
+
+    // Can also be placed above recursion.
     if (root == p || root == q) {
         return root;
     }
 
-    TreeNode* left = lowestCommonAncestor(root->left, p, q);
-    TreeNode* right = lowestCommonAncestor(root->right, p, q);
-
-    if (not left and not right) {
-        return nullptr;
+    if (left and right) {
+        // If left and right both exist, then root must be the lowest common ancester.
+        // (root is guaranteed to be the lowest because of postorder traversal).
+        return root;
     } else if (left) {
         return left;
     } else if (right) {
         return right;
     } else {
-        // If left and right both exist, then root must be the lowest common ancester.
-        // (root is guaranteed to be the lowest because of postorder traversal).
-        return root;
+        return nullptr;
     }
 }
 
