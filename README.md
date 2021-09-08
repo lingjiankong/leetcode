@@ -271,7 +271,7 @@
 | 516 | Longest Palindromic Subsequence | Alpha
 | 5 | Longest Palindromic Substring | Alpha
 | 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha
-| 10 | Reguar Expression Matching | Alpha
+| 10 | Reguar Expression Matching | Bravo
 | 651 | 4 Keys Keyboard | Alpha
 | 650 | 2 Keys Keyboard | Alpha
 | 887 | Super Egg Drop | Bravo | dynamic programming, binary search
