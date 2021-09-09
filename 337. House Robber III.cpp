@@ -26,7 +26,7 @@
 class Solution {
 public:
     int rob(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return 0;
         }
 
@@ -43,7 +43,7 @@ public:
             robCur += rob(root->right->left) + rob(root->right->right);
         }
 
-        // Amount of money we can have if we do not rob current node.
+        // Amount of money we can have if we do NOT rob current node.
         int notRobCur = rob(root->left) + rob(root->right);
 
         // Return max amount of money we can have in this node.
@@ -68,7 +68,7 @@ public:
 
 private:
     array<int, 2> _dfs(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return {0, 0};
         }
 
