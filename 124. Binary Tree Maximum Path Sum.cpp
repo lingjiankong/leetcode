@@ -42,20 +42,20 @@ private:
     // Returns max sum from current root,
     // This will return either leftSubtreeMaxSum + root->val, or rightSubtreeMaxSum + root->val.
     int _oneSideMax(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return 0;
         }
 
         // We need to take max(_oneSideMax(root->left), 0)
-        // because for example if leftSubtreeMaxPathSum is negative, then we simply don't need the left subtree at all
+        // because for example if leftMaxPathSum is negative, then we simply don't need the left subtree at all
         // when we are calculating the path sum for leftSubtree -> root -> rightSubtree.
-        int leftSubtreeMaxPathSum = max(_oneSideMax(root->left), 0);
-        int rightSubtreeMaxPathSum = max(_oneSideMax(root->right), 0);
+        int leftMaxPathSum = max(0, _oneSideMax(root->left));
+        int rightMaxPathSum = max(0, _oneSideMax(root->right));
 
         // Update global max sum.
-        _maxSum = max(_maxSum, leftSubtreeMaxPathSum + rightSubtreeMaxPathSum + root->val);
+        _maxSum = max(_maxSum, leftMaxPathSum + rightMaxPathSum + root->val);
 
         // Return max sum from current root.
-        return max(leftSubtreeMaxPathSum, rightSubtreeMaxPathSum) + root->val;
+        return max(leftMaxPathSum, rightMaxPathSum) + root->val;
     }
 };

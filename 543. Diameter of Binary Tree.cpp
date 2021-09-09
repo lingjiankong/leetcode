@@ -18,7 +18,7 @@
 // ***
 //
 // This is exactly the same as 104. Maximum Depth of Binary Tree,
-// with an added _diameter to track the diameter (leftSubtreeMaxDepth + rightSubtreeMaxDepth) of the tree.
+// with an added _diameter to track the diameter (leftMaxDepth + rightMaxDepth) of the tree.
 //
 // Learning: generally in tree problems, if what you want to return in your recursion (max depth) needed for your
 // calculation is not what the provided function returns (diameter), then you just should have another recursive
@@ -36,15 +36,15 @@ private:
     int _diameter = 0;
 
     int _maxDepth(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return 0;
         }
 
-        int leftTreeMaxDepth = _maxDepth(root->left);
-        int rightTreeMaxDepth = _maxDepth(root->right);
+        int leftMaxDepth = _maxDepth(root->left);
+        int rightMaxDepth = _maxDepth(root->right);
 
-        _diameter = max(_diameter, leftTreeMaxDepth + rightTreeMaxDepth);
+        _diameter = max(_diameter, leftMaxDepth + rightMaxDepth);
 
-        return 1 + max(leftTreeMaxDepth, rightTreeMaxDepth);
+        return 1 + max(leftMaxDepth, rightMaxDepth);
     }
 };

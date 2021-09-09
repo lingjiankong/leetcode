@@ -27,9 +27,9 @@
 | 113 | Path Sum II | Alpha
 | 437 | Path Sum III | Bravo | Preorder
 | 124 | Binary Tree Maximum Path Sum | Alpha | Postorder
+| 543 | Diameter of Binary Tree | Alpha | Postorder
 | 687 | Longest Univalue Path | Alpha | Postorder
 | 250 | Count Univalue Subtrees | Alpha | Postorder
-| 543 | Diameter of Binary Tree | Alpha | Postorder
 | 104 | Maximum Depth of Binary Tree | Alpha | Postorder
 | 366 | Find Leaves of Binary Tree | Alpha | Postorder
 | 111 | Minimum Depth of Binary Tree | Alpha | Postorder, BFS

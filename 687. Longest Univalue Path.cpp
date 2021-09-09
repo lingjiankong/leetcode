@@ -50,26 +50,26 @@ private:
     int _longestPath = 0;
 
     int _maxUnivalueDepth(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return 0;
         }
 
-        int leftSubtreeMaxUnivalDepth = _maxUnivalueDepth(root->left);
-        int rightSubtreeMaxUnivalDepth = _maxUnivalueDepth(root->right);
+        int leftMaxUnivalDepth = _maxUnivalueDepth(root->left);
+        int rightMaxUnivalDepth = _maxUnivalueDepth(root->right);
 
         // Reset maxUnival of a subtree if its values != the value of our current root.
-        if (root->left && root->val != root->left->val) {
-            leftSubtreeMaxUnivalDepth = 0;
+        if (root->left and root->val != root->left->val) {
+            leftMaxUnivalDepth = 0;
         }
 
-        if (root->right && root->val != root->right->val) {
-            rightSubtreeMaxUnivalDepth = 0;
+        if (root->right and root->val != root->right->val) {
+            rightMaxUnivalDepth = 0;
         }
 
         // Note: we are interested in path (i.e. number of edges, instead of number of nodes),
-        // so we just need to compare current _longestPath with leftSubtreeMaxUnivalDepth + rightSubtreeMaxUnivalDepth
-        _longestPath = max(_longestPath, leftSubtreeMaxUnivalDepth + rightSubtreeMaxUnivalDepth);
+        // so we just need to compare current _longestPath with leftMaxUnivalDepth + rightMaxUnivalDepth
+        _longestPath = max(_longestPath, leftMaxUnivalDepth + rightMaxUnivalDepth);
 
-        return 1 + max(leftSubtreeMaxUnivalDepth, rightSubtreeMaxUnivalDepth);
+        return 1 + max(leftMaxUnivalDepth, rightMaxUnivalDepth);
     }
 };

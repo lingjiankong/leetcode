@@ -33,24 +33,26 @@ private:
     int _totalUnivalueTrees = 0;
 
     bool _isUnivalueTree(TreeNode* node) {
-        if (!node) {
+        if (not node) {
             return true;
         }
 
-        bool leftSubtreeIsUnivalue = _isUnivalueTree(node->left);
-        bool rightSubtreeIsUnivalue = _isUnivalueTree(node->right);
+        bool isLeftUnival = _isUnivalueTree(node->left);
+        bool isRightUnival = _isUnivalueTree(node->right);
 
-        if (leftSubtreeIsUnivalue && rightSubtreeIsUnivalue) {
-            if (node->left && node->val != node->left->val) {
+        if (isLeftUnival and isRightUnival) {
+            if (node->left and node->val != node->left->val) {
                 return false;
-            } else if (node->right && node->val != node->right->val) {
-                return false;
-            } else {
-                ++_totalUnivalueTrees;
-                return true;
             }
-        } else {
-            return false;
+
+            if (node->right and node->val != node->right->val) {
+                return false;
+            }
+
+            ++_totalUnivalueTrees;
+            return true;
         }
+
+        return false;
     }
 };
