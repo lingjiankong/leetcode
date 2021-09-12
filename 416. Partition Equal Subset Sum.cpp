@@ -36,7 +36,7 @@
 //
 // Base case:
 // dp[0][0] = true
-// dp[i][0] = true: when weight capacity if 0, you can put 0 items in the knapsack (the knapsack is already full).
+// dp[i][0] = true: when weight capacity is 0, you can put 0 items in the knapsack (the knapsack is already full).
 // dp[0][w] = false: there is no item to select to reach weight capacity w.
 class Solution {
 public:

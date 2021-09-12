@@ -32,11 +32,20 @@
 //
 // ***
 
-// dp[i][j] number of coins we are going to have by bursting all balloons in (i, j)
+// See labuladong book pp. 181.
+// dp[i][j]: number of coins we are going to have by bursting all balloons in (i, j)
 //
 // Base case:
 // dp[i][j] = 0 where i == j since there's no balloon in (i, j).
 // dp[i][j] = 0 where i + 1 == j since there's no balloon in (i, j).
+//
+// 0 0 X X X X X
+// X 0 0 X X X X
+// X X 0 0 X X X
+// X X X 0 0 X X
+// X X X X 0 0 X
+// X X X X X 0 0
+// X X X X X X 0
 //
 // We only need to traverse upper right of the dp table, from left to right, bottom to top.
 class Solution {

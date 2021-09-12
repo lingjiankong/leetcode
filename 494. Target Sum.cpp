@@ -47,8 +47,7 @@ public:
 
 private:
     void backtrack(int i, const vector<int>& nums, int curTotal, int& target, int& total) {
-        if (i >= nums.size()) {
-            if (curTotal == target) {
+        if (i == nums.size() and curTotal == target) {
                 total += 1;
             }
             return;
@@ -64,32 +63,88 @@ private:
     }
 };
 
-// Dynamic programming 1:
-// dp(i, target): Number of ways we can sum to target by using all number between nums[0:i]
+// Dynamic programming 1-1:
 class Solution {
 public:
     int findTargetSumWays(vector<int>& nums, int target) { return dp(0, 0, nums, target); }
 
 private:
-    int dp(int i, int curSum, const vector<int>& nums, int target) {
+    int dp(int i, int curTotal, const vector<int>& nums, int target) {
         if (i == nums.size()) {
-            if (curSum == target) {
+            if (curTotal == target) {
                 return 1;
             } else {
                 return 0;
             }
         }
 
-        string key = to_string(i) + "," + to_string(curSum);
+        string key = to_string(i) + "," + to_string(curTotal);
         if (memo.count(key)) {
             return memo[key];
         }
 
-        return memo[key] = dp(i + 1, curSum - nums[i], nums, target) + dp(i + 1, curSum + nums[i], nums, target);
+        return memo[key] = dp(i + 1, curTotal - nums[i], nums, target) + dp(i + 1, curTotal + nums[i], nums, target);
     }
 
     unordered_map<string, int> memo;
 };
+
+// Dynamic programming 1-2:
+// Same idea as DP 1, different direction.
+// You are going from target to 0 instead going from 0 to target,
+class Solution {
+public:
+    int findTargetSumWays(vector<int>& nums, int target) { return dp(0, target, nums); }
+
+private:
+    int dp(int i, int target, const vector<int>& nums) {
+        if (i == nums.size()) {
+            if (target == 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        string key = to_string(i) + "," + to_string(target);
+        if (memo.count(key)) {
+            return memo[key];
+        }
+
+        return memo[key] = dp(i + 1, target - nums[i], nums) + dp(i + 1, target + nums[i], nums);
+    }
+
+    unordered_map<string, int> memo;
+};
+
+// Dynamic programming 1-3:
+// Same idea as DP1 again, different direction.
+// You are going from target to 0 instead going from 0 to target,
+class Solution {
+public:
+    int findTargetSumWays(vector<int>& nums, int target) { return dp(nums.size() - 1, target, nums); }
+
+private:
+    int dp(int i, int target, const vector<int>& nums) {
+        if (i == -1) {  // note it is -1 here instead of 0!
+            if (target == 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        string key = to_string(i) + "," + to_string(target);
+        if (memo.count(key)) {
+            return memo[key];
+        }
+
+        return memo[key] = dp(i - 1, target - nums[i], nums) + dp(i - 1, target + nums[i], nums);
+    }
+
+    unordered_map<string, int> memo;
+};
+
 
 // Dynamic programming 2:
 // Partition nums into two subset: A subset are numbers assigned '+'; B subset are numbers assigned '-'.
@@ -116,7 +171,7 @@ private:
 //
 // Base condition:
 // dp[0][0] = 1, dp[i][0] = 1: The only way to make up sum of 0 is not choosing anything
-// dp[0][j] = No number to choose from, therefore no way to make up sum of j
+// dp[0][j] = 0, No number to choose from, therefore no way to make up sum of j
 class Solution {
 public:
     int findTargetSumWays(vector<int>& nums, int target) {
@@ -147,7 +202,8 @@ private:
                     // (i.e., there is no space in the knapsack)
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]];
+                    // Either choose of not choose the ith number.
+                    dp[i][j] = dp[i - 1][j - nums[i - 1]] + dp[i - 1][j];
                 }
             }
         }
@@ -155,57 +211,3 @@ private:
         return dp[nums.size()][goal];
     }
 };
-
-// Same idea as DP 1, different direction.
-// You are going from target to 0 instead going from 0 to target,
-class Solution {
-public:
-    int findTargetSumWays(vector<int>& nums, int target) { return dp(0, target, nums); }
-
-private:
-    int dp(int i, int target, const vector<int>& nums) {
-        if (i == nums.size()) {
-            if (target == 0) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        string key = to_string(i) + "," + to_string(target);
-        if (memo.count(key)) {
-            return memo[key];
-        }
-
-        return memo[key] = dp(i + 1, target - nums[i], nums) + dp(i + 1, target + nums[i], nums);
-    }
-
-    unordered_map<string, int> memo;
-};
-
-// Same idea as DP1 again, different direction.
-class Solution {
-public:
-    int findTargetSumWays(vector<int>& nums, int target) { return dp(nums.size() - 1, target, nums); }
-
-private:
-    int dp(int i, int target, const vector<int>& nums) {
-        if (i == -1) {  // note it is -1 here instead of 0!
-            if (target == 0) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        string key = to_string(i) + "," + to_string(target);
-        if (memo.count(key)) {
-            return memo[key];
-        }
-
-        return memo[key] = dp(i - 1, target - nums[i], nums) + dp(i - 1, target + nums[i], nums);
-    }
-
-    unordered_map<string, int> memo;
-};
-

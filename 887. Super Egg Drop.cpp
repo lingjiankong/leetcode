@@ -130,6 +130,7 @@ private:
 };
 
 // Not very intuitive to understand.
+// Understanding the above solutions is sufficient.
 //
 // Faster definition of state:
 // dp[m][k]: Given m moves and k eggs, what is the *maximum* number of floors we can check.

@@ -69,13 +69,14 @@ public:
                     // NOTICE the state transition function here is slightly different than regular knapsack problem
                     // (e.g. 416. Partition Equal Subset Sum)
                     //
-                    // Not using the ith coin, only using the first i-1 coins to make up amount j, then we have
-                    // dp[i-1][j] ways.
-                    //
-                    // Using the ith coin, since we can use unlimited same coin, we need to know how
+                    // 1. Using the ith coin, since we can use unlimited same coin, we need to know how
                     // many ways to make up amount j - coins[i-1] by using first i coins (including ith), which is
                     // dp[i][j - coins[i-1]]
-                    dp[i][j] = dp[i - 1][j] + dp[i][j - coins[i - 1]];
+                    //
+                    // 2. Not using the ith coin, only using the first i-1 coins to make up amount j, then we have
+                    // dp[i-1][j] ways.
+                    //
+                    dp[i][j] = dp[i][j - coins[i - 1]] + dp[i - 1][j];
                 }
             }
         }

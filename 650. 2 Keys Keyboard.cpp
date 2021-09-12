@@ -45,7 +45,9 @@ public:
             dp[i] = i;  // in the worst case, you need i steps to get i 'A's (keep pasting 'A')
             for (int factor = 2; factor < i; ++factor) {
                 if (i % factor == 0) {
-                    dp[i] = min(dp[i], dp[i / factor] + factor);  // copy dp[i / factor] factor number of times
+                    // copy dp[i / factor] (1 ops) and paste factor - 1 number of times (factor - 1 ops)
+                    // (total of factor number of ops)
+                    dp[i] = min(dp[i], dp[i / factor] + factor); 
                 }
             }
         }

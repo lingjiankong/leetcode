@@ -15,7 +15,18 @@
 //
 // ***
 
-// 1. Find the sorted nth element
+// Hash table
+int majorityElement(vector<int>& nums) {
+    unordered_map<int, int> hash;
+    for (int num : nums) {
+        if (++hash[num] > nums.size() / 2) {
+            return num;
+        }
+    }
+    return -1;
+}
+
+// Find the sorted nth element
 // std::nth_element(RandomIt first, RandomIt nth, RandomIt last)
 // std::nth_element(): rearranges the elements in the range [first,last),
 // in such way that the element at the nth position is the element that would be
@@ -26,31 +37,63 @@ int majorityElement(vector<int>& nums) {
     return nums[nums.size() / 2];
 }
 
-// 2a. Moore voting alogorithm.
+// Devide and conquer
+// Won't be the most efficient one, just get the idea.
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) { return majorityElement(nums, 0, nums.size() - 1); }
+
+private:
+    int majorityElement(vector<int>& nums, int l, int r) {
+        if (l == r) {
+            return nums[l];
+        }
+
+        int m = l + (r - l) / 2;
+        int leftMajority = majorityElement(nums, l, m);
+        int rightMajority = majorityElement(nums, m + 1, r);
+
+        // if nums[l:m] and nums[m+1:r] have the same majority elements,
+        // then this element must also be the majority element of nums[l:r]
+        if (leftMajority == rightMajority) {
+            return leftMajority;
+        }
+
+        // Otherwise, the majority element is either leftMajority or rightMajority.
+        // We need to maunally count and see which one it is.
+        if (count(nums.begin() + l, nums.begin() + r + 1, leftMajority) >
+            count(nums.begin() + l, nums.begin() + r + 1, rightMajority)) {
+            return leftMajority;
+        }
+        return rightMajority;
+    };
+};
+
+// Moore voting alogorithm - a.
 // This is exactly the same as 2b. below, just make the algorithm clear so you know what's going on.
 //
 // Basic idea of the algorithm is if we cancel out each occurrence of an element e with
-// all the other elements that are different from e, then e will exist utill the end if it is the majority element.
+// all the other elements that are different from e, then e will exist until the end if it is the majority element.
 // Code below loops through each element and maintains a count of the element that has the potential of
 // being the majority element. If next element is same then increments the count, otherwise decrements the count.
 // If the count reaches 0 then update the potential index to the current element and sets count to 1.
 int majorityElement(vector<int>& nums) {
-    int majorityElementCandidateIndex = 0;
+    int candidateIdx = 0;  // candidate index for the majority element
     int count = 1;
 
     for (int i = 1; i < nums.size(); ++i) {
-        nums[majorityElementCandidateIndex] == nums[i] ? ++count : --count;
+        nums[candidateIdx] == nums[i] ? ++count : --count;
 
         if (count == 0) {
-            majorityElementCandidateIndex = i;
+            candidateIdx = i;
             count = 1;
         }
     }
 
-    return nums[majorityElementCandidateIndex];
+    return nums[candidateIdx];
 }
 
-// 2b. Moore voting algorithm.
+// Moore voting algorithm - b.
 // This is a more generic form, see 229. Majority Element II.
 //
 // The idea is to repeatedly get rid of pairs of different element,

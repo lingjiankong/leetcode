@@ -11,7 +11,7 @@
 // dp[i][w] max values you can get if you select from the first i items and their weights are no larger than w.
 //
 // base case:
-// dp[i][0] = 0 since your weight capacity is 0
+// dp[i][0] = 0 since your weight capacity is 0.
 // dp[0][w] = 0 since you have no items.
 int knapsack(int W, int N, const vector<int>& weights, const vector<int>& values) {
     vector<vector<int>> dp(N + 1, vector<int>(W + 1));

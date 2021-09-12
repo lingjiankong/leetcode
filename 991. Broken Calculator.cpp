@@ -37,7 +37,7 @@
 //
 // ***
 
-// dp[i] minimum number of operations to dispary i on the calculator
+// dp[i] minimum number of operations to display i on the calculator
 //
 // Base conditions:
 // dp[startValue] = 0
@@ -51,7 +51,7 @@
 class Solution {
 public:
     int brokenCalc(int startValue, int target) {
-        int res;
+        int res = 0;
 
         while (target > startValue) {
             if (target % 2 == 0) {  // if target is even, devide it by two

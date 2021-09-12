@@ -59,24 +59,61 @@ private:
     // Put all elements greater than nums[pivot] to the left
     // and all elements less than nums[pivot] to the right, return pivot.
     int partition(vector<int>& nums, int left, int right) {
-        int pivot = nums[left], l = left + 1, r = right;
+        int pivot = nums[left], l = left + 1;
 
-        while (l <= r) {
-            if (nums[l] < pivot && nums[r] > pivot) {
-                // Sort in descending order,
-                // all elements to the left of pivot should be greater than the element to the right of pivot.
-                swap(nums[l++], nums[r--]);
-            }
-            if (nums[l] >= pivot) {
-                ++l;
-            }
-            if (nums[r] <= pivot) {
-                --r;
+        // all elements left to "l" are greater than pivot
+        //
+        // for example, initially you have
+        // 5     8     3     1     4     2     3     9     6
+        // ^     ^
+        // pivot l
+        //
+        // after the for loop, you have (6789 and 1234 blob might be ordered differently):
+        // 5     6     7     8     9     1     2     3     4
+        // ^                             ^
+        // pivot                         l
+        //
+        // you want pivot to be in the correct place and return the pivot position.
+        // therefore, you need to swap(nums[left], nums[i-1]) and return l - 1
+        //
+        // 9     6     7     8     5     1     2     3     4
+        //                         ^
+        //                         pivot
+        for (int i = left + 1; i <= right; ++i) {
+            if (nums[i] > pivot) {
+                swap(nums[i], nums[l++]);
             }
         }
 
-        swap(nums[left], nums[r]);
+        swap(nums[left], nums[l - 1]);
 
-        return r;
+        return l - 1;
+    }
+};
+
+// Full quick sort solution, sorted in ascending order
+class QuickSort {
+public:
+    int quickSort(vector<int>& nums) { _quickSort(nums, 0, nums.size() - 1); }
+
+private:
+    int _quickSort(vector<int>& nums, int left, int right) {
+        if (left < right) {
+            int pivot = _partition(nums, left, right);
+            _quickSort(nums, left, pivot - 1);
+            _quickSort(nums, pivot + 1, right);
+        }
+    }
+
+    int _partition(vector<int>& nums, int left, int right) {
+        int pivot = nums[left], l = left + 1;
+        for (int i = left + 1; i <= right; ++i) {
+            if (nums[i] < pivot) {
+                swap(nums[i], nums[l++]);
+            }
+        }
+
+        swap(nums[left], nums[l - 1]);
+        return l - 1;
     }
 };

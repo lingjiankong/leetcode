@@ -177,13 +177,18 @@
 | 4 | Median of Two Sorted Arrays | Alpha, Mechanical
 | 274 | H-Index | Bravo | See 275
 | 275 | H-Index II | Bravo
-| 215 | Kth Largest Element in an Array | Bravo, Mechanical | quick sort, binary search
 | 278 | First Bad Version | Alpha
 | 887 | Super Egg Drop | Alpha | dynamic programming, binary search
-| 312 | Burst Balloons | Alpha
+| 312 | Burst Balloons | Bravo
 | 875 | Koko Eating Bananas | Alpha | koko
 | 1011 | Capacity To Ship Packages Within D Days | Alpha | koko
 | 1891 | Cutting Ribbons | koko
+
+## Devide and Conquer
+| ID | Name | Rating | Note
+| 215 | Kth Largest Element in an Array | Alpha | quick sort, binary search
+| 169 | Majority Element | Alpha | Mechanical
+| 153 | Find Minimum in Rotated Sorted Array | Alpha, Mechanical
 
 ## Backtracking
 | ID | Name | Rating | Note

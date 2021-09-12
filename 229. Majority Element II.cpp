@@ -30,7 +30,7 @@ vector<int> majorityElement(vector<int>& nums) {
     // otherwise [8, 8, 7, 7, 7] will only output [7] instead of [8, 7].
     // You have to test if a num is equal to one of the candidates before checking the counters,
     // otherwise if you check counters first, what might happen is the first 8 becomes candidate1,
-    // the second 8, which should be count1++, becomes candidate2,
+    // the second 8, which should be count1++, becomes candidate2 (wrong!),
     // and you have candidate1 = 8 (first 8) and candidate2 = 8 (second 8),
     // when in fact both 8 should belong to the same candidate.
     for (int num : nums) {
@@ -45,7 +45,7 @@ vector<int> majorityElement(vector<int>& nums) {
             candidate2 = num;
             count2 = 1;
         } else {
-            // In this case num != cadidate1 and num != candidate2,
+            // In this case num != candidate1 and num != candidate2,
             // we get rid of one pair of (candidate1, num), therefore we --count1,
             // and one pair of (candidate2, num), therefore we --count2
             --count1;
