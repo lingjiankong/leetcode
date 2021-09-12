@@ -108,7 +108,7 @@ private:
     int _partition(vector<int>& nums, int left, int right) {
         int pivot = nums[left], l = left + 1;
         for (int i = left + 1; i <= right; ++i) {
-            if (nums[i] < pivot) {
+            if (nums[i] < pivot) {  // to sort in descending order, simply change this to ">"
                 swap(nums[i], nums[l++]);
             }
         }

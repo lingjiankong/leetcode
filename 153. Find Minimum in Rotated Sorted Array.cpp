@@ -36,7 +36,7 @@ public:
                 left = mid + 1;
             }
             // In this case, the pivot is on the left half of the array.
-            else {
+            else if (nums[mid] < nums[right]) {
                 right = mid;
             }
         }
@@ -55,11 +55,18 @@ public:
 
 private:
     int findMin(vector<int>& nums, int l, int r) {
-        if (l == r) return nums[l];
-        if (l + 1 == r) return min(nums[l], nums[r]);
+        if (l == r) {
+            return nums[l];
+        }
 
-        // if the array is sorted, return the left most element.
-        if (nums[l] < nums[r]) return nums[l];
+        if (l + 1 == r) {
+            return min(nums[l], nums[r]);
+        }
+
+        // if the array is sorted, return the leftmost element.
+        if (nums[l] < nums[r]) {
+            return nums[l];
+        }
 
         // otherwise if the array is not sorted,
         // devide and conquer to find the min element of left and right subarray.

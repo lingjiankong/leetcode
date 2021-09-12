@@ -188,7 +188,8 @@
 | ID | Name | Rating | Note
 | 215 | Kth Largest Element in an Array | Alpha | quick sort, binary search
 | 169 | Majority Element | Alpha | Mechanical
-| 153 | Find Minimum in Rotated Sorted Array | Alpha, Mechanical
+| 153 | Find Minimum in Rotated Sorted Array | Alpha
+| 154 | Find Minimum in Rotated Sorted Array II | Alpha
 
 ## Backtracking
 | ID | Name | Rating | Note

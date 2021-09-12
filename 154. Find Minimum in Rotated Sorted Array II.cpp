@@ -23,22 +23,26 @@
 // Look at the if, else if, and else loop to get the intuition.
 
 int findMin(vector<int>& nums) {
+
     int left = 0, right = nums.size() - 1;
 
     while (left < right) {
         int mid = left + (right - left) / 2;
 
-        // In this case, the pivot is on the right half of the array.
-        if (nums[mid] > nums[right]) {
-            left = mid + 1;
-        }
-        // In this case, the pivot is on the left half of the array.
-        else if (nums[mid] < nums[right]) {
-            right = mid;
-        } else {
+        if (nums[mid] == nums[right]) {
             --right;
+        // In this case, the pivot is on the right half of the array.
+        } else if (nums[mid] > nums[right]) {
+            left = mid + 1;
+        // In this case, the pivot is on the left half of the array.
+        } else if (nums[mid] < nums[right]) {
+            right = mid;
         }
     }
 
     return nums[right];
-};
+}
+
+// Devide and counquer
+// Devide and conquer solution is exactly the same as 153. Find Minimum in Rotated Sorted Array
+// See that question for solution
