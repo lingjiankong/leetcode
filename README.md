@@ -1,4 +1,4 @@
-#Coding challenges from www.leetcode.com
+# Coding challenges from www.leetcode.com
 
 ## Note
 - Alpha: Three star questions. These are the questions that you must know.
@@ -76,12 +76,13 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 98 | Validate Binary Search Tree | Alpha | preorder, inorder
+| 530 | Minimum Absolute Difference in BST | Alpha | inorder
 | 700 | Search in a Binary Search Tree | Alpha | preorder
 | 701 | Insert into a Binary Search Tree | Alpha | preorder
 | 450 | Delete Node in a BST | Alpha | preorder
 | 333 | Largest BST Subtree | Alpha | Preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
-| 108 | Convert Sorted Array to Binary Search Tree | Alpha
+| 108 | Convert Sorted Array to Binary Search Tree | Alpha+
 | 109 | Convert Sorted List to Binary Search Tree | Alpha
 | 173 | Binary Search Tree Iterator | Bravo, Mechanical
 | 230 | Kth Smallest Element in a BST | Alpha
@@ -91,13 +92,14 @@
 | 255 | Verify Preorder Sequence in Binary Search Tree | Hard
 | 96 | Unique Binary Search Trees | Charlie
 | 95 | Unique Binary Search Trees II | Charlie
+| 501 | Find Mode in Binary Search Tree | Bravo
 
 ## Linked List
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 141 | Linked List Cycle | Alpha
+| 141 | Linked List Cycle | Alpha+
 | 142 | Linked List Cycle II | Alpha
-| 876 | Middle of the Linked List | Alpha
+| 876 | Middle of the Linked List | Alpha+
 | 234 | Palindrome Linked List | Alpha
 | 24 | Swap Nodes in Pairs | Bravo
 | 237 | Delete Node in a Linked List | Bravo
@@ -112,13 +114,16 @@
 | 160 | Intersection of Two Linked Lists | Alpha
 | 21 | Merge Two Sorted Lists | Alpha
 | 143 | Reorder List | Bravo
-| 148 | Sort List | Alpha
+| 147 | Insertion Sort List | Alpha | insertion sort
+| 148 | Sort List | Alpha | merge sort
 | 61 | Rotate List | Alpha
 | 86 | Partition List | Alpha
 | 23 | Merge k Sorted Lists | Alpha
-| 206 | Reverse Linked List | Alpha
+| 206 | Reverse Linked List | Alpha+
 | 92 | Reverse Linked List II | Bravo
 | 25 | Reverse Nodes in k-Group | Alpha
+| 147 | Insertion Sort List | Alpha
+| 707 | Designed Linked List | Bravo
 
 ## Sliding window
 | ID | Name | Rating | Note

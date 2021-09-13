@@ -49,28 +49,28 @@
 class Solution {
 public:
     void recoverTree(TreeNode* root) {
-        vector<TreeNode*> inOrderTreeNodePtrs;
-        vector<int> inOrderTreeNodeValues;
+        vector<TreeNode*> nodes;
+        vector<int> nodeVals;
 
-        _inorder(root, inOrderTreeNodePtrs, inOrderTreeNodeValues);
+        _inorder(root, nodes, nodeVals);
 
-        sort(inOrderTreeNodeValues.begin(), inOrderTreeNodeValues.end());
-        for (int i = 0; i < inOrderTreeNodePtrs.size(); ++i) {
-            inOrderTreeNodePtrs[i]->val = inOrderTreeNodeValues[i];
+        sort(nodeVals.begin(), nodeVals.end());
+        for (int i = 0; i < nodes.size(); ++i) {
+            nodes[i]->val = nodeVals[i];
         }
     }
 
 private:
-    void _inorder(TreeNode* root, vector<TreeNode*>& inOrderTreeNodePtrs, vector<int>& inOrderTreeNodeValues) {
+    void _inorder(TreeNode* root, vector<TreeNode*>& nodes, vector<int>& nodeVals) {
         if (not root) {
             return;
         }
-        _inorder(root->left, inOrderTreeNodePtrs, inOrderTreeNodeValues);
+        _inorder(root->left, nodes, nodeVals);
 
-        inOrderTreeNodePtrs.push_back(root);
-        inOrderTreeNodeValues.push_back(root->val);
+        nodes.push_back(root);
+        nodeVals.push_back(root->val);
 
-        _inorder(root->right, inOrderTreeNodePtrs, inOrderTreeNodeValues);
+        _inorder(root->right, nodes, nodeVals);
     }
 };
 
@@ -89,22 +89,19 @@ public:
         }
         _inorder(root->left);
 
-        if (prev) {
-            // We know only two elements have been swapped, so if prev->val > root->val,
-            // then prev is a misplaced node, assign it to first;
-            // current root is also a misplaced node, assign it to second.
-            if (prev->val > root->val) {
-                if (not first) {
-                    first = prev;
-                }
-                // Note that "first" will not change once assigned (because the first prev we encounter which prev->val
-                // > root->val is a misplaced node). However, we will keep assigning current root to "second" as long as
-                // prev->val > root->val since current root is also a misplaced node (we only have a pair of misplaced
-                // node).
-                second = root;
+        // We know only two elements have been swapped, so if prev->val > root->val,
+        // then prev is a misplaced node, assign it to first;
+        // current root is also a misplaced node, assign it to second.
+        if (prev and prev->val > root->val) {
+            if (not first) {
+                first = prev;
             }
+            // Note that "first" will not change once assigned (because the first prev we encounter which prev->val
+            // > root->val is a misplaced node). However, we will keep assigning current root to "second" as long as
+            // prev->val > root->val since current root is also a misplaced node (we only have a pair of misplaced
+            // node).
+            second = root;
         }
-
         prev = root;
 
         _inorder(root->right);

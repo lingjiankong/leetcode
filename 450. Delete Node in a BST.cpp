@@ -43,17 +43,19 @@ public:
             else {
                 TreeNode* minNode = getMinNode(root->right);
                 root->val = minNode->val;
-                // Note you have to do this here instead of naively "delete minNode"
+                // Note you have to call deleteNode function here instead of naively "delete minNode"
                 // Think about the case that all nodes in right subtree only have right children (like a linked list)
                 root->right = deleteNode(root->right, minNode->val);
                 return root;
             }
         }
 
+        // Node to be deleted is in the right subtree
         else if (root->val < key) {
             root->right = deleteNode(root->right, key);
         }
 
+        // Node to be deleted is in the left subtree
         else if (root->val > key) {
             root->left = deleteNode(root->left, key);
         }
