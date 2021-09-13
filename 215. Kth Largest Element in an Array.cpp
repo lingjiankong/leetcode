@@ -94,10 +94,10 @@ private:
 // Full quick sort solution, sorted in ascending order
 class QuickSort {
 public:
-    int quickSort(vector<int>& nums) { _quickSort(nums, 0, nums.size() - 1); }
+    void quickSort(vector<int>& nums) { _quickSort(nums, 0, nums.size() - 1); }
 
 private:
-    int _quickSort(vector<int>& nums, int left, int right) {
+    void _quickSort(vector<int>& nums, int left, int right) {
         if (left < right) {
             int pivot = _partition(nums, left, right);
             _quickSort(nums, left, pivot - 1);

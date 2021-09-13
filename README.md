@@ -108,6 +108,7 @@
 | 82 | Remove Duplicates from Sorted List II | Hard
 | 369 | Plus One Linked List | Bravo
 | 2 | Add Two Numbers | Alpha
+| 445 | Add Two Numbers II | Alpha
 | 160 | Intersection of Two Linked Lists | Alpha
 | 21 | Merge Two Sorted Lists | Alpha
 | 143 | Reorder List | Bravo
@@ -190,6 +191,7 @@
 | 169 | Majority Element | Alpha | Mechanical
 | 153 | Find Minimum in Rotated Sorted Array | Alpha
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha
+| 912 | Sort an Array | Alpha
 
 ## Backtracking
 | ID | Name | Rating | Note

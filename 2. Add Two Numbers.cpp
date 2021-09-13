@@ -21,7 +21,7 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode* current = &dummy;
     int carry = 0;
 
-    while (l1 || l2 || carry) {
+    while (l1 or l2 or carry) {
         int sum = 0;
 
         if (l1) {

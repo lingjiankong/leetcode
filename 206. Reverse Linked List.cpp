@@ -78,7 +78,7 @@ ListNode* reverseList(ListNode* head) {
 //
 // Finally, return last.
 ListNode* reverseList(ListNode* head) {
-    if (!head || !head->next) {
+    if (!head or !head->next) {
         return head;
     }
 

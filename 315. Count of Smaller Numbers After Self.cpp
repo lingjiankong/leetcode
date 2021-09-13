@@ -15,32 +15,36 @@
 // To the right of 1 there is 0 smaller element.
 //
 // ***
-//
+
 // 将给定数组nums从最后一个开始，用二分法插入到一个新的数组sortedSeen，这样新数组sortedSeen就是有序的，
 // 那么此时该数字在新数组sortedSeen中的坐标就是原数组nums中其右边所有较小数字的个数
 // Why not implement sortedSeen using priority queue? Because you can't do binary search on it.
+class Solution {
+public:
+    vector<int> countSmaller(vector<int>& nums) {
+        vector<int> sortedSeen;
+        vector<int> count(nums.size());
 
-vector<int> countSmaller(vector<int>& nums) {
-    vector<int> sortedSeen;
-    vector<int> counts(nums.size());
+        for (int i = nums.size() - 1; i >= 0; i--) {
+            int left = 0, right = sortedSeen.size();
 
-    for (int i = nums.size() - 1; i >= 0; --i) {
-        int left = 0, right = sortedSeen.size();
-
-        // Same as std::lower_bound(), find the index of first number that >= target (nums[i])
-        // All elements in sortedSeen to the left of this index are smaller than nums[i].
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (sortedSeen[mid] < nums[i]) {
-                left = mid + 1;
-            } else {
-                right = mid;
+            // Same as std::lower_bound(), find the index of first number that >= target (nums[i])
+            // All elements in sortedSeen to the left of this index are smaller than nums[i].
+            while (left < right) {
+                int mid = left + (right - left) / 2;
+                if (sortedSeen[mid] == nums[i]) {
+                    right = mid;
+                } else if (sortedSeen[mid] < nums[i]) {
+                    left = mid + 1;
+                } else if (sortedSeen[mid] > nums[i]) {
+                    right = mid;
+                }
             }
+
+            count[i] = right;
+            sortedSeen.insert(sortedSeen.begin() + right, nums[i]);
         }
 
-        counts[i] = right;
-        sortedSeen.insert(sortedSeen.begin() + right, nums[i]);
+        return count;
     }
-
-    return counts;
-}
+};
