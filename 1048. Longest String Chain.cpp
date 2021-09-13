@@ -49,8 +49,6 @@
 class Solution {
 public:
     int longestStrChain(vector<string>& words) {
-        int n = words.size();
-
         sort(words.begin(), words.end(), [](const string& a, const string& b) { return a.size() < b.size(); });
 
         vector<int> dp(words.size(), 1);
@@ -60,6 +58,7 @@ public:
         for (int i = 1; i < words.size(); ++i) {
             // Traverse from right to left (decreasing word size)
             for (int j = i - 1; j >= 0; --j) {
+                // These are just optimizations.
                 if (words[j].size() == words[i].size()) {
                     continue;
                 } else if (words[j].size() + 1 < words[i].size()) {
@@ -92,7 +91,7 @@ private:
     }
 };
 
-// Another DP method.
+// Another DP method. Tree traversal.
 // dfs[word]: longest possible word chain that ends in "word".
 class Solution {
 public:
