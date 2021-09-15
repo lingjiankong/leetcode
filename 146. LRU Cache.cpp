@@ -32,14 +32,14 @@ public:
     LRUCache(int capacity) : _capacity(capacity) {}
 
     int get(int key) {
-        const auto itr = _hash.find(key);
+        auto itr = _hash.find(key);
 
         // If key does not exist, simply return -1.
         if (itr == _hash.end()) {
             return -1;
         }
 
-        // Else if the key exists, move this key to the front of the linked list.
+        // Else if the key exists, move this key to the back of the linked list.
         _list.splice(_list.end(), _list, itr->second);
 
         // Return the value of the key.
@@ -47,7 +47,7 @@ public:
     }
 
     void put(int key, int value) {
-        const auto itr = _hash.find(key);
+        auto itr = _hash.find(key);
 
         // Key already exists
         if (itr != _hash.end()) {
@@ -57,21 +57,19 @@ public:
             // Move this entry to the back of the LinkedList (back of the linked list stores the most recently used
             // element). itr->second is iterator of type pair<int, int>::iterator, i.e. of element in the linked list
             _list.splice(_list.end(), _list, itr->second);
+        } else {
+            // Reached the capacity. Remove the oldest entry.
+            if (_list.size() == _capacity) {
+                auto node = _list.front();
 
-            return;
+                _hash.erase(node.first);
+                _list.pop_front();
+            }
+
+            // Insert the entry to the end of the LinkedList and update mapping.
+            _list.push_back({key, value});
+            _hash[key] = --_list.end();
         }
-
-        // Reached the capacity. Remove the oldest entry.
-        if (_list.size() == _capacity) {
-            const auto& node = _list.front();
-
-            _hash.erase(node.first);
-            _list.pop_front();
-        }
-
-        // Insert the entry to the front of the LinkedList and update mapping.
-        _list.push_back({key, value});
-        _hash[key] = --_list.end();
     }
 
 private:
@@ -80,5 +78,6 @@ private:
     // LinkedHashMap
     // Stores (key : pointer to key value pair in the linked list).
     unordered_map<int, list<pair<int, int>>::iterator> _hash;
+
     list<pair<int, int>> _list;
 };

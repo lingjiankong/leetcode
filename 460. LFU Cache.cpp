@@ -66,7 +66,7 @@ public:
     }
 
     void put(int key, int value) {
-        if (_capacity <= 0) {
+        if (_capacity == 0) {
             return;
         }
 
@@ -83,7 +83,6 @@ public:
         // Key is newly introduced.
         keyToVal[key] = value;
         keyToFreq[key] = 1;
-
         freqToKeynodes[1].push_back(key);
         keyToKeynode[key] = --freqToKeynodes[1].end();
 
@@ -122,6 +121,7 @@ private:
     // LinkedHashSet
     // Stores (key : pointer to the key in the linked list)
     unordered_map<int, list<int>::iterator> keyToKeynode;
+
     unordered_map<int, list<int>> freqToKeynodes;
 };
 

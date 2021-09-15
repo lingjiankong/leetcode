@@ -297,7 +297,6 @@
 | 494 | Target Sum | Alpha | backtracking, dynamic programming, knapsack
 | 1048 | Longest String Chain | Alpha
 | 1027 | Longest Arithmetic Subsequence | Alpha
-| 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
 
 ## Two Sum Series
 | ID | Name | Rating | Note
@@ -398,7 +397,8 @@
 | 281 | Zigzag Iterator | Bravo
 | 251 | Flatten 2D Vector | Bravo
 | 348 | Design Tic-Tac-Toe | Charlie
-| 146 | LRU Cache | Alpha
+| 146 | LRU Cache | Alpha+
+| 460 | LFU Cache | Alpha
 | 303 | Range Sum Query - Immutable | Bravo
 | 304 | Range Sum Query 2D - Immutable | Charlie
 
@@ -549,3 +549,4 @@
 | 991 | Broken Calculator | Bravo | math
 | 556 | Next Greater Element III | Bravo
 | 969 | Pancake Sorting | Bravo | recursion
+| 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo

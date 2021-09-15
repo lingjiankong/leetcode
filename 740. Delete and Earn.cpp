@@ -57,6 +57,6 @@ public:
             dp[i] = max(dp[i-1], dp[i-2] + values[i]);
         }
 
-        return dp[dp.size() - 1];
+        return dp.back();
     }
 };
