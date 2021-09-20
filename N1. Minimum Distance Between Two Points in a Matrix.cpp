@@ -29,17 +29,17 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
     vector<vector<bool>> visited(m, vector<bool>(n));
 
     // Applying BFS on matrix cells starting from start
-    queue<pair<int, int>> cellQueue;
+    queue<pair<int, int>> q;
 
-    cellQueue.push(start);
+    q.push(start);
     visited[start.first][start.second] = true;
     int distance = 0;
 
-    while (!cellQueue.empty()) {
-        int qSize = cellQueue.size();
+    while (!q.empty()) {
+        int qSize = q.size();
         for (int i = 0; i < qSize; ++i) {
-            pair<int, int> cell = cellQueue.front();
-            cellQueue.pop();
+            pair<int, int> cell = q.front();
+            q.pop();
             int x = cell.first, y = cell.second;
 
             if (pair<int, int>(x, y) == goal) {
@@ -52,25 +52,25 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
 
             // Moving up
             if (x - 1 >= 0 && !visited[x - 1][y]) {
-                cellQueue.push({x - 1, y});
+                q.push({x - 1, y});
                 visited[x - 1][y] = true;
             }
 
             // Moving down
             if (x + 1 < m && !visited[x + 1][y]) {
-                cellQueue.push({x + 1, y});
+                q.push({x + 1, y});
                 visited[x + 1][y] = true;
             }
 
             // Moving left
             if (y - 1 >= 0 && !visited[x][y - 1]) {
-                cellQueue.push({x, y - 1});
+                q.push({x, y - 1});
                 visited[x][y - 1] = true;
             }
 
             // Moving right
             if (y + 1 < n && !visited[x][y + 1]) {
-                cellQueue.push({x, y + 1});
+                q.push({x, y + 1});
                 visited[x][y + 1] = true;
             }
         }
@@ -102,17 +102,17 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
     vector<vector<bool>> visited(m, vector<bool>(n));
 
     // Applying BFS on matrix cells starting from start
-    queue<pair<int, int>> cellQueue;
+    queue<pair<int, int>> q;
 
-    cellQueue.push(start);
+    q.push(start);
     visited[start.first][start.second] = true;
     int distance = 0;
 
-    while (!cellQueue.empty()) {
-        int qSize = cellQueue.size();
+    while (!q.empty()) {
+        int qSize = q.size();
         for (int i = 0; i < qSize; ++i) {
-            pair<int, int> cell = cellQueue.front();
-            cellQueue.pop();
+            pair<int, int> cell = q.front();
+            q.pop();
             int x = cell.first, y = cell.second;
 
             if (pair<int, int>(x, y) == goal) {
@@ -121,25 +121,25 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
 
             // Moving up
             if (x - 1 >= 0 && grid[x - 1][y] != 'x' && !visited[x - 1][y]) {
-                cellQueue.push({x - 1, y});
+                q.push({x - 1, y});
                 visited[x - 1][y] = true;
             }
 
             // Moving down
             if (x + 1 < m && grid[x + 1][y] != 'x' && !visited[x + 1][y]) {
-                cellQueue.push({x + 1, y});
+                q.push({x + 1, y});
                 visited[x + 1][y] = true;
             }
 
             // Moving left
             if (y - 1 >= 0 && grid[x][y - 1] != 'x' && !visited[x][y - 1]) {
-                cellQueue.push({x, y - 1});
+                q.push({x, y - 1});
                 visited[x][y - 1] = true;
             }
 
             // Moving right
             if (y + 1 < n && grid[x][y + 1] != 'x' && !visited[x][y + 1]) {
-                cellQueue.push({x, y + 1});
+                q.push({x, y + 1});
                 visited[x][y + 1] = true;
             }
         }
@@ -162,18 +162,17 @@ struct Comparator {
 };
 
 int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
-    int m = grid.size();
-    int n = grid[0].size();
-
-    vector<vector<bool>> visited(m, vector<bool>(n));
-
-    int distance = 0;
-
     set<pair<int, int>, Comparator> q1;
     q1.insert(start);
 
     set<pair<int, int>, Comparator> q2;
     q2.insert(goal);
+
+    int m = grid.size();
+    int n = grid[0].size();
+    vector<vector<bool>> visited(m, vector<bool>(n));
+
+    int distance = 0;
 
     while (not q1.empty() and not q2.empty()) {
         if (q1.size() > q2.size()) {
@@ -185,13 +184,15 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
         for (pair<int, int> cell : q1) {
             int x = cell.first, y = cell.second;
 
+            visited[x][y] = true;
+
             if (grid[x][y] == 'x') {
                 continue;
             }
+
             if (q2.count({x, y})) {
                 return distance;
             }
-            visited[x][y] = true;
 
             // Moving up
             if (x - 1 >= 0 && !visited[x - 1][y]) {
@@ -220,7 +221,6 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
     return -1;
 }
 
-
 // 4. Obtain the shortest distance from start to every (x, y).
 int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
     int m = grid.size();
@@ -230,15 +230,15 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
     vector<vector<bool>> visited(m, vector<bool>(n));
 
     // Applying BFS on matrix cells starting from start
-    queue<pair<int, int>> cellQueue;
+    queue<pair<int, int>> q;
 
-    cellQueue.push(start);
+    q.push(start);
     distance[start.first][start.second] = 0;
     visited[start.first][start.second] = true;
 
-    while (!cellQueue.empty()) {
-        pair<int, int> cell = cellQueue.front();
-        cellQueue.pop();
+    while (!q.empty()) {
+        pair<int, int> cell = q.front();
+        q.pop();
         int x = cell.first, y = cell.second;
 
         if (pair<int, int>(x, y) == goal) {
@@ -247,28 +247,28 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
 
         // Moving up
         if (x - 1 >= 0 && grid[x - 1][y] != 'x' && !visited[x - 1][y]) {
-            cellQueue.push({x - 1, y});
+            q.push({x - 1, y});
             distance[x - 1][y] = distance[x][y] + 1;
             visited[x - 1][y] = true;
         }
 
         // Moving down
         if (x + 1 < m && grid[x + 1][y] != 'x' && !visited[x + 1][y]) {
-            cellQueue.push({x + 1, y});
+            q.push({x + 1, y});
             distance[x + 1][y] = distance[x][y] + 1;
             visited[x + 1][y] = true;
         }
 
         // Moving left
         if (y - 1 >= 0 && grid[x][y - 1] != 'x' && !visited[x][y - 1]) {
-            cellQueue.push({x, y - 1});
+            q.push({x, y - 1});
             distance[x][y - 1] = distance[x][y] + 1;
             visited[x][y - 1] = true;
         }
 
         // Moving right
         if (y + 1 < n && grid[x][y + 1] != 'x' && !visited[x][y + 1]) {
-            cellQueue.push({x, y + 1});
+            q.push({x, y + 1});
             distance[x][y + 1] = distance[x][y] + 1;
             visited[x][y + 1] = true;
         }

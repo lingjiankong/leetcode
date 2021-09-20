@@ -72,7 +72,7 @@ public:
                 string curCode = q.front();
                 q.pop();
 
-                if (notAllowed.count(curCode)) { // You can also check this while you are checking visited. See N1.
+                if (notAllowed.count(curCode)) {  // You can also check this while you are checking visited. See N1.
                     continue;
                 }
 
@@ -145,16 +145,16 @@ public:
 
             unordered_set<string> temp;  // to be assigned later to q1.
             for (string s : q1) {
+                // Unidirectional BFS: add to visited when adding to queue.
+                // Bidirectional BFS: add to visited when popping from queue.
+                visited.insert(s);
+
                 if (notAllowed.count(s)) {
                     continue;
                 }
                 if (q2.count(s)) {
                     return numTurns;
                 }
-
-                // Unidirectional BFS: add to visited when adding to queue.
-                // Bidirectional BFS: add to visited when popping from queue.
-                visited.insert(s);
 
                 for (int j = 0; j < 4; ++j) {
                     string up = plusOne(s, j);

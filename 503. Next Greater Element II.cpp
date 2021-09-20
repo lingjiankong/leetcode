@@ -27,7 +27,7 @@
 //
 // ***
 
-// Monotonic increasing stack.
+// Monotonic decreasing stack.
 //
 // This would be the solution if we are not dealing with a circular array. Read this one first.
 //

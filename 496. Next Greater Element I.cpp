@@ -39,7 +39,7 @@
 //
 // ***
 
-// Monotonic increasing stack.
+// Monotonic decreasing stack.
 // Same as 503. Next Greater Element III.
 // Note that we are told all integers are unique and all integers of num1 also appear in num2.
 class Solution {

@@ -19,53 +19,6 @@
 // ]
 //
 // ***
-//
-// See also 15. 3Sum. Same idea. This question just add one more for loop.
-// Read this question before you read 15. 3Sum.
-
-vector<vector<int>> fourSum(vector<int>& nums, int target) {
-    vector<vector<int>> allPairs;
-
-    sort(nums.begin(), nums.end());
-
-    // Find the first candidate element.
-    for (int i = 0; i < nums.size() - 3; ++i) {
-        // Remove duplicate elements. Don't forget.
-        if (i > 0 && nums[i] == nums[i - 1]) {
-            continue;
-        }
-
-        // Find the second candidate element.
-        for (int j = i + 1; j < nums.size() - 2; ++j) {
-            if (j > i + 1 && nums[j] == nums[j - 1]) {
-                continue;
-            }
-
-            // Find the third and fourth candidate elements.
-            int left = j + 1, right = nums.size() - 1;
-            while (left < right) {
-                int sum = nums[i] + nums[j] + nums[left] + nums[right];
-                if (sum == target) {
-                    allPairs.push_back({nums[i], nums[j], nums[left], nums[right]});
-                    while (left < right && nums[left] == nums[left + 1]) {
-                        ++left;
-                    }
-                    while (left < right && nums[right] == nums[right - 1]) {
-                        --right;
-                    }
-                    ++left;
-                    --right;
-                } else if (sum < target) {
-                    ++left;
-                } else if (sum > target) {
-                    --right;
-                }
-            }
-        }
-    }
-
-    return allPairs;
-}
 
 // Generalization: n sum. See labuladong book pp. 326.
 // In this solution, we eliminate duplicate element in the end instead of from the beginning,
@@ -130,3 +83,50 @@ private:
         return res;
     }
 };
+
+// See also 15. 3Sum. Same idea. This question just add one more for loop.
+// Read this question before you read 15. 3Sum.
+vector<vector<int>> fourSum(vector<int>& nums, int target) {
+    vector<vector<int>> allPairs;
+
+    sort(nums.begin(), nums.end());
+
+    // Find the first candidate element.
+    for (int i = 0; i < nums.size() - 3; ++i) {
+        // Remove duplicate elements. Don't forget.
+        if (i > 0 && nums[i] == nums[i - 1]) {
+            continue;
+        }
+
+        // Find the second candidate element.
+        for (int j = i + 1; j < nums.size() - 2; ++j) {
+            if (j > i + 1 && nums[j] == nums[j - 1]) {
+                continue;
+            }
+
+            // Find the third and fourth candidate elements.
+            int left = j + 1, right = nums.size() - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[j] + nums[left] + nums[right];
+                if (sum == target) {
+                    allPairs.push_back({nums[i], nums[j], nums[left], nums[right]});
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        ++left;
+                    }
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        --right;
+                    }
+                    ++left;
+                    --right;
+                } else if (sum < target) {
+                    ++left;
+                } else if (sum > target) {
+                    --right;
+                }
+            }
+        }
+    }
+
+    return allPairs;
+}
+

@@ -21,16 +21,16 @@ public:
     int longestValidParentheses(string s) {
         int longest = 0, start = 0;
 
-        stack<int> seen;
+        stack<int> leftParen;
         for (int i = 0; i < s.size(); ++i) {
             if (s[i] == '(') {
-                seen.push(i);
+                leftParen.push(i);
             } else if (s[i] == ')') {
-                // If we see a ')' but the stack is empty, what we have seen so far can't be valid,
+                // If we see a ')' but the stack is empty, what we have leftParen so far can't be valid,
                 // so we reinitialize the new valid to start = i + 1 (next iteration)
-                // For example, when i = 0, the first parenthesis you see is ")", seen is empty now, and you would
+                // For example, when i = 0, the first parenthesis you see is ")", leftParen is empty now, and you would
                 // reset start to i + 1 => 0 + 1 = 1.
-                if (seen.empty()) {
+                if (leftParen.empty()) {
                     start = i + 1;
                 } else {
                     // If stack becomes empty after popping, from start to i we have valid parenthesis.
@@ -45,7 +45,7 @@ public:
                     //
                     // in this case, current valid parentheses length is i - start + 1 => 9 - 2 + 1 = 8
                     //
-                    // Otherwise if stack is non-empty after popping, then from seen.top() to i we have valid
+                    // Otherwise if stack is non-empty after popping, then from leftParen.top() to i we have valid
                     // parenthesis.
                     //
                     //   valid parenthesis
@@ -56,11 +56,11 @@ public:
                     //     |     |
                     //     |     this element has been popped
                     //     |
-                    //     seen.top() = 2
+                    //     leftParen.top() = 2
                     //
-                    // in this case, current valid parentheses length is i - seen.top() => 8 - 2 = 6
-                    seen.pop();
-                    longest = seen.empty() ? max(longest, i - start + 1) : max(longest, i - seen.top());
+                    // in this case, current valid parentheses length is i - leftParen.top() => 8 - 2 = 6
+                    leftParen.pop();
+                    longest = leftParen.empty() ? max(longest, i - start + 1) : max(longest, i - leftParen.top());
                 }
             }
         }
@@ -69,7 +69,7 @@ public:
     }
 };
 
-// DP solution. Should be intuitive.
+// DP solution.
 //
 // Definition:
 // dp[i]: longest valid parentheses substring ending in s[i-1].
@@ -83,21 +83,22 @@ public:
         vector<int> dp(s.size() + 1);
 
         for (int i = 1; i < dp.size(); ++i) {
-            // j is the index of matching parentheses of s[i-1]
-            // dp[i] == dp[i-1] + 2 only if s[i-1] == ')' and s[j] == '('
-            int j = i - dp[i - 1] - 2;
-            if (s[i - 1] == '(' or j < 0 or s[j] == ')') {
-                dp[i] = 0;
-            } else {
-                // Case s[j] == '(' and s[i-1] = ')'
-                // Note: you need to add dp[j] for scenarios like this:
-                // dp[j] + '(' + dp[j-1] + ')'
-                // ()(())          ((()()
-                dp[i] = dp[i - 1] + 2 + dp[j];
+            // left is the index of matching parentheses of s[i-1]
+            int left = (i - 1) - dp[i - 1] - 1;
+            if (left >= 0 and s[left] == '(' and s[i - 1] == ')') {
+                // you also add need to dp[left] because dp[left] might be seomthing like ((()()()))
+                // which can be add to any valid parentheses to make it longer.
+                dp[i] = dp[i - 1] + 2 + dp[left];
                 res = max(res, dp[i]);
+            } else {
+                // Otherwise if s[i-1] is an open parenthesis,
+                // or if s[left] is a close parenthesis, then
+                // you cannot form any valid parentheses substring ending in s[i-1]
+                dp[i] = 0;
             }
         }
 
         return res;
     }
 };
+

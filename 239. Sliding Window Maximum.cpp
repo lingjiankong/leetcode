@@ -63,8 +63,8 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
     return maximums;
 }
 
-// Monotonic queue in descending order (using deque as the underlying data structure)
-// (a monotonic queue is a data structure which elements is strictly increasing or decreasing)
+// Monotonic decreasing queue
+// (using deque as the underlying data structure)
 // Time complexity: O(n)
 class MonotonicQueue {
 public:
@@ -76,21 +76,21 @@ public:
     // Note: we should allow duplicate elements in the queue because there might be multiple elements of the same value
     // in the window.
     void push(int e) {
-        while (not _data.empty() and e > _data.back()) {
-            _data.pop_back();
+        while (not _dq.empty() and _dq.back() < e) {
+            _dq.pop_back();
         }
 
-        _data.push_back(e);
+        _dq.push_back(e);
     }
 
     // Pop the max element
-    void popMax() { _data.pop_front(); }
+    void popMax() { _dq.pop_front(); }
 
     // Peek the max element
-    int peekMax() const { return _data.front(); }
+    int peekMax() const { return _dq.front(); }
 
 private:
-    deque<int> _data;
+    deque<int> _dq;
 };
 
 class Solution {

@@ -100,7 +100,7 @@
 | 141 | Linked List Cycle | Alpha+
 | 142 | Linked List Cycle II | Alpha
 | 876 | Middle of the Linked List | Alpha+
-| 234 | Palindrome Linked List | Alpha
+| 234 | Palindrome Linked List | Alpha+
 | 24 | Swap Nodes in Pairs | Bravo
 | 237 | Delete Node in a Linked List | Bravo
 | 19 | Remove Nth Node From End of List | Alpha
@@ -306,7 +306,7 @@
 | 653 | Two Sum IV - Input is a BST | Alpha
 | 167 | Two Sum II - Input array is sorted | Alpha | Two pointers
 | 1099 | Two Sum Less Than K | Alpha | Two pointers
-| 18 | 4Sum | Alpha | Two pointers
+| 18 | 4Sum | Alpha+ | Two pointers
 | 15 | 3Sum | Alpha | Two pointers
 | 16 | 3Sum Closest | Alpha | Two pointers
 | 259 | 3Sum Smaller | Alpha | Two pointers
@@ -327,7 +327,7 @@
 ## Prefix Sum
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 325 | Maximum Size Subarray Sum Equals k | Alpha | prefix sum
+| 325 | Maximum Size Subarray Sum Equals k | Alpha+ | prefix sum
 | 525 | Contiguous Array | Alpha
 | 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
 | 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
@@ -537,7 +537,7 @@
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | Alpha | See 772
 | 227 | Basic Calculator II | Alpha | See 772
-| 772 | Basic Calculator III | Alpha | mechanical, recursion
+| 772 | Basic Calculator III | Alpha+ | mechanical, recursion
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry
 | 1447 | Simplified Fractions | GCD
@@ -547,6 +547,6 @@
 |:---:|:---:|:---:|:---:|
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 | 991 | Broken Calculator | Bravo | math
-| 556 | Next Greater Element III | Bravo
+| 556 | Next Greater Element III | Bravo, Mechanical
 | 969 | Pancake Sorting | Bravo | recursion
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo

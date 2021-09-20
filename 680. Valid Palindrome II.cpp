@@ -24,7 +24,7 @@ public:
 
         while (l < r) {
             if (s[l] != s[r]) {
-                return (isPalindrom(s, l + 1, r) || isPalindrom(s, l, r - 1));
+                return (isPalindrom(s, l + 1, r) or isPalindrom(s, l, r - 1));
             } else {
                 ++l, --r;
             }

@@ -33,8 +33,8 @@
 //           v   |                       v
 // 1 <- 2 <- 3   4 <- 5 <- 6   7 <- 8 <- 9    10 -> 11
 // |                       ^   |              ^
-// |                       |   |              |
-// -------------------------   ----------------
+// |_______________________|   |______________|
+//
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
@@ -48,7 +48,7 @@ public:
         for (int i = 0; i < k; ++i) {
             // No enough elements to reverse. Simply return the original head.
             if (not b) {
-                return head;;
+                return head;
             }
             b = b->next;
         }

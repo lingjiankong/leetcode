@@ -40,7 +40,7 @@ public:
     vector<int> pancakeSort(vector<int>& cakes) {
         pancakeSort(cakes, cakes.size() - 1);
 
-        return flips;
+        return _flips;
     }
 
 private:
@@ -60,7 +60,7 @@ private:
             }
         }
 
-        // Note that reverse takes [i, j), therefore needs + 1 on the right index.
+        // Note that std::reverse takes [i, j), therefore needs + 1 on the right index.
         // first, move the max cake to the front
         // then, move max cake to the right
         //
@@ -75,13 +75,13 @@ private:
         // 3 1 4 4 6 7 8 9 (6, 7, 8, 9 are at their correct spots now,
         // now recursively calling the front of remaining cakes)
         reverse(cakes.begin(), cakes.begin() + maxCakeIdx + 1);
-        flips.push_back(maxCakeIdx + 1);
+        _flips.push_back(maxCakeIdx + 1);
         reverse(cakes.begin(), cakes.begin() + n + 1);
-        flips.push_back(n + 1);
+        _flips.push_back(n + 1);
 
         pancakeSort(cakes, n - 1);
     }
 
-    vector<int> flips;
+    vector<int> _flips;
 };
 

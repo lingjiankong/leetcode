@@ -20,7 +20,7 @@
 int calculate(string s) {
     int n = s.size(), num = 0, res = 0;
 
-    stack<int> stack_;
+    stack<int> s;
 
     // Initialize the dummy operator as "+"
     char op = '+';
@@ -51,20 +51,20 @@ int calculate(string s) {
         // This is basically saying that if you see a new operator, this new operator acts like a break point,
         // and you should perform the operation specified by the last seen operator (op).
         // if op is + or -, push num to the top of the stack.
-        // if op is * or /, the top of the stack becomes "stack.top() op num c".
+        // if op is * or /, the top of the stack becomes "stack.top() op num".
         if (c == '+' || c == '-' || c == '*' || c == '/' || i == n - 1) {
             switch (op) {
                 case '+':
-                    stack_.push(num);
+                    s.push(num);
                     break;
                 case '-':
-                    stack_.push(-num);
+                    s.push(-num);
                     break;
                 case '*':
-                    stack_.top() *= num;
+                    s.top() *= num;
                     break;
                 case '/':
-                    stack_.top() /= num;
+                    s.top() /= num;
                     break;
             }
             op = c;
@@ -73,9 +73,9 @@ int calculate(string s) {
     }
 
     // Sum over all numbers in stack
-    while (not stack_.empty()) {
-        res += stack_.top();
-        stack_.pop();
+    while (not s.empty()) {
+        res += s.top();
+        s.pop();
     }
 
     return res;

@@ -25,8 +25,8 @@
 class Solution {
 public:
     int slidingPuzzle(vector<vector<int>>& board) {
-        // We are given a 2 by 3 board. We can treat it as a 1D board and hardcode each positions neightboring index. If
-        // we are given a board of different sizes, this can also be done dynamically.
+        // We are given a 2 by 3 board. We can treat it as a 1D board and hardcode each position's neightboring index.
+        // If we are given a board of different sizes, this can also be done dynamically.
         //
         // Stores where can a given 0 be moved. For example, if your 0 is at position 5 (lower right, (1, 2)),
         // then you can only swap with position 2 (0, 2) and 4 (1, 1)
@@ -43,9 +43,9 @@ public:
         }
 
         queue<string> q;
-        unordered_set<string> visited;
-
         q.push(start);
+
+        unordered_set<string> visited;
         visited.insert(start);
 
         int moves = 0;

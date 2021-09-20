@@ -44,11 +44,11 @@ private:
     void _backtrack(int left, int right, string current, vector<string>& all, int& total) {
         // Return when you see something like "())" i.e. number of ')' is greater than number of '('.
         // Note that it is OK to have "((()" i.e. number of '(' is greater than number of ')'.
-        if (left < right || left > total || right > total) {
+        if (left < right or left > total or right > total) {
             return;
         }
 
-        if (left == total && right == total) {
+        if (left == total and right == total) {
             all.push_back(current);
         }
 

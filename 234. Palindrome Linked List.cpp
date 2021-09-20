@@ -35,7 +35,7 @@ public:
         // i.e. the mid element will be on the left part if even number of elements.
         ListNode* slow = head;
         ListNode* fast = head;
-        while (fast && fast->next) {
+        while (fast and fast->next) {
             slow = slow->next;
             fast = fast->next->next;
         }
@@ -44,7 +44,7 @@ public:
         // slow is now the head of second half
         ListNode* head2 = reverse(slow);
 
-        while (head && head2) {
+        while (head and head2) {
             if (head->val != head2->val) {
                 return false;
             }
@@ -74,6 +74,7 @@ private:
 };
 
 // Without modifying linkedlist. Using the property of postorder traversal and two pointers.
+// When you are postorder traversing a linked list, you are printing from tail to head.
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {

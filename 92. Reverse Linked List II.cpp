@@ -124,8 +124,8 @@ public:
 
         ListNode* curNode = prevNode->next;
 
-        int numOperations = n - m;
-        while (numOperations--) {
+        int numOps = n - m;
+        while (numOps--) {
             ListNode* nextNode = curNode->next;
             curNode->next = nextNode->next;
             nextNode->next = prevNode->next;

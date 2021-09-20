@@ -65,21 +65,21 @@ bool isValidSudoku(vector<vector<char>>& board) {
 
     // The following flag matrix have the same size as board.
     // It keeps track of the numbers you have seen (just a hash table).
-    vector<vector<bool>> rowSeen(m, vector<bool>(n, false));
-    vector<vector<bool>> colSeen(m, vector<bool>(n, false));
-    vector<vector<bool>> subboxSeen(m, vector<bool>(n, false));
+    vector<vector<bool>> rowSeen(m, vector<bool>(n, false));  // rowSeen[i][num]: Whether we've seen num in the ith row.
+    vector<vector<bool>> colSeen(m, vector<bool>(n, false));  // colSeen[j][num]: Whether we've seen num in the jth col.
+    vector<vector<bool>> subboxSeen(m, vector<bool>(n, false)); // subboxSeen[k][num]: Whether we've seen num in the k = 3 * (i / 3) + j / 3 th subbox
 
     for (int i = 0; i < m; ++i) {
         for (int j = 0; j < n; ++j) {
             if (board[i][j] >= '1' && board[i][j] <= '9') {
                 int num = board[i][j] - '1';
                 int k = 3 * (i / 3) + j / 3;
-                if (rowSeen[i][num] || colSeen[num][j] || subboxSeen[k][num]) {
+                if (rowSeen[i][num] || colSeen[j][num] || subboxSeen[k][num]) {
                     return false;
                 }
 
                 rowSeen[i][num] = true;
-                colSeen[num][j] = true;
+                colSeen[j][num] = true;
                 subboxSeen[k][num] = true;
             }
         }

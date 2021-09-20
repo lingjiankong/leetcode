@@ -29,7 +29,7 @@
 // ***
 
 // Almost exactly the same as 503. Next Greater Element II.
-// In this question, the monotonic increasing stack stores index instead of numbers.
+// In this question, the monotonic decreasing stack stores index instead of numbers.
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {

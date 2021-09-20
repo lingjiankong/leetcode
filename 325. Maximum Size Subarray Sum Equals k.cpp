@@ -20,6 +20,7 @@
 //
 // ***
 
+// Code only, see below for detailed explanation.
 int maxSubArrayLen(vector<int>& nums, int k) {
     unordered_map<int, int> prefixSumToIndex;
 
