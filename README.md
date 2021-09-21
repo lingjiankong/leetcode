@@ -379,6 +379,10 @@
 |:---:|:---:|:---:|:---:|
 | 207 | Course Schedule | Bravo
 | 210 | Course Schedule II | Bravo
+| 133 | Clone Graph | Alpha | deep-copy
+| 1490 | Clone N-ary Tree | Alpha | deep-copy
+| 138 | Copy List with Random Pointer | Alpha | deep-copy
+| 1495 | Clone Binary Tree With Random Pointer | Alpha | deep-copy
 | N5 | Union Find | Alpha | union-find
 | 990 | Satisfiability of Equality Equations | Alpha | union-find
 | 261 | Graph Valid Tree | Alpha | union-find
