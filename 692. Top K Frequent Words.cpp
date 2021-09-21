@@ -52,21 +52,22 @@
 //
 // sort(data.begin(), data.end(), comp)
 // data is now {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}.
-
+//
+// Almost exactly the same as 347. Top K Frequent Elements.
 class Solution {
 public:
     vector<string> topKFrequent(vector<string>& words, int k) {
+        unordered_map<string, int> wordToFreq;
+        for (string word : words) {
+            ++wordToFreq[word];
+        }
+
         // Higher frequency has higher priority.
         // If frequency is the same, shorter word and earlier letters have higher priority.
         auto comp = [](const pair<int, string>& lhs, const pair<int, string>& rhs) {
             return lhs.first < rhs.first or (lhs.first == rhs.first and lhs.second > rhs.second);
         };
         priority_queue<pair<int, string>, vector<pair<int, string>>, decltype(comp)> pq(comp);
-
-        unordered_map<string, int> wordToFreq;
-        for (string word : words) {
-            ++wordToFreq[word];
-        }
 
         for (auto e : wordToFreq) {
             pq.push({e.second, e.first});

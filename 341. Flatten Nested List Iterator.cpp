@@ -9,9 +9,7 @@
 // int next() Returns the next integer in the nested list.
 // boolean hasNext() Returns true if there are still some integers in the nested list and false otherwise.
 // Your code will be tested with the following pseudocode:
-//
-// initialize iterator with nestedList
-// res = []
+// // initialize iterator with nestedList // res = []
 // while iterator.hasNext()
 //     append iterator.next() to the end of res
 // return res
@@ -65,6 +63,42 @@
  * while (i.hasNext()) cout << i.next();
  */
 
+// Pre-generate all elements during construction.
+class NestedIterator {
+public:
+    NestedIterator(vector<NestedInteger>& nestedList) {
+        for (auto child : nestedList) {
+            _traverse(child);
+        }
+    }
+
+    int next() {
+        int res = _list.front();
+        _list.pop_front();
+        return res;
+    }
+
+    bool hasNext() { return not _list.empty(); }
+
+private:
+    list<int> _list;
+
+    // N-tree preorder traversal.
+    // root is leaf node if it is an integer. If root contains a list then root has children.
+    // We are only interested in leaf node (integer).
+    void _traverse(NestedInteger& root) {
+        // Only put leaf node (integer) into list.
+        if (root.isInteger()) {
+            _list.push_back(root.getInteger());
+            return;
+        }
+
+        for (auto child : root.getList()) {
+            _traverse(child);
+        }
+    }
+};
+
 // Generate next element during runtime
 class NestedIterator {
 public:
@@ -101,38 +135,3 @@ private:
     deque<NestedInteger> _dq;
 };
 
-// Pre-generate all elements during construction.
-class NestedIterator {
-public:
-    NestedIterator(vector<NestedInteger>& nestedList) {
-        for (auto child : nestedList) {
-            _traverse(child);
-        }
-    }
-
-    int next() {
-        int res = _list.front();
-        _list.pop_front();
-        return res;
-    }
-
-    bool hasNext() { return not _list.empty(); }
-
-private:
-    list<int> _list;
-
-    // N-tree preorder traversal.
-    // root is leaf node if it is an integer. If root contains a list then root has children.
-    // We are only interested in leaf node (integer).
-    void _traverse(NestedInteger& root) {
-        // Only put leaf node (integer) into list.
-        if (root.isInteger()) {
-            _list.push_back(root.getInteger());
-            return;
-        }
-
-        for (auto child : root.getList()) {
-            _traverse(child);
-        }
-    }
-};

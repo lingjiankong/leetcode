@@ -30,7 +30,7 @@ vector<int> topKFrequent(vector<int>& nums, int k) {
     }
 
     vector<int> topKNums;
-    for (int i = 0; i < k; ++i) {
+    while (k--) {
         int num = pq.top().second;
         pq.pop();
         topKNums.push_back(num);

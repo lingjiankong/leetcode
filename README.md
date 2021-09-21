@@ -79,7 +79,7 @@
 | 530 | Minimum Absolute Difference in BST | Alpha | inorder
 | 700 | Search in a Binary Search Tree | Alpha | preorder
 | 701 | Insert into a Binary Search Tree | Alpha | preorder
-| 450 | Delete Node in a BST | Alpha | preorder
+| 450 | Delete Node in a BST | Alpha+ | preorder
 | 333 | Largest BST Subtree | Alpha | Preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha+
@@ -346,7 +346,8 @@
 | 503 | Next Greater Element II | Alpha | monotonic stack
 | 739 | Daily Temperatures | Alpha | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
-| 347 | Top K Frequent Elements | Alpha
+| 347 | Top K Frequent Elements | Alpha+
+| 692 | Top K Frequent Words | Alpha
 | 451 | Sort Characters By Frequency | Bravo
 | 295 | Find Median from Data Stream | Alpha
 | 480 | Sliding Window Median | Alpha
@@ -358,7 +359,7 @@
 | 921 | Minimum Add to Make Parentheses Valid | Alpha
 | 1249 | Minimum Remove to Make Valid Parentheses | Alpha
 | 1190 | Reverse Substrings Between Each Pair of Parentheses | Bravo
-| 973 | K CLosest Points to Origin | Alpha | priority queue, custom sort
+| 973 | K CLosest Points to Origin | Alpha+ | priority queue, custom sort
 
 ## Bit Manipulation
 | ID | Name | Rating | Note

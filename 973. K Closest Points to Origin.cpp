@@ -31,6 +31,7 @@
 //
 // ***
 
+// Simple sorting
 class Solution {
 public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
@@ -42,6 +43,7 @@ public:
     }
 };
 
+// Priority queue
 class Solution {
 public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
