@@ -68,8 +68,8 @@ public:
         }
 
         // If we want a total of k ribbons,
-        // Minimum possible cut length is 0, maximum possible cut length is sumRibbons / k.
-        long left = 0, right = sumRibbons / k + 1;
+        // Minimum possible cut length is 1, maximum possible cut length is sumRibbons / k.
+        long left = 1, right = sumRibbons / k + 1;
 
         // upper_bound: Looking for maximum cut length.
         while (left < right) {

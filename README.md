@@ -186,9 +186,9 @@
 | 278 | First Bad Version | Alpha
 | 887 | Super Egg Drop | Alpha | dynamic programming, binary search
 | 312 | Burst Balloons | Bravo
-| 875 | Koko Eating Bananas | Alpha | koko
-| 1011 | Capacity To Ship Packages Within D Days | Alpha | koko
-| 1891 | Cutting Ribbons | koko
+| 875 | Koko Eating Bananas | Alpha | koko-eat-bananas
+| 1011 | Capacity To Ship Packages Within D Days | Alpha | koko-eat-bananas
+| 1891 | Cutting Ribbons | koko-eat-bananas
 
 ## Devide and Conquer
 | ID | Name | Rating | Note
@@ -213,10 +213,6 @@
 | 377 | Combination Sum IV | Charlie
 | 254 | Factor Combinations | Bravo
 | 17 | Letter Combinations of a Phone Number | Alpha
-| 200 | Number of Islands | Alpha
-| 695 | Max Area of Island | Alpha
-| 694 | Number of Distinct Islands | Alpha
-| 463 | Island Perimeter | Alpha
 | 79 | Word Search | Alpha
 | 329 | Longest Increasing Path in a Matrix | Alpha
 | 489 | Robot Room Cleaner | Alpha
@@ -383,7 +379,7 @@
 | 1490 | Clone N-ary Tree | Alpha | deep-copy
 | 138 | Copy List with Random Pointer | Alpha | deep-copy
 | 1495 | Clone Binary Tree With Random Pointer | Alpha | deep-copy
-| N5 | Union Find | Alpha | union-find
+| N5 | Union Find | Alpha+ | union-find
 | 990 | Satisfiability of Equality Equations | Alpha | union-find
 | 261 | Graph Valid Tree | Alpha | union-find
 | 305 | Number of Islands II | Alpha | union-find
@@ -392,6 +388,12 @@
 | 399 | Evaluate Division | Alpha | DFS (graph traversal)
 | 684 | Redundant Connection | Alpha | union-find
 | 721 | Accounts Merge | Alpha | union-find
+| 200 | Number of Islands | Alpha+ | BFS, union-find
+| 733 | Flood Fill | Alpha | BFS
+| 695 | Max Area of Island | Alpha | BFS, union-find
+| 694 | Number of Distinct Islands | Alpha
+| 463 | Island Perimeter | Alpha
+| 827 | Making a Large Island Alpha | union-find
 
 ## Design
 | ID | Name | Rating | Note

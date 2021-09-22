@@ -26,10 +26,42 @@
 //
 // ***
 
+// Union-find
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
-        if (grid.empty() || grid[0].empty()) {
+        int m = grid.size(), n = grid[0].size();
+
+        UnionFind<string> uf;
+
+        vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] == '1') {
+                    string curPos = to_string(i) + "," + to_string(j);
+                    uf.add(curPos);
+                    for (vector<int> dir : dirs) {
+                        int neighX = i + dir[0], neighY = j + dir[1];
+                        if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and grid[neighX][neighY] == '1') {
+                            string neighPos = to_string(neighX) + "," + to_string(neighY);
+                            if (uf.has(neighPos)) {
+                                uf.connect(curPos, neighPos);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return uf.numClusters();
+    }
+};
+
+// BFS
+class Solution {
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        if (grid.empty() or grid[0].empty()) {
             return 0;
         }
 
@@ -38,7 +70,7 @@ public:
         int totalIslands = 0;
         for (int i = 0; i < grid.size(); ++i) {
             for (int j = 0; j < grid[0].size(); ++j) {
-                if (grid[i][j] == '1' && !visited[i][j]) {
+                if (grid[i][j] == '1' and not visited[i][j]) {
                     _dfs(i, j, grid, visited);
                     ++totalIslands;
                 }
@@ -50,17 +82,18 @@ public:
 
 private:
     void _dfs(int x, int y, const vector<vector<char>>& grid, vector<vector<bool>>& visited) {
-        if (x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() || visited[x][y] || grid[x][y] != '1') {
+        if (x < 0 or y < 0 or x >= grid.size() or y >= grid[0].size() or visited[x][y] or grid[x][y] != '1') {
             return;
         }
 
         visited[x][y] = true;
 
-        for (auto direction : _directions) {
-            int newX = x + direction[0], newY = y + direction[1];
+        for (auto dir : _dirs) {
+            int newX = x + dir[0], newY = y + dir[1];
             _dfs(newX, newY, grid, visited);
         }
     }
 
-    vector<vector<int>> _directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };
+

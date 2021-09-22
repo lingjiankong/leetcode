@@ -22,8 +22,8 @@ public:
     int depthSum(vector<NestedInteger>& nestedList) {
         int res = 0;
 
-        for (auto child : nestedList) {
-            res += preorder(child, 1);
+        for (auto node : nestedList) {
+            res += preorder(node, 1);
         }
 
         return res;

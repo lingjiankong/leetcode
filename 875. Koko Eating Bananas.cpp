@@ -50,7 +50,7 @@ public:
         int left = 1, right = maxPile + 1;
 
         // lower_bound: binary search on eat speed to find the minimum eat speed such that totalHours == h
-        // (eat slowly before the guards coms back)
+        // (eat slowly before the guard comes back)
         while (left < right) {
             // mid is the candidate eat speed (bananas per hour)
             int mid = left + (right - left) / 2;
@@ -62,10 +62,10 @@ public:
             }
 
             if (totalHours == h) {
-                // Try to reduce the minimum eat speed (lower_bound)
+                // Try to reduce the eat speed (lower_bound)
                 right = mid;
             } else if (totalHours < h) {
-                // Finished all before guard is back, we should decrease eat speed.
+                // Finished all before guard is back, we should reduce eat speed.
                 right = mid;
             } else if (totalHours > h) {
                 // Takes too long to eat, we should increase eat speed.

@@ -16,6 +16,7 @@ struct UnionFind {
         T rootP = findRoot(p);
         T rootQ = findRoot(q);
 
+        // p and q are already connected. Nothing needed.
         if (rootP == rootQ) {
             return;
         }
@@ -24,9 +25,11 @@ struct UnionFind {
         if (_size[rootP] > _size[rootQ]) {
             _parent[rootQ] = rootP;
             _size[rootP] += _size[rootQ];
+            _size.erase(rootQ);  // optional
         } else {
             _parent[rootP] = rootQ;
             _size[rootQ] += _size[rootP];
+            _size.erase(rootP);  // optional
         }
 
         --_numClusters;
@@ -38,8 +41,6 @@ struct UnionFind {
 
         return rootP == rootQ;
     }
-
-    int numClusters() { return _numClusters; }
 
     void add(T x) {
         if (has(x)) {
@@ -65,8 +66,13 @@ struct UnionFind {
         return x;
     }
 
+    // Getters.
+    int numClusters() { return _numClusters; }
+    unordered_map<T, T> parent() { return _parent; }
+    unordered_map<T, int> size() { return _size; }
+
     int _numClusters = 0;
-    unordered_map<T, T> _parent;
-    unordered_map<T, int> _size;
+    unordered_map<T, T> _parent;  // Parent of each node. The root node's parent is itself
+    unordered_map<T, int> _size;  // Size of the tree represented by each root
 };
 

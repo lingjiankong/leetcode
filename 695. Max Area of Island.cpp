@@ -26,6 +26,42 @@
 //
 // ***
 
+// Union-find
+class Solution {
+public:
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
+        int m = grid.size(), n = grid[0].size();
+
+        UnionFind<string> uf;
+
+        vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] == 1) {
+                    string curPos = to_string(i) + "," + to_string(j);
+                    uf.add(curPos);
+                    for (vector<int> dir : dirs) {
+                        int neighX = i + dir[0], neighY = j + dir[1];
+                        if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and grid[neighX][neighY] == 1) {
+                            string neighPos = to_string(neighX) + "," + to_string(neighY);
+                            if (uf.has(neighPos)) {
+                                uf.connect(curPos, neighPos);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        int maxArea = 0;
+        for (auto e : uf.size()) {
+            maxArea = max(maxArea, e.second);
+        }
+        return maxArea;
+    }
+};
+
+// BFS
 class Solution {
 public:
     int maxAreaOfIsland(vector<vector<int>>& grid) {
@@ -52,7 +88,7 @@ public:
     }
 
 private:
-    vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
     void _dfs(int x, int y, int& area, const vector<vector<int>>& grid, vector<vector<bool>>& visited) {
         if (x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() || visited[x][y] || grid[x][y] != 1) {
@@ -62,8 +98,8 @@ private:
         visited[x][y] = true;
         ++area;
 
-        for (auto direction : directions) {
-            int newX = x + direction[0], newY = y + direction[1];
+        for (auto dir : _dirs) {
+            int newX = x + dir[0], newY = y + dir[1];
             _dfs(newX, newY, area, grid, visited);
         }
     }

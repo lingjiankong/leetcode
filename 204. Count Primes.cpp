@@ -30,7 +30,7 @@ public:
         isPrime[0] = false;
         isPrime[1] = false;
 
-        int numOfPrimes = 0;
+        int numPrimes = 0;
         for (int i = 2; i * i < n; ++i) {
             if (isPrime[i]) {
                 for (int j = 2; i * j < n; ++j) {
@@ -41,10 +41,10 @@ public:
 
         for (int i = 2; i < n; ++i) {
             if (isPrime[i]) {
-                ++numOfPrimes;
+                ++numPrimes;
             }
         }
 
-        return numOfPrimes;
+        return numPrimes;
     }
 };
