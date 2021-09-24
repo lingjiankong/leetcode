@@ -1,7 +1,7 @@
 // ***
 //
-// Given a *sorted* array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the
-// new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place
+// Given a *sorted* array nums, remove the duplicates in-place such that duplicates appeared at most twice and return
+// the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place
 // with O(1) extra memory.
 //
 // Example 1:
@@ -24,10 +24,6 @@ int removeDuplicates(vector<int>& nums) {
         return nums.size();
     }
 
-    // Because nums is a sorted array, nums[0] and nums[1] just stay at where they are.
-    // It is ok if they are duplicates, therefore dupStart starts at 2.
-    // dupStart is the position of first occurance of possible triple-duplicate elements,
-    // i.e. it is possible that nums[dupStart] = nums[dupStart-1] = nums[dupStart-2].
     // All elements to the left of dupStart i.e. [0, dupStart) are guaranteed to contain at most TWO duplicates.
     int dupStart = 2;
 

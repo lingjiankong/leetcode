@@ -47,13 +47,9 @@
 class Solution {
 public:
     vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
-        unordered_map<string, string> owners;
-        for (vector<string> account : accounts) {
-            for (int i = 1; i < account.size(); ++i) {
-                owners[account[i]] = account[0];
-            }
-        }
-
+        // Connect all emails in each account.
+        // If multiple accounts belong to the same owner, then they must share at least one email,
+        // in which case all emails in those accounts will be connected.
         UnionFind<string> uf;
         for (vector<string> account : accounts) {
             string firstEmail = account[1];
@@ -65,6 +61,8 @@ public:
             }
         }
 
+        // Find all emails which belong to the same root.
+        // These emails belong to the same person.
         unordered_map<string, unordered_set<string>> rootToEmails;
         for (vector<string> account : accounts) {
             for (int i = 1; i < account.size(); ++i) {
@@ -74,9 +72,18 @@ public:
             }
         }
 
+        // Find the owner of each email.
+        unordered_map<string, string> emailToOwner;
+        for (vector<string> account : accounts) {
+            for (int i = 1; i < account.size(); ++i) {
+                emailToOwner[account[i]] = account[0];
+            }
+        }
+
+        // Now we know who owns all emails which belong to the same root.
         vector<vector<string>> res;
         for (auto e : rootToEmails) {
-            string owner = owners[e.first];
+            string owner = emailToOwner[e.first];
             unordered_set<string> emailSet = e.second;
 
             vector<string> emailVec(emailSet.begin(), emailSet.end());

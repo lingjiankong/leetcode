@@ -53,15 +53,8 @@ int trap(vector<int>& height) {
 int trap(vector<int>& height) {
     int totalWater = 0;
 
-    // Well, you can think of leftMaxHeight = height[left] and rightMaxHeight = height[right]
-    // We assign 0 to them simply because we don't have to check the size of the vector.
-    // leftMaxHeight and rightMaxHeight will be assigned once we enter the while loop.
-    // Otherwise we would need to make sure height.size() != 0.
-    int leftMaxHeight = 0;
-    int rightMaxHeight = 0;
-
-    int left = 0;
-    int right = height.size() - 1;
+    int left = 0, right = height.size() - 1;
+    int leftMaxHeight = height[left], rightMaxHeight = height[right];
 
     while (left < right) {
         leftMaxHeight = max(leftMaxHeight, height[left]);
@@ -83,70 +76,34 @@ int trap(vector<int>& height) {
 // Maintain a monotonic decreasing stack (which stores the *index*) of bars.
 // Whenever we see a higher bar we might be able to form a valley to store water.
 // In the process of popping elements which are smaller than current height[i], we do our calculation.
-int trap(vector<int>& height) {
-    stack<int> s;
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        stack<int> s;
+        int totalWater = 0;
 
-    int totalWater = 0;
+        for (int i = 0; i < height.size(); ++i) {
+            while (not s.empty() and height[s.top()] <= height[i]) {
+                int curValleyIdx = s.top();
+                s.pop();
 
-    int i = 0;
-    while (i < height.size()) {
-        // > and >= all works here.
-        if (s.empty() || height[s.top()] > height[i]) {
-            s.push(i++);
-        }
-        // Else, we see a higher bar, the top() element of stack might be a valley.
-        // Popping all elements which are smaller than current heights[i] (the right wall)
-        else {
-            int currentValleyIndex = s.top();
-            s.pop();
+                // No left bar, can't hold any water.
+                if (s.empty()) {
+                    break;
+                }
 
-            // No left bar, must continue.
-            if (s.empty()) {
-                continue;
+                // i is the index of right bar.
+                // The valley has already been popped.
+                // Current top of the stack is the index of left bar.
+                int rectangleWidth = i - s.top() - 1;
+                int rectangleHeight = min(height[s.top()], height[i]) - height[curValleyIdx];
+                totalWater += rectangleHeight * rectangleWidth;
             }
 
-            // i is the index of right bar.
-            // The valley has already been popped.
-            // Current top of the stack is the index of left bar.
-            int rectangleWidth = i - s.top() - 1;
-
-            int rectangleHeight = min(height[s.top()], height[i]) - height[currentValleyIndex];
-
-            totalWater += rectangleHeight * rectangleWidth;
+            // Nothing in the stack is higher than height[i]. Push i to stack.
+            s.push(i);
         }
+
+        return totalWater;
     }
-
-    return totalWater;
-}
-
-// Exactly same as above, with named variables to make it clear.
-int trap(vector<int>& height) {
-    stack<int> s;
-
-    int totalWater = 0;
-
-    int i = 0;
-    while (i < height.size()) {
-        if (s.empty() || height[s.top()] > heights[i]) {
-            s.push(i++);
-        } else {
-            int rightBarIndex = i;
-
-            int currentValleyIndex = s.top();
-            s.pop();
-
-            if (s.empty()) {
-                continue;
-            }
-
-            int leftBarIndex = s.top();
-
-            int rectangleWidth = rightBarIndex - leftBarIndex - 1;
-            int rectangleHeight = min(height[leftBarIndex], height[rightBarIndex]) - height[currentValleyIndex];
-
-            totalWater += rectangleWidth * rectangleHeight;
-        }
-    }
-
-    return totalWater;
-}
+};

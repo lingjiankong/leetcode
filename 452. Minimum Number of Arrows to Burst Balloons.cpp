@@ -30,7 +30,7 @@
 //
 // ***
 
-// Find the max number of non-overlapping interval.
+// Find the max number of non-overlapping interval. You need one arrow for each interval.
 // Almost exactly the same as 435. Non-overlapping Intervals.
 class Solution {
 public:

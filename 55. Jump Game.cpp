@@ -20,16 +20,16 @@
 // ***
 
 bool canJump(vector<int>& nums) {
-    int maxReachIndex = 0;
+    int maxReach = 0; // max index which we are able to reach.
 
     for (int i = 0; i < nums.size(); ++i) {
         // This needs to be checked first to make sure that i is reachable.
-        // If you increment maxReachIndex first instead, the result won't be accurate.
-        if (i > maxReachIndex) {
+        // If you increment maxReach first instead, the result won't be accurate.
+        if (i > maxReach) {
             return false;
         }
 
-        maxReachIndex = max(maxReachIndex, i + nums[i]);
+        maxReach = max(maxReach, i + nums[i]);
     }
 
     return true;

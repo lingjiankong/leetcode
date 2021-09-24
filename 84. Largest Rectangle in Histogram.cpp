@@ -15,7 +15,7 @@
 //     | | | . . . I
 //   | | | | . . . I
 // | | | | | . . . I
-//           <---> 
+//           <--->
 //           width
 //                 ^
 //                 i
@@ -35,11 +35,11 @@ int largestRectangleArea(vector<int>& heights) {
 
     for (int i = 0; i < heights.size(); ++i) {
         while (!s.empty() && heights[s.top()] >= heights[i]) {
-            int currentHighestIndex = s.top();
+            int curHeighestIdx = s.top();
             s.pop();
 
             int width = s.empty() ? i : i - s.top() - 1;
-            int height = heights[currentHighestIndex];
+            int height = heights[curHeighestIdx];
             int area = height * width;
             maxArea = max(maxArea, area);
         }
@@ -72,27 +72,27 @@ int largestRectangleArea(vector<int>& heights) {
         // height is the highest height that just been popped from the stack (see comments for what the width is).
         else {
             // Index of current highest bar.
-            int currentHighestIndex = s.top();
+            int curHeighestIdx = s.top();
             s.pop();
 
             // Why i - s.top() - 1?
-            // We are interested in the area of the rectangle whose height is heights[currentHighestIndex].
+            // We are interested in the area of the rectangle whose height is heights[curHeighestIdx].
             // The rectangle's left bound is heights[s.top()] (which is smaller than
-            // heights[currentHighestIndex] since we have a monotonically increasing stack). The rectangle's right bound
+            // heights[curHeighestIdx] since we have a monotonically increasing stack). The rectangle's right bound
             // is heights[i] (which is also smaller than heights[currentHightestIndex], otherwise you wouldn't enter the
             // else loop at all). The width of the rectangle is therefore i (right bound) - s.top() (left
-            // bound) - 1. For exmaple, Consider i = 18, currentHighestIndex = 17, and s.top() = 16.
-            // The width of the rectangle whose height is heights[currentHighestIndex], is 18 - 16 - 1 = 1, which is
-            // just the width of the bar heights[currentHighestIndex] itself.
+            // bound) - 1. For exmaple, Consider i = 18, curHeighestIdx = 17, and s.top() = 16.
+            // The width of the rectangle whose height is heights[curHeighestIdx], is 18 - 16 - 1 = 1, which is
+            // just the width of the bar heights[curHeighestIdx] itself.
             //
             // Why width = i when s.empty()?
             // When the stack is empty, it means we have never seen any bar that is lower than heights[i], as a result,
             // there is no left bound (same as saying its left bound has index of 0) on the rectangle formed whose
-            // height is heights[currentHighestIndex]. Its width is bounded only by its right bound, which is
+            // height is heights[curHeighestIdx]. Its width is bounded only by its right bound, which is
             // heights[i]. Therefore, the width is i - 0 = i
             int width = s.empty() ? i : i - s.top() - 1;
 
-            int height = heights[currentHighestIndex];
+            int height = heights[curHeighestIdx];
 
             int area = height * width;
             maxArea = max(maxArea, area);

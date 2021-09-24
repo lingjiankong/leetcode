@@ -47,7 +47,7 @@ public:
         ListNode* prevNode = &dummy;
 
         while (prevNode->next) {
-            if (prevNode != &dummy && prevNode->next->val == prevNode->val) {
+            if (prevNode != &dummy and prevNode->next->val == prevNode->val) {
                 ListNode* toBeDeleted = prevNode->next;
                 prevNode->next = prevNode->next->next;
                 delete toBeDeleted;

@@ -54,10 +54,8 @@ public:
         for (int curIdx : _occupied) {
             if (prevIdx == -1) {
                 // Sit next to left wall
-                if (maxDist < curIdx) {
-                    maxDist = curIdx;
-                    chosenIdx = 0;
-                }
+                maxDist = curIdx;
+                chosenIdx = 0;
             } else {
                 // Sit in between two people.
                 if (maxDist < (curIdx - prevIdx) / 2) {
@@ -72,9 +70,9 @@ public:
         // Need to check if prevIdx != -1 because we can only consider sitting next the right wall
         // only if _occupied is not empty (someone is in the exam room). If the exam room is empty we have to sit by the
         // left wall.
-        if (prevIdx != -1 and maxDist < _n - prevIdx - 1) {
-            maxDist = _n - 1 - prevIdx;
-            chosenIdx = _n - 1;
+        if (prevIdx != -1 and maxDist < (_n - 1) - prevIdx) {
+            maxDist = (_n - 1) - prevIdx;
+            chosenIdx = (_n - 1);
         }
 
         _occupied.insert(chosenIdx);

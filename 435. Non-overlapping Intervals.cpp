@@ -25,9 +25,9 @@
 // ***
 //
 // Greedy.
-// This is a typical "Interval Scheduling" type of question. See labuladong bok 382
+// This is a typical "Interval Scheduling" type of question. See labuladong book 382
 // The question can be rephrased as: given intervals, find the max number of events you can attend (maxEvents).
-// Therefore the minimum number of intervals you need to remove the make the rest of the intervals non-overlapping is
+// Therefore the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping is
 // just intervals.size() - maxEvents
 //
 // Sort intervals based on end time. Traverse intervals, whenever you see start time >= current end time, ++maxEvents.

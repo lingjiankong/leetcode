@@ -16,7 +16,7 @@ struct UnionFind {
         T rootP = findRoot(p);
         T rootQ = findRoot(q);
 
-        // p and q are already connected. Nothing needed.
+        // p and q are already connected. No action needed.
         if (rootP == rootQ) {
             return;
         }

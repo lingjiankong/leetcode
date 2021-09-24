@@ -18,25 +18,25 @@
 int jump(vector<int>& nums) {
     // The ending index of current window. Initial window is [0, 0] so when i = 0 you initiate a jump.
     // You can jump to every index in this window in the same number of step from previous window.
-    int currentWindowEnd = 0;
+    int curWindowEnd = 0;
 
     // The farthest index we can jump from current window,
-    // this will be used to update currentWindowEnd when we've reached the end of current window.
-    int currentMaxReach = 0;
+    // this will be used to update curWindowEnd when we've reached the end of current window.
+    int curMaxReach = 0;
 
     int totalJump = 0;
     for (int i = 0; i < nums.size() - 1; ++i) {
         // Note that the problem guarantees that that we are can always jump to the last index.
         // Therefore no need to check if we can jump to current index.
-        currentMaxReach = max(currentMaxReach, i + nums[i]);
+        curMaxReach = max(curMaxReach, i + nums[i]);
 
         // If we've reached the end of current window, this will trigger another jump from current window, and our new
-        // window's end (i.e. new currentWindowEnd) will be currentMaxReach. Why we have ;i<nums.size()-1;? Because if
+        // window's end (i.e. new curWindowEnd) will be curMaxReach. Why we have ;i<nums.size()-1;? Because if
         // we had ;i<nums.size();, we were including the last index, then another jump is triggered at last index, and
         // our totalJump will be 1 greater than what it should have been.
-        if (i == currentWindowEnd) {
+        if (i == curWindowEnd) {
             ++totalJump;
-            currentWindowEnd = currentMaxReach;
+            curWindowEnd = curMaxReach;
         }
     }
 

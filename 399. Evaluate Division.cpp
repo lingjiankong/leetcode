@@ -44,7 +44,7 @@
 //
 // ***
 
-// Vanilla graph traversal. DFS.
+// Vanilla bi-directional graph traversal. DFS.
 class Solution {
 public:
     vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values,
@@ -95,13 +95,15 @@ private:
                 continue;
             }
 
-            double subproblem = devide(C, B, graph, visited);  // subproblem = C / B
-            if (subproblem > 0) {
-                // A / B = A / C * C / B
-                return graph[A][C] * subproblem;
+            // A / B = A / C * C / B
+            // We already know A / C = graph[A][C], we need the value of C_B = C / B
+            double C_B = devide(C, B, graph, visited);
+            if (C_B > 0) {
+                return graph[A][C] * C_B;
             }
         }
 
+        // No solution
         return -1;
     }
 };

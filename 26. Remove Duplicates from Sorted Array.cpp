@@ -1,8 +1,8 @@
 // ***
 //
-// Given a *sorted* array nums, remove the duplicates in-place such that each element appear only once and return the new
-// length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with
-// O(1) extra memory.
+// Given a *sorted* array nums, remove the duplicates in-place such that each element appear only once and return the
+// new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place
+// with O(1) extra memory.
 //
 // Example 1:
 // Given nums = [1,1,2],
@@ -25,14 +25,12 @@ int removeDuplicates(vector<int>& nums) {
         return nums.size();
     }
 
-    // dupStart is the position of first occurance of possible duplicate elements, i.e. it is possible that
-    // nums[dupStart] = nums[dupStart-1]. All elements to the left of dupStart i.e. [0, dupStart) are guaranteed to
-    // contain no duplicate.
+    // All elements to the left of dupStart i.e. [0, dupStart) are guaranteed to contain no duplicate.
     // Since nums is a sorted array, nums[0] just stays at where it is, therefore dupStart starts at 1.
+    // Put all non-duplicate elements to the left of dupStart.
     int dupStart = 1;
 
     for (int i = 1; i < nums.size(); ++i) {
-        // Put all non-duplicate elements to the left of dupStart.
         if (nums[i] != nums[dupStart - 1]) {
             swap(nums[i], nums[dupStart++]);
         }

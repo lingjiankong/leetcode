@@ -56,7 +56,9 @@ public:
         vector<int> nums;
 
         for (int i = 0; i < n; ++i) {
-            if (seats[i] == 1) nums.push_back(i);
+            if (seats[i] == 1) {
+                nums.push_back(i);
+            }
         }
 
         for (int i = 0; i < nums.size(); ++i) {
@@ -70,7 +72,7 @@ public:
         }
 
         // Sit next to right wall
-        res = max(res, n - 1 - nums.back());
+        res = max(res, (n - 1) - nums.back());
 
         return res;
     }
@@ -80,22 +82,23 @@ public:
 class Solution {
 public:
     int maxDistToClosest(vector<int>& seats) {
-        int n = seats.size(), start = -1, res = 0;
+        int n = seats.size();
+        int prevIdx = -1;  // index of previous seat which has been taken.
+        int res = 0;
         for (int i = 0; i < n; ++i) {
             if (seats[i] != 1) {
                 continue;
             }
-            if (start == -1) {
-                res = max(res, i);
-            }
-            else {
-                res = max(res, (i - start) / 2);
+            if (prevIdx == -1) {
+                res = max(res, i);  // sit next to left wall
+            } else {
+                res = max(res, (i - prevIdx) / 2);  // sit in the middle
             }
 
-            start = i;
+            prevIdx = i;
         }
 
-        res = max(res, n - start - 1);
+        res = max(res, (n - 1) - prevIdx);  // sit next to right wall
 
         return res;
     }

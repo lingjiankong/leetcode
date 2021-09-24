@@ -49,19 +49,20 @@ public:
         UnionFind<string> uf;
 
         vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-        for (vector<int> position : positions) {
-            int x = position[0], y = position[1];
+        for (vector<int> pos : positions) {
+            int x = pos[0], y = pos[1];
 
             string curPos = to_string(x) + "," + to_string(y);
             uf.add(curPos);
 
             for (vector<int> dir : dirs) {
-                int neighborX = x + dir[0];
-                int neighborY = y + dir[1];
-                string neighborPos = to_string(neighborX) + "," + to_string(neighborY);
-
-                if (uf.has(neighborPos)) {
-                    uf.connect(curPos, neighborPos);
+                int neighX = x + dir[0];
+                int neighY = y + dir[1];
+                if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n) {
+                    string neighborPos = to_string(neighX) + "," + to_string(neighY);
+                    if (uf.has(neighborPos)) {
+                        uf.connect(curPos, neighborPos);
+                    }
                 }
             }
 
@@ -81,19 +82,18 @@ public:
         UnionFind<int> uf;
 
         vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-        for (vector<int> position : positions) {
-            int x = position[0], y = position[1];
+        for (vector<int> pos : positions) {
+            int x = pos[0], y = pos[1];
             int index = y + x * n;
 
             uf.add(index);
 
             bool hasNeighborIsland = false;
             for (vector<int> dir : dirs) {
-                int neighborX = x + dir[0];
-                int neighborY = y + dir[1];
-                int neighborIndex = neighborY + neighborX * n;
-                // You must have this check here, otherwise 1-D index could be messed up.
-                if (0 <= neighborX and neighborX < m and 0 <= neighborY and neighborY < n) {
+                int neighX = x + dir[0];
+                int neighY = y + dir[1];
+                int neighborIndex = neighY + neighX * n;
+                if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n) {
                     if (uf.has(neighborIndex)) {
                         uf.connect(index, neighborIndex);
                         hasNeighborIsland = true;

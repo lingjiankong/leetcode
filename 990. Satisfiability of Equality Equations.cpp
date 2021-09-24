@@ -63,6 +63,7 @@ public:
         }
 
         for (string eq : equations) {
+            // if two numbers are not equal but have already been connected, this violates the constraint.
             if (eq[1] == '!' and uf.isConnected(eq[0], eq[3])) {
                 return false;
             }

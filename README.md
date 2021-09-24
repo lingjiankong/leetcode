@@ -385,7 +385,7 @@
 | 305 | Number of Islands II | Alpha | union-find
 | 323 | Number of Connected Components in an Undirected Graph | Alpha | union-find
 | 547 | Number of Provinces | Alpha | union-find
-| 399 | Evaluate Division | Alpha | DFS (graph traversal)
+| 399 | Evaluate Division | Alpha+ | DFS (graph traversal)
 | 684 | Redundant Connection | Alpha | union-find
 | 721 | Accounts Merge | Alpha | union-find
 | 200 | Number of Islands | Alpha+ | BFS, union-find
@@ -394,6 +394,7 @@
 | 694 | Number of Distinct Islands | Alpha
 | 463 | Island Perimeter | Alpha
 | 827 | Making a Large Island Alpha | union-find
+| 1162 | As Far from Land as Possible | Alpha | BFS
 
 ## Design
 | ID | Name | Rating | Note
@@ -412,7 +413,7 @@
 ## Array
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 27 | Remove Element | Alpha
+| 27 | Remove Element | Alpha+
 | 283 | Move Zeroes | Alpha
 | 26 | Remove Duplicates from Sorted Array | Alpha
 | 80 | Remove Duplicates from Sorted Array II | Alpha
