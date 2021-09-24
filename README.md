@@ -395,6 +395,8 @@
 | 463 | Island Perimeter | Alpha
 | 827 | Making a Large Island Alpha | union-find
 | 1162 | As Far from Land as Possible | Alpha | BFS
+| 841 | Keys and Rooms | Alpha+ | DFS
+| 1202 | Smallest String With Swaps | Alpha | union-find
 
 ## Design
 | ID | Name | Rating | Note
