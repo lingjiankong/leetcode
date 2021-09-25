@@ -57,18 +57,18 @@
 class Solution {
 public:
     int openLock(vector<string>& deadends, string target) {
-        unordered_set<string> visited;
         unordered_set<string> notAllowed(deadends.begin(), deadends.end());
-
-        int numTurns = 0;
 
         queue<string> q;
         q.push("0000");
+
+        unordered_set<string> visited;
         visited.insert("0000");
 
+        int numTurns = 0;
         while (not q.empty()) {
             int qSize = q.size();
-            for (int i = 0; i < qSize; ++i) {
+            while (qSize--) {
                 string curCode = q.front();
                 q.pop();
 
@@ -80,14 +80,14 @@ public:
                     return numTurns;
                 }
 
-                for (int j = 0; j < 4; ++j) {
-                    string up = plusOne(curCode, j);
+                for (int i = 0; i < 4; ++i) {
+                    string up = plusOne(curCode, i);
                     if (not visited.count(up)) {
                         q.push(up);
                         visited.insert(up);  // Note where we insert element to visited. Compare to bidirectional BFS.
                     }
 
-                    string down = minusOne(curCode, j);
+                    string down = minusOne(curCode, i);
                     if (not visited.count(down)) {
                         q.push(down);
                         visited.insert(down);
@@ -152,17 +152,18 @@ public:
                 if (notAllowed.count(s)) {
                     continue;
                 }
+
                 if (q2.count(s)) {
                     return numTurns;
                 }
 
-                for (int j = 0; j < 4; ++j) {
-                    string up = plusOne(s, j);
+                for (int i = 0; i < 4; ++i) {
+                    string up = plusOne(s, i);
                     if (not visited.count(up)) {
                         temp.insert(up);
                     }
 
-                    string down = minusOne(s, j);
+                    string down = minusOne(s, i);
                     if (not visited.count(down)) {
                         temp.insert(down);
                     }

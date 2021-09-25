@@ -25,7 +25,7 @@
 // Inorder   [(left subtree)  root  (right subtree)]
 // Postorder [(left subtree)  (right subtree)  root]
 //
-// Postorder traversing implies that the last element in post order is the root node.
+// Postorder traversal implies that the last element in post order is the root node.
 // Then we can find this root in inorder, say it's inorder[5].
 // Now we know that inorder[5] is root, so we know that inorder[0] to inorder[4] is its left subtree;
 // inorder[6] to the end is its right subtree. Recursively doing this on subarrays, we can build a tree.

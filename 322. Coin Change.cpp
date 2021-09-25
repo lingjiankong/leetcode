@@ -55,12 +55,10 @@ public:
         for (int coin : coins) {
             int subproblem = coinChange(coins, amount - coin);
 
-            // (amount - coin) cannot be made up by any combination of the coins, subproblem has no solution. Continue.
-            if (subproblem == -1) {
-                continue;
+            // if subproblem = -1, (amount - coin) cannot be made up by any combination of the coins
+            if (subproblem != -1) {
+                minCoins = min(minCoins, subproblem + 1);
             }
-
-            minCoins = min(minCoins, subproblem + 1);
         }
 
         return _memo[amount] = minCoins == INT_MAX ? -1 : minCoins;

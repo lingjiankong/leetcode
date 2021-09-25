@@ -56,8 +56,8 @@ int minDepth(TreeNode* root) {
 
     queue<TreeNode*> q;
     q.push(root);
-    int depth = 1;
 
+    int depth = 1;
     while (!q.empty()) {
         int qSize = q.size();
         for (int i = 0; i < qSize; ++i) {

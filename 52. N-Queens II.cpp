@@ -57,13 +57,13 @@ private:
             }
         }
         // Check if the 45° diagonal had a queen before.
-        for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; --i, --j) {
+        for (int i = row - 1, j = col - 1; i >= 0 and j >= 0; --i, --j) {
             if (current[i][j] == 'Q') {
                 return false;
             }
         }
         // check if the 135° diagonal had a queen before.
-        for (int i = row - 1, j = col + 1; i >= 0 && j < n; --i, ++j) {
+        for (int i = row - 1, j = col + 1; i >= 0 and j < n; --i, ++j) {
             if (current[i][j] == 'Q') {
                 return false;
             }

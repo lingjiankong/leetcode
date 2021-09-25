@@ -26,7 +26,7 @@
 | 112 | Path Sum | Alpha
 | 113 | Path Sum II | Alpha
 | 437 | Path Sum III | Bravo | Preorder
-| 124 | Binary Tree Maximum Path Sum | Alpha | Postorder
+| 124 | Binary Tree Maximum Path Sum | Alpha+ | Postorder
 | 543 | Diameter of Binary Tree | Alpha | Postorder
 | 687 | Longest Univalue Path | Alpha | Postorder
 | 250 | Count Univalue Subtrees | Alpha | Postorder
@@ -201,9 +201,9 @@
 ## Backtracking
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 46 | Permutations | Alpha
+| 46 | Permutations | Alpha+
 | 47 | Permutations II | Alpha
-| 77 | Combinations | Alpha
+| 77 | Combinations | Alpha+
 | 78 | Subsets | Alpha
 | 90 | Subsets II | Alpha
 | 491 | Increasing Subsequence | Alpha
@@ -218,7 +218,7 @@
 | 489 | Robot Room Cleaner | Alpha
 | 286 | Walls and Gates | Alpha
 | 130 | Surrounded Regions | Alpha
-| 51 | N-Queens | Alpha
+| 51 | N-Queens | Alpha+
 | 52 | N-Queens II | Alpha
 | 37 | Sudoku Solver | Alpha
 | 22 | Generate Parentheses | Alpha
@@ -237,7 +237,7 @@
 | 127 | Word Ladder | Alpha
 | 126 | Word Ladder II | Bravo
 | 752 | Open the Lock | Alpha 
-| 111 | Minimum Depth of Binary Tree | Alpha | Postorder, BFS
+| 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
 | 773 | Sliding Puzzle | Alpha
 
 ## Dynamic Programming
@@ -253,7 +253,7 @@
 | 746 | Min Cost Climbing Staris | Alpha
 | 120 | Triangle | Alpha
 | 279 | Perfect Squares | Alpha
-| 322 | Coin Change | Alpha
+| 322 | Coin Change | Alpha+
 | 256 | Paint House | Alpha
 | 265 | Paint House II | Alpha
 | 198 | House Robber | Alpha

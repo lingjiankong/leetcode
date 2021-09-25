@@ -11,9 +11,8 @@
 // 'x' represents obstacles
 //
 // ***
-//
-// The whole idea is Breadth First Search.
 
+#include <bits/stdc++.h>
 #include <iostream>
 #include <queue>
 #include <set>
@@ -22,59 +21,43 @@
 using namespace std;
 
 // 1. Obtain the shortest distance from start to goal
-int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
+int minDistance(const vector<int>& start, const vector<int>& goal, const vector<vector<char>>& grid) {
     int m = grid.size();
     int n = grid[0].size();
 
     vector<vector<bool>> visited(m, vector<bool>(n));
 
-    // Applying BFS on matrix cells starting from start
-    queue<pair<int, int>> q;
+    queue<vector<int>> q;
 
     q.push(start);
-    visited[start.first][start.second] = true;
+    visited[start[0]][start[1]] = true;
+    vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
     int distance = 0;
 
-    while (!q.empty()) {
+    while (not q.empty()) {
         int qSize = q.size();
         for (int i = 0; i < qSize; ++i) {
-            pair<int, int> cell = q.front();
+            vector<int> cell = q.front();
             q.pop();
-            int x = cell.first, y = cell.second;
+            int x = cell[0], y = cell[1];
 
-            if (pair<int, int>(x, y) == goal) {
+            if (cell == goal) {
                 return distance;
             }
 
+            // You may also check this while traversing the neighbors.
             if (grid[x][y] == 'x') {
                 continue;
             }
 
-            // Moving up
-            if (x - 1 >= 0 && !visited[x - 1][y]) {
-                q.push({x - 1, y});
-                visited[x - 1][y] = true;
-            }
-
-            // Moving down
-            if (x + 1 < m && !visited[x + 1][y]) {
-                q.push({x + 1, y});
-                visited[x + 1][y] = true;
-            }
-
-            // Moving left
-            if (y - 1 >= 0 && !visited[x][y - 1]) {
-                q.push({x, y - 1});
-                visited[x][y - 1] = true;
-            }
-
-            // Moving right
-            if (y + 1 < n && !visited[x][y + 1]) {
-                q.push({x, y + 1});
-                visited[x][y + 1] = true;
+            for (vector<int> dir : dirs) {
+                int neighX = x + dir[0], neighY = y + dir[1];
+                if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and not visited[neighX][neighY]) {
+                    q.push({neighX, neighY});
+                    visited[neighX][neighY] = true;
+                }
             }
         }
-
         ++distance;
     }
 
@@ -85,93 +68,27 @@ int main() {
     vector<vector<char>> grid = {
         {'x', 'o', 'x', 'o'}, {'o', 'x', 'o', 'o'}, {'x', 'o', 'o', 'o'}, {'o', 'o', 'o', 'o'}};
 
-    pair<int, int> start = {0, 3};
-    pair<int, int> goal = {3, 0};
+    vector<int> start = {0, 3};
+    vector<int> goal = {3, 0};
 
     cout << minDistance(start, goal, grid) << endl;
 
     return 0;
 }
 
-// 2. This is also works. You can check whether grid[x][y] == "x" while checking visited.
-// Note that, this will not be able to handle the case when the starting location is already a "x"
-int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
-    int m = grid.size();
-    int n = grid[0].size();
-
-    vector<vector<bool>> visited(m, vector<bool>(n));
-
-    // Applying BFS on matrix cells starting from start
-    queue<pair<int, int>> q;
-
-    q.push(start);
-    visited[start.first][start.second] = true;
-    int distance = 0;
-
-    while (!q.empty()) {
-        int qSize = q.size();
-        for (int i = 0; i < qSize; ++i) {
-            pair<int, int> cell = q.front();
-            q.pop();
-            int x = cell.first, y = cell.second;
-
-            if (pair<int, int>(x, y) == goal) {
-                return distance;
-            }
-
-            // Moving up
-            if (x - 1 >= 0 && grid[x - 1][y] != 'x' && !visited[x - 1][y]) {
-                q.push({x - 1, y});
-                visited[x - 1][y] = true;
-            }
-
-            // Moving down
-            if (x + 1 < m && grid[x + 1][y] != 'x' && !visited[x + 1][y]) {
-                q.push({x + 1, y});
-                visited[x + 1][y] = true;
-            }
-
-            // Moving left
-            if (y - 1 >= 0 && grid[x][y - 1] != 'x' && !visited[x][y - 1]) {
-                q.push({x, y - 1});
-                visited[x][y - 1] = true;
-            }
-
-            // Moving right
-            if (y + 1 < n && grid[x][y + 1] != 'x' && !visited[x][y + 1]) {
-                q.push({x, y + 1});
-                visited[x][y + 1] = true;
-            }
-        }
-
-        ++distance;
-    }
-
-    return -1;
-}
-
-// 3. Bidirectional BFS. Comapre with 752. Open the Lock
-struct Comparator {
-    template <typename T>
-    bool operator()(const T& l, const T& r) const {
-        if (l.first == r.first) {
-            return l.second < r.second;
-        }
-        return l.first < r.first;
-    }
-};
-
-int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
-    set<pair<int, int>, Comparator> q1;
+// 2. Bidirectional BFS. Comapre with 752. Open the Lock
+int minDistance(const vector<int>& start, const vector<int>& goal, const vector<vector<char>>& grid) {
+    set<vector<int>> q1;
     q1.insert(start);
 
-    set<pair<int, int>, Comparator> q2;
+    set<vector<int>> q2;
     q2.insert(goal);
 
     int m = grid.size();
     int n = grid[0].size();
     vector<vector<bool>> visited(m, vector<bool>(n));
 
+    vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
     int distance = 0;
 
     while (not q1.empty() and not q2.empty()) {
@@ -179,39 +96,25 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
             swap(q1, q2);
         }
 
-        set<pair<int, int>, Comparator> temp;
+        set<vector<int>> temp;
 
-        for (pair<int, int> cell : q1) {
-            int x = cell.first, y = cell.second;
+        for (vector<int> cell : q1) {
+            if (q2.count(cell)) {
+                return distance;
+            }
 
-            visited[x][y] = true;
-
+            int x = cell[0], y = cell[1];
             if (grid[x][y] == 'x') {
                 continue;
             }
 
-            if (q2.count({x, y})) {
-                return distance;
-            }
+            visited[x][y] = true;
 
-            // Moving up
-            if (x - 1 >= 0 && !visited[x - 1][y]) {
-                temp.insert({x - 1, y});
-            }
-
-            // Moving down
-            if (x + 1 < m && !visited[x + 1][y]) {
-                temp.insert({x + 1, y});
-            }
-
-            // Moving left
-            if (y - 1 >= 0 && !visited[x][y - 1]) {
-                temp.insert({x, y - 1});
-            }
-
-            // Moving right
-            if (y + 1 < n && !visited[x][y + 1]) {
-                temp.insert({x, y + 1});
+            for (vector<int> dir : dirs) {
+                int neighX = x + dir[0], neighY = y + dir[1];
+                if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and not visited[neighX][neighY]) {
+                    temp.insert({neighX, neighY});
+                }
             }
         }
         ++distance;
@@ -221,59 +124,40 @@ int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const v
     return -1;
 }
 
-// 4. Obtain the shortest distance from start to every (x, y).
-int minDistance(const pair<int, int>& start, const pair<int, int>& goal, const vector<vector<char>>& grid) {
+// 3. Obtain the shortest distance from start to every (x, y).
+int minDistance(const vector<int>& start, const vector<int>& goal, const vector<vector<char>>& grid) {
     int m = grid.size();
     int n = grid[0].size();
 
-    vector<vector<int>> distance(m, vector<int>(n));
-    vector<vector<bool>> visited(m, vector<bool>(n));
-
-    // Applying BFS on matrix cells starting from start
-    queue<pair<int, int>> q;
-
+    queue<vector<int>> q;
     q.push(start);
-    distance[start.first][start.second] = 0;
-    visited[start.first][start.second] = true;
 
-    while (!q.empty()) {
-        pair<int, int> cell = q.front();
+    vector<vector<bool>> visited(m, vector<bool>(n));
+    visited[start[0]][start[1]] = true;
+
+    vector<vector<int>> distance(m, vector<int>(n, INT_MAX));
+    distance[start[0]][start[1]] = 0;
+
+    vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    while (not q.empty()) {
+        vector<int> cell = q.front();
         q.pop();
-        int x = cell.first, y = cell.second;
+        int x = cell[0], y = cell[1];
 
-        if (pair<int, int>(x, y) == goal) {
+        if (cell == goal) {
             return distance[x][y];
         }
 
-        // Moving up
-        if (x - 1 >= 0 && grid[x - 1][y] != 'x' && !visited[x - 1][y]) {
-            q.push({x - 1, y});
-            distance[x - 1][y] = distance[x][y] + 1;
-            visited[x - 1][y] = true;
-        }
-
-        // Moving down
-        if (x + 1 < m && grid[x + 1][y] != 'x' && !visited[x + 1][y]) {
-            q.push({x + 1, y});
-            distance[x + 1][y] = distance[x][y] + 1;
-            visited[x + 1][y] = true;
-        }
-
-        // Moving left
-        if (y - 1 >= 0 && grid[x][y - 1] != 'x' && !visited[x][y - 1]) {
-            q.push({x, y - 1});
-            distance[x][y - 1] = distance[x][y] + 1;
-            visited[x][y - 1] = true;
-        }
-
-        // Moving right
-        if (y + 1 < n && grid[x][y + 1] != 'x' && !visited[x][y + 1]) {
-            q.push({x, y + 1});
-            distance[x][y + 1] = distance[x][y] + 1;
-            visited[x][y + 1] = true;
+        for (vector<int> dir : dirs) {
+            int neighX = x + dir[0], neighY = y + dir[1];
+            if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and grid[neighX][neighY] != 'x' and
+                not visited[neighX][neighY]) {
+                q.push({neighX, neighY});
+                distance[neighX][neighY] = distance[x][y] + 1;
+                visited[neighX][neighY] = true;
+            }
         }
     }
 
     return -1;
 }
-
