@@ -69,29 +69,31 @@ public:
 };
 
 // Iterative
+// See iterative solution for 145. Binary Tree Postorder Traversal.
 class Solution {
 public:
     vector<int> postorder(Node* root) {
         if (not root) {
             return {};
         }
-        
+
         vector<int> ans;
 
         stack<Node*> s;
         s.push(root);
 
-        while(not s.empty()){
-            Node* node = s.top(); s.pop();
+        while (not s.empty()) {
+            Node* node = s.top();
+            s.pop();
             ans.push_back(node->val);
 
-            for (int i = 0; i < node->children.size(); ++i){
-                s.push(node->children[i]); 
+            for (int i = 0; i < node->children.size(); ++i) {
+                s.push(node->children[i]);
             }
         }
 
-        reverse(ans.begin(), ans.end()); 
+        reverse(ans.begin(), ans.end());
 
-        return ans; 
+        return ans;
     }
 };

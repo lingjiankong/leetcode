@@ -46,6 +46,36 @@ int minDepth(TreeNode* root) {
     return 1 + min(minDepth(root->left), minDepth(root->right));
 }
 
+// DFS, maintain global variable
+class Solution {
+public:
+    int minDepth(TreeNode* root) {
+        if (not root) {
+            return 0;
+        }
+
+        dfs(root, 1);
+        return _minDepth;
+    }
+
+private:
+    void dfs(TreeNode* root, int depth) {
+        if (not root->left and not root->right) {
+            _minDepth = min(_minDepth, depth);
+        }
+
+        if (root->left) {
+            dfs(root->left, depth + 1);
+        }
+
+        if (root->right) {
+            dfs(root->right, depth + 1);
+        }
+    }
+
+    int _minDepth = INT_MAX;
+};
+
 // BFS
 // start: the root node
 // goal: the first node with no children
@@ -60,10 +90,11 @@ int minDepth(TreeNode* root) {
     int depth = 1;
     while (!q.empty()) {
         int qSize = q.size();
-        for (int i = 0; i < qSize; ++i) {
+        while (qSize--) {
             TreeNode* node = q.front();
             q.pop();
 
+            // Goal found.
             if (!node->left && !node->right) {
                 return depth;
             }

@@ -66,7 +66,7 @@ public:
 
         stack<TreeNode*> s;
         s.push(root);
-        while (!s.empty()) {
+        while (not s.empty()) {
             TreeNode* node = s.top();
             s.pop();
 
@@ -83,11 +83,10 @@ public:
         reverse(res.begin(), res.end());
         return res;
     }
-
-private:
 };
 
 // A "solution template" for both preorder, inorder, and postorder traversal.
+// No need to remember it.
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {

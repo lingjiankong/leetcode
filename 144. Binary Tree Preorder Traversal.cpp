@@ -50,7 +50,7 @@ public:
 
         stack<TreeNode*> s;
         s.push(root);
-        while (!s.empty()) {
+        while (not s.empty()) {
             TreeNode* node = s.top();
             s.pop();
 

@@ -30,19 +30,19 @@ public:
     }
 
 private:
-    bool _dfs(TreeNode* l, TreeNode* r) {
-        if (!l and !r) {
+    bool _dfs(TreeNode* p, TreeNode* q) {
+        if (!p and !q) {
             return true;
         }
 
-        if (!l or !r) {
+        if (!p or !q) {
             return false;
         }
 
-        if (l->val or r->val) {
+        if (p->val != q->val) {
             return false;
         }
 
-        return _dfs(l->left, r->right) and _dfs(l->right, r->left);
+        return _dfs(p->left, q->right) and _dfs(p->right, q->left);
     }
 };

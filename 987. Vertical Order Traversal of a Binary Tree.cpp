@@ -56,8 +56,9 @@
 class Solution {
 public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
-        vector<vector<int>> allLevels;
+        _preorder(root, 0, 0);
 
+        vector<vector<int>> allLevels;
         for (auto& col2Rows : _map) {
             vector<int> curLevel;
             for (auto& row2Vals : col2Rows.second) {
@@ -72,8 +73,9 @@ public:
 
         return allLevels;
     }
+
 private:
-    // Need to store _map[col][row] as a vector instead of integer because
+    // Important: Need to store _map[col][row] as a vector instead of integer because
     // multiple values might have the same (col, row)
     map<int, map<int, vector<int>>> _map;
 

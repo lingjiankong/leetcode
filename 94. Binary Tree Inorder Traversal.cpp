@@ -39,7 +39,7 @@ private:
 }
 
 // A "solution template" for both preorder, inorder, and postorder traversal.
-// No need to memorize it.
+// No need to remember it.
 class Solution {
 public:
     vector<int> inOrderTraversal(TreeNode* root) {

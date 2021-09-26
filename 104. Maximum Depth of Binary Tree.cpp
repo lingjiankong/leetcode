@@ -42,3 +42,26 @@ int maxDepth(TreeNode* root) {
 
     return 1 + max(maxDepth(root->left), maxDepth(root->right));
 }
+
+// DFS, maintain global variable.
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        _dfs(root, 1);
+
+        return _maxDepth;
+    }
+
+private:
+    void _dfs(TreeNode* root, int depth) {
+        if (not root) {
+            return;
+        }
+
+        _maxDepth = max(_maxDepth, depth);
+        _dfs(root->left, depth + 1);
+        _dfs(root->right, depth + 1);
+    }
+
+    int _maxDepth = 0;
+};

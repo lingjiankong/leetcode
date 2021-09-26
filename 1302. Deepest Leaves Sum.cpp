@@ -22,37 +22,6 @@
 //
 // ***
 
-// Recursive
-class Solution {
-public:
-    int deepestLeavesSum(TreeNode* root) {
-        _preorder(root, 0);
-        return _sum;
-    }
-
-private:
-    int _maxDepth = 0;
-    int _sum = 0;
-
-    void _preorder(TreeNode* root, int depth) {
-        if (not root) {
-            return;
-        }
-
-        if (depth > _maxDepth) {
-            _maxDepth = depth;
-            _sum = 0;
-        }
-
-        if (depth == _maxDepth) {
-            _sum += root->val;
-        }
-
-        _preorder(root->left, depth + 1);
-        _preorder(root->right, depth + 1);
-    }
-};
-
 // Iterative
 class Solution {
 public:
@@ -93,3 +62,35 @@ public:
         return sum;
     }
 };
+
+// Recursive
+class Solution {
+public:
+    int deepestLeavesSum(TreeNode* root) {
+        _preorder(root, 0);
+        return _sum;
+    }
+
+private:
+    int _maxDepth = 0;
+    int _sum = 0;
+
+    void _preorder(TreeNode* root, int depth) {
+        if (not root) {
+            return;
+        }
+
+        if (depth > _maxDepth) {
+            _maxDepth = depth;
+            _sum = 0;
+        }
+
+        if (depth == _maxDepth) {
+            _sum += root->val;
+        }
+
+        _preorder(root->left, depth + 1);
+        _preorder(root->right, depth + 1);
+    }
+};
+
