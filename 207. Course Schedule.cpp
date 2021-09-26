@@ -1,89 +1,82 @@
 // ***
 //
-// There are a total of n courses you have to take, labeled from 0 to n-1.
-// Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
-// Given the total number of courses and a list of prerequisite pairs, is it possible for you to finish all courses?
-// 
+// There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array
+// prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take
+// course ai.
+//
+// For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
+// Return true if you can finish all courses. Otherwise, return false.
+//
+//
 // Example 1:
-// 
-// Input: 2, [[1,0]]
+//
+// Input: numCourses = 2, prerequisites = [[1,0]]
 // Output: true
 // Explanation: There are a total of 2 courses to take.
-//              To take course 1 you should have finished course 0. So it is possible.
+// To take course 1 you should have finished course 0. So it is possible.
+//
+//
 // Example 2:
-// 
-// Input: 2, [[1,0],[0,1]]
+//
+// Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
 // Output: false
 // Explanation: There are a total of 2 courses to take.
-//              To take course 1 you should have finished course 0, and to take course 0 you should
-//              also have finished course 1. So it is impossible.
+// To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So
+// it is impossible.
+//
+//
+// Constraints:
+//
+// 1 <= numCourses <= 105
+// 0 <= prerequisites.length <= 5000
+// prerequisites[i].length == 2
+// 0 <= ai, bi < numCourses
+// All the pairs prerequisites[i] are unique.
 //
 // ***
-//
+
+// Typical topological sort.
 // This question is the same as asking us to detect whether there's loop in a graph.
-//
-class Solution
-{
+class Solution {
+public:
+    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+        // Construct the graph
+        vector<vector<int>> graph(numCourses);
+        for (auto course : prerequisites) {
+            graph[course[1]].push_back(course[0]);
+        }
 
-	public:
+        // Initialize the initial states for all courses to be UNVISITED.
+        vector<State> states(numCourses, State::UNVISITED);
+        for (int i = 0; i < numCourses; ++i) {
+            // If dfs returns true then there's a cycle.
+            if (dfs(i, states, graph)) {
+                return false;
+            }
+        }
 
-		bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites)
-		{
-			// Construct the graph
-			mGraph = vector<vector<int>>(numCourses);
-			for(auto course : prerequisites)
-			{
-				mGraph[course.second].push_back(course.first);
-			}
-			
-			// Initialize the initial visitingStatus for all courses to be unknown.
-			vector<State> visitingStatus(numCourses, State::Unknown);
-			for(int i = 0; i < numCourses; ++i)
-			{
-				// If backtrack returns true then there's a cycle.
-				if (backtrack(i, visitingStatus))
-				{
-					return false;
-				}
-			}
-			
-			return true;
-		}
-		
-	private:
+        return true;
+    }
 
-		vector<vector<int>> mGraph;
+private:
+    enum State { UNVISITED, VISITING, VISITED };
 
-		enum State
-		{
-			Visiting,
-			Visited,
-			Unknown
-		};
+    // Returns true if there's a cycle.
+    bool dfs(int curCourse, vector<State>& states, const vector<vector<int>>& graph) {
+        if (states[curCourse] == State::VISITING) {
+            return true;  // has cycle
+        } else if (states[curCourse] == State::VISITED) {
+            return false;
+        }
 
-		// Returns true if there's a cycle.
-		bool backtrack(int currentCourse, vector<State>& visitingStatus)
-		{
-			if (visitingStatus[currentCourse] == State::Visiting)
-			{
-				return true;
-			}
-			else if (visitingStatus[currentCourse] == State::Visited)
-			{
-				return false;
-			}
-			
-			visitingStatus[currentCourse] = State::Visiting;
-			for (int course : mGraph[currentCourse])
-			{
-				if (backtrack(course, visitingStatus))
-				{
-					return true;
-				}
-			}
-			visitingStatus[currentCourse] = State::Visited;
-			
-			return false;
-		}
+        states[curCourse] = State::VISITING;
+        for (int course : graph[curCourse]) {
+            if (dfs(course, states, graph)) {
+                return true;
+            }
+        }
+        states[curCourse] = State::VISITED;
 
+        return false;
+    }
 };

@@ -373,30 +373,30 @@
 ## Graph
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 207 | Course Schedule | Bravo
-| 210 | Course Schedule II | Bravo
+| 207 | Course Schedule | Alpha+ | topological sort
+| 210 | Course Schedule II | Alpha+ | topological sort
 | 133 | Clone Graph | Alpha | deep-copy
 | 1490 | Clone N-ary Tree | Alpha | deep-copy
 | 138 | Copy List with Random Pointer | Alpha | deep-copy
 | 1495 | Clone Binary Tree With Random Pointer | Alpha | deep-copy
-| N5 | Union Find | Alpha+ | union-find
-| 990 | Satisfiability of Equality Equations | Alpha | union-find
-| 261 | Graph Valid Tree | Alpha | union-find
-| 305 | Number of Islands II | Alpha | union-find
-| 323 | Number of Connected Components in an Undirected Graph | Alpha | union-find
-| 547 | Number of Provinces | Alpha | union-find
+| N5 | Union Find | Alpha+ | union find
+| 990 | Satisfiability of Equality Equations | Alpha | union find
+| 261 | Graph Valid Tree | Alpha | union find
+| 305 | Number of Islands II | Alpha | union find
+| 323 | Number of Connected Components in an Undirected Graph | Alpha | union find
+| 547 | Number of Provinces | Alpha | union find
 | 399 | Evaluate Division | Alpha+ | DFS (graph traversal)
-| 684 | Redundant Connection | Alpha | union-find
-| 721 | Accounts Merge | Alpha | union-find
-| 200 | Number of Islands | Alpha+ | BFS, union-find
+| 684 | Redundant Connection | Alpha | union find
+| 721 | Accounts Merge | Alpha | union find
+| 200 | Number of Islands | Alpha+ | BFS, union find
 | 733 | Flood Fill | Alpha | BFS
-| 695 | Max Area of Island | Alpha | BFS, union-find
+| 695 | Max Area of Island | Alpha | BFS, union find
 | 694 | Number of Distinct Islands | Alpha
 | 463 | Island Perimeter | Alpha
-| 827 | Making a Large Island Alpha | union-find
+| 827 | Making a Large Island Alpha | union find
 | 1162 | As Far from Land as Possible | Alpha | BFS
 | 841 | Keys and Rooms | Alpha+ | DFS
-| 1202 | Smallest String With Swaps | Alpha | union-find
+| 1202 | Smallest String With Swaps | Alpha | union find
 
 ## Design
 | ID | Name | Rating | Note

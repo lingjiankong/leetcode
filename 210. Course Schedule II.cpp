@@ -1,18 +1,19 @@
 // ***
 //
 // There are a total of n courses you have to take, labeled from 0 to n-1.
-// Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
-// Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses.
-// There may be multiple correct orders, you just need to return one of them. If it is impossible to finish all courses, return an empty array.
-// 
+// Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed
+// as a pair: [0,1] Given the total number of courses and a list of prerequisite pairs, return the ordering of courses
+// you should take to finish all courses. There may be multiple correct orders, you just need to return one of them. If
+// it is impossible to finish all courses, return an empty array.
+//
 // Example 1:
-// 
+//
 // Input: 2, [[1,0]]
 // Output: [0,1]
 // Explanation: There are a total of 2 courses to take. To take course 1 you should have finished
 //              course 0. So the correct course order is [0,1] .
 // Example 2:
-// 
+//
 // Input: 4, [[1,0],[2,0],[3,1],[3,2]]
 // Output: [0,1,2,3] or [0,2,1,3]
 // Explanation: There are a total of 4 courses to take. To take course 3 you should have finished both
@@ -23,68 +24,51 @@
 //
 // See 207. Course Schedule. The code is almost the same.
 // This code stores one additional information: courseOrder, which stores the course after topological sort.
-class Solution
-{
-
-    public:
-
-        vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites)
-        {
-            mGraph = vector<vector<int>>(numCourses);
-            for(auto course : prerequisites)
-            {
-                mGraph[course.second].push_back(course.first);
-            }
-
-            vector<State> visitingStatus(numCourses, State::Unknown);
-			vector<int> courseOrder;
-            for(int i = 0; i < numCourses; ++i)
-            {
-                if (backtrack(i, visitingStatus, courseOrder))
-                {
-                    return {};
-                }
-            }
-
-			reverse(courseOrder.begin(), courseOrder.end());
-			return courseOrder;
+class Solution {
+public:
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        // Construct the graph
+        vector<vector<int>> graph(numCourses);
+        for (auto course : prerequisites) {
+            graph[course[1]].push_back(course[0]);
         }
 
-    private:
-
-        vector<vector<int>> mGraph;
-
-        enum State
-        {
-            Visiting,
-            Visited,
-            Unknown
-        };
-
-        bool backtrack(int currentCourse, vector<State>& visitingStatus, vector<int>& courseOrder)
-        {
-            if (visitingStatus[currentCourse] == State::Visiting)
-            {
-                return true;
+        // Initialize the initial states for all courses to be UNVISITED.
+        vector<State> states(numCourses, State::UNVISITED);
+        vector<int> courseOrder;
+        for (int i = 0; i < numCourses; ++i) {
+            // If dfs returns true then there's a cycle.
+            if (dfs(i, states, courseOrder, graph)) {
+                return {};
             }
-            else if (visitingStatus[currentCourse] == State::Visited)
-            {
-                return false;
-            }
+        }
 
-            visitingStatus[currentCourse] = State::Visiting;
-            for (int course : mGraph[currentCourse])
-            {
-                if (backtrack(course, visitingStatus, courseOrder))
-                {
-                    return true;
-                }
-            }
-            visitingStatus[currentCourse] = State::Visited;
+        reverse(courseOrder.begin(), courseOrder.end());
+        return courseOrder;
+    }
 
-			courseOrder.push_back(currentCourse);
+private:
+    enum State { UNVISITED, VISITING, VISITED };
 
+    // Returns true if there's a cycle.
+    bool dfs(int curCourse, vector<State>& states, vector<int>& courseOrder, const vector<vector<int>>& graph) {
+        if (states[curCourse] == State::VISITING) {
+            return true;  // has cycle
+        } else if (states[curCourse] == State::VISITED) {
             return false;
         }
 
+        states[curCourse] = State::VISITING;
+        for (int course : graph[curCourse]) {
+            if (dfs(course, states, courseOrder, graph)) {
+                return true;
+            }
+        }
+        states[curCourse] = State::VISITED;
+
+        courseOrder.push_back(curCourse);
+
+        return false;
+    }
 };
+
