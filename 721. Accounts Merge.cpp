@@ -62,7 +62,7 @@ public:
         }
 
         // Find all emails which belong to the same root.
-        // These emails belong to the same person.
+        // These emails must belong to the same person.
         unordered_map<string, unordered_set<string>> rootToEmails;
         for (vector<string> account : accounts) {
             for (int i = 1; i < account.size(); ++i) {

@@ -375,10 +375,10 @@
 |:---:|:---:|:---:|:---:|
 | 207 | Course Schedule | Alpha+ | topological sort
 | 210 | Course Schedule II | Alpha+ | topological sort
-| 133 | Clone Graph | Alpha | deep-copy
-| 1490 | Clone N-ary Tree | Alpha | deep-copy
-| 138 | Copy List with Random Pointer | Alpha | deep-copy
-| 1495 | Clone Binary Tree With Random Pointer | Alpha | deep-copy
+| 133 | Clone Graph | Alpha | clone
+| 1490 | Clone N-ary Tree | Alpha | clone
+| 138 | Copy List with Random Pointer | Alpha | clone
+| 1495 | Clone Binary Tree With Random Pointer | Alpha | clone
 | N5 | Union Find | Alpha+ | union find
 | 990 | Satisfiability of Equality Equations | Alpha | union find
 | 261 | Graph Valid Tree | Alpha | union find
@@ -397,6 +397,9 @@
 | 1162 | As Far from Land as Possible | Alpha | BFS
 | 841 | Keys and Rooms | Alpha+ | DFS
 | 1202 | Smallest String With Swaps | Alpha | union find
+| 839 | Similar String Groups | Alpha | union find
+| 952 | Largest Component Size by Common Factor | Alpha | union find
+| 737 | Sentence Similarity II | Alpha | union find
 
 ## Design
 | ID | Name | Rating | Note
