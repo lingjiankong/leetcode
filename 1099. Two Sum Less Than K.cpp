@@ -38,7 +38,7 @@ public:
             if (sum == k) {
                 --right;
             } else if (sum < k) {
-                res = max(res, nums[left] + nums[right]);
+                res = max(res, sum);
                 ++left;
             } else if (sum > k) {
                 --right;

@@ -41,21 +41,24 @@ vector<vector<int>> threeSum(vector<int>& nums, int target) {
 
         int left = i + 1, right = nums.size() - 1;
         while (left < right) {
-            int sum = nums[i] + nums[left] + nums[right];
+            int leftVal = nums[left], rightVal = nums[right];
+            int sum = nums[i] + leftVal + rightVal;
             if (sum == target) {
-                allPairs.push_back({nums[i], nums[left], nums[right]});
-                while (left < right && nums[left] == nums[left + 1]) {
+                allPairs.push_back({nums[i], leftVal, rightVal});
+                while (left < right && leftVal == nums[left]) {
                     ++left;
                 }
-                while (left < right && nums[right] == nums[right - 1]) {
+                while (left < right && rightVal == nums[right]) {
                     --right;
                 }
-                ++left;
-                --right;
             } else if (sum < target) {
-                ++left;
+                while (left < right && leftVal == nums[left]) {
+                    ++left;
+                }
             } else if (sum > target) {
-                --right;
+                while (left < right && rightVal == nums[right]) {
+                    --right;
+                }
             }
         }
     }

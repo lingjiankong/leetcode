@@ -57,13 +57,12 @@ private:
 
     vector<vector<int>> twoSum(const vector<int>& nums, int start, int target) {
         vector<vector<int>> res;
-        int left = start;
-        int right = nums.size() - 1;
+        int left = start, right = nums.size() - 1;
         while (left < right) {
-            int sum = nums[left] + nums[right];
             int leftVal = nums[left], rightVal = nums[right];
+            int sum = leftVal + rightVal;
             if (sum == target) {
-                res.push_back({nums[left], nums[right]});
+                res.push_back({leftVal, rightVal});
                 while (left < right and leftVal == nums[left]) {
                     ++left;
                 }
@@ -107,21 +106,24 @@ vector<vector<int>> fourSum(vector<int>& nums, int target) {
             // Find the third and fourth candidate elements.
             int left = j + 1, right = nums.size() - 1;
             while (left < right) {
+                int leftVal = nums[left], rightVal = nums[right];
                 int sum = nums[i] + nums[j] + nums[left] + nums[right];
                 if (sum == target) {
-                    allPairs.push_back({nums[i], nums[j], nums[left], nums[right]});
-                    while (left < right && nums[left] == nums[left + 1]) {
+                    allPairs.push_back({nums[i], nums[j], leftVal, rightVal});
+                    while (left < right && leftVal == nums[left]) {
                         ++left;
                     }
-                    while (left < right && nums[right] == nums[right - 1]) {
+                    while (left < right && rightVal == nums[right]) {
                         --right;
                     }
-                    ++left;
-                    --right;
                 } else if (sum < target) {
-                    ++left;
+                    while (left < right && leftVal == nums[left]) {
+                        ++left;
+                    }
                 } else if (sum > target) {
-                    --right;
+                    while (left < right && rightVal == nums[right]) {
+                        --right;
+                    }
                 }
             }
         }
