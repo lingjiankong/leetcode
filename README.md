@@ -103,7 +103,7 @@
 | 234 | Palindrome Linked List | Alpha+
 | 24 | Swap Nodes in Pairs | Bravo
 | 237 | Delete Node in a Linked List | Bravo
-| 19 | Remove Nth Node From End of List | Alpha
+| 19 | Remove Nth Node From End of List | Alpha+
 | 1474 | Delete N Nodes After M Nodes of a Linked List | Alpha
 | 203 | Remove Linked List Elements | Alpha
 | 83 | Remove Duplicates from Sorted List | Alpha
@@ -297,7 +297,7 @@
 ## Two Sum Series
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 1 | Two Sum | Alpha
+| 1 | Two Sum | Alpha+
 | 170 | Two Sum III - Data structure design | Alpha
 | 653 | Two Sum IV - Input is a BST | Alpha
 | 167 | Two Sum II - Input array is sorted | Alpha | Two pointers
