@@ -51,13 +51,12 @@ public:
         ListNode *slow = head, *fast = head;
 
         while (fast) {
-            int mTemp = m;
-            int nTemp = n;
+            int mTemp = m, nTemp = n;
 
             // fast is now the 1 st node
             // slow is now the 1 st node
 
-            while (fast and mTemp-- > 0) {
+            while (fast and mTemp--) {
                 // We update slow 1 step "slower" here because
                 // we want slow to be the m th node (so it points to the m + 1 th node).
                 slow = fast;
@@ -67,7 +66,7 @@ public:
             // fast is now the m + 1 th node
             // slow is now the m th node
 
-            while (fast and nTemp-- > 0) {
+            while (fast and nTemp--) {
                 fast = fast->next;
             }
 
