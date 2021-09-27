@@ -400,6 +400,9 @@
 | 839 | Similar String Groups | Alpha | union find
 | 952 | Largest Component Size by Common Factor | Alpha | union find
 | 737 | Sentence Similarity II | Alpha | union find
+| 785 | Is Graph Bipartite | Alpha | bipartition, coloring
+| 886 | Possible Bipartition.cpp | bipartition, coloring
+| 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
 
 ## Design
 | ID | Name | Rating | Note
