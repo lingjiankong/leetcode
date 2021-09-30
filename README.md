@@ -231,12 +231,13 @@
 ## BFS
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| N1 | Minimum Distance Between Two Points in a Matrix | Alpha | BFS
+| N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
 | N2 | Shortest Path Between Two Points in a Matrix | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 127 | Word Ladder | Alpha
 | 126 | Word Ladder II | Bravo
 | 752 | Open the Lock | Alpha 
+| 433 | Minimum Genetic Mutation | Alpha
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
 | 773 | Sliding Puzzle | Alpha
 
@@ -404,6 +405,7 @@
 | 785 | Is Graph Bipartite | Alpha | bipartition, coloring
 | 886 | Possible Bipartition.cpp | bipartition, coloring
 | 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
+| 997 | Find the Town Judge | Alpha+
 
 ## Design
 | ID | Name | Rating | Note
