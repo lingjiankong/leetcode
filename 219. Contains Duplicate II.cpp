@@ -16,7 +16,7 @@
 // Output: false
 //
 // Constraints:
-// 
+//
 // 1 <= nums.length <= 10^5
 // -10^9 <= nums[i] <= 10^9
 // 0 <= k <= 105
@@ -53,10 +53,8 @@ bool containsNearbyDuplicate(vector<int>& nums, int k) {
     unordered_map<int, int> seen;
 
     for (int i = 0; i < nums.size(); ++i) {
-        if (seen.count(nums[i])) {
-            if (i - seen[nums[i]] <= k) {
-                return true;
-            }
+        if (seen.count(nums[i]) and i - seen[nums[i]] <= k) {
+            return true;
         }
         seen[nums[i]] = i;
     }

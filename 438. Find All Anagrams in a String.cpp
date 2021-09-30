@@ -68,6 +68,40 @@ vector<int> findAnagrams(string s, string p) {
     }
 
     int left = 0, right = 0;
+    vector<int> res;
+
+    while (right < s.size()) {
+        char c = s[right++];
+        if (need.count(c)) {  // optional check
+            ++window[c];
+        }
+
+        while (right - left == p.size()) {
+            if (window == need) {
+                res.push_back(left);
+            }
+
+            char c = s[left++];
+            if (need.count(c)) {  // optional check
+                if (--window[c] == 0) {
+                    window.erase(c);
+                }
+            }
+        }
+    }
+
+    return res;
+}
+
+// Same idea.
+vector<int> findAnagrams(string s, string p) {
+    unordered_map<char, int> need, window;
+
+    for (char c : p) {
+        ++need[c];
+    }
+
+    int left = 0, right = 0;
     int validCount = 0;
     vector<int> res;
 
@@ -91,40 +125,6 @@ vector<int> findAnagrams(string s, string p) {
                     --validCount;
                 }
                 --window[c];
-            }
-        }
-    }
-
-    return res;
-}
-
-// Same idea.
-vector<int> findAnagrams(string s, string p) {
-    unordered_map<char, int> need, window;
-
-    for (char c : p) {
-        ++need[c];
-    }
-
-    int left = 0, right = 0;
-    vector<int> res;
-
-    while (right < s.size()) {
-        char c = s[right++];
-        if (need.count(c)) {
-            ++window[c];
-        }
-
-        while (right - left == p.size()) {
-            if (window == need) {
-                res.push_back(left);
-            }
-
-            char c = s[left++];
-            if (need.count(c)) {
-                if (--window[c] == 0) {
-                    window.erase(c);
-                };
             }
         }
     }

@@ -23,7 +23,7 @@ public:
         unordered_map<char, int> window;
 
         int left = 0, right = 0;
-        int maxLen = INT_MIN;
+        int maxLen = 0;
 
         while (right < s.size()) {
             char c = s[right++];

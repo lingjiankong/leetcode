@@ -26,6 +26,7 @@
 class Solution {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        // Do not forget to sort the array first in these types of problems!
         sort(nums.begin(), nums.end());
 
         int n = 4, start = 0;

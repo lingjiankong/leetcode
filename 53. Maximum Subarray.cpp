@@ -10,13 +10,11 @@
 //
 // ***
 
+// The maximum sum of subarray that *ends at nums[i]* is the maximum of:
+// 1. The maximum sum of subarray that ends at nums[i-1] plus nums[i], and
+// 2. The value of nums[i] itself.
 // O(n) space
 int maxSubArray(vector<int>& nums) {
-    if (nums.empty()) {
-        return 0;
-    }
-
-    // The maximum sum of subarray that ends at nums[i]
     vector<int> dp(nums.size());
     dp[0] = nums[0];
 
@@ -30,10 +28,6 @@ int maxSubArray(vector<int>& nums) {
     return maxSum;
 }
 
-// The maximum sum of subarray that *ends at nums[i]* is the maximum of:
-// 1. The maximum sum of subarray that ends at nums[i-1] plus nums[i], and
-// 2. The value of nums[i] itself.
-// That is, curMaxSum[i] = max(curMaxSum[i-1] + nums[i], nums[i]).
 // O(1) space
 int maxSubArray(vector<int>& nums) {
     int maxSum = INT_MIN, curMaxSum = 0;

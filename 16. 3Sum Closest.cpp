@@ -62,6 +62,7 @@ public:
 
             int left = i + 1, right = nums.size() - 1;
             while (left < right) {
+                int leftVal = nums[left], rightVal = nums[right];
                 int sum = nums[i] + nums[left] + nums[right];
                 int newDiff = abs(sum - target);
                 if (newDiff < diff) {
@@ -70,18 +71,20 @@ public:
                 }
 
                 if (sum == target) {
-                    while (left < right && nums[left] == nums[left + 1]) {
+                    while (left < right && leftVal == nums[left]) {
                         ++left;
                     }
-                    while (left < right && nums[right] == nums[right - 1]) {
+                    while (left < right && rightVal == nums[right]) {
                         --right;
                     }
-                    ++left;
-                    --right;
                 } else if (sum < target) {
-                    ++left;
-                } else {
-                    --right;
+                    while (left < right && leftVal == nums[left]) {
+                        ++left;
+                    }
+                } else if (sum > target) {
+                    while (left < right && rightVal == nums[right]) {
+                        --right;
+                    }
                 }
             }
         }

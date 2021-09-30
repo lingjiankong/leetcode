@@ -24,7 +24,7 @@ public:
     int lengthOfLongestSubstringKDistinct(string s, int k) {
         unordered_map<char, int> window;
 
-        int maxLen = INT_MIN;
+        int maxLen = 0;
 
         int left = 0, right = 0;
         while (right < s.size()) {

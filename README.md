@@ -128,15 +128,15 @@
 ## Sliding window
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 239 | Sliding Window Maximum | Alpha | sliding window, monotonic queue
-| 209 | Minimum Size Subarray Sum | Alpha
-| 567 | Permutation in String | Alpha
+| 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
+| 209 | Minimum Size Subarray Sum | Alpha+
+| 567 | Permutation in String | Alpha+
 | 438 | Find All Anagrams in a String | Alpha
-| 76 | Minimum Window Substring | Alpha
-| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha
-| 217 | Contains Duplicate | Alpha
-| 219 | Contains Duplicate II | Alpha
-| 220 | Contains Duplicate III | Alpha
+| 76 | Minimum Window Substring | Alpha+
+| 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha+
+| 217 | Contains Duplicate | Alpha+
+| 219 | Contains Duplicate II | Alpha+
+| 220 | Contains Duplicate III | Alpha+
 | 3 | Longest Substring Without Repeating Characters | Alpha
 | 159 | Longest Substring with At Most Two Distinct Characters | Alpha
 | 340 | Longest Substring with At Most K Distinct Characters | Alpha
@@ -159,10 +159,10 @@
 ## Binary Search
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 35 | Search Insert Position | Alpha
+| 35 | Search Insert Position | Alpha+
 | 704 | Binary Search | Alpha
-| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha | Binary search
-| 475 | Heaters | Alpha
+| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha+ | Binary search
+| 475 | Heaters | Alpha+
 | 441 | Arranging Coins | Alpha
 | 367 | Valid Perfect Square | Alpha
 | 611 | Valid Triangle Number | Alpha
@@ -266,7 +266,7 @@
 | 64 | Minimum Path Sum | Alpha
 | 221 | Maximal Square | Alpha
 | 361 | Bomb Enemy | Alpha
-| 53 | Maximum Subarray | Alpha
+| 53 | Maximum Subarray | Alpha+
 | 152 | Maximum Product Subarray | Alpha
 | 376 | Wiggle Subsequence | Alpha
 | 97 | Interleaving String | Alpha | 2D DP String
@@ -275,13 +275,13 @@
 | 139 | Word Break | Alpha | 1D DP String
 | 673 | Number of Increasing Subsequence | Alpha
 | 978 | Longest Turbulent Subarray | Alpha
-| 300 | Longest Increasing Subsequence | Alpha
-| 354 | Russian Doll Envelopes | Alpha
+| 300 | Longest Increasing Subsequence | Alpha+
+| 354 | Russian Doll Envelopes | Alpha+
 | 1143 | Longest Common Subsequence | Alpha
 | 583 | Delete Operation for Two Strings | Alpha
 | 72 | Edit Distance | Alpha
-| 516 | Longest Palindromic Subsequence | Alpha
-| 5 | Longest Palindromic Substring | Alpha
+| 516 | Longest Palindromic Subsequence | Alpha+
+| 5 | Longest Palindromic Substring | Alpha+
 | 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha
 | 10 | Reguar Expression Matching | Bravo
 | 651 | 4 Keys Keyboard | Alpha
@@ -306,7 +306,7 @@
 | 15 | 3Sum | Alpha | Two pointers
 | 16 | 3Sum Closest | Alpha | Two pointers
 | 259 | 3Sum Smaller | Alpha | Two pointers
-| 454 | 4Sum II | Alpha | Hash table
+| 454 | 4Sum II | Alpha+ | hash table
 
 ## Parentheses Series
 | ID | Name | Rating | Note
@@ -342,6 +342,7 @@
 | 503 | Next Greater Element II | Alpha | monotonic stack
 | 739 | Daily Temperatures | Alpha | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
+| 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
 | 347 | Top K Frequent Elements | Alpha+
 | 692 | Top K Frequent Words | Alpha
 | 451 | Sort Characters By Frequency | Bravo

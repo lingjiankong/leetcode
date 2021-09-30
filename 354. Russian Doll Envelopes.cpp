@@ -56,7 +56,7 @@ public:
     }
 };
 
-// Same idea, if you sort both width and height in asending order.
+// Same idea, if you sort both width and height in ascending order.
 // (i.e. default sorting with no comparator provided).
 class Solution {
 public:

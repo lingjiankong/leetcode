@@ -32,7 +32,6 @@ int threeSumSmaller(vector<int>& nums, int target) {
             // nums[i] + nums[left] + nums[right - 2] ... There are total of right - left such combinations -> therefore
             // total += right - left.
             if (sum == target) {
-                ++left;
                 --right;
             } else if (sum < target) {
                 total += right - left;

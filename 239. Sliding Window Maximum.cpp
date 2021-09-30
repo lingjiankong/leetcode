@@ -42,7 +42,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
             res.push_back(*window.rbegin());
 
             int num = nums[left++];
-            // need to use lower_bound here, otherwise multiple elements of the same value will be erased.
+            // Must use lower_bound here, otherwise multiple elements of the same value will be erased.
             window.erase(window.lower_bound(num));
         }
     }
