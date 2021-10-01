@@ -35,7 +35,7 @@ private:
     vector<vector<int>> _result;
 
     void _dfs(TreeNode* root, int level) {
-        if (!root) {
+        if (not root) {
             return;
         }
 
@@ -44,7 +44,6 @@ private:
         }
 
         _result[level].push_back(root->val);
-
         _dfs(root->left, level + 1);
         _dfs(root->right, level + 1);
     }

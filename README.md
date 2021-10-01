@@ -23,9 +23,9 @@
 | 101 | Symmetric Tree | Alpha+
 | 965 | Univalued Binary Tree | Alpha+
 | 226 | Invert Binary Tree | Alpha | Postorder
-| 112 | Path Sum | Alpha
+| 112 | Path Sum | Alpha+
 | 113 | Path Sum II | Alpha
-| 437 | Path Sum III | Bravo | Preorder
+| 437 | Path Sum III | Alpha | Preorder
 | 124 | Binary Tree Maximum Path Sum | Alpha+ | Postorder
 | 543 | Diameter of Binary Tree | Alpha | Postorder
 | 687 | Longest Univalue Path | Alpha | Postorder
@@ -33,13 +33,13 @@
 | 104 | Maximum Depth of Binary Tree | Alpha+ | Postorder
 | 366 | Find Leaves of Binary Tree | Alpha | Postorder
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
-| 257 | Binary Tree Paths | Alpha
-| 129 | Sum Root to Leaf Numbers | Alpha
+| 257 | Binary Tree Paths | Alpha+
+| 129 | Sum Root to Leaf Numbers | Alpha+
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
 | 549 | Binary Tree Longest Consecutive Sequence II | TODO | Compare with 673
 | 110 | Balanced Binary Tree | Alpha
 | 102 | Binary Tree Level Order Traversal | Alpha | Postorder, BFS
-| 107 | Binary Tree Level Order Traversal II | Bravo | Postorder, BFS
+| 107 | Binary Tree Level Order Traversal II | Alpha | Postorder, BFS
 | 314 | Binary Tree Vertical Order Traversal | Alpha | BFS
 | 103 | Binary Tree Zigzag Level Order Traversal | Bravo | BFS
 | 199 | Binary Tree Right Side View | Bravo | Preorder
@@ -64,7 +64,7 @@
 | 987 | Vertical Order Traversal of a Binary Tree | Alpha+
 | 1302 | Deepest Leaves Sum | Alpha
 | 872 | Leaf-Similar Trees | Alpha
-| 814 | Binary Tree Pruning | Alpha | postorder
+| 814 | Binary Tree Pruning | Alpha+ | postorder
 | 669 | Trim a Binary Search Tree | Alpha | BST, postorder
 | 1325 | Delete Leaves With a Given Value | Alpha | postorder
 | 508 | Most Frequent Subtree Sum | Alpha | postorder
@@ -238,6 +238,7 @@
 | 126 | Word Ladder II | Bravo
 | 752 | Open the Lock | Alpha 
 | 433 | Minimum Genetic Mutation | Alpha
+| 815 | Bus ROutes | Alpha
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
 | 773 | Sliding Puzzle | Alpha
 

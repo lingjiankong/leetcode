@@ -30,26 +30,26 @@ class Solution {
 public:
     vector<vector<int>> pathSum(TreeNode* root, int sum) {
         vector<vector<int>> all;
-        vector<int> current;
+        vector<int> cur;
 
-        _dfs(root, sum, current, all);
+        _dfs(root, sum, cur, all);
 
         return all;
     }
 
 private:
-    void _dfs(TreeNode* root, int sum, vector<int> current, vector<vector<int>>& all) {
+    void _dfs(TreeNode* root, int sum, vector<int> cur, vector<vector<int>>& all) {
         if (not root) {
             return;
         }
 
-        current.push_back(root->val);
+        cur.push_back(root->val);
 
         if (root->val == sum and not root->left and not root->right) {
-            all.push_back(current);
+            all.push_back(cur);
         }
 
-        _dfs(root->left, sum - root->val, current, all);
-        _dfs(root->right, sum - root->val, current, all);
+        _dfs(root->left, sum - root->val, cur, all);
+        _dfs(root->right, sum - root->val, cur, all);
     }
 };

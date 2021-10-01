@@ -42,13 +42,13 @@ public:
 private:
     // Returns the sum from root to leaf whenever we see a leaf node.
     int _dfs(TreeNode* root, int sum) {
-        if (!root) {
+        if (not root) {
             return 0;
         }
 
         sum = sum * 10 + root->val;
 
-        if (!root->left && !root->right) {
+        if (not root->left and not root->right) {
             return sum;
         }
 
@@ -60,31 +60,31 @@ private:
 class Solution {
 public:
     int sumNumbers(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return 0;
         }
 
+        int curSum = 0;
         int totalSum = 0;
-        int currentSum = 0;
 
-        _dfs(root, currentSum, totalSum);
+        _dfs(root, curSum, totalSum);
 
         return totalSum;
     }
 
 private:
-    void _dfs(TreeNode* root, int currentSum, int& totalSum) {
-        if (!root) {
+    void _dfs(TreeNode* root, int curSum, int& totalSum) {
+        if (not root) {
             return;
         }
 
-        currentSum = currentSum * 10 + root->val;
+        curSum = curSum * 10 + root->val;
 
-        if (!root->left && !root->right) {
-            totalSum += currentSum;
+        if (not root->left and not root->right) {
+            totalSum += curSum;
         }
 
-        _dfs(root->left, currentSum, totalSum);
-        _dfs(root->right, currentSum, totalSum);
+        _dfs(root->left, curSum, totalSum);
+        _dfs(root->right, curSum, totalSum);
     }
 };
