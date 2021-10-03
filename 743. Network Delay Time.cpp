@@ -51,7 +51,7 @@ public:
             weights[u][v] = w;
         }
 
-        unordered_map<int, int> minDistTo = dijkstra<int>(neighbors, weights, k);
+        unordered_map<int, int> minDistTo = dijkstra<int, int>(neighbors, weights, k);
 
         int maxTime = 0;
         for (int i = 1; i <= n; ++i) {

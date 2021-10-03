@@ -4,15 +4,15 @@
 //
 // ***
 
-template <typename T>
-unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
-                               unordered_map<T, unordered_map<T, int>>& weights, T start) {
+template <typename NodeT, typename DistT>
+unordered_map<NodeT, DistT> dijkstra(unordered_map<NodeT, unordered_set<NodeT>>& neighbors,
+                                     unordered_map<NodeT, unordered_map<NodeT, DistT>>& weights, NodeT start) {
     struct NodeState {
-        T id;
-        int dist;  // distance from start the current node
+        NodeT id;
+        DistT dist;  // distance from start the current node
     };
 
-    unordered_map<T, int> minDistTo;  // min distance from start to each node
+    unordered_map<NodeT, DistT> minDistTo;  // min distance from start to each node
     minDistTo[start] = 0;
 
     // smallest distance has the highest priority
@@ -24,8 +24,8 @@ unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
         NodeState curState = pq.top();
         pq.pop();
 
-        T curID = curState.id;
-        int distToCur = curState.dist;
+        NodeT curID = curState.id;
+        DistT distToCur = curState.dist;
 
         // already obtained a shorter distance to reach curID, continue.
         // Note: this step is an optimization for Djikstra; removing it does not affect correctness.
@@ -33,8 +33,8 @@ unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
             continue;
         }
 
-        for (int neighID : neighbors[curID]) {
-            int distToNeigh = distToCur + weights[curID][neighID];
+        for (NodeT neighID : neighbors[curID]) {
+            DistT distToNeigh = distToCur + weights[curID][neighID];
 
             if (not minDistTo.count(neighID) or distToNeigh < minDistTo[neighID]) {
                 minDistTo[neighID] = distToNeigh;
