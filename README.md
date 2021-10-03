@@ -386,7 +386,8 @@
 | 305 | Number of Islands II | Alpha | union find
 | 323 | Number of Connected Components in an Undirected Graph | Alpha | union find
 | 547 | Number of Provinces | Alpha | union find
-| 399 | Evaluate Division | Alpha+ | DFS (graph traversal)
+| 797 | All Paths From Source to Target | Alpha+ | graph traversal
+| 399 | Evaluate Division | Alpha+ | graph traversal
 | 684 | Redundant Connection | Alpha | union find
 | 721 | Accounts Merge | Alpha | union find
 | 200 | Number of Islands | Alpha+ | BFS, union find
