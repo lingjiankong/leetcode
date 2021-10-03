@@ -38,6 +38,7 @@
 //
 // ***
 
+// Djikstra
 class Solution {
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
@@ -60,6 +61,58 @@ public:
             maxTime = max(maxTime, minDistTo[i]);
         }
         return maxTime;
+    }
+};
+
+// Bellman-Ford
+class Solution {
+public:
+    int networkDelayTime(vector<vector<int>>& times, int n, int k) {
+        vector<int> dp(n + 1, INT_MAX);  // nodes are indexed from 1 to n
+        dp[k] = 0;
+
+        for (int i = 1; i <= n; ++i) {
+            for (vector<int>& e : times) {
+                int u = e[0], v = e[1], w = e[2];
+                if (dp[u] != INT_MAX and dp[v] > dp[u] + w) {
+                    dp[v] = dp[u] + w;
+                }
+            }
+        }
+
+        int maxTime = 0;
+        for (int i = 1; i <= n; ++i) {
+            maxTime = max(maxTime, dp[i]);
+        }
+
+        return maxTime == INT_MAX ? -1 : maxTime;
+    }
+};
+
+// Bellman-Ford, 2D generic
+// See also 787. Cheapest Flights Within K Stops.
+class Solution {
+public:
+    int networkDelayTime(vector<vector<int>>& times, int n, int k) {
+        // 1st dim: max number of steps it could possibly take to traverse the entire graph: n (number of nodes)
+        // 2nd dim: all nodes (indexed from 1 to n)
+        vector<vector<int>> dp(n, vector<int>(n + 1, 1e9)); 
+        dp[0][k] = 0;
+
+        for (int i = 1; i < n; ++i) {
+            dp[i][k] = 0;
+            for (vector<int>& e : times) {
+                int u = e[0], v = e[1], w = e[2];
+                dp[i][v] = min(dp[i][v], dp[i - 1][u] + w);
+            }
+        }
+
+        int maxTime = 0;
+        for (int i = 1; i <= n; ++i) {
+            maxTime = max(maxTime, dp[n - 1][i]);
+        }
+
+        return maxTime == 1e9 ? -1 : maxTime;
     }
 };
 

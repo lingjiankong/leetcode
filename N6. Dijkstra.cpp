@@ -28,6 +28,7 @@ unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
         int distToCur = curState.dist;
 
         // already obtained a shorter distance to reach curID, continue.
+        // Note: this step is an optimization for Djikstra; removing it does not affect correctness.
         if (minDistTo.count(curID) and distToCur > minDistTo[curID]) {
             continue;
         }
