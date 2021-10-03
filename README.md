@@ -367,7 +367,7 @@
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
 | 127 | Word Ladder | Alpha
 | 126 | Word Ladder II | Bravo
-| 752 | Open the Lock | Alpha 
+| 752 | Open the Lock | Alpha
 | 433 | Minimum Genetic Mutation | Alpha
 | 815 | Bus Routes | Alpha
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
@@ -408,10 +408,11 @@
 | 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
 | 997 | Find the Town Judge | Alpha+
 | N6 | Dijkstra | Alpha+ | Dijkstra
-| 743 | Network Delay Time | Alpha+ | Dijkstra, Bellman-Ford
-| 787 | Cheapest Flights Within K Stops | Alpha+ | Dijkstra, Bellman-Ford
+| 743 | Network Delay Time | Alpha+ | Dijkstra
+| 787 | Cheapest Flights Within K Stops | Alpha+ | Dijkstra
 | 1631 | Path With Minimum Effort | Alpha+ | Dijkstra
-| 1514 | Alpha | Dijkstra | Alpha
+| 1514 | Path with Maximum Probability | Alpha | Dijkstra
+| 1334 | Find the City With the Smallest Number of Neighbors at a Threshold Distance | Alpha | Dijkstra
 
 ## Design
 | ID | Name | Rating | Note

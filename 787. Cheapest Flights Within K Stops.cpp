@@ -45,9 +45,9 @@ public:
         unordered_map<int, unordered_set<int>> neighbors;
         unordered_map<int, unordered_map<int, int>> weights;
         for (vector<int>& e : flights) {
-            int from = e[0], to = e[1], price = e[2];
-            neighbors[from].insert(to);
-            weights[from][to] = price;
+            int u = e[0], v = e[1], price = e[2];
+            neighbors[u].insert(v);
+            weights[u][v] = price;
         }
 
         unordered_map<int, int> costTo = bfs(neighbors, weights, src, k);
