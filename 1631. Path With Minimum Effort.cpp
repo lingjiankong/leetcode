@@ -42,7 +42,7 @@
 //
 // ***
 
-// Slight modification based on N6. Djikstra. See comments.
+// Slight modification based on N6. Dijkstra. See comments.
 template <typename T>
 unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
                                unordered_map<T, unordered_map<T, int>>& weights, T start) {
@@ -70,7 +70,7 @@ unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
         }
 
         for (T neighID : neighbors[curID]) {
-            // Here is the only difference to vanilla Djikstra:
+            // Here is the only difference to vanilla Dijkstra:
             // Notice we are taking the max of efforts instead of accumulating them.
             int effortToNeigh = max(effortToCur, weights[curID][neighID]);
 
@@ -98,7 +98,7 @@ public:
     }
 
 private:
-    // Construct a graph to use Djikstra.
+    // Construct a graph to use Dijkstra.
     void _construct(vector<vector<int>>& heights, unordered_map<string, unordered_set<string>>& neighbors,
                     unordered_map<string, unordered_map<string, int>>& weights) {
         int m = heights.size(), n = heights[0].size();

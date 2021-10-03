@@ -37,8 +37,8 @@
 //
 // ***
 
-// A version in between vanilla BFS (to ensure number of steps) and Djikstra (to track min cost).
-// See also N6. Djikstra.
+// A version in between vanilla BFS (to ensure number of steps) and Dijkstra (to track min cost).
+// See also N6. Dijkstra.
 class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
@@ -87,7 +87,7 @@ private:
                 int curID = curState.id;
                 int costToCur = curState.cost;
 
-                // cannot check if (costToCur > minCostTo[curID]) like in Djikstra,
+                // cannot check if (costToCur > minCostTo[curID]) like in Dijkstra,
                 // because we might be interested in larger cost with fewer steps.
 
                 for (int neighID : neighbors[curID]) {

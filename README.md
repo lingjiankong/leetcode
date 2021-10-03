@@ -407,7 +407,7 @@
 | 886 | Possible Bipartition.cpp | bipartition, coloring
 | 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
 | 997 | Find the Town Judge | Alpha+
-| N6 | Djikstra | Alpha+ | Dijkstra
+| N6 | Dijkstra | Alpha+ | Dijkstra
 | 743 | Network Delay Time | Alpha+ | Dijkstra, Bellman-Ford
 | 787 | Cheapest Flights Within K Stops | Alpha+ | Dijkstra, Bellman-Ford
 | 1631 | Path With Minimum Effort | Alpha+ | Dijkstra

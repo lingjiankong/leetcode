@@ -28,7 +28,7 @@ unordered_map<NodeT, DistT> dijkstra(unordered_map<NodeT, unordered_set<NodeT>>&
         DistT distToCur = curState.dist;
 
         // already obtained a shorter distance to reach curID, continue.
-        // Note: this step is an optimization for Djikstra; removing it does not affect correctness.
+        // Note: this step is an optimization for Dijkstra; removing it does not affect correctness.
         if (minDistTo.count(curID) and distToCur > minDistTo[curID]) {
             continue;
         }
