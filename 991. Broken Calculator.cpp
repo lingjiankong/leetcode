@@ -1,6 +1,6 @@
 // ***
 //
-// There is a broken calculator that has the integer startValue on its display initially. In on operation you can:
+// There is a broken calculator that has the integer startValue on its display initially. In one operation you can:
 //
 // multiply the number on the display by 2, or
 // subtract 1 from the number on the display.

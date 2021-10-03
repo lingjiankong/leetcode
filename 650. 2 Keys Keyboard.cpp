@@ -42,12 +42,15 @@ public:
         dp[1] = 0;
 
         for (int i = 2; i <= n; ++i) {
-            dp[i] = i;  // in the worst case, you need i steps to get i 'A's (keep pasting 'A')
+            // in the worst case, you need i steps to get i 'A's (keep pasting 'A')
+            dp[i] = i;
+
+            // ( <= works as well, but you have already initialized dp[i] = i, so <= not needed)
             for (int factor = 2; factor < i; ++factor) {
                 if (i % factor == 0) {
                     // copy dp[i / factor] (1 ops) and paste factor - 1 number of times (factor - 1 ops)
                     // (total of factor number of ops)
-                    dp[i] = min(dp[i], dp[i / factor] + factor); 
+                    dp[i] = min(dp[i], dp[i / factor] + factor);
                 }
             }
         }
@@ -64,7 +67,7 @@ public:
         }
 
         int res = n;
-        for (int factor = 2; factor <= n; ++factor) {
+        for (int factor = 2; factor < n; ++factor) {
             if (n % factor == 0) {
                 res = min(res, minSteps(n / factor) + factor);
             }

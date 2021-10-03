@@ -39,7 +39,7 @@
 class Solution {
 public:
     int minKBitFlips(vector<int>& A, int K) {
-        int res = 0, n = A.size();
+        int numFlips = 0, n = A.size();
 
         // Whether the net effect of all previous flips you've done so far have flipped A[i] (the current value you are
         // looking at when you are in the loop). This is used to update isFlipped[i].
@@ -49,14 +49,13 @@ public:
         vector<int> isFlipped(n);
 
         for (int i = 0; i < n; ++i) {
-            // Each flip will only affect a window of K subsequent elements, so once your window moves right,
-            // you should undo the effect before you enter the window.
+            // Each flip will only affect a window of K subsequent elements, so once your window moves right, you
+            // should undo the effect before you entered the window.
             if (i >= K) {
                 isCurFlipped ^= isFlipped[i - K];
             }
 
-            // While traversing A,
-            // See if we need to flip everything in [i, i + K]
+            // While traversing A, see if we need to flip everything in [i, i + K]
             //
             // If isCurFlipped == 0 and A[i] == 0, you need to flip A[i] from 0 to 1.
             // If isCurFlipped == 1 and A[i] == 1, meaning although A[i] was originally 1, it has been flipped to 0, in
@@ -68,11 +67,11 @@ public:
                 }
                 isFlipped[i] = 1;
                 isCurFlipped ^= 1;
-                ++res;
+                ++numFlips;
             }
         }
 
-        return res;
+        return numFlips;
     }
 };
 
@@ -80,7 +79,7 @@ public:
 class Solution {
 public:
     int minKBitFlips(vector<int>& A, int K) {
-        int res = 0, n = A.size();
+        int numFlips = 0, n = A.size();
         queue<int> q;
 
         for (int i = 0; i < n; ++i) {
@@ -99,11 +98,11 @@ public:
                     return -1;
                 }
                 q.push(i);
-                ++res;
+                ++numFlips;
             }
         }
 
-        return res;
+        return numFlips;
     }
 };
 

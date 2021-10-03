@@ -64,7 +64,7 @@ public:
                 char c = s[left++];
                 --window[c - 'A'];
 
-                if (maxFreqChar == c) {
+                if (c == maxFreqChar) {
                     --maxFreqCount;
                 }
             }

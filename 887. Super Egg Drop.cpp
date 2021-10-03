@@ -119,7 +119,7 @@ public:
             }
         }
 
-        // `right` is the first i such that superEggDrop(k - 1, i - 1) >= superEggDrop(k, n - i)
+        // "right" is the first i such that superEggDrop(k - 1, i - 1) >= superEggDrop(k, n - i)
         int minDrop = max(superEggDrop(k, n - right), superEggDrop(k - 1, right - 1)) + 1;
 
         return _memo[k][n] = minDrop;

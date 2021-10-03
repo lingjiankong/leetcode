@@ -63,7 +63,7 @@ public:
         for (int i = n - 3; i >= 0; --i) {
             for (int j = i + 2; j < n; ++j) {
                 for (int k = i + 1; k < j; ++k) {
-                    // k is the last ballon to be burst in (i, j)
+                    // k is the *last* ballon to be burst in (i, j)
                     dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j] + points[i] * points[k] * points[j]);
                 }
             }

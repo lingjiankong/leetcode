@@ -35,6 +35,7 @@
 
 // See labuladong book pp. 166.
 // dp[i]: Max numbers of 'A's on screen after i times of operations.
+// base condition: dp[0] = 0 'A's on screen with 0 number of operations.
 class Solution {
 public:
     int maxA(int N) {
@@ -42,7 +43,7 @@ public:
         for (int i = 1; i <= N; ++i) {
             // Choice 1: Print another 'A'
             dp[i] = dp[i - 1] + 1;
-            for (int j = 2; j < i; ++j) {
+            for (int j = 2; j <= i; ++j) {
                 // Choice 2: Ctrl-V whatever in the clipboard.
                 // If we Ctrl-A and Ctrl-C dp[j - 2], and then Ctrl-V (i - j) times,
                 // then there are total of dp[j - 2] * (i - j + 1) 'A's currently on the screen.

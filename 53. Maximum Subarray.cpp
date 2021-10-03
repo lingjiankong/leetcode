@@ -11,7 +11,7 @@
 // ***
 
 // The maximum sum of subarray that *ends at nums[i]* is the maximum of:
-// 1. The maximum sum of subarray that ends at nums[i-1] plus nums[i], and
+// 1. The maximum sum of subarray that ends at nums[i-1] plus nums[i], OR
 // 2. The value of nums[i] itself.
 // O(n) space
 int maxSubArray(vector<int>& nums) {

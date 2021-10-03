@@ -141,9 +141,9 @@
 | 159 | Longest Substring with At Most Two Distinct Characters | Alpha
 | 340 | Longest Substring with At Most K Distinct Characters | Alpha
 | 424 | Longest Repeating Character Replacement | Alpha
-| 395 | Longest Substring with At Least K Repeating Characters | Alpha
-| 727 | Minimum Window Subsequence | Bravo | sliding window
-| 992 | Subarrays with K Different Integers | Alpha
+| 395 | Longest Substring with At Least K Repeating Characters | Alpha | dynamic programming
+| 727 | Minimum Window Subsequence | Bravo |
+| 992 | Subarrays with K Different Integers | Alpha+
 | 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
 | 1004 | Max Consecutive Ones III | Alpha
 | 487 | Max Consecutive Ones II | Alpha
@@ -228,20 +228,6 @@
 | 131 | Palindrome Partitioning | Charlie
 | 267 | Palindrome Permutation II | Alpha
 
-## BFS
-| ID | Name | Rating | Note
-|:---:|:---:|:---:|:---:|
-| N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
-| N2 | Shortest Path Between Two Points in a Matrix | Alpha
-| N3 | Unique Paths from Top Left to Bottom Right | Alpha
-| 127 | Word Ladder | Alpha
-| 126 | Word Ladder II | Bravo
-| 752 | Open the Lock | Alpha 
-| 433 | Minimum Genetic Mutation | Alpha
-| 815 | Bus ROutes | Alpha
-| 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
-| 773 | Sliding Puzzle | Alpha
-
 ## Dynamic Programming
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -284,8 +270,8 @@
 | 72 | Edit Distance | Alpha
 | 516 | Longest Palindromic Subsequence | Alpha+
 | 5 | Longest Palindromic Substring | Alpha+
-| 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha
-| 10 | Reguar Expression Matching | Bravo
+| 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha+
+| 10 | Reguar Expression Matching | Alpha
 | 651 | 4 Keys Keyboard | Alpha
 | 650 | 2 Keys Keyboard | Alpha
 | 887 | Super Egg Drop | Bravo | dynamic programming, binary search
@@ -376,6 +362,18 @@
 ## Graph
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
+| N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
+| N2 | Shortest Path Between Two Points in a Matrix | Alpha
+| N3 | Unique Paths from Top Left to Bottom Right | Alpha
+| 127 | Word Ladder | Alpha
+| 126 | Word Ladder II | Bravo
+| 752 | Open the Lock | Alpha 
+| 433 | Minimum Genetic Mutation | Alpha
+| 815 | Bus Routes | Alpha
+| 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
+| 773 | Sliding Puzzle | Alpha
+| 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
+| 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS
 | 207 | Course Schedule | Alpha+ | topological sort
 | 210 | Course Schedule II | Alpha+ | topological sort
 | 133 | Clone Graph | Alpha | clone
@@ -403,6 +401,7 @@
 | 839 | Similar String Groups | Alpha | union find
 | 952 | Largest Component Size by Common Factor | Alpha | union find
 | 737 | Sentence Similarity II | Alpha | union find
+| 1319 | Number of Operations to Make Network Connected | Alpha | union find
 | 785 | Is Graph Bipartite | Alpha | bipartition, coloring
 | 886 | Possible Bipartition.cpp | bipartition, coloring
 | 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
@@ -566,7 +565,7 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
-| 991 | Broken Calculator | Bravo | math
+| 991 | Broken Calculator | Charlie | math
 | 556 | Next Greater Element III | Bravo, Mechanical
 | 969 | Pancake Sorting | Bravo | recursion
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo

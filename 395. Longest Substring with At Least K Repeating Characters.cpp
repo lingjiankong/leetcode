@@ -42,7 +42,7 @@ public:
                     }
                 }
 
-                if (window.size() == numUnique and _allCharFreqGreaterThanK(window, k)) {
+                if (window.size() == numUnique and _allCharFreqGrEqK(window, k)) {
                     curMaxLen = max(curMaxLen, right - left);
                 }
             }
@@ -54,7 +54,7 @@ public:
     }
 
 private:
-    bool _allCharFreqGreaterThanK(const unordered_map<char, int>& window, int k) {
+    bool _allCharFreqGrEqK(const unordered_map<char, int>& window, int k) {
         if (window.empty()) {
             return false;
         }
