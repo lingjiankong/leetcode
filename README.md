@@ -275,7 +275,7 @@
 | 651 | 4 Keys Keyboard | Alpha
 | 650 | 2 Keys Keyboard | Alpha
 | 887 | Super Egg Drop | Bravo | dynamic programming, binary search
-| N4 | 1-0 Knapsack | Alpha | knapsack
+| N4 | 1-0 Knapsack | Alpha+ | knapsack
 | 416 | Partition Equal Subset Sum | Alpha | knapsack
 | 518 | Coin Change 2 | Alpha | knapsack
 | 494 | Target Sum | Alpha | backtracking, dynamic programming, knapsack
@@ -374,6 +374,8 @@
 | 773 | Sliding Puzzle | Alpha
 | 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
 | 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS
+| 847 | Shortest Path Visiting All Nodes | Alpha | multidimensional BFS
+| 864 | Shortest Path to Get All Keys | Alpha | multidimensional BFS
 | 207 | Course Schedule | Alpha+ | topological sort
 | 210 | Course Schedule II | Alpha+ | topological sort
 | 133 | Clone Graph | Alpha | clone
