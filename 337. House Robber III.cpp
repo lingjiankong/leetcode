@@ -78,7 +78,7 @@ private:
         // If you rob current root, you cannot rob the left and right child.
         int robCur = root->money + leftChild[1] + rightChild[1];
 
-        // If you do not rob current root, you can either rob or don't rob your left and right child.
+        // If you do not rob current root, you can either rob, or not rob your left and right child.
         int notRobCur = max(leftChild[0], leftChild[1]) + max(rightChild[0], rightChild[1]);
 
         return {robCur, notRobCur};

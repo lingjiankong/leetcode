@@ -46,107 +46,42 @@ public:
     }
 
 private:
-    void backtrack(int i, const vector<int>& nums, int curTotal, int& target, int& total) {
-        if (i == nums.size() and curTotal == target) {
-                total += 1;
-            }
+    void backtrack(int start, const vector<int>& nums, int curTotal, int& target, int& total) {
+        if (start == nums.size() and curTotal == target) {
+            total += 1;
             return;
         }
 
-        curTotal += nums[i];
-        backtrack(i + 1, nums, curTotal, target, total);
-        curTotal -= nums[i];
-
-        curTotal -= nums[i];
-        backtrack(i + 1, nums, curTotal, target, total);
-        curTotal += nums[i];
+        backtrack(start + 1, nums, curTotal + nums[i], target, total);
+        backtrack(start + 1, nums, curTotal - nums[i], target, total);
     }
 };
 
-// Dynamic programming 1-1:
+// Recursion with memoization
 class Solution {
 public:
-    int findTargetSumWays(vector<int>& nums, int target) { return dp(0, 0, nums, target); }
-
-private:
-    int dp(int i, int curTotal, const vector<int>& nums, int target) {
-        if (i == nums.size()) {
-            if (curTotal == target) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        string key = to_string(i) + "," + to_string(curTotal);
-        if (memo.count(key)) {
-            return memo[key];
-        }
-
-        return memo[key] = dp(i + 1, curTotal - nums[i], nums, target) + dp(i + 1, curTotal + nums[i], nums, target);
+    int findTargetSumWays(vector<int>& nums, int target) {
+        unordered_map<int, unordered_map<int, int>> memo;
+        return dfs(nums, target, 0, memo);
     }
 
-    unordered_map<string, int> memo;
-};
-
-// Dynamic programming 1-2:
-// Same idea as DP 1, different direction.
-// You are going from target to 0 instead going from 0 to target,
-class Solution {
-public:
-    int findTargetSumWays(vector<int>& nums, int target) { return dp(0, target, nums); }
-
 private:
-    int dp(int i, int target, const vector<int>& nums) {
-        if (i == nums.size()) {
-            if (target == 0) {
-                return 1;
-            } else {
-                return 0;
-            }
+    int dfs(vector<int>& nums, int sum, int start, unordered_map<int, unordered_map<int, int>>& memo) {
+        if (start == nums.size()) {
+            return sum == 0;
         }
 
-        string key = to_string(i) + "," + to_string(target);
-        if (memo.count(key)) {
-            return memo[key];
+        if (memo[start].count(sum)) {
+            return memo[start][sum];
         }
 
-        return memo[key] = dp(i + 1, target - nums[i], nums) + dp(i + 1, target + nums[i], nums);
+        int count1 = dfs(nums, sum - nums[start], start + 1, memo);
+        int count2 = dfs(nums, sum + nums[start], start + 1, memo);
+        return memo[start][sum] = count1 + count2;
     }
-
-    unordered_map<string, int> memo;
 };
 
-// Dynamic programming 1-3:
-// Same idea as DP1 again, different direction.
-// You are going from target to 0 instead going from 0 to target,
-class Solution {
-public:
-    int findTargetSumWays(vector<int>& nums, int target) { return dp(nums.size() - 1, target, nums); }
-
-private:
-    int dp(int i, int target, const vector<int>& nums) {
-        if (i == -1) {  // note it is -1 here instead of 0!
-            if (target == 0) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        string key = to_string(i) + "," + to_string(target);
-        if (memo.count(key)) {
-            return memo[key];
-        }
-
-        return memo[key] = dp(i - 1, target - nums[i], nums) + dp(i - 1, target + nums[i], nums);
-    }
-
-    unordered_map<string, int> memo;
-};
-
-
-// Dynamic programming 2:
+// Dynamic programming:
 // Partition nums into two subset: A subset are numbers assigned '+'; B subset are numbers assigned '-'.
 //
 // Therefore we have:

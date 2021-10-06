@@ -40,7 +40,7 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
     TreeNode* right = lowestCommonAncestor(root->right, p, q);
 
     // Can also be placed above recursion.
-    if (root == p || root == q) {
+    if (root == p or root == q) {
         return root;
     }
 

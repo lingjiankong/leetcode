@@ -47,7 +47,7 @@ private:
             dp[i] = max(nums[i + start] + dp[i - 2], dp[i - 1]);
         }
 
-        return dp[dp.size() - 1];
+        return dp.back();
     }
 };
 

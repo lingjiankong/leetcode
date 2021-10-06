@@ -41,13 +41,14 @@
 //
 // ***
 
-// dp[i][j]: Using only a subset of first i coins, how many ways to make up exactly j amount.
-// In knapsack language: Using only a subset of first i items, how many ways to make up exactly j weights
+// dp[i][w]: How many ways to make up exactly w amount using only a subset of first i coins.
+// In knapsack language: How many ways to make up exactly w weights using only a subset of first i items.
+//
 // Note: In this problem, you can use unlimited amount of items (coins)
 //
 // Base case:
 // dp[0][0] = 1
-// dp[0][j] = 0 since there is no coin to use.
+// dp[0][w] = 0 since there is no coin to use.
 // dp[i][0] = 1 since the only way to make up 0 amount is not using any coin
 
 class Solution {
@@ -61,22 +62,22 @@ public:
         }
 
         for (int i = 1; i <= n; ++i) {
-            for (int j = 1; j <= amount; ++j) {
-                if (coins[i - 1] > j) {
-                    // Coin i is larger than amount j. Cannot use the coin.
-                    dp[i][j] = dp[i - 1][j];
+            for (int w = 1; w <= amount; ++w) {
+                if (coins[i - 1] > w) {
+                    // Coin i is larger than amount w. Cannot use the coin.
+                    dp[i][w] = dp[i - 1][w];
                 } else {
                     // NOTICE the state transition function here is slightly different than regular knapsack problem
                     // (e.g. 416. Partition Equal Subset Sum)
                     //
                     // 1. Using the ith coin, since we can use unlimited same coin, we need to know how
-                    // many ways to make up amount j - coins[i-1] by using first i coins (including ith), which is
-                    // dp[i][j - coins[i-1]]
+                    // many ways to make up amount w - coins[i-1] by using first i coins (including ith), which is
+                    // dp[i][w - coins[i-1]]
                     //
-                    // 2. Not using the ith coin, only using the first i-1 coins to make up amount j, then we have
-                    // dp[i-1][j] ways.
+                    // 2. Not using the ith coin, only using the first i-1 coins to make up amount w, then we have
+                    // dp[i-1][w] ways.
                     //
-                    dp[i][j] = dp[i][j - coins[i - 1]] + dp[i - 1][j];
+                    dp[i][w] = dp[i][w - coins[i - 1]] + dp[i - 1][w];
                 }
             }
         }

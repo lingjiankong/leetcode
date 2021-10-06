@@ -50,8 +50,8 @@
 | 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
 | 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
 | 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
-| 297 | Serialize and Deserialize Binary Tree | Alpha | preorder
-| 428 | Serialize and Deserialize N-ary Tree | Alpha | preorder
+| 297 | Serialize and Deserialize Binary Tree | Alpha+ | preorder
+| 428 | Serialize and Deserialize N-ary Tree | Alpha+ | preorder
 | 449 | Serialize and Deserialize Binary Search Tree | Alpha
 | 236 | Lowest Common Ancestor of a Binary Tree | Bravo | postorder
 | 1644 | Lowest Common Ancestor of a Binary Tree II | Alpha | postorder
@@ -67,9 +67,9 @@
 | 814 | Binary Tree Pruning | Alpha+ | postorder
 | 669 | Trim a Binary Search Tree | Alpha | BST, postorder
 | 1325 | Delete Leaves With a Given Value | Alpha | postorder
-| 508 | Most Frequent Subtree Sum | Alpha | postorder
+| 508 | Most Frequent Subtree Sum | Alpha+ | postorder
 | 968 | Binary Tree Cameras | Alpha | postorder
-| 337 | House Robber III | Alpha | Postorder
+| 337 | House Robber III | Alpha+ | Postorder
 | 979 | Distribute Coins in Binary Tree | Bravo | postorder
 
 ## Binary Search Tree
@@ -244,9 +244,9 @@
 | 322 | Coin Change | Alpha+
 | 256 | Paint House | Alpha
 | 265 | Paint House II | Alpha
-| 198 | House Robber | Alpha
+| 198 | House Robber | Alpha+
 | 213 | House Robber II | Alpha
-| 337 | House Robber III | Alpha | Postorder
+| 337 | House Robber III | Alpha+ | Postorder
 | 740 | Delete and Earn | Alpha
 | 62 | Unique Paths | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
@@ -275,11 +275,11 @@
 | 651 | 4 Keys Keyboard | Alpha
 | 650 | 2 Keys Keyboard | Alpha
 | 887 | Super Egg Drop | Bravo | dynamic programming, binary search
-| N4 | 1-0 Knapsack | Alpha+ | knapsack
+| N4 | 1-0 Knapsack | Alpha | knapsack
 | 416 | Partition Equal Subset Sum | Alpha | knapsack
 | 518 | Coin Change 2 | Alpha | knapsack
-| 494 | Target Sum | Alpha | backtracking, dynamic programming, knapsack
-| 1048 | Longest String Chain | Alpha
+| 494 | Target Sum | Alpha+ | backtracking, dynamic programming, knapsack
+| 1048 | Longest String Chain | Alpha+
 | 1027 | Longest Arithmetic Subsequence | Alpha
 
 ## Two Sum Series

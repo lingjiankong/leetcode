@@ -20,8 +20,7 @@
 //
 // ***
 
-// By using postorder, you avoid calculating tree sum by treating every node as root,
-// Reducing time complexity from O(nlogn) to O(n)
+// By using postorder, you can calculate the sum of every subtree.
 class Solution {
 public:
     vector<int> findFrequentTreeSum(TreeNode* root) {

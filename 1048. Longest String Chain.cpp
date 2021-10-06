@@ -42,10 +42,11 @@
 //
 // ***
 
-// dp[i]: longest possible word chain with words chosen from words[0:i]
+// First, sort words based on word length.
+// dp[i]: longest word chain that ends with dp[i].
 //
 // Base condition:
-// dp[0] = 1: Every element in dp is at least 1 because a word by itself is a longest word chain of size 1.
+// dp[i] = 1: Every element in dp is at least 1 because a word by itself is a longest word chain of size 1.
 class Solution {
 public:
     int longestStrChain(vector<string>& words) {
@@ -65,7 +66,7 @@ public:
                     break;
                 }
 
-                // words[i].size() + 1 = words[j].size()
+                // words[j].size() + 1 = words[i].size()
                 if (isPredecessor(words[j], words[i])) {
                     dp[i] = max(dp[i], dp[j] + 1);
                     maxLen = max(maxLen, dp[i]);
@@ -92,7 +93,7 @@ private:
 };
 
 // Another DP method. Tree traversal.
-// dfs[word]: longest possible word chain that ends in "word".
+// dfs(word): longest possible word chain that ends in "word".
 class Solution {
 public:
     int longestStrChain(vector<string>& words) {

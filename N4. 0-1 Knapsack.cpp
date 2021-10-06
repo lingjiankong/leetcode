@@ -8,7 +8,7 @@
 // ***
 //
 // See labuladong book pp. 191.
-// dp[i][w] max values you can get if you select from the first i items and their weights are no larger than w.
+// dp[i][w] max values you can get if you select a subset from the first i items and their weights are no larger than w.
 //
 // base case:
 // dp[i][0] = 0 since your weight capacity is 0.
