@@ -48,11 +48,11 @@ class Solution {
 public:
     int distributeCoins(TreeNode* root) {
         balance(root);
-        return moves;
+        return _moves;
     }
 
 private:
-    int moves = 0;
+    int _moves = 0;
 
     int balance(TreeNode* root) {
         if (not root) {
@@ -66,7 +66,7 @@ private:
         int r = balance(root->right);
 
         // Add to total coin flows
-        moves += abs(l) + abs(r);
+        _moves += abs(l) + abs(r);
 
         // Return total coin flows through (to/from) tree at root
         // -1 here because if root->val = 1, it is perfect, no flow is needed.

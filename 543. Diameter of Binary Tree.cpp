@@ -20,6 +20,8 @@
 // This is exactly the same as 104. Maximum Depth of Binary Tree,
 // with an added _diameter to track the diameter (leftMaxDepth + rightMaxDepth) of the tree.
 //
+// Very similar to 124. Binary Tree Maximum Path Sum
+//
 // Learning: generally in tree problems, if what you want to return in your recursion (max depth) needed for your
 // calculation is not what the provided function returns (diameter), then you just should have another recursive
 // function that returns the value you need (max depth), but tracks what the question asks for (diameter) internally.

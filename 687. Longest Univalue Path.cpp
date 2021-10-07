@@ -41,7 +41,7 @@
 class Solution {
 public:
     int longestUnivaluePath(TreeNode* root) {
-        _maxUnivalueDepth(root);
+        _dfs(root);
 
         return _longestPath;
     }
@@ -49,13 +49,14 @@ public:
 private:
     int _longestPath = 0;
 
-    int _maxUnivalueDepth(TreeNode* root) {
+    // return one side max univalue depth.
+    int _dfs(TreeNode* root) {
         if (not root) {
             return 0;
         }
 
-        int leftMaxUnivalDepth = _maxUnivalueDepth(root->left);
-        int rightMaxUnivalDepth = _maxUnivalueDepth(root->right);
+        int leftMaxUnivalDepth = _dfs(root->left);
+        int rightMaxUnivalDepth = _dfs(root->right);
 
         // Reset maxUnival of a subtree if its values != the value of our current root.
         if (root->left and root->val != root->left->val) {

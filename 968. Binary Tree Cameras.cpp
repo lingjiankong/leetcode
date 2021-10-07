@@ -44,6 +44,13 @@ private:
     int _minCams = 0;
 
     State _postorder(TreeNode* root) {
+        // Postorder traverse the tree bottom up.
+        // You want to place cameras on the parent node of a leaf node.
+        //                  CAMERA
+        //               /          \
+        //           NONE            NONE   <- leaf nodes
+        //          /    \          /    \
+        //      COVERED COVERED COVERED COVERED  <- nullptrs
         if (not root) {
             return COVERED;
         }

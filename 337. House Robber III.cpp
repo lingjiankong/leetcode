@@ -25,6 +25,8 @@
 
 class Solution {
 public:
+    // Max amount of money you can get from a tree rooted at root
+    // (you can either rob root, or not rob root)
     int rob(TreeNode* root) {
         if (not root) {
             return 0;
@@ -53,6 +55,7 @@ public:
 
 private:
     // Cache max amount of money each node can have.
+    // a cache is needed because we might be visiting the same node multiple times (rob is called six times above)
     unordered_map<TreeNode*, int> _hash;
 };
 
@@ -72,14 +75,14 @@ private:
             return {0, 0};
         }
 
-        array<int, 2> leftChild = _dfs(root->left);
-        array<int, 2> rightChild = _dfs(root->right);
+        array<int, 2> l = _dfs(root->left);
+        array<int, 2> r = _dfs(root->right);
 
         // If you rob current root, you cannot rob the left and right child.
-        int robCur = root->money + leftChild[1] + rightChild[1];
+        int robCur = root->money + l[1] + r[1];
 
         // If you do not rob current root, you can either rob, or not rob your left and right child.
-        int notRobCur = max(leftChild[0], leftChild[1]) + max(rightChild[0], rightChild[1]);
+        int notRobCur = max(l[0], l[1]) + max(r[0], r[1]);
 
         return {robCur, notRobCur};
     }

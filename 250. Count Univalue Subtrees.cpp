@@ -49,6 +49,9 @@ private:
                 return false;
             }
 
+            // Note: even if both node->left and node->right are nullptrs, we still have a valid univalue tree;
+            // if one of node->left or node->right is nullptr, then as long as the other tree's value is the same as
+            // root's value, we still have a valid univalue tree.
             ++_totalUnivalueTrees;
             return true;
         }
