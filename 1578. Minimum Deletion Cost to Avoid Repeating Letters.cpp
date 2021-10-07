@@ -38,44 +38,24 @@
 
 // Maintain the running sum and max cost for repeated letters.
 // For a group of continuous same characters, we need to delete all the group but leave only one character.
-// For each group of continuous same characters, we need cost = sum_cost(group) - max_cost(group)
+// For each group of continuous same characters, we need cost = sumCost(group) - maxCost(group)
 class Solution {
 public:
     int minCost(string s, vector<int>& cost) {
-        int res = 0, max_cost = 0, sum_cost = 0;
+        int res = 0, maxCost = 0, sumCost = 0;
 
         for (int i = 0; i < s.size(); ++i) {
 
             // When we see non-repeating letter, wrap up and reset.
             if (i > 0 && s[i] != s[i - 1]) {
-                res += sum_cost - max_cost;
-                sum_cost = max_cost = 0;
+                res += sumCost - maxCost;
+                sumCost = maxCost = 0;
             }
-            sum_cost += cost[i];
-            max_cost = max(max_cost, cost[i]);
-        }
-
-        res += sum_cost - max_cost;
-
-        return res;
-    }
-};
-
-// Same idea. Hold the character with the biggest cost in hand.
-class Solution {
-public:
-    int minCost(string s, vector<int>& cost) {
-        int res = 0;
-
-        int maxCost = 0;
-        for (int i = 0; i < s.size(); ++i) {
-            if (i > 0 and s[i - 1] != s[i]) {
-                maxCost = 0;
-            }
-
-            res += min(maxCost, cost[i]);
+            sumCost += cost[i];
             maxCost = max(maxCost, cost[i]);
         }
+
+        res += sumCost - maxCost;
 
         return res;
     }

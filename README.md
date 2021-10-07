@@ -280,7 +280,7 @@
 | 518 | Coin Change 2 | Alpha | knapsack
 | 494 | Target Sum | Alpha+ | backtracking, dynamic programming, knapsack
 | 1048 | Longest String Chain | Alpha+
-| 1027 | Longest Arithmetic Subsequence | Alpha
+| 1027 | Longest Arithmetic Subsequence | Alpha+
 
 ## Two Sum Series
 | ID | Name | Rating | Note
