@@ -75,7 +75,7 @@ private:
 // Basic idea of the algorithm is if we cancel out each occurrence of an element e with
 // all the other elements that are different from e, then e will exist until the end if it is the majority element.
 // Code below loops through each element and maintains a count of the element that has the potential of
-// being the majority element. If next element is same then increments the count, otherwise decrements the count.
+// being the majority element. If next element is same then increment the count, otherwise decrement the count.
 // If the count reaches 0 then update the potential index to the current element and sets count to 1.
 int majorityElement(vector<int>& nums) {
     int candidateIdx = 0;  // candidate index for the majority element
@@ -94,7 +94,7 @@ int majorityElement(vector<int>& nums) {
 }
 
 // Moore voting algorithm - b.
-// This is a more generic form, see 229. Majority Element II.
+// This is a more generic form, Read 229. Majority Element II first.
 //
 // The idea is to repeatedly get rid of pairs of different element,
 // after which the element left must be the majority element.

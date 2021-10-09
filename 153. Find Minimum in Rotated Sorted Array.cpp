@@ -55,16 +55,8 @@ public:
 
 private:
     int findMin(vector<int>& nums, int l, int r) {
-        if (l == r) {
-            return nums[l];
-        }
-
-        if (l + 1 == r) {
-            return min(nums[l], nums[r]);
-        }
-
         // if the array is sorted, return the leftmost element.
-        if (nums[l] < nums[r]) {
+        if (nums[l] <= nums[r]) {
             return nums[l];
         }
 

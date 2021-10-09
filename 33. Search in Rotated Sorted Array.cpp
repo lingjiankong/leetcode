@@ -47,16 +47,25 @@ int search(vector<int>& nums, int target) {
 
         if (nums[mid] == target) {
             return mid;
-        } else if (nums[mid] < nums[right]) {                   // Right half is sorted.
-            if (nums[mid] < target && target <= nums[right]) {  // Target is in this sorted right half of the array.
+        }
+
+        if (nums[mid] == nums[right]) {  // if this is the case, mid == right (since there's no duplciate in the array)
+            --right;
+        }
+        // Right half is sorted.
+        else if (nums[mid] < nums[right]) {
+            // Target is in this sorted right half of the array.
+            if (nums[mid] < target && target <= nums[right]) {
                 left = mid + 1;
-            } else {  // Otherwise, target is in the other half of the array.
+            } else {
                 right = mid;
             }
-        } else {                                               // Left half is sorted.
-            if (nums[left] <= target && target < nums[mid]) {  // Target is in this sorted left half of the array.
+        } else if (nums[mid] > nums[right]) {
+            // Left half is sorted.
+            if (nums[left] <= target && target < nums[mid]) {
+                // Target is in this sorted left half of the array.
                 right = mid;
-            } else {  // Otherwise, target is in the other half of the array.
+            } else {
                 left = mid + 1;
             }
         }

@@ -32,25 +32,44 @@
 // must be larger than current node. Therefore we can use preorder traversal to see whether a node satisfy this
 // condition, and recursively check its left and right subtrees.
 
+// Postorder
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) { return _preorder(root, nullptr, nullptr); }
+    bool isValidBST(TreeNode* root) { return _postorder(root, LONG_MIN, LONG_MAX); }
 
 private:
-    bool _preorder(TreeNode* root, TreeNode* minNode, TreeNode* maxNode) {
+    bool _postorder(TreeNode* root, long minVal, long maxVal) {
         if (not root) {
             return true;
         }
 
-        if (minNode and root->val <= minNode->val) {
+        bool isLeftValid = _postorder(root->left, minVal, root->val);
+        bool isRightValid = _postorder(root->right, root->val, maxVal);
+
+        return isLeftValid and isRightValid and minVal < root->val and root->val < maxVal;
+    }
+};
+
+// Preorder
+class Solution {
+public:
+    bool isValidBST(TreeNode* root) { return _preorder(root, LONG_MIN, LONG_MAX); };
+
+private:
+    bool _preorder(TreeNode* root, long minVal, long maxVal) {
+        if (not root) {
+            return true;
+        }
+
+        if (root->val <= minVal) {
             return false;
         }
 
-        if (maxNode and root->val >= maxNode->val) {
+        if (root->val >= maxVal) {
             return false;
         }
 
-        return _preorder(root->left, minNode, root) and _preorder(root->right, root, maxNode);
+        return _preorder(root->left, minVal, root->val) and _preorder(root->right, root->val, maxVal);
     }
 };
 

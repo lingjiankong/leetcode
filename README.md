@@ -38,13 +38,13 @@
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha
 | 549 | Binary Tree Longest Consecutive Sequence II | TODO | Compare with 673
 | 110 | Balanced Binary Tree | Alpha
-| 102 | Binary Tree Level Order Traversal | Alpha | Postorder, BFS
+| 102 | Binary Tree Level Order Traversal | Alpha+ | Postorder, BFS
 | 107 | Binary Tree Level Order Traversal II | Alpha | Postorder, BFS
 | 314 | Binary Tree Vertical Order Traversal | Alpha | BFS
 | 103 | Binary Tree Zigzag Level Order Traversal | Bravo | BFS
 | 199 | Binary Tree Right Side View | Bravo | Preorder
 | 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
-| 222 | Count Complete Tree Nodes | Alpha
+| 222 | Count Complete Tree Nodes | Alpha+
 | 105 | Construct Binary Tree from Preorder and Inorder Traversal | Alpha | Preorder
 | 106 | Construct Binary Tree from Inorder and Postorder Traversal | Alpha | Postorder
 | 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
@@ -75,10 +75,10 @@
 ## Binary Search Tree
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 98 | Validate Binary Search Tree | Alpha | preorder, inorder
+| 98 | Validate Binary Search Tree | Alpha+ | preorder, inorder, postorder
 | 530 | Minimum Absolute Difference in BST | Alpha | inorder
-| 700 | Search in a Binary Search Tree | Alpha | preorder
-| 701 | Insert into a Binary Search Tree | Alpha | preorder
+| 700 | Search in a Binary Search Tree | Alpha+ | preorder
+| 701 | Insert into a Binary Search Tree | Alpha+ | preorder
 | 450 | Delete Node in a BST | Alpha+ | preorder
 | 333 | Largest BST Subtree | Alpha | Preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
@@ -167,10 +167,10 @@
 | 367 | Valid Perfect Square | Alpha
 | 611 | Valid Triangle Number | Alpha
 | 69 | Sqrt(x) | Alpha
-| 33 | Search in Rotated Sorted Array | Alpha, Mechanical
-| 81 | Search in Rotated Sorted Array II | Alpha, Mechanical
-| 153 | Find Minimum in Rotated Sorted Array | Alpha, Mechanical
-| 154 | Find Minimum in Rotated Sorted Array II | Alpha, Mechanical
+| 33 | Search in Rotated Sorted Array | Alpha+
+| 81 | Search in Rotated Sorted Array II | Alpha+
+| 153 | Find Minimum in Rotated Sorted Array | Alpha+
+| 154 | Find Minimum in Rotated Sorted Array II | Alpha+
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha
 | 315 | Count of Smaller Numbers After Self | Alpha
 | 378 | Kth Smallest Element in a Sorted Matrix | Alpha | binary search, priority queue
@@ -192,9 +192,9 @@
 
 ## Devide and Conquer
 | ID | Name | Rating | Note
-| 215 | Kth Largest Element in an Array | Alpha | quick sort, binary search
-| 169 | Majority Element | Alpha | Mechanical
-| 153 | Find Minimum in Rotated Sorted Array | Alpha
+| 215 | Kth Largest Element in an Array | Alpha+ | quick sort, binary search
+| 169 | Majority Element | Alpha+
+| 153 | Find Minimum in Rotated Sorted Array | Alpha+
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha
 | 912 | Sort an Array | Alpha
 
@@ -443,8 +443,8 @@
 | 134 | Gas Station | Bravo
 | 118 | Pascal's Triangle | Alpha
 | 119 | Pascal's Triangle II | Charlie | Duplicate with 118
-| 169 | Majority Element | Alpha | Mechanical
-| 229 | Majority Element II | Alpha | Mechanical
+| 169 | Majority Element | Alpha+
+| 229 | Majority Element II | Bravo
 | 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha | Binary search
 | 243 | Shortest Word Distance | Alpha
 | 245 | Shortest Word Distance III | Alpha

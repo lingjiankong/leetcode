@@ -32,52 +32,58 @@ public:
     LRUCache(int capacity) : _capacity(capacity) {}
 
     int get(int key) {
-        auto itr = _hash.find(key);
-
-        // If key does not exist, simply return -1.
-        if (itr == _hash.end()) {
+        if (not keyToVal.count(key)) {
             return -1;
         }
 
-        // Else if the key exists, move this key to the back of the linked list.
-        _list.splice(_list.end(), _list, itr->second);
+        makeMostRecently(key);
 
-        // Return the value of the key.
-        return itr->second->second;
+        return keyToVal[key];
     }
 
     void put(int key, int value) {
-        auto itr = _hash.find(key);
-
         // Key already exists
-        if (itr != _hash.end()) {
-            // Update the value
-            itr->second->second = value;
-
-            // Move this entry to the back of the LinkedList (back of the linked list stores the most recently used
-            // element). itr->second is iterator of type pair<int, int>::iterator, i.e. of element in the linked list
-            _list.splice(_list.end(), _list, itr->second);
-        } else {
-            // Reached the capacity. Remove the oldest entry.
-            if (_list.size() == _capacity) {
-                auto node = _list.front();
-
-                _hash.erase(node.first);
-                _list.pop_front();
-            }
-
-            // Insert the entry to the end of the LinkedList and update mapping.
-            _list.push_back({key, value});
-            _hash[key] = --_list.end();
+        if (keyToVal.count(key)) {
+            keyToVal[key] = value;
+            makeMostRecently(key);
+            return;
         }
+
+        // Reached the capacity. Remove the oldest entry.
+        if (_list.size() == _capacity) {
+            removeLeastRecently();
+        }
+
+        // Insert the key to the end of the linked list and update mapping.
+        keyToVal[key] = value;
+        _list.push_back(key);
+        _hash[key] = --_list.end();
+    }
+
+    void makeMostRecently(int key) {
+        // Move this entry to the back of the linked list
+        // (back of the linked list stores the most recently used element).
+        // _hash[key] is iterator of type list<int>::iterator, i.e. points to the element in the linked list
+        auto itr = _hash[key];
+        _list.splice(_list.end(), _list, itr);
+    }
+
+    void removeLeastRecently() {
+        int key = _list.front();
+        keyToVal.erase(key);
+        _hash.erase(key);
+        _list.pop_front();
     }
 
 private:
     int _capacity;
 
-    // LinkedHashMap
-    // Stores (key : pointer to key value pair in the linked list).
-    unordered_map<int, list<pair<int, int>>::iterator> _hash;
+    unordered_map<int, int> keyToVal;
 
-    list<pair<int, int>> _list;
+    // LinkedHashSet
+    // Stores (key : pointer to the key in the linked list).
+    unordered_map<int, list<int>::iterator> _hash;
+
+    list<int> _list;
 };
+

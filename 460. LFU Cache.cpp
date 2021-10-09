@@ -76,40 +76,39 @@ public:
             return;
         }
 
-        if (keyToVal.size() >= _capacity) {
+        if (keyToVal.size() == _capacity) {
             removeMinFreqKey();
         }
 
         // Key is newly introduced.
         keyToVal[key] = value;
         keyToFreq[key] = 1;
-        freqToKeynodes[1].push_back(key);
-        keyToKeynode[key] = --freqToKeynodes[1].end();
-
+        freqToNode[1].push_back(key);
+        keyToNode[key] = --freqToNode[1].end();
         _minFreq = 1;
     }
 
     void increaseFreq(int key) {
         int freq = keyToFreq[key];
-        freqToKeynodes[freq].erase(keyToKeynode[key]);
+        freqToNode[freq].erase(keyToNode[key]);
 
         int newFreq = ++keyToFreq[key];
-        freqToKeynodes[newFreq].push_back(key);
-        keyToKeynode[key] = --freqToKeynodes[newFreq].end();
+        freqToNode[newFreq].push_back(key);
+        keyToNode[key] = --freqToNode[newFreq].end();
 
-        if (freqToKeynodes[_minFreq].size() == 0) {
+        if (freqToNode[_minFreq].size() == 0) {
             ++_minFreq;
         }
     }
 
     void removeMinFreqKey() {
         // Head of the linked list corresponding to the min freqeuncy is what we want to remove.
-        int key = freqToKeynodes[_minFreq].front();
-        freqToKeynodes[_minFreq].pop_front();
+        int key = freqToNode[_minFreq].front();
+        freqToNode[_minFreq].pop_front();
 
         keyToVal.erase(key);
         keyToFreq.erase(key);
-        keyToKeynode.erase(key);
+        keyToNode.erase(key);
     }
 
 private:
@@ -120,8 +119,8 @@ private:
 
     // LinkedHashSet
     // Stores (key : pointer to the key in the linked list)
-    unordered_map<int, list<int>::iterator> keyToKeynode;
+    unordered_map<int, list<int>::iterator> keyToNode;
 
-    unordered_map<int, list<int>> freqToKeynodes;
+    unordered_map<int, list<int>> freqToNode;
 };
 

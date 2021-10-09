@@ -18,17 +18,19 @@
 //
 // ***
 //
+// The array may contain duplicates in this question.
+//
 // For these kinds of binary search problems, where there's a sorted array rotated at some unknown pivot, AND
 // there exists duplicate element in the array, the method is the same.
 // Look at the if, else if, and else loop to get the intuition.
 
 int findMin(vector<int>& nums) {
-
     int left = 0, right = nums.size() - 1;
 
     while (left < right) {
         int mid = left + (right - left) / 2;
 
+        // Seeing duplicate element.
         if (nums[mid] == nums[right]) {
             --right;
         // In this case, the pivot is on the right half of the array.

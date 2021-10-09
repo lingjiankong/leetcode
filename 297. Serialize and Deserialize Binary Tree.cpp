@@ -50,6 +50,7 @@ public:
     }
 
 private:
+    // Searlize the tree into a preorder string.
     void serialize(TreeNode* root, ostringstream& oss) {
         if (!root) {
             oss << "# ";
@@ -61,6 +62,7 @@ private:
         serialize(root->right, oss);
     }
 
+    // Preorder traverse the string and reconstruct the tree.
     TreeNode* deserialize(istringstream& iss) {
         string value;
         iss >> value;
@@ -94,6 +96,7 @@ public:
     }
 
 private:
+    // Searlize the tree into a levelorder string.
     void serialize(TreeNode* root, ostringstream& oss) {
         queue<TreeNode*> q;
         q.push(root);
@@ -113,6 +116,7 @@ private:
         }
     }
 
+    // Levelorder traverse the string and reconstruct the tree.
     TreeNode* deserialize(istringstream& iss) {
         string value;
         iss >> value;
