@@ -405,6 +405,7 @@
 | 952 | Largest Component Size by Common Factor | Alpha | union find
 | 737 | Sentence Similarity II | Alpha | union find
 | 1319 | Number of Operations to Make Network Connected | Alpha | union find
+| 959 | Regions Cut By Slashes | Alpha | union find
 | 785 | Is Graph Bipartite | Alpha | bipartition, coloring
 | 886 | Possible Bipartition.cpp | bipartition, coloring
 | 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
