@@ -415,6 +415,7 @@
 | 1631 | Path With Minimum Effort | Alpha+ | Dijkstra
 | 1514 | Path with Maximum Probability | Alpha | Dijkstra
 | 1334 | Find the City With the Smallest Number of Neighbors at a Threshold Distance | Alpha | Dijkstra
+| 332 | Reconstruct Itinerary | Bravo, Mechanical
 
 ## Design
 | ID | Name | Rating | Note
