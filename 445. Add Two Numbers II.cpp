@@ -67,6 +67,8 @@ public:
 
             carry = sum / 10;
             ListNode* current = new ListNode(sum % 10);
+
+            // Construct linked list from tail node to head node, moving from right to left.
             current->next = head;
             head = current;
         }

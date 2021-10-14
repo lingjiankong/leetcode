@@ -10,7 +10,7 @@
 // ***
 
 ListNode* removeElements(ListNode* head, int val) {
-    ListNode dummy = ListNode(0);
+    ListNode dummy(0);
     dummy.next = head;
 
     ListNode* prevNode = &dummy;

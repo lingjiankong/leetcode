@@ -59,7 +59,7 @@ struct UnionFind {
         while (x != _parent[x]) {
             // Make the tree as flat as possible flat by compressing the tree during find.
             // Speed advantage. Not required for correctness.
-            x = _parent[_parent[x]];
+            _parent[x] = _parent[_parent[x]];
             x = _parent[x];
         }
 

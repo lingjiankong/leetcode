@@ -52,11 +52,10 @@ class Solution {
 public:
     bool equationsPossible(vector<string>& equations) {
         UnionFind<char> uf;
-        for (char c = 'a'; c <= 'z'; ++c) {
-            uf.add(c);
-        }
 
         for (string eq : equations) {
+            uf.add(eq[0]);
+            uf.add(eq[3]);
             if (eq[1] == '=') {
                 uf.connect(eq[0], eq[3]);
             }

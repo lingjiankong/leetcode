@@ -13,11 +13,11 @@
 //
 // Recursive. Draw a picture and you should understand.
 ListNode* swapPairs(ListNode* head) {
-    if (!head || !head->next) {
+    if (!head or !head->next) {
         return head;
     }
 
-    // head -> second -> head2 -> secondr2 ...
+    // head -> second -> head2 -> secondr ...
     // second -> head -> swapParis(head->next->next) ...
 
     ListNode* second = head->next;

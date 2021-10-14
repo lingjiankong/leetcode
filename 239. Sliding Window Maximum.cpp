@@ -68,19 +68,18 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
 // Time complexity: O(n)
 class MonotonicQueue {
 public:
-    // Push an element e to the monotonic queue.
-    // All elements smaller than e will be popped from the queue,
-    // so the queue will always be sorted in descending order,
-    // with the largest element on the left and smallest element on the right.
-    // The underlying deque looks something like this: (9, 7, 7, 4, 1}
-    // Note: we should allow duplicate elements in the queue because there might be multiple elements of the same value
-    // in the window.
-    void push(int e) {
-        while (not _dq.empty() and _dq.back() < e) {
+    // Push an element num to the monotonic queue. All elements smaller than num will be popped from the queue,
+    // so the queue will always be sorted in descending order, with the largest element on the left and smallest element
+    // on the right. The underlying deque looks something like this: (9, 7, 7, 4, 1}. Note: we should allow duplicate
+    // elements in the queue because there might be multiple elements of the same value in the window. Also, we want the
+    // window size equals to the number of element in the window including duplicate ones, therefore we must use <
+    // instead of <= here.
+    void push(int num) {
+        while (not _dq.empty() and _dq.back() < num) {
             _dq.pop_back();
         }
 
-        _dq.push_back(e);
+        _dq.push_back(num);
     }
 
     // Pop the max element
@@ -96,22 +95,22 @@ private:
 class Solution {
 public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-        MonotonicQueue q;
+        MonotonicQueue window;
 
         int left = 0, right = 0;
         vector<int> maximums;
         while (right < nums.size()) {
             int num = nums[right++];
-            q.push(num);
+            window.push(num);
 
             while (right - left == k) {
-                maximums.push_back(q.peekMax());
+                maximums.push_back(window.peekMax());
 
                 int num = nums[left++];
                 // Only pop the max element from the monotonic queue if it equals to the element that we no longer need
                 // in the window. There might be multiple max element with the samle value. We only pop one of them.
-                if (num == q.peekMax()) {
-                    q.popMax();
+                if (num == window.peekMax()) {
+                    window.popMax();
                 }
             }
         }

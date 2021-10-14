@@ -50,7 +50,7 @@ public:
             uf.add(i);
         }
 
-        for (auto e : pairs) {
+        for (auto& e : pairs) {
             uf.connect(e[0], e[1]);
         }
 
@@ -66,13 +66,14 @@ public:
             sort(e.second.begin(), e.second.end());
         }
 
-        for (auto e : root2Indices) {
+        for (auto& e : root2Indices) {
             int root = e.first;
             vector<int> indices = e.second;
             for (int i = 0; i < indices.size(); ++i) {
                 s[indices[i]] = root2Chars[root][i];
             }
         }
+
         return s;
     }
 };

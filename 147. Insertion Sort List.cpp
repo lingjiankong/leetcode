@@ -44,8 +44,9 @@ public:
             return head;
         }
 
-        ListNode dummy = ListNode(0);
+        ListNode dummy(0);
         dummy.next = head;
+
         ListNode* cur = head;
         ListNode* prev = nullptr;  // use the traverse from left to right to find the insertion position.
 
@@ -53,7 +54,7 @@ public:
         while (cur and cur->next) {
             if (cur->val <= cur->next->val) {
                 cur = cur->next;  // cur->next is at the correct position, keep traversing.
-            } else {
+            } else { // cur->next is misplaced.
                 ListNode* misplaced = cur->next;
                 cur->next = cur->next->next;
 

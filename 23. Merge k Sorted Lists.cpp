@@ -19,8 +19,8 @@
 ListNode* mergeKLists(vector<ListNode*>& lists) {
     // Want the smallest element to have the highest priority
     // (Smaller elements are to the right of the pq), therefore, return l1->val > l2->val.
-    auto compare = [](const ListNode* l1, const ListNode* l2) { return l1->val > l2->val; };
-    priority_queue<ListNode*, vector<ListNode*>, decltype(compare)> pq(compare);
+    auto comp = [](const ListNode* l1, const ListNode* l2) { return l1->val > l2->val; };
+    priority_queue<ListNode*, vector<ListNode*>, decltype(comp)> pq(comp);
 
     for (ListNode* head : lists) {
         if (head) {
@@ -31,15 +31,15 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
     ListNode dummy(0);
     ListNode* current = &dummy;
 
-    while (!pq.empty()) {
+    while (not pq.empty()) {
         ListNode* node = pq.top();
         pq.pop();
-        current->next = node;
 
         if (node->next) {
             pq.push(node->next);
         }
 
+        current->next = node;
         current = current->next;
     }
 

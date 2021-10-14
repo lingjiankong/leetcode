@@ -18,7 +18,7 @@
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
-        if (!head || !head->next) {
+        if (!head or !head->next) {
             return head;
         }
 
@@ -26,7 +26,7 @@ public:
         ListNode* rightHead = mid->next;
         mid->next = nullptr;
 
-        return mergeTwoLists(sortList(head), sortList(rightHead));
+        return mergeTwoSortedLists(sortList(head), sortList(rightHead));
     }
 
 private:
@@ -34,7 +34,9 @@ private:
         ListNode* slow = head;
         ListNode* fast = head;
 
-        while (fast->next && fast->next->next) {
+        // Need to use while (fast->next and fast->next->next)
+        // because we need to get rightHead and set mid->next = nullptr.
+        while (fast->next and fast->next->next) {
             slow = slow->next;
             fast = fast->next->next;
         }
@@ -42,11 +44,11 @@ private:
         return slow;
     }
 
-    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+    ListNode* mergeTwoSortedLists(ListNode* l1, ListNode* l2) {
         ListNode dummy(0);
         ListNode* current = &dummy;
 
-        while (l1 && l2) {
+        while (l1 and l2) {
             if (l1->val < l2->val) {
                 current->next = l1;
                 l1 = l1->next;

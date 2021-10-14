@@ -8,10 +8,13 @@
 // Generalization of 236. Lowest Common Ancester of a Binary Tree
 class Solution {
 public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, vector<TreeNode*> &nodes) {
+    TreeNode* lowestCommonAncestor(TreeNode* root, vector<TreeNode*>& nodes) {
         if (not root) {
             return nullptr;
         }
+
+        TreeNode* l = lowestCommonAncestor(root->left, nodes);
+        TreeNode* r = lowestCommonAncestor(root->right, nodes);
 
         for (auto node : nodes) {
             if (root == node) {
@@ -19,9 +22,6 @@ public:
             }
         }
 
-        TreeNode* l = lowestCommonAncestor(root->left, nodes);
-        TreeNode* r = lowestCommonAncestor(root->right, nodes);
- 
         if (l and r) {
             return root;
         } else if (l) {

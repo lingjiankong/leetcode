@@ -47,7 +47,7 @@ public:
 */
 
 // DFS
-// See "deep-copy" type questions. All of these questions use the same method.
+// See "clone" type questions. All of these questions use the same method.
 class Solution {
 public:
     Node* cloneGraph(Node* node) {
@@ -78,7 +78,7 @@ private:
 };
 
 
-// BFS. Making sense of BFS solution is sufficient.
+// BFS. Making sense of DFS solution is sufficient.
 class Solution {
 public:
     Node* cloneGraph(Node* node) {

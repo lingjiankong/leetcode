@@ -31,7 +31,8 @@
 //
 // ***
 
-// Put all land cells into a queue as source nodes and BFS for water cells, the last expanded one will be the farthest.
+// Put *all* land cells (1) into a queue as source nodes and BFS for water cells (0),
+// the last expanded one will be the farthest.
 class Solution {
 public:
     int maxDistance(vector<vector<int>>& grid) {
@@ -62,8 +63,8 @@ public:
                     if (x < 0 || x >= n || y < 0 || y >= n || grid[x][y] != 0) {
                         continue;
                     }
-                    grid[x][y] = INT_MAX; // mark as visited
-                    q.push({x, y});
+                    grid[x][y] = INT_MAX;  // mark water cell (0) as visited
+                    q.push({x, y});        // push water cell (0) to queue for next level of BFS
                 }
             }
             ++step;

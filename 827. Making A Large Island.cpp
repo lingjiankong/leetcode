@@ -35,7 +35,7 @@
 //
 // ***
 
-// BFS, TLE
+// BFS. TLE. Not very efficient. The idea is helpful.
 // For each 0, look at its neighbors and calculate the max area of islands we could have if we turn this 0 to 1.
 class Solution {
 public:

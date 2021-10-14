@@ -53,11 +53,11 @@
 | 297 | Serialize and Deserialize Binary Tree | Alpha+ | preorder
 | 428 | Serialize and Deserialize N-ary Tree | Alpha+ | preorder
 | 449 | Serialize and Deserialize Binary Search Tree | Alpha
-| 236 | Lowest Common Ancestor of a Binary Tree | Bravo | postorder
-| 1644 | Lowest Common Ancestor of a Binary Tree II | Alpha | postorder
-| 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha | postorder
-| 1676 | Lowest Common Ancestor of a Binary Tree IV | Alpha | postorder
-| 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha
+| 236 | Lowest Common Ancestor of a Binary Tree | Alpha+, Mechanical | postorder
+| 1676 | Lowest Common Ancestor of a Binary Tree IV | Alpha+ | postorder
+| 1644 | Lowest Common Ancestor of a Binary Tree II | Alpha+ | postorder
+| 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha+ | postorder
+| 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha+
 | 341 | Flatten Nested List Iterator | Bravo
 | 339 | Nested List Weight Sum | Alpha | preorder
 | 364 | Nested List Weight Sum II | preorder
@@ -85,7 +85,7 @@
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha+
 | 109 | Convert Sorted List to Binary Search Tree | Alpha
 | 173 | Binary Search Tree Iterator | Bravo, Mechanical
-| 230 | Kth Smallest Element in a BST | Alpha
+| 230 | Kth Smallest Element in a BST | Alpha+
 | 285 | Inorder Successor in BST | Hard
 | 270 | Closest Binary Search Tree Value | Alpha
 | 272 | Closest Binary Search Tree Value II | Alpha
@@ -101,7 +101,7 @@
 | 142 | Linked List Cycle II | Alpha
 | 876 | Middle of the Linked List | Alpha+
 | 234 | Palindrome Linked List | Alpha+
-| 24 | Swap Nodes in Pairs | Bravo
+| 24 | Swap Nodes in Pairs | Alpha+
 | 237 | Delete Node in a Linked List | Bravo
 | 19 | Remove Nth Node From End of List | Alpha+
 | 1474 | Delete N Nodes After M Nodes of a Linked List | Alpha
@@ -109,16 +109,16 @@
 | 83 | Remove Duplicates from Sorted List | Alpha
 | 82 | Remove Duplicates from Sorted List II | Hard
 | 369 | Plus One Linked List | Bravo
-| 2 | Add Two Numbers | Alpha
-| 445 | Add Two Numbers II | Alpha
-| 160 | Intersection of Two Linked Lists | Alpha
-| 21 | Merge Two Sorted Lists | Alpha
+| 2 | Add Two Numbers | Alpha+
+| 445 | Add Two Numbers II | Alpha+
+| 160 | Intersection of Two Linked Lists | Alpha+
+| 21 | Merge Two Sorted Lists | Alpha+
 | 143 | Reorder List | Bravo
-| 147 | Insertion Sort List | Alpha | insertion sort
-| 148 | Sort List | Alpha | merge sort
+| 147 | Insertion Sort List | Alpha+ | insertion sort
+| 148 | Sort List | Alpha+ | merge sort
 | 61 | Rotate List | Alpha
 | 86 | Partition List | Alpha
-| 23 | Merge k Sorted Lists | Alpha
+| 23 | Merge k Sorted Lists | Alpha+
 | 206 | Reverse Linked List | Alpha+
 | 92 | Reverse Linked List II | Bravo
 | 25 | Reverse Nodes in k-Group | Alpha
@@ -172,7 +172,7 @@
 | 153 | Find Minimum in Rotated Sorted Array | Alpha+
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha+
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha
-| 315 | Count of Smaller Numbers After Self | Alpha
+| 315 | Count of Smaller Numbers After Self | Alpha+
 | 378 | Kth Smallest Element in a Sorted Matrix | Alpha | binary search, priority queue
 | 74 | Search a 2D Matrix | Alpha
 | 240 | Search a 2D Matrix II | Alpha, Mechanical
@@ -328,7 +328,7 @@
 | 42 | Trapping Rain Water | Alpha | dynamic programming, two pointers, monotonic stack
 | 84 | Largest Rectangle in Histogram | monotonic stack
 | 503 | Next Greater Element II | Alpha | monotonic stack
-| 739 | Daily Temperatures | Alpha | monotonic stack
+| 739 | Daily Temperatures | Alpha+ | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
 | 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
 | 347 | Top K Frequent Elements | Alpha+
@@ -378,26 +378,26 @@
 | 864 | Shortest Path to Get All Keys | Alpha | multidimensional BFS
 | 207 | Course Schedule | Alpha+ | topological sort
 | 210 | Course Schedule II | Alpha+ | topological sort
-| 133 | Clone Graph | Alpha | clone
+| 133 | Clone Graph | Alpha+ | clone
 | 1490 | Clone N-ary Tree | Alpha | clone
 | 138 | Copy List with Random Pointer | Alpha | clone
-| 1495 | Clone Binary Tree With Random Pointer | Alpha | clone
+| 1485 | Clone Binary Tree With Random Pointer | Alpha | clone
 | N5 | Union Find | Alpha+ | union find
 | 990 | Satisfiability of Equality Equations | Alpha | union find
 | 261 | Graph Valid Tree | Alpha | union find
 | 305 | Number of Islands II | Alpha | union find
 | 323 | Number of Connected Components in an Undirected Graph | Alpha | union find
-| 547 | Number of Provinces | Alpha | union find
+| 547 | Number of Provinces | Alpha+ | union find
 | 797 | All Paths From Source to Target | Alpha+ | graph traversal
 | 399 | Evaluate Division | Alpha+ | graph traversal
 | 684 | Redundant Connection | Alpha | union find
 | 721 | Accounts Merge | Alpha | union find
 | 200 | Number of Islands | Alpha+ | BFS, union find
-| 733 | Flood Fill | Alpha | BFS
-| 695 | Max Area of Island | Alpha | BFS, union find
-| 694 | Number of Distinct Islands | Alpha
+| 733 | Flood Fill | Alpha+ | BFS
+| 695 | Max Area of Island | Alpha+ | BFS, union find
+| 694 | Number of Distinct Islands | Alpha+
 | 463 | Island Perimeter | Alpha
-| 827 | Making a Large Island Alpha | union find
+| 827 | Making a Large Island | Alpha+ | union find
 | 1162 | As Far from Land as Possible | Alpha | BFS
 | 841 | Keys and Rooms | Alpha+ | DFS
 | 1202 | Smallest String With Swaps | Alpha | union find
@@ -549,8 +549,8 @@
 | 66 | Plus One | Alpha
 | 369 | Plus One Linked List | Bravo
 | 258 | Add Digits | Alpha
-| 2 | Add Two Numbers | Alpha
-| 415 | Add Strings | Alpha
+| 2 | Add Two Numbers | Alpha+
+| 415 | Add Strings | Alpha+
 | 67 | Add Binary | Alpha
 | 43 | Multiply Strings | Exotic
 | 204 | Count Primes | Bravo
@@ -577,6 +577,6 @@
 |:---:|:---:|:---:|:---:|
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 | 991 | Broken Calculator | Charlie | math
-| 556 | Next Greater Element III | Bravo, Mechanical
+| 556 | Next Greater Element III | Charlie
 | 969 | Pancake Sorting | Bravo | recursion
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
