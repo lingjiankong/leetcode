@@ -204,15 +204,15 @@
 | 46 | Permutations | Alpha+
 | 47 | Permutations II | Alpha
 | 77 | Combinations | Alpha+
-| 78 | Subsets | Alpha
-| 90 | Subsets II | Alpha
+| 78 | Subsets | Alpha+
 | 491 | Increasing Subsequence | Alpha
-| 39 | Combination Sum | Alpha
-| 40 | Combination Sum II | Alpha
-| 216 | Combination Sum III | Alpha
+| 39 | Combination Sum | Alpha+
+| 40 | Combination Sum II | Alpha+
+| 90 | Subsets II | Alpha+
+| 216 | Combination Sum III | Alpha+
 | 377 | Combination Sum IV | Charlie
 | 254 | Factor Combinations | Bravo
-| 17 | Letter Combinations of a Phone Number | Alpha
+| 17 | Letter Combinations of a Phone Number | Alpha+
 | 79 | Word Search | Alpha
 | 329 | Longest Increasing Path in a Matrix | Alpha
 | 489 | Robot Room Cleaner | Alpha
@@ -227,6 +227,7 @@
 | 140 | Word Break II | Alpha
 | 131 | Palindrome Partitioning | Charlie
 | 267 | Palindrome Permutation II | Alpha
+| 784 | Letter Case Permutation | Alpha+ | DFS
 
 ## Dynamic Programming
 | ID | Name | Rating | Note

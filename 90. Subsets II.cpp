@@ -32,10 +32,9 @@ public:
         vector<int> current;
         vector<vector<int>> all;
 
-        int startIndex = 0;
-
         sort(nums.begin(), nums.end());
 
+        int startIndex = 0;
         _backtrack(nums, startIndex, current, all);
 
         return all;

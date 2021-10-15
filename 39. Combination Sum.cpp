@@ -30,7 +30,7 @@
 // ***
 //
 // See also 77. Combinations.
-// Note the difference in for loop in this question and 77:
+// Note the difference in for loop in this question and 77. Combinations:
 // In this question, when we backtrack, the startIndex = i;
 // In 77, when we backtrack, the startIndex = i + 1;
 // This is because we are allowed to use same element multiple times in this question,

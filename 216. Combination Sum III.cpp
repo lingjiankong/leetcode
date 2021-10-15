@@ -37,7 +37,7 @@ private:
         }
 
         for (int num = startNum; num <= 9; ++num) {
-            if (num > n) {
+            if (num > n) {  // don't forget to trim the tree
                 break;
             }
 

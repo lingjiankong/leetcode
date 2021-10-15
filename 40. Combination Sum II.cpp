@@ -60,6 +60,8 @@ private:
                 break;
             }
 
+            // You can not use the same number on the same level. However, on next level you may use it.
+            // For example, candidates = [1, 1, 1, 1, 9], target = 10, you only want one [1, 9], where 1 is the first 1.
             if (i > startIndex && candidates[i - 1] == candidates[i]) {
                 continue;
             }
