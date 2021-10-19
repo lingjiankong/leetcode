@@ -120,7 +120,7 @@
 | 86 | Partition List | Alpha
 | 23 | Merge k Sorted Lists | Alpha+
 | 206 | Reverse Linked List | Alpha+
-| 92 | Reverse Linked List II | Bravo
+| 92 | Reverse Linked List II | Alpha
 | 25 | Reverse Nodes in k-Group | Alpha
 | 147 | Insertion Sort List | Alpha
 | 707 | Designed Linked List | Bravo
@@ -202,7 +202,8 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 46 | Permutations | Alpha+
-| 47 | Permutations II | Alpha
+| 47 | Permutations II | Alpha+
+| 996 | Number of Squareful Arrays | Alpha
 | 77 | Combinations | Alpha+
 | 78 | Subsets | Alpha+
 | 491 | Increasing Subsequence | Alpha
@@ -221,7 +222,7 @@
 | 51 | N-Queens | Alpha+
 | 52 | N-Queens II | Alpha
 | 37 | Sudoku Solver | Alpha
-| 22 | Generate Parentheses | Alpha
+| 22 | Generate Parentheses | Alpha+
 | 241 | Different Ways to Add Parentheses | Alpha
 | 139 | Word Break | Alpha | dynamic programming
 | 140 | Word Break II | Alpha
@@ -302,7 +303,8 @@
 |:---:|:---:|:---:|:---:|
 | 20 | Valid Parentheses | Alpha
 | 32 | Longest Valid Parentheses | Bravo
-| 22 | Generate Parentheses | Alpha
+| 22 | Generate Parentheses | Alpha+
+| 301 | Remove Invalid Parentheses | Alpha+
 | 241 | Different Ways to Add Parentheses | Alpha
 | 856 | Score of Parentheses | Bravo
 | 921 | Minimum Add to Make Parentheses Valid | Alpha
@@ -521,7 +523,7 @@
 | 246 | Strobogrammatic Number | Alpha
 | 247 | Strobogrammatic Number II | Charlie
 | 125 | Valid Palindrome | Alpha
-| 680 | Valid Palindrome II | Alpha
+| 680 | Valid Palindrome II | Alpha+
 | 266 | Palindrome Permutation | Alpha
 | 267 | Palindrome Permutation II | Alpha
 | 392 | Is Subsequence | Alpha

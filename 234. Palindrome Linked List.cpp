@@ -17,7 +17,7 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        if (!head || !head->next) {
+        if (!head or !head->next) {
             return true;
         }
 
@@ -73,55 +73,32 @@ private:
     }
 };
 
-// Without modifying linkedlist. Using the property of postorder traversal and two pointers.
-// When you are postorder traversing a linked list, you are printing from tail to head.
-class Solution {
-public:
-    bool isPalindrome(ListNode* head) {
-        ListNode *left = head, *right = head;
-        return postorder(right, left);
-    }
-
-private:
-    bool postorder(ListNode* right, ListNode* left) {
-        if (not right) {
-            return true;
-        }
-
-        bool res = postorder(right->next, left);
-
-        res = res and left->val == right->val;
-
-        left = left->next;
-
-        return res;
-    }
-};
-
 // Without modifying linkedlist. Using the property of postorder traversal.
+// When you are postorder traversing a linked list, you are printing from tail to head.
 // Keep left fixed, postorder traverse right and use two pointers.
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
         _left = head;
-        return postorder(head);
+        postorder(head);
+        return _ans;
     }
 
 private:
-    //
-    bool postorder(ListNode* right) {
+    void postorder(ListNode* right) {
         if (not right) {
-            return true;
+            return;
         }
 
-        bool res = postorder(right->next);
+        postorder(right->next);
 
-        res = res and _left->val == right->val;
+        if (_left->val != right->val) {
+            _ans = false;
+        }
+        
         _left = _left->next;
-
-        return res;
     }
 
     ListNode* _left;
+    bool _ans = true;
 };
-

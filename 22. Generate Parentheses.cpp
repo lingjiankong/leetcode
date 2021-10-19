@@ -26,10 +26,10 @@
 class Solution {
 public:
     vector<string> generateParenthesis(int n) {
-        // Number of total '(' so far.
+        // Count of '(' so far.
         int left = 0;
 
-        // Number of total ')' so far.
+        // Count of ')' so far.
         int right = 0;
 
         string current;
@@ -41,18 +41,18 @@ public:
     }
 
 private:
-    void _backtrack(int left, int right, string current, vector<string>& all, int& total) {
+    void _backtrack(int left, int right, string current, vector<string>& all, int& n) {
         // Return when you see something like "())" i.e. number of ')' is greater than number of '('.
         // Note that it is OK to have "((()" i.e. number of '(' is greater than number of ')'.
-        if (left < right or left > total or right > total) {
+        if (left < right or left > n or right > n) {
             return;
         }
 
-        if (left == total and right == total) {
+        if (left == n and right == n) {
             all.push_back(current);
         }
 
-        _backtrack(left + 1, right, current + '(', all, total);
-        _backtrack(left, right + 1, current + ')', all, total);
+        _backtrack(left + 1, right, current + '(', all, n);
+        _backtrack(left, right + 1, current + ')', all, n);
     }
 };

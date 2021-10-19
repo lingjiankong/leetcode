@@ -30,6 +30,7 @@ public:
 
         vector<bool> visited(nums.size(), false);
 
+        // Sort so it is easy for us to skip duplicate elements.
         sort(nums.begin(), nums.end());
 
         _backtrack(nums, visited, current, all);
