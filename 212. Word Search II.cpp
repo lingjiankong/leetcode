@@ -30,9 +30,98 @@
 //
 // ***
 
-// TODO
+// Very easy once you understand trie structure and how to use trie.
+// Compare to 208. Implement Trie (Prefix Tree). This trie structure need to record the current string (str) stored in
+// each node.
+struct TrieNode {
+    unordered_map<char, TrieNode*> children;
+    string str;
+    bool isWord = false;
+};
+
+class Trie {
+public:
+    Trie() { root = new TrieNode(); }
+
+    void insert(string word) {
+        TrieNode* node = root;
+        for (int i = 0; i < word.size(); ++i) {
+            char c = word[i];
+            if (not node->children.count(c)) {
+                node->children[c] = new TrieNode();
+                node->children[c]->str = word.substr(0, i + 1);
+            }
+            node = node->children[c];
+        }
+        node->isWord = true;
+    }
+
+    bool search(string word) {
+        TrieNode* node = root;
+        for (char c : word) {
+            if (not node->children.count(c)) {
+                return false;
+            }
+            node = node->children[c];
+        }
+        return node->isWord;
+    }
+
+    bool startsWith(string prefix) {
+        TrieNode* node = root;
+        for (char c : prefix) {
+            if (not node->children.count(c)) {
+                return false;
+            }
+            node = node->children[c];
+        }
+        return true;
+    }
+
+    TrieNode* root;
+};
+
 class Solution {
 public:
     vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
+        Trie trie;
+        for (string& word : words) {
+            trie.insert(word);
+        }
+
+        vector<string> all;
+
+        int m = board.size(), n = board[0].size();
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                char c = board[i][j];
+                if (trie.startsWith(to_string(c))) {
+                    _backtrack(board, trie.root->children[c], i, j, all);
+                }
+            }
+        }
+
+        return all;
     }
+
+private:
+    void _backtrack(vector<vector<char>>& board, TrieNode* node, int i, int j, vector<string>& all) {
+        if (node->isWord) {
+            all.push_back(node->str);
+            node->isWord = false;
+        }
+
+        int m = board.size(), n = board[0].size();
+        for (vector<int>& dir : _dirs) {
+            int neighX = i + dir[0], neighY = j + dir[1];
+            // Only keep traversing if trie has next prefix.
+            if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and
+                node->children.count(board[neighX][neighY])) {
+                _backtrack(board, node->children[board[neighX][neighY]], neighX, neighY, all);
+            }
+        }
+    }
+
+    vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };
+

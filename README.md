@@ -215,6 +215,7 @@
 | 254 | Factor Combinations | Bravo
 | 17 | Letter Combinations of a Phone Number | Alpha+
 | 79 | Word Search | Alpha+
+| 212 | Word Search II |  Alpha | Trie
 | 329 | Longest Increasing Path in a Matrix | Alpha
 | 489 | Robot Room Cleaner | Alpha
 | 286 | Walls and Gates | Alpha
@@ -439,6 +440,7 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 208 | Implement Trie (Prefix Tree) | Alpha+
+| 212 | Word Search II |  Alpha
 
 ## Array
 | ID | Name | Rating | Note
