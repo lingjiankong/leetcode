@@ -214,14 +214,14 @@
 | 377 | Combination Sum IV | Charlie
 | 254 | Factor Combinations | Bravo
 | 17 | Letter Combinations of a Phone Number | Alpha+
-| 79 | Word Search | Alpha
+| 79 | Word Search | Alpha+
 | 329 | Longest Increasing Path in a Matrix | Alpha
 | 489 | Robot Room Cleaner | Alpha
 | 286 | Walls and Gates | Alpha
 | 130 | Surrounded Regions | Alpha
 | 51 | N-Queens | Alpha+
 | 52 | N-Queens II | Alpha
-| 37 | Sudoku Solver | Alpha
+| 37 | Sudoku Solver | Alpha+
 | 22 | Generate Parentheses | Alpha+
 | 241 | Different Ways to Add Parentheses | Alpha
 | 139 | Word Break | Alpha | dynamic programming
@@ -435,6 +435,11 @@
 | 303 | Range Sum Query - Immutable | Bravo
 | 304 | Range Sum Query 2D - Immutable | Charlie
 
+## Trie
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 208 | Implement Trie (Prefix Tree) | Alpha+
+
 ## Array
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -489,7 +494,6 @@
 | 485 | Max Consecutive Ones | Alpha
 | 849 | Maximize Distance to Closest Person | Bravo
 | 855 | Exam Room | Bravo
-
 
 ## String
 | ID | Name | Rating | Note

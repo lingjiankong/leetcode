@@ -26,20 +26,20 @@ public:
             return _backtrack(board, i + 1, 0);
         }
 
+        // Not empty cell, keep looking at next row.
         if (board[i][j] != '.') {
             return _backtrack(board, i, j + 1);
         }
 
+        // Empty cell, see which number we can use.
         for (char c = '1'; c <= '9'; ++c) {
-            if (not isValid(board, i, j, c)) {
-                continue;
+            if (isValid(board, i, j, c)) {
+                board[i][j] = c;
+                if (_backtrack(board, i, j + 1)) {
+                    return true;
+                }
+                board[i][j] = '.';
             }
-
-            board[i][j] = c;
-            if (_backtrack(board, i, j + 1)) {
-                return true;
-            }
-            board[i][j] = '.';
         }
 
         return false;

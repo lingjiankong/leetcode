@@ -32,7 +32,8 @@ public:
 
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                if (_backtrack(board, word, 0, i, j)) {
+                vector<vector<bool>> visited(m, vector<bool>(n, false));
+                if (_backtrack(board, word, 0, i, j, visited)) {
                     return true;
                 }
             }
@@ -42,24 +43,23 @@ public:
     }
 
 private:
-    bool _backtrack(vector<vector<char>>& board, const string& word, int letterCount, int i, int j) {
-        if (letterCount == word.size()) {
+    bool _backtrack(vector<vector<char>>& board, const string& word, int pos, int i, int j,
+                    vector<vector<bool>>& visited) {
+        if (pos == word.size()) {
             return true;
         }
 
-        int m = board.size(), n = board[i].size();
-        if (i < 0 || j < 0 || i >= m || j >= n || board[i][j] != word[letterCount]) {
+        int m = board.size(), n = board[0].size();
+        if (i < 0 || j < 0 || i >= m || j >= n || visited[i][j] || board[i][j] != word[pos]) {
             return false;
         }
 
-        char letter = board[i][j];
-        board[i][j] = '#';  // a temporary placeholder indicating the cell is being visited
-        // note that the condition here is || so
-        // the call to _backtrack() will be true as long as one of the recursive calls returns true
-        bool isFound =
-            _backtrack(board, word, letterCount + 1, i - 1, j) || _backtrack(board, word, letterCount + 1, i + 1, j) ||
-            _backtrack(board, word, letterCount + 1, i, j - 1) || _backtrack(board, word, letterCount + 1, i, j + 1);
-        board[i][j] = letter;
+        visited[i][j] = true;
+        bool isFound = _backtrack(board, word, pos + 1, i - 1, j, visited) ||
+                       _backtrack(board, word, pos + 1, i + 1, j, visited) ||
+                       _backtrack(board, word, pos + 1, i, j - 1, visited) ||
+                       _backtrack(board, word, pos + 1, i, j + 1, visited);
+        visited[i][j] = false;
 
         return isFound;
     }
