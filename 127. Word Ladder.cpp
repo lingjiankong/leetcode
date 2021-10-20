@@ -41,25 +41,21 @@
 int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
     unordered_set<string> dict(wordList.begin(), wordList.end());
 
-    if (!dict.count(endWord)) {
+    if (not dict.count(endWord)) {
         return 0;
     }
 
-    queue<string> wordQueue;
-    wordQueue.push(beginWord);
+    queue<string> q;
+    q.push(beginWord);
 
-    // BFS level, this is the number of steps between words.
     int level = 0;
-
-    while (!wordQueue.empty()) {
-        // Every time we enter this loop we enter a new BFS level.
+    while (not q.empty()) {
         ++level;
 
-        // For all words in current level
-        int currentLevelSize = wordQueue.size();
-        for (int k = 0; k < currentLevelSize; ++k) {
-            string word = wordQueue.front();
-            wordQueue.pop();
+        int qSize = q.size();
+        while (qSize--) {
+            string word = q.front();
+            q.pop();
 
             // Found the solution
             if (word == endWord) {
@@ -71,14 +67,14 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
                 char original_letter = word[i];
 
                 // Replace that letter with 'a' thru 'z'.
-                for (int replaced_letter = 'a'; replaced_letter <= 'z'; ++replaced_letter) {
-                    word[i] = replaced_letter;
+                for (int c = 'a'; c <= 'z'; ++c) {
+                    word[i] = c;
 
                     // If word exists in dict, push it to the queue for next bfs level.
                     if (dict.count(word)) {
-                        // Remember to erase the word from dict!
+                        // Remember to erase the word from dict (so you don't have to keep explicit visited array)
                         dict.erase(word);
-                        wordQueue.push(word);
+                        q.push(word);
                     }
                 }
 

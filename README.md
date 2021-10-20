@@ -369,9 +369,11 @@
 | N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
 | N2 | Shortest Path Between Two Points in a Matrix | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
-| 127 | Word Ladder | Alpha
+| 127 | Word Ladder | Alpha+ | BFS
 | 126 | Word Ladder II | Bravo
-| 752 | Open the Lock | Alpha
+| 752 | Open the Lock | Alpha+
+| 542 | 01 Matrix | Alpha+ | BFS
+| 934 | Shortest Bridge | Alpha | BFS
 | 433 | Minimum Genetic Mutation | Alpha
 | 815 | Bus Routes | Alpha
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS

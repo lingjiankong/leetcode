@@ -44,18 +44,20 @@
 vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
     vector<vector<string>> res;
     unordered_set<string> dict(wordList.begin(), wordList.end());
-    queue<vector<string>> paths;
-    paths.push({beginWord});
+    queue<vector<string>> q;  // Queue of path
+    q.push({beginWord});
 
     int curLevel = 1, minLevel = INT_MAX;
     // All the visited nodes on curLevel. These words will never be visited again after curLevel,
     // and should be removed from wordList. This is guaranteed by BFS.
     unordered_set<string> visited;
 
-    while (!paths.empty()) {
-        vector<string> path = paths.front();
-        paths.pop();
-        if (path.size() > curLevel) {
+    while (!q.empty()) {
+        vector<string> curPath = q.front();
+        q.pop();
+
+        // Tree pruning.
+        if (curPath.size() > curLevel) {
             if (curLevel > minLevel) {
                 break;
             }
@@ -63,10 +65,11 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
                 dict.erase(w);
             }
             visited.clear();
-            curLevel = path.size();
+            curLevel = curPath.size();
         }
 
-        string last = path.back();
+        // Core BFS on this level.
+        string last = curPath.back();
         for (int i = 0; i < last.size(); ++i) {
             string newLast = last;
             for (char c = 'a'; c <= 'z'; ++c) {
@@ -75,7 +78,7 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
                     continue;
                 }
 
-                vector<string> nextPath = path;
+                vector<string> nextPath = curPath;
                 nextPath.push_back(newLast);
                 visited.insert(newLast);
 
@@ -83,7 +86,7 @@ vector<vector<string>> findLadders(string beginWord, string endWord, vector<stri
                     res.push_back(nextPath);
                     minLevel = curLevel;
                 } else {
-                    paths.push(nextPath);
+                    q.push(nextPath);
                 }
             }
         }
