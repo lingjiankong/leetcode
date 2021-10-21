@@ -1,4 +1,4 @@
-# Coding challenges from www.leetcode.com
+#Coding challenges from www.leetcode.com
 
 ## Note
 - Alpha: Three star questions. These are the questions that you must know.
@@ -224,12 +224,15 @@
 | 52 | N-Queens II | Alpha
 | 37 | Sudoku Solver | Alpha+
 | 22 | Generate Parentheses | Alpha+
-| 241 | Different Ways to Add Parentheses | Alpha
+| 241 | Different Ways to Add Parentheses | Alpha+
 | 139 | Word Break | Alpha | dynamic programming
 | 140 | Word Break II | Alpha
-| 131 | Palindrome Partitioning | Charlie
 | 267 | Palindrome Permutation II | Alpha
 | 784 | Letter Case Permutation | Alpha+ | DFS
+| 698 | Partition to K Equal Sum Subsets | Alpha+
+| 93 | Restore IP Addresses | Alpha+
+| 131 | Palindrome Partitioning | Alpha+
+| 282 | Expression Add Operators | Alpha
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
@@ -306,7 +309,7 @@
 | 32 | Longest Valid Parentheses | Bravo
 | 22 | Generate Parentheses | Alpha+
 | 301 | Remove Invalid Parentheses | Alpha+
-| 241 | Different Ways to Add Parentheses | Alpha
+| 241 | Different Ways to Add Parentheses | Alpha+
 | 856 | Score of Parentheses | Bravo
 | 921 | Minimum Add to Make Parentheses Valid | Alpha
 | 1249 | Minimum Remove to Make Valid Parentheses | Alpha

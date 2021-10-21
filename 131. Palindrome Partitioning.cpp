@@ -1,11 +1,11 @@
 // ***
 //
 // Given a string s, partition s such that every substring of the partition is a palindrome.
-// 
+//
 // Return all possible palindrome partitioning of s.
-// 
+//
 // Example:
-// 
+//
 // Input: "aab"
 // Output:
 // [
@@ -15,57 +15,79 @@
 //
 // ***
 
-class Solution
-{
+class Solution {
+public:
+    vector<vector<string>> partition(string s) {
+        vector<string> current;
+        vector<vector<string>> all;
+        backtrack(s, current, all);
 
-	public:
+        return all;
+    }
 
-		vector<vector<string>> partition(string s)
-		{
-			vector<string> current;
-			vector<vector<string>> all;
+private:
+    void backtrack(string s, vector<string>& current, vector<vector<string>>& all) {
+        if (s.empty()) {
+            all.push_back(current);
+            return;
+        }
 
-			int startIndex = 0;
+        for (int i = 1; i <= s.size(); ++i) {
+            if (isPalindrome(s.substr(0, i))) {
+                current.push_back(s.substr(0, i));
+                backtrack(s.substr(i), current, all);
+                current.pop_back();
+            }
+        }
+    }
 
-			backtrack(s, startIndex, current, all);
+    bool isPalindrome(string s) {
+        int left = 0, right = s.size() - 1;
+        while (left < right) {
+            if (s[left++] != s[right--]) {
+                return false;
+            }
+        }
 
-			return all;
-		}
+        return true;
+    }
+};
 
-	private:
+// Same idea using startIndex instead of s.substr()
+class Solution {
+public:
+    vector<vector<string>> partition(string s) {
+        vector<string> current;
+        vector<vector<string>> all;
+        int startIndex = 0;
+        backtrack(s, startIndex, current, all);
 
-		void backtrack(string s, int startIndex, vector<string>& current, vector<vector<string>>& all)
-		{
-			if (startIndex == s.size())
-			{
-				all.push_back(current);
-				return;
-			}
+        return all;
+    }
 
-			for (int i = startIndex; i < s.size(); ++i)
-			{
-				if (isPalindrome(s, startIndex, i))
-				{
-					// Why i - startIndex + 1?  At first when i = startIndex you are testing if a single letter is palindrome.
-					// A single letter must be palindrome, so you add that single letter to current and iteratively check the rest.
-					current.push_back(s.substr(startIndex, i - startIndex + 1));
-					backtrack(s, i + 1, current, all);
-					current.pop_back();
-				}
-			}
-		}
+private:
+    void backtrack(string s, int startIndex, vector<string>& current, vector<vector<string>>& all) {
+        if (startIndex == s.size()) {
+            all.push_back(current);
+            return;
+        }
 
-		bool isPalindrome(string s, int left, int right)
-		{
-			while (left < right)
-			{
-				if (s[left++] != s[right--])
-				{
-					return false;
-				}
-			}
+        for (int i = startIndex; i < s.size(); ++i) {
+            if (isPalindrome(s, startIndex, i)) {
+                current.push_back(s.substr(startIndex, i - startIndex + 1));
+                backtrack(s, i + 1, current, all);
+                current.pop_back();
+            }
+        }
+    }
 
-			return true;
-		}
+    bool isPalindrome(string s, int left, int right) {
+        while (left < right) {
+            if (s[left++] != s[right--]) {
+                return false;
+            }
+        }
 
+        return true;
+    }
 };

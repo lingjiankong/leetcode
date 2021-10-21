@@ -22,6 +22,10 @@
 // (2*((3-4)*5)) = -10
 // (((2*3)-4)*5) = 10
 //
+// 1 <= expression.length <= 20
+// expression consists of digits and the operator '+', '-', and '*'.
+// All the integer values in the input expression are in the range [0, 99].
+//
 // ***
 
 // Recursive solution
@@ -75,11 +79,11 @@ public:
             }
         }
 
-        vector<int> result = result.size() ? result : std::vector<int>({stoi(input)});
-        _hash[input] = result;
-        return result;
+        result = result.size() ? result : std::vector<int>({stoi(input)});
+        return _hash[input] = result;
     }
 
 private:
     unordered_map<string, vector<int>> _hash;
 };
+
