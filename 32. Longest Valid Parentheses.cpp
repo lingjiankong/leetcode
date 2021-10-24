@@ -16,6 +16,40 @@
 //
 // ***
 
+// DP solution.
+//
+// Definition:
+// dp[i]: longest valid parentheses substring ending in s[i-1].
+//
+// Base condition:
+// dp[0] = 0: No parentheses, longest valid parentheses is just 0.
+// dp[1] = 0: A single parentheses cannot be valid, longest valid parentheses is just 0.
+class Solution {
+public:
+    int longestValidParentheses(string s) {
+        int res = 0;
+        vector<int> dp(s.size() + 1);
+
+        for (int i = 2; i < dp.size(); ++i) {
+            // left is the index of matching parentheses of s[i-1]
+            int left = (i - 1) - dp[i - 1] - 1;
+            if (left >= 0 and s[left] == '(' and s[i - 1] == ')') {
+                // you also add need dp[left] because dp[left] might be something like ((()()()))
+                // which can be add to any valid parentheses to make it longer.
+                dp[i] = dp[i - 1] + 2 + dp[left];
+                res = max(res, dp[i]);
+            } else {
+                // Otherwise if s[i-1] is an open parenthesis,
+                // or if s[left] is a close parenthesis, then
+                // you cannot form any valid parentheses substring ending in s[i-1]
+                dp[i] = 0;
+            }
+        }
+
+        return res;
+    }
+};
+
 class Solution {
 public:
     int longestValidParentheses(string s) {
@@ -68,37 +102,3 @@ public:
         return longest;
     }
 };
-
-// DP solution.
-//
-// Definition:
-// dp[i]: longest valid parentheses substring ending in s[i-1].
-//
-// Base condition:
-// dp[0] = 0: A single parentheses cannot be valid.
-class Solution {
-public:
-    int longestValidParentheses(string s) {
-        int res = 0;
-        vector<int> dp(s.size() + 1);
-
-        for (int i = 1; i < dp.size(); ++i) {
-            // left is the index of matching parentheses of s[i-1]
-            int left = (i - 1) - dp[i - 1] - 1;
-            if (left >= 0 and s[left] == '(' and s[i - 1] == ')') {
-                // you also add need to dp[left] because dp[left] might be seomthing like ((()()()))
-                // which can be add to any valid parentheses to make it longer.
-                dp[i] = dp[i - 1] + 2 + dp[left];
-                res = max(res, dp[i]);
-            } else {
-                // Otherwise if s[i-1] is an open parenthesis,
-                // or if s[left] is a close parenthesis, then
-                // you cannot form any valid parentheses substring ending in s[i-1]
-                dp[i] = 0;
-            }
-        }
-
-        return res;
-    }
-};
-

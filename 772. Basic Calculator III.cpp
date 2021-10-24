@@ -67,6 +67,8 @@ int calculate(string s) {
                     s.top() /= num;
                     break;
             }
+
+            // Update op, reset num.
             op = c;
             num = 0;
         }

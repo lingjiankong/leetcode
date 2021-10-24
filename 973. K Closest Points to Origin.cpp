@@ -47,7 +47,8 @@ public:
 class Solution {
 public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
-        // Stores distance to index in ascending order, with smallest distance having the highest priority.
+        // Stores distance to index in ascending order, with largest distance having the highest priority.
+        // so large distances get popped first.
         priority_queue<pair<int, int>> pq;
 
         for (int i = 0; i < points.size(); ++i) {

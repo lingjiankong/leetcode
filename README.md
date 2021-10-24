@@ -231,6 +231,7 @@
 | 784 | Letter Case Permutation | Alpha+ | DFS
 | 698 | Partition to K Equal Sum Subsets | Alpha+
 | 93 | Restore IP Addresses | Alpha+
+| 842 | Split Array into Fibonacci Sequence | Alpha
 | 131 | Palindrome Partitioning | Alpha+
 | 282 | Expression Add Operators | Alpha
 
@@ -306,7 +307,7 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 20 | Valid Parentheses | Alpha
-| 32 | Longest Valid Parentheses | Bravo
+| 32 | Longest Valid Parentheses | Charlie
 | 22 | Generate Parentheses | Alpha+
 | 301 | Remove Invalid Parentheses | Alpha+
 | 241 | Different Ways to Add Parentheses | Alpha+
@@ -339,7 +340,7 @@
 | 496 | Next Greater Element I | Alpha | monotonic stack
 | 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
 | 347 | Top K Frequent Elements | Alpha+
-| 692 | Top K Frequent Words | Alpha
+| 692 | Top K Frequent Words | Alpha+
 | 451 | Sort Characters By Frequency | Bravo
 | 295 | Find Median from Data Stream | Alpha
 | 480 | Sliding Window Median | Alpha
@@ -380,7 +381,7 @@
 | 433 | Minimum Genetic Mutation | Alpha
 | 815 | Bus Routes | Alpha
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
-| 773 | Sliding Puzzle | Alpha
+| 773 | Sliding Puzzle | Alpha+
 | 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
 | 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS
 | 847 | Shortest Path Visiting All Nodes | Alpha | multidimensional BFS
@@ -581,7 +582,7 @@
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | Alpha | See 772
 | 227 | Basic Calculator II | Alpha | See 772
-| 772 | Basic Calculator III | Alpha+ | mechanical, recursion
+| 772 | Basic Calculator III | Alpha+ | mechanical
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry
 | 1447 | Simplified Fractions | GCD
@@ -592,5 +593,5 @@
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 | 991 | Broken Calculator | Charlie | math
 | 556 | Next Greater Element III | Charlie
-| 969 | Pancake Sorting | Bravo | recursion
+| 969 | Pancake Sorting | Charlie | recursion
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo

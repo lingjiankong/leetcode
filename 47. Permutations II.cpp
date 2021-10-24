@@ -17,7 +17,7 @@
 // See also 46. Permutations, and compare their difference.
 //
 // In this question, we need to check if the number is a duplicate, AND
-// if the number is a duplicate, whether the duplicated number has been visited before at current recursive level.
+// if the number is a duplicate, whether the duplicated number has been visited before in parent nodes.
 // If so then we shall skip this duplicate number.
 //
 // See 90. Subsets II and 216. Combination Sum III, which eliminate duplicates using sumilar method.
