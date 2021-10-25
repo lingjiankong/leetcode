@@ -15,11 +15,11 @@
 //
 // ***
 
-// This question is essentially asking for all nodes, starting from where has no cycles.
+// This question is essentially asking us to return all nodes, starting from where has no cycles.
 // You can do this question similar to how you did 207. Course Schedule using vanilla topological sort.
 // However, note that doing that way, you need a new "states" arary of {UNVISITIED, VISITING, VISITED}
 // for EVERY node that you are currently traversing, which is inefficient.
-// When we are travelling the 0th node, we actually know which nodes are unsafe, and we want to save that information.
+// When we are travelling the 0th node, we actually know which nodes are unsafe, so we can save that information.
 class Solution {
 public:
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
@@ -35,14 +35,15 @@ public:
     }
 
 private:
+    // VISITED is split into UNSAFE and SAFE.
     enum State { UNVISITED, VISITING, UNSAFE, SAFE };
 
     State dfs(int curNode, vector<State>& states, const vector<vector<int>>& graph) {
-        if (states[curNode] == VISITING) {
+        if (states[curNode] == VISITING) {  // has cycle
             return states[curNode] = UNSAFE;
         }
 
-        if (states[curNode] != UNVISITED) {
+        if (states[curNode] == SAFE or states[curNode] == UNSAFE) {
             return states[curNode];
         }
 

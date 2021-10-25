@@ -59,7 +59,7 @@ public:
         }
 
         UnionFind<string> uf;
-        for (const vector<string>& e : similarPairs) {
+        for (vector<string>& e : similarPairs) {
             uf.add(e[0]);
             uf.add(e[1]);
             uf.connect(e[0], e[1]);

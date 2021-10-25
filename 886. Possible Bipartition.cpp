@@ -39,6 +39,7 @@
 
 // See 785. Is Graph Bipartite for explanation.
 // Solution is exactly the same.
+// DFS
 class Solution {
 public:
     bool possibleBipartition(int n, vector<vector<int>>& dislikes) {
@@ -77,6 +78,48 @@ private:
         }
 
         return true;
+    }
+};
+
+// BFS
+class Solution {
+public:
+    bool possibleBipartition(int n, vector<vector<int>>& dislikes) {
+        vector<vector<int>> graph(n);
+        for (int i = 0; i < dislikes.size(); ++i) {
+            graph[dislikes[i][0] - 1].push_back(dislikes[i][1] - 1);
+            graph[dislikes[i][1] - 1].push_back(dislikes[i][0] - 1);
+        }
+
+        queue<int> q;
+        vector<int> colors(n, 0);
+
+        // Traverse all nodes in the graph in case there are nodes that are not connected. 
+        for (int i = 0; i < graph.size(); ++i) {
+            if (colors[i] != 0) {
+                continue; 
+            }
+
+            q.push(i); 
+            colors[i] = 1; 
+
+            while (not q.empty()) {
+                int cur = q.front();
+                q.pop(); 
+                for (int neigh : graph[cur]) {
+                    if (colors[neigh] == colors[cur]) {
+                        return false;
+                    }
+                    
+                    if (colors[neigh] == 0) {
+                        colors[neigh] = -colors[cur];
+                        q.push(neigh);
+                    }
+                }
+            }
+        }
+     
+        return true; 
     }
 };
 

@@ -49,8 +49,8 @@ public:
         // Initialize the initial states for all courses to be UNVISITED.
         vector<State> states(numCourses, State::UNVISITED);
         for (int i = 0; i < numCourses; ++i) {
-            // If dfs returns true then there's a cycle.
-            if (dfs(i, states, graph)) {
+            // If hasCycle returns true then there's a cycle.
+            if (hasCycle(i, states, graph)) {
                 return false;
             }
         }
@@ -62,16 +62,18 @@ private:
     enum State { UNVISITED, VISITING, VISITED };
 
     // Returns true if there's a cycle.
-    bool dfs(int curCourse, vector<State>& states, const vector<vector<int>>& graph) {
+    bool hasCycle(int curCourse, vector<State>& states, const vector<vector<int>>& graph) {
         if (states[curCourse] == State::VISITING) {
             return true;  // has cycle
-        } else if (states[curCourse] == State::VISITED) {
+        }
+        if (states[curCourse] == State::VISITED) {
             return false;
         }
 
+        // Neither VISITING nor VISITED. This course is unvisited.
         states[curCourse] = State::VISITING;
         for (int course : graph[curCourse]) {
-            if (dfs(course, states, graph)) {
+            if (hasCycle(course, states, graph)) {
                 return true;
             }
         }

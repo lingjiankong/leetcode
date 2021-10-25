@@ -388,6 +388,7 @@
 | 864 | Shortest Path to Get All Keys | Alpha | multidimensional BFS
 | 207 | Course Schedule | Alpha+ | topological sort
 | 210 | Course Schedule II | Alpha+ | topological sort
+| 802 | Find Eventual Safe States | Alpha | topological sort
 | 133 | Clone Graph | Alpha+ | clone
 | 1490 | Clone N-ary Tree | Alpha | clone
 | 138 | Copy List with Random Pointer | Alpha | clone
@@ -413,11 +414,11 @@
 | 1202 | Smallest String With Swaps | Alpha | union find
 | 839 | Similar String Groups | Alpha | union find
 | 952 | Largest Component Size by Common Factor | Alpha | union find
-| 737 | Sentence Similarity II | Alpha | union find
+| 737 | Sentence Similarity II | Alpha+ | union find
 | 1319 | Number of Operations to Make Network Connected | Alpha | union find
 | 959 | Regions Cut By Slashes | Alpha | union find
 | 785 | Is Graph Bipartite | Alpha | bipartition, coloring
-| 886 | Possible Bipartition.cpp | bipartition, coloring
+| 886 | Possible Bipartition | Alpha | bipartition, coloring
 | 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
 | 997 | Find the Town Judge | Alpha+
 | N6 | Dijkstra | Alpha+ | Dijkstra

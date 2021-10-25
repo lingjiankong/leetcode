@@ -2,7 +2,7 @@
 //
 // There are a total of n courses you have to take, labeled from 0 to n-1.
 // Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed
-// as a pair: [0,1] Given the total number of courses and a list of prerequisite pairs, return the ordering of courses
+// as a pair: [0,1]. Given the total number of courses and a list of prerequisite pairs, return the ordering of courses
 // you should take to finish all courses. There may be multiple correct orders, you just need to return one of them. If
 // it is impossible to finish all courses, return an empty array.
 //
@@ -24,6 +24,7 @@
 //
 // See 207. Course Schedule. The code is almost the same.
 // This code stores one additional information: courseOrder, which stores the course after topological sort.
+// i.e. postorder traversal of graph
 class Solution {
 public:
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
@@ -37,21 +38,22 @@ public:
         vector<State> states(numCourses, State::UNVISITED);
         vector<int> courseOrder;
         for (int i = 0; i < numCourses; ++i) {
-            // If dfs returns true then there's a cycle.
-            if (dfs(i, states, courseOrder, graph)) {
+            if (hasCycle(i, states, courseOrder, graph)) {
                 return {};
             }
         }
 
+        // courseOrder stores the post order result of the graph after topologocial sort.
+        // Therefore to get the course order you need to reverse it.
         reverse(courseOrder.begin(), courseOrder.end());
+
         return courseOrder;
     }
 
 private:
     enum State { UNVISITED, VISITING, VISITED };
 
-    // Returns true if there's a cycle.
-    bool dfs(int curCourse, vector<State>& states, vector<int>& courseOrder, const vector<vector<int>>& graph) {
+    bool hasCycle(int curCourse, vector<State>& states, vector<int>& courseOrder, const vector<vector<int>>& graph) {
         if (states[curCourse] == State::VISITING) {
             return true;  // has cycle
         } else if (states[curCourse] == State::VISITED) {
@@ -60,12 +62,14 @@ private:
 
         states[curCourse] = State::VISITING;
         for (int course : graph[curCourse]) {
-            if (dfs(course, states, courseOrder, graph)) {
+            if (hasCycle(course, states, courseOrder, graph)) {
                 return true;
             }
         }
         states[curCourse] = State::VISITED;
 
+        // Postorder traversal of graph.
+        // The first course that you add to courseOrder is the first course which you've done traversing.
         courseOrder.push_back(curCourse);
 
         return false;

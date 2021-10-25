@@ -41,15 +41,18 @@
 //
 // ***
 
-// For bipartile types of questions:
+// For bipartition types of questions:
 // Traverse all nodes, recursively color the node itself blue (1) and all its neighbor nodes red (-1).
 // If you are able to successfully do it for all nodes in the graph, then the graph is bipartite.
 // Otherwise, if you see a conflict, then the graph is not bipartite.
 // See https://youtu.be/VlZiMD7Iby4
+
+// DFS
 class Solution {
 public:
     bool isBipartite(vector<vector<int>>& graph) {
-        vector<int> colors(graph.size());
+        // colors is initialized to 0, meaning all nodes have not been colored yet.
+        vector<int> colors(graph.size(), 0);
 
         for (int i = 0; i < graph.size(); ++i) {
             if (not colors[i]) {  // only traverse nodes which have not been colored.
@@ -76,6 +79,44 @@ private:
         for (int neighNode : graph[curNode]) {
             if (not coloring(neighNode, -curColor, graph, colors)) {
                 return false;
+            }
+        }
+
+        return true;
+    }
+};
+
+// BFS
+class Solution {
+public:
+    bool isBipartite(vector<vector<int>>& graph) {
+        queue<int> q;
+        vector<int> colors(graph.size(), 0);
+
+        // Traverse all nodes in the graph in case there are nodes that are not connected.
+        for (int i = 0; i < graph.size(); ++i) {
+            if (colors[i] != 0) {
+                continue;
+            }
+
+            q.push(i);
+            colors[i] = 1;
+
+            while (not q.empty()) {
+                int cur = q.front();
+                q.pop();
+                for (int neigh : graph[cur]) {
+                    // Neighbor node has the same color as current node.
+                    if (colors[neigh] == colors[cur]) {
+                        return false;
+                    }
+
+                    // Neighbor node has not been colored yet.
+                    if (colors[neigh] == 0) {
+                        colors[neigh] = -colors[cur];
+                        q.push(neigh);
+                    }
+                }
             }
         }
 

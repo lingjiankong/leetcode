@@ -35,6 +35,7 @@
 //
 // ***
 
+// Note that we are told that all words in strs have the same length and are anagrams of each other.
 // Union-find
 class Solution {
 public:
@@ -67,7 +68,7 @@ private:
                 }
             }
         }
-        return true;
+        return diff == 0 or diff == 2;
     }
 };
 
@@ -83,7 +84,7 @@ public:
                 continue;
             }
 
-            // All similar strings will be marked visited during on traversal.
+            // All similar strings will be marked visited during one traversal.
             dfs(strs, word, visited);
             ++numClusters;
         }
@@ -115,7 +116,7 @@ private:
                 }
             }
         }
-        return true;
+        return diff == 0 or diff == 2;
     }
 };
 
