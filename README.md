@@ -162,7 +162,7 @@
 | 81 | Search in Rotated Sorted Array II | Alpha+
 | 153 | Find Minimum in Rotated Sorted Array | Alpha+
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha+
-| 34 | Find First and Last Position of Element in Sorted Array | Alpha
+| 34 | Find First and Last Position of Element in Sorted Array | Alpha+
 | 315 | Count of Smaller Numbers After Self | Alpha+
 | 378 | Kth Smallest Element in a Sorted Matrix | Alpha | binary search, priority queue
 | 74 | Search a 2D Matrix | Alpha
@@ -180,6 +180,7 @@
 | 875 | Koko Eating Bananas | Alpha | koko-eat-bananas
 | 1011 | Capacity To Ship Packages Within D Days | Alpha | koko-eat-bananas
 | 1891 | Cutting Ribbons | koko-eat-bananas
+| 981 | Time Based Key-Value Store | Alpha+
 
 ## Devide and Conquer
 | ID | Name | Rating | Note
