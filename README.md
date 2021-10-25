@@ -378,8 +378,8 @@
 | 752 | Open the Lock | Alpha+
 | 542 | 01 Matrix | Alpha+ | BFS
 | 934 | Shortest Bridge | Alpha | BFS
-| 433 | Minimum Genetic Mutation | Alpha
-| 815 | Bus Routes | Alpha
+| 433 | Minimum Genetic Mutation | Alpha | BFS
+| 815 | Bus Routes | Alpha+ | BFS
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
 | 773 | Sliding Puzzle | Alpha+
 | 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
@@ -417,8 +417,8 @@
 | 737 | Sentence Similarity II | Alpha+ | union find
 | 1319 | Number of Operations to Make Network Connected | Alpha | union find
 | 959 | Regions Cut By Slashes | Alpha | union find
-| 785 | Is Graph Bipartite | Alpha | bipartition, coloring
-| 886 | Possible Bipartition | Alpha | bipartition, coloring
+| 785 | Is Graph Bipartite | Alpha+ | bipartition, coloring
+| 886 | Possible Bipartition | Alpha+ | bipartition, coloring
 | 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
 | 997 | Find the Town Judge | Alpha+
 | N6 | Dijkstra | Alpha+ | Dijkstra

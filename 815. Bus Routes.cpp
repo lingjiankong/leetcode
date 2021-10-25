@@ -36,8 +36,8 @@
 // Treat bus stops as a graph and BFS on it.
 // The difference between this problem and vanilla BFS is that:
 // in this problem, when you are expanding a bus stop, you not only expand neighbor of a bus stop. Instead, you look at
-// all buses (buses you haven't rided yet) you can ride from that bus stop and add to the queue all stops you can reach
-// by riding those buses.
+// all buses (buses you haven't rided yet) you can ride from that bus stop and add to the queue *all* stops you can
+// reach by riding those buses.
 class Solution {
 public:
     int numBusesToDestination(vector<vector<int>>& routes, int source, int target) {
