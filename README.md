@@ -1,14 +1,5 @@
 #Coding challenges from www.leetcode.com
 
-## Note
-- Alpha: Three star questions. These are the questions that you must know.
-- Bravo: Two star questions. It is also good to know these questions.
-- Charlie: One star questions.
-- Exotic: Exotic questions (not necessarily a bad question). Can be skipped.
-- Hard: Hard to understand questions. If you can't get it, then don't spend too much time on it.
-- Bad: Badly designed questions with lots of down voting. You shouldn't waste your time here.
-- Mechanical: There might not be some obvious pattern to the solution. Just memorize it.
-
 ## Tree
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -192,6 +183,7 @@
 
 ## Devide and Conquer
 | ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
 | 215 | Kth Largest Element in an Array | Alpha+ | quick sort, binary search
 | 169 | Majority Element | Alpha+
 | 153 | Find Minimum in Rotated Sorted Array | Alpha+
