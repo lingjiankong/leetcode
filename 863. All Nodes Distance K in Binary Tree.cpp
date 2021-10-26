@@ -27,6 +27,7 @@
 //
 // ***
 
+// First, build a graph from the tree. Then, BFS the graph from target.
 class Solution {
 public:
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {

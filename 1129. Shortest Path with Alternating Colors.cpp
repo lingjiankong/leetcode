@@ -63,8 +63,8 @@ public:
         // first element: node; second element: how you traversed to this node, where 1 indicates you've traversed to
         // this node via a red edge, and 0 indicates you've traversed to this node via a blue edge.
         queue<vector<int>> q;
-        q.push({0, 1});  // traversed to 0 from a red edge
-        q.push({0, 0});  // traversed to 0 from blue edge
+        q.push({0, 1});  // traversed to 0 via a red edge
+        q.push({0, 0});  // traversed to 0 via a blue edge
 
         unordered_set<int> red_visited;  // visited in red graph
         red_visited.insert(0);
@@ -82,11 +82,11 @@ public:
                 q.pop();
 
                 int node = cur[0];
-                bool from_red = cur[1];  // if we traversed to this node from a red node;
+                bool from_red = cur[1];  // if we traversed to this node from a red node
 
                 ans[node] = ans[node] == -1 ? steps : min(steps, ans[node]);
 
-                // if we traversed here via a red node, then we should traverse the blue graph, and vice versa.
+                // if we traversed here via a red edge, then we should traverse the blue graph, and vice versa.
                 vector<vector<int>>& graph = from_red ? blue_graph : red_graph;
                 unordered_set<int>& visited = from_red ? blue_visited : red_visited;
                 for (int neighNode : graph[node]) {

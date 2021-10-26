@@ -376,7 +376,7 @@
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
 | 773 | Sliding Puzzle | Alpha+
 | 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
-| 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS
+| 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS, mechanical
 | 847 | Shortest Path Visiting All Nodes | Alpha | multidimensional BFS
 | 864 | Shortest Path to Get All Keys | Alpha | multidimensional BFS
 | 207 | Course Schedule | Alpha+ | topological sort
@@ -408,7 +408,7 @@
 | 839 | Similar String Groups | Alpha | union find
 | 952 | Largest Component Size by Common Factor | Alpha | union find
 | 737 | Sentence Similarity II | Alpha+ | union find
-| 1319 | Number of Operations to Make Network Connected | Alpha | union find
+| 1319 | Number of Operations to Make Network Connected | Alpha+ | union find
 | 959 | Regions Cut By Slashes | Alpha | union find
 | 785 | Is Graph Bipartite | Alpha+ | bipartition, coloring
 | 886 | Possible Bipartition | Alpha+ | bipartition, coloring

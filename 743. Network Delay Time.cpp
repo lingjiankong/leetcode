@@ -54,7 +54,7 @@ public:
         unordered_map<int, int> minDistTo = dijkstra<int, int>(neighbors, weights, k);
 
         int maxTime = 0;
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i <= n; ++i) {  // nodes are indexed from 1 to n
             if (not minDistTo.count(i)) {
                 return -1;
             }
@@ -64,7 +64,7 @@ public:
     }
 };
 
-// Bellman-Ford
+// Bellman-Ford. Understand Dijkstra solution is sufficient.
 class Solution {
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
@@ -96,7 +96,7 @@ public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
         // 1st dim: max number of steps it could possibly take to traverse the entire graph: n (number of nodes)
         // 2nd dim: all nodes (indexed from 1 to n)
-        vector<vector<int>> dp(n, vector<int>(n + 1, 1e9)); 
+        vector<vector<int>> dp(n, vector<int>(n + 1, 1e9));
         dp[0][k] = 0;
 
         for (int i = 1; i < n; ++i) {

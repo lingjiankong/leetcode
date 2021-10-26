@@ -57,7 +57,7 @@ public:
         }
 
         int redundant_cables = 0;
-        for (vector<int> conn : connections) {
+        for (vector<int>& conn : connections) {
             int p = conn[0], q = conn[1];
             if (uf.findRoot(p) == uf.findRoot(q)) {
                 ++redundant_cables;

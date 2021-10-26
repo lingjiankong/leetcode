@@ -39,6 +39,7 @@ private:
             dfs(graph, neighNode, target, curPath, allPaths);
         }
 
-        // Since we are given a DAG (no cycle), there is no need pop curNode from curPath.
+        // Since we are given a DAG (no cycle), there is no need to pop curNode from curPath.
+        // You may do curPath.pop_back() optionally here.
     }
 };

@@ -16,8 +16,8 @@ unordered_map<NodeT, DistT> dijkstra(unordered_map<NodeT, unordered_set<NodeT>>&
     minDistTo[start] = 0;
 
     // smallest distance has the highest priority
-    auto compare = [](const NodeState& a, const NodeState& b) { return a.dist > b.dist; };
-    priority_queue<NodeState, vector<NodeState>, decltype(compare)> pq(compare);
+    auto comp = [](const NodeState& a, const NodeState& b) { return a.dist > b.dist; };
+    priority_queue<NodeState, vector<NodeState>, decltype(comp)> pq(comp);
     pq.push({start, 0});
 
     while (not pq.empty()) {
