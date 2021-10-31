@@ -24,6 +24,7 @@
 // ***
 
 // We are guaranteed there is only one maxima and it is the global maxima.
+// See 153. Find Minimum in Rotated Sorted Array for why using while (left < right).
 class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& A) {
@@ -34,7 +35,7 @@ public:
             int mid = left + (right - left) / 2;
             if (A[mid] < A[mid + 1]) {
                 left = mid + 1;
-            } else {
+            } else if (A[mid] > A[mid + 1]) {
                 right = mid;
             }
         }

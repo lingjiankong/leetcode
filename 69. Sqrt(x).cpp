@@ -18,11 +18,10 @@
 // Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
 //
 // ***
-//
+
 // Find last mid such that mid * mid <= x (target).
 // So we use std::upper_bound() to find the first mid such that mid * mid > x
 // Then index right - 1 is the last mid such that mid * mid <= x
-
 int mySqrt(int x) {
     if (x <= 1) {
         return x;
@@ -34,9 +33,11 @@ int mySqrt(int x) {
 
         // Theoretically you can also write if (mid * mid <= x),
         // but mid * mid will overflow, so you write if (mid <= x / mid)
-        if (mid <= x / mid) {
+        if (mid == x / mid) {
             left = mid + 1;
-        } else {
+        } else if (mid < x / mid) {
+            left = mid + 1;
+        } else if (mid > x / mid) {
             right = mid;
         }
     }

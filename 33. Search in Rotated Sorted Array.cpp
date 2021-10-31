@@ -21,8 +21,8 @@
 // ***
 //
 // Note that you do not have any duplicate element in this question.
-// See also 81. Search in Rotated Sorted Array II, where you mighe have duplicate elements.
-// Altough you do not know where the pivot point is, either left half or right half of the array must be sorted.
+// See also 81. Search in Rotated Sorted Array II, where you might have duplicate elements.
+// Although you do not know where the pivot point is, either left half or right half of the array must be sorted.
 //
 // For these kinds of binary search questions which
 //
@@ -31,9 +31,10 @@
 // -> Then you should initialize left = 0 and right = nums.size() - 1 (not nums.size()), because you can't take index on
 // nums when i = nums.size(),
 //
-// 2. You are finding an element which MIGHT NOT be in the array (which you need to return -1)
-// -> Then the condition should be while (left <= right), because otherwise if nums has size 1 then the while loop will
-// simply not execute.
+// 2. You are finding an element which MIGHT NOT be in the array (which you need to return -1), OR
+// You don't know what element to find (for example, finding peak, see 852. Peak Index in a Mountain Array)
+// -> Then the condition should be while (left <= right) (instead of while (left < right)).
+// Otherwise if nums has size 1 then the while loop will simply not execute.
 //
 // See also 153. Find Minimum in Rotated Sorted Array. In that question, the minimum element is guaranteed to exist
 // (which is just the pivot), so the condition in that question is while (left < right) because even if the size of nums
@@ -49,21 +50,24 @@ int search(vector<int>& nums, int target) {
             return mid;
         }
 
-        if (nums[mid] == nums[right]) {  // if this is the case, mid == right (since there's no duplciate in the array)
+        // if there's duplicate in the array (not required for this question)
+        if (nums[mid] == nums[right]) {
             --right;
         }
+
         // Right half is sorted.
         else if (nums[mid] < nums[right]) {
             // Target is in this sorted right half of the array.
-            if (nums[mid] < target && target <= nums[right]) {
+            if (nums[mid] < target and target <= nums[right]) {
                 left = mid + 1;
             } else {
                 right = mid;
             }
-        } else if (nums[mid] > nums[right]) {
-            // Left half is sorted.
-            if (nums[left] <= target && target < nums[mid]) {
-                // Target is in this sorted left half of the array.
+        }
+        // Left half is sorted.
+        else if (nums[mid] > nums[right]) {
+            // Target is in this sorted left half of the array.
+            if (nums[left] <= target and target < nums[mid]) {
                 right = mid;
             } else {
                 left = mid + 1;

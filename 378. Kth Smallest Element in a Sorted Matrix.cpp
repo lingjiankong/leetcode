@@ -26,7 +26,7 @@ int kthSmallest(vector<vector<int>>& matrix, int k) {
         for (int j = 0; j < matrix[0].size(); ++j) {
             pq.push(matrix[i][j]);
 
-            // Always keep the k smalleset elements in the priority_queue.
+            // Always keep the k smallest elements in the priority_queue.
             // So the top() of the priority_queue is always the kth smallest element.
             if (pq.size() > k) {
                 pq.pop();
@@ -37,12 +37,14 @@ int kthSmallest(vector<vector<int>>& matrix, int k) {
     return pq.top();
 }
 
-// Binary search, O(nlogn) time, O(1) space.
+// Binary search using std::lower_bound(), O(nlogn) time, O(1) space.
 class Solution {
 public:
     int kthSmallest(vector<vector<int>>& matrix, int k) {
         // Note here that left and right are numbers, not index.
-        int left = matrix[0][0], right = matrix.back().back();
+        // Given that rows and columns are sorted in ascending order,
+        // therefore the smallest element is matrix[0][0] and largest element is matrix.back().back().
+        int left = matrix[0][0], right = matrix.back().back() + 1;
 
         // Eventually, left and right will converge to the Kth smallest element.
         while (left < right) {
@@ -54,9 +56,11 @@ public:
                 count += upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();
             }
 
-            if (count < k) {
+            if (count == k) {
+                right = mid;
+            } else if (count < k) {
                 left = mid + 1;
-            } else {
+            } else if (count > k) {
                 right = mid;
             }
         }

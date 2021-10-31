@@ -33,8 +33,8 @@ public:
         int numPrimes = 0;
         for (int i = 2; i * i < n; ++i) {
             if (isPrime[i]) {
-                for (int j = 2; i * j < n; ++j) {
-                    isPrime[i * j] = false;
+                for (int factor = 2; i * factor < n; ++factor) {
+                    isPrime[i * factor] = false;
                 }
             }
         }

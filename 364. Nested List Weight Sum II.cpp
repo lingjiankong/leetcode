@@ -43,7 +43,7 @@ public:
     }
 
 private:
-    void preorder(NestedInteger root, int depth, vector<int>& sumAtAllLevels) {
+    void preorder(NestedInteger& root, int depth, vector<int>& sumAtAllLevels) {
         if (depth >= sumAtAllLevels.size()) {
             sumAtAllLevels.push_back(0);
         }
@@ -53,7 +53,7 @@ private:
             return;
         }
 
-        for (auto child : root.getList()) {
+        for (auto& child : root.getList()) {
             preorder(child, depth + 1, sumAtAllLevels);
         }
     }

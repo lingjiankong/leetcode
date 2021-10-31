@@ -21,7 +21,7 @@
 //
 // ***
 
-// Code only. Detail explanation after the code.
+// Code only.
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     int n1 = nums1.size();
     int n2 = nums2.size();
@@ -98,7 +98,7 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
 // effect:   1   2   3   4 | 5   6   7   8   9
 //
 // The basic idea is to use binary search on nums1 to find cut1,
-// (and cut2 can be automatically calculated as cut2 = (n1+n2)/2 - cut1)
+// (and cut2 can be automatically calculated as cut2 = (n1 + n2) / 2 - cut1
 // such that L1 <= R2 and L2 <= R1.
 // (i.e. all numbers to the left of cut1 and cut2 <= those to the right of cut1 and cut2).
 //

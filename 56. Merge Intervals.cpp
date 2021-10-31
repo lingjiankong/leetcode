@@ -32,7 +32,7 @@ public:
 
         vector<vector<int>> mergedIntervals;
 
-        for (auto interval : intervals) {
+        for (auto& interval : intervals) {
             // If mergedIntervals is empty, or if the start of current interval is greater than the end of last merged
             // interval, then add a brand new interval to merged interval.
             if (mergedIntervals.empty() || mergedIntervals.back()[1] < interval[0]) {

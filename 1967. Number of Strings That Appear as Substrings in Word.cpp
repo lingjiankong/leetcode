@@ -46,7 +46,7 @@ class Solution {
 public:
     int numOfStrings(vector<string>& patterns, string word) {
         int res = 0;
-        for (const string& s : patterns) {
+        for (string& s : patterns) {
             if (isSubstring(s, word)) {
                 ++res;
             }
@@ -55,7 +55,7 @@ public:
     }
 
 private:
-    int isSubstring(string pattern, string word) {
+    int isSubstring(string& pattern, string& word) {
         if (pattern.size() > word.size()) {
             return false;
         }
@@ -84,7 +84,7 @@ public:
 
 private:
     // Return true if pattern is a substring of word
-    int isSubstring(string pattern, string word) {
+    int isSubstring(string& pattern, string& word) {
         if (word.find(pattern) != string::npos) {
             return true;
         }

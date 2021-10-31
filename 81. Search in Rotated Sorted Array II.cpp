@@ -16,7 +16,7 @@
 //
 // ***
 
-int search(vector<int>& nums, int target) {
+bool search(vector<int>& nums, int target) {
     int left = 0, right = nums.size() - 1;
 
     while (left <= right) {
@@ -29,10 +29,11 @@ int search(vector<int>& nums, int target) {
         if (nums[mid] == nums[right]) {  // seeing duplicate element
             --right;
         }
+
         // Right half is sorted.
         else if (nums[mid] < nums[right]) {
             // Target is in this sorted right half of the array.
-            if (nums[mid] < target && target <= nums[right]) {
+            if (nums[mid] < target and target <= nums[right]) {
                 left = mid + 1;
             } else {
                 right = mid;
@@ -41,7 +42,7 @@ int search(vector<int>& nums, int target) {
         // Left half is not sorted.
         else if (nums[mid] > nums[right]) {
             // Target is in the sorted left half of the array.
-            if (nums[left] <= target && target < nums[mid]) {
+            if (nums[left] <= target and target < nums[mid]) {
                 right = mid;
             } else {
                 left = mid + 1;

@@ -22,7 +22,7 @@ public:
     int depthSum(vector<NestedInteger>& nestedList) {
         int res = 0;
 
-        for (auto node : nestedList) {
+        for (auto& node : nestedList) {
             res += preorder(node, 1);
         }
 
@@ -31,16 +31,40 @@ public:
 
 private:
     int preorder(NestedInteger& root, int level) {
-        int res = 0;
-
         if (root.isInteger()) {
-            return level * nestedList.getInteger();
+            return level * root.getInteger();
         }
 
+        int res = 0;
         for (auto child : root.getList()) {
             res += preorder(child, level + 1);
         }
 
         return res;
+    }
+};
+
+// Same idea, maintain global variable.
+class Solution {
+public:
+    int depthSum(vector<NestedInteger>& nestedList) {
+        for (auto& node : nestedList) {
+            preorder(node, 1);
+        }
+
+        return _res;
+    }
+
+private:
+    int _res = 0;
+
+    void preorder(NestedInteger& root, int level) {
+        if (root.isInteger()) {
+            _res += level * root.getInteger();
+        }
+
+        for (auto child : root.getList()) {
+            preorder(child, level + 1);
+        }
     }
 };

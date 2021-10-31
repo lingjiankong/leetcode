@@ -57,7 +57,7 @@ public:
         }
 
         int left = maxWeight, right = totalWeights + 1;
-        // lower_bound: looking for minimum weight capacity.
+        // lower_bound: looking for minimum weight capacity
         while (left < right) {
             // cadidate capacity
             int mid = left + (right - left) / 2;
@@ -73,11 +73,13 @@ public:
             }
 
             if (daysNeeded == days) {
-                // Try reduce the days needed (lower_bound).
+                // Try reduce weight capacity (lower_bound)
                 right = mid;
             } else if (daysNeeded < days) {
+                // Try reduce weight capacity (increase daysNeeded)
                 right = mid;
             } else if (daysNeeded > days) {
+                // Try increase weight capacity (reduce daysNeeded)
                 left = mid + 1;
             }
         }

@@ -50,8 +50,8 @@
 | 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha+ | postorder
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha+
 | 341 | Flatten Nested List Iterator | Bravo
-| 339 | Nested List Weight Sum | Alpha | preorder
-| 364 | Nested List Weight Sum II | preorder
+| 339 | Nested List Weight Sum | Alpha+ | preorder
+| 364 | Nested List Weight Sum II | Alpha+ | preorder
 | 987 | Vertical Order Traversal of a Binary Tree | Alpha+
 | 1302 | Deepest Leaves Sum | Alpha
 | 872 | Leaf-Similar Trees | Alpha
@@ -157,29 +157,31 @@
 | 441 | Arranging Coins | Alpha
 | 367 | Valid Perfect Square | Alpha
 | 611 | Valid Triangle Number | Alpha
-| 69 | Sqrt(x) | Alpha
+| 69 | Sqrt(x) | Alpha+
 | 33 | Search in Rotated Sorted Array | Alpha+
 | 81 | Search in Rotated Sorted Array II | Alpha+
 | 153 | Find Minimum in Rotated Sorted Array | Alpha+
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha+
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha+
 | 315 | Count of Smaller Numbers After Self | Alpha+
-| 378 | Kth Smallest Element in a Sorted Matrix | Alpha | binary search, priority queue
-| 74 | Search a 2D Matrix | Alpha
+| 378 | Kth Smallest Element in a Sorted Matrix | Alpha+ | binary search, priority queue
+| 668 | Kth Smallest Number in Multiplication Table | Alpha
+| 719 | Find K-th Smallest Pair Distance | Alpha
+| 74 | Search a 2D Matrix | Alpha+
 | 240 | Search a 2D Matrix II | Alpha, Mechanical
 | 287 | Find the Duplicate Number | Charlie
-| 162 | Find Peak Element | Alpha
+| 162 | Find Peak Element | Bravo
 | 852 | Peack Index in a Mountain Array | Alpha
 | 1095 | Find in Mountain Array | Alpha
-| 4 | Median of Two Sorted Arrays | Alpha, Mechanical
+| 4 | Median of Two Sorted Arrays | Alpha | mechanical
 | 274 | H-Index | Bravo | See 275
 | 275 | H-Index II | Bravo
 | 278 | First Bad Version | Alpha
 | 887 | Super Egg Drop | Alpha | dynamic programming, binary search
 | 312 | Burst Balloons | Bravo
-| 875 | Koko Eating Bananas | Alpha | koko-eat-bananas
-| 1011 | Capacity To Ship Packages Within D Days | Alpha | koko-eat-bananas
-| 1891 | Cutting Ribbons | koko-eat-bananas
+| 875 | Koko Eating Bananas | Alpha+ | koko-eat-bananas
+| 1011 | Capacity To Ship Packages Within D Days | Alpha+ | koko-eat-bananas
+| 1891 | Cutting Ribbons | Alpha+ | koko-eat-bananas
 | 981 | Time Based Key-Value Store | Alpha+
 
 ## Devide and Conquer
@@ -326,8 +328,8 @@
 | 232 | Implement Queue using Stacks | Bravo
 | 225 | Implement Stack using Queues | Bravo
 | 150 | Evaluate Reverse Polish Notation | Alpha
-| 42 | Trapping Rain Water | Alpha | dynamic programming, two pointers, monotonic stack
-| 84 | Largest Rectangle in Histogram | monotonic stack
+| 42 | Trapping Rain Water | Alpha+ | dynamic programming, two pointers, monotonic stack
+| 84 | Largest Rectangle in Histogram | Alpha+ | monotonic stack
 | 503 | Next Greater Element II | Alpha | monotonic stack
 | 739 | Daily Temperatures | Alpha+ | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
@@ -446,9 +448,9 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 27 | Remove Element | Alpha+
-| 283 | Move Zeroes | Alpha
-| 26 | Remove Duplicates from Sorted Array | Alpha
-| 80 | Remove Duplicates from Sorted Array II | Alpha
+| 283 | Move Zeroes | Alpha+
+| 26 | Remove Duplicates from Sorted Array | Alpha+
+| 80 | Remove Duplicates from Sorted Array II | Alpha+
 | 277 | Find the Celebrity | Bravo
 | 189 | Rotate Array | Alpha
 | 299 | Bulls and Cows | Bravo
@@ -463,7 +465,7 @@
 | 244 | Shortest Word Distance II | Alpha
 | 55 | Jump Game | Alpha
 | 45 | Jump Game II | Alpha
-| 11 | Container With Most Water | Alpha
+| 11 | Container With Most Water | Alpha+ | two pointers
 | 128 | Longest Consecutive Sequence | Alpha
 | 674 | Longest Continuous Increasing Subsequence | Alpha
 | 673 | Number of Increasing Subsequence | Bravo | dynamic programming
@@ -471,11 +473,11 @@
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
 | 321 | Create Maximum Number | Hard
-| 56 | Merge Intervals | Alpha
-| 57 | Insert Intervals | Alpha | Merge interval
+| 56 | Merge Intervals | Alpha+ | intervals
+| 57 | Insert Intervals | Alpha | intervals
 | 252 | Meeting Rooms | Alpha
 | 253 | Meeting Rooms II | Alpha |
-| 435 | Non-overlapping Intervals | Alpha | greedy
+| 435 | Non-overlapping Intervals | Alpha+ | greedy
 | 452 | Minimum Number of Arrows to Burst Balloons | Alpha | greedy
 | 1640 | Check Array Formation Through Concatenation | Alpha
 | 238 | Product of Array Except Self | Alpha
@@ -528,7 +530,7 @@
 | 12 | Integer to Roman | Bad
 | 246 | Strobogrammatic Number | Alpha
 | 247 | Strobogrammatic Number II | Charlie
-| 125 | Valid Palindrome | Alpha
+| 125 | Valid Palindrome | Alpha+ | two pointers
 | 680 | Valid Palindrome II | Alpha+
 | 266 | Palindrome Permutation | Alpha
 | 267 | Palindrome Permutation II | Alpha
@@ -562,7 +564,7 @@
 | 415 | Add Strings | Alpha+
 | 67 | Add Binary | Alpha
 | 43 | Multiply Strings | Exotic
-| 204 | Count Primes | Bravo
+| 204 | Count Primes | Alpha+
 | 231 | Power of Two | Alpha
 | 326 | Power of Three | Alpha
 | 342 | Power of Four | Alpha
@@ -581,10 +583,20 @@
 | 223 | Rectangle Area | Bravo | Geometry
 | 1447 | Simplified Fractions | GCD
 
+## Two Pointers
+| 455 | Assign Cookies | Alpha | two pointers
+| 125 | Valid Palindrome | Alpha+ | two pointers
+| 917 | Reverse Only Letters | Alpha+ | two pointers
+| 42 | Trapping Rain Water | Alpha+ | dynamic programming, two pointers, monotonic stack
+| 11 | Container With Most Water | Alpha+ | two pointers
+| 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
+| 925 | Long Pressed Name | Bravo
+| 986 | Interval List Intersection | Alpha+ | two pointers, intervals
+| 881 | 881. Boats to Save People | Alpha
+
 ## Uncategorized
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 | 991 | Broken Calculator | Charlie | math
 | 556 | Next Greater Element III | Charlie
 | 969 | Pancake Sorting | Charlie | recursion

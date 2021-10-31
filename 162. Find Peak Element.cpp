@@ -23,7 +23,8 @@
 //
 // ***
 
-// We are given that nums[-1] = nums[n] = -∞, so if we ever see a number which is less that previous number,
+// O(n)
+// We are given that nums[-1] = nums[n] = -∞, so if we ever see a number which is less than previous number,
 // previous number is a local maxima.
 class Solution {
 public:
@@ -37,13 +38,14 @@ public:
     }
 };
 
+// O(logn)
 // Binary search.
 // If nums[mid] < nums[mid + 1], then local maxima is to the right of mid, in this case left = mid + 1.
 // Otherwise, either mid itself is the local maxima or local maxima is to the left of mid, in this case right = mid.
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) {
-        int left = 1, right = nums.size() - 1;
+        int left = 0, right = nums.size() - 1;
         while (left < right) {
             int mid = left + (right - left) / 2;
             if (nums[mid] < nums[mid + 1]) {

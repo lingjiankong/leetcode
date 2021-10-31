@@ -46,7 +46,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
             return true;
         } else if (value < target) {
             left = mid + 1;
-        } else {
+        } else if (value > target) {
             right = mid;
         }
     }

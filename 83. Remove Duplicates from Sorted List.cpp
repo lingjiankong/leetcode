@@ -14,40 +14,16 @@
 //
 // ***
 
-// Does not delete the duplicated node
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-        if (not head) {
-            return nullptr;
-        }
-
-        ListNode *slow = head, *fast = head->next;
-        while (fast) {
-            if (slow->val != fast->val) {
-                slow->next = fast;
-                slow = slow->next;
-            }
-            fast = fast->next;
-        }
-
-        slow->next = nullptr;
-
-        return head;
-    }
-};
-
-// Delete the duplicated node.
-class Solution {
-public:
-    ListNode* deleteDuplicates(ListNode* head) {
-        ListNode dummy = ListNode(0);
+        ListNode dummy(0);
         dummy.next = head;
 
         ListNode* prevNode = &dummy;
 
         while (prevNode->next) {
-            if (prevNode != &dummy and prevNode->next->val == prevNode->val) {
+            if (prevNode != &dummy and prevNode->val == prevNode->next->val) {
                 ListNode* toBeDeleted = prevNode->next;
                 prevNode->next = prevNode->next->next;
                 delete toBeDeleted;

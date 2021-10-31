@@ -55,6 +55,7 @@
 // 875. Koko Eating Bananas and
 // 1011. Capacity To Ship Packages Within D Days
 // which are very similar questions but are looking for minimum values (therefore uses lower_bound).
+// This question is looking for maximum values (therefore uses upper_bound and return right - 1).
 class Solution {
 public:
     int maxLength(vector<int>& ribbons, int k) {
