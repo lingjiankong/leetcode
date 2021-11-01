@@ -45,10 +45,15 @@
 //
 // ***
 
+// maximize product of probability = minimize sum of negative log likelihood
 // Multiplying probabilities will result in precision errors.
-// Instead of multiplying porbablilities, take negative log likelihood (all negative log likelihood are >= 0).
-// Now the problem can be formulated using vanilla dijkstra's algorithm where you find the mininum of the sum of
-// negative log likelihood, which gives you the maximum product of probability.
+// Instead of multiplying porbablilities, take negative log likelihood (all negative log likelihood are >= 0, so we can
+// use Dijkstra). Now the problem can be formulated using vanilla Dijkstra's algorithm where you find the mininum of the
+// sum of negative log likelihood, which gives you the maximum product of probability.
+//
+// a * b * c
+// = e ^ log(a) * e ^ log(b) * e ^ log(c)
+// = e ^ (log(a) + log(b) + log(c))
 class Solution {
 public:
     double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start, int end) {

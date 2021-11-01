@@ -592,7 +592,8 @@
 | 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
 | 925 | Long Pressed Name | Bravo
 | 986 | Interval List Intersection | Alpha+ | two pointers, intervals
-| 881 | 881. Boats to Save People | Alpha
+| 881 | Boats to Save People | Alpha+
+| 977 | Squares of a Sorted Array | Alpha+
 
 ## Uncategorized
 | ID | Name | Rating | Note

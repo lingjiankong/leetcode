@@ -45,7 +45,7 @@ public:
     vector<string> findItinerary(vector<vector<string>> tickets) {
         // Construct graph, use multiset so children is sorted in lexical order.
         unordered_map<string, multiset<string>> children;
-        for (auto ticket : tickets) {
+        for (auto& ticket : tickets) {
             children[ticket[0]].insert(ticket[1]);
         }
 

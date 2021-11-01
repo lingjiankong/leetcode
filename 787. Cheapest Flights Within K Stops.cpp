@@ -91,12 +91,12 @@ private:
                 // because we might be interested in larger cost with fewer steps.
 
                 for (int neighID : neighbors[curID]) {
-                    int distToNeigh = costToCur + weights[curID][neighID];
+                    int costToNeigh = costToCur + weights[curID][neighID];
 
-                    // Keep track of minimum distance here.
-                    if (not minCostTo.count(neighID) or distToNeigh < minCostTo[neighID]) {
-                        minCostTo[neighID] = distToNeigh;
-                        q.push({neighID, distToNeigh});
+                    // Keep track of minimum cost here.
+                    if (not minCostTo.count(neighID) or costToNeigh < minCostTo[neighID]) {
+                        minCostTo[neighID] = costToNeigh;
+                        q.push({neighID, costToNeigh});
                     }
                 }
             }
@@ -107,7 +107,7 @@ private:
     }
 };
 
-// Bellman-Ford
+// Bellman-Ford. Understand BFS version is sufficient.
 class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {

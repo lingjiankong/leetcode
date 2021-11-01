@@ -65,6 +65,7 @@ public:
         int m = grid.size(), n = grid[0].size();
 
         queue<nodeState> q;
+        // 3D BFS, therefore 3 different states.
         unordered_map<int, unordered_map<int, unordered_map<int, int>>> visited;
 
         int allKeys = 0;  // goal is to collect all keys

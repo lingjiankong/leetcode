@@ -49,6 +49,7 @@
 //
 // ***
 
+// For each city, use Dijkstra to find the min distance to every other city.
 class Solution {
 public:
     int findTheCity(int n, vector<vector<int>>& edges, int distanceThreshold) {

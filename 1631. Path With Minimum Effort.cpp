@@ -43,15 +43,14 @@
 // ***
 
 // Slight modification based on N6. Dijkstra. See comments.
-template <typename T>
-unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
-                               unordered_map<T, unordered_map<T, int>>& weights, T start) {
+unordered_map<string, int> dijkstra(unordered_map<string, unordered_set<string>>& neighbors,
+                                    unordered_map<string, unordered_map<string, int>>& weights, string start) {
     struct NodeState {
-        T id;
+        string id;
         int effort;
     };
 
-    unordered_map<T, int> minEffortTo;
+    unordered_map<string, int> minEffortTo;
     minEffortTo[start] = 0;
 
     auto compare = [](const NodeState& a, const NodeState& b) { return a.effort > b.effort; };
@@ -62,14 +61,14 @@ unordered_map<T, int> dijkstra(unordered_map<T, unordered_set<T>>& neighbors,
         NodeState curState = pq.top();
         pq.pop();
 
-        T curID = curState.id;
+        string curID = curState.id;
         int effortToCur = curState.effort;
 
         if (minEffortTo.count(curID) and effortToCur > minEffortTo[curID]) {
             continue;
         }
 
-        for (T neighID : neighbors[curID]) {
+        for (string neighID : neighbors[curID]) {
             // Here is the only difference to vanilla Dijkstra:
             // Notice we are taking the max of efforts instead of accumulating them.
             int effortToNeigh = max(effortToCur, weights[curID][neighID]);
@@ -93,12 +92,12 @@ public:
 
         string start = "0,0";
         string goal = to_string(heights.size() - 1) + "," + to_string(heights[0].size() - 1);
-        unordered_map<string, int> effortTo = dijkstra<string>(neighbors, weights, "0,0");
+        unordered_map<string, int> effortTo = dijkstra(neighbors, weights, "0,0");
         return effortTo[goal];
     }
 
 private:
-    // Construct a graph to use Dijkstra.
+    // Construct a graph for Dijkstra.
     void _construct(vector<vector<int>>& heights, unordered_map<string, unordered_set<string>>& neighbors,
                     unordered_map<string, unordered_map<string, int>>& weights) {
         int m = heights.size(), n = heights[0].size();
