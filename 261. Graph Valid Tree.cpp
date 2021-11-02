@@ -21,7 +21,7 @@ public:
 
             // You cannot constraint p and q with another edge if they are already connected (i.e. share the same root).
             // In this case, this is not a valid graph.
-            if (uf.findRoot(p) == uf.findRoot(q)) {
+            if (uf.isConnected(p, q)) {
                 return false;
             }
 

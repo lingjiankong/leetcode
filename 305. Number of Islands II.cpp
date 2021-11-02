@@ -49,13 +49,13 @@ public:
         UnionFind<string> uf;
 
         vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-        for (vector<int> pos : positions) {
+        for (vector<int>& pos : positions) {
             int x = pos[0], y = pos[1];
 
             string curPos = to_string(x) + "," + to_string(y);
             uf.add(curPos);
 
-            for (vector<int> dir : dirs) {
+            for (vector<int>& dir : dirs) {
                 int neighX = x + dir[0];
                 int neighY = y + dir[1];
                 if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n) {
@@ -88,7 +88,6 @@ public:
 
             uf.add(index);
 
-            bool hasNeighborIsland = false;
             for (vector<int> dir : dirs) {
                 int neighX = x + dir[0];
                 int neighY = y + dir[1];
@@ -96,7 +95,6 @@ public:
                 if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n) {
                     if (uf.has(neighborIndex)) {
                         uf.connect(index, neighborIndex);
-                        hasNeighborIsland = true;
                     }
                 }
             }

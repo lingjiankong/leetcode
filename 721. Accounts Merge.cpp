@@ -51,7 +51,7 @@ public:
         // If multiple accounts belong to the same owner, then they must share at least one email,
         // in which case all emails in those accounts will be connected.
         UnionFind<string> uf;
-        for (vector<string> account : accounts) {
+        for (vector<string>& account : accounts) {
             string firstEmail = account[1];
             uf.add(firstEmail);
             for (int i = 2; i < account.size(); ++i) {
@@ -64,7 +64,7 @@ public:
         // Find all emails which belong to the same root.
         // These emails must belong to the same person.
         unordered_map<string, unordered_set<string>> rootToEmails;
-        for (vector<string> account : accounts) {
+        for (vector<string>& account : accounts) {
             for (int i = 1; i < account.size(); ++i) {
                 string email = account[i];
                 string root = uf.findRoot(email);
@@ -74,7 +74,7 @@ public:
 
         // Find the owner of each email.
         unordered_map<string, string> emailToOwner;
-        for (vector<string> account : accounts) {
+        for (vector<string>& account : accounts) {
             for (int i = 1; i < account.size(); ++i) {
                 emailToOwner[account[i]] = account[0];
             }
@@ -82,7 +82,7 @@ public:
 
         // Now we know who owns all emails which belong to the same root.
         vector<vector<string>> res;
-        for (auto e : rootToEmails) {
+        for (auto& e : rootToEmails) {
             string owner = emailToOwner[e.first];
             unordered_set<string> emailSet = e.second;
 
@@ -91,7 +91,7 @@ public:
 
             res.push_back({});
             res.back().push_back(owner);
-            for (string email : emailVec) {
+            for (string& email : emailVec) {
                 res.back().push_back(email);
             }
         }

@@ -40,13 +40,13 @@ public:
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
         UnionFind<int> uf;
 
-        for (vector<int> edge : edges) {
+        for (vector<int>& edge : edges) {
             int p = edge[0], q = edge[1];
             uf.add(p);
             uf.add(q);
 
             // return the first illegal pq pair.
-            if (uf.findRoot(p) == uf.findRoot(q)) {
+            if (uf.isConnected(p, q)) {
                 return {p, q};
             }
 

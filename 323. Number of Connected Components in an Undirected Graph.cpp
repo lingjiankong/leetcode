@@ -35,7 +35,7 @@ public:
             uf.add(i);
         }
 
-        for (vector<int> edge : edges) {
+        for (vector<int>& edge : edges) {
             uf.connect(edge[0], edge[1]);
         }
 

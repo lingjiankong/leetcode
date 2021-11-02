@@ -389,14 +389,14 @@
 | 138 | Copy List with Random Pointer | Alpha | clone
 | 1485 | Clone Binary Tree With Random Pointer | Alpha | clone
 | N5 | Union Find | Alpha+ | union find
-| 990 | Satisfiability of Equality Equations | Alpha | union find
-| 261 | Graph Valid Tree | Alpha | union find
-| 305 | Number of Islands II | Alpha | union find
-| 323 | Number of Connected Components in an Undirected Graph | Alpha | union find
+| 990 | Satisfiability of Equality Equations | Alpha+ | union find
+| 261 | Graph Valid Tree | Alpha+ | union find
+| 305 | Number of Islands II | Alpha+ | union find
+| 323 | Number of Connected Components in an Undirected Graph | Alpha+ | union find
 | 547 | Number of Provinces | Alpha+ | union find
 | 797 | All Paths From Source to Target | Alpha+ | graph traversal
 | 399 | Evaluate Division | Alpha+ | graph traversal
-| 684 | Redundant Connection | Alpha | union find
+| 684 | Redundant Connection | Alpha+ | union find
 | 721 | Accounts Merge | Alpha | union find
 | 200 | Number of Islands | Alpha+ | BFS, union find
 | 733 | Flood Fill | Alpha+ | BFS
