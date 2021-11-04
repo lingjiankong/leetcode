@@ -443,6 +443,8 @@
 |:---:|:---:|:---:|:---:|
 | 208 | Implement Trie (Prefix Tree) | Alpha+
 | 212 | Word Search II |  Alpha
+| 648 | Replace Words | Bravo
+| 677 | Map Sum Pairs | Alpha
 
 ## Array
 | ID | Name | Rating | Note
