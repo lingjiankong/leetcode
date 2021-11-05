@@ -333,7 +333,8 @@
 | 503 | Next Greater Element II | Alpha | monotonic stack
 | 739 | Daily Temperatures | Alpha+ | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
-| 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
+| 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue 
+| 901 | Online Stock Span | Alpha | monotonic stack
 | 347 | Top K Frequent Elements | Alpha+
 | 692 | Top K Frequent Words | Alpha+
 | 451 | Sort Characters By Frequency | Bravo
@@ -445,6 +446,8 @@
 | 212 | Word Search II |  Alpha
 | 648 | Replace Words | Bravo
 | 677 | Map Sum Pairs | Alpha
+| 211 |  Design Add and Search Words Data Structure | Alpha | Alpha
+
 
 ## Array
 | ID | Name | Rating | Note
