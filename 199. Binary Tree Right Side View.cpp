@@ -42,7 +42,7 @@ private:
         // meaning we are seeing the right most node on that level.
         // In this case, push the value of node to _result.
         if (_result.size() == level) {
-            _result.push_back({node->val});
+            _result.push_back(node->val);
         }
 
         _dfs(node->right, level + 1);

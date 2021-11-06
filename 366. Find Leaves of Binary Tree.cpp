@@ -54,8 +54,8 @@ public:
 private:
     vector<vector<int>> _leaves;
 
-    // Note here we are returning the max *height* of a root, which is the number of edges along a path,
-    // not the max *depth* of a root, which is the number of nodes along a path.
+    // Note here we are returning the max *height* of a root, which is the number of *edges* along a path,
+    // not the max *depth* of a root, which is the number of *nodes* along a path.
     // that's why if (!root) { return -1; }, instead of if (!root) { return 0; }.
     int _maxHeight(TreeNode* root) {
         if (!root) {
@@ -70,7 +70,6 @@ private:
         while (_leaves.size() <= currentMaxHeight) {
             _leaves.push_back({});
         }
-
         _leaves[currentMaxHeight].push_back(root->val);
 
         // Make root the nullptr (i.e. erase that node, since the question asks us to do so)

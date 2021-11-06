@@ -20,39 +20,39 @@
 // Use *postorder* traversal to check:
 // 1. If left and right subtrees are all univalue trees
 // 2. If they are both univalue trees, then see if the value of current node is the same as the value of its existing
-// subtree(s). If so, then we just found another univalue tree, ++_totalUnivalueTrees.
+// subtree(s). If so, then we just found another univalue tree, ++_totalUnivalTrees.
 class Solution {
 public:
     int countUnivalSubtrees(TreeNode* root) {
         _isUnivalueTree(root);
 
-        return _totalUnivalueTrees;
+        return _totalUnivalTrees;
     }
 
 private:
-    int _totalUnivalueTrees = 0;
+    int _totalUnivalTrees = 0;
 
-    bool _isUnivalueTree(TreeNode* node) {
-        if (not node) {
+    bool _isUnivalueTree(TreeNode* root) {
+        if (not root) {
             return true;
         }
 
-        bool isLeftUnival = _isUnivalueTree(node->left);
-        bool isRightUnival = _isUnivalueTree(node->right);
+        bool isLeftUnival = _isUnivalueTree(root->left);
+        bool isRightUnival = _isUnivalueTree(root->right);
 
         if (isLeftUnival and isRightUnival) {
-            if (node->left and node->val != node->left->val) {
+            if (root->left and root->val != root->left->val) {
                 return false;
             }
 
-            if (node->right and node->val != node->right->val) {
+            if (root->right and root->val != root->right->val) {
                 return false;
             }
 
-            // Note: even if both node->left and node->right are nullptrs, we still have a valid univalue tree;
-            // if one of node->left or node->right is nullptr, then as long as the other tree's value is the same as
+            // Note: even if both root->left and root->right are nullptrs, we still have a valid univalue tree;
+            // if one of root->left or root->right is nullptr, then as long as the other tree's value is the same as
             // root's value, we still have a valid univalue tree.
-            ++_totalUnivalueTrees;
+            ++_totalUnivalTrees;
             return true;
         }
 

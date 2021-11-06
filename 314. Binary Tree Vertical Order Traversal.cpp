@@ -86,7 +86,7 @@
 // Why do we need to maintain an tree map verticalLevelToNodes?
 // Because unlike horizontal level order, initially you don't know what the "0th" vertial level is,
 // so you can't use index to push to vector. We have to traverse through verticalLevelToNodes in the end
-// and push each vector at different vertical level to result in the end.
+// and push each vector at different vertical level to res in the end.
 
 vector<vector<int>> verticalOrder(TreeNode* root) {
     if (!root) {
@@ -96,12 +96,12 @@ vector<vector<int>> verticalOrder(TreeNode* root) {
     map<int, vector<int>> verticalLevelToNodes;
 
     // Stores node as well as that node's vertical level.
-    queue<pair<TreeNode*, int>> nodeQueue;
-    nodeQueue.push({root, 0});
+    queue<pair<TreeNode*, int>> q;
+    q.push({root, 0});
 
-    while (!nodeQueue.empty()) {
-        auto nodeToLevel = nodeQueue.front();
-        nodeQueue.pop();
+    while (!q.empty()) {
+        auto nodeToLevel = q.front();
+        q.pop();
 
         TreeNode* node = nodeToLevel.first;
         int verticalLevel = nodeToLevel.second;
@@ -109,19 +109,50 @@ vector<vector<int>> verticalOrder(TreeNode* root) {
         verticalLevelToNodes[verticalLevel].push_back(node->val);
 
         if (node->left) {
-            nodeQueue.push({node->left, verticalLevel - 1});
+            q.push({node->left, verticalLevel - 1});
         }
 
         if (node->right) {
-            nodeQueue.push({node->right, verticalLevel + 1});
+            q.push({node->right, verticalLevel + 1});
         }
     }
 
-    vector<vector<int>> result;
-    for (vector<int> element : verticalLevelToNodes) {
+    vector<vector<int>> res;
+    for (vector<int>& element : verticalLevelToNodes) {
         vector<int> sameLevelNodes = element.second;
-        result.push_back(sameLevelNodes);
+        res.push_back(sameLevelNodes);
     }
 
-    return result;
+    return res;
 }
+
+// DFS
+class Solution {
+private:
+    map<int, map<int, vector<int>>> _table;
+
+    void dfs(TreeNode* root, int i, int j) {
+        if (root == nullptr) {
+            return;
+        }
+
+        _table[j][i].push_back(root->val);
+        dfs(root->left, i + 1, j - 1);
+        dfs(root->right, i + 1, j + 1);
+    }
+
+public:
+    vector<vector<int>> verticalOrder(TreeNode* root) {
+        dfs(root, 0, 0);
+
+        vector<vector<int>> res;
+        for (auto& col : _table) {
+            res.emplace_back();
+            for (auto& elem : col.second) {
+                auto& vec = elem.second;
+                res.back().insert(res.back().end(), vec.begin(), vec.end());
+            }
+        }
+        return res;
+    }
+};

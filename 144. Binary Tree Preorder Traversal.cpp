@@ -21,17 +21,17 @@ class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
         _preorder(root);
-        return _result;
+        return _res;
     }
 
 private:
-    vector<int> _result;
+    vector<int> _res;
     void _preorder(TreeNode* root) {
         if (not root) {
             return;
         }
 
-        _result.push_back(root->val);
+        _res.push_back(root->val);
         _preorder(root->left);
         _preorder(root->right);
     }
@@ -54,7 +54,7 @@ public:
             TreeNode* node = s.top();
             s.pop();
 
-            _result.push_back(node->val);
+            res.push_back(node->val);
 
             if (node->right) {
                 s.push(node->right);
@@ -68,7 +68,8 @@ public:
     }
 };
 
-// A "solution template" for both preorder, inorder, and postorder traversal. No need to remember it.
+// A "solution template" for both preorder, inorder, and postorder traversal.
+// No need to remember it.
 // See also 94. Binary Tree Inorder Traversal and 145. Binary Tree Postorder Traversal.
 class Solution {
 public:
@@ -79,7 +80,7 @@ public:
         while (currentNode || !nodeStack.empty()) {
             if (currentNode) {
                 nodeStack.push(currentNode);
-                _result.push_back(currentNode->val);
+                _res.push_back(currentNode->val);
                 currentNode = currentNode->left;
             } else {
                 TreeNode* node = nodeStack.top();
@@ -88,9 +89,9 @@ public:
             }
         }
 
-        return _result;
+        return _res;
     }
 
 private:
-    vector<int> _result;
+    vector<int> _res;
 };

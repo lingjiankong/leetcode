@@ -44,7 +44,6 @@ private:
         }
 
         cur.push_back(root->val);
-
         if (root->val == sum and not root->left and not root->right) {
             all.push_back(cur);
         }

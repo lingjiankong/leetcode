@@ -67,7 +67,7 @@ private:
 
         _ans[level].push_back({root->val});
 
-        for (const auto& child : root->children) {
+        for (auto& child : root->children) {
             preorder(child, level + 1);
         }
     }
@@ -94,7 +94,7 @@ public:
                 q.pop();
                 curLevel.push_back(node->val);
 
-                for (const auto& child : node->children) {
+                for (auto& child : node->children) {
                     q.push(child);
                 }
             }

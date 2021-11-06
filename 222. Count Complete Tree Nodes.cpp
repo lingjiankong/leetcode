@@ -53,7 +53,7 @@ int countNodes(TreeNode* root) {
     return 1 + countNodes(root->left) + countNodes(root->right);
 }
 
-// Same idea. Just more writing.
+// Same idea. Clearer.
 class Solution {
 public:
     int countNodes(TreeNode* root) {

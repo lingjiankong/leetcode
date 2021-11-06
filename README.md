@@ -22,19 +22,19 @@
 | 687 | Longest Univalue Path | Alpha+ | Postorder
 | 250 | Count Univalue Subtrees | Alpha+ | Postorder
 | 104 | Maximum Depth of Binary Tree | Alpha+ | Postorder
-| 366 | Find Leaves of Binary Tree | Alpha | Postorder
+| 366 | Find Leaves of Binary Tree | Alpha+ | Postorder
 | 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
 | 257 | Binary Tree Paths | Alpha+
 | 129 | Sum Root to Leaf Numbers | Alpha+
-| 298 | Binary Tree Longest Consecutive Sequence | Alpha
-| 549 | Binary Tree Longest Consecutive Sequence II | TODO | Compare with 673
-| 110 | Balanced Binary Tree | Alpha
+| 298 | Binary Tree Longest Consecutive Sequence | Alpha+
+| 549 | Binary Tree Longest Consecutive Sequence II | Alpha+
+| 110 | Balanced Binary Tree | Alpha+
 | 102 | Binary Tree Level Order Traversal | Alpha+ | Postorder, BFS
 | 107 | Binary Tree Level Order Traversal II | Alpha | Postorder, BFS
-| 314 | Binary Tree Vertical Order Traversal | Alpha | BFS
-| 103 | Binary Tree Zigzag Level Order Traversal | Bravo | BFS
-| 199 | Binary Tree Right Side View | Bravo | Preorder
-| 114 | Flatten Binary Tree to Linked List | Alpha | Preorder
+| 314 | Binary Tree Vertical Order Traversal | Alpha+ | BFS
+| 103 | Binary Tree Zigzag Level Order Traversal | Alpha | BFS
+| 199 | Binary Tree Right Side View | Alpha+ | Preorder
+| 114 | Flatten Binary Tree to Linked List | Alpha+ | Preorder
 | 222 | Count Complete Tree Nodes | Alpha+
 | 105 | Construct Binary Tree from Preorder and Inorder Traversal | Alpha | Preorder
 | 106 | Construct Binary Tree from Inorder and Postorder Traversal | Alpha | Postorder

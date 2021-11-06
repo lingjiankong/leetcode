@@ -58,7 +58,7 @@ public:
             }
 
             ans.push_back(root->val);
-            for (const auto& child : root->children) {
+            for (auto& child : root->children) {
                 dfs(child);
             }
         };
@@ -82,11 +82,12 @@ public:
         stack<Node*> s;
         s.push(root);
 
-        while(not s.empty()){
-            Node* node = s.top(); s.pop();
+        while (not s.empty()) {
+            Node* node = s.top();
+            s.pop();
             ans.push_back(node->val);
 
-            for (int i = node->children.size() - 1; i >= 0; --i){
+            for (int i = node->children.size() - 1; i >= 0; --i) {
                 s.push(node->children[i]);
             }
         }

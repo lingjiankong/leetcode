@@ -21,13 +21,16 @@
 //
 // Compare this question with 104. Maximum Depth of Binary Tree,
 
-// DFS
+// Postorder
 // Note: A leaf is a node with no children (no left chidren and no right children).
 // The extra if conditions in this problem checks if a node has only one subtree.
 int minDepth(TreeNode* root) {
     if (!root) {
         return 0;
     }
+
+    int leftMinDepth = minDepth(root->left);
+    int rightMinDepth = minDepth(root->right);
 
     // If only one subtree exist (either left or right subtree), then we must look into that subtree that exists,
     // otherwise, the null subtree (the subtree that doesn't exist) will return 0, and you will falsely conclude that a
@@ -36,14 +39,14 @@ int minDepth(TreeNode* root) {
         return 1;
     }
     if (!root->left && root->right) {
-        return 1 + minDepth(root->right);
+        return 1 + rightMinDepth;
     }
     if (root->left && !root->right) {
-        return 1 + minDepth(root->left);
+        return 1 + leftMinDepth;
     }
 
     // Both subtrees exist
-    return 1 + min(minDepth(root->left), minDepth(root->right));
+    return 1 + min(leftMinDepth, rightMinDepth);
 }
 
 // DFS, maintain global variable
@@ -60,6 +63,7 @@ public:
 
 private:
     void dfs(TreeNode* root, int depth) {
+        // Find a leaf node, update _minDepth.
         if (not root->left and not root->right) {
             _minDepth = min(_minDepth, depth);
         }

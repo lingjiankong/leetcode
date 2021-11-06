@@ -46,33 +46,65 @@ public:
         }
 
         // Initial target doesn't matter, you can set taret = 12345.
-        // currentLength will either be increased by 1 (if we pass in target = root->val),
-        // or currentLength will be reset to 1 (if we pass in a random number).
-        int currentLength = 0;
+        // curLen will either be increased by 1 (if we pass in target = root->val),
+        // or curLen will be reset to 1 (if we pass in a random number).
+        int curLen = 0;
         int target = 0;
-        int maxLength = 0;
 
-        _dfs(root, currentLength, root->val, maxLength);
+        _dfs(root, curLen, root->val);
 
-        return maxLength;
+        return _maxLen;
     }
 
 private:
-    void _dfs(TreeNode* node, int currentLength, int target, int& maxLength) {
+    int _maxLen = 0;
+
+    void _dfs(TreeNode* node, int curLen, int target) {
         if (!node) {
             return;
         }
 
         if (node->val == target) {
-            ++currentLength;
+            ++curLen;
         } else {
             // Reset current length.
-            currentLength = 1;
+            curLen = 1;
         }
 
-        maxLength = max(maxLength, currentLength);
+        _maxLen = max(_maxLen, curLen);
 
-        _dfs(node->left, currentLength, node->val + 1, maxLength);
-        _dfs(node->right, currentLength, node->val + 1, maxLength);
+        _dfs(node->left, curLen, node->val + 1);
+        _dfs(node->right, curLen, node->val + 1);
+    }
+};
+
+// Use same method as 549. Binary Tree Longest Consecutive Sequence II. Less efficient.
+class Solution {
+public:
+    int longestConsecutive(TreeNode* root) {
+        if (!root) {
+            return 0;
+        }
+
+        int curLongest = 1 + helper(root, -1);
+
+        return max({curLongest, longestConsecutive(root->left), longestConsecutive(root->right)});
+    }
+
+private:
+    int helper(TreeNode* root, int diff) {
+        if (not root) {
+            return 0;
+        }
+
+        int left = 0, right = 0;
+        if (root->left and root->val - root->left->val == diff) {
+            left = 1 + helper(root->left, diff);
+        }
+        if (root->right and root->val - root->right->val == diff) {
+            right = 1 + helper(root->right, diff);
+        }
+
+        return max(left, right);
     }
 };

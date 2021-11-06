@@ -26,7 +26,13 @@
 
 class Solution {
 public:
-    bool isUnivalTree(TreeNode* root) { return _dfs(root, root->val); }
+    bool isUnivalTree(TreeNode* root) {
+        if (not root) {
+            return true;
+        }
+
+        return _dfs(root, root->val);
+    }
 
 private:
     bool _dfs(TreeNode* root, int val) {

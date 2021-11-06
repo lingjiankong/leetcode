@@ -71,7 +71,7 @@ public:
             vector<int> curLevel;
             int qSize = q.size();
 
-            for (int i = 0; i < qSize; ++i) {
+            while (qSize--) {
                 TreeNode* node = q.front();
                 q.pop();
 
@@ -108,7 +108,7 @@ vector<vector<int>> levelOrder(TreeNode* root) {
     while (!curLevel.empty()) {
         levels.push_back({});
 
-        for (auto node : curLevel) {
+        for (auto& node : curLevel) {
             levels.back().push_back(node->val);
 
             if (node->left) {

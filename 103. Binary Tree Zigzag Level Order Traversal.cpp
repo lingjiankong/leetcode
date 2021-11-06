@@ -27,25 +27,25 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         return {};
     }
 
-    vector<vector<int>> result;
-    queue<TreeNode*> nodeQueue;
-    nodeQueue.push(root);
+    vector<vector<int>> res;
+    queue<TreeNode*> q;
+    q.push(root);
     bool leftToRight = true;
 
-    while (!nodeQueue.empty()) {
+    while (!q.empty()) {
         vector<int> currentLevel;
-        int currentLevelSize = nodeQueue.size();
+        int currentLevelSize = q.size();
 
         for (int i = 0; i < currentLevelSize; ++i) {
-            TreeNode* node = nodeQueue.front();
-            nodeQueue.pop();
+            TreeNode* node = q.front();
+            q.pop();
             currentLevel.push_back(node->val);
 
             if (node->left) {
-                nodeQueue.push(node->left);
+                q.push(node->left);
             }
             if (node->right) {
-                nodeQueue.push(node->right);
+                q.push(node->right);
             }
         }
 
@@ -53,10 +53,10 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
             reverse(currentLevel.begin(), currentLevel.end());
         }
 
-        result.push_back(currentLevel);
+        res.push_back(currentLevel);
 
         leftToRight = !leftToRight;
     }
 
-    return result;
+    return res;
 }
