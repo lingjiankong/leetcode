@@ -64,9 +64,7 @@ public:
             for (auto& row2Vals : col2Rows.second) {
                 vector<int>& vals = row2Vals.second;
                 sort(vals.begin(), vals.end());
-                for (int val : vals) {
-                    curLevel.push_back(val);
-                }
+                curLevel.insert(curLevel.end(), vals.begin(), vals.end());
             }
             allLevels.push_back(curLevel);
         }
@@ -89,3 +87,4 @@ private:
         _preorder(root->right, row + 1, col + 1);
     }
 };
+

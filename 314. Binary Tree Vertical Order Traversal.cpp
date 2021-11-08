@@ -126,33 +126,38 @@ vector<vector<int>> verticalOrder(TreeNode* root) {
     return res;
 }
 
-// DFS
+// DFS, exactly same as 987. Vertical Order Traversal of a Binary Tree (but with no sorting).
 class Solution {
-private:
-    map<int, map<int, vector<int>>> _table;
+public:
+    vector<vector<int>> verticalOrder(TreeNode* root) {
+        _preorder(root, 0, 0);
 
-    void dfs(TreeNode* root, int i, int j) {
-        if (root == nullptr) {
+        vector<vector<int>> allLevels;
+        for (auto& col2Rows : _map) {
+            vector<int> curLevel;
+            for (auto& row2Vals : col2Rows.second) {
+                vector<int>& vals = row2Vals.second;
+                curLevel.insert(curLevel.end(), vals.begin(), vals.end());
+            }
+            allLevels.push_back(curLevel);
+        }
+
+        return allLevels;
+    }
+
+private:
+    // Important: Need to store _map[col][row] as a vector instead of integer because
+    // multiple values might have the same (col, row)
+    map<int, map<int, vector<int>>> _map;
+
+    void _preorder(TreeNode* root, int row, int col) {
+        if (not root) {
             return;
         }
 
-        _table[j][i].push_back(root->val);
-        dfs(root->left, i + 1, j - 1);
-        dfs(root->right, i + 1, j + 1);
-    }
-
-public:
-    vector<vector<int>> verticalOrder(TreeNode* root) {
-        dfs(root, 0, 0);
-
-        vector<vector<int>> res;
-        for (auto& col : _table) {
-            res.emplace_back();
-            for (auto& elem : col.second) {
-                auto& vec = elem.second;
-                res.back().insert(res.back().end(), vec.begin(), vec.end());
-            }
-        }
-        return res;
+        _map[col][row].push_back(root->val);
+        _preorder(root->left, row + 1, col - 1);
+        _preorder(root->right, row + 1, col + 1);
     }
 };
+

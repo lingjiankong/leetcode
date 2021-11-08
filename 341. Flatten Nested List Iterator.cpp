@@ -67,7 +67,7 @@
 class NestedIterator {
 public:
     NestedIterator(vector<NestedInteger>& nestedList) {
-        for (auto child : nestedList) {
+        for (auto& child : nestedList) {
             _traverse(child);
         }
     }
@@ -93,13 +93,13 @@ private:
             return;
         }
 
-        for (auto child : root.getList()) {
+        for (auto& child : root.getList()) {
             _traverse(child);
         }
     }
 };
 
-// Generate next element during runtime
+// Generate next element during runtime.
 class NestedIterator {
 public:
     NestedIterator(vector<NestedInteger>& nestedList) {

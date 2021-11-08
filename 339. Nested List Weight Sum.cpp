@@ -36,7 +36,7 @@ private:
         }
 
         int res = 0;
-        for (auto child : root.getList()) {
+        for (auto& child : root.getList()) {
             res += preorder(child, level + 1);
         }
 
@@ -63,7 +63,7 @@ private:
             _res += level * root.getInteger();
         }
 
-        for (auto child : root.getList()) {
+        for (auto& child : root.getList()) {
             preorder(child, level + 1);
         }
     }

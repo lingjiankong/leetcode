@@ -31,7 +31,7 @@ public:
         int res = 0;
         vector<int> sumAtAllLevels;
 
-        for (auto child : nestedList) {
+        for (auto& child : nestedList) {
             preorder(child, 0, sumAtAllLevels);
         }
 

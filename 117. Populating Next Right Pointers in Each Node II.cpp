@@ -47,28 +47,28 @@ public:
             return nullptr;
         }
 
-        queue<Node*> nodeQueue;
-        nodeQueue.push(root);
+        queue<Node*> q;
+        q.push(root);
 
-        while (!nodeQueue.empty()) {
-            int currentLevelSize = nodeQueue.size();
+        while (!q.empty()) {
+            int currentLevelSize = q.size();
             for (int i = 0; i < currentLevelSize; ++i) {
-                Node* node = nodeQueue.front();
-                nodeQueue.pop();
+                Node* node = q.front();
+                q.pop();
 
                 // As long as we have not reached the rightmost node in current level,
                 // set current node's next to be the next element in the queue
                 // (which is the next node on current level)
                 if (i < currentLevelSize - 1) {
-                    node->next = nodeQueue.front();
+                    node->next = q.front();
                 }
 
                 if (node->left) {
-                    nodeQueue.push(node->left);
+                    q.push(node->left);
                 }
 
                 if (node->right) {
-                    nodeQueue.push(node->right);
+                    q.push(node->right);
                 }
             }
         }
@@ -80,15 +80,15 @@ public:
 // BFS, constant space.
 // This solution uses the idea in 102. Binary Tree Level Order Traversal
 // The difference between this one and 116. Populating Next Right Pointers in Each Node is that
-// in this question, we are not guaranteed be be given a perfect binary tree.
+// in this question, we are not guaranteed a perfect binary tree.
 //
-// We traverse current level (the level of currentNode), and we connect the current level's all children nodes (instead
-// connecting current nodes themselves) accordingly, until there's no more node (currentNode) in current level. Now we
+// We traverse current level (the level of curNode), and we connect the current level's all children nodes (instead
+// connecting current nodes themselves) accordingly, until there's no more node (curNode) in current level. Now we
 // go to next level and do the same.
 //
 // Well, how do we know where to start in next level? This is where dummyNode->next comes into play:
 // dummyNode->next is the first child node we see when we are traversing current level,
-// so dummyNode->next is the node we should start we traversing the next level.
+// so dummyNode->next is the node we should start when traversing the next level.
 class Solution {
 public:
     Node* connect(Node* root) {
@@ -96,33 +96,32 @@ public:
             return nullptr;
         }
 
-        Node* currentLevelStart = root;
+        Node* curLevelStart = root;
+        Node dummyNode = Node(0);
 
-        while (currentLevelStart) {
-            Node dummyNode = Node(0);
-
-            // currentNode is the node on current level we are traversing.
-            Node* currentNode = currentLevelStart;
+        while (curLevelStart) {
+            // curNode is the node on current level we are traversing.
+            Node* curNode = curLevelStart;
 
             // currentChild is a node on next level.
             // Initially we have no idea when we will see the first child of current level.
             Node* currentChild = &dummyNode;
 
-            while (currentNode) {
-                if (currentNode->left) {
-                    currentChild->next = currentNode->left;
+            while (curNode) {
+                if (curNode->left) {
+                    currentChild->next = curNode->left;
                     currentChild = currentChild->next;
                 }
 
-                if (currentNode->right) {
-                    currentChild->next = currentNode->right;
+                if (curNode->right) {
+                    currentChild->next = curNode->right;
                     currentChild = currentChild->next;
                 }
 
-                currentNode = currentNode->next;
+                curNode = curNode->next;
             }
 
-            currentLevelStart = dummyNode.next;
+            curLevelStart = dummyNode.next;
             dummyNode.next = nullptr;  // optional
         }
 

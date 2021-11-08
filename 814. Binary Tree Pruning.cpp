@@ -39,7 +39,7 @@ class Solution {
 public:
     TreeNode* pruneTree(TreeNode* root) {
         if (not root) {
-            return root;
+            return nullptr;
         }
 
         root->left = pruneTree(root->left);

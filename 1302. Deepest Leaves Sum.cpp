@@ -55,11 +55,7 @@ public:
         }
 
         // Last curLevel are the deepest leaves.
-        int sum = 0;
-        for (int val : curLevel) {
-            sum += val;
-        }
-        return sum;
+        return accumulate(curLevel.begin(), curLevel.end(), 0);
     }
 };
 

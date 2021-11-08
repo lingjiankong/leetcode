@@ -50,28 +50,28 @@ public:
             return nullptr;
         }
 
-        queue<Node*> nodeQueue;
-        nodeQueue.push(root);
+        queue<Node*> q;
+        q.push(root);
 
-        while (!nodeQueue.empty()) {
-            int currentLevelSize = nodeQueue.size();
+        while (!q.empty()) {
+            int currentLevelSize = q.size();
             for (int i = 0; i < currentLevelSize; ++i) {
-                Node* node = nodeQueue.front();
-                nodeQueue.pop();
+                Node* node = q.front();
+                q.pop();
 
                 // As long as we have not reached the rightmost node in current level,
                 // set current node's next to be the next element in the queue
                 // (which is the next node on current level)
                 if (i < currentLevelSize - 1) {
-                    node->next = nodeQueue.front();
+                    node->next = q.front();
                 }
 
                 if (node->left) {
-                    nodeQueue.push(node->left);
+                    q.push(node->left);
                 }
 
                 if (node->right) {
-                    nodeQueue.push(node->right);
+                    q.push(node->right);
                 }
             }
         }
@@ -90,28 +90,28 @@ public:
             return nullptr;
         }
 
-        Node* currentLevelStart = root;
+        Node* curLevelStart = root;
 
-        while (currentLevelStart) {
+        while (curLevelStart) {
             // Current node on current level
-            Node* currentNode = currentLevelStart;
+            Node* curNode = curLevelStart;
 
-            while (currentNode) {
-                if (currentNode->left) {
-                    currentNode->left->next = currentNode->right;
+            while (curNode) {
+                if (curNode->left) {
+                    curNode->left->next = curNode->right;
                 }
 
-                if (currentNode->right && currentNode->next) {
-                    currentNode->right->next = currentNode->next->left;
+                if (curNode->right && curNode->next) {
+                    curNode->right->next = curNode->next->left;
                 }
 
-                currentNode = currentNode->next;
+                curNode = curNode->next;
             }
 
             // The start position of next level.
             // Note that we are given in the problem that the tree is a perfect binary tree,
-            // so currentLevelStart->left exists and it is the start of the next level.
-            currentLevelStart = currentLevelStart->left;
+            // so curLevelStart->left exists and it is the start of the next level.
+            curLevelStart = curLevelStart->left;
         }
 
         return root;

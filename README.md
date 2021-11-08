@@ -13,54 +13,55 @@
 | 572 | Subtree of Another Tree | Alpha+
 | 101 | Symmetric Tree | Alpha+
 | 965 | Univalued Binary Tree | Alpha+
-| 226 | Invert Binary Tree | Alpha | Postorder
+| 226 | Invert Binary Tree | Alpha | postorder
 | 112 | Path Sum | Alpha+
 | 113 | Path Sum II | Alpha
-| 437 | Path Sum III | Alpha | Preorder
-| 124 | Binary Tree Maximum Path Sum | Alpha+ | Postorder
-| 543 | Diameter of Binary Tree | Alpha+ | Postorder
-| 687 | Longest Univalue Path | Alpha+ | Postorder
-| 250 | Count Univalue Subtrees | Alpha+ | Postorder
-| 104 | Maximum Depth of Binary Tree | Alpha+ | Postorder
-| 366 | Find Leaves of Binary Tree | Alpha+ | Postorder
-| 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
+| 437 | Path Sum III | Alpha | preorder
+| 124 | Binary Tree Maximum Path Sum | Alpha+ | postorder
+| 543 | Diameter of Binary Tree | Alpha+ | postorder
+| 687 | Longest Univalue Path | Alpha+ | postorder
+| 250 | Count Univalue Subtrees | Alpha+ | postorder
+| 104 | Maximum Depth of Binary Tree | Alpha+ | postorder
+| 366 | Find Leaves of Binary Tree | Alpha+ | postorder
+| 111 | Minimum Depth of Binary Tree | Alpha+ | postorder, BFS
 | 257 | Binary Tree Paths | Alpha+
 | 129 | Sum Root to Leaf Numbers | Alpha+
 | 298 | Binary Tree Longest Consecutive Sequence | Alpha+
 | 549 | Binary Tree Longest Consecutive Sequence II | Alpha+
 | 110 | Balanced Binary Tree | Alpha+
-| 102 | Binary Tree Level Order Traversal | Alpha+ | Postorder, BFS
-| 107 | Binary Tree Level Order Traversal II | Alpha | Postorder, BFS
+| 102 | Binary Tree Level Order Traversal | Alpha+ | postorder, BFS
+| 107 | Binary Tree Level Order Traversal II | Alpha | postorder, BFS
 | 314 | Binary Tree Vertical Order Traversal | Alpha+ | BFS
 | 103 | Binary Tree Zigzag Level Order Traversal | Alpha | BFS
-| 199 | Binary Tree Right Side View | Alpha+ | Preorder
-| 114 | Flatten Binary Tree to Linked List | Alpha+ | Preorder
+| 199 | Binary Tree Right Side View | Alpha+ | preorder
+| 114 | Flatten Binary Tree to Linked List | Alpha+ | preorder
 | 222 | Count Complete Tree Nodes | Alpha+
-| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Alpha | Preorder
-| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Alpha | Postorder
-| 331 | Verify Preorder Serialization of a Binary Tree | Charlie, Mechanical
-| 116 | Populating Next Right Pointers in Each Node | Bravo | BFS, Preorder
-| 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, Preorder
+| 105 | Construct Binary Tree from Preorder and Inorder Traversal | Alpha+ | preorder
+| 106 | Construct Binary Tree from Inorder and Postorder Traversal | Alpha+ | postorder
+| 331 | Verify Preorder Serialization of a Binary Tree | Charlie
+| 116 | Populating Next Right Pointers in Each Node | Alpha | BFS, preorder
+| 117 | Populating Next Right Pointers in Each Node II | Alpha | BFS, preorder
 | 297 | Serialize and Deserialize Binary Tree | Alpha+ | preorder
 | 428 | Serialize and Deserialize N-ary Tree | Alpha+ | preorder
 | 449 | Serialize and Deserialize Binary Search Tree | Alpha
-| 236 | Lowest Common Ancestor of a Binary Tree | Alpha+, Mechanical | postorder
+| 236 | Lowest Common Ancestor of a Binary Tree | Alpha+ | mechanical, postorder
 | 1676 | Lowest Common Ancestor of a Binary Tree IV | Alpha+ | postorder
 | 1644 | Lowest Common Ancestor of a Binary Tree II | Alpha+ | postorder
-| 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha+ | postorder
+| 1650 | Lowest Common Ancestor of a Binary Tree III | Alpha+
 | 235 | Lowest Common Ancestor of a Binary Search Tree | Alpha+
 | 341 | Flatten Nested List Iterator | Bravo
 | 339 | Nested List Weight Sum | Alpha+ | preorder
 | 364 | Nested List Weight Sum II | Alpha+ | preorder
 | 987 | Vertical Order Traversal of a Binary Tree | Alpha+
-| 1302 | Deepest Leaves Sum | Alpha
-| 872 | Leaf-Similar Trees | Alpha
+| 1302 | Deepest Leaves Sum | Alpha+
+| 872 | Leaf-Similar Trees | Alpha+
 | 814 | Binary Tree Pruning | Alpha+ | postorder
-| 669 | Trim a Binary Search Tree | Alpha | BST, postorder
 | 1325 | Delete Leaves With a Given Value | Alpha | postorder
 | 508 | Most Frequent Subtree Sum | Alpha+ | postorder
+| 1973 | Count Nodes Equal to Sum of Descendants | Alpha | postorder
+| 1120 | Maximum Average Subtree | Alpha+ | postorder
 | 968 | Binary Tree Cameras | Alpha | postorder
-| 337 | House Robber III | Alpha+ | Postorder
+| 337 | House Robber III | Alpha+ | postorder
 | 979 | Distribute Coins in Binary Tree | Bravo | postorder
 
 ## Binary Search Tree
@@ -71,7 +72,7 @@
 | 700 | Search in a Binary Search Tree | Alpha+ | preorder
 | 701 | Insert into a Binary Search Tree | Alpha+ | preorder
 | 450 | Delete Node in a BST | Alpha+ | preorder
-| 333 | Largest BST Subtree | Alpha | Preorder
+| 333 | Largest BST Subtree | Alpha | preorder
 | 99 | Recover Binary Search Tree | Bravo | Inorder
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha+
 | 109 | Convert Sorted List to Binary Search Tree | Alpha
@@ -84,6 +85,7 @@
 | 96 | Unique Binary Search Trees | Charlie
 | 95 | Unique Binary Search Trees II | Charlie
 | 501 | Find Mode in Binary Search Tree | Bravo
+| 669 | Trim a Binary Search Tree | Alpha+
 
 ## Linked List
 | ID | Name | Rating | Note
@@ -248,7 +250,7 @@
 | 265 | Paint House II | Alpha
 | 198 | House Robber | Alpha+
 | 213 | House Robber II | Alpha
-| 337 | House Robber III | Alpha+ | Postorder
+| 337 | House Robber III | Alpha+ | postorder
 | 740 | Delete and Earn | Alpha
 | 62 | Unique Paths | Alpha
 | N3 | Unique Paths from Top Left to Bottom Right | Alpha
@@ -333,7 +335,7 @@
 | 503 | Next Greater Element II | Alpha | monotonic stack
 | 739 | Daily Temperatures | Alpha+ | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
-| 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue 
+| 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
 | 901 | Online Stock Span | Alpha | monotonic stack
 | 347 | Top K Frequent Elements | Alpha+
 | 692 | Top K Frequent Words | Alpha+
@@ -376,7 +378,7 @@
 | 934 | Shortest Bridge | Alpha | BFS
 | 433 | Minimum Genetic Mutation | Alpha | BFS
 | 815 | Bus Routes | Alpha+ | BFS
-| 111 | Minimum Depth of Binary Tree | Alpha+ | Postorder, BFS
+| 111 | Minimum Depth of Binary Tree | Alpha+ | postorder, BFS
 | 773 | Sliding Puzzle | Alpha+
 | 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
 | 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS, mechanical

@@ -79,7 +79,7 @@ private:
         array<int, 2> r = _dfs(root->right);
 
         // If you rob current root, you cannot rob the left and right child.
-        int robCur = root->money + l[1] + r[1];
+        int robCur = root->val + l[1] + r[1];
 
         // If you do not rob current root, you can either rob, or not rob your left and right child.
         int notRobCur = max(l[0], l[1]) + max(r[0], r[1]);

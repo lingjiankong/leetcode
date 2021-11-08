@@ -24,30 +24,32 @@
 class Solution {
 public:
     vector<int> findFrequentTreeSum(TreeNode* root) {
-        int maxFreq = 0;
-        treeSum(root, maxFreq);
+        treeSum(root);
 
         vector<int> res;
-        for (auto e : _sum2Freq) {
-            if (e.second == maxFreq) {
+        for (auto& e : _sum2Freq) {
+            if (e.second == _maxFreq) {
                 res.push_back(e.first);
             }
         }
         return res;
     }
+
 private:
     unordered_map<int, int> _sum2Freq;
 
-    int treeSum(TreeNode* root, int& maxFreq) {
+    int _maxFreq = 0;
+
+    int treeSum(TreeNode* root) {
         if (not root) {
             return 0;
         }
 
-        int leftSum = treeSum(root->left, maxFreq);
-        int rightSum = treeSum(root->right, maxFreq);
+        int leftSum = treeSum(root->left);
+        int rightSum = treeSum(root->right);
 
         int sum = root->val + leftSum + rightSum;
-        maxFreq = max(++_sum2Freq[sum], maxFreq);
+        _maxFreq = max(++_sum2Freq[sum], _maxFreq);
         return sum;
     }
 };
