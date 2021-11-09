@@ -31,7 +31,7 @@ private:
     void _backtrack(string& digits, int startIndex, string& current, vector<string>& all) {
         // We check if !current.empty() simply to deal with the case when input digits = "",
         // we do not want to return {""}. You can move it to parent function letterCombinations if you wish.
-        if (startIndex == digits.size() && !current.empty()) {
+        if (startIndex == digits.size() and !current.empty()) {
             all.push_back(current);
             return;
         }

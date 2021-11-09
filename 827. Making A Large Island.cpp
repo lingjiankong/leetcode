@@ -75,7 +75,7 @@ private:
         area += 1;
         visited[x][y] = true;
 
-        for (vector<int> dir : _dirs) {
+        for (vector<int>& dir : _dirs) {
             int neighX = x + dir[0], neighY = y + dir[1];
             _dfs(neighX, neighY, grid, visited, area);
         }

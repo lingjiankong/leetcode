@@ -56,16 +56,16 @@ public:
 
 private:
     void _backtrack(int n, int startNumber, vector<int>& current, vector<vector<int>>& all) {
-        if (n == 1 && current.size() > 1) {
+        if (n == 1 and current.size() > 1) {
             all.push_back(current);
         }
 
-        // Why num <= n here? Because during recursive call, n might not be the original target so
+        // Why factor <= n here? Because during recursive call, n might not be the original target so
         // we have to consider this number.
-        for (int num = startNumber; num <= n; ++num) {
-            if (n % num == 0) {
-                current.push_back(num);
-                _backtrack(n / num, num, current, all);
+        for (int factor = startNumber; factor <= n; ++factor) {
+            if (n % factor == 0) {
+                current.push_back(factor);
+                _backtrack(n / factor, factor, current, all);
                 current.pop_back();
             }
         }

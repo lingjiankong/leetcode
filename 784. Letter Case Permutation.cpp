@@ -46,37 +46,37 @@
 // a = 0b1000001
 // A = 0b1100001
 //
-// 
+//
 // 'a' ^= (1 << 5) = 'A'
 // 'A' ^= (1 << 5) = 'a'
 class Solution {
 public:
     vector<string> letterCasePermutation(string s) {
-        vector<string> all; 
-         
+        vector<string> all;
+
         int startIndex = 0;
-        _dfs(s, startIndex, all); 
-         
-        return all; 
+        _dfs(s, startIndex, all);
+
+        return all;
     }
 
-private: 
+private:
     void _dfs(string& s, int startIndex, vector<string>& all) {
         if (startIndex == s.size()) {
-            all.push_back(s); 
-            return; 
+            all.push_back(s);
+            return;
         }
 
         // Number has one child tree
-        // Letter has two child trees.
+        // Letter has two child trees
         _dfs(s, startIndex + 1, all);
 
         // Additional child tree of the letter.
         if (isalpha(s[startIndex])) {
-            s[startIndex] ^= (1 << 5); 
+            s[startIndex] ^= (1 << 5);
             _dfs(s, startIndex + 1, all);
             s[startIndex] ^= (1 << 5);
         }
     }
-}; 
+};
 

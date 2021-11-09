@@ -29,6 +29,7 @@
 //
 // ***
 
+// BFS the original string and remove parenthesis one by one, until you find a valid string.
 class Solution {
 public:
     vector<string> removeInvalidParentheses(string s) {
@@ -47,12 +48,13 @@ public:
                 string cur = q.front();
                 q.pop();
 
+                // Found goal.
                 if (isValid(cur)) {
                     ans.push_back(cur);
                 }
 
                 for (int i = 0; i < cur.size(); ++i) {
-                    if (cur[i] != '(' && cur[i] != ')') {
+                    if (cur[i] != '(' and cur[i] != ')') {
                         continue;
                     }
 
@@ -73,7 +75,7 @@ public:
         for (int i = 0; i < s.size(); ++i) {
             if (s[i] == '(') {
                 ++count;
-            } else if (s[i] == ')' && --count < 0) {
+            } else if (s[i] == ')' and --count < 0) {
                 return false;
             }
         }

@@ -29,7 +29,6 @@
 //
 // ***
 //
-// See also 77. Combinations.
 // Note the difference in for loop in this question and 77. Combinations:
 // In this question, when we backtrack, the startIndex = i;
 // In 77, when we backtrack, the startIndex = i + 1;
@@ -63,7 +62,7 @@ private:
 
         for (int i = startIndex; i < candidates.size(); ++i) {
             current.push_back(candidates[i]);
-            _backtrack(candidates, target - candidates[i], i, current, all);
+            _backtrack(candidates, target - candidates[i], i, current, all);  // i instead of i + 1.
             current.pop_back();
         }
     }

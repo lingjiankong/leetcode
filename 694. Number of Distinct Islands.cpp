@@ -49,7 +49,7 @@ public:
 
         for (int i = 0; i < grid.size(); ++i) {
             for (int j = 0; j < grid[0].size(); ++j) {
-                if (grid[i][j] == 1 && !visited[i][j]) {
+                if (grid[i][j] == 1 and !visited[i][j]) {
                     string current;
 
                     _dfs(i, j, i, j, current, grid, visited);
@@ -72,11 +72,11 @@ private:
         visited[x][y] = true;
         current += " " + to_string(x - x0) + " " + to_string(y - y0);
 
-        for (auto direction : directions) {
-            int newX = x + direction[0], newY = y + direction[1];
+        for (vector<int>& dir : _dirs) {
+            int newX = x + dir[0], newY = y + dir[1];
             _dfs(x0, y0, newX, newY, current, grid, visited);
         }
     }
 
-    vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };

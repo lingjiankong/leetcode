@@ -5,7 +5,7 @@
 //
 // Formally, a Fibonacci-like sequence is a list f of non-negative integers such that:
 //
-// 0 <= f[i] < 231, (that is, each integer fits in a 32-bit signed integer type),
+// 0 <= f[i] < 2^31, (that is, each integer fits in a 32-bit signed integer type),
 // f.length >= 3, and
 // f[i] + f[i + 1] == f[i + 2] for all 0 <= i < f.length - 2.
 // Note that when splitting the string into pieces, each piece must not have extra leading zeroes, except if the piece
@@ -68,7 +68,7 @@ private:
     void _backtrack(string s, vector<int>& cur, vector<vector<int>>& all) {
         if (s.empty()) {
             if (cur.size() >= 3) {
-                all.push_back(cur);
+                all.push_back(cur);  // problem requires seq len to be at least 3.
             }
             return;
         }
@@ -92,11 +92,10 @@ private:
                 break;
             }
 
-            if (cur.size() < 2) {  // first two numbers in a fib seq can be anything.
-                cur.push_back(numInt);
-                _backtrack(s.substr(i), cur, all);
-                cur.pop_back();
-            } else if (numInt == (long)cur[cur.size() - 1] + (long)cur[cur.size() - 2]) {
+            // Continue backtracking when:
+            // first two numbers in a fib seq can be anything, OR
+            // current number is the sum of previous two numbers in cur.
+            if (cur.size() < 2 or (numInt == (long)cur[cur.size() - 1] + (long)cur[cur.size() - 2])) {
                 cur.push_back(numInt);
                 _backtrack(s.substr(i), cur, all);
                 cur.pop_back();

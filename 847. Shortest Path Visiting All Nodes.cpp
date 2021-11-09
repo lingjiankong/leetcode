@@ -31,7 +31,7 @@
 // ***
 
 // Because we are told 1 <= n <= 12, we can use bits to represent the state of
-// which nodes have been visited. For example, if n = 4, then 0x1111 represented that we've visited all nodes.
+// which nodes have been visited. For example, if n = 4, then 0b1111 represented that we've visited all nodes.
 // Think of this problem like converting 1D BFS (id,) to 2D BFS (id, visited)
 class Solution {
 public:
@@ -43,7 +43,7 @@ public:
 
         int n = graph.size();  // number of nodes
 
-        // Goal of the BFS: all nodes have been visited, e.g. if n = 4, allVisited = 0x10000 - 1 = 0x1111
+        // Goal of the BFS: all nodes have been visited, e.g. if n = 4, allVisited = 0b10000 - 1 = 0b1111
         int allVisited = (1 << n) - 1;
 
         queue<nodeState> q;
@@ -66,12 +66,12 @@ public:
                 int curID = cur.id;
                 int curVisited = cur.visited;
 
-                if (curVisited == allVisited) {  // the first time you reach 0x1111 is when you've visited all nodes.
+                if (curVisited == allVisited) {  // the first time you reach 0b1111 is when you've visited all nodes.
                     return steps;
                 }
 
                 for (int neighID : graph[curID]) {
-                    int newState = curVisited | 1 << neighID;  // e.g. 0x1101 = 0x1001 | 1 << 2
+                    int newState = curVisited | 1 << neighID;  // e.g. 0b1101 = 0b1001 | 1 << 2
                     if (not visited[neighID].count(newState)) {
                         q.push({neighID, newState});
                         visited[neighID].insert(newState);

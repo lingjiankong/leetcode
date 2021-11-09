@@ -77,7 +77,7 @@ public:
 
 private:
     void backtrack(int startIndex, string current, long resSoFar, long prevNum) {
-        if (startIndex == s.length()) {
+        if (startIndex == s.size()) {
             if (resSoFar == target) {
                 all.push_back(current);
             }
@@ -86,7 +86,7 @@ private:
 
         string numStr;
         long num = 0;
-        for (int i = startIndex; i < s.length(); ++i) {
+        for (int i = startIndex; i < s.size(); ++i) {
             if (i > startIndex and s[startIndex] == '0') {
                 break;  // Skip leading zero number
             }
@@ -95,7 +95,7 @@ private:
             num = num * 10 + s[i] - '0';
 
             if (startIndex == 0) {
-                backtrack(i + 1, current + numStr, num, num);  // First num, pick it without adding any operator!
+                backtrack(i + 1, numStr, num, num);  // First num, pick it without adding any operator!
             } else {
                 backtrack(i + 1, current + "+" + numStr, resSoFar + num, num);
                 backtrack(i + 1, current + "-" + numStr, resSoFar - num, -num);

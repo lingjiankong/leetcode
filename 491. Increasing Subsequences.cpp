@@ -19,7 +19,7 @@
 //
 // You cannot eliminate duplicate elements by sorting the array and doing what you did in 90. Subsets II.
 // The array sequence in this problem must be fixed because you are finding increasing subsequences within it.
-// You cannot alter the array.
+// You cannot alter the array. Therefore, "set<vector<int>> all" instead of "vector<vector<int>> all".
 
 class Solution {
 public:
@@ -41,7 +41,7 @@ private:
         }
 
         for (int i = startIndex; i < nums.size(); ++i) {
-            if (!current.empty() && nums[i] < current.back()) {
+            if (!current.empty() and nums[i] < current.back()) {
                 continue;
             }
 

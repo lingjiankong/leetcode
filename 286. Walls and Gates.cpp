@@ -37,7 +37,7 @@ public:
             for (int j = 0; j < rooms[0].size(); ++j) {
                 if (rooms[i][j] == 0) {
                     int distance = 0;
-                    _dfs(i, j, distance, rooms);
+                    _dfs(i, j, distance, rooms);  // DFS from each gate.
                 }
             }
         }
@@ -46,7 +46,7 @@ public:
 private:
     void _dfs(int i, int j, int distance, vector<vector<int>>& rooms) {
         // When rooms[i][j] < distance, either the cell is an obstacle, a gate,
-        // or we have already found a gate distance that is smaller than current distance, therefore return.
+        // or it is an empty room but we have already found a gate distance that is smaller than current distance.
         if (i < 0 || j < 0 || i >= rooms.size() || j >= rooms[0].size() || rooms[i][j] < distance) {
             return;
         }

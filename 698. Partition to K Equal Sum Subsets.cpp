@@ -32,6 +32,7 @@ public:
         if (sum % k != 0) {
             return false;
         }
+
         vector<bool> visited(nums.size());
         return _backtrack(nums, k, sum / k, 0, 0, visited);
     }
@@ -46,11 +47,16 @@ private:
         }
 
         if (curSum == target) {
-            return _backtrack(nums, k - 1, target, 0, 0, visited);
+            return _backtrack(nums, k - 1, target, 0, 0, visited);  // reset startIndex to 0.
         }
 
         for (int i = startIndex; i < nums.size(); ++i) {
             if (visited[i]) {
+                continue;
+            }
+
+            // Trim the tree. Won't affect correctness without this.
+            if (curSum + nums[i] > target) {
                 continue;
             }
 
@@ -64,3 +70,4 @@ private:
         return false;
     }
 };
+

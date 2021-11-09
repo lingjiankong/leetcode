@@ -75,10 +75,10 @@ private:
         for (int i = 0; i < 4; ++i) {
             // If move succeeds, the robot will move forward one step, otherwise, the robot stays in place.
             if (robot.move()) {
-                int newX = x + _directions[orientation][0], newY = y + _directions[orientation][1];
+                int newX = x + _dirs[orientation][0], newY = y + _dirs[orientation][1];
                 _backtrack(robot, newX, newY, orientation, visited);
 
-                // After backtracking, trace back to original position and orientation.
+                // After backtracking, return to original position and orientation.
                 // First turn 180 degree, move one step, then turn another 180 degree to face the original orientation.
                 robot.turnRight();
                 robot.turnRight();
@@ -94,5 +94,5 @@ private:
     }
 
     // Absolute (global) directions: going up, right, down, left.
-    vector<vector<int>> _directions{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    vector<vector<int>> _dirs{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };

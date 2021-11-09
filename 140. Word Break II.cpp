@@ -44,31 +44,24 @@
 // then recursively add all sentences composed by s[word.size(), end).
 //
 // wordBreak(catasanddog)
-// = {cats + _wordBreak(anddog),
-//    cat + _wordBreak(sanddog)}
+// = {cats + wordBreak(anddog),
+//    cat + wordBreak(sanddog)}
 //
 // wordBreak(anddog)
-// = {and + _wordBreak(dog)}
+// = {and + wordBreak(dog)}
 //
 // wordBreak(dog)
-// = {dog + _wordBreak("")}
+// = {dog + wordBreak("")}
 //
 // wordBreak("")
 // = {""}
 
 class Solution {
 public:
-    vector<string> wordBreak(const string& s, const vector<string>& wordDict) {
-        unordered_map<string, vector<string>> cache;
-
-        return _wordBreak(s, wordDict, cache);
-    }
-
-private:
     // Returns all sentences (in terms of vector<string>) that can be formed be string s.
-    vector<string> _wordBreak(const string& s, const vector<string>& wordDict, unordered_map<string, vector<string>>& cache) {
-        if (cache.count(s)) {
-            return cache[s];
+    vector<string> wordBreak(string s, vector<string>& wordDict) {
+        if (_cache.count(s)) {
+            return _cache[s];
         }
 
         // If s.empty() it indicates that there's nothing to the right of s,
@@ -78,17 +71,20 @@ private:
         }
 
         vector<string> sentences;
-
-        for (string word : wordDict) {
+        for (string& word : wordDict) {
             if (s.substr(0, word.size()) == word) {
-                vector<string> remain = _wordBreak(s.substr(word.size()), wordDict, cache);
+                vector<string> remain = wordBreak(s.substr(word.size()), wordDict);
 
-                for (string sentence : remain) {
+                for (string& sentence : remain) {
                     sentences.push_back(word + (sentence.empty() ? "" : " ") + sentence);
                 }
             }
         }
 
-        return cache[s] = sentences;
+        return _cache[s] = sentences;
     }
+
+private:
+    unordered_map<string, vector<string>> _cache;
 };
+

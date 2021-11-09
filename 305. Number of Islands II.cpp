@@ -56,8 +56,7 @@ public:
             uf.add(curPos);
 
             for (vector<int>& dir : dirs) {
-                int neighX = x + dir[0];
-                int neighY = y + dir[1];
+                int neighX = x + dir[0], neighY = y + dir[1];
                 if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n) {
                     string neighborPos = to_string(neighX) + "," + to_string(neighY);
                     if (uf.has(neighborPos)) {
@@ -89,8 +88,7 @@ public:
             uf.add(index);
 
             for (vector<int> dir : dirs) {
-                int neighX = x + dir[0];
-                int neighY = y + dir[1];
+                int neighX = x + dir[0], neighY = y + dir[1];
                 int neighborIndex = neighY + neighX * n;
                 if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n) {
                     if (uf.has(neighborIndex)) {

@@ -52,8 +52,8 @@ private:
             return cache[startIndex];
         }
 
-        for (int i = startIndex + 1; i <= s.size(); ++i) {
-            if (wordSet.count(s.substr(startIndex, i - startIndex)) && _dfs(i, s, wordSet, cache)) {
+        for (int i = 1; i <= s.size() - startIndex; ++i) {
+            if (wordSet.count(s.substr(startIndex, i)) and _dfs(startIndex + i, s, wordSet, cache)) {
                 return cache[i] = true;
             }
         }
@@ -76,7 +76,7 @@ public:
         dp[0] = true;
         for (int i = 1; i <= s.size(); ++i) {
             for (int j = 0; j < i; ++j) {
-                if (dp[j] && wordSet.count(s.substr(j, i - j))) {
+                if (dp[j] and wordSet.count(s.substr(j, i - j))) {
                     dp[i] = true;
                     break;  // we can break as soon as dp[i] = true
                 }

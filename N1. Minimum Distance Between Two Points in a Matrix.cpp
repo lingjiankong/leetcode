@@ -50,7 +50,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
                 continue;
             }
 
-            for (vector<int> dir : dirs) {
+            for (vector<int>& dir : dirs) {
                 int neighX = x + dir[0], neighY = y + dir[1];
                 if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and not visited[neighX][neighY]) {
                     q.push({neighX, neighY});

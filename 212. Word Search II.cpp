@@ -56,17 +56,6 @@ public:
         node->isWord = true;
     }
 
-    bool search(string word) {
-        TrieNode* node = root;
-        for (char c : word) {
-            if (not node->children.count(c)) {
-                return false;
-            }
-            node = node->children[c];
-        }
-        return node->isWord;
-    }
-
     bool startsWith(string prefix) {
         TrieNode* node = root;
         for (char c : prefix) {
@@ -108,7 +97,7 @@ private:
     void _backtrack(vector<vector<char>>& board, TrieNode* node, int i, int j, vector<string>& all) {
         if (node->isWord) {
             all.push_back(node->str);
-            node->isWord = false;
+            node->isWord = false;  // remember to reset isWord (serve as "visited")
         }
 
         int m = board.size(), n = board[0].size();

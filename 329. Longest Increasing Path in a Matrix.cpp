@@ -36,40 +36,40 @@ public:
 
         int m = matrix.size(), n = matrix[0].size();
 
-        // cache[i][j] is the longest increasing path which starts in i, j.
-        vector<vector<int>> cache(m, vector<int>(n, 0));
-
-        int maxLength = 1;
+        int maxLen = 1;
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                maxLength = max(maxLength, _dfs(matrix, cache, i, j, directions));
+                maxLen = max(maxLen, _dfs(matrix, i, j));
             }
         }
 
-        return maxLength;
+        return maxLen;
     }
 
 private:
-    vector<vector<int>> directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-
-    int _dfs(vector<vector<int>>& matrix, vector<vector<int>>& cache, int x, int y, vector<vector<int>>& directions) {
-        if (cache[x][y]) {
-            return cache[x][y];
+    int _dfs(vector<vector<int>>& matrix, int x, int y) {
+        if (_cache.count(x) and _cache[x].count(y)) {
+            return _cache[x][y];
         }
 
         int m = matrix.size(), n = matrix[0].size();
 
-        int maxLength = 1;
-        for (auto direction : directions) {
-            int newX = x + direction[0], newY = y + direction[1];
-            if (newX < 0 || newX >= m || newY < 0 || newY >= n || matrix[newX][newY] <= matrix[x][y]) {
+        int maxLen = 1;
+        for (vector<int>& dir : _dirs) {
+            int neighX = x + dir[0], neighY = y + dir[1];
+            if (neighX < 0 || neighX >= m || neighY < 0 || neighY >= n || matrix[x][y] >= matrix[neighX][neighY]) {
                 continue;
             }
-            int currentLength = 1 + _dfs(matrix, cache, newX, newY, directions);
-            maxLength = max(maxLength, currentLength);
+            int curLen = 1 + _dfs(matrix, neighX, neighY);
+            maxLen = max(maxLen, curLen);
         }
 
-        cache[x][y] = maxLength;
-        return maxLength;
+        _cache[x][y] = maxLen;
+        return maxLen;
     }
+
+    vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
+    // _cache[i][j] is the longest increasing path which starts in i, j.
+    unordered_map<int, unordered_map<int, int>> _cache;
 };

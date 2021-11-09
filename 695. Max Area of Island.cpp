@@ -76,9 +76,7 @@ public:
             for (int j = 0; j < grid[0].size(); ++j) {
                 if (grid[i][j] == 1 && !visited[i][j]) {
                     int area = 0;
-
                     _dfs(i, j, area, grid, visited);
-
                     maxArea = max(maxArea, area);
                 }
             }
@@ -98,7 +96,7 @@ private:
         visited[x][y] = true;
         ++area;
 
-        for (auto dir : _dirs) {
+        for (auto& dir : _dirs) {
             int newX = x + dir[0], newY = y + dir[1];
             _dfs(newX, newY, area, grid, visited);
         }

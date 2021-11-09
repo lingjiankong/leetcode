@@ -58,7 +58,7 @@ public:
             while (qSize--) {
                 auto cur = q.front();
                 q.pop();
-                for (auto dir : dirs) {
+                for (auto& dir : dirs) {
                     int x = cur[0] + dir[0], y = cur[1] + dir[1];
                     if (x < 0 || x >= n || y < 0 || y >= n || grid[x][y] != 0) {
                         continue;

@@ -50,7 +50,7 @@ private:
                 continue;
             }
 
-            if (i > 0 && nums[i] == nums[i - 1] && visited[i - 1]) {
+            if (i > 0 and nums[i] == nums[i - 1] and visited[i - 1]) {
                 continue;
             }
 

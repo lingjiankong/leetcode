@@ -45,7 +45,7 @@ private:
         all.push_back(current);
 
         for (int i = startIndex; i < nums.size(); ++i) {
-            if (i > startIndex && nums[i] == nums[i - 1]) {
+            if (i > startIndex and nums[i] == nums[i - 1]) {
                 continue;
             }
 

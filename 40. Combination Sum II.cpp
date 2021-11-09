@@ -23,6 +23,7 @@
 //
 // 1. In this question, startIndex in the backtracking function is i + 1 (i.e. next element) instead of i, this prevent
 // multiple use of the same element.
+//
 // 2. Sort the input array and check if (i > startIndex && candidates[i-1] == candidates[i]), this prevent duplicate
 // result, for example, [1, 7] and [7, 1] will only appear once.
 //
@@ -62,7 +63,7 @@ private:
 
             // You cannot use the same number on the same level. However, on next level you may use it.
             // For example, candidates = [1, 1, 1, 1, 9], target = 10, you only want one [1, 9], where 1 is the first 1.
-            if (i > startIndex && candidates[i - 1] == candidates[i]) {
+            if (i > startIndex and candidates[i - 1] == candidates[i]) {
                 continue;
             }
 

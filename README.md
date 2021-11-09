@@ -203,32 +203,36 @@
 | 996 | Number of Squareful Arrays | Alpha
 | 77 | Combinations | Alpha+
 | 78 | Subsets | Alpha+
-| 491 | Increasing Subsequence | Alpha
+| 491 | Increasing Subsequence | Alpha+
 | 39 | Combination Sum | Alpha+
 | 40 | Combination Sum II | Alpha+
 | 90 | Subsets II | Alpha+
 | 216 | Combination Sum III | Alpha+
 | 377 | Combination Sum IV | Charlie
-| 254 | Factor Combinations | Bravo
+| 254 | Factor Combinations | Alpha+
 | 17 | Letter Combinations of a Phone Number | Alpha+
 | 79 | Word Search | Alpha+
-| 212 | Word Search II |  Alpha | Trie
-| 329 | Longest Increasing Path in a Matrix | Alpha
+| 212 | Word Search II | Alpha | Trie, DFS
+| 329 | Longest Increasing Path in a Matrix | Alpha+ | DFS
 | 489 | Robot Room Cleaner | Alpha
-| 286 | Walls and Gates | Alpha
+| 286 | Walls and Gates | Alpha+
 | 130 | Surrounded Regions | Alpha
+| 200 | Number of Islands | Alpha+ | DFS, union find
+| 733 | Flood Fill | Alpha+ | DFS
+| 695 | Max Area of Island | Alpha+ | DFS, union find
+| 827 | Making a Large Island | Alpha+ | DFS, union find
 | 51 | N-Queens | Alpha+
 | 52 | N-Queens II | Alpha
 | 37 | Sudoku Solver | Alpha+
 | 22 | Generate Parentheses | Alpha+
 | 241 | Different Ways to Add Parentheses | Alpha+
-| 139 | Word Break | Alpha | dynamic programming
-| 140 | Word Break II | Alpha
+| 139 | Word Break | Alpha+ | DFS, dynamic programming
+| 140 | Word Break II | Alpha+
 | 267 | Palindrome Permutation II | Alpha
 | 784 | Letter Case Permutation | Alpha+ | DFS
-| 698 | Partition to K Equal Sum Subsets | Alpha+
+| 698 | Partition to K Equal Sum Subsets | Alpha
 | 93 | Restore IP Addresses | Alpha+
-| 842 | Split Array into Fibonacci Sequence | Alpha
+| 842 | Split Array into Fibonacci Sequence | Alpha+
 | 131 | Palindrome Partitioning | Alpha+
 | 282 | Expression Add Operators | Alpha
 
@@ -401,12 +405,12 @@
 | 399 | Evaluate Division | Alpha+ | graph traversal
 | 684 | Redundant Connection | Alpha+ | union find
 | 721 | Accounts Merge | Alpha | union find
-| 200 | Number of Islands | Alpha+ | BFS, union find
-| 733 | Flood Fill | Alpha+ | BFS
-| 695 | Max Area of Island | Alpha+ | BFS, union find
-| 694 | Number of Distinct Islands | Alpha+
+| 200 | Number of Islands | Alpha+ | DFS, union find
+| 733 | Flood Fill | Alpha+ | DFS
+| 695 | Max Area of Island | Alpha+ | DFS, union find
+| 694 | Number of Distinct Islands | Alpha+ | DFS
 | 463 | Island Perimeter | Alpha
-| 827 | Making a Large Island | Alpha+ | union find
+| 827 | Making a Large Island | Alpha+ | DFS, union find
 | 1162 | As Far from Land as Possible | Alpha | BFS
 | 841 | Keys and Rooms | Alpha+ | DFS
 | 1202 | Smallest String With Swaps | Alpha | union find
