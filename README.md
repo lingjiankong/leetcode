@@ -68,22 +68,22 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 98 | Validate Binary Search Tree | Alpha+ | preorder, inorder, postorder
-| 530 | Minimum Absolute Difference in BST | Alpha | inorder
+| 530 | Minimum Absolute Difference in BST | Alpha+ | inorder
 | 700 | Search in a Binary Search Tree | Alpha+ | preorder
 | 701 | Insert into a Binary Search Tree | Alpha+ | preorder
 | 450 | Delete Node in a BST | Alpha+ | preorder
 | 333 | Largest BST Subtree | Alpha | preorder
-| 99 | Recover Binary Search Tree | Bravo | Inorder
+| 99 | Recover Binary Search Tree | Alpha | Inorder
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha+
-| 109 | Convert Sorted List to Binary Search Tree | Alpha
-| 173 | Binary Search Tree Iterator | Bravo, Mechanical
+| 109 | Convert Sorted List to Binary Search Tree | Alpha+
+| 173 | Binary Search Tree Iterator | Bravo | mechanical
 | 230 | Kth Smallest Element in a BST | Alpha+
-| 285 | Inorder Successor in BST | Hard
+| 285 | Inorder Successor in BST | Alpha+
 | 270 | Closest Binary Search Tree Value | Alpha
 | 272 | Closest Binary Search Tree Value II | Alpha
 | 255 | Verify Preorder Sequence in Binary Search Tree | Hard
-| 96 | Unique Binary Search Trees | Charlie
-| 95 | Unique Binary Search Trees II | Charlie
+| 96 | Unique Binary Search Trees | Bravo
+| 95 | Unique Binary Search Trees II | Bravo
 | 501 | Find Mode in Binary Search Tree | Bravo
 | 669 | Trim a Binary Search Tree | Alpha+
 
@@ -95,14 +95,16 @@
 | 876 | Middle of the Linked List | Alpha+
 | 234 | Palindrome Linked List | Alpha+
 | 24 | Swap Nodes in Pairs | Alpha+
-| 237 | Delete Node in a Linked List | Bravo
+| 237 | Delete Node in a Linked List | Alpha
 | 19 | Remove Nth Node From End of List | Alpha+
 | 1474 | Delete N Nodes After M Nodes of a Linked List | Alpha
-| 203 | Remove Linked List Elements | Alpha
+| 203 | Remove Linked List Elements | Alpha+
+| 1836 | Remove Duplicates From an Unsorted Linked List | Alpha
 | 83 | Remove Duplicates from Sorted List | Alpha
-| 82 | Remove Duplicates from Sorted List II | Hard
-| 369 | Plus One Linked List | Bravo
+| 82 | Remove Duplicates from Sorted List II | Bravo
+
 | 2 | Add Two Numbers | Alpha+
+| 369 | Plus One Linked List | Bravo
 | 445 | Add Two Numbers II | Alpha+
 | 160 | Intersection of Two Linked Lists | Alpha+
 | 21 | Merge Two Sorted Lists | Alpha+
@@ -117,6 +119,7 @@
 | 25 | Reverse Nodes in k-Group | Alpha
 | 147 | Insertion Sort List | Alpha
 | 707 | Designed Linked List | Bravo
+| 1290 | Convert Binary Number in a Linked List to Integer | Alpha
 
 ## Sliding window
 | ID | Name | Rating | Note

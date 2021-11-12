@@ -12,7 +12,7 @@ class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {
         if (not root) {
-            return new TreeNode(val);
+            return new TreeNode(val);  // note here we are not return nullptr, but return new TreeNode(val)!
         }
 
         if (root->val == val) {

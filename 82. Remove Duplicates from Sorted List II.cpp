@@ -1,9 +1,10 @@
 // ***
 //
-// Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
-// 
+// Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the
+// original list.
+//
 // Example 1:
-// 
+//
 // Input: 1->2->3->3->4->4->5
 // Output: 1->2->5
 //
@@ -12,46 +13,34 @@
 // Output: 2->3
 //
 // ***
-//
-// dummy -> 1 -> 1 -> 1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 4 -> 4 -> 5
-// ^        ^                   ^
-// prev	    prev->next          current
-//
-// dummy -> 1 -> 1 -> 1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 4 -> 4 -> 5
-// ^                                 ^              ^
-// prev                              prev->next     current
-ListNode* deleteDuplicates(ListNode* head)
-{
-	if (!head || !head->next)
-	{
-		return head;
-	}
 
-	ListNode dummy(0);
-	dummy.next = head;
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        if (!head or !head->next) {
+            return head;
+        }
 
-	ListNode* prevNode = &dummy;
+        ListNode dummy(0);
+        dummy.next = head;
 
-	while (prevNode->next)
-	{
-		ListNode* currentNode = prevNode->next;
-		while (currentNode->next && currentNode->next->val == prevNode->next->val)
-		{
-			currentNode = currentNode->next;
-		}
+        ListNode* prevNode = &dummy;
 
-		// If these two does not point to the same address, we were inside the while loop and have seen duplicates. Set prev->next to cur->next but do not update prev yet!
-		// Because you may keep seeing all duplciates and in that case we still want prev to stay at the original place.
-		if (currentNode != prevNode->next)
-		{
-			prevNode->next = currentNode->next;
-		}
-		// Else, we update prevNode only if you have not seen duplicates.
-		else
-		{
-			prevNode = prevNode->next;
-		}
-	}
+        while (head) {
+            if (head->next and head->val == head->next->val) {
+                while (head->next and head->val == head->next->val) {
+                    ListNode* toBeDeleted = head;
+                    head = head->next;
+                    delete toBeDeleted;
+                }
+                prevNode->next = head->next;  // skip all duplicated node.
+            } else {
+                prevNode = prevNode->next;
+            }
 
-	return dummy.next;
-}
+            head = head->next;  // move forward.
+        }
+
+        return dummy.next;
+    }
+};

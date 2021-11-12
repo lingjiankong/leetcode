@@ -11,9 +11,10 @@
 // => 2 * (a + b) = a + b + c + b => 2a = a + c => a = c => the distance from head to cycle start and the distance from
 // meet point to cycle start MUST be the same. Start from head and the meet point, when they are equal it is the cycle
 // start.
+
 ListNode *detectCycle(ListNode *head) {
     ListNode *slow = head, *fast = head;
-    while (fast && fast->next) {
+    while (fast and fast->next) {
         slow = slow->next;
         fast = fast->next->next;
 
@@ -25,7 +26,7 @@ ListNode *detectCycle(ListNode *head) {
     }
 
     // fast has reached the end. There is no cycle in this case.
-    if (!fast || !fast->next) {
+    if (!fast or !fast->next) {
         return nullptr;
     }
 

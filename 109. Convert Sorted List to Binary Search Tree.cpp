@@ -1,7 +1,8 @@
 // ***
 //
 // Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
-// For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+// For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of
+// every node never differ by more than 1.
 //
 // Example:
 //
@@ -21,47 +22,35 @@
 // The only difference is how you find the mid element of an array and of a linked list.
 //
 // See also 234. Palindrome Linked List for intuition on calculating the mid of a linked list.
-class Solution
-{
 
-	public:
+class Solution {
+public:
+    TreeNode* sortedListToBST(ListNode* head) { return preorder(head, nullptr); }
 
-		TreeNode* sortedListToBST(ListNode* head)
-		{
-			return preorder(head, nullptr);
-		}
+private:
+    TreeNode* preorder(ListNode* head, ListNode* tail) {
+        if (head == tail) {
+            return nullptr;
+        }
 
-	private:
+        ListNode* mid = findMid(head, tail);
 
-		TreeNode* preorder(ListNode* head, ListNode* tail)
-		{
-			if (head == tail)
-			{
-				return nullptr;
-			}
+        TreeNode* root = new TreeNode(mid->val);
+        root->left = preorder(head, mid);
+        root->right = preorder(mid->next, tail);
 
-			ListNode* mid = findMid(head, tail);
+        return root;
+    }
 
-			TreeNode* root = new TreeNode(mid->val);
-			root->left = preorder(head, mid);
-			root->right = preorder(mid->next, tail);
+    ListNode* findMid(ListNode* head, ListNode* tail) {
+        ListNode* slow = head;
+        ListNode* fast = head;
 
-			return root;
+        while (fast != tail and fast->next != tail) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
 
-		}
-
-		ListNode* findMid(ListNode* head, ListNode* tail)
-		{
-			ListNode* slow = head;
-			ListNode* fast = head;
-
-			while (fast != tail && fast->next != tail)
-			{
-				slow = slow->next;
-				fast = fast->next->next;
-			}
-
-			return slow;
-		}
-
+        return slow;
+    }
 };

@@ -17,6 +17,8 @@
 //
 // Input: root = [1,null,2,2]
 // Output: [2]
+//
+//
 // Example 2:
 //
 // Input: root = [0]

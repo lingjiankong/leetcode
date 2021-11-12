@@ -42,23 +42,23 @@ private:
     int _k;
     int _res;
 
-    void _inorder(TreeNode* node) {
-        if (!node) {
+    void _inorder(TreeNode* root) {
+        if (!root) {
             return;
         }
 
-        _inorder(node->left);
+        _inorder(root->left);
 
         if (--_k == 0) {
-            _res = node->val;
+            _res = root->val;
             return;
         }
 
-        _inorder(node->right);
+        _inorder(root->right);
     }
 };
 
-// Iterative, no need to memorize it.
+// Iterative, no need to remember it.
 int kthSmallest(TreeNode* root, int k) {
     stack<TreeNode*> nodeStack;
     TreeNode* currentNode = root;

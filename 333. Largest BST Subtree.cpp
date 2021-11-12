@@ -42,19 +42,19 @@ public:
 
 private:
     bool _isValidBST(TreeNode* root, int minValue, int maxValue) {
-        if (!root) {
+        if (not root) {
             return true;
         }
 
-        if (root->val <= minValue || root->val >= maxValue) {
+        if (root->val <= minValue or root->val >= maxValue) {
             return false;
         }
 
-        return (_isValidBST(root->left, minValue, root->val) && _isValidBST(root->right, root->val, maxValue));
+        return _isValidBST(root->left, minValue, root->val) and _isValidBST(root->right, root->val, maxValue);
     }
 
     int _countNodes(TreeNode* root) {
-        if (!root) {
+        if (not root) {
             return 0;
         }
 

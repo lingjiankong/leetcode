@@ -61,20 +61,17 @@
 //       1              2              3           n = 3
 //      / \            / \            / \
 // dp[0]  dp[2]   dp[1]   dp[1]  dp[2]   dp[0]
-//
-int numTrees(int n)
-{
-	vector<int> dp(n + 1, 0);
-	dp[0] = 1;
-	dp[1] = 1;
 
-	for (int i = 2; i <= n; ++i)
-	{
-		for (int j = 0; j < i; ++j)
-		{
-			dp[i] += dp[j] * dp[i-j-1];
-		}
-	}
+int numTrees(int n) {
+    vector<int> dp(n + 1, 0);
+    dp[0] = 1;
+    dp[1] = 1;
 
-	return dp[n];
+    for (int i = 2; i <= n; ++i) {
+        for (int j = 0; j < i; ++j) {
+            dp[i] += dp[j] * dp[i - j - 1];
+        }
+    }
+
+    return dp[n];
 }

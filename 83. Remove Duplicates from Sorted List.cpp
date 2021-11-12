@@ -14,6 +14,27 @@
 //
 // ***
 
+// Without using dummy node (since we will never delete the first element).
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* curNode = head;  // Need to keep head as is because you need to return it in the end;
+
+        while (curNode and curNode->next) {
+            if (curNode->next->val == curNode->val) {
+                ListNode* toBeDeleted = curNode->next;
+                curNode->next = curNode->next->next;
+                delete toBeDeleted;
+            } else {
+                curNode = curNode->next;
+            }
+        }
+
+        return head;
+    }
+};
+
+// Using dummy node. Similar to 203. Remove Linked List Elements
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {

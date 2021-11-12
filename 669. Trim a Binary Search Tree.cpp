@@ -41,16 +41,19 @@ public:
             return nullptr;
         }
 
-        // In this case, the entire left subtree of root are also < low and should be removed,
+        // If (root->val < low), we need to remove root and its left subtree (since they all < low).
         // therefore we only need to return the trimmed right subtree.
         if (root->val < low) {
             return trimBST(root->right, low, high);
         }
 
+        // Similar case. root and its entire right subtree needs to be removed,
+        // therefore we only need to return the trimmed left subtree.
         if (root->val > high) {
             return trimBST(root->left, low, high);
         }
 
+        // Otherwise, root is within low and high.
         root->left = trimBST(root->left, low, high);
         root->right = trimBST(root->right, low, high);
         return root;

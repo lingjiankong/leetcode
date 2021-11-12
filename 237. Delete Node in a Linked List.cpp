@@ -9,7 +9,16 @@
 // A -> C ------> D
 
 // Delete next node and pretend the node to be deleted will be the next node.
-void deleteNode(ListNode* node) {
-    node->val = node->next->val;
-    node->next = node->next->next;
-}
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        if (not node->next) {
+            node = nullptr;
+        }
+
+        ListNode* nextNode = node->next;
+        node->next = nextNode->next;
+        node->val = nextNode->val;
+        delete nextNode;
+    }
+};

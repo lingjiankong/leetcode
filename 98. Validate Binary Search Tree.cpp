@@ -27,10 +27,6 @@
 //              is 5 but its right child's value is 4.
 //
 // ***
-//
-// For a binary search tree, all nodes in left subtree must be smaller than current node, and all nodes in right subtree
-// must be larger than current node. Therefore we can use preorder traversal to see whether a node satisfy this
-// condition, and recursively check its left and right subtrees.
 
 // Postorder
 class Solution {

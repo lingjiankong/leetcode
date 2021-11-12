@@ -67,7 +67,9 @@ public:
             // slow is now the m th node
 
             while (fast and nTemp--) {
+                ListNode* toBeDeleted = fast;
                 fast = fast->next;
+                delete toBeDeleted;
             }
 
             // fast is now the m + n + 1 th node
