@@ -102,22 +102,20 @@
 | 1836 | Remove Duplicates From an Unsorted Linked List | Alpha
 | 83 | Remove Duplicates from Sorted List | Alpha
 | 82 | Remove Duplicates from Sorted List II | Bravo
-
 | 2 | Add Two Numbers | Alpha+
-| 369 | Plus One Linked List | Bravo
 | 445 | Add Two Numbers II | Alpha+
+| 369 | Plus One Linked List | Alpha
 | 160 | Intersection of Two Linked Lists | Alpha+
 | 21 | Merge Two Sorted Lists | Alpha+
-| 143 | Reorder List | Bravo
-| 147 | Insertion Sort List | Alpha+ | insertion sort
+| 143 | Reorder List | Alpha
+| 147 | Insertion Sort List | Alpha | insertion sort
 | 148 | Sort List | Alpha+ | merge sort
-| 61 | Rotate List | Alpha
+| 61 | Rotate List | Alpha+
 | 86 | Partition List | Alpha
 | 23 | Merge k Sorted Lists | Alpha+
 | 206 | Reverse Linked List | Alpha+
 | 92 | Reverse Linked List II | Alpha
 | 25 | Reverse Nodes in k-Group | Alpha
-| 147 | Insertion Sort List | Alpha
 | 707 | Designed Linked List | Bravo
 | 1290 | Convert Binary Number in a Linked List to Integer | Alpha
 
@@ -127,30 +125,30 @@
 | 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
 | 209 | Minimum Size Subarray Sum | Alpha+
 | 567 | Permutation in String | Alpha+
-| 438 | Find All Anagrams in a String | Alpha
+| 438 | Find All Anagrams in a String | Alpha+
 | 76 | Minimum Window Substring | Alpha+
 | 1438 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Alpha+
 | 217 | Contains Duplicate | Alpha+
 | 219 | Contains Duplicate II | Alpha+
 | 220 | Contains Duplicate III | Alpha+
-| 3 | Longest Substring Without Repeating Characters | Alpha
+| 3 | Longest Substring Without Repeating Characters | Alpha+
+| 1695 | Maximum Erasure Value | Alpha+
 | 159 | Longest Substring with At Most Two Distinct Characters | Alpha
 | 340 | Longest Substring with At Most K Distinct Characters | Alpha
 | 424 | Longest Repeating Character Replacement | Alpha
-| 395 | Longest Substring with At Least K Repeating Characters | Alpha | dynamic programming
-| 727 | Minimum Window Subsequence | Bravo |
+| 395 | Longest Substring with At Least K Repeating Characters | Alpha+
+| 2067 | Number of Equal Count Substrings | Alpha+
 | 992 | Subarrays with K Different Integers | Alpha+
-| 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
-| 1004 | Max Consecutive Ones III | Alpha
+| 1004 | Max Consecutive Ones III | Alpha+
 | 487 | Max Consecutive Ones II | Alpha
 | 1052 | Grumpy Bookstore Ownder | Alpha
-| 1100 | Find K-Length Substrings With No Repeated Characters | Alpha
+| 1100 | Find K-Length Substrings With No Repeated Characters | Alpha+
 | 1151 | Minimum Swaps to Group All 1's Together | Alpha
 | 1208 | Get Equal Substrings Within Budget | Alpha
-| 1423 | Maximum Points You Can Obtain from Cards | Alpha
+| 1423 | Maximum Points You Can Obtain from Cards | Alpha+
 | 1176 | Diet Plan Performance | Alpha
-| 1456 | Maximum Number of Vowels in a Substring of Given Length | Alpha
-| 1658 | Minimum Operations to Reduce X to Zero | Alpha
+| 1456 | Maximum Number of Vowels in a Substring of Given Length | Alpha+
+| 1658 | Minimum Operations to Reduce X to Zero | Alpha+
 
 ## Binary Search
 | ID | Name | Rating | Note
@@ -292,6 +290,7 @@
 | 494 | Target Sum | Alpha+ | backtracking, dynamic programming, knapsack
 | 1048 | Longest String Chain | Alpha+
 | 1027 | Longest Arithmetic Subsequence | Alpha+
+| 727 | Minimum Window Subsequence | Bravo
 
 ## Two Sum Series
 | ID | Name | Rating | Note
@@ -616,3 +615,5 @@
 | 556 | Next Greater Element III | Charlie
 | 969 | Pancake Sorting | Charlie | recursion
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
+| 1188 | Design Bounded Blocking Queue | Alpha+ | multithreading
+| 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy

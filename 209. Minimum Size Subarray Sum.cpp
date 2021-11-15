@@ -25,6 +25,7 @@ public:
 
             while (sumInWindow >= s) {
                 minLen = min(right - left, minLen);
+
                 num = nums[left++];
                 sumInWindow -= num;
             }

@@ -45,6 +45,38 @@ public:
         int totalOnes = accumulate(data.begin(), data.end(), 0);
         int res = INT_MAX;
 
+        int numOnes = 0;
+        int left = 0, right = 0;
+
+        while (right < data.size()) {
+            int num = data[right++];
+            if (num == 1) {
+                ++numOnes;
+            }
+
+            while (right - left > totalOnes) {
+                int num = data[left++];
+                if (num == 1) {
+                    --numOnes;
+                }
+            }
+
+            if (right - left == totalOnes) {
+                res = min(res, totalOnes - numOnes);
+            }
+        }
+
+        return res;
+    }
+};
+
+// Same idea.
+class Solution {
+public:
+    int minSwaps(vector<int>& data) {
+        int totalOnes = accumulate(data.begin(), data.end(), 0);
+        int res = INT_MAX;
+
         vector<int> window(2, 0);
         int left = 0, right = 0;
 

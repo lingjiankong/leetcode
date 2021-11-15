@@ -32,6 +32,7 @@ bool containsNearbyDuplicate(vector<int>& nums, int k) {
     while (right < nums.size()) {
         int num = nums[right++];
 
+        // Note: because you need to freshest num, perform the check before you shrink the window.
         // When we perform the check here, window.size() will never be > k.
         if (window.count(num)) {
             return true;

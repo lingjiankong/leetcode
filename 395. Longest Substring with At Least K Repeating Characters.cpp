@@ -17,15 +17,16 @@
 //
 // ***
 
+// See also 2067. Number of Equal Count Substrings.
 class Solution {
 public:
     int longestSubstring(string s, int k) {
-        int minUnique = 1;
-        int maxUnique = unordered_set<char>(s.begin(), s.end()).size();
+        int minUniq = 1;
+        int maxUniq = unordered_set<char>(s.begin(), s.end()).size();
         int maxLen = 0;
 
-        for (int numUnique = minUnique; numUnique <= maxUnique; ++numUnique) {
-            // Find the size of the string with exactly numUnique unique characters,
+        for (int numUniq = minUniq; numUniq <= maxUniq; ++numUniq) {
+            // Find the size of the string with exactly numUniq unique characters,
             // and the frequency of each character is greater than or equal to k.
             unordered_map<char, int> window;
             int left = 0, right = 0;
@@ -35,14 +36,14 @@ public:
                 char c = s[right++];
                 ++window[c];
 
-                while (window.size() > numUnique) {
+                while (window.size() > numUniq) {
                     char c = s[left++];
                     if (--window[c] == 0) {
                         window.erase(c);
                     }
                 }
 
-                if (window.size() == numUnique and _allCharFreqGrEqK(window, k)) {
+                if (window.size() == numUniq and _allCharFreqGrEqK(window, k)) {
                     curMaxLen = max(curMaxLen, right - left);
                 }
             }
@@ -59,7 +60,7 @@ private:
             return false;
         }
 
-        for (auto e : window) {
+        for (auto& e : window) {
             if (e.second < k) {
                 return false;
             }

@@ -31,6 +31,9 @@ public:
         while (right < nums.size()) {
             long num = nums[right++];
 
+            // Note: because you need to freshest num, perform the check before you shrink the window.
+            // Here the window size is always <= k
+            // Find whether there is a number in the window within plus minus t of num.
             auto itr = window.lower_bound(num - t);
             if (itr != window.end() and *itr <= num + t) {
                 return true;

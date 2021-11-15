@@ -46,7 +46,10 @@ string minWindow(string s, string t) {
                 if (window[c] == need[c]) {
                     --validCount;
                 }
-                --window[c];
+
+                if (--window[c] == 0) {
+                    window.erase(c);
+                }
             }
         }
     }

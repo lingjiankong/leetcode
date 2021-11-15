@@ -29,7 +29,10 @@ public:
         int left = 0, right = 0;
 
         int already_satisfied = 0;
+
+        // additional customers that you can satified if you were not grumpy in sliding window of size X
         int additional_satisfied = 0;
+
         int max_additional_satisfied = 0;
 
         while (right < customers.size()) {

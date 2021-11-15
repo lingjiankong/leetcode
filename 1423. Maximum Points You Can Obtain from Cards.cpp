@@ -39,26 +39,26 @@
 //
 // ***
 //
-// Problem translation: Find the smallest subarray sum of length len(cardPoints) - k
+// Problem translation: Find the smallest subarray sum of length len(nums) - k
 
 class Solution {
 public:
-    int maxScore(vector<int>& cardPoints, int k) {
+    int maxScore(vector<int>& nums, int k) {
         int windowSum = 0, totalSum = 0, minSum = INT_MAX;
         int left = 0, right = 0;
-        while (right < cardPoints.size()) {
-            int num = cardPoints[right++];
+        while (right < nums.size()) {
+            int num = nums[right++];
             windowSum += num;
             totalSum += num;
 
-            while (right - left == cardPoints.size() - k) {
+            while (right - left == nums.size() - k) {
                 minSum = min(windowSum, minSum);
-                int num = cardPoints[left++];
+                int num = nums[left++];
                 windowSum -= num;
             }
         }
 
-        // When minSum == INT_MAX, meaning k == cardPoints.size(), in which case minSum has never been updated.
+        // When minSum == INT_MAX, meaning k == nums.size(), in which case minSum has never been updated.
         return minSum == INT_MAX ? totalSum : totalSum - minSum;
     }
 };

@@ -45,7 +45,7 @@ public:
         // Reverse K elements between [a, b) (the element before b will be the new head).
         ListNode *a = head, *b = head;
 
-        for (int i = 0; i < k; ++i) {
+        while (k--) {
             // No enough elements to reverse. Simply return the original head.
             if (not b) {
                 return head;

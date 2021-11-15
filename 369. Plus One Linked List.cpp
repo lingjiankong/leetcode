@@ -26,7 +26,7 @@ public:
             return nullptr;
         }
 
-        int finalCarry = _dfs(head);
+        int finalCarry = _postorder(head);
 
         if (finalCarry == 1) {
             ListNode* newHead = new ListNode(1);
@@ -39,15 +39,15 @@ public:
 
 private:
     // Returns carry to parent node.
-    int _dfs(ListNode* node) {
+    int _postorder(ListNode* node) {
 
         // Returns carry 1 to right most tail node.
         if (!node) {
             return 1;
         }
 
-        // Get carry as you are going from right to left.
-        int carry = _dfs(node->next);
+        // Postorder traversal. Get carry as you are going from right to left.
+        int carry = _postorder(node->next);
         int sum = node->val + carry;
         node->val = sum % 10;
 

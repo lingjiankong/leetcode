@@ -105,7 +105,7 @@
 // prev current             next
 //
 // prev and current do not change, only next changes.
-//
+
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int m, int n) {
@@ -136,7 +136,7 @@ public:
     }
 };
 
-// Recursive. Harder to understand. Compare with recursive solution for 206. Reverse Linked List.
+// Recursive. No need to understand. Compare with recursive solution for 206. Reverse Linked List.
 // See labuladong book pp. 286.
 class Solution {
 public:

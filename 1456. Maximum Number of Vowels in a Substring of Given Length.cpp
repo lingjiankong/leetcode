@@ -31,24 +31,24 @@ class Solution {
 public:
     int maxVowels(string s, int k) {
         unordered_set<char> vowels = {'a', 'e', 'i', 'o', 'u'};
-        int maxVowel = 0, curVowel = 0;
+        int maxNumVowel = 0, curNumVowel = 0;
         int left = 0, right = 0;
 
         while (right < s.size()) {
             char c = s[right++];
             if (vowels.count(c)) {
-                ++curVowel;
+                ++curNumVowel;
             }
 
             while (right - left == k) {
-                maxVowel = max(maxVowel, curVowel);
+                maxNumVowel = max(maxNumVowel, curNumVowel);
                 char c = s[left++];
                 if (vowels.count(c)) {
-                    --curVowel;
+                    --curNumVowel;
                 }
             }
         }
 
-        return maxVowel;
+        return maxNumVowel;
     }
 };

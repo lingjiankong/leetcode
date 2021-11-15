@@ -1,7 +1,7 @@
 // ***
 //
 // Given a linked list, rotate the list to the right by k places, where k is non-negative.
-// 
+//
 // Example 1:
 //
 // Input: 1->2->3->4->5->NULL, k = 2
@@ -23,32 +23,29 @@
 // rotate 4 steps to the right: 2->0->1->NULL
 //
 // ***
-ListNode* rotateRight(ListNode* head, int k)
-{
-	if (!head)
-	{
-		return nullptr;
-	}
 
-	int listLength = 1;
-	ListNode* current = head;
+ListNode* rotateRight(ListNode* head, int k) {
+    if (!head) {
+        return nullptr;
+    }
 
-	// Find the length of the linked list, hook the tail element with head. Now it forms a circle.
-	while (current->next)
-	{
-		++listLength;
-		current = current->next;
-	}
-	current->next = head;
+    int listLen = 1;
+    ListNode* current = head;
 
-	// Find where the new linked list should end and disconnect that node with next.
-	int m = listLength - k % listLength;
-	for (int i = 0; i < m; ++i)
-	{
-		current = current->next;
-	}
-	ListNode* newHead = current->next;
-	current->next = nullptr;
+    // Find the length of the linked list, hook the tail element with head. Now it forms a circle.
+    while (current->next) {
+        ++listLen;
+        current = current->next;
+    }
+    current->next = head;
 
-	return newHead;
+    // Find where the new linked list should end and disconnect that node with next.
+    int m = listLen - k % listLen;
+    while (m--) {
+        current = current->next;
+    }
+    ListNode* newHead = current->next;
+    current->next = nullptr;
+
+    return newHead;
 }

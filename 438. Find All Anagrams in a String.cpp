@@ -124,7 +124,10 @@ vector<int> findAnagrams(string s, string p) {
                 if (window[c] == need[c]) {
                     --validCount;
                 }
-                --window[c];
+
+                if (--window[c] == 0) {
+                    window.erase(c);
+                }
             }
         }
     }

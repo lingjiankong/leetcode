@@ -24,27 +24,29 @@
 // ***
 
 // labuladong sliding window template
-int lengthOfLongestSubstring(string s) {
-    unordered_map<char, int> window;
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        unordered_map<char, int> window;
 
-    int maxLen = 0;
+        int maxLen = 0;
 
-    int left = 0, right = 0;
-    while (right < s.size()) {
-        char c = s[right++];
-        ++window[c];
+        int left = 0, right = 0;
+        while (right < s.size()) {
+            char c = s[right++];
+            ++window[c];
 
-        while (window[c] > 1) {
-            char c = s[left++];
+            while (window[c] > 1) {
+                char c_ = s[left++];
 
-            if (--window[c] == 0) {
-                window.erase(c);
+                if (--window[c_] == 0) {
+                    window.erase(c_);
+                }
             }
+
+            maxLen = max(maxLen, right - left);
         }
 
-        maxLen = max(maxLen, right - left);
+        return maxLen;
     }
-
-    return maxLen;
-}
-
+};
