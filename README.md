@@ -154,7 +154,7 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 35 | Search Insert Position | Alpha+
-| 704 | Binary Search | Alpha
+| 704 | Binary Search | Alpha+
 | 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha+ | Binary search
 | 475 | Heaters | Alpha+
 | 441 | Arranging Coins | Alpha
@@ -231,7 +231,7 @@
 | 140 | Word Break II | Alpha+
 | 267 | Palindrome Permutation II | Alpha
 | 784 | Letter Case Permutation | Alpha+ | DFS
-| 698 | Partition to K Equal Sum Subsets | Alpha
+| 698 | Partition to K Equal Sum Subsets | Alpha+
 | 93 | Restore IP Addresses | Alpha+
 | 842 | Split Array into Fibonacci Sequence | Alpha+
 | 131 | Palindrome Partitioning | Alpha+
@@ -455,7 +455,6 @@
 | 648 | Replace Words | Bravo
 | 677 | Map Sum Pairs | Alpha
 | 211 |  Design Add and Search Words Data Structure | Alpha | Alpha
-
 
 ## Array
 | ID | Name | Rating | Note

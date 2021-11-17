@@ -144,7 +144,7 @@ public:
             }
 
             unordered_set<string> temp;  // to be assigned later to q1.
-            for (string s : q1) {
+            for (string& s : q1) {
                 // Unidirectional BFS: add to visited when adding to queue.
                 // Bidirectional BFS: add to visited when popping from queue.
                 visited.insert(s);

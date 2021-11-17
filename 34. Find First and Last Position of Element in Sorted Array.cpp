@@ -15,7 +15,7 @@
 // ***
 
 // Use std::lower_bound() to calculate the first position of the element;
-// Use std::upper_bound() to calculate the last position of the element:
+// Use std::upper_bound() to calculate one past the last position of the element:
 vector<int> searchRange(vector<int>& nums, int target) {
     // std::lower_bound on target
     int left = 0, right = nums.size();

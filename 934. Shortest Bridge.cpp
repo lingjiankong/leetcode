@@ -85,7 +85,8 @@ private:
         for (vector<int>& dir : _dirs) {
             int neighX = i + dir[0], neighY = j + dir[1];
             int m = grid.size(), n = grid[0].size();
-            if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and grid[neighX][neighY] == 1) {
+            if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and not visited[neighX][neighY] and
+                grid[neighX][neighY] == 1) {
                 grid[neighX][neighY] = 2;
                 q.push({neighX, neighY});
                 visited[neighX][neighY] = true;

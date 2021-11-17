@@ -92,7 +92,7 @@ private:
                 break;
             }
 
-            // Continue backtracking when:
+            // Continue backtracking:
             // first two numbers in a fib seq can be anything, OR
             // current number is the sum of previous two numbers in cur.
             if (cur.size() < 2 or (numInt == (long)cur[cur.size() - 1] + (long)cur[cur.size() - 2])) {
