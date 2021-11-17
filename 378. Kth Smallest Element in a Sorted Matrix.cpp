@@ -18,7 +18,8 @@
 //
 // ***
 
-// Prioirty queue, O(nlogn) time, O(n) space.
+// Prioirty queue
+// O(nlogn) time, O(n) space.
 int kthSmallest(vector<vector<int>>& matrix, int k) {
     priority_queue<int> pq;
 
@@ -37,27 +38,30 @@ int kthSmallest(vector<vector<int>>& matrix, int k) {
     return pq.top();
 }
 
-// Binary search using std::lower_bound(), O(nlogn) time, O(1) space.
+// Binary search using lower_bound()
+// O(nlogn) time, O(1) space.
 class Solution {
 public:
     int kthSmallest(vector<vector<int>>& matrix, int k) {
-        // Note here that left and right are numbers, not index.
+        // Note here that left and right are *numbers*, not index.
         // Given that rows and columns are sorted in ascending order,
         // therefore the smallest element is matrix[0][0] and largest element is matrix.back().back().
         int left = matrix[0][0], right = matrix.back().back() + 1;
 
-        // Eventually, left and right will converge to the Kth smallest element.
+        // Eventually, left and right will converge to the k-th smallest element.
         while (left < right) {
+            // Candidate number
             int mid = left + (right - left) / 2;
 
-            // Count the total number of elements in the matrix that are smaller than mid
+            // Count the total number of elements in the matrix that are <= mid (including mid itself)
             int count = 0;
             for (int i = 0; i < matrix.size(); ++i) {
+                // upper_bound() here!
                 count += upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();
             }
 
             if (count == k) {
-                right = mid;
+                right = mid; // lower_bound() here!
             } else if (count < k) {
                 left = mid + 1;
             } else if (count > k) {

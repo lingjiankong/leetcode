@@ -56,6 +56,9 @@
 // 1011. Capacity To Ship Packages Within D Days
 // which are very similar questions but are looking for minimum values (therefore uses lower_bound).
 // This question is looking for maximum values (therefore uses upper_bound and return right - 1).
+//
+// upper_bound: binary search on ribbon length to find the min ribbon length such that numRibbons > k
+// (therefore right - 1 gives you the max ribbon length such that numRibbon <= k)
 class Solution {
 public:
     int maxLength(vector<int>& ribbons, int k) {
@@ -86,10 +89,10 @@ public:
                 // Try if increase cut length still works.
                 left = mid + 1;
             } else if (numRibbons < k) {
-                // Need more ribbons, therefore need to decrease cut length.
+                // Reduce cut length to get more ribbons.
                 right = mid;
             } else if (numRibbons > k) {
-                // Can have fewer ribbons, therefore need to increase cut length.
+                // Increase cut length to get fewer ribbons.
                 left = mid + 1;
             }
         }

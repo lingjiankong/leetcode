@@ -26,10 +26,10 @@ bool search(vector<int>& nums, int target) {
             return true;
         }
 
-        if (nums[mid] == nums[right]) {  // seeing duplicate element
+        // Seeing duplicate element
+        if (nums[mid] == nums[right]) {
             --right;
         }
-
         // Right half is sorted.
         else if (nums[mid] < nums[right]) {
             // Target is in this sorted right half of the array.

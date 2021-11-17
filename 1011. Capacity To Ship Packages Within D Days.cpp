@@ -10,7 +10,6 @@
 // within days days.
 //
 //
-//
 // Example 1:
 //
 // Input: weights = [1,2,3,4,5,6,7,8,9,10], days = 5
@@ -44,6 +43,8 @@
 // ***
 
 // Almost the same as 875. Koko Eating Bananas
+// lower_bound: binary search on capacity to find the minimum weight capacity such that daysNeeded == days
+// (least weight capacity of the ship so that all packages are shipped within days days)
 class Solution {
 public:
     int shipWithinDays(vector<int>& weights, int days) {
@@ -57,7 +58,6 @@ public:
         }
 
         int left = maxWeight, right = totalWeights + 1;
-        // lower_bound: looking for minimum weight capacity
         while (left < right) {
             // cadidate capacity
             int mid = left + (right - left) / 2;

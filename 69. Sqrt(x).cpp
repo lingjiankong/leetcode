@@ -27,7 +27,7 @@ int mySqrt(int x) {
         return x;
     }
 
-    int left = 0, right = x;
+    int left = 1, right = x;
     while (left < right) {
         int mid = left + (right - left) / 2;
 

@@ -37,6 +37,9 @@
 // ***
 
 // Almost the same as 1011. Capacity To Ship Packages Within D Days
+//
+// lower_bound: binary search on eat speed to find the minimum eat speed such that totalHours == h
+// (eat slowly before the guard comes back)
 class Solution {
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
@@ -49,8 +52,6 @@ public:
         // Max speed she can eat banana is max(piles) bananas per hour
         int left = 1, right = maxPile + 1;
 
-        // lower_bound: binary search on eat speed to find the minimum eat speed such that totalHours == h
-        // (eat slowly before the guard comes back)
         while (left < right) {
             // mid is the candidate eat speed (bananas per hour)
             int mid = left + (right - left) / 2;

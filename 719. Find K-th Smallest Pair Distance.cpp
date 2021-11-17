@@ -51,8 +51,8 @@ public:
             int start = 0, count = 0;  // count: number of distance smaller than mid.
             for (int i = 0; i < nums.size(); ++i) {
                 // if nums[i] - nums[start] > mid, it means the distance between nums[i] and nums[start] is too large,
-                // so we need to ++start until nums[i] - nums[start] <= mid, in which case we have i - start distances
-                // that are smaller than mid.
+                // so we need to ++start until nums[i] - nums[start] <= mid, in which case we have (i - start) pairs
+                // which distances that are smaller than or equal to mid.
                 //
                 // You can also initialize start = 0 everytime inside the for loop. Correct but TLE.
                 // note that start can only increase.
