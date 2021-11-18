@@ -30,12 +30,15 @@ public:
                 // we can form a valid triangle.
                 // Using binary search to find how many targets are less than nums[i] + nums[j]
                 int target = nums[i] + nums[j];
+
                 int left = j + 1, right = nums.size();
                 while (left < right) {
                     int mid = left + (right - left) / 2;
-                    if (nums[mid] < target) {
+                    if (nums[mid] == target) {
+                        right = mid;
+                    } else if (nums[mid] < target) {
                         left = mid + 1;
-                    } else {
+                    } else if (nums[mid] > target) {
                         right = mid;
                     }
                 }
@@ -43,10 +46,11 @@ public:
                 // right is the first index in nums which is greater or equal to target
                 // Therefore, right - 1 is the last index in nums which is smaller than target.
                 // Hence, right - 1 - j is the count of such numbers.
-                numTriangles += right - 1 - j;
+                numTriangles += (right - 1) - j;
             }
         }
 
         return numTriangles;
     }
 };
+

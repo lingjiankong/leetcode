@@ -19,7 +19,7 @@
 // ***
 //
 // By definition on Wikipedia, we can find H-index in the following way:
-// Sort citations descending order, give each a index start from 1.
+// Sort citations in descending order, index start from 1.
 // From left to right, find the last citation >= its index, the result is its H-index.
 // i.e. h of his paper have at least h citations each
 // In the case below, the H-index is 3.
@@ -32,7 +32,8 @@
 // citations: 0, 2, 2, 3, 3, 5, 8, 25
 // index0:	  0, 1, 2, 3, 4, 5, 6, 7
 //
-// We can covert the index from 0-based to reverse 1-based by converting the original index to (citations.size() - index):
+// We can covert the index from 0-based to reverse 1-based by converting the original index to (citations.size() -
+// index):
 //
 // citations: 0, 2, 2, 3, 3, 5, 8, 25
 // index1:	  8, 7, 6, 5, 4, 3, 2, 1
@@ -48,9 +49,13 @@ int hIndex(vector<int>& citations) {
 
     while (left < right) {
         int mid = left + (right - left) / 2;
-        if (citations[mid] < citations.size() - mid) {
+        int target = citations.size() - mid;
+
+        if (citations[mid] == target) {
+            right = mid;
+        } else if (citations[mid] < target) {
             left = mid + 1;
-        } else {
+        } else if (citations[mid] > target) {
             right = mid;
         }
     }

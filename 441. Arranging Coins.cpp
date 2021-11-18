@@ -51,7 +51,11 @@ public:
 };
 
 // Binary search, O(logn).
-// Find the last number no larger the target
+// To be able to build stairs with m level, we need at least m(m+1)/2 coins (triangular number).
+//
+// The problem can be translated to:
+// Find the last mid such that mid * (mid + 1) / 2 <= n
+// => Find the first mid such that mid * (mid + 1) / 2 > n (and return right - 1).
 class Solution {
 public:
     int arrangeCoins(long n) {
@@ -63,17 +67,17 @@ public:
         while (left < right) {
             long mid = left + (right - left) / 2;
 
-            // To be able to build stairs with m level, we need at least m(m+1)/2 coins (triangular number).
-            totalCoins = mid * (mid + 1) / 2;
-            if (totalCoins <= n) {
+            long totalCoins = mid * (mid + 1) / 2;
+            if (totalCoins == n) {
                 left = mid + 1;
-            } else {
+            } else if (totalCoins < n) {
+                left = mid + 1;
+            } else if (totalCoins > n) {
                 right = mid;
             }
         }
 
-        // We know that the value (i.e. level) returns here will be the largest number,
-        // that does not exceed n (i.e. level * (level + 1) / 2 is at most n).
         return right - 1;
     }
 };
+

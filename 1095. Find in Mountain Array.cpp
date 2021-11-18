@@ -11,7 +11,7 @@
 // Given a mountain array mountainArr, return the minimum index such that mountainArr.get(index) == target.  If such an
 // index doesn't exist, return -1.
 //
-// You can't access the mountain array directly.  You may only access the array using a MountainArray interface:
+// You can't access the mountain array directly. You may only access the array using a MountainArray interface:
 //
 // MountainArray.get(k) returns the element of the array at index k (0-indexed).
 // MountainArray.length() returns the length of the array.
@@ -19,12 +19,13 @@
 // attempt to circumvent the judge will result in disqualification.
 //
 //
-//
 // Example 1:
 //
 // Input: array = [1,2,3,4,5,3,1], target = 3
 // Output: 2
 // Explanation: 3 exists in the array, at index=2 and index=5. Return the minimum index, which is 2.
+//
+//
 // Example 2:
 //
 // Input: array = [0,1,2,4,2,1], target = 3

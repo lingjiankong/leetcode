@@ -40,14 +40,16 @@
 class Solution {
 public:
     int findRadius(vector<int>& houses, vector<int>& heaters) {
-        int maxRadius = 0;
+        int maxRadius = 0;  // maximum of min radius we've seen
         sort(heaters.begin(), heaters.end());
 
         for (int house : houses) {
             // Find the first heater position that is no less than house position.
             auto pos = lower_bound(heaters.begin(), heaters.end(), house);
+
             int rightDist = (pos == heaters.end()) ? INT_MAX : *pos - house;
             int leftDist = (pos == heaters.begin()) ? INT_MAX : house - *(--pos);
+
             maxRadius = max(maxRadius, min(rightDist, leftDist));
         }
 
