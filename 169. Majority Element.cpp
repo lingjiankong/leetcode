@@ -69,6 +69,8 @@ private:
     };
 };
 
+// No need to memorize below.
+//
 // Moore voting alogorithm - a.
 // This is exactly the same as 2b. below, just make the algorithm clear so you know what's going on.
 //

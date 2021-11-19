@@ -39,13 +39,14 @@ vector<pair<int, int>> shortestPath(const pair<int, int>& start, const pair<int,
     vector<vector<bool>> visited(m, vector<bool>(n));
 
     // Applying BFS on matrix cells starting from start
-    queue<pair<int, int>> cellQueue;
-    cellQueue.push(start);
+    queue<pair<int, int>> q;
+    q.push(start);
     visited[start.first][start.second] = true;
 
-    while (!cellQueue.empty()) {
-        pair<int, int> cell = cellQueue.front();
-        cellQueue.pop();
+    vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    while (not q.empty()) {
+        pair<int, int> cell = q.front();
+        q.pop();
         int x = cell.first, y = cell.second;
 
         // Found the goal.
@@ -53,32 +54,14 @@ vector<pair<int, int>> shortestPath(const pair<int, int>& start, const pair<int,
             break;
         }
 
-        // Moving up
-        if (x - 1 >= 0 && grid[x - 1][y] != 'x' && !visited[x - 1][y]) {
-            cellQueue.push({x - 1, y});
-            from[x - 1][y] = {x, y};
-            visited[x - 1][y] = true;
-        }
-
-        // Moving down
-        if (x + 1 < m && grid[x + 1][y] != 'x' && !visited[x + 1][y]) {
-            cellQueue.push({x + 1, y});
-            from[x + 1][y] = {x, y};
-            visited[x + 1][y] = true;
-        }
-
-        // Moving left
-        if (y - 1 >= 0 && grid[x][y - 1] != 'x' && !visited[x][y - 1]) {
-            cellQueue.push({x, y - 1});
-            from[x][y - 1] = {x, y};
-            visited[x][y - 1] = true;
-        }
-
-        // Moving right
-        if (y + 1 < n && grid[x][y + 1] != 'x' && !visited[x][y + 1]) {
-            cellQueue.push({x, y + 1});
-            from[x][y + 1] = {x, y};
-            visited[x][y + 1] = true;
+        for (vector<int>& dir : dirs) {
+            int neighX = x + dir[0], neighY = y + dir[1];
+            if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and grid[neighX][neighY] != 'x' and
+                not visited[neighX][neighY]) {
+                q.push({neighX, neighY});
+                from[neighX][neighY] = {x, y};
+                visited[neighX][neighY] = true;
+            }
         }
     }
 
@@ -93,7 +76,7 @@ vector<pair<int, int>> shortestPath(const pair<int, int>& start, const pair<int,
     // Reverse the path (so it is from start to goal)
     reverse(toReturn.begin(), toReturn.end());
     cout << "Shortest path to goal is: " << endl;
-    for (auto cell : toReturn) {
+    for (auto& cell : toReturn) {
         cout << "(" << cell.first << ", " << cell.second << ") " << endl;
     }
     cout << "Distance to goal is: " << toReturn.size() - 1 << endl;
@@ -103,7 +86,7 @@ vector<pair<int, int>> shortestPath(const pair<int, int>& start, const pair<int,
 
 int main() {
     vector<vector<char>> grid = {
-        {'x', 'o', 'x', 'o'}, {'o', 'x', 'o', 'o'}, {'x', 'o', 'o', 'o'}, {'o', 'o', 'o', 'o'}};
+        {'x', 'o', 'x', 'o'}, {'o', 'x', 'o', 'o'}, {'x', 'o', 'o', 'o'}, {'o', 'o', 'o', 'x'}};
 
     pair<int, int> start = {0, 3};
     pair<int, int> goal = {3, 0};

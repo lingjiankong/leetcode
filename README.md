@@ -163,7 +163,7 @@
 | 611 | Valid Triangle Number | Alpha+
 | 33 | Search in Rotated Sorted Array | Alpha+
 | 81 | Search in Rotated Sorted Array II | Alpha+
-| 153 | Find Minimum in Rotated Sorted Array | Alpha+
+| 153 | Find Minimum in Rotated Sorted Array | Alpha+ | Devide and Conquer
 | 154 | Find Minimum in Rotated Sorted Array II | Alpha+
 | 34 | Find First and Last Position of Element in Sorted Array | Alpha+
 | 315 | Count of Smaller Numbers After Self | Alpha+
@@ -184,15 +184,7 @@
 | 1011 | Capacity To Ship Packages Within D Days | Alpha+ | koko-eat-bananas
 | 1891 | Cutting Ribbons | Alpha+ | koko-eat-bananas
 | 981 | Time Based Key-Value Store | Alpha+
-
-## Devide and Conquer
-| ID | Name | Rating | Note
-|:---:|:---:|:---:|:---:|
-| 215 | Kth Largest Element in an Array | Alpha+ | quick sort, binary search
-| 169 | Majority Element | Alpha+
-| 153 | Find Minimum in Rotated Sorted Array | Alpha+
-| 154 | Find Minimum in Rotated Sorted Array II | Alpha
-| 912 | Sort an Array | Alpha
+| 215 | Kth Largest Element in an Array | Alpha | quick sort, binary search
 
 ## Backtracking
 | ID | Name | Rating | Note
@@ -457,6 +449,18 @@
 | 677 | Map Sum Pairs | Alpha
 | 211 |  Design Add and Search Words Data Structure | Alpha | Alpha
 
+## Two Pointers
+| 455 | Assign Cookies | Alpha | two pointers
+| 125 | Valid Palindrome | Alpha+ | two pointers
+| 917 | Reverse Only Letters | Alpha+ | two pointers
+| 42 | Trapping Rain Water | Alpha+ | dynamic programming, two pointers, monotonic stack
+| 11 | Container With Most Water | Alpha+ | two pointers
+| 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
+| 925 | Long Pressed Name | Bravo
+| 986 | Interval List Intersection | Alpha+ | two pointers, intervals
+| 881 | Boats to Save People | Alpha+
+| 977 | Squares of a Sorted Array | Alpha+
+
 ## Array
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -512,6 +516,7 @@
 | 849 | Maximize Distance to Closest Person | Bravo
 | 855 | Exam Room | Bravo
 | 645 | Set Mismatch | Alpha
+| 912 | Sort an Array | Alpha
 
 ## String
 | ID | Name | Rating | Note
@@ -596,18 +601,6 @@
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry
 | 1447 | Simplified Fractions | GCD
-
-## Two Pointers
-| 455 | Assign Cookies | Alpha | two pointers
-| 125 | Valid Palindrome | Alpha+ | two pointers
-| 917 | Reverse Only Letters | Alpha+ | two pointers
-| 42 | Trapping Rain Water | Alpha+ | dynamic programming, two pointers, monotonic stack
-| 11 | Container With Most Water | Alpha+ | two pointers
-| 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
-| 925 | Long Pressed Name | Bravo
-| 986 | Interval List Intersection | Alpha+ | two pointers, intervals
-| 881 | Boats to Save People | Alpha+
-| 977 | Squares of a Sorted Array | Alpha+
 
 ## Uncategorized
 | ID | Name | Rating | Note

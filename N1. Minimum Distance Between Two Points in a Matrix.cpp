@@ -98,7 +98,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
 
         set<vector<int>> temp;
 
-        for (vector<int> cell : q1) {
+        for (vector<int>& cell : q1) {
             if (q2.count(cell)) {
                 return distance;
             }
@@ -110,7 +110,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
 
             visited[x][y] = true;
 
-            for (vector<int> dir : dirs) {
+            for (vector<int>& dir : dirs) {
                 int neighX = x + dir[0], neighY = y + dir[1];
                 if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and not visited[neighX][neighY]) {
                     temp.insert({neighX, neighY});
@@ -125,7 +125,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
 }
 
 // 3. Obtain the shortest distance from start to every (x, y).
-int minDistance(const vector<int>& start, const vector<int>& goal, const vector<vector<char>>& grid) {
+void minDistance(const vector<int>& start, const vector<vector<char>>& grid) {
     int m = grid.size();
     int n = grid[0].size();
 
@@ -144,11 +144,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
         q.pop();
         int x = cell[0], y = cell[1];
 
-        if (cell == goal) {
-            return distance[x][y];
-        }
-
-        for (vector<int> dir : dirs) {
+        for (vector<int>& dir : dirs) {
             int neighX = x + dir[0], neighY = y + dir[1];
             if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and grid[neighX][neighY] != 'x' and
                 not visited[neighX][neighY]) {
@@ -158,6 +154,4 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
             }
         }
     }
-
-    return -1;
 }

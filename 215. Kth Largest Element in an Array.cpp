@@ -31,33 +31,6 @@ public:
 };
 
 // However this question tests your knowledge in applying quick sort.
-// Full quick sort solution (not the solution to this problem), sorted in ascending order
-class QuickSort {
-public:
-    void quickSort(vector<int>& nums) { _quickSort(nums, 0, nums.size() - 1); }
-
-private:
-    void _quickSort(vector<int>& nums, int left, int right) {
-        if (left < right) {
-            int pivot = _partition(nums, left, right);
-            _quickSort(nums, left, pivot - 1);
-            _quickSort(nums, pivot + 1, right);
-        }
-    }
-
-    int _partition(vector<int>& nums, int left, int right) {
-        int pivot = nums[left], l = left + 1;
-        for (int i = left + 1; i <= right; ++i) {
-            if (nums[i] < pivot) {  // to sort in descending order, simply change this to ">"
-                swap(nums[i], nums[l++]);
-            }
-        }
-
-        swap(nums[left], nums[l - 1]);
-        return l - 1;
-    }
-};
-
 // Memorize the logic in quick sort partition (all elements greater than nums[pivot] to one side, all elements less than
 // nums[pivot] to the other side). Use the idea of binary search and quick sort to sort the array in *descending* order
 // because you want to find the kth *largest* element i.e. Put all elements greater than nums[pivot] to the left and all
@@ -117,3 +90,31 @@ private:
         return l - 1;
     }
 };
+
+// Full quick sort solution (not the solution to this problem), sorted in ascending order
+class QuickSort {
+public:
+    void quickSort(vector<int>& nums) { _quickSort(nums, 0, nums.size() - 1); }
+
+private:
+    void _quickSort(vector<int>& nums, int left, int right) {
+        if (left < right) {
+            int pivot = _partition(nums, left, right);
+            _quickSort(nums, left, pivot - 1);
+            _quickSort(nums, pivot + 1, right);
+        }
+    }
+
+    int _partition(vector<int>& nums, int left, int right) {
+        int pivot = nums[left], l = left + 1;
+        for (int i = left + 1; i <= right; ++i) {
+            if (nums[i] < pivot) {  // to sort in descending order, simply change this to ">"
+                swap(nums[i], nums[l++]);
+            }
+        }
+
+        swap(nums[left], nums[l - 1]);
+        return l - 1;
+    }
+};
+
