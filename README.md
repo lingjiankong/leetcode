@@ -436,7 +436,7 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 359 | Logger Rate Limiter | Bravo
-| 346 | Moving Average from Data Stream | Alpha
+| 346 | Moving Average from Data Stream | Alpha+
 | 362 | Design Hit Counter | Alpha
 | 281 | Zigzag Iterator | Bravo
 | 251 | Flatten 2D Vector | Bravo
@@ -445,6 +445,8 @@
 | 460 | LFU Cache | Alpha
 | 303 | Range Sum Query - Immutable | Bravo
 | 304 | Range Sum Query 2D - Immutable | Charlie
+| N7 | Timedelta Statistics | Alpha+
+| N8 | Endpoint Metrics | Alpha | I.Q.
 
 ## Trie
 | ID | Name | Rating | Note
