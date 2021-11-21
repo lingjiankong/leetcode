@@ -32,8 +32,7 @@ public:
         int m = mat.size(), n = mat[0].size();
 
         queue<vector<int>> q;
-        vector<vector<bool>> visited(m, vector<bool>(n));
-        vector<vector<int>> ans(m, vector<int>(n, INT_MAX));
+        vector<vector<int>> ans(m, vector<int>(n, INT_MAX));  // ans serves as "visited". No need for another "visited"
 
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
@@ -53,7 +52,6 @@ public:
             for (vector<int>& dir : dirs) {
                 int neighX = i + dir[0], neighY = j + dir[1];
                 if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and ans[neighX][neighY] == INT_MAX) {
-                    visited[neighX][neighY] = true;
                     ans[neighX][neighY] = ans[i][j] + 1;
                     q.push({neighX, neighY});
                 }

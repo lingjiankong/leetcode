@@ -1,4 +1,4 @@
-#Coding challenges from www.leetcode.com
+# Coding challenges from www.leetcode.com
 
 ## Tree
 | ID | Name | Rating | Note
@@ -231,10 +231,10 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
-| N2 | Shortest Path Between Two Points in a Matrix | Alpha
-| N3 | Unique Paths from Top Left to Bottom Right | Alpha
+| N2 | Shortest Path Between Two Points in a Matrix | Alpha+
+| N3 | Unique Paths from Top Left to Bottom Right | Alpha+
 | 127 | Word Ladder | Alpha+ | BFS
-| 126 | Word Ladder II | Bravo
+| 126 | Word Ladder II | Hard
 | 752 | Open the Lock | Alpha+
 | 542 | 01 Matrix | Alpha+ | BFS
 | 934 | Shortest Bridge | Alpha | BFS
@@ -602,6 +602,20 @@
 | 223 | Rectangle Area | Bravo | Geometry
 | 1447 | Simplified Fractions | GCD
 
+## Multithreading
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 1188 | Design Bounded Blocking Queue | Alpha+
+| 1114 | Print in Order.cpp | Alpha
+| 1115 | Print FooBar Alternately.cpp | Alpha
+| 1116 | Print Zero Even Odd.cpp | Alpha
+| 1195 | Fizz Buzz Multithreaded.cpp  | Alpha
+
+## CPP Examples
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| N9 | Function Pointers | Alpha
+
 ## Uncategorized
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -609,6 +623,5 @@
 | 556 | Next Greater Element III | Charlie
 | 969 | Pancake Sorting | Charlie | recursion
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
-| 1188 | Design Bounded Blocking Queue | Alpha+ | multithreading
 | 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
 | 795 | Number of Subarrays with Bounded Maximum | Bravo

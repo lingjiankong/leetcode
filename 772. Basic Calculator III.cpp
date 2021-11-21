@@ -17,69 +17,73 @@
 // ***
 //
 // See comments.
-int calculate(string s) {
-    int n = s.size(), num = 0, res = 0;
+class Solution {
+public:
+    int calculate(string str) {
+        stack<int> s;
 
-    stack<int> s;
+        // Initialize the dummy operator as "+"
+        char op = '+';
+        int num = 0;
 
-    // Initialize the dummy operator as "+"
-    char op = '+';
-
-    for (int i = 0; i < n; ++i) {
-        char c = s[i];
-        if (isdigit(c)) {
-            num = num * 10 + (c - '0');
-        } else if (c == '(') {
-            int iOpen = i, count = 0;
-            for (; i < n; ++i) {
-                if (s[i] == '(') {
-                    ++count;
+        for (int i = 0; i < str.size(); ++i) {
+            char c = str[i];
+            if (isdigit(c)) {
+                num = num * 10 + (c - '0');
+            } else if (c == '(') {
+                int iOpen = i, iClose;  // Open and close index of parentheses pair
+                int count = 0;
+                for (; i < str.size(); ++i) {
+                    if (str[i] == '(') {
+                        ++count;
+                    }
+                    if (str[i] == ')') {
+                        --count;
+                    }
+                    if (count == 0) {
+                        iClose = i;
+                        break;
+                    }
                 }
-                if (s[i] == ')') {
-                    --count;
-                }
-                if (count == 0) {
-                    break;
-                }
-            }
-            // Recusively deal with calculations inside parenthesis.
-            // iOpen is the index of '(' and i is now the index of ')'.
-            // Everything inside parenthesis is now num.
-            num = calculate(s.substr(iOpen + 1, i - iOpen - 1));
-        }
-        // Here 'c' is the *current* operator at s[i], 'op' is the *last* operator you've seen.
-        // This is basically saying that if you see a new operator, this new operator acts like a break point,
-        // and you should perform the operation specified by the last seen operator (op).
-        // if op is + or -, push num to the top of the stack.
-        // if op is * or /, the top of the stack becomes "stack.top() op num".
-        if (c == '+' || c == '-' || c == '*' || c == '/' || i == n - 1) {
-            switch (op) {
-                case '+':
-                    s.push(num);
-                    break;
-                case '-':
-                    s.push(-num);
-                    break;
-                case '*':
-                    s.top() *= num;
-                    break;
-                case '/':
-                    s.top() /= num;
-                    break;
+                // Recusively deal with calculations inside parenthesis.
+                // iOpen is the index of '(' and i is now the index of ')'.
+                // Everything inside parenthesis is now num.
+                num = calculate(str.substr(iOpen + 1, iClose - iOpen - 1));
             }
 
-            // Update op, reset num.
-            op = c;
-            num = 0;
+            // Here 'c' is the *current* operator at str[i], 'op' is the *last* operator you've seen.
+            // This is basically saying that if you see a new operator, this new operator acts like a break point,
+            // and you should perform the operation specified by the last seen operator (op).
+            // if op is + or -, push num to the top of the stack.
+            // if op is * or /, the top of the stack becomes "stack.top() op num".
+            if (c == '+' or c == '-' or c == '*' or c == '/' or i == str.size() - 1) {
+                switch (op) {
+                    case '+':
+                        s.push(num);
+                        break;
+                    case '-':
+                        s.push(-num);
+                        break;
+                    case '*':
+                        s.top() *= num;
+                        break;
+                    case '/':
+                        s.top() /= num;
+                        break;
+                }
+
+                // Update op, reset num.
+                op = c;
+                num = 0;
+            }
         }
+
+        // Sum over all numbers in stack
+        int res = 0;
+        while (not s.empty()) {
+            res += s.top();
+            s.pop();
+        }
+        return res;
     }
-
-    // Sum over all numbers in stack
-    while (not s.empty()) {
-        res += s.top();
-        s.pop();
-    }
-
-    return res;
-}
-
+};

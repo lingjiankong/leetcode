@@ -3,16 +3,16 @@
 // Return all unique paths from top left to bottom right.
 //
 // ***
-//
-// Note: vector<string> current is NOT a reference.
-// Side note: It seems in C++ backtracking problems, if you only have one operation in between
-// current.push_back() and current.pop_back(), then parameter `current` can be a reference vector<string>& current.
-// If you have two operations like this question does, then parameter `current` must be a non-reference value.
-// This is because in the first _dfs, current has changed, but in the second _dfs we actually want the unchanged current.
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> uniquePaths(int m, int n) {
+    vector<vector<string>> uniquePaths(int m, int n) {
         vector<string> current;
         vector<vector<string>> all;
 
@@ -23,19 +23,36 @@ public:
 
 private:
     void _dfs(int i, int j, int m, int n, vector<string> current, vector<vector<string>>& all) {
-        if (i == m || j == n) {
-            return;
-        }
+        current.emplace_back("(" + to_string(i) + ", " + to_string(j) + ")");
 
-        if (i == m - 1 && j == n - 1) {
-            current.emplace_back("(" + to_string(i) + ", " + to_string(j) + ")");
+        if (i == m - 1 and j == n - 1) {
             all.push_back(current);
             return;
         }
 
-        current.emplace_back("(" + to_string(i) + ", " + to_string(j) + ")");
-        _dfs(i + 1, j, m, n, current, all);
-        _dfs(i, j + 1, m, n, current, all);
-        current.pop_back();
+        for (vector<int>& dir : _dirs) {
+            int neighX = i + dir[0], neighY = j + dir[1];
+
+            if (neighX < m and neighY < n) {
+                _dfs(neighX, neighY, m, n, current, all);
+            }
+        }
     }
+
+    vector<vector<int>> _dirs = {{0, 1}, {1, 0}};
 };
+
+int main() {
+    Solution soln;
+
+    vector<vector<string>> path = soln.uniquePaths(2, 3);
+
+    for (int i = 0; i < path.size(); ++i) {
+        for (string& cell : path[i]) {
+            cout << cell << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}

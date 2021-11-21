@@ -22,22 +22,22 @@ public:
         unique_lock<mutex> lk(_m);
 
         // Can be waken up by spurious wakeup. You can also explicity check if (_q.size() >= _capacity)
-        _not_full.wait(lk, [this] { return _q.size() < _capacity; });
+        _cvNotFull.wait(lk, [this] { return _q.size() < _capacity; });
 
         _q.push(element);
 
-        _not_empty.notify_one();
+        _cvNotEmpty.notify_one();
     }
 
     int dequeue() {
         unique_lock<mutex> lk(_m);
 
-        _not_empty.wait(lk, [this] { return _q.size() > 0; });
+        _cvNotEmpty.wait(lk, [this] { return _q.size() > 0; });
 
         int num = _q.front();
         _q.pop();
 
-        _not_full.notify_one();
+        _cvNotFull.notify_one();
 
         return num;
     }
@@ -49,8 +49,8 @@ public:
 
 private:
     mutex _m;
-    condition_variable _not_empty;  // wait until the queue is not empty (so we can pop)
-    condition_variable _not_full;   // wait until the queue is not full (so we can push)
+    condition_variable _cvNotEmpty;  // wait until the queue is not empty (so we can pop)
+    condition_variable _cvNotFull;   // wait until the queue is not full (so we can push)
     queue<int> _q;
     int _capacity;
 };
