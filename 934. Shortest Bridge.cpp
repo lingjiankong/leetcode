@@ -54,6 +54,7 @@ public:
             }
         }
 
+        // BFS island 2 until you meet island 1.
         int steps = -1;
         while (not q.empty()) {
             int qSize = q.size();

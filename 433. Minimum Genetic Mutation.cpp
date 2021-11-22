@@ -85,7 +85,7 @@ private:
                 return false;
             }
         }
-        return true;
+        return diff == 1;
     }
 };
 

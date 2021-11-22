@@ -231,21 +231,21 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
-| N2 | Shortest Path Between Two Points in a Matrix | Alpha+
-| N3 | Unique Paths from Top Left to Bottom Right | Alpha+
+| N2 | Shortest Path Between Two Points in a Matrix | Alpha+ | BFS
+| N3 | Unique Paths from Top Left to Bottom Right | Alpha+ | BFS
 | 127 | Word Ladder | Alpha+ | BFS
-| 126 | Word Ladder II | Hard
-| 752 | Open the Lock | Alpha+
+| 126 | Word Ladder II | Hard, BFS
+| 752 | Open the Lock | Alpha+ | BFS
 | 542 | 01 Matrix | Alpha+ | BFS
 | 934 | Shortest Bridge | Alpha | BFS
-| 433 | Minimum Genetic Mutation | Alpha | BFS
+| 433 | Minimum Genetic Mutation | Alpha+ | BFS
 | 815 | Bus Routes | Alpha+ | BFS
 | 111 | Minimum Depth of Binary Tree | Alpha+ | postorder, BFS
 | 773 | Sliding Puzzle | Alpha+
 | 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
 | 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS, mechanical
 | 847 | Shortest Path Visiting All Nodes | Alpha | multidimensional BFS
-| 864 | Shortest Path to Get All Keys | Alpha | multidimensional BFS
+| 864 | Shortest Path to Get All Keys | Alpha+ | multidimensional BFS
 | 207 | Course Schedule | Alpha+ | topological sort
 | 210 | Course Schedule II | Alpha+ | topological sort
 | 802 | Find Eventual Safe States | Alpha | topological sort

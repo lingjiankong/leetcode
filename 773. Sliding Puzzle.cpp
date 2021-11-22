@@ -30,7 +30,7 @@ public:
         //
         // Stores where can a given 0 be moved. For example, if your 0 is at position 5 (lower right, (1, 2)),
         // then you can only swap with position 2 (0, 2) and 4 (1, 1)
-        _neighbors = {{1, 3}, {0, 2, 4}, {1, 5}, {0, 4}, {1, 3, 5}, {2, 4}};
+        vector<vector<int>> _neighbors = {{1, 3}, {0, 2, 4}, {1, 5}, {0, 4}, {1, 3, 5}, {2, 4}};
 
         int m = board.size(), n = board[0].size();
 
@@ -78,8 +78,5 @@ public:
 
         return -1;
     }
-
-private:
-    vector<vector<int>> _neighbors;
 };
 
