@@ -30,7 +30,7 @@ public:
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
         // Construct the graph
         vector<vector<int>> graph(numCourses);
-        for (auto course : prerequisites) {
+        for (vector<int>& course : prerequisites) {
             graph[course[1]].push_back(course[0]);
         }
 

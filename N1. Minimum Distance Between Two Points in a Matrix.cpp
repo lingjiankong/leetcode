@@ -45,17 +45,60 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
                 return distance;
             }
 
-            // You may also check this while traversing the neighbors.
-            if (grid[x][y] == 'x') {
-                continue;
+            for (vector<int>& dir : dirs) {
+                int neighX = x + dir[0], neighY = y + dir[1];
+                if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and grid[x][y] != 'x' and
+                    not visited[neighX][neighY]) {
+                    q.push({neighX, neighY});
+                    visited[neighX][neighY] = true;
+                }
+            }
+        }
+        ++distance;
+    }
+
+    return -1;
+}
+
+// Same code. Use "continue".
+int minDistance(const vector<int>& start, const vector<int>& goal, const vector<vector<char>>& grid) {
+    int m = grid.size();
+    int n = grid[0].size();
+
+    vector<vector<bool>> visited(m, vector<bool>(n));
+
+    queue<vector<int>> q;
+
+    q.push(start);
+    visited[start[0]][start[1]] = true;
+    vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    int distance = 0;
+
+    while (not q.empty()) {
+        int qSize = q.size();
+        for (int i = 0; i < qSize; ++i) {
+            vector<int> cell = q.front();
+            q.pop();
+            int x = cell[0], y = cell[1];
+
+            if (cell == goal) {
+                return distance;
             }
 
             for (vector<int>& dir : dirs) {
                 int neighX = x + dir[0], neighY = y + dir[1];
-                if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and not visited[neighX][neighY]) {
-                    q.push({neighX, neighY});
-                    visited[neighX][neighY] = true;
+                if (neighX < 0 or neighX >= m or neighY < 0 or neighY >= n) {
+                    continue;
                 }
+                if (grid[x][y] == 'x') {
+                    continue;
+                }
+                if (visited[neighX][neighY]) {
+                    continue;
+                }
+
+                q.push({neighX, neighY});
+                visited[neighX][neighY] = true;
             }
         }
         ++distance;
