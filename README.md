@@ -439,6 +439,7 @@
 | 304 | Range Sum Query 2D - Immutable | Charlie
 | N7 | Timedelta Statistics | Alpha+
 | N8 | Endpoint Metrics | Alpha | I.Q.
+| N10 | Dictionary Supports getRandom | Alpha | I.Q.
 
 ## Trie
 | ID | Name | Rating | Note
