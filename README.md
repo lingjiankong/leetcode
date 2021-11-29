@@ -517,6 +517,7 @@
 | 855 | Exam Room | Bravo
 | 645 | Set Mismatch | Alpha
 | 912 | Sort an Array | Alpha
+| 1395 | Count Number of Teams | Alpha
 
 ## String
 | ID | Name | Rating | Note

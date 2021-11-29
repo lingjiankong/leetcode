@@ -17,9 +17,6 @@
 
 // This question is essentially asking us to return all nodes, starting from where has no cycles.
 // You can do this question similar to how you did 207. Course Schedule using vanilla topological sort.
-// However, note that doing that way, you need a new "states" arary of {UNVISITIED, VISITING, VISITED}
-// for EVERY node that you are currently traversing, which is inefficient.
-// When we are travelling the 0th node, we actually know which nodes are unsafe, so we can save that information.
 class Solution {
 public:
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
