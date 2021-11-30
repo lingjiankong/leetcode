@@ -34,7 +34,9 @@ public:
 class Solution {
 public:
     Node* cloneTree(Node* root) {
+        // original node : cloned node
         unordered_map<Node*, Node*> m;
+
         return dfs(root, m);
     }
 

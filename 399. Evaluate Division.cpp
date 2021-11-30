@@ -85,21 +85,20 @@ private:
             return 1;
         }
 
-        visited.insert(A);
-
         // Traverse the neighbor of A
         for (auto& e : graph[A]) {
             string C = e.first;
+            double A_C = e.second;  // i.e., A / C = graph[A][C];
 
-            if (visited.count(C)) {
-                continue;
-            }
+            if (not visited.count(C)) {
+                visited.insert(A);
 
-            // A / B = A / C * C / B
-            // We already know A / C = graph[A][C], we need the value of C_B = C / B
-            double C_B = devide(C, B, graph, visited);
-            if (C_B != -1) {
-                return graph[A][C] * C_B;
+                // A / B = A / C * C / B
+                // We already know A / C = graph[A][C], we need the value of C_B = C / B
+                double C_B = devide(C, B, graph, visited);
+                if (C_B != -1) {
+                    return A_C * C_B;
+                }
             }
         }
 
@@ -107,3 +106,4 @@ private:
         return -1;
     }
 };
+

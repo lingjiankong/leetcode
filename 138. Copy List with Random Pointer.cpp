@@ -41,7 +41,9 @@ public:
 class Solution {
 public:
     Node* copyRandomList(Node* head) {
+        // original node : cloned node
         unordered_map<Node*, Node*> m;
+
         return dfs(node, m);
     }
 

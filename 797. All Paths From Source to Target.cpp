@@ -43,3 +43,28 @@ private:
         // You may do curPath.pop_back() optionally here.
     }
 };
+
+// Same idea
+class Solution {
+public:
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        vector<int> cur;
+        vector<vector<int>> all;
+        dfs(0, cur, all, graph);
+        return all;
+    }
+
+    void dfs(int start, vector<int> cur, vector<vector<int>>& all, vector<vector<int>>& graph) {
+        cur.push_back(start);
+
+        if (start == graph.size() - 1) {
+            all.push_back(cur);
+            return;
+        }
+
+        for (int neigh : graph[start]) {
+            dfs(neigh, cur, all, graph);
+        }
+    }
+};
+

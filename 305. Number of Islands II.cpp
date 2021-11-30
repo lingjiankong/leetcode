@@ -81,13 +81,13 @@ public:
         UnionFind<int> uf;
 
         vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-        for (vector<int> pos : positions) {
+        for (vector<int>& pos : positions) {
             int x = pos[0], y = pos[1];
             int index = y + x * n;
 
             uf.add(index);
 
-            for (vector<int> dir : dirs) {
+            for (vector<int>& dir : dirs) {
                 int neighX = x + dir[0], neighY = y + dir[1];
                 int neighborIndex = neighY + neighX * n;
                 if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n) {

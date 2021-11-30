@@ -16,7 +16,7 @@ public:
             uf.add(i);
         }
 
-        for (vector<int> edge : edges) {
+        for (vector<int>& edge : edges) {
             int p = edge[0], q = edge[1];
 
             // You cannot constraint p and q with another edge if they are already connected (i.e. share the same root).

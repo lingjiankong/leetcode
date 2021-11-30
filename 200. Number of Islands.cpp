@@ -57,7 +57,8 @@ public:
     }
 };
 
-// BFS
+
+// DFS
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
@@ -89,11 +90,50 @@ private:
         visited[x][y] = true;
 
         for (vector<int>& dir : _dirs) {
-            int newX = x + dir[0], newY = y + dir[1];
-            _dfs(newX, newY, grid, visited);
+            int neighX = x + dir[0], neighY = y + dir[1];
+            _dfs(neighX, neighY, grid, visited);
         }
     }
 
     vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };
 
+
+// Same idea (DFS), "visited" at different position.
+class Solution {
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        if (grid.empty() or grid[0].empty()) {
+            return 0;
+        }
+
+        vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
+
+        int totalIslands = 0;
+        for (int i = 0; i < grid.size(); ++i) {
+            for (int j = 0; j < grid[0].size(); ++j) {
+                if (grid[i][j] == '1' and not visited[i][j]) {
+                    visited[i][j] = true;
+                    _dfs(i, j, grid, visited);
+                    ++totalIslands;
+                }
+            }
+        }
+
+        return totalIslands;
+    }
+
+private:
+    void _dfs(int x, int y, const vector<vector<char>>& grid, vector<vector<bool>>& visited) {
+        for (vector<int>& dir : _dirs) {
+            int neighX = x + dir[0], neighY = y + dir[1];
+            if (neighX >= 0 and neighX < grid.size() and neighY >= 0 and neighY < grid[0].size() and
+                grid[neighX][neighY] == '1' and not visited[neighX][neighY]) {
+                visited[neighX][neighY] = true;
+                _dfs(neighX, neighY, grid, visited);
+            }
+        }
+    }
+
+    vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+};
