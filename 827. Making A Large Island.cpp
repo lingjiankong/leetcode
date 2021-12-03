@@ -99,7 +99,7 @@ public:
                 if (grid[i][j] == 1) {
                     string curPos = to_string(i) + "," + to_string(j);
                     uf.add(curPos);
-                    for (vector<int> dir : dirs) {
+                    for (vector<int>& dir : dirs) {
                         int neighX = i + dir[0], neighY = j + dir[1];
                         if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and grid[neighX][neighY] == 1) {
                             string neighPos = to_string(neighX) + "," + to_string(neighY);
@@ -121,7 +121,7 @@ public:
                     int area = 1;
                     unordered_set<string> uniqueRoots;
 
-                    for (vector<int> dir : dirs) {
+                    for (vector<int>& dir : dirs) {
                         int neighX = i + dir[0], neighY = j + dir[1];
 
                         if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and grid[neighX][neighY] == 1) {
@@ -130,7 +130,7 @@ public:
                         }
                     }
 
-                    for (auto root : uniqueRoots) {
+                    for (string& root : uniqueRoots) {
                         area += uf.size()[root];
                     }
                     maxArea = max(maxArea, area);

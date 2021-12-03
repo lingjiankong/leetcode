@@ -54,14 +54,14 @@ public:
     void cleanRoom(Robot& robot) {
         unordered_set<string> visited;
 
-        // Initial position is (0, 0). Initial orientation is up (specified by the problem).
-        int x = 0, y = 0, orientation = 0;
-        _backtrack(robot, x, y, orientation, visited);
+        // Initial position is (0, 0). Initial heading is up (specified by the problem).
+        int x = 0, y = 0, heading = 0;
+        _backtrack(robot, x, y, heading, visited);
     }
 
 private:
-    // Orientation is the robot's absolute (global) orientation: 0: up, 1: right, 2: down, 3: left
-    void _backtrack(Robot& robot, int x, int y, int orientation, unordered_set<string>& visited) {
+    // Orientation is the robot's absolute (global) heading: 0: up, 1: right, 2: down, 3: left
+    void _backtrack(Robot& robot, int x, int y, int heading, unordered_set<string>& visited) {
         string position = to_string(x) + "," + to_string(y);
 
         if (visited.count(position)) {
@@ -75,11 +75,11 @@ private:
         for (int i = 0; i < 4; ++i) {
             // If move succeeds, the robot will move forward one step, otherwise, the robot stays in place.
             if (robot.move()) {
-                int newX = x + _dirs[orientation][0], newY = y + _dirs[orientation][1];
-                _backtrack(robot, newX, newY, orientation, visited);
+                int newX = x + _dirs[heading][0], newY = y + _dirs[heading][1];
+                _backtrack(robot, newX, newY, heading, visited);
 
-                // After backtracking, return to original position and orientation.
-                // First turn 180 degree, move one step, then turn another 180 degree to face the original orientation.
+                // After backtracking, return to original position and heading.
+                // First turn 180 degree, move one step, then turn another 180 degree to face the original heading.
                 robot.turnRight();
                 robot.turnRight();
                 robot.move();
@@ -87,9 +87,9 @@ private:
                 robot.turnRight();
             }
 
-            // Turn right to face next orientation.
+            // Turn right to face next heading.
             robot.turnRight();
-            orientation = (orientation + 1) % 4;
+            heading = (heading + 1) % 4;
         }
     }
 

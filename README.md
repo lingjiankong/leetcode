@@ -206,6 +206,7 @@
 | 212 | Word Search II | Alpha | Trie, DFS
 | 329 | Longest Increasing Path in a Matrix | Alpha+ | DFS
 | 489 | Robot Room Cleaner | Alpha
+| N11 | Shortest Path Given Robot API | Alpha
 | 286 | Walls and Gates | Alpha+
 | 130 | Surrounded Regions | Alpha
 | 200 | Number of Islands | Alpha+ | DFS, union find
@@ -618,6 +619,12 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | N9 | Function Pointers | Alpha
+| N13 | Polymorphism | Alpha
+
+## Vector Math
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| N12 | Half Space | Alpha
 
 ## Uncategorized
 | ID | Name | Rating | Note
