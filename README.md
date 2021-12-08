@@ -19,6 +19,7 @@
 | 437 | Path Sum III | Alpha | preorder
 | 124 | Binary Tree Maximum Path Sum | Alpha+ | postorder
 | 543 | Diameter of Binary Tree | Alpha+ | postorder
+| N14 | Diameter of Generic Tree | Alpha | I.Q.
 | 687 | Longest Univalue Path | Alpha+ | postorder
 | 250 | Count Univalue Subtrees | Alpha+ | postorder
 | 104 | Maximum Depth of Binary Tree | Alpha+ | postorder
