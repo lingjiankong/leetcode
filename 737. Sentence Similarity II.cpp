@@ -1,7 +1,7 @@
 // ***
 //
 // We can represent a sentence as an array of words, for example, the sentence "I am happy with leetcode" can be
-// represented as arr = ["I","am",happy","with","leetcode"].
+// represented as arr = ["I","am","happy","with","leetcode"].
 //
 // Given two sentences sentence1 and sentence2 each represented as a string array and given an array of string pairs
 // similarPairs where similarPairs[i] = [xi, yi] indicates that the two words xi and yi are similar.

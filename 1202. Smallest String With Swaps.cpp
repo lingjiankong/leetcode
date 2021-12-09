@@ -40,7 +40,7 @@
 
 // Treat all indices as node in a graph. Those that can be swapped are connected component.
 // You can individually sort each component lexicographically,
-// and then put each sorted compenent back to the original string.
+// and then put each sorted component back to the original string.
 class Solution {
 public:
     string smallestStringWithSwaps(string s, vector<vector<int>>& pairs) {

@@ -68,7 +68,7 @@ unordered_map<string, int> dijkstra(unordered_map<string, unordered_set<string>>
             continue;
         }
 
-        for (string neighID : neighbors[curID]) {
+        for (string& neighID : neighbors[curID]) {
             // Here is the only difference to vanilla Dijkstra:
             // Notice we are taking the max of efforts instead of accumulating them.
             int effortToNeigh = max(effortToCur, weights[curID][neighID]);

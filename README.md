@@ -276,7 +276,7 @@
 | 841 | Keys and Rooms | Alpha+ | DFS
 | 1202 | Smallest String With Swaps | Alpha | union find
 | 839 | Similar String Groups | Alpha | union find
-| 952 | Largest Component Size by Common Factor | Alpha | union find
+| 952 | Largest Component Size by Common Factor | Alpha+ | union find
 | 737 | Sentence Similarity II | Alpha+ | union find
 | 1319 | Number of Operations to Make Network Connected | Alpha+ | union find
 | 959 | Regions Cut By Slashes | Alpha | union find
@@ -287,66 +287,10 @@
 | N6 | Dijkstra | Alpha+ | Dijkstra
 | 743 | Network Delay Time | Alpha+ | Dijkstra
 | 787 | Cheapest Flights Within K Stops | Alpha+ | Dijkstra
-| 1631 | Path With Minimum Effort | Alpha+ | Dijkstra
+| 1631 | Path With Minimum Effort | Alpha | Dijkstra
 | 1514 | Path with Maximum Probability | Alpha | Dijkstra
 | 1334 | Find the City With the Smallest Number of Neighbors at a Threshold Distance | Alpha | Dijkstra
-| 332 | Reconstruct Itinerary | Bravo, Mechanical
-
-## Dynamic Programming
-| ID | Name | Rating | Note
-|:---:|:---:|:---:|:---:|
-| 121 | Best Time to Buy and Sell Stock | Alpha
-| 122 | Best Time to Buy and Sell Stock II | Alpha
-| 123 | Best Time to Buy and Sell Stock III | Alpha
-| 188 | Best Time to Buy and Sell Stock IV | Alpha
-| 309 | Best Time to Buy and Sell Stock with Cooldown | Alpha
-| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Alpha
-| 70 | Climbing Stairs | Alpha
-| 746 | Min Cost Climbing Staris | Alpha
-| 120 | Triangle | Alpha
-| 279 | Perfect Squares | Alpha
-| 322 | Coin Change | Alpha+
-| 256 | Paint House | Alpha
-| 265 | Paint House II | Alpha
-| 198 | House Robber | Alpha+
-| 213 | House Robber II | Alpha
-| 337 | House Robber III | Alpha+ | postorder
-| 740 | Delete and Earn | Alpha
-| 62 | Unique Paths | Alpha
-| N3 | Unique Paths from Top Left to Bottom Right | Alpha
-| 63 | Unique Paths II | Alpha
-| 64 | Minimum Path Sum | Alpha
-| 221 | Maximal Square | Alpha
-| 361 | Bomb Enemy | Alpha
-| 53 | Maximum Subarray | Alpha+
-| 152 | Maximum Product Subarray | Alpha
-| 376 | Wiggle Subsequence | Alpha
-| 97 | Interleaving String | Alpha | 2D DP String
-| 44 | Wildcard Matching | Bravo | 2D DP String, Mechanical
-| 115 | Distinct Subsequences | Bravo | 2D DP String
-| 139 | Word Break | Alpha | 1D DP String
-| 673 | Number of Increasing Subsequence | Alpha
-| 978 | Longest Turbulent Subarray | Alpha
-| 300 | Longest Increasing Subsequence | Alpha+
-| 354 | Russian Doll Envelopes | Alpha+
-| 1143 | Longest Common Subsequence | Alpha
-| 583 | Delete Operation for Two Strings | Alpha
-| 72 | Edit Distance | Alpha
-| 516 | Longest Palindromic Subsequence | Alpha+
-| 5 | Longest Palindromic Substring | Alpha+
-| 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha+
-| 10 | Reguar Expression Matching | Alpha
-| 651 | 4 Keys Keyboard | Alpha
-| 650 | 2 Keys Keyboard | Alpha
-| 887 | Super Egg Drop | Bravo | dynamic programming, binary search
-| 312 | Burst Balloons | Bravo
-| N4 | 1-0 Knapsack | Alpha | knapsack
-| 416 | Partition Equal Subset Sum | Alpha | knapsack
-| 518 | Coin Change 2 | Alpha | knapsack
-| 494 | Target Sum | Alpha+ | backtracking, dynamic programming, knapsack
-| 1048 | Longest String Chain | Alpha+
-| 1027 | Longest Arithmetic Subsequence | Alpha+
-| 727 | Minimum Window Subsequence | Bravo
+| 332 | Reconstruct Itinerary | Charlie
 
 ## Two Sum Series
 | ID | Name | Rating | Note
@@ -636,3 +580,59 @@
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
 | 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
 | 795 | Number of Subarrays with Bounded Maximum | Bravo
+
+## Dynamic Programming
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 121 | Best Time to Buy and Sell Stock | Alpha
+| 122 | Best Time to Buy and Sell Stock II | Alpha
+| 123 | Best Time to Buy and Sell Stock III | Alpha
+| 188 | Best Time to Buy and Sell Stock IV | Alpha
+| 309 | Best Time to Buy and Sell Stock with Cooldown | Alpha
+| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Alpha
+| 70 | Climbing Stairs | Alpha
+| 746 | Min Cost Climbing Staris | Alpha
+| 120 | Triangle | Alpha
+| 279 | Perfect Squares | Alpha
+| 322 | Coin Change | Alpha+
+| 256 | Paint House | Alpha
+| 265 | Paint House II | Alpha
+| 198 | House Robber | Alpha+
+| 213 | House Robber II | Alpha
+| 337 | House Robber III | Alpha+ | postorder
+| 740 | Delete and Earn | Alpha
+| 62 | Unique Paths | Alpha
+| N3 | Unique Paths from Top Left to Bottom Right | Alpha
+| 63 | Unique Paths II | Alpha
+| 64 | Minimum Path Sum | Alpha
+| 221 | Maximal Square | Alpha
+| 361 | Bomb Enemy | Alpha
+| 53 | Maximum Subarray | Alpha+
+| 152 | Maximum Product Subarray | Alpha
+| 376 | Wiggle Subsequence | Alpha
+| 97 | Interleaving String | Alpha | 2D DP String
+| 44 | Wildcard Matching | Bravo | 2D DP String, Mechanical
+| 115 | Distinct Subsequences | Bravo | 2D DP String
+| 139 | Word Break | Alpha | 1D DP String
+| 673 | Number of Increasing Subsequence | Alpha
+| 978 | Longest Turbulent Subarray | Alpha
+| 300 | Longest Increasing Subsequence | Alpha+
+| 354 | Russian Doll Envelopes | Alpha+
+| 1143 | Longest Common Subsequence | Alpha
+| 583 | Delete Operation for Two Strings | Alpha
+| 72 | Edit Distance | Alpha
+| 516 | Longest Palindromic Subsequence | Alpha+
+| 5 | Longest Palindromic Substring | Alpha+
+| 1312 | Minimum Insertion Steps to Make a String Palindrome | Alpha+
+| 10 | Reguar Expression Matching | Alpha
+| 651 | 4 Keys Keyboard | Alpha
+| 650 | 2 Keys Keyboard | Alpha
+| 887 | Super Egg Drop | Bravo | dynamic programming, binary search
+| 312 | Burst Balloons | Bravo
+| N4 | 1-0 Knapsack | Alpha | knapsack
+| 416 | Partition Equal Subset Sum | Alpha | knapsack
+| 518 | Coin Change 2 | Alpha | knapsack
+| 494 | Target Sum | Alpha+ | backtracking, dynamic programming, knapsack
+| 1048 | Longest String Chain | Alpha+
+| 1027 | Longest Arithmetic Subsequence | Alpha+
+| 727 | Minimum Window Subsequence | Bravo

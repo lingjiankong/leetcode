@@ -1,14 +1,7 @@
+// ***
 // Just a reminder of how to use and pass around function pointers.
 //
-// Expect:
-//
-// [func1] received string: I am given to func1, num: 1
-// [func2] received string: I am given to func2, num: 2
-// [func3] received string: I am given to func3, num: 3
-//
-// s1 becomes I am changed inside func1
-// s2 becomes I am changed inside func2
-// s3 becomes I am changed inside func3
+// ***
 
 #include <functional>
 #include <iostream>
@@ -35,7 +28,7 @@ int main() {
     string s2 = "I am given to func2";
     string s3 = "I am given to func3";
 
-    // Using function and lambda expression
+    // Using std::function and lambda expression
     std::function<bool(string&, int)> func1 = [](string& s, int num) {
         cout << "[func1] "
              << "received string: " << s << ", num: " << num << endl;
@@ -60,3 +53,13 @@ int main() {
     cout << "s2 becomes " << s2 << endl;
     cout << "s3 becomes " << s3 << endl;
 }
+
+// Expect:
+//
+// [func1] received string: I am given to func1, num: 1
+// [func2] received string: I am given to func2, num: 2
+// [func3] received string: I am given to func3, num: 3
+//
+// s1 becomes I am changed inside func1
+// s2 becomes I am changed inside func2
+// s3 becomes I am changed inside func3
