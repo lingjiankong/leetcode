@@ -296,10 +296,10 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 1 | Two Sum | Alpha+
-| 170 | Two Sum III - Data structure design | Alpha
+| 170 | Two Sum III - Data structure design | Alpha+
 | 653 | Two Sum IV - Input is a BST | Alpha
-| 167 | Two Sum II - Input array is sorted | Alpha | Two pointers
-| 1099 | Two Sum Less Than K | Alpha | Two pointers
+| 167 | Two Sum II - Input array is sorted | Alpha+ | Two pointers
+| 1099 | Two Sum Less Than K | Alpha+ | Two pointers
 | 18 | 4Sum | Alpha+ | Two pointers
 | 15 | 3Sum | Alpha | Two pointers
 | 16 | 3Sum Closest | Alpha | Two pointers

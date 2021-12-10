@@ -28,9 +28,9 @@ public:
     void add(int number) { ++_hash[number]; }
 
     bool find(int target) {
-        for (auto element : _hash) {
-            int numA = element.first;
-            int numACount = element.second;
+        for (auto& e : _hash) {
+            int numA = e.first;
+            int numACount = e.second;
 
             int numB = target - numA;
 
