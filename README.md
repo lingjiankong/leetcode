@@ -323,7 +323,7 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 325 | Maximum Size Subarray Sum Equals k | Alpha+ | prefix sum
-| 525 | Contiguous Array | Alpha
+| 525 | Contiguous Array | Alpha+
 | 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
 | 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
 | 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
