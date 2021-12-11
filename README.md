@@ -314,8 +314,8 @@
 | 22 | Generate Parentheses | Alpha+
 | 301 | Remove Invalid Parentheses | Alpha+
 | 241 | Different Ways to Add Parentheses | Alpha+
-| 856 | Score of Parentheses | Bravo
-| 921 | Minimum Add to Make Parentheses Valid | Alpha
+| 856 | Score of Parentheses | Exotic
+| 921 | Minimum Add to Make Parentheses Valid | Bravo
 | 1249 | Minimum Remove to Make Valid Parentheses | Alpha
 | 1190 | Reverse Substrings Between Each Pair of Parentheses | Bravo, Mechanical
 

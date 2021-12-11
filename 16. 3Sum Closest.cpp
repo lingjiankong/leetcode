@@ -17,10 +17,10 @@
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
+        sort(nums.begin(), nums.end());
+
         int closest = nums[0] + nums[1] + nums[2];
         int diff = abs(closest - target);
-
-        sort(nums.begin(), nums.end());
 
         for (int i = 0; i < nums.size() - 2; ++i) {
             int left = i + 1, right = nums.size() - 1;
@@ -50,10 +50,10 @@ public:
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
+        sort(nums.begin(), nums.end());
+
         int closest = nums[0] + nums[1] + nums[2];
         int diff = abs(closest - target);
-
-        sort(nums.begin(), nums.end());
 
         for (int i = 0; i < nums.size() - 2; ++i) {
             if (i > 0 && nums[i] == nums[i - 1]) {

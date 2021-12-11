@@ -42,7 +42,7 @@ int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D)
     }
 
     int count = 0;
-    for (auto sumAB : hash1) {
+    for (auto& sumAB : hash1) {
         int target = 0 - sumAB.first;
         if (hash2.count(target)) {
             count += sumAB.second * hash2[target];

@@ -32,25 +32,25 @@
 // ***
 
 bool isValid(string s) {
-    stack<char> seen;
+    stack<char> stack_;
 
     for (char c : s) {
-        if (c == '{' || c == '[' || c == '(') {
-            seen.push(c);
-        } else {
-            if (seen.empty()) {
+        if (c == '{' || c == '[' || c == '(') {  // push open parentheses to the stack
+            stack_.push(c);
+        } else {  // compare close parentheses with the top of the stack
+            if (stack_.empty()) {
                 return false;
-            } else if (c == '}' && seen.top() != '{') {
+            } else if (c == '}' && stack_.top() != '{') {
                 return false;
-            } else if (c == ']' && seen.top() != '[') {
+            } else if (c == ']' && stack_.top() != '[') {
                 return false;
-            } else if (c == ')' && seen.top() != '(') {
+            } else if (c == ')' && stack_.top() != '(') {
                 return false;
             }
 
-            seen.pop();
+            stack_.pop();  // valid parentheses pair, pop the matching close parentheses.
         }
     }
 
-    return seen.empty();
+    return stack_.empty();
 }

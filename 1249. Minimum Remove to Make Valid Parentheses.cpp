@@ -51,10 +51,12 @@
 //
 // We mark parentheses to be removed with '*', and erase all of them in the end.
 
+// See also 301. Remove Invalid Parentheses
+// TODO: Are these two questions the same?
 class Solution {
 public:
     string minRemoveToMakeValid(string s) {
-        stack<int> parenStack;
+        stack<int> parenStack;  // stores the index of s
 
         for (int i = 0; i < s.size(); ++i) {
             if (s[i] == '(') {
@@ -64,18 +66,19 @@ public:
                 if (!parenStack.empty()) {
                     parenStack.pop();
                 } else {
-                    s[i] = '*';
+                    s[i] = '*';  // no matching "("
                 }
             }
         }
 
-        while (!parenStack.empty()) {
+        while (!parenStack.empty()) {  // remaining "(" in the stack has no matching ")"
             s[parenStack.top()] = '*';
             parenStack.pop();
         }
 
         // Note std::remove transforms the range [first, last) into a range with all the elements that compare equal to
         // val removed, and returns an iterator to the new end of that range.
+        // TODO: Google what std::remove does.
         s.erase(remove(s.begin(), s.end(), '*'), s.end());
 
         return s;

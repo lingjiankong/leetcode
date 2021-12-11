@@ -29,7 +29,7 @@
 //
 // ***
 
-// BFS the original string and remove parenthesis one by one, until you find a valid string.
+// BFS the original string and remove parentheses one by one, until you find a valid string.
 class Solution {
 public:
     vector<string> removeInvalidParentheses(string s) {
@@ -70,15 +70,29 @@ public:
         return ans;
     }
 
+private:
+    // Same as 20. Valid Parentheses
     bool isValid(string& s) {
-        int count = 0;
-        for (int i = 0; i < s.size(); ++i) {
-            if (s[i] == '(') {
-                ++count;
-            } else if (s[i] == ')' and --count < 0) {
-                return false;
+        stack<char> stack_;
+
+        for (char c : s) {
+            if (c == '{' || c == '[' || c == '(') {  // push open parentheses to the stack
+                stack_.push(c);
+            } else {  // compare close parentheses with the top of the stack
+                if (stack_.empty()) {
+                    return false;
+                } else if (c == '}' && stack_.top() != '{') {
+                    return false;
+                } else if (c == ']' && stack_.top() != '[') {
+                    return false;
+                } else if (c == ')' && stack_.top() != '(') {
+                    return false;
+                }
+
+                stack_.pop();  // valid parentheses pair, pop the matching close parentheses.
             }
         }
-        return count == 0;
+
+        return stack_.empty();
     }
 };
