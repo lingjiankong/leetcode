@@ -257,6 +257,7 @@
 | 1485 | Clone Binary Tree With Random Pointer | Alpha | clone
 | 797 | All Paths From Source to Target | Alpha+ | graph traversal
 | 399 | Evaluate Division | Alpha+ | graph traversal
+| N15 | Construct Dependency Graph | Alpha+ | I.Q., graph traversal
 | N5 | Union Find | Alpha+ | union find
 | 990 | Satisfiability of Equality Equations | Alpha+ | union find
 | 261 | Graph Valid Tree | Alpha+ | union find
@@ -325,7 +326,7 @@
 | 325 | Maximum Size Subarray Sum Equals k | Alpha+ | prefix sum
 | 525 | Contiguous Array | Alpha+
 | 862 | Shortest Subarray with Sum at Least K | Hard | running sum, mechanical
-| 560 | Subarray Sum Equals K | Alpha | prefix sum, hash map
+| 560 | Subarray Sum Equals K | Alpha+ | prefix sum, hash map
 | 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
 | 1074 | Number of Submatriecs That Sum To Target | TODO
 
