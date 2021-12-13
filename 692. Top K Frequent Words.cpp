@@ -42,7 +42,7 @@
 //
 // std::priority_queue<int, std::vector<int>, decltype(comp)> pq(comp);
 // this comparator is equivalent to using std::less<int>
-// largest element has the highest prioirty.
+// largest element has the highest prioirty (elements with highest priority will be popped first).
 //
 // After for(int n : data) pq.push(n),
 // Internally, pq is now {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}. Top of the element is ON THE RIGHT
@@ -58,7 +58,7 @@ class Solution {
 public:
     vector<string> topKFrequent(vector<string>& words, int k) {
         unordered_map<string, int> wordToFreq;
-        for (string word : words) {
+        for (string& word : words) {
             ++wordToFreq[word];
         }
 
@@ -69,7 +69,7 @@ public:
         };
         priority_queue<pair<int, string>, vector<pair<int, string>>, decltype(comp)> pq(comp);
 
-        for (auto e : wordToFreq) {
+        for (auto e& : wordToFreq) {
             pq.push({e.second, e.first});
             // NOTE: you cannot prematurely pop here if pq.size() > k like other questions.
             // Because of your custom sorting, your decision cannot be made with just k elements.

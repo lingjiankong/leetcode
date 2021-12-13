@@ -19,11 +19,12 @@
 //           width
 //                 ^
 //                 i
+//
 //           ^
-//           currentHieghtIndex
+//           curHeighestIdx
 //
 //         ^
-//         s.top() after currentHeightIndex is popped()
+//         s.top() after curHeighestIdx is popped()
 //
 // Dotted bar are those that have been popped.
 //

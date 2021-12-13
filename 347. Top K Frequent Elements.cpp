@@ -25,7 +25,7 @@ vector<int> topKFrequent(vector<int>& nums, int k) {
         ++numToFreq[num];
     }
 
-    for (auto e : numToFreq) {
+    for (auto& e : numToFreq) {
         pq.push({e.second, e.first});
     }
 

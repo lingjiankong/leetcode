@@ -7,6 +7,48 @@
 #include <iostream>
 #include <string>
 
+// TODO: This file is too messy, needs rewrite.
+//
+// n = -9, n % 3 = 0
+// n = -8, n % 3 = -2
+// n = -7, n % 3 = -1
+// n = -6, n % 3 = 0
+// n = -5, n % 3 = -2
+// n = -4, n % 3 = -1
+// n = -3, n % 3 = 0
+// n = -2, n % 3 = -2
+// n = -1, n % 3 = -1
+// n = 0, n % 3 = 0
+// n = 1, n % 3 = 1
+// n = 2, n % 3 = 2
+// n = 3, n % 3 = 0
+// n = 4, n % 3 = 1
+// n = 5, n % 3 = 2
+// n = 6, n % 3 = 0
+// n = 7, n % 3 = 1
+// n = 8, n % 3 = 2
+// n = 9, n % 3 = 0
+//
+// n = -9, n / 3 = -3
+// n = -8, n / 3 = -2
+// n = -7, n / 3 = -2
+// n = -6, n / 3 = -2
+// n = -5, n / 3 = -1
+// n = -4, n / 3 = -1
+// n = -3, n / 3 = -1
+// n = -2, n / 3 = 0
+// n = -1, n / 3 = 0
+// n = 0, n / 3 = 0
+// n = 1, n / 3 = 0
+// n = 2, n / 3 = 0
+// n = 3, n / 3 = 1
+// n = 4, n / 3 = 1
+// n = 5, n / 3 = 1
+// n = 6, n / 3 = 2
+// n = 7, n / 3 = 2
+// n = 8, n / 3 = 2
+// n = 9, n / 3 = 3
+
 using namespace std;
 
 void consumer(string& s1, string& s2, string& s3, std::function<bool(string&, int)> f1, bool (*fp2)(string&, int),

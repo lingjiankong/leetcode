@@ -14,6 +14,7 @@
 //
 // ***
 
+// Monotonic decreasing stack.
 class StockSpanner {
 public:
     StockSpanner() {}

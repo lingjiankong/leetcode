@@ -333,23 +333,23 @@
 ## Stack, Queue & Priority Queue
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 155 | Min Stack | Alpha
+| 155 | Min Stack | Alpha+
 | 232 | Implement Queue using Stacks | Bravo
 | 225 | Implement Stack using Queues | Bravo
-| 150 | Evaluate Reverse Polish Notation | Alpha
+| 150 | Evaluate Reverse Polish Notation | Alpha+
 | 42 | Trapping Rain Water | Alpha+ | dynamic programming, two pointers, monotonic stack
 | 84 | Largest Rectangle in Histogram | Alpha+ | monotonic stack
-| 503 | Next Greater Element II | Alpha | monotonic stack
+| 503 | Next Greater Element II | Alpha+ | monotonic stack
 | 739 | Daily Temperatures | Alpha+ | monotonic stack
 | 496 | Next Greater Element I | Alpha | monotonic stack
 | 239 | Sliding Window Maximum | Alpha+ | sliding window, monotonic queue
 | 901 | Online Stock Span | Alpha | monotonic stack
 | 347 | Top K Frequent Elements | Alpha+
 | 692 | Top K Frequent Words | Alpha+
-| 451 | Sort Characters By Frequency | Bravo
-| 295 | Find Median from Data Stream | Alpha
-| 480 | Sliding Window Median | Alpha
-| 373 | Find K Pairs with Smallest Sums | Alpha
+| 451 | Sort Characters By Frequency | Alpha
+| 295 | Find Median from Data Stream | Alpha+
+| 480 | Sliding Window Median | Alpha+
+| 373 | Find K Pairs with Smallest Sums | Alpha+
 | 218 | The Skyline Problem | Alpha
 | 20 | Valid Parentheses | Alpha
 | 32 | Longest Valid Parentheses | Bravo

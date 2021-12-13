@@ -1,7 +1,7 @@
 // ***
 //
 // Implement the following operations of a queue using stacks.
-// 
+//
 // push(x) -- Push element x to the back of queue.
 // pop() -- Removes the element from in front of queue.
 // peek() -- Get the front element.
@@ -9,51 +9,36 @@
 //
 // ***
 
-class MyQueue
-{
+class MyQueue {
+public:
+    MyQueue() {}
 
-	public:
+    void push(int x) { _s1.push(x); }
 
-		MyQueue()
-		{}
-		
-		void push(int x)
-		{
-			inStack.push(x);
-		}
-		
-		int pop()
-		{
-			shiftStack();
-			int toReturn = outStack.top(); outStack.pop();
-			return toReturn;
-		}
-		
-		int peek()
-		{
-			shiftStack();
-			return outStack.top();
-		}
-		
-		bool empty()
-		{
-			return inStack.empty() && outStack.empty();
-		}
-	
-	private:
+    int pop() {
+        shiftStack();
+        int toReturn = _s2.top();
+        _s2.pop();
+        return toReturn;
+    }
 
-		stack<int> inStack;
-		stack<int> outStack;
+    int peek() {
+        shiftStack();
+        return _s2.top();
+    }
 
-		void shiftStack()
-		{
-			if (outStack.empty())
-			{
-				while (!inStack.empty())
-				{
-					outStack.push(inStack.top()); inStack.pop();
-				}
-			}
-		}
+    bool empty() { return _s1.empty() && _s2.empty(); }
 
+private:
+    stack<int> _s1;  // stores elements in the order which they were pushed.
+    stack<int> _s2;  // stores elements in the reverse order which they were pushed.
+
+    void shiftStack() {
+        if (_s2.empty()) {
+            while (!_s1.empty()) {
+                _s2.push(_s1.top());
+                _s1.pop();
+            }
+        }
+    }
 };
