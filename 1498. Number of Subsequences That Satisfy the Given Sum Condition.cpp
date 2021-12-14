@@ -41,7 +41,7 @@
 //
 // ***
 //
-// Given an elements if we need to find out total number of sub sequences(without any condition) then it will be 2^n.
+// Given an elements if we need to find out total number of sub sequences (without any condition) then it will be 2^n.
 // [1, 2, 3] -> [], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]
 //
 // 先将数组排序（之所以可以排序求解，是因为并未要求子数组连续），left, right

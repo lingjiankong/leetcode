@@ -46,6 +46,7 @@ public:
 
             if (--_endpoint2count[endpoint] == 0) {
                 _endpoint2count.erase(endpoint);
+                _endpoint2sum.erase(endpoint);
             }
         }
 
@@ -81,13 +82,9 @@ public:
 
 private:
     int _qSize;
-
     int _sum = 0;
-
     unordered_map<string, double> _endpoint2sum;
-
     unordered_map<string, int> _endpoint2count;
-
     deque<pair<string, double>> _dq;
 };
 

@@ -4,6 +4,54 @@
 //
 // ***
 
+// You can also use monotonic queue O(1) instead of multiset(Ologn) to track min max.
+class MonotonicQueue {
+public:
+    void push(double num) {
+        while (not _dec_dq.empty() and _dec_dq.back() < num) {
+            _dec_dq.pop_back();
+        }
+        _dec_dq.push_back(num);
+
+        while (not _inc_dq.empty() and _inc_dq.back() > num) {
+            _inc_dq.pop_back();
+        }
+        _inc_dq.push_back(num);
+    }
+
+    double peek_max() {
+        if (_dec_dq.empty()) {
+            return 0;
+        }
+        return _dec_dq.front();
+    }
+
+    double peek_min() {
+        if (_inc_dq.empty()) {
+            return 0;
+        }
+        return _inc_dq.front();
+    }
+
+    void pop_max() {
+        if (_dec_dq.empty()) {
+            return;
+        }
+        _dec_dq.pop_front();
+    }
+
+    void pop_min() {
+        if (_inc_dq.empty()) {
+            return;
+        }
+        _inc_dq.pop_front();
+    }
+
+private:
+    std::deque<double> _dec_dq;
+    std::deque<double> _inc_dq;
+};
+
 class Statistics {
 public:
     Statistics(max_size = 100) { _max_size = max_size; }

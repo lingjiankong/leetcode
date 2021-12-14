@@ -45,7 +45,7 @@
 //
 // Algorithm:
 //
-// Let people[i] to the currently lightest person, and people[j] to the heaviest.
+// Let people[i] be the currently lightest person, and people[j] to the heaviest.
 //
 // Then, as described above, if the heaviest person can share a boat with the lightest person (if people[i] + people[j]
 // <= limit) then do so; otherwise, the heaviest person sits in their own boat.

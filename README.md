@@ -187,6 +187,18 @@
 | 981 | Time Based Key-Value Store | Alpha+
 | 215 | Kth Largest Element in an Array | Alpha | quick sort, binary search
 
+## Two Pointers
+| 455 | Assign Cookies | Alpha | two pointers
+| 125 | Valid Palindrome | Alpha+ | two pointers
+| 917 | Reverse Only Letters | Alpha+ | two pointers
+| 42 | Trapping Rain Water | Alpha+ | dynamic programming, two pointers, monotonic stack
+| 11 | Container With Most Water | Alpha+ | two pointers
+| 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
+| 925 | Long Pressed Name | Bravo
+| 986 | Interval List Intersection | Alpha+ | two pointers, intervals
+| 881 | Boats to Save People | Alpha+
+| 977 | Squares of a Sorted Array | Alpha+
+
 ## Backtracking
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -350,42 +362,23 @@
 | 295 | Find Median from Data Stream | Alpha+
 | 480 | Sliding Window Median | Alpha+
 | 373 | Find K Pairs with Smallest Sums | Alpha+
-| 218 | The Skyline Problem | Alpha
-| 20 | Valid Parentheses | Alpha
-| 32 | Longest Valid Parentheses | Bravo
-| 856 | Score of Parentheses | Alpha
-| 921 | Minimum Add to Make Parentheses Valid | Alpha
-| 1249 | Minimum Remove to Make Valid Parentheses | Alpha
-| 1190 | Reverse Substrings Between Each Pair of Parentheses | Bravo
+| 218 | The Skyline Problem | Bravo
 | 973 | K CLosest Points to Origin | Alpha+ | priority queue, custom sort
-
-## Bit Manipulation
-| ID | Name | Rating | Note
-|:---:|:---:|:---:|:---:|
-| 289 | Game of Life | Alpha
-| 136 | Single Number | Alpha
-| 137 | Single Number II | Bravo, Mechanical
-| 260 | Single Number III | Bravo, Mechanical
-| 389 | Find the Difference | Bravo, Mechanical
-| 268 | Missing Number | Bravo
-| 191 | Number of 1 Bits | Bravo
-| 190 | Reverse Bits | Bravo
-| 201 | Bitwise AND of Numbers Range | Bravo, Mechanical
 
 ## Design
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 359 | Logger Rate Limiter | Bravo
+| 359 | Logger Rate Limiter | Alpha+
 | 346 | Moving Average from Data Stream | Alpha+
-| 362 | Design Hit Counter | Alpha
-| 281 | Zigzag Iterator | Bravo
-| 251 | Flatten 2D Vector | Bravo
-| 348 | Design Tic-Tac-Toe | Charlie
+| 362 | Design Hit Counter | Alpha+
+| 281 | Zigzag Iterator | Alpha
+| 251 | Flatten 2D Vector | Alpha
+| 348 | Design Tic-Tac-Toe | Bravo
 | 146 | LRU Cache | Alpha+
 | 460 | LFU Cache | Alpha
-| 303 | Range Sum Query - Immutable | Bravo
-| 304 | Range Sum Query 2D - Immutable | Charlie
-| N7 | Timedelta Statistics | Alpha+
+| 303 | Range Sum Query - Immutable | Alpha
+| 304 | Range Sum Query 2D - Immutable | Alpha
+| N7 | Timedelta Statistics | Alpha
 | N8 | Endpoint Metrics | Alpha | I.Q.
 | N10 | Dictionary Supports getRandom | Alpha | I.Q.
 
@@ -396,19 +389,7 @@
 | 212 | Word Search II |  Alpha
 | 648 | Replace Words | Bravo
 | 677 | Map Sum Pairs | Alpha
-| 211 |  Design Add and Search Words Data Structure | Alpha | Alpha
-
-## Two Pointers
-| 455 | Assign Cookies | Alpha | two pointers
-| 125 | Valid Palindrome | Alpha+ | two pointers
-| 917 | Reverse Only Letters | Alpha+ | two pointers
-| 42 | Trapping Rain Water | Alpha+ | dynamic programming, two pointers, monotonic stack
-| 11 | Container With Most Water | Alpha+ | two pointers
-| 1498 | Number of Subsequences That Satisfy the Given Sum Condition | Bravo | two pointers
-| 925 | Long Pressed Name | Bravo
-| 986 | Interval List Intersection | Alpha+ | two pointers, intervals
-| 881 | Boats to Save People | Alpha+
-| 977 | Squares of a Sorted Array | Alpha+
+| 211 | Design Add and Search Words Data Structure | Alpha
 
 ## Array
 | ID | Name | Rating | Note
@@ -581,6 +562,19 @@
 | 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
 | 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
 | 795 | Number of Subarrays with Bounded Maximum | Bravo
+
+## Bit Manipulation
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| 289 | Game of Life | Alpha
+| 136 | Single Number | Alpha
+| 137 | Single Number II | Bravo, Mechanical
+| 260 | Single Number III | Bravo, Mechanical
+| 389 | Find the Difference | Bravo, Mechanical
+| 268 | Missing Number | Bravo
+| 191 | Number of 1 Bits | Bravo
+| 190 | Reverse Bits | Bravo
+| 201 | Bitwise AND of Numbers Range | Bravo, Mechanical
 
 ## Dynamic Programming
 | ID | Name | Rating | Note

@@ -32,6 +32,7 @@
 //
 // ***
 
+// Note that both lists are pairwise disjoint and are in sorted order.
 // You can visualize these different scenarios by drawing.
 class Solution {
 public:

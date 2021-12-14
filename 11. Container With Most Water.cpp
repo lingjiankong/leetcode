@@ -41,14 +41,14 @@
 
 int maxArea(vector<int>& height) {
     int maxArea = 0;
-    int currentArea = 0;
+    int curArea = 0;
 
     int left = 0;
     int right = height.size() - 1;
 
     while (left < right) {
-        currentArea = min(height[left], height[right]) * (right - left);
-        maxArea = max(maxArea, currentArea);
+        curArea = min(height[left], height[right]) * (right - left);
+        maxArea = max(maxArea, curArea);
         height[left] < height[right] ? ++left : --right;
     }
 
