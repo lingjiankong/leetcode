@@ -45,6 +45,7 @@ public:
 
     void insert(const string &key, int val) {
         // This is needed because we might update key with different val.
+        // originalVal will be updated. So the net effect to the prefixes are inc -= originalVal.
         int inc = val;
         if (word2val_.count(key)) {
             inc -= word2val_[key];

@@ -14,7 +14,7 @@
 // Your function should return length = 7, with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and
 // 3 respectively. It doesn't matter what values are set beyond the returned length.
 //
-//***
+// ***
 //
 // This problem uses the same logic as
 // 26. Remove Duplicates from Sorted Array. See that problem for intuition.

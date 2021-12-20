@@ -386,7 +386,7 @@
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 208 | Implement Trie (Prefix Tree) | Alpha+
-| 212 | Word Search II |  Alpha
+| 212 | Word Search II | Alpha+
 | 648 | Replace Words | Bravo
 | 677 | Map Sum Pairs | Alpha
 | 211 | Design Add and Search Words Data Structure | Alpha
@@ -399,14 +399,13 @@
 | 26 | Remove Duplicates from Sorted Array | Alpha+
 | 80 | Remove Duplicates from Sorted Array II | Alpha+
 | 277 | Find the Celebrity | Bravo
-| 189 | Rotate Array | Alpha
+| 189 | Rotate Array | Alpha+
 | 299 | Bulls and Cows | Bravo
 | 134 | Gas Station | Bravo
 | 118 | Pascal's Triangle | Alpha
 | 119 | Pascal's Triangle II | Charlie | Duplicate with 118
 | 169 | Majority Element | Alpha+
 | 229 | Majority Element II | Bravo
-| 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha | Binary search
 | 243 | Shortest Word Distance | Alpha
 | 245 | Shortest Word Distance III | Alpha
 | 244 | Shortest Word Distance II | Alpha
