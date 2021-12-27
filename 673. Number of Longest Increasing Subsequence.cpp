@@ -18,8 +18,8 @@
 // ***
 //
 // The idea is to maintain two dp arrays:
-// dpMaxLength[i] is the maximum length of increasing subsequence that ends with nums[i]
-// dpMaxLengthCount[i] is the number of increasing subsequence of length dpMaxLength[i] that ends with nums[i]
+// dpMaxLen[i] is the maximum length of increasing subsequence that ends with nums[i]
+// dpMaxLenCount[i] is the number of increasing subsequence of length dpMaxLen[i] that ends with nums[i]
 // Didn't put too much comments since it can be confusing. Read the code and you should be able to understand.
 
 class Solution {
@@ -30,29 +30,29 @@ public:
         }
 
         // Everything below is initialized to 1 because a number itself is an increasing subsequence of length 1.
-        vector<int> dpMaxLength(nums.size(), 1);
-        vector<int> dpMaxLengthCount(nums.size(), 1);
+        vector<int> dpMaxLen(nums.size(), 1);
+        vector<int> dpMaxLenCount(nums.size(), 1);
         int maxLength = 1;
 
         for (int i = 0; i < nums.size(); ++i) {
             for (int j = 0; j < i; ++j) {
                 // We only care when nums[i] is larger than nums[j] (i.e. forms an increasing sequence).
                 if (nums[i] > nums[j]) {
-                    if (dpMaxLength[i] == dpMaxLength[j] + 1) {
-                        dpMaxLengthCount[i] += dpMaxLengthCount[j];
-                    } else if (dpMaxLength[i] < dpMaxLength[j] + 1) {
-                        dpMaxLength[i] = dpMaxLength[j] + 1;
-                        dpMaxLengthCount[i] = dpMaxLengthCount[j];
+                    if (dpMaxLen[i] == dpMaxLen[j] + 1) {
+                        dpMaxLenCount[i] += dpMaxLenCount[j];
+                    } else if (dpMaxLen[i] < dpMaxLen[j] + 1) {
+                        dpMaxLen[i] = dpMaxLen[j] + 1;
+                        dpMaxLenCount[i] = dpMaxLenCount[j];
                     }
                 }
             }
-            maxLength = max(maxLength, dpMaxLength[i]);
+            maxLength = max(maxLength, dpMaxLen[i]);
         }
 
         int totalLIS = 0;
-        for (int i = 0; i < dpMaxLength.size(); ++i) {
-            if (dpMaxLength[i] == maxLength) {
-                totalLIS += dpMaxLengthCount[i];
+        for (int i = 0; i < dpMaxLen.size(); ++i) {
+            if (dpMaxLen[i] == maxLength) {
+                totalLIS += dpMaxLenCount[i];
             }
         }
 

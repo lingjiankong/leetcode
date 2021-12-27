@@ -341,6 +341,7 @@
 | 560 | Subarray Sum Equals K | Alpha+ | prefix sum, hash map
 | 930 | Binary Subarrays With Sum | Alpha | prefix sum, hash map
 | 1074 | Number of Submatriecs That Sum To Target | TODO
+| N16 | Find Minimum Length of Two Non-Overlapping Subarrays Each with a Sum Equal to Target | I.Q.
 
 ## Stack, Queue & Priority Queue
 | ID | Name | Rating | Note
@@ -406,12 +407,11 @@
 | 119 | Pascal's Triangle II | Charlie | Duplicate with 118
 | 169 | Majority Element | Alpha+
 | 229 | Majority Element II | Bravo
-| 243 | Shortest Word Distance | Alpha
+| 243 | Shortest Word Distance | Alpha+
 | 245 | Shortest Word Distance III | Alpha
 | 244 | Shortest Word Distance II | Alpha
 | 55 | Jump Game | Alpha
 | 45 | Jump Game II | Alpha
-| 11 | Container With Most Water | Alpha+ | two pointers
 | 128 | Longest Consecutive Sequence | Alpha
 | 674 | Longest Continuous Increasing Subsequence | Alpha
 | 673 | Number of Increasing Subsequence | Bravo | dynamic programming
