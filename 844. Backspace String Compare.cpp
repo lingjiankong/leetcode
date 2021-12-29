@@ -48,7 +48,7 @@
 class Solution {
 public:
     bool backspaceCompare(string S, string T) {
-        string s = "", t = "";
+        string s, t;
 
         for (char c : S) {
             c == '#' ? s.size() > 0 ? s.pop_back() : void() : s.push_back(c);
@@ -62,7 +62,7 @@ public:
     }
 };
 
-// O(1) space.
+// O(1) space. Understanding above is sufficient.
 // Maintain two pointers i and j and traverse both strings *from back to start*.
 // count is the number of times we've seen #. While we are seeing # or count > 0, we can skip the previous letter(s)
 // (since the letter(s) will be deleted) by decrement the pointer. If current letter is #, then increase count. We only

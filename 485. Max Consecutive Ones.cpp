@@ -17,7 +17,7 @@ public:
         int maxLen = 0;
         int curLen = 0;
         for (int num : nums) {
-            curLen = num == 0 ? 0 : curLen + 1;
+            curLen = num == 0 ? 0 : curLen + 1;  // reset curLen if num == 0, otherwise curLen += 1
             maxLen = max(maxLen, curLen);
         }
         return maxLen;

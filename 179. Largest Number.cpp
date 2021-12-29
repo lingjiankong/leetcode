@@ -33,15 +33,16 @@
 // and returns a value convertible to bool.
 // The value returned indicates whether the element passed as first argument should go before the second.
 // In our case, obviously a needs to go before b if string version of a+b is greater than b+a.
+// For example "9" + "5" > "5" + "34" since "9" is larger than "5".
 
 string largestNumber(vector<int>& nums) {
     sort(nums.begin(), nums.end(),
          [](int a, int b) { return to_string(a) + to_string(b) > to_string(b) + to_string(a); });
 
-    string result;
+    string ans;
     for (int num : nums) {
-        result += to_string(num);
+        ans += to_string(num);
     }
 
-    return result[0] == '0' ? "0" : result;
+    return ans[0] == '0' ? "0" : ans;
 }

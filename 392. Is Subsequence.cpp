@@ -33,7 +33,7 @@ bool isSubsequence(string s, string t) {
     }
 
     int i = 0, j = 0;
-    while (i < s.size() && j < t.size()) {
+    while (i < s.size() and j < t.size()) {
         if (s[i] == t[j]) {
             ++i;
             ++j;
@@ -52,28 +52,28 @@ public:
     bool isSubsequence(string s, string t) {
         if (!_isInitialized) {
             for (int i = 0; i < t.size(); ++i) {
-                charToIndexes[t[i]].push_back(i);
+                char2indices[t[i]].push_back(i);
             }
             _isInitialized = true;
         }
 
-        // Why previous_index = -1 rather than previous_index = 0?
+        // Why prevIdx = -1 rather than prevIdx = 0?
         // Because when you are looking for new index, you want to find *itr which needs to be strictly larger than
-        // previous_index. If you initialized previous_index = 0, then the first *itr must be at least 1 to be valid,
+        // prevIdx. If you initialized prevIdx = 0, then the first *itr must be at least 1 to be valid,
         // which isn't true because the first *itr can be 0.
-        int previous_index = -1;
+        int prevIdx = -1;
         for (int i = 0; i < s.size(); ++i) {
-            if (!charToIndexes.count(s[i])) {
+            if (!char2indices.count(s[i])) {
                 return false;
             }
 
-            auto itr = upper_bound(charToIndexes[s[i]].begin(), charToIndexes[s[i]].end(), previous_index);
+            auto itr = upper_bound(char2indices[s[i]].begin(), char2indices[s[i]].end(), prevIdx);
 
-            if (itr == charToIndexes[s[i]].end()) {
+            if (itr == char2indices[s[i]].end()) {
                 return false;
             }
 
-            previous_index = *itr;
+            prevIdx = *itr;
         }
 
         return true;
@@ -81,5 +81,5 @@ public:
 
 private:
     bool _isInitialized = false;
-    unordered_map<char, vector<int>> charToIndexes;
+    unordered_map<char, vector<int>> char2indices;
 };

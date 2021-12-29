@@ -78,7 +78,7 @@ public:
                 }
             }
             // l * r: number of tuples such that rating[i] < rating[j] < rating[k]
-            // (rating.size() - j - 1 - r): number of tuples such that rating[i] > rating[j] > rating[k]
+            // (j - l) * (rating.size() - j - 1 - r): number of tuples such that rating[i] > rating[j] > rating[k]
             ans += l * r + (j - l) * (rating.size() - j - 1 - r);
         }
         return ans;

@@ -35,8 +35,8 @@ public:
 
         vector<vector<string>> result;
 
-        for (auto element : _hash) {
-            result.push_back(element.second);
+        for (auto& e : _hash) {
+            result.push_back(e.second);
         }
 
         return result;
@@ -48,8 +48,8 @@ private:
 
         string shiftedWord;
 
-        for (char letter : word) {
-            int diff = (letter - 'a') - offset;
+        for (char c : word) {
+            int diff = (c - 'a') - offset;
             if (diff < 0) {
                 diff += 26;  // This step is important. Otherwise, "ba" would #0#-1, but "az" would be #0#25. With this
                              // step, they would both share the same "shifting sequence" of #0#25.

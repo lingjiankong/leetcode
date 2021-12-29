@@ -35,3 +35,32 @@ vector<string> findRepeatedDnaSequences(string s) {
 
     return vector<string>(repeated.begin(), repeated.end());
 }
+
+// Sliding window template.
+class Solution {
+public:
+    vector<string> findRepeatedDnaSequences(string s) {
+        unordered_set<string> firstSeen;
+        unordered_set<string> repeated;
+
+        string window;
+        int left = 0, right = 0;
+        while (right < s.size()) {
+            char c = s[right++];
+            window += c;
+
+            while (right - left == 10) {
+                if (firstSeen.count(window)) {
+                    repeated.insert(window);
+                } else {
+                    firstSeen.insert(window);
+                }
+
+                ++left;
+                window.erase(0, 1);  // erase the first element from window.
+            }
+        }
+
+        return vector<string>(repeated.begin(), repeated.end());
+    }
+};

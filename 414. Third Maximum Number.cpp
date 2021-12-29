@@ -29,7 +29,7 @@
 // For example if you have [2, 2, 2], then the third max number is 2, but there's no third *distinct* maximum number.
 //
 // Note the difference between this question and 334. Increasing Triplet Subsequence.
-// 334. asks us to find whether there's increasing triplet. This question asks us for the third maximum distinct
+// 334 asks us to find whether there's increasing triplet. This question asks us for the third maximum distinct
 // element. Notice the difference in the update to elements inside the if-elif loop and you'll get the idea
 
 int thirdMax(vector<int>& nums) {

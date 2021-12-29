@@ -22,14 +22,18 @@
 
 // Cleaner version.
 bool isAnagram(string s, string t) {
-    vector<int> counts(26, 0);
-
-    for (char letter : s) {
-        ++counts[letter - 'a'];
+    if (s.size() != t.size()) {
+        return false;
     }
 
-    for (char letter : t) {
-        --counts[letter - 'a'];
+    vector<int> counts(26, 0);
+
+    for (char c : s) {
+        ++counts[c - 'a'];
+    }
+
+    for (char c : t) {
+        --counts[c - 'a'];
     }
 
     for (int num : counts) {
@@ -49,12 +53,12 @@ bool isAnagram(string s, string t) {
 
     vector<int> counts(26, 0);
 
-    for (char letter : s) {
-        ++counts[letter - 'a'];
+    for (char c : s) {
+        ++counts[c - 'a'];
     }
 
-    for (char letter : t) {
-        if (--counts[letter - 'a'] < 0) {
+    for (char c : t) {
+        if (--counts[c - 'a'] < 0) {
             return false;
         }
     }

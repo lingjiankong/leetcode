@@ -24,15 +24,11 @@
 // This question is too easy.
 
 int numJewelsInStones(string jewels, string stones) {
-    unordered_set<char> hash;
+    unordered_set<char> jewelSet(jewels.begin(), jewels.end());
 
-    for (char letter : jewels) {
-        hash.insert(letter);
-    }
-
-    int count;
-    for (char letter : stones) {
-        if (hash.count(letter)) {
+    int count = 0;
+    for (char stone : stones) {
+        if (jewelSet.count(stone)) {
             ++count;
         }
     }

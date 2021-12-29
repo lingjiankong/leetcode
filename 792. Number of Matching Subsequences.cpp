@@ -45,12 +45,12 @@ public:
 
         // For each letter, store the index where it has been seen.
         for (int i = 0; i < s.size(); ++i) {
-            mLetterIndex[s[i]].push_back(i);
+            char2indices[s[i]].push_back(i);
         }
 
-        for (string word : words) {
-            if (mCache.count(word)) {
-                subsequenceCount += mCache[word];
+        for (string& word : words) {
+            if (_cache.count(word)) {
+                subsequenceCount += _cache[word];
             } else {
                 subsequenceCount += _isSubsequence(word);
             }
@@ -61,26 +61,25 @@ public:
 
 private:
     bool _isSubsequence(const string& word) {
-
-        int previousIndex = -1;
+        int prevIdx = -1;
         for (char letter : word) {
-            auto itr = upper_bound(mLetterIndex[letter].begin(), mLetterIndex[letter].end(), previousIndex);
+            auto itr = upper_bound(char2indices[letter].begin(), char2indices[letter].end(), prevIdx);
 
-            if (itr == mLetterIndex[letter].end()) {
-                return mCache[word] = false;
+            if (itr == char2indices[letter].end()) {
+                return _cache[word] = false;
             }
 
-            previousIndex = *itr;
+            prevIdx = *itr;
         }
 
-        return mCache[word] = true;
+        return _cache[word] = true;
     }
 
     // Cache if word string is a subsequence of s,
     // so we can reuse our result if we see duplicate words.
-    unordered_map<string, bool> mCache;
+    unordered_map<string, bool> _cache;
 
     // Using array as hash map.
-    array<vector<int>, 256> mLetterIndex;
+    array<vector<int>, 256> char2indices;
 };
 

@@ -45,17 +45,17 @@
 class Codec {
 public:
     string encode(vector<string>& strs) {
-        string toReturn;
+        string encoded;
 
-        for (string word : strs) {
-            toReturn += to_string(word.size()) + '/' + word;
+        for (string& word : strs) {
+            encoded += to_string(word.size()) + '/' + word;
         }
 
-        return toReturn;
+        return encoded;
     }
 
     vector<string> decode(string s) {
-        vector<string> toReturn;
+        vector<string> decoded;
 
         // Starting position of number which stores each string length.
         int numStart = 0;
@@ -63,14 +63,14 @@ public:
         while (numStart < s.size()) {
             int slashPos = s.find_first_of('/', numStart);
             int wordLen = stoi(s.substr(numStart, slashPos - numStart));
-            toReturn.push_back(s.substr(slashPos + 1, wordLen));
+            decoded.push_back(s.substr(slashPos + 1, wordLen));
 
             // slashPos + 1 is where the string starts
             // slashPos + 1 + wordLen is where the number which stores the size of next string starts.
             numStart = slashPos + 1 + wordLen;
         }
 
-        return toReturn;
+        return decoded;
     }
 };
 

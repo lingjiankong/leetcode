@@ -18,6 +18,10 @@
 //
 // 1. The input string does not contain leading or trailing spaces.
 // 2. The words are always separated by a single space.
+//
+// the sky is blue
+// eulb si yks eht
+// blue is sky the
 
 class Solution {
 public:
@@ -30,7 +34,7 @@ public:
         for (int i = 0; i < str.size(); ++i) {
             if (str[i] == ' ') {
                 reverse(str.begin() + start, str.begin() + i);
-                start = i + 1; // i + 1 because we are skipping the space.
+                start = i + 1;  // i + 1 because we are skipping the space.
             }
         }
 

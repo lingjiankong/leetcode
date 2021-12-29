@@ -30,13 +30,13 @@ vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
          [](vector<int>& a, vector<int>& b) { return a[0] > b[0] || (a[0] == b[0] && a[1] < b[1]); });
 
     vector<vector<int>> toReturn;
-    for (auto currentPerson : people) {
-        // For currentPerson, we know there are currentPerson[1] number of people who are in front of currentPerson
-        // and whose heights are higher than currentPerson. Since people array has already been sorted by decreasing
-        // height, we simply insert currentPerson to the position at (toReturn.begin() + currentPerson[1]), which
-        // is the postiion currentPerson belongs to.
-        int numOfPeopleInFrontOfCurrentPerson = currentPerson[1];
-        toReturn.insert(toReturn.begin() + numOfPeopleInFrontOfCurrentPerson, currentPerson);
+    for (auto& curPerson : people) {
+        // For curPerson, we know there are curPerson[1] number of people who are in front of curPerson
+        // and whose heights are higher than curPerson. Since people array has already been sorted by decreasing
+        // height, we simply insert curPerson to the position at (toReturn.begin() + curPerson[1]), which
+        // is the position curPerson belongs to.
+        int numOfPeopleInFrontOfCurPerson = curPerson[1];
+        toReturn.insert(toReturn.begin() + numOfPeopleInFrontOfCurPerson, curPerson);
     }
 
     return toReturn;

@@ -15,6 +15,8 @@
 void rotate(vector<vector<int> > &matrix) {
     // It is given that the matrix is n by n
     int n = matrix.size();
+
+    // To take transpose, if is sufficient to only traverse the top right triangle.
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n; ++j) {
             swap(matrix[i][j], matrix[j][i]);

@@ -431,48 +431,49 @@
 | 163 | Missing Ranges | Exotic
 | 88 | Merge Sorted Array | Alpha
 | 75 | Sort Colors | Bravo |  Two pointers, mechanical
-| 41 | First Missing Positive | Bravo | Two pointers
+| 41 | First Missing Positive | Alpha | Two pointers
 | 280 | Wiggle Sort | Charlie
 | 324 | Wiggle Sort II | Charlie
 | 370 | Range Addition | Charlie
 | 349 | Intersection of Two Arrays | Alpha
-| 350 | Intersection of Two Arrays II | Alpha
+| 350 | Intersection of Two Arrays II | Alpha+
+| N17 | Find the First, Second and Third Minimum Elements in an Array | Alpha+
 | 334 | Increasing Triplet Subsequence | Alpha | dynamic programming
-| 414 | Third Maximum Number | Alpha
+| 414 | Third Maximum Number | Alpha+
 | 406 | Queue Reconstruction by Height | Bravo, Mechanical
 | 363 | Max Sum of Rectangle No Larger Than K | Bravo | Mechanical
-| 485 | Max Consecutive Ones | Alpha
+| 485 | Max Consecutive Ones | Alpha+
 | 849 | Maximize Distance to Closest Person | Bravo
 | 855 | Exam Room | Bravo
-| 645 | Set Mismatch | Alpha
-| 912 | Sort an Array | Alpha
+| 645 | Set Mismatch | Alpha+
+| 912 | Sort an Array | Bravo
 | 1395 | Count Number of Teams | Alpha
 
 ## String
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 28 | Implement strStr() | Bravo
-| 14 | Longest Common Prefix | Alpha
-| 58 | Length of Last Word | Charlie
-| 344 | Reverse String | Alpha
-| 186 | Reverse Words in a String II | Alpha
-| 151 | Reverse Words in a String | Bravo
-| 345 | Reverse Vowels of a String | Alpha
-| 434 | Number of Segments in a String | Bravo
-| 205 | Isomorphic Strings | Alpha
+| 14 | Longest Common Prefix | Alpha+
+| 58 | Length of Last Word | Alpha
+| 344 | Reverse String | Alpha+
+| 186 | Reverse Words in a String II | Alpha+
+| 151 | Reverse Words in a String | Alpha+
+| 345 | Reverse Vowels of a String | Alpha+
+| 434 | Number of Segments in a String | Alpha+
+| 205 | Isomorphic Strings | Alpha+
 | 290 | Word Pattern | Alpha
-| 293 | Flip Game | Bravo
-| 294 | Flip Game II | Alpha, Recursion
+| 293 | Flip Game | Alpha
+| 294 | Flip Game II | Alpha | Recursion
 | 387 | First Unique Character in a String | Alpha
 | 383 | Ransom Note | Alpha
-| 242 | Valid Anagram | Alpha
-| 49 | Group Anagrams | Alpha
-| 249 | Group Shifted Strings | Alpha
-| 179 | Largest Number | Bravo
-| 6 | ZigZag Conversion | Exotic
-| 161 | One Edit Distance | Bravo
-| 38 | Count and Say | Bad
-| 271 | Encode and Decode Strings | Alpha
+| 242 | Valid Anagram | Alpha+
+| 49 | Group Anagrams | Alpha+
+| 249 | Group Shifted Strings | Alpha+
+| 179 | Largest Number | Alpha | custom sort
+| 6 | ZigZag Conversion | Alpha
+| 161 | One Edit Distance | Alpha+
+| 38 | Count and Say | Exotic
+| 271 | Encode and Decode Strings | Alpha+
 | 168 | Excel Sheet Column Title | Exotic
 | 171 | Excel Sheet Column Number | Charlie
 | 13 | Roman to Integer | Bad
@@ -482,24 +483,24 @@
 | 125 | Valid Palindrome | Alpha+ | two pointers
 | 680 | Valid Palindrome II | Alpha+
 | 266 | Palindrome Permutation | Alpha
-| 267 | Palindrome Permutation II | Alpha
-| 392 | Is Subsequence | Alpha
-| 792 | Number of Matching Subsequence | Alpha
-| 187 | Repeated DNA Sequences | Alpha
-| 771 | Jewels and Stongs | Bravo
-| 844 | Backspace String Compare | Bravo
-| 1967 | Number of Strings That Appear as Substrings in Word | Bravo
+| 267 | Palindrome Permutation II | Alpha+
+| 392 | Is Subsequence | Alpha+
+| 792 | Number of Matching Subsequence | Alpha+
+| 187 | Repeated DNA Sequences | Alpha+
+| 771 | Jewels and Stongs | Alpha
+| 844 | Backspace String Compare | Alpha
+| 1967 | Number of Strings That Appear as Substrings in Word | Alpha+
 | 372 | Super Pos | Exotic
 
 ## Matrix
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 48 | Rotate Image | Alpha
-| 54 | Spiral Matrix | Alpha
-| 59 | Spiral Matrix II | Alpha
+| 48 | Rotate Image | Alpha+
+| 54 | Spiral Matrix | Alpha+
+| 59 | Spiral Matrix II | Alpha+
 | 73 | Set Matrix Zeroes | Alpha
-| 311 | Sparse Matrix Multiplication | Alpha, Mechanical
-| 36 | Valid Sudoku | Bravo, Mechanical
+| 311 | Sparse Matrix Multiplication | Alpha+
+| 36 | Valid Sudoku | Alpha
 
 ## Math
 | ID | Name | Rating | Note

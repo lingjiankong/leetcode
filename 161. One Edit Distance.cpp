@@ -78,7 +78,7 @@ bool isOneEditDistance(string s, string t) {
     // For example,
     // s = "abc"
     // t = "abcd"
-    return (s == t) || (s + t[t.size() - 1] == t);
+    return (s == t) || (s + t.back() == t);
 }
 
 // 2. Better solution, without modifying existing string.

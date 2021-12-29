@@ -24,7 +24,7 @@ bool isStrobogrammatic(string num) {
     int i = 0, j = num.size() - 1;
 
     while (i <= j) {
-        if (hash.count(num[i]) && num[j] == hash[num[i]]) {
+        if (hash.count(num[i]) and hash[num[i]] = num[j]) {
             ++i, --j;
         } else {
             return false;

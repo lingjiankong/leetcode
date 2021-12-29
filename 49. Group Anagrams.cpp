@@ -32,8 +32,8 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
 
     vector<vector<string>> toReturn;
 
-    for (auto element : hash) {
-        toReturn.push_back(element.second);
+    for (auto& e : hash) {
+        toReturn.push_back(e.second);
     }
 
     return toReturn;
@@ -44,7 +44,7 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
 vector<vector<string>> groupAnagrams2(vector<string>& strs) {
     unordered_map<string, vector<string>> hash;
 
-    for (string word : strs) {
+    for (string& word : strs) {
         vector<int> counts(26, 0);
 
         for (char letter : word) {
@@ -62,8 +62,8 @@ vector<vector<string>> groupAnagrams2(vector<string>& strs) {
 
     vector<vector<string>> toReturn;
 
-    for (auto element : hash) {
-        toReturn.push_back(element.second);
+    for (auto& e : hash) {
+        toReturn.push_back(e.second);
     }
 
     return toReturn;

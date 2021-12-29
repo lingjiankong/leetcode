@@ -20,14 +20,14 @@
 bool canConstruct(string ransomNote, string magazine) {
     vector<int> counts(26, 0);
 
-    for (char letter : magazine) {
-        ++counts[letter - 'a'];
+    for (char c : magazine) {
+        ++counts[c - 'a'];
     }
 
-    for (char letter : ransomNote) {
-        --counts[letter - 'a'];
+    for (char c : ransomNote) {
+        --counts[c - 'a'];
 
-        if (counts[letter - 'a'] < 0) {
+        if (counts[c - 'a'] < 0) {
             return false;
         }
     }

@@ -76,17 +76,12 @@ public:
             ++letterCount[letter];
         }
 
-        // Element needs to be a referece here, see comments.
         for (auto &element : letterCount) {
             if (element.second % 2 == 1) {
                 middleLetter += element.first;
             }
 
-            // element.second /= 2 in place is needed because we want to alter it in the the original letterCount.
-            // Hash map letterCount with count for only the front half of the palindrome is needed for
-            // backtracking later.
-            element.second /= 2;
-            frontHalf += string(element.second, element.first);
+            frontHalf += string(element.second / 2, element.first);
 
             if (middleLetter.size() > 1) {
                 return {};
@@ -148,7 +143,7 @@ public:
 
             // e.second /= 2 in place is needed because we want to alter it in the the original letterCount.
             // Hash map letterCount with count for only the front half of the palindrome is needed for
-            // backtracking later.
+            // backtracking later (letterCount serves as "visited").
             e.second /= 2;
             frontHalf += string(e.second, e.first);
 

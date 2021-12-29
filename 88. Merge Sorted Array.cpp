@@ -14,8 +14,7 @@
 // Output: [1,2,2,3,5,6]
 //
 // ***
-//
-//
+
 // The idea is to place the largest number in the right most position (m+n-1),
 // and move from *right to left* and place the elements from nums1 and nums2 into corresponding positions.
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
