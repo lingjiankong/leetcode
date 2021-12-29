@@ -20,16 +20,18 @@
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-        vector<vector<int>> result;
+        vector<vector<int>> ans;
         int insertPos = 0;
         for (int i = 0; i < intervals.size(); ++i) {
             if (intervals[i][1] < newInterval[0]) {
+                // No overlap:
                 // Right boundary of existing interval i is less than left boundary of new interval.
-                result.push_back(intervals[i]);
+                ans.push_back(intervals[i]);
                 ++insertPos;
             } else if (intervals[i][0] > newInterval[1]) {
+                // No overlap:
                 // Left boundary of existing interval i is greater than right boundary of new interval.
-                result.push_back(intervals[i]);
+                ans.push_back(intervals[i]);
             } else {
                 // In this case, new interval overlap with existing interval,
                 // we form a new merged interval based on the boundaries of two intervals.
@@ -38,7 +40,7 @@ public:
             }
         }
 
-        result.insert(result.begin() + insertPos, newInterval);
-        return result;
+        ans.insert(ans.begin() + insertPos, newInterval);
+        return ans;
     }
 };

@@ -55,23 +55,23 @@ public:
     bool canFormArray(vector<int>& arr, vector<vector<int>>& pieces) {
         // The first element of each piece is the piece index
         unordered_map<int, vector<int>> pieceIndexToPiece;
-        for (auto piece : pieces) {
+        for (auto& piece : pieces) {
             pieceIndexToPiece[piece[0]] = piece;
         }
 
-        int currentPos = 0;
-        while (currentPos < arr.size()) {
-            if (!pieceIndexToPiece.count(arr[currentPos])) {
+        int curPos = 0;
+        while (curPos < arr.size()) {
+            if (!pieceIndexToPiece.count(arr[curPos])) {
                 return false;
             }
 
-            vector<int> piece = pieceIndexToPiece[arr[currentPos]];
+            vector<int> piece = pieceIndexToPiece[arr[curPos]];
             for (int i = 0; i < piece.size(); ++i) {
-                if (arr[currentPos + i] != piece[i]) {
+                if (arr[curPos + i] != piece[i]) {
                     return false;
                 }
             }
-            currentPos += piece.size();
+            curPos += piece.size();
         }
 
         return true;

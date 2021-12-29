@@ -30,7 +30,7 @@ public:
         int curLen = 1;
 
         for (int i = 1; i < nums.size(); ++i) {
-            if (num[i-1] < nums[i]) {
+            if (num[i - 1] < nums[i]) {
                 ++curLen;
             } else {
                 curLen = 1;

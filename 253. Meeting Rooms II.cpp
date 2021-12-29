@@ -22,15 +22,15 @@
 int minMeetingRooms(vector<vector<int>>& intervals) {
     map<int, int> timeToNewRoomsNeeded;
 
-    for (auto interval : intervals) {
+    for (auto& interval : intervals) {
         ++timeToNewRoomsNeeded[interval[0]];
         --timeToNewRoomsNeeded[interval[1]];
     }
 
-    int currentRooms = 0, maxRooms = 0;
-    for (auto element : timeToNewRoomsNeeded) {
-        currentRooms += element.second;
-        maxRooms = max(maxRooms, currentRooms);
+    int curRooms = 0, maxRooms = 0;
+    for (auto& e : timeToNewRoomsNeeded) {
+        curRooms += e.second;
+        maxRooms = max(maxRooms, curRooms);
     }
 
     return maxRooms;
@@ -48,7 +48,7 @@ int minMeetingRooms(vector<vector<int>>& intervals) {
     vector<int> startTimes;
     vector<int> endTimes;
 
-    for (auto interval : intervals) {
+    for (auto& interval : intervals) {
         startTimes.push_back(interval[0]);
         endTimes.push_back(interval[1]);
     }
@@ -87,7 +87,7 @@ int minMeetingRooms(vector<vector<int>>& intervals) {
     // Using priority_queue to store the *end time* (the earliest end time has highest priority) of each meeting.
     priority_queue<int, vector<int>, greater<int>> pqEndTimes;
 
-    for (auto interval : intervals) {
+    for (auto& interval : intervals) {
         // If pqEndTimes.top() (earliest end time of exisiting meetings) <= interval[0] (start time of current meeting),
         // then there's a meeting that has just ended, in which case we can use that vacanted room. No need for extra
         // room.

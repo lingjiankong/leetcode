@@ -412,20 +412,20 @@
 | 244 | Shortest Word Distance II | Alpha
 | 55 | Jump Game | Alpha
 | 45 | Jump Game II | Alpha
-| 128 | Longest Consecutive Sequence | Alpha
-| 674 | Longest Continuous Increasing Subsequence | Alpha
+| 128 | Longest Consecutive Sequence | Alpha+
+| 674 | Longest Continuous Increasing Subsequence | Alpha+ | dynamic programming
 | 673 | Number of Increasing Subsequence | Bravo | dynamic programming
 | 164 | Maximum Gap Bucket | Hard
 | 135 | Candy | Alpha
 | 330 | Patching Array | Hard
 | 321 | Create Maximum Number | Hard
 | 56 | Merge Intervals | Alpha+ | intervals
-| 57 | Insert Intervals | Alpha | intervals
-| 252 | Meeting Rooms | Alpha
-| 253 | Meeting Rooms II | Alpha |
+| 57 | Insert Intervals | Alpha+ | intervals
+| 252 | Meeting Rooms | Alpha+
+| 253 | Meeting Rooms II | Alpha+
 | 435 | Non-overlapping Intervals | Alpha+ | greedy
 | 452 | Minimum Number of Arrows to Burst Balloons | Alpha | greedy
-| 1640 | Check Array Formation Through Concatenation | Alpha
+| 1640 | Check Array Formation Through Concatenation | Bravo
 | 238 | Product of Array Except Self | Alpha
 | 228 | Summary Ranges | Exotic
 | 163 | Missing Ranges | Exotic

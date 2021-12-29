@@ -32,7 +32,7 @@ public:
         // Everything below is initialized to 1 because a number itself is an increasing subsequence of length 1.
         vector<int> dpMaxLen(nums.size(), 1);
         vector<int> dpMaxLenCount(nums.size(), 1);
-        int maxLength = 1;
+        int maxLen = 1;
 
         for (int i = 0; i < nums.size(); ++i) {
             for (int j = 0; j < i; ++j) {
@@ -46,12 +46,12 @@ public:
                     }
                 }
             }
-            maxLength = max(maxLength, dpMaxLen[i]);
+            maxLen = max(maxLen, dpMaxLen[i]);
         }
 
         int totalLIS = 0;
         for (int i = 0; i < dpMaxLen.size(); ++i) {
-            if (dpMaxLen[i] == maxLength) {
+            if (dpMaxLen[i] == maxLen) {
                 totalLIS += dpMaxLenCount[i];
             }
         }
