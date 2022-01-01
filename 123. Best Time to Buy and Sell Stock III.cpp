@@ -96,6 +96,10 @@
 // sold[1]	   0,  2,  4,  4,  4,  4,  9,  9
 // sold[2]	   0,  2,  4,  4,  7,  7,  13, 13
 // sold[3]	   0,  2,  4,  4,  7,  7,  14, 14
+//
+//                         d/n                     d/n                     d/n                     d/n
+// SOLD0 ---------------> HOLD1 ----------------> SOLD1 ----------------> HOLD2 ----------------> SOLD2
+//         buy (-price)           sell (+price)           buy (-price)            sell (+price)
 
 int maxProfit(vector<int>& prices) {
     int sold2 = 0;

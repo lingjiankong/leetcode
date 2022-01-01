@@ -35,7 +35,7 @@
 
 // See labuladong book pp. 166.
 // dp[i]: Max numbers of 'A's on screen after i times of operations.
-// base condition: dp[0] = 0 'A's on screen with 0 number of operations.
+// base condition: dp[0] = 0: 0 'A's on screen with 0 number of operations.
 class Solution {
 public:
     int maxA(int N) {

@@ -15,8 +15,8 @@
 | 965 | Univalued Binary Tree | Alpha+
 | 226 | Invert Binary Tree | Alpha | postorder
 | 112 | Path Sum | Alpha+
-| 113 | Path Sum II | Alpha
-| 437 | Path Sum III | Alpha | preorder
+| 113 | Path Sum II | Alpha+
+| 437 | Path Sum III | Alpha+ | preorder
 | 124 | Binary Tree Maximum Path Sum | Alpha+ | postorder
 | 543 | Diameter of Binary Tree | Alpha+ | postorder
 | N14 | Diameter of Generic Tree | Alpha | I.Q.
@@ -57,9 +57,9 @@
 | 1302 | Deepest Leaves Sum | Alpha+
 | 872 | Leaf-Similar Trees | Alpha+
 | 814 | Binary Tree Pruning | Alpha+ | postorder
-| 1325 | Delete Leaves With a Given Value | Alpha | postorder
+| 1325 | Delete Leaves With a Given Value | Alpha+ | postorder
 | 508 | Most Frequent Subtree Sum | Alpha+ | postorder
-| 1973 | Count Nodes Equal to Sum of Descendants | Alpha | postorder
+| 1973 | Count Nodes Equal to Sum of Descendants | Alpha+ | postorder
 | 1120 | Maximum Average Subtree | Alpha+ | postorder
 | 968 | Binary Tree Cameras | Alpha | postorder
 | 337 | House Robber III | Alpha+ | postorder
@@ -73,15 +73,15 @@
 | 700 | Search in a Binary Search Tree | Alpha+ | preorder
 | 701 | Insert into a Binary Search Tree | Alpha+ | preorder
 | 450 | Delete Node in a BST | Alpha+ | preorder
-| 333 | Largest BST Subtree | Alpha | preorder
+| 333 | Largest BST Subtree | Alpha+ | preorder
 | 99 | Recover Binary Search Tree | Alpha | Inorder
 | 108 | Convert Sorted Array to Binary Search Tree | Alpha+
 | 109 | Convert Sorted List to Binary Search Tree | Alpha+
 | 173 | Binary Search Tree Iterator | Bravo | mechanical
 | 230 | Kth Smallest Element in a BST | Alpha+
 | 285 | Inorder Successor in BST | Alpha+
-| 270 | Closest Binary Search Tree Value | Alpha
-| 272 | Closest Binary Search Tree Value II | Alpha
+| 270 | Closest Binary Search Tree Value | Alpha+
+| 272 | Closest Binary Search Tree Value II | Alpha++
 | 255 | Verify Preorder Sequence in Binary Search Tree | Hard
 | 96 | Unique Binary Search Trees | Bravo
 | 95 | Unique Binary Search Trees II | Bravo
@@ -105,7 +105,7 @@
 | 82 | Remove Duplicates from Sorted List II | Bravo
 | 2 | Add Two Numbers | Alpha+
 | 445 | Add Two Numbers II | Alpha+
-| 369 | Plus One Linked List | Alpha
+| 369 | Plus One Linked List | Alpha+
 | 160 | Intersection of Two Linked Lists | Alpha+
 | 21 | Merge Two Sorted Lists | Alpha+
 | 143 | Reorder List | Alpha
@@ -505,42 +505,42 @@
 ## Math
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 7 | Reverse Integer | Bravo
-| 9 | Palindrome Number | Alpha
+| 7 | Reverse Integer | Alpha+
+| 9 | Palindrome Number | Alpha+
 | 66 | Plus One | Alpha
-| 369 | Plus One Linked List | Bravo
+| 369 | Plus One Linked List | Alpha+
 | 258 | Add Digits | Alpha
 | 2 | Add Two Numbers | Alpha+
 | 415 | Add Strings | Alpha+
-| 67 | Add Binary | Alpha
+| 67 | Add Binary | Alpha+
 | 43 | Multiply Strings | Exotic
 | 204 | Count Primes | Alpha+
-| 231 | Power of Two | Alpha
+| 231 | Power of Two | Alpha+
 | 326 | Power of Three | Alpha
 | 342 | Power of Four | Alpha
 | 319 | Bulb Switcher | Bravo
 | 292 | Nim Game | Exotic
-| 202 | Happy Number | Alpha
-| 263 | Ugly Number | Bravo
+| 202 | Happy Number | Alpha+
+| 263 | Ugly Number | Alpha+
 | 264 | Ugly Number II | Exotic
 | 313 | Super Ugly Number | Exotic
 | 31 | Next Permutation | Bravo, Mechanical
 | 60 | Permutation Sequence | Exotic
 | 224 | Basic Calculator | Alpha | See 772
 | 227 | Basic Calculator II | Alpha | See 772
-| 772 | Basic Calculator III | Alpha+ | mechanical
+| 772 | Basic Calculator III | Alpha+
 | 50 | Pow(x, n) | Alpha
 | 223 | Rectangle Area | Bravo | Geometry
-| 1447 | Simplified Fractions | GCD
+| 1447 | Simplified Fractions | Bravo | GCD
 
 ## Multithreading
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
 | 1188 | Design Bounded Blocking Queue | Alpha+
-| 1114 | Print in Order.cpp | Alpha
-| 1115 | Print FooBar Alternately.cpp | Alpha
+| 1114 | Print in Order.cpp | Alpha+
+| 1115 | Print FooBar Alternately.cpp | Alpha+
 | 1116 | Print Zero Even Odd.cpp | Alpha
-| 1195 | Fizz Buzz Multithreaded.cpp  | Alpha
+| 1195 | Fizz Buzz Multithreaded.cpp  | Alpha+
 
 ## CPP Examples
 | ID | Name | Rating | Note
@@ -551,7 +551,7 @@
 ## Vector Math
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| N12 | Half Space | Alpha
+| N12 | Half Space | Alpha+
 
 ## Uncategorized
 | ID | Name | Rating | Note
@@ -559,7 +559,7 @@
 | 991 | Broken Calculator | Charlie | math
 | 556 | Next Greater Element III | Charlie
 | 969 | Pancake Sorting | Charlie | recursion
-| 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Bravo
+| 1578 | Minimum Deletion Cost to Avoid Repeating Letters | Alpha
 | 995 | Minimum Number of K Consecutive Bit Flips | Bravo | greedy
 | 795 | Number of Subarrays with Bounded Maximum | Bravo
 
@@ -568,53 +568,53 @@
 |:---:|:---:|:---:|:---:|
 | 289 | Game of Life | Alpha
 | 136 | Single Number | Alpha
+| 389 | Find the Difference | Alpha
 | 137 | Single Number II | Bravo, Mechanical
 | 260 | Single Number III | Bravo, Mechanical
-| 389 | Find the Difference | Bravo, Mechanical
 | 268 | Missing Number | Bravo
-| 191 | Number of 1 Bits | Bravo
-| 190 | Reverse Bits | Bravo
-| 201 | Bitwise AND of Numbers Range | Bravo, Mechanical
+| 191 | Number of 1 Bits | Alpha+
+| 190 | Reverse Bits | Alpha
+| 201 | Bitwise AND of Numbers Range | Bravo
 
 ## Dynamic Programming
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
-| 121 | Best Time to Buy and Sell Stock | Alpha
-| 122 | Best Time to Buy and Sell Stock II | Alpha
-| 123 | Best Time to Buy and Sell Stock III | Alpha
-| 188 | Best Time to Buy and Sell Stock IV | Alpha
-| 309 | Best Time to Buy and Sell Stock with Cooldown | Alpha
-| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Alpha
-| 70 | Climbing Stairs | Alpha
+| 121 | Best Time to Buy and Sell Stock | Alpha+
+| 122 | Best Time to Buy and Sell Stock II | Alpha+
+| 123 | Best Time to Buy and Sell Stock III | Alpha+
+| 188 | Best Time to Buy and Sell Stock IV | Alpha+
+| 309 | Best Time to Buy and Sell Stock with Cooldown | Alpha+
+| 714 | Best Time to Buy and Sell Stock with Transaction Fee | Alpha+
+| 70 | Climbing Stairs | Alpha+
 | 746 | Min Cost Climbing Staris | Alpha
 | 120 | Triangle | Alpha
 | 279 | Perfect Squares | Alpha
 | 322 | Coin Change | Alpha+
-| 256 | Paint House | Alpha
-| 265 | Paint House II | Alpha
+| 256 | Paint House | Alpha+
+| 265 | Paint House II | Alpha+
 | 198 | House Robber | Alpha+
 | 213 | House Robber II | Alpha
 | 337 | House Robber III | Alpha+ | postorder
 | 740 | Delete and Earn | Alpha
-| 62 | Unique Paths | Alpha
-| N3 | Unique Paths from Top Left to Bottom Right | Alpha
-| 63 | Unique Paths II | Alpha
-| 64 | Minimum Path Sum | Alpha
+| 62 | Unique Paths | Alpha+
+| N3 | Unique Paths from Top Left to Bottom Right | Alpha+
+| 63 | Unique Paths II | Alpha+
+| 64 | Minimum Path Sum | Alpha+
 | 221 | Maximal Square | Alpha
-| 361 | Bomb Enemy | Alpha
+| 361 | Bomb Enemy | Alpha+
 | 53 | Maximum Subarray | Alpha+
-| 152 | Maximum Product Subarray | Alpha
-| 376 | Wiggle Subsequence | Alpha
+| 152 | Maximum Product Subarray | Alpha+
+| 376 | Wiggle Subsequence | Alpha+
+| 978 | Longest Turbulent Subarray | Alpha
 | 97 | Interleaving String | Alpha | 2D DP String
 | 44 | Wildcard Matching | Bravo | 2D DP String, Mechanical
 | 115 | Distinct Subsequences | Bravo | 2D DP String
-| 139 | Word Break | Alpha | 1D DP String
-| 673 | Number of Increasing Subsequence | Alpha
-| 978 | Longest Turbulent Subarray | Alpha
+| 139 | Word Break | Alpha+ | 1D DP String
+| 673 | Number of Increasing Subsequence | Bravo
 | 300 | Longest Increasing Subsequence | Alpha+
 | 354 | Russian Doll Envelopes | Alpha+
-| 1143 | Longest Common Subsequence | Alpha
-| 583 | Delete Operation for Two Strings | Alpha
+| 1143 | Longest Common Subsequence | Alpha+
+| 583 | Delete Operation for Two Strings | Alpha+
 | 72 | Edit Distance | Alpha
 | 516 | Longest Palindromic Subsequence | Alpha+
 | 5 | Longest Palindromic Substring | Alpha+
@@ -627,7 +627,7 @@
 | N4 | 1-0 Knapsack | Alpha | knapsack
 | 416 | Partition Equal Subset Sum | Alpha | knapsack
 | 518 | Coin Change 2 | Alpha | knapsack
-| 494 | Target Sum | Alpha+ | backtracking, dynamic programming, knapsack
+| 494 | Target Sum | Alpha+| backtracking, dynamic programming, knapsack
 | 1048 | Longest String Chain | Alpha+
 | 1027 | Longest Arithmetic Subsequence | Alpha+
 | 727 | Minimum Window Subsequence | Bravo

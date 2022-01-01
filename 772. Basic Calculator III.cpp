@@ -46,7 +46,7 @@ public:
                     }
                 }
                 // Recusively deal with calculations inside parenthesis.
-                // iOpen is the index of '(' and i is now the index of ')'.
+                // iOpen is the index of '(' and iClose is the index of ')'.
                 // Everything inside parenthesis is now num.
                 num = calculate(str.substr(iOpen + 1, iClose - iOpen - 1));
             }

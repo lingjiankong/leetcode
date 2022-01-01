@@ -36,8 +36,8 @@
 //
 // ***
 
-// 其实这道题跟之前那道House
-// Robber的本质是一样的，那道题小偷不能偷相邻的房子，这道题相邻的数字不能累加积分，是不是一个道理？
+// 其实这道题跟之前那道House Robber的本质是一样的，
+// 那道题小偷不能偷相邻的房子，这道题相邻的数字不能累加积分，是不是一个道理？
 // dp[i]: maximum points you can have when you are visiting number i.
 class Solution {
 public:

@@ -12,6 +12,42 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        TreeNode* res = dfs(root, p, q);
+        return _count < 2 ? nullptr : res;
+    }
+
+private:
+    int _count = 0;
+
+    TreeNode* dfs(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (not root) {
+            return nullptr;
+        }
+
+        TreeNode* l = dfs(root->left, p, q);
+        TreeNode* r = dfs(root->right, p, q);
+
+        if (root == p or root == q) {
+            ++_count;
+            return root;
+        }
+
+        if (l and r) {
+            return root;
+        } else if (l) {
+            return l;
+        } else if (r) {
+            return r;
+        } else {
+            return nullptr;
+        }
+    }
+};
+
+// Same idea.
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         pair<TreeNode*, int> res = dfs(root, p, q);
         return res.second < 2 ? nullptr : res.first;
     }
@@ -42,39 +78,3 @@ private:
         }
     }
 };
-
-// Same idea.
-class Solution {
-public:
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        TreeNode* res = dfs(root, p, q);
-        return _count < 2 ? nullptr : res;
-    }
-private:
-    int _count = 0;
-
-    TreeNode* dfs(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if (not root) {
-            return nullptr;
-        }
-
-        TreeNode* l = dfs(root->left, p, q);
-        TreeNode* r = dfs(root->right, p, q);
-
-        if (root == p or root == q) {
-            ++_count;
-            return root;
-        }
-
-        if (l and r) {
-            return root;
-        } else if (l) {
-            return l;
-        } else if (r) {
-            return r;
-        } else {
-            return nullptr;
-        }
-    }
-};
-

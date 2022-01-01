@@ -32,7 +32,7 @@ public:
         }
 
         // Because we are using preorder traversal, the first time you see a valid BST it is
-        // guaranteed be be the largest BST among its subtrees, simply return the number of nodes.
+        // guaranteed to be the largest BST among its subtrees, simply return the number of nodes.
         if (_isValidBST(root, INT_MIN, INT_MAX)) {
             return _countNodes(root);
         }

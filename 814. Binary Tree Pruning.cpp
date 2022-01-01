@@ -45,6 +45,8 @@ public:
         root->left = pruneTree(root->left);
         root->right = pruneTree(root->right);
 
+        // "return the same tree where every subtree (of the given tree) not containing a 1 has been removed.":
+        // even if root->val != 1, as long as root->left or root->right exist, we should return root.
         if (root->val == 1 or root->left or root->right) {
             return root;
         }

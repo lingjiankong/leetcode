@@ -1,16 +1,16 @@
 // ***
 //
 // Write a program to find the nth super ugly number.
-// 
+//
 // Super ugly numbers are positive numbers whose all prime factors are in the given prime list primes of size k.
-// 
+//
 // Example:
-// 
+//
 // Input: n = 12, primes = [2,7,13,19]
-// Output: 32 
-// Explanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 super ugly numbers given primes = [2,7,13,19] of size 4.
-// Note:
-// 
+// Output: 32
+// Explanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 super ugly numbers given primes =
+// [2,7,13,19] of size 4. Note:
+//
 // 1 is a super ugly number for any given primes.
 // The given numbers in primes are in ascending order.
 // 0 < k ≤ 100, 0 < n ≤ 10^6, 0 < primes[i] < 1000.
@@ -21,27 +21,22 @@
 // This question uses the exact same idea as 264. Ugly Number II.
 // We use for loops to iterate the prime numbers.
 
-int nthSuperUglyNumber(int n, vector<int>& primes)
-{
-	vector<int> dp(n, 1), indexes(primes.size(), 0);
+int nthSuperUglyNumber(int n, vector<int>& primes) {
+    vector<int> dp(n, 1), indexes(primes.size(), 0);
 
-	for (int i = 1; i < n; ++i)
-	{
-		dp[i] = INT_MAX;
+    for (int i = 1; i < n; ++i) {
+        dp[i] = INT_MAX;
 
-		for (int j = 0; j < primes.size(); ++j)
-		{
-			dp[i] = min(dp[i], dp[indexes[j]] * primes[j]);
-		}
+        for (int j = 0; j < primes.size(); ++j) {
+            dp[i] = min(dp[i], dp[indexes[j]] * primes[j]);
+        }
 
-		for (int j = 0; j < primes.size(); ++j)
-		{
-			if (dp[i] == dp[indexes[j]] * primes[j])
-			{
-				++indexes[j];
-			}
-		}
-	}
+        for (int j = 0; j < primes.size(); ++j) {
+            if (dp[i] == dp[indexes[j]] * primes[j]) {
+                ++indexes[j];
+            }
+        }
+    }
 
-	return dp.back();
+    return dp.back();
 }

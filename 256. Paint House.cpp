@@ -20,7 +20,7 @@
 //
 // ***
 
-// dp[i][j]: cost of printing the ith row of how with color j.
+// dp[i][j]: cost of printing the ith row with color j.
 int minCost(vector<vector<int>>& costs) {
     if (costs.empty() || costs[0].empty()) {
         return 0;

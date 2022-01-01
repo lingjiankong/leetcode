@@ -28,7 +28,7 @@
 // Recursion with memoization.
 //
 // We split a given string at every possible index (startIndex), check if the front portion of that string is in the
-// dictionary, if it is found in the dictionary, then the recursive function is called for the remaining portion of the
+// dictionary: if it is found in the dictionary, then the recursive function is called for the remaining portion of the
 // string. startIndex is where we want to split the string. If startIndex == s.size(), then it means everything before
 // startIndex can be partitioned, so return true. cache[i] stores whether the substring s[0, i) can be partitioned.
 class Solution {

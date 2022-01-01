@@ -44,6 +44,12 @@
 //		          {3,  5,  7,  1,  3,  2,  9,  1}
 // sold        0   0   2   4   4   4   4   8   8
 // hold	 INT_MIN  -3  -3  -3  -1  -1  -1  -1  -1
+//
+//
+//                         d/n                     d/n
+// SOLD0 ---------------> HOLD1 ----------------> SOLD1
+//         buy (-price)           sell (+price)
+//        
 int maxProfit(vector<int>& prices) {
     int sold = 0;
     int hold = INT_MIN;

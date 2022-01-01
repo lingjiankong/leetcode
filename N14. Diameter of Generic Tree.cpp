@@ -19,6 +19,7 @@
 
 // Note: haven't been validated but should be correct.
 
+#include <climits>
 #include <iostream>
 #include <set>
 #include <vector>
@@ -53,18 +54,25 @@ private:
             return 1;
         }
 
-        multiset<int> maxDepths;
+        int firstMaxDepth = INT_MIN;
+        int secondMaxDepth = INT_MIN;
         for (Node* child : root->children) {
-            maxDepths.insert(_maxDepth(child));
+            int curDepth = _maxDepth(child);
+            if (curDepth >= firstMaxDepth) {
+                secondMaxDepth = firstMaxDepth;
+                firstMaxDepth = curDepth;
+            } else if (curDepth >= secondMaxDepth) {
+                secondMaxDepth = curDepth;
+            }
         }
 
-        if (maxDepths.size() >= 2) {
-            _diameter = max(_diameter, *maxDepths.rbegin() + *prev(maxDepths.rbegin()));
-        } else if (maxDepths.size() == 1) {
-            _diameter = max(_diameter, *maxDepths.rbegin());
+        if (root.children.size() >= 2) {
+            _diameter = max(_diameter, firstMaxDepth + secondMaxDepth);
+        } else if (root.children.size() == 1) {
+            _diameter = max(_diameter, firstMaxDepth);
         }
 
-        return 1 + *maxDepths.rbegin();
+        return 1 + firstMaxDepth;
     }
 
     int _diameter = 0;

@@ -26,8 +26,8 @@
 //
 // 1. if p and q are in the tree starting at root, return the lowest common ancester.
 // 2. if neither p nor q are in the tree starting at root, return the nullptr.
-// 3. if p is in the tree strating at root but not q,  return p.
-// 4. if q is in the tree strating at root but not p,  return q.
+// 3. if p is in the tree strating at root but not q, return p.
+// 4. if q is in the tree strating at root but not p, return q.
 //
 // Note, this question guarantees that lowest common ancester exists.
 

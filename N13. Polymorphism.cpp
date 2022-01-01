@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// TODO: Too messy. Rewrite in the future.
+
 class Polygon {
 public:
     Polygon(double width, double height) : _width(width), _height(height) {}
@@ -106,5 +108,4 @@ int main() {
 // 12.5
 // Calling Polygon::nonVirtualFunc
 // Calling Polygon::nonVirtualFunc
-
 

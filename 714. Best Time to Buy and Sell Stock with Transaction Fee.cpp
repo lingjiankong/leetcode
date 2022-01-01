@@ -28,6 +28,13 @@
 //
 // See the dp solution of 122. Best Time to Buy and Sell Stock.
 // We just add the fee mechanism to the dp transition equation.
+//
+//              sell (+price)
+//          ------------------->
+// d/n HOLD                      SOLD d/n
+//          <-------------------
+//           buy (-price - fee)
+
 
 int maxProfit(vector<int>& prices, int fee) {
     int sold = 0;

@@ -20,6 +20,10 @@
 //              Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
 //
 // ***
+//
+//                         d/n                     d/n                     d/n                     d/n
+// SOLD0 ---------------> HOLD1 ----------------> SOLD1 ----------------> HOLD2 ----------------> SOLD2 ... SOLDK
+//         buy (-price)           sell (+price)           buy (-price)            sell (+price)
 
 int maxProfit(int k, vector<int>& prices) {
     // Same as saying we can perform unlimited transaction, the situation becomes the same as

@@ -50,6 +50,14 @@
 //
 // It is hard to explain in word, take a deeper look into the dp transition equations
 // of the stock series problem, and look at the state transition graph you drew.
+//
+//
+//              sell (+price)
+//          ------------------->
+// d/n HOLD                      SOLD d/n
+//          <-------------------
+//              buy (-price)
+//
 int maxProfit(vector<int>& prices) {
     int sold = 0;
     int hold = INT_MIN;

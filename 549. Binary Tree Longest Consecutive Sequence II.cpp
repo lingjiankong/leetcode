@@ -32,6 +32,8 @@ public:
         }
 
         // Treat every node in the tree as the "turning point".
+        // helper(root, -1): longest increasing consecutive path starting from root.
+        // helper(root, 1): longest decreasing consecutive path starting from root.
         int curLongest = 1 + helper(root, -1) + helper(root, 1);
 
         return max({curLongest, longestConsecutive(root->left), longestConsecutive(root->right)});
@@ -44,10 +46,12 @@ private:
             return 0;
         }
 
-        int left = 0, right = 0;
+        int left = 0;
         if (root->left and root->val - root->left->val == diff) {
             left = 1 + helper(root->left, diff);
         }
+
+        int right = 0;
         if (root->right and root->val - root->right->val == diff) {
             right = 1 + helper(root->right, diff);
         }

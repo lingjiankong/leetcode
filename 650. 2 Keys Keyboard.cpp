@@ -39,7 +39,7 @@ public:
     int minSteps(int n) {
         vector<int> dp(n + 1, 0);
         dp[0] = 0;
-        dp[1] = 0;
+        dp[1] = 0; // initially one 'A' is present. no need for any ops.
 
         for (int i = 2; i <= n; ++i) {
             // in the worst case, you need i steps to get i 'A's (keep pasting 'A')
@@ -72,6 +72,7 @@ public:
                 res = min(res, minSteps(n / factor) + factor);
             }
         }
+
         return res;
     }
 };

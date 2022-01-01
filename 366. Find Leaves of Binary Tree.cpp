@@ -41,7 +41,7 @@
 // corresponding height.
 //
 // Compare this question with 102. Binary Tree Level Order Traversal, which is a similar question but uese a top-down
-// appraoch.
+// approach.
 
 class Solution {
 public:
@@ -64,18 +64,18 @@ private:
 
         int leftSubtreeMaxHeight = _maxHeight(root->left);
         int rightSubtreeMaxHeight = _maxHeight(root->right);
-        int currentMaxHeight = 1 + max(leftSubtreeMaxHeight, rightSubtreeMaxHeight);
+        int curMaxHeight = 1 + max(leftSubtreeMaxHeight, rightSubtreeMaxHeight);
 
         // Make sure _leaves has enough space.
-        while (_leaves.size() <= currentMaxHeight) {
+        while (_leaves.size() <= curMaxHeight) {
             _leaves.push_back({});
         }
-        _leaves[currentMaxHeight].push_back(root->val);
+        _leaves[curMaxHeight].push_back(root->val);
 
         // Make root the nullptr (i.e. erase that node, since the question asks us to do so)
         // Whether you set root to nullptr has no effect to the result _leaves.
         root = nullptr;
 
-        return currentMaxHeight;
+        return curMaxHeight;
     }
 };

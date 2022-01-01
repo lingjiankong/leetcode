@@ -36,6 +36,17 @@
 //
 // In the end, the maximum profit only occurs either in state sold or rest.
 // Because if you hold any stock on hand, that stock has not been cashed!
+//
+//      d/n  sell (+price)
+//      HOLD ------------> SOLD 
+//         ^              /
+//          \            /
+//      buy  \          /
+//   (-price) \        / do nothing (cooldown)
+//             \      /
+//              \    v
+//               REST
+//               d/n
 
 int maxProfit(vector<int>& prices) {
     int sold = 0;

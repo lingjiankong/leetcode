@@ -29,8 +29,6 @@
 // This question is basically Fibonacci number.
 // The problem specified that n is a positive number.
 //
-// During interview, draw this picture first:
-//
 // Number of stairs:        0 0 1 2 3 4 5 6 ...
 // Number of ways to climb: 0 1 1 2 3 5 8 13 ...
 // 					          ^ ^

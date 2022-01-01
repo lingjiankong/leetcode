@@ -2,7 +2,7 @@
 //
 // A robot is located at the top-left corner of a m x n grid.
 // The robot can only move either down or right at any point in time.
-// he robot is trying to reach the bottom-right corner of the grid.
+// The robot is trying to reach the bottom-right corner of the grid.
 // Now consider if some obstacles are added to the grids. How many unique paths would there be?
 //
 // ***

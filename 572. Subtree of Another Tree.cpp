@@ -40,6 +40,7 @@ class Solution {
 public:
     bool isSubtree(TreeNode* s, TreeNode* t) {
         // if s is a nullptr, then t should not be considered as a subtree of s.
+        // (given in the problem, t is non-empty).
         if (!s) {
             return false;
         }

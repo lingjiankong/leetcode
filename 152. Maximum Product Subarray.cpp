@@ -29,20 +29,18 @@
 // Therefore we need to keep track of min and max products of the subarray ending in nums[i-1].
 
 int maxProduct(vector<int>& nums) {
-    int currentMin = nums[0];
-    int currentMax = nums[0];
+    int curMin = nums[0];
+    int curMax = nums[0];
     int maxProduct = nums[0];
 
     for (int i = 1; i < nums.size(); ++i) {
-        // std::min and std::max takes two argument or an initializer list,
-        // therefore if you want the min or max of three arguments you need to pass in a {}.
-        int tempCurrentMin = min({currentMin * nums[i], currentMax * nums[i], nums[i]});
-        int tempCurrentMax = max({currentMin * nums[i], currentMax * nums[i], nums[i]});
+        int tempCurMin = min({curMin * nums[i], curMax * nums[i], nums[i]});
+        int tempCurMax = max({curMin * nums[i], curMax * nums[i], nums[i]});
 
-        currentMin = tempCurrentMin;
-        currentMax = tempCurrentMax;
+        curMin = tempCurMin;
+        curMax = tempCurMax;
 
-        maxProduct = max(maxProduct, currentMax);
+        maxProduct = max(maxProduct, curMax);
     }
 
     return maxProduct;

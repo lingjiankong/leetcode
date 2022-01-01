@@ -45,11 +45,10 @@ public:
             return 0;
         }
 
-        // Initial target doesn't matter, you can set taret = 12345.
+        // Initial target doesn't matter, you can set target = 12345.
         // curLen will either be increased by 1 (if we pass in target = root->val),
         // or curLen will be reset to 1 (if we pass in a random number).
         int curLen = 0;
-        int target = 0;
 
         _dfs(root, curLen, root->val);
 

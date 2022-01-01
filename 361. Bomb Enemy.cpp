@@ -45,6 +45,7 @@ int maxKilledEnemies(vector<vector<char>>& grid) {
             rightToLeft[i][j] = grid[i][j] == 'E' ? val + 1 : val;
         }
     }
+
     for (int j = 0; j < n; ++j) {
         // Each column from top to bottom
         for (int i = 0; i < m; ++i) {
