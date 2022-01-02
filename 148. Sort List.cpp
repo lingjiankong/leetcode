@@ -46,21 +46,21 @@ private:
 
     ListNode* mergeTwoSortedLists(ListNode* l1, ListNode* l2) {
         ListNode dummy(0);
-        ListNode* current = &dummy;
+        ListNode* curNode = &dummy;
 
         while (l1 and l2) {
             if (l1->val < l2->val) {
-                current->next = l1;
+                curNode->next = l1;
                 l1 = l1->next;
             } else {
-                current->next = l2;
+                curNode->next = l2;
                 l2 = l2->next;
             }
 
-            current = current->next;
+            curNode = curNode->next;
         }
 
-        current->next = l1 ? l1 : l2;
+        curNode->next = l1 ? l1 : l2;
 
         return dummy.next;
     }

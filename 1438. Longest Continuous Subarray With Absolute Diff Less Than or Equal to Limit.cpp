@@ -59,9 +59,10 @@ public:
 
             while (*window.rbegin() - *window.begin() > limit) {
                 int num = nums[left++];
-                window.erase(window.lower_bound(num));
+                window.erase(window.lower_bound(num));  // don't forget lower_bound here.
             }
 
+            // window must be valid if you reach here.
             maxLen = max(maxLen, right - left);
         }
 

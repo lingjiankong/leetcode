@@ -18,7 +18,7 @@
 
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode dummy(0);
-    ListNode* current = &dummy;
+    ListNode* curNode = &dummy;
     int carry = 0;
 
     while (l1 or l2 or carry) {
@@ -38,9 +38,9 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
             sum += 1;
         }
 
-        current->next = new ListNode(sum % 10);
+        curNode->next = new ListNode(sum % 10);
         carry = sum / 10;
-        current = current->next;
+        curNode = curNode->next;
     }
 
     return dummy.next;

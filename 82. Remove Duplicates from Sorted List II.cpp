@@ -14,6 +14,8 @@
 //
 // ***
 
+// You may also use method same as 1836. Remove Duplicates From an Unsorted Linked List.
+// Much easier to remember.
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {

@@ -13,7 +13,7 @@
 //
 // Note that the question specifies that the most significant digit is at the head of the list.
 //
-// This question can be done recursively, node by node.
+// This question can be done recursively (postorder), node by node.
 // First, deal with the tail element first, +1 and see if we have carry, change the node value and returns carry.
 // If there's still carry left after the entire dfs is finished, we simply add a new 1 to the front.
 //
@@ -40,7 +40,6 @@ public:
 private:
     // Returns carry to parent node.
     int _postorder(ListNode* node) {
-
         // Returns carry 1 to right most tail node.
         if (!node) {
             return 1;

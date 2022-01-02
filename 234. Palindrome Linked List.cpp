@@ -40,10 +40,11 @@ public:
             fast = fast->next->next;
         }
 
-        // Reverse second half of the linkedlist
         // slow is now the head of second half
+        // Reverse second half of the linkedlist
         ListNode* head2 = reverse(slow);
 
+        // Test if the first half and the reversed second half are palindrome.
         while (head and head2) {
             if (head->val != head2->val) {
                 return false;
@@ -95,7 +96,7 @@ private:
         if (_left->val != right->val) {
             _ans = false;
         }
-        
+
         _left = _left->next;
     }
 

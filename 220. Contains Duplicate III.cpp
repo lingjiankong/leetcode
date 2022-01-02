@@ -25,7 +25,7 @@
 class Solution {
 public:
     bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-        set<long> window;
+        multiset<long> window;
 
         int left = 0, right = 0;
         while (right < nums.size()) {
@@ -42,10 +42,11 @@ public:
 
             while (right - left == k + 1) {
                 int num = nums[left++];
-                window.erase(num);
+                window.erase(window.lower_bound(num));
             }
         }
 
         return false;
     }
 };
+

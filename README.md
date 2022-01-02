@@ -96,12 +96,12 @@
 | 876 | Middle of the Linked List | Alpha+
 | 234 | Palindrome Linked List | Alpha+
 | 24 | Swap Nodes in Pairs | Alpha+
-| 237 | Delete Node in a Linked List | Alpha
+| 237 | Delete Node in a Linked List | Alpha+
 | 19 | Remove Nth Node From End of List | Alpha+
 | 1474 | Delete N Nodes After M Nodes of a Linked List | Alpha
 | 203 | Remove Linked List Elements | Alpha+
-| 1836 | Remove Duplicates From an Unsorted Linked List | Alpha
-| 83 | Remove Duplicates from Sorted List | Alpha
+| 1836 | Remove Duplicates From an Unsorted Linked List | Alpha+
+| 83 | Remove Duplicates from Sorted List | Alpha+
 | 82 | Remove Duplicates from Sorted List II | Bravo
 | 2 | Add Two Numbers | Alpha+
 | 445 | Add Two Numbers II | Alpha+
@@ -112,7 +112,7 @@
 | 147 | Insertion Sort List | Alpha | insertion sort
 | 148 | Sort List | Alpha+ | merge sort
 | 61 | Rotate List | Alpha+
-| 86 | Partition List | Alpha
+| 86 | Partition List | Alpha+
 | 23 | Merge k Sorted Lists | Alpha+
 | 206 | Reverse Linked List | Alpha+
 | 92 | Reverse Linked List II | Alpha
@@ -134,18 +134,18 @@
 | 220 | Contains Duplicate III | Alpha+
 | 3 | Longest Substring Without Repeating Characters | Alpha+
 | 1695 | Maximum Erasure Value | Alpha+
-| 159 | Longest Substring with At Most Two Distinct Characters | Alpha
-| 340 | Longest Substring with At Most K Distinct Characters | Alpha
+| 159 | Longest Substring with At Most Two Distinct Characters | Alpha+
+| 340 | Longest Substring with At Most K Distinct Characters | Alpha+
 | 424 | Longest Repeating Character Replacement | Alpha
 | 395 | Longest Substring with At Least K Repeating Characters | Alpha+
-| 2067 | Number of Equal Count Substrings | Alpha+
+| 2067 | Number of Equal Count Substrings | Alpha
 | 992 | Subarrays with K Different Integers | Alpha+
 | 1004 | Max Consecutive Ones III | Alpha+
-| 487 | Max Consecutive Ones II | Alpha
+| 487 | Max Consecutive Ones II | Alpha+
 | 1052 | Grumpy Bookstore Ownder | Alpha
 | 1100 | Find K-Length Substrings With No Repeated Characters | Alpha+
-| 1151 | Minimum Swaps to Group All 1's Together | Alpha
-| 1208 | Get Equal Substrings Within Budget | Alpha
+| 1151 | Minimum Swaps to Group All 1's Together | Alpha+
+| 1208 | Get Equal Substrings Within Budget | Alpha+
 | 1423 | Maximum Points You Can Obtain from Cards | Alpha+
 | 1176 | Diet Plan Performance | Alpha
 | 1456 | Maximum Number of Vowels in a Substring of Given Length | Alpha+

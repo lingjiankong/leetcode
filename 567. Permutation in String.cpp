@@ -61,8 +61,6 @@ bool checkInclusion(string s1, string s2) {
     }
 
     int left = 0, right = 0;
-    int validCount = 0;
-
     while (right < s2.size()) {
         char c = s2[right++];
         ++window[c];

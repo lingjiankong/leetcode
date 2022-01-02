@@ -23,10 +23,10 @@ public:
         while (curNode and curNode->next) {
             if (curNode->next->val == curNode->val) {
                 ListNode* toBeDeleted = curNode->next;
-                curNode->next = curNode->next->next;
+                curNode->next = curNode->next->next;  // anchor curNode, update its next ptr only
                 delete toBeDeleted;
             } else {
-                curNode = curNode->next;
+                curNode = curNode->next;  // advance curNode itself.
             }
         }
 
@@ -46,10 +46,10 @@ public:
         while (prevNode->next) {
             if (prevNode != &dummy and prevNode->val == prevNode->next->val) {
                 ListNode* toBeDeleted = prevNode->next;
-                prevNode->next = prevNode->next->next;
+                prevNode->next = prevNode->next->next;  // anchor prevNode, update its next ptr only
                 delete toBeDeleted;
             } else {
-                prevNode = prevNode->next;
+                prevNode = prevNode->next;  // advance prevNode itself.
             }
         }
 

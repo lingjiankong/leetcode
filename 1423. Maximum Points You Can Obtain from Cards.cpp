@@ -39,7 +39,7 @@
 //
 // ***
 //
-// Problem translation: Find the smallest subarray sum of length len(nums) - k
+// Problem translation: Find the minimum subarray sum of length len(nums) - k
 
 class Solution {
 public:
@@ -59,6 +59,7 @@ public:
         }
 
         // When minSum == INT_MAX, meaning k == nums.size(), in which case minSum has never been updated.
+        // The total points you have is totalSum - minSum (take all cards except those that make up minSum).
         return minSum == INT_MAX ? totalSum : totalSum - minSum;
     }
 };

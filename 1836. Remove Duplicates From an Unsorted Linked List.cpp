@@ -33,10 +33,10 @@ public:
         while (prevNode->next) {
             if (val2freq[prevNode->next->val] > 1) {
                 ListNode* toBeDeleted = prevNode->next;
-                prevNode->next = prevNode->next->next;
+                prevNode->next = prevNode->next->next;  // prevNode itself is anchored. Update its next ptr only
                 delete toBeDeleted;
             } else {
-                prevNode = prevNode->next;
+                prevNode = prevNode->next;  // advance prevNode
             }
         }
 

@@ -18,10 +18,10 @@ ListNode* removeElements(ListNode* head, int val) {
     while (prevNode->next) {
         if (prevNode->next->val == val) {
             ListNode* toBeDeleted = prevNode->next;
-            prevNode->next = prevNode->next->next;
+            prevNode->next = prevNode->next->next;  // prevNode itself is anchored. Update its next ptr only.
             delete toBeDeleted;
         } else {
-            prevNode = prevNode->next;
+            prevNode = prevNode->next;  // advance prevNode
         }
     }
 

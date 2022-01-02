@@ -29,7 +29,7 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
     }
 
     ListNode dummy(0);
-    ListNode* current = &dummy;
+    ListNode* curNode = &dummy;
 
     while (not pq.empty()) {
         ListNode* node = pq.top();
@@ -39,8 +39,8 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
             pq.push(node->next);
         }
 
-        current->next = node;
-        current = current->next;
+        curNode->next = node;
+        curNode = curNode->next;
     }
 
     return dummy.next;

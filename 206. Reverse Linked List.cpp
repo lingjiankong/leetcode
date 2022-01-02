@@ -11,8 +11,6 @@
 
 // Iterative.
 // This question is essentially asking you to reverse a linkedlist from head to nullptr.
-// If you would like to reverse from head to node target, simply change
-// "while (head != nullptr)" to "while (head != target)" (note however, linkedlist is cut in this case)
 //
 // a -> b -> c -> d -> e
 // a    b -> c -> d -> e
@@ -20,6 +18,17 @@
 // a <- b <- c    d -> e
 // a <- b <- c <- d    e
 // a <- b <- c <- d <- e
+//
+// If you would like to reverse from head to node target, simply change
+// "while (head != nullptr)" to "while (head != target)" (note however, linkedlist is cut in this case)
+//
+// For example, head = a, target = c:
+// a -> b -> c -> d -> e
+// a    b -> c -> d -> e
+// a <- b    c -> d -> e
+//
+// while (head != target) {...}
+// in the end, head will be c, prevNode will be b.
 ListNode* reverseList(ListNode* head) {
     ListNode* prevNode = nullptr;
 

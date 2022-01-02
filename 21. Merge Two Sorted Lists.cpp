@@ -12,21 +12,21 @@
 
 ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
     ListNode dummy(0);
-    ListNode* cur = &dummy;
+    ListNode* curNode = &dummy;
 
     while (l1 and l2) {
         if (l1->val < l2->val) {
-            cur->next = l1;
+            curNode->next = l1;
             l1 = l1->next;
         } else {
-            cur->next = l2;
+            curNode->next = l2;
             l2 = l2->next;
         }
 
-        cur = cur->next;
+        curNode = curNode->next;
     }
 
-    cur->next = l1 ? l1 : l2;
+    curNode->next = l1 ? l1 : l2;
 
     return dummy.next;
 }

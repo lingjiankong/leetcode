@@ -30,22 +30,22 @@ ListNode* rotateRight(ListNode* head, int k) {
     }
 
     int listLen = 1;
-    ListNode* current = head;
+    ListNode* curNode = head;
 
     // Find the length of the linked list, hook the tail element with head. Now it forms a circle.
-    while (current->next) {
+    while (curNode->next) {
         ++listLen;
-        current = current->next;
+        curNode = curNode->next;
     }
-    current->next = head;
+    curNode->next = head;
 
     // Find where the new linked list should end and disconnect that node with next.
     int m = listLen - k % listLen;
     while (m--) {
-        current = current->next;
+        curNode = curNode->next;
     }
-    ListNode* newHead = current->next;
-    current->next = nullptr;
+    ListNode* newHead = curNode->next;
+    curNode->next = nullptr;
 
     return newHead;
 }
