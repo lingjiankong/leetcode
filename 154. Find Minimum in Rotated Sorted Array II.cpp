@@ -22,7 +22,7 @@
 //
 // For these kinds of binary search problems, where there's a sorted array rotated at some unknown pivot, AND
 // there exists duplicate element in the array, the method is the same.
-// Look at the if, else if, and else loop to get the intuition.
+// Look at the if and else if loop to get the intuition.
 
 int findMin(vector<int>& nums) {
     int left = 0, right = nums.size() - 1;

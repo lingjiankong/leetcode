@@ -67,12 +67,12 @@ public:
         while (left < right) {
             long mid = left + (right - left) / 2;
 
-            long totalCoins = mid * (mid + 1) / 2;
-            if (totalCoins == n) {
+            long numCoins = mid * (mid + 1) / 2;
+            if (numCoins == n) {
                 left = mid + 1;
-            } else if (totalCoins < n) {
+            } else if (numCoins < n) {
                 left = mid + 1;
-            } else if (totalCoins > n) {
+            } else if (numCoins > n) {
                 right = mid;
             }
         }

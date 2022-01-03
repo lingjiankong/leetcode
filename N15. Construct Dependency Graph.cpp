@@ -32,12 +32,13 @@
 
 using namespace std;
 
+// Postorder traverse the grpah.
 class DFS {
 public:
     vector<string> findOrder(const vector<pair<string, string>>& dependency) {
         unordered_map<string, vector<string>> graph;
         for (const pair<string, string>& p : dependency) {
-            graph[p.first].push_back(p.second);  // p.first depends on p.second
+            graph[p.first].push_back(p.second);  // p.first -> p.second
         }
 
         vector<string> path;
@@ -58,38 +59,9 @@ private:
         for (const string& depLib : graph[curLib]) {
             dfs(depLib, graph, path, visited);
         }
+
+        // You have finished traversing curLib. Push it to path (postorder)
         path.push_back(curLib);
-    }
-};
-
-class BFS {
-public:
-    vector<string> findOrder(const vector<pair<string, string>>& dependency) {
-        unordered_map<string, vector<string>> graph;
-        for (const pair<string, string>& p : dependency) {
-            graph[p.second].push_back(p.first);  // p.second depends on p.first
-        }
-
-        queue<string> q;
-        q.push("E");
-
-        unordered_set<string> visited;
-        visited.insert("E");
-
-        vector<string> path;
-        while (not q.empty()) {
-            string cur = q.front();
-            q.pop();
-            path.push_back(cur);
-            for (const string& neigh : graph[cur]) {
-                if (not visited.count(neigh)) {
-                    q.push(neigh);
-                    visited.insert(neigh);
-                }
-            }
-        }
-
-        return path;
     }
 };
 
@@ -100,12 +72,6 @@ int main() {
     vector<string> output = dfs.findOrder(inputs);
     for (const string& lib : output) {
         cout << lib << endl;  // Expect: E B D C A
-    }
-
-    DFS bfs;
-    output = dfs.findOrder(inputs);
-    for (const string& lib : output) {
-        cout << lib << endl;  // Expect: E D B C A
     }
 
     return 0;

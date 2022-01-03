@@ -72,7 +72,9 @@ public:
                 string curCode = q.front();
                 q.pop();
 
-                if (notAllowed.count(curCode)) {  // You can also check this while you are checking visited. See N1.
+                // Check it here in case "0000" itself is not allowed.
+                // Typically, you check this while you are checking visited.
+                if (notAllowed.count(curCode)) {
                     continue;
                 }
 

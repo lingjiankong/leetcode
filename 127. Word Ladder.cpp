@@ -56,7 +56,7 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
             string word = q.front();
             q.pop();
 
-            // Found the solution
+            // Found the goal
             if (word == endWord) {
                 return level;
             }

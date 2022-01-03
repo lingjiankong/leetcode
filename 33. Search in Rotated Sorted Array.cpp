@@ -29,7 +29,7 @@
 // 1. You need to take the index of left and right
 // i.e. left and right serve as indexes, not bounds: nums[left], nums[right]
 // -> Then you should initialize left = 0 and right = nums.size() - 1 (not nums.size()), because you can't take index on
-// nums when i = nums.size(),
+// nums when i = nums.size().
 //
 // 2. You are finding an element which MIGHT NOT be in the array (which you need to return -1), OR
 // You don't know what element to find (for example, finding peak, see 852. Peak Index in a Mountain Array)

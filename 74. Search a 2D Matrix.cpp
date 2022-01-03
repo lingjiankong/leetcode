@@ -39,6 +39,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
     int right = m * n;
 
     while (left < right) {
+        // Treat 2D matrix as 1D array, mid is the candidate index for 1D array.
         int mid = left + (right - left) / 2;
         int value = matrix[mid / n][mid % n];
 

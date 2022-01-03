@@ -9,7 +9,7 @@ unordered_map<NodeT, DistT> dijkstra(unordered_map<NodeT, unordered_set<NodeT>>&
                                      unordered_map<NodeT, unordered_map<NodeT, DistT>>& weights, NodeT start) {
     struct NodeState {
         NodeT id;
-        DistT dist;  // distance from start the current node
+        DistT dist;  // distance from start to current node
     };
 
     unordered_map<NodeT, DistT> minDistTo;  // min distance from start to each node

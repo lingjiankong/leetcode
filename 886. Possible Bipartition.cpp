@@ -94,32 +94,32 @@ public:
         queue<int> q;
         vector<int> colors(n, 0);
 
-        // Traverse all nodes in the graph in case there are nodes that are not connected. 
+        // Traverse all nodes in the graph in case there are nodes that are not connected.
         for (int i = 0; i < graph.size(); ++i) {
             if (colors[i] != 0) {
-                continue; 
+                continue;
             }
 
-            q.push(i); 
-            colors[i] = 1; 
+            q.push(i);
+            colors[i] = 1;  // mark as visited with color 1
 
             while (not q.empty()) {
                 int cur = q.front();
-                q.pop(); 
+                q.pop();
                 for (int neigh : graph[cur]) {
                     if (colors[neigh] == colors[cur]) {
                         return false;
                     }
-                    
+
                     if (colors[neigh] == 0) {
-                        colors[neigh] = -colors[cur];
+                        colors[neigh] = -colors[cur];  // if unvisited, mark as visited with opposite color
                         q.push(neigh);
                     }
                 }
             }
         }
-     
-        return true; 
+
+        return true;
     }
 };
 

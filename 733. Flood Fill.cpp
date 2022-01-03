@@ -17,6 +17,10 @@ class Solution {
 public:
     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
         int m = image.size(), n = image[0].size();
+
+        // You still need visited array here because srcColor and newColor might be the same.
+        // If srcColor and newColor are guaranteed to be not the same, then you do not need visited array
+        // (in this the image itself serves as the visitied array).
         vector<vector<bool>> visited(m, vector<bool>(n, false));
 
         int srcColor = image[sr][sc];

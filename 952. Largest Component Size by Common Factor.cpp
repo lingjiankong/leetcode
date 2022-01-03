@@ -57,6 +57,7 @@ public:
             }
         }
 
+        // Cannot call uf.size() directly since uf includes elements which are not part of nums.
         map<int, int> clusterSizes;
         int maxSize = 1;
         for (int num : nums) {

@@ -51,7 +51,7 @@
 // ***
 
 // The idea is intuitive once you understand it.
-// The thinking process is the same as 847. Shortest Path VIsiting All Nodes.
+// The thinking process is the same as 847. Shortest Path Visiting All Nodes.
 // Basically, instead of treating the problem as 2D BFS (x, y), you treat it like 3D BFS (x, y, keys)
 class Solution {
 public:

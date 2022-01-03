@@ -91,7 +91,7 @@ class Solution {
 public:
     bool isBipartite(vector<vector<int>>& graph) {
         queue<int> q;
-        vector<int> colors(graph.size(), 0);
+        vector<int> colors(graph.size(), 0);  // also servers as "visited" but with three possible values (-1, 0, 1)
 
         // Traverse all nodes in the graph in case there are nodes that are not connected.
         for (int i = 0; i < graph.size(); ++i) {

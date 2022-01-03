@@ -15,7 +15,7 @@
 #include <bits/stdc++.h>
 #include <iostream>
 #include <queue>
-#include <set>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
@@ -31,6 +31,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
 
     q.push(start);
     visited[start[0]][start[1]] = true;
+
     vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
     int distance = 0;
 
@@ -71,6 +72,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
 
     q.push(start);
     visited[start[0]][start[1]] = true;
+
     vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
     int distance = 0;
 
@@ -119,12 +121,12 @@ int main() {
     return 0;
 }
 
-// 2. Bidirectional BFS. Comapre with 752. Open the Lock
+// 2. Bidirectional BFS. See 752. Open the Lock for detailed explanation.
 int minDistance(const vector<int>& start, const vector<int>& goal, const vector<vector<char>>& grid) {
-    set<vector<int>> q1;
+    unordered_set<vector<int>> q1;
     q1.insert(start);
 
-    set<vector<int>> q2;
+    unordered_set<vector<int>> q2;
     q2.insert(goal);
 
     int m = grid.size();
@@ -139,7 +141,7 @@ int minDistance(const vector<int>& start, const vector<int>& goal, const vector<
             swap(q1, q2);
         }
 
-        set<vector<int>> temp;
+        unordered_set<vector<int>> temp;
 
         for (vector<int>& cell : q1) {
             if (q2.count(cell)) {

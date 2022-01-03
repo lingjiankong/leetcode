@@ -120,6 +120,70 @@
 | 707 | Designed Linked List | Bravo
 | 1290 | Convert Binary Number in a Linked List to Integer | Alpha
 
+## Graph
+| ID | Name | Rating | Note
+|:---:|:---:|:---:|:---:|
+| N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
+| N2 | Shortest Path Between Two Points in a Matrix | Alpha+ | BFS
+| N3 | Unique Paths from Top Left to Bottom Right | Alpha+ | BFS
+| 127 | Word Ladder | Alpha+ | BFS
+| 126 | Word Ladder II | Hard, BFS
+| 752 | Open the Lock | Alpha+ | BFS
+| 542 | 01 Matrix | Alpha+ | BFS
+| 934 | Shortest Bridge | Alpha+ | BFS
+| 433 | Minimum Genetic Mutation | Alpha+ | BFS
+| 815 | Bus Routes | Alpha+ | BFS
+| 111 | Minimum Depth of Binary Tree | Alpha+ | postorder, BFS
+| 773 | Sliding Puzzle | Alpha+
+| 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
+| 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS, mechanical
+| 847 | Shortest Path Visiting All Nodes | Alpha | multidimensional BFS
+| 864 | Shortest Path to Get All Keys | Alpha+ | multidimensional BFS
+| 207 | Course Schedule | Alpha+ | topological sort
+| N15 | Construct Dependency Graph | Alpha+ | I.Q., graph traversal, postorder
+| 210 | Course Schedule II | Alpha+ | topological sort, postorder
+| 802 | Find Eventual Safe States | Alpha+ | topological sort
+| 785 | Is Graph Bipartite | Alpha+ | bipartition, coloring
+| 886 | Possible Bipartition | Alpha+ | bipartition, coloring
+| 1042 | Flower Planting With No Adjacent | Alpha+ | coloring, greedy
+| 133 | Clone Graph | Alpha+ | clone
+| 1490 | Clone N-ary Tree | Alpha | clone
+| 138 | Copy List with Random Pointer | Alpha | clone
+| 1485 | Clone Binary Tree With Random Pointer | Alpha | clone
+| 797 | All Paths From Source to Target | Alpha+ | graph traversal
+| 399 | Evaluate Division | Alpha+ | graph traversal
+| N5 | Union Find | Alpha+ | union find
+| 990 | Satisfiability of Equality Equations | Alpha+ | union find
+| 261 | Graph Valid Tree | Alpha+ | union find
+| 305 | Number of Islands II | Alpha+ | union find
+| 323 | Number of Connected Components in an Undirected Graph | Alpha+ | union find
+| 547 | Number of Provinces | Alpha+ | union find
+| 684 | Redundant Connection | Alpha+ | union find
+| 721 | Accounts Merge | Bravo | union find
+| 200 | Number of Islands | Alpha+ | DFS, union find
+| 733 | Flood Fill | Alpha+ | DFS
+| 1905 | Count Sub Islands | Alpha+ | DFS
+| 695 | Max Area of Island | Alpha+ | DFS, union find
+| 694 | Number of Distinct Islands | Alpha+ | DFS
+| 463 | Island Perimeter | Alpha
+| 827 | Making a Large Island | Alpha+ | DFS, union find
+| 1162 | As Far from Land as Possible | Alpha+ | BFS
+| 841 | Keys and Rooms | Alpha+ | DFS
+| 1202 | Smallest String With Swaps | Alpha | union find
+| 839 | Similar String Groups | Alpha | union find
+| 952 | Largest Component Size by Common Factor | Alpha+ | union find
+| 737 | Sentence Similarity II | Alpha+ | union find
+| 1319 | Number of Operations to Make Network Connected | Alpha+ | union find
+| 959 | Regions Cut By Slashes | Alpha+ | union find
+| 997 | Find the Town Judge | Alpha+
+| N6 | Dijkstra | Alpha+ | Dijkstra
+| 743 | Network Delay Time | Alpha+ | Dijkstra
+| 787 | Cheapest Flights Within K Stops | Alpha+ | Dijkstra
+| 1631 | Path With Minimum Effort | Alpha | Dijkstra
+| 1514 | Path with Maximum Probability | Alpha | Dijkstra
+| 1334 | Find the City With the Smallest Number of Neighbors at a Threshold Distance | Alpha | Dijkstra
+| 332 | Reconstruct Itinerary | Charlie
+
 ## Sliding window
 | ID | Name | Rating | Note
 |:---:|:---:|:---:|:---:|
@@ -157,7 +221,7 @@
 | 35 | Search Insert Position | Alpha+
 | 704 | Binary Search | Alpha+
 | 1150 | Check If a Number Is Majority Element in a Sorted Array | Alpha+
-| 475 | Heaters | Alpha+
+| 475 | Heaters | Alpha
 | 441 | Arranging Coins | Alpha+
 | 367 | Valid Perfect Square | Alpha+
 | 69 | Sqrt(x) | Alpha+
@@ -180,7 +244,7 @@
 | 4 | Median of Two Sorted Arrays | Alpha | mechanical
 | 274 | H-Index | Alpha | See 275
 | 275 | H-Index II | Alpha
-| 278 | First Bad Version | Alpha
+| 278 | First Bad Version | Alpha+
 | 875 | Koko Eating Bananas | Alpha+ | koko-eat-bananas
 | 1011 | Capacity To Ship Packages Within D Days | Alpha+ | koko-eat-bananas
 | 1891 | Cutting Ribbons | Alpha+ | koko-eat-bananas
@@ -240,70 +304,6 @@
 | 842 | Split Array into Fibonacci Sequence | Alpha+
 | 131 | Palindrome Partitioning | Alpha+
 | 282 | Expression Add Operators | Alpha
-
-## Graph
-| ID | Name | Rating | Note
-|:---:|:---:|:---:|:---:|
-| N1 | Minimum Distance Between Two Points in a Matrix | Alpha+ | BFS
-| N2 | Shortest Path Between Two Points in a Matrix | Alpha+ | BFS
-| N3 | Unique Paths from Top Left to Bottom Right | Alpha+ | BFS
-| 127 | Word Ladder | Alpha+ | BFS
-| 126 | Word Ladder II | Hard, BFS
-| 752 | Open the Lock | Alpha+ | BFS
-| 542 | 01 Matrix | Alpha+ | BFS
-| 934 | Shortest Bridge | Alpha | BFS
-| 433 | Minimum Genetic Mutation | Alpha+ | BFS
-| 815 | Bus Routes | Alpha+ | BFS
-| 111 | Minimum Depth of Binary Tree | Alpha+ | postorder, BFS
-| 773 | Sliding Puzzle | Alpha+
-| 863 | All Nodes Distance K in Binary Tree | Alpha+ | BFS
-| 1129 | Shortest Path with Alternating Colors | Alpha+ | BFS, mechanical
-| 847 | Shortest Path Visiting All Nodes | Alpha | multidimensional BFS
-| 864 | Shortest Path to Get All Keys | Alpha+ | multidimensional BFS
-| 207 | Course Schedule | Alpha+ | topological sort
-| 210 | Course Schedule II | Alpha+ | topological sort
-| 802 | Find Eventual Safe States | Alpha | topological sort
-| 133 | Clone Graph | Alpha+ | clone
-| 1490 | Clone N-ary Tree | Alpha | clone
-| 138 | Copy List with Random Pointer | Alpha | clone
-| 1485 | Clone Binary Tree With Random Pointer | Alpha | clone
-| 797 | All Paths From Source to Target | Alpha+ | graph traversal
-| 399 | Evaluate Division | Alpha+ | graph traversal
-| N15 | Construct Dependency Graph | Alpha+ | I.Q., graph traversal
-| N5 | Union Find | Alpha+ | union find
-| 990 | Satisfiability of Equality Equations | Alpha+ | union find
-| 261 | Graph Valid Tree | Alpha+ | union find
-| 305 | Number of Islands II | Alpha+ | union find
-| 323 | Number of Connected Components in an Undirected Graph | Alpha+ | union find
-| 547 | Number of Provinces | Alpha+ | union find
-| 684 | Redundant Connection | Alpha+ | union find
-| 721 | Accounts Merge | Bravo | union find
-| 200 | Number of Islands | Alpha+ | DFS, union find
-| 733 | Flood Fill | Alpha+ | DFS
-| 1905 | Count Sub Islands | Alpha | DFS
-| 695 | Max Area of Island | Alpha+ | DFS, union find
-| 694 | Number of Distinct Islands | Alpha+ | DFS
-| 463 | Island Perimeter | Alpha
-| 827 | Making a Large Island | Alpha+ | DFS, union find
-| 1162 | As Far from Land as Possible | Alpha | BFS
-| 841 | Keys and Rooms | Alpha+ | DFS
-| 1202 | Smallest String With Swaps | Alpha | union find
-| 839 | Similar String Groups | Alpha | union find
-| 952 | Largest Component Size by Common Factor | Alpha+ | union find
-| 737 | Sentence Similarity II | Alpha+ | union find
-| 1319 | Number of Operations to Make Network Connected | Alpha+ | union find
-| 959 | Regions Cut By Slashes | Alpha | union find
-| 785 | Is Graph Bipartite | Alpha+ | bipartition, coloring
-| 886 | Possible Bipartition | Alpha+ | bipartition, coloring
-| 1042 | Flower Planting With No Adjacent | Alpha | coloring, greedy
-| 997 | Find the Town Judge | Alpha+
-| N6 | Dijkstra | Alpha+ | Dijkstra
-| 743 | Network Delay Time | Alpha+ | Dijkstra
-| 787 | Cheapest Flights Within K Stops | Alpha+ | Dijkstra
-| 1631 | Path With Minimum Effort | Alpha | Dijkstra
-| 1514 | Path with Maximum Probability | Alpha | Dijkstra
-| 1334 | Find the City With the Smallest Number of Neighbors at a Threshold Distance | Alpha | Dijkstra
-| 332 | Reconstruct Itinerary | Charlie
 
 ## Two Sum Series
 | ID | Name | Rating | Note

@@ -60,7 +60,7 @@ public:
 
         //  _map[key].upper_bound(timestamp) gives you first timestamp > target timestamp.
         //  Since we are told that all timestamps are unique.
-        //  prev(itr) must be the first timestamp <= target timestamp.
+        //  prev(itr) must be the last timestamp <= target timestamp.
         return prev(itr)->second;
     }
 

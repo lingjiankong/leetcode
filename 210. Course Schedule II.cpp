@@ -31,7 +31,7 @@ public:
         // Construct the graph
         vector<vector<int>> graph(numCourses);
         for (vector<int>& course : prerequisites) {
-            graph[course[1]].push_back(course[0]);
+            graph[course[1]].push_back(course[0]);  // course[1] -> course[0]
         }
 
         // Initialize the initial states for all courses to be UNVISITED.

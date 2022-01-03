@@ -41,7 +41,7 @@ bool isPerfectSquare(long num) {
             left = mid + 1;
         } else if (mid * mid < num) {
             left = mid + 1;
-        } else {
+        } else if (mid * mid > num) {
             right = mid;
         }
     }

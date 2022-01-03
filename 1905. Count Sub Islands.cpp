@@ -35,6 +35,8 @@
 //
 // ***
 
+// Count the number of islands in grid2. While counting islands, see if grid1 is 1 for every cell for that island in
+// grid2. If so, we found a subisland.
 class Solution {
 public:
     int countSubIslands(vector<vector<int>>& grid1, vector<vector<int>>& grid2) {
@@ -45,10 +47,10 @@ public:
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (grid2[i][j] == 1 and not visited[i][j]) {
-                    bool valid = true;
-                    _dfs(i, j, valid, visited, grid1, grid2);
+                    bool isSubIsland = true;
+                    _dfs(i, j, isSubIsland, visited, grid1, grid2);
 
-                    if (valid) {
+                    if (isSubIsland) {
                         ++count;
                     }
                 }
@@ -59,7 +61,7 @@ public:
     }
 
 private:
-    void _dfs(int i, int j, bool& valid, vector<vector<bool>>& visited, vector<vector<int>>& grid1,
+    void _dfs(int i, int j, bool& isSubIsland, vector<vector<bool>>& visited, vector<vector<int>>& grid1,
               vector<vector<int>>& grid2) {
         if (i < 0 or j < 0 or i >= grid2.size() or j >= grid2[0].size() or grid2[i][j] != 1 or visited[i][j]) {
             return;
@@ -68,12 +70,12 @@ private:
         visited[i][j] = true;
 
         if (grid1[i][j] != 1) {
-            valid = false;
+            isSubIsland = false;
         }
 
         for (vector<int>& dir : _dirs) {
             int neighX = i + dir[0], neighY = j + dir[1];
-            _dfs(neighX, neighY, valid, visited, grid1, grid2);
+            _dfs(neighX, neighY, isSubIsland, visited, grid1, grid2);
         }
     }
 

@@ -53,7 +53,7 @@ public:
     bool equationsPossible(vector<string>& equations) {
         UnionFind<char> uf;
 
-        for (string eq : equations) {
+        for (string& eq : equations) {
             uf.add(eq[0]);
             uf.add(eq[3]);
             if (eq[1] == '=') {

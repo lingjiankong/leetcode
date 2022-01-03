@@ -26,38 +26,6 @@
 //
 // ***
 
-// Union-find
-class Solution {
-public:
-    int numIslands(vector<vector<char>>& grid) {
-        int m = grid.size(), n = grid[0].size();
-
-        UnionFind<string> uf;
-
-        vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < n; ++j) {
-                if (grid[i][j] == '1') {
-                    string curPos = to_string(i) + "," + to_string(j);
-                    uf.add(curPos);
-                    for (vector<int>& dir : dirs) {
-                        int neighX = i + dir[0], neighY = j + dir[1];
-                        if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and grid[neighX][neighY] == '1') {
-                            string neighPos = to_string(neighX) + "," + to_string(neighY);
-                            if (uf.has(neighPos)) {
-                                uf.connect(curPos, neighPos);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return uf.numClusters();
-    }
-};
-
-
 // DFS
 class Solution {
 public:
@@ -98,7 +66,6 @@ private:
     vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };
 
-
 // Same idea (DFS), "visited" at different position.
 class Solution {
 public:
@@ -137,3 +104,35 @@ private:
 
     vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 };
+
+// Union-find
+class Solution {
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        int m = grid.size(), n = grid[0].size();
+
+        UnionFind<string> uf;
+
+        vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] == '1') {
+                    string curPos = to_string(i) + "," + to_string(j);
+                    uf.add(curPos);
+                    for (vector<int>& dir : dirs) {
+                        int neighX = i + dir[0], neighY = j + dir[1];
+                        if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and grid[neighX][neighY] == '1') {
+                            string neighPos = to_string(neighX) + "," + to_string(neighY);
+                            if (uf.has(neighPos)) {
+                                uf.connect(curPos, neighPos);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return uf.numClusters();
+    }
+};
+

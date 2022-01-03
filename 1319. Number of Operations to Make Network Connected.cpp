@@ -56,18 +56,18 @@ public:
             uf.add(i);
         }
 
-        int redundant_cables = 0;
+        int redundantCables = 0;
         for (vector<int>& conn : connections) {
             int p = conn[0], q = conn[1];
             if (uf.findRoot(p) == uf.findRoot(q)) {
-                ++redundant_cables;
+                ++redundantCables;
             }
 
             uf.connect(p, q);
         }
 
         // uf.numClusters() - 1 connections are needed to connect all computers
-        return redundant_cables >= uf.numClusters() - 1 ? uf.numClusters() - 1 : -1;
+        return redundantCables >= uf.numClusters() - 1 ? uf.numClusters() - 1 : -1;
     }
 };
 

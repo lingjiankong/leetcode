@@ -24,7 +24,7 @@ public:
     int triangleNumber(vector<int>& nums) {
         int numTriangles = 0;
         sort(nums.begin(), nums.end());
-        for (int i = 0; i < nums.size(); ++i) {
+        for (int i = 0; i < nums.size() - 1; ++i) {
             for (int j = i + 1; j < nums.size(); ++j) {
                 // As long as target is less than nums[i] + nums[j] (target needs to be non zeros, of course),
                 // we can form a valid triangle.

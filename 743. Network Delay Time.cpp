@@ -64,7 +64,7 @@ public:
     }
 };
 
-// Bellman-Ford. Understand Dijkstra solution is sufficient.
+// Bellman-Ford. No need to read. Understand Dijkstra solution is sufficient.
 class Solution {
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {

@@ -88,14 +88,13 @@ private:
         // Traverse the neighbor of A
         for (auto& e : graph[A]) {
             string C = e.first;
-            double A_C = e.second;  // i.e., A / C = graph[A][C];
 
             if (not visited.count(C)) {
-                visited.insert(A);
+                visited.insert(C);
 
                 // A / B = A / C * C / B
-                // We already know A / C = graph[A][C], we need the value of C_B = C / B
-                double C_B = devide(C, B, graph, visited);
+                double A_C = graph[A][C];                   // A / C = graph[A][C];
+                double C_B = devide(C, B, graph, visited);  // C / B
                 if (C_B != -1) {
                     return A_C * C_B;
                 }

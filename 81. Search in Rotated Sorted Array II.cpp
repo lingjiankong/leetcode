@@ -39,7 +39,7 @@ bool search(vector<int>& nums, int target) {
                 right = mid;
             }
         }
-        // Left half is not sorted.
+        // Left half is sorted.
         else if (nums[mid] > nums[right]) {
             // Target is in the sorted left half of the array.
             if (nums[left] <= target and target < nums[mid]) {

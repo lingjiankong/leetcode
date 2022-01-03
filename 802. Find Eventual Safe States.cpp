@@ -23,7 +23,7 @@ public:
         vector<int> ans;
         vector<State> states(graph.size(), UNVISITED);
         for (int i = 0; i < graph.size(); ++i) {
-            if (dfs(i, states, graph) == SAFE) {
+            if (dfs(i, states, graph) == NO_CYCLE) {
                 ans.push_back(i);
             }
         }
@@ -32,25 +32,26 @@ public:
     }
 
 private:
-    // VISITED is split into UNSAFE and SAFE.
-    enum State { UNVISITED, VISITING, UNSAFE, SAFE };
+    // VISITED is split into HAS_CYCLE and NO_CYCLE.
+    enum State { UNVISITED, VISITING, HAS_CYCLE, NO_CYCLE };
 
     State dfs(int curNode, vector<State>& states, const vector<vector<int>>& graph) {
         if (states[curNode] == VISITING) {  // has cycle
-            return states[curNode] = UNSAFE;
+            return states[curNode] = HAS_CYCLE;
         }
 
-        if (states[curNode] == SAFE or states[curNode] == UNSAFE) {
+        if (states[curNode] == NO_CYCLE or states[curNode] == HAS_CYCLE) {
             return states[curNode];
         }
 
         states[curNode] = VISITING;
         for (int neighNode : graph[curNode]) {
-            if (dfs(neighNode, states, graph) == UNSAFE) {
-                return states[curNode] = UNSAFE;
+            // if any of the neighNode is HAS_CYCLE, then curNode is HAS_CYCLE.
+            if (dfs(neighNode, states, graph) == HAS_CYCLE) {
+                return states[curNode] = HAS_CYCLE;
             }
         }
-        return states[curNode] = SAFE;
+        return states[curNode] = NO_CYCLE;
     }
 };
 

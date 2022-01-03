@@ -36,14 +36,14 @@
 // ***
 
 // Typical topological sort.
-// This question is the same as asking us to detect whether there's loop in a graph.
+// This question is the same as asking us to detect whether there's loop (circular dependency) in a graph.
 class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         // Construct the graph
         vector<vector<int>> graph(numCourses);
         for (vector<int>& course : prerequisites) {
-            graph[course[1]].push_back(course[0]);
+            graph[course[1]].push_back(course[0]);  // course[1] -> course[0]
         }
 
         // Initialize the initial states for all courses to be UNVISITED.
@@ -70,7 +70,7 @@ private:
             return false;
         }
 
-        // Neither VISITING nor VISITED. This course is unvisited.
+        // Neither VISITING nor VISITED. This course is unvisited. Traverse it.
         states[curCourse] = State::VISITING;
         for (int course : graph[curCourse]) {
             if (hasCycle(course, states, graph)) {

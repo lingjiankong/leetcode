@@ -18,7 +18,7 @@
 // 10000
 // 00001
 // 11011
-// Given the above grid map, return 3.  //
+// Given the above grid map, return 3.
 // Notice that:
 // 11
 // 1
@@ -31,7 +31,7 @@
 // ***
 //
 // During dfs of each island, maintain a string of the coordinates and push_back every (x - x0, y - y0) to it,
-// where x0, y0 is the initial position when dfs starts (for all islands which are the same, dfs will start at the same
+// where x0, y0 is the initial position when dfs starts (for all islands that are the same, dfs will start at the same
 // relative position). This offset i.e. (x - x0, y - y0) is needed so all islands with same shape will have the same
 // string of coordinates. Finally, insert the string of coordinates to an unordered_set and its size is the number of
 // distinct islands.
