@@ -64,8 +64,7 @@ private:
             maxLen = max(maxLen, curLen);
         }
 
-        _cache[x][y] = maxLen;
-        return maxLen;
+        return _cache[x][y] = maxLen;
     }
 
     vector<vector<int>> _dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};

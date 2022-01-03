@@ -67,11 +67,11 @@ private:
             return;
         }
 
-        // Number has one child tree
-        // Letter has two child trees
+        // A number has one child tree
+        // A letter has two child trees
         _dfs(s, startIndex + 1, all);
 
-        // Additional child tree of the letter.
+        // Additional child tree of letter.
         if (isalpha(s[startIndex])) {
             s[startIndex] ^= (1 << 5);
             _dfs(s, startIndex + 1, all);

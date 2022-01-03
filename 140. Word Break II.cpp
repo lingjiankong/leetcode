@@ -56,6 +56,8 @@
 // wordBreak("")
 // = {""}
 
+// Compare to 139. Word Break, this question is looking for all such possible sequences.
+// in 139. Word Break you just need to return true / false.
 class Solution {
 public:
     // Returns all sentences (in terms of vector<string>) that can be formed be string s.

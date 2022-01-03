@@ -36,8 +36,9 @@ private:
             return;
         }
 
-        for (int num = startNum; num <= 9; ++num) {
-            if (num > n) {  // don't forget to trim the tree
+        for (int num = startNum; num <= 9; ++num) {  // must use unique numbers, num starts from startNum
+            // don't forget to trim the tree
+            if (num > n) {
                 break;
             }
 

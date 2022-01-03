@@ -25,7 +25,12 @@
 //
 // ***
 
-// This is a 0-1 knapsack problem. See N4. 0-1 Knapsack.
+
+// Backtracking: Can be solved using the same method as
+// 698. Partition to K Equal Sum Subsets (will TLE but should be correct)
+
+
+// Can also be solved via 0-1 knapsack. See N4. 0-1 Knapsack.
 //
 // You want to find whether you can place nums into a knapsack of capacity sum / 2,
 // so that a subset of nums has exactly capacity w.

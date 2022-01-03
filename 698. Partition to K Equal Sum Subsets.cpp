@@ -39,15 +39,15 @@ public:
 
 private:
     bool _backtrack(vector<int>& nums, int k, int target, int startIndex, int curSum, vector<bool>& visited) {
-        // We have found k times such that curSum == target (that's why k can eventually become 0),
-        // meaning nums can be devided into k non-empty subsets (target * k = sum)
+        // If we have found k times such that curSum == target (that's why k can eventually become 0),
+        // then it means nums can be devided into k non-empty subsets (target * k = sum)
         // Note we've already tested that sum % k == 0 and set sum / k == target.
         if (k == 0) {
             return true;
         }
 
         if (curSum == target) {
-            return _backtrack(nums, k - 1, target, 0, 0, visited);  // reset startIndex to 0.
+            return _backtrack(nums, k - 1, target, 0, 0, visited);  // reset startIndex to 0, reset curSum to 0.
         }
 
         for (int i = startIndex; i < nums.size(); ++i) {

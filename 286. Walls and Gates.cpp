@@ -26,6 +26,7 @@
 //
 //  ***
 
+// BFS
 class Solution {
 public:
     void wallsAndGates(vector<vector<int>>& rooms) {
@@ -33,29 +34,44 @@ public:
             return;
         }
 
+        int m = rooms.size(), n = rooms[0].size();
+
+        queue<vector<int>> q;  // {x, y, distance}
+        vector<vector<bool>> visited(m, vector<bool>(n, false));
+
+        // Push all gates to queue.
         for (int i = 0; i < rooms.size(); ++i) {
             for (int j = 0; j < rooms[0].size(); ++j) {
                 if (rooms[i][j] == 0) {
-                    int distance = 0;
-                    _dfs(i, j, distance, rooms);  // DFS from each gate.
+                    q.push({i, j, 0});
+                    visited[i][j] = true;
                 }
             }
         }
-    }
 
-private:
-    void _dfs(int i, int j, int distance, vector<vector<int>>& rooms) {
-        // When rooms[i][j] < distance, either the cell is an obstacle, a gate,
-        // or it is an empty room but we have already found a gate distance that is smaller than current distance.
-        if (i < 0 || j < 0 || i >= rooms.size() || j >= rooms[0].size() || rooms[i][j] < distance) {
-            return;
+        vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+        while (not q.empty()) {
+            int qSize = q.size();
+            while (qSize--) {
+                vector<int> cur = q.front();
+                q.pop();
+
+                int i = cur[0], j = cur[1];
+                for (vector<int>& dir : dirs) {
+                    int neighX = i + dir[0], neighY = j + dir[1];
+                    if (0 <= neighX and neighX < m and 0 <= neighY and neighY < n and not visited[neighX][neighY] and
+                        rooms[neighX][neighY] != -1) {
+                        int dist = rooms[i][j] + 1;
+
+                        if (rooms[neighX][neighY] == INT_MAX) {  // update empty room with distance
+                            rooms[neighX][neighY] = dist;
+                        }
+
+                        visited[neighX][neighY] = true;
+                        q.push({neighX, neighY, dist});
+                    }
+                }
+            }
         }
-
-        rooms[i][j] = distance;
-
-        _dfs(i + 1, j, distance + 1, rooms);
-        _dfs(i - 1, j, distance + 1, rooms);
-        _dfs(i, j + 1, distance + 1, rooms);
-        _dfs(i, j - 1, distance + 1, rooms);
     }
 };

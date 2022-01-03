@@ -130,6 +130,7 @@
 | 126 | Word Ladder II | Hard, BFS
 | 752 | Open the Lock | Alpha+ | BFS
 | 542 | 01 Matrix | Alpha+ | BFS
+| 286 | Walls and Gates | Alpha+ | BFS
 | 934 | Shortest Bridge | Alpha+ | BFS
 | 433 | Minimum Genetic Mutation | Alpha+ | BFS
 | 815 | Bus Routes | Alpha+ | BFS
@@ -168,6 +169,7 @@
 | 463 | Island Perimeter | Alpha
 | 827 | Making a Large Island | Alpha+ | DFS, union find
 | 1162 | As Far from Land as Possible | Alpha+ | BFS
+| 130 | Surrounded Regions | Alpha
 | 841 | Keys and Rooms | Alpha+ | DFS
 | 1202 | Smallest String With Swaps | Alpha | union find
 | 839 | Similar String Groups | Alpha | union find
@@ -183,6 +185,11 @@
 | 1514 | Path with Maximum Probability | Alpha | Dijkstra
 | 1334 | Find the City With the Smallest Number of Neighbors at a Threshold Distance | Alpha | Dijkstra
 | 332 | Reconstruct Itinerary | Charlie
+| 79 | Word Search | Alpha+
+| 212 | Word Search II | Alpha | Trie, DFS
+| 329 | Longest Increasing Path in a Matrix | Alpha+ | DFS
+| 489 | Robot Room Cleaner | Alpha+
+| N11 | Shortest Path Given Robot API | Alpha+
 
 ## Sliding window
 | ID | Name | Rating | Note
@@ -268,7 +275,7 @@
 |:---:|:---:|:---:|:---:|
 | 46 | Permutations | Alpha+
 | 47 | Permutations II | Alpha+
-| 996 | Number of Squareful Arrays | Alpha
+| 996 | Number of Squareful Arrays | Alpha+
 | 77 | Combinations | Alpha+
 | 78 | Subsets | Alpha+
 | 491 | Increasing Subsequence | Alpha+
@@ -279,25 +286,14 @@
 | 377 | Combination Sum IV | Charlie
 | 254 | Factor Combinations | Alpha+
 | 17 | Letter Combinations of a Phone Number | Alpha+
-| 79 | Word Search | Alpha+
-| 212 | Word Search II | Alpha | Trie, DFS
-| 329 | Longest Increasing Path in a Matrix | Alpha+ | DFS
-| 489 | Robot Room Cleaner | Alpha
-| N11 | Shortest Path Given Robot API | Alpha
-| 286 | Walls and Gates | Alpha+
-| 130 | Surrounded Regions | Alpha
-| 200 | Number of Islands | Alpha+ | DFS, union find
-| 733 | Flood Fill | Alpha+ | DFS
-| 695 | Max Area of Island | Alpha+ | DFS, union find
-| 827 | Making a Large Island | Alpha+ | DFS, union find
 | 51 | N-Queens | Alpha+
-| 52 | N-Queens II | Alpha
+| 52 | N-Queens II | Alpha+ | See 51 N-Queens
 | 37 | Sudoku Solver | Alpha+
 | 22 | Generate Parentheses | Alpha+
 | 241 | Different Ways to Add Parentheses | Alpha+
 | 139 | Word Break | Alpha+ | DFS, dynamic programming
-| 140 | Word Break II | Alpha+
-| 267 | Palindrome Permutation II | Alpha
+| 140 | Word Break II | Alpha
+| 267 | Palindrome Permutation II | Alpha+
 | 784 | Letter Case Permutation | Alpha+ | DFS
 | 698 | Partition to K Equal Sum Subsets | Alpha+
 | 93 | Restore IP Addresses | Alpha+

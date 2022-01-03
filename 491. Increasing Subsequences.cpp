@@ -19,7 +19,8 @@
 //
 // You cannot eliminate duplicate elements by sorting the array and doing what you did in 90. Subsets II.
 // The array sequence in this problem must be fixed because you are finding increasing subsequences within it.
-// You cannot alter the array. Therefore, "set<vector<int>> all" instead of "vector<vector<int>> all".
+// Use "set<vector<int>> all" instead of "vector<vector<int>> all" to remove duplicates
+// (can't use unordered_set since vector<int> is not hashable)
 
 class Solution {
 public:

@@ -7,15 +7,18 @@
 // Return s after reversing it.
 //
 //
-//
 // Example 1:
 //
 // Input: s = "ab-cd"
 // Output: "dc-ba"
+//
+//
 // Example 2:
 //
 // Input: s = "a-bC-dEf-ghIj"
 // Output: "j-Ih-gfE-dCba"
+//
+//
 // Example 3:
 //
 // Input: s = "Test1ng-Leet=code-Q!"

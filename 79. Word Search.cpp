@@ -49,8 +49,7 @@ private:
             return true;
         }
 
-        int m = board.size(), n = board[0].size();
-        if (i < 0 || j < 0 || i >= m || j >= n || visited[i][j] || board[i][j] != word[pos]) {
+        if (i < 0 || j < 0 || i >= board.size() || j >= board[0].size() || visited[i][j] || board[i][j] != word[pos]) {
             return false;
         }
 

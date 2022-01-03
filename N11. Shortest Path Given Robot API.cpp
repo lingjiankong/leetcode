@@ -19,7 +19,11 @@ The robot needs to move into the desired position.
 */
 
 // Note: the answer has not been validated. I think this is correct.
+//
+// the Robot class is defined by the interviewee.
+// This class is helpful to track the robot state (x, y, heading).
 struct Robot {
+    // assume the following four functions are given.
     bool frontClear();
     bool rightClear();
     bool leftClear();
@@ -60,6 +64,7 @@ struct Robot {
 
     string xy() { return to_string(x) + "," + to_string(y); }
 
+    // Current state of the robot.
     int heading;  // 0 up, 1 right, 2 down, 3 left
     int x;
     int y;
