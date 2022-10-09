@@ -1,6 +1,6 @@
 // ***
 //
-// Given a string s , find the length of the longest substring t that contains at most 2 distinct characters.
+// Given a string s, find the length of the longest substring t that contains at most 2 distinct characters.
 //
 // Example 1:
 //
@@ -42,4 +42,3 @@ public:
         return maxLen;
     }
 };
-

@@ -32,16 +32,16 @@ struct Robot {
     void moveForward() {
         switch (heading) {
             case 0:
-                --x;
-                break;
-            case 1:
                 ++y;
                 break;
-            case 2:
+            case 1:
                 ++x;
                 break;
-            case 3:
+            case 2:
                 --y;
+                break;
+            case 3:
+                --x;
                 break;
         }
     }
@@ -128,6 +128,7 @@ int shortestPath(Robot& robot, int xGoal, int yGoal) {
                 }
             }
         }
+        ++steps;
     }
 
     return -1;

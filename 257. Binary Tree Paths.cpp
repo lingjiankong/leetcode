@@ -39,7 +39,7 @@ public:
 
 private:
     void _dfs(TreeNode* node, string cur, vector<string>& all) {
-        // Learning: In tree problems, we generally need to check whether the node we are instereted in right now is a
+        // Learning: In tree problems, we generally need to check whether the node we are intereted in right now is a
         // nullptr i.e. check if (!node) { return; }. However, in the case when we have already performed check for
         // nullptrs during recursion for subtrees (i.e. if (node->left) and if (node->right)), checking if (!node) is no
         // longer necessary

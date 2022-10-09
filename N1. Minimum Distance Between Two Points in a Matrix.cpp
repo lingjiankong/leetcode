@@ -200,3 +200,136 @@ void minDistance(const vector<int>& start, const vector<vector<char>>& grid) {
         }
     }
 }
+
+// For interviewing others:
+
+// Template:
+
+// ***
+//
+// Given a 2D grid of size m by n, find the shortest path from upper left cell to every other cell.
+// You can only move up, down, left and right. If a cell is unreachable, return INT_MAX.
+//
+// 0 represents free cell;
+// 1 represents obstacle that you cannot cross;
+//
+// Example:
+// Input:
+// {
+//     {0, 1, 0, 0},
+//     {0, 0, 1, 0},
+//     {1, 0, 0, 0},
+//     {0, 1, 0, 0}
+// };
+//
+// Output:
+// {
+//     {0, X, 8, 7},
+//     {1, 2, X, 6},
+//     {X, 3, 4, 5},
+//     {X, X, 5, 6}
+// }
+// (where X represents unreachable cell (you can use INT_MAX))
+//
+// ***
+
+#include <vector>
+#include <iostream>
+
+std::vector<std::vector<int>> shortestPathFromUpperLeftCellToEveryCell(const std::vector<std::vector<int>>& grid) {
+    // You code goes here.
+}
+
+// To test your code.
+int main() {
+    std::vector<std::vector<int>> grid = {
+        {0, 1, 0, 0},
+        {0, 0, 1, 0},
+        {1, 0, 0, 0},
+        {0, 1, 0, 0}
+    };
+
+    const std::vector<std::vector<int>> min_distance = shortestPathFromUpperLeftCellToEveryCell(grid);
+
+    for (int i = 0; i < min_distance.size(); ++i) {
+      for (int j = 0; j < min_distance[0].size(); ++j) {
+        std::cout << min_distance[i][j] << ", ";
+      }
+      std::cout << std::endl;
+    }
+
+    return 0;
+}
+
+// Bonus questions:
+// (You do not need to write any code for the bonus questions. Verbally communicate your thought process is sufficient)
+// 1. If your task is to find the shortest distance from upper left cell to lower right cell only,
+//    (no need to calculate the shortest distance to other cells)
+//    how would you change your appraoch? How can you speed it up?
+// 2. What method would you use to calculate all UNIQUE PATHS from upper left cell to lower right cell?
+// 3. If there's different costs associated with traveling from one cell to another,
+//    (i.e., the distance between horizontally and vertically adjacent cells is no longer 1,
+//     but can be any positive integer), how would you approach this problem?
+
+// Solution:
+
+#include <iostream>
+#include <queue>
+#include <unordered_set>
+#include <vector>
+
+using namespace std;
+
+vector<vector<int>> shortestPathFromUpperLeftCellToEveryCell(const vector<vector<int>>& grid) {
+    int m = grid.size();
+    int n = grid[0].size();
+    vector<int> start = {0, 0};
+
+    queue<vector<int>> q;
+    q.push(start);
+
+    vector<vector<bool>> visited(m, vector<bool>(n));
+    visited[start[0]][start[1]] = true;
+
+    vector<vector<int>> distance(m, vector<int>(n, INT_MAX));
+    distance[start[0]][start[1]] = 0;
+
+    vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    while (not q.empty()) {
+        vector<int> cell = q.front();
+        q.pop();
+        int x = cell[0], y = cell[1];
+
+        for (vector<int>& dir : dirs) {
+            int neighX = x + dir[0], neighY = y + dir[1];
+            if (neighX >= 0 and neighX < m and neighY >= 0 and neighY < n and grid[neighX][neighY] != 1 and
+                not visited[neighX][neighY]) {
+                q.push({neighX, neighY});
+                distance[neighX][neighY] = distance[x][y] + 1;
+                visited[neighX][neighY] = true;
+            }
+        }
+    }
+
+    return distance;
+}
+
+int main() {
+    std::vector<std::vector<int>> grid = {
+        {0, 1, 0, 0},
+        {0, 0, 1, 0},
+        {1, 0, 0, 0},
+        {0, 1, 0, 0}
+    };
+
+    const std::vector<std::vector<int>> min_distance = shortestPathFromUpperLeftCellToEveryCell(grid);
+
+    for (int i = 0; i < min_distance.size(); ++i) {
+      for (int j = 0; j < min_distance[0].size(); ++j) {
+        std::cout << min_distance[i][j] << ", ";
+      }
+      std::cout << std::endl;
+    }
+
+    return 0;
+}
